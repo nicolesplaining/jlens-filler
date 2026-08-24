@@ -1,0 +1,13 @@
+{
+  "sanity_prompts": [
+    {
+      "id": "capital",
+      "messages": [
+        {
+          "role": "user",
+          "content": "The capital of France is"
+        }
+      ]
+    }
+  ]
+}
