@@ -1,0 +1,33 @@
+example_id,order,fact_count,filler_answer,filler_correct,no_filler_answer,no_filler_correct,method,target_label,target_surface,best_rank,best_layer,best_filler,best_cell_top1,first_rank_le_10_layer,first_rank_le_10_filler,first_rank_le_10
+tungsten_plus_carbon,tungsten → carbon,2,80,True,80,True,j_lens,tungsten_atomic_number,74,1,36,4,74,35,4,10
+tungsten_plus_carbon,tungsten → carbon,2,80,True,80,True,j_lens,carbon_atomic_number,6,5,36,8, six,35,8,10
+tungsten_plus_carbon,tungsten → carbon,2,80,True,80,True,j_lens,sum,80,89,41,10,Answer,,,
+tungsten_plus_carbon,tungsten → carbon,2,80,True,80,True,logit_lens,tungsten_atomic_number,74,2,37,5,额外,37,5,2
+tungsten_plus_carbon,tungsten → carbon,2,80,True,80,True,logit_lens,carbon_atomic_number,6,12,36,8, six,,,
+tungsten_plus_carbon,tungsten → carbon,2,80,True,80,True,logit_lens,sum,80,77,40,10,Answer,,,
+carbon_plus_tungsten,carbon → tungsten,2,80,True,80,True,j_lens,tungsten_atomic_number,74,1,35,3,74,34,3,5
+carbon_plus_tungsten,carbon → tungsten,2,80,True,80,True,j_lens,carbon_atomic_number,6,92,20,1,足,,,
+carbon_plus_tungsten,carbon → tungsten,2,80,True,80,True,j_lens,sum,80,53,39,10,八十,,,
+carbon_plus_tungsten,carbon → tungsten,2,80,True,80,True,logit_lens,tungsten_atomic_number,74,1,35,3,74,34,3,4
+carbon_plus_tungsten,carbon → tungsten,2,80,True,80,True,logit_lens,carbon_atomic_number,6,58,38,5, carbon,,,
+carbon_plus_tungsten,carbon → tungsten,2,80,True,80,True,logit_lens,sum,80,76,32,3,36,,,
+tungsten_carbon_oxygen,tungsten → carbon → oxygen,3,106,False,96,False,j_lens,tungsten_atomic_number,74,1,35,4,74,34,4,6
+tungsten_carbon_oxygen,tungsten → carbon → oxygen,3,106,False,96,False,j_lens,carbon_atomic_number,6,6,35,7,ilig,35,7,6
+tungsten_carbon_oxygen,tungsten → carbon → oxygen,3,106,False,96,False,j_lens,oxygen_atomic_number,8,30,22,3,重,,,
+tungsten_carbon_oxygen,tungsten → carbon → oxygen,3,106,False,96,False,j_lens,first_two_sum,80,40,24,3, Digits,,,
+tungsten_carbon_oxygen,tungsten → carbon → oxygen,3,106,False,96,False,j_lens,sum,88,2,27,3,s,27,3,2
+tungsten_carbon_oxygen,tungsten → carbon → oxygen,3,106,False,96,False,logit_lens,tungsten_atomic_number,74,1,35,4,74,34,5,8
+tungsten_carbon_oxygen,tungsten → carbon → oxygen,3,106,False,96,False,logit_lens,carbon_atomic_number,6,10,34,4, tung,34,4,10
+tungsten_carbon_oxygen,tungsten → carbon → oxygen,3,106,False,96,False,logit_lens,oxygen_atomic_number,8,691,26,3,\,,,
+tungsten_carbon_oxygen,tungsten → carbon → oxygen,3,106,False,96,False,logit_lens,first_two_sum,80,187,24,3,\,,,
+tungsten_carbon_oxygen,tungsten → carbon → oxygen,3,106,False,96,False,logit_lens,sum,88,59,27,3,癫�,,,
+carbon_tungsten_oxygen,carbon → tungsten → oxygen,3,90,False,42,False,j_lens,tungsten_atomic_number,74,1,35,1,74,34,1,2
+carbon_tungsten_oxygen,carbon → tungsten → oxygen,3,90,False,42,False,j_lens,carbon_atomic_number,6,20,40,5, six,,,
+carbon_tungsten_oxygen,carbon → tungsten → oxygen,3,90,False,42,False,j_lens,oxygen_atomic_number,8,17,22,3,s,,,
+carbon_tungsten_oxygen,carbon → tungsten → oxygen,3,90,False,42,False,j_lens,first_two_sum,80,13,35,4,74,,,
+carbon_tungsten_oxygen,carbon → tungsten → oxygen,3,90,False,42,False,j_lens,sum,88,13,27,3,enst,,,
+carbon_tungsten_oxygen,carbon → tungsten → oxygen,3,90,False,42,False,logit_lens,tungsten_atomic_number,74,1,34,1,74,34,1,1
+carbon_tungsten_oxygen,carbon → tungsten → oxygen,3,90,False,42,False,logit_lens,carbon_atomic_number,6,18,37,3,124,,,
+carbon_tungsten_oxygen,carbon → tungsten → oxygen,3,90,False,42,False,logit_lens,oxygen_atomic_number,8,169,26,3,\,,,
+carbon_tungsten_oxygen,carbon → tungsten → oxygen,3,90,False,42,False,logit_lens,first_two_sum,80,132,26,3,\,,,
+carbon_tungsten_oxygen,carbon → tungsten → oxygen,3,90,False,42,False,logit_lens,sum,88,11,33,1, tungsten,,,

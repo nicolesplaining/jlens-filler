@@ -1,0 +1,27 @@
+{
+  "seed": 42,
+  "filler_type": "dots",
+  "filler_length": 10,
+  "few_shot": [
+    {"fact_phrase_1": "the atomic number of Helium", "fact_value_1": 2, "fact_phrase_2": "the atomic number of Neon", "fact_value_2": 10, "answer": 12},
+    {"fact_phrase_1": "the atomic number of Sulfur", "fact_value_1": 16, "fact_phrase_2": "the atomic number of Cobalt", "fact_value_2": 27, "answer": 43},
+    {"fact_phrase_1": "the atomic number of Selenium", "fact_value_1": 34, "fact_phrase_2": "the atomic number of Promethium", "fact_value_2": 61, "answer": 95},
+    {"fact_phrase_1": "the atomic number of Europium", "fact_value_1": 63, "fact_phrase_2": "the atomic number of Tantalum", "fact_value_2": 73, "answer": 136},
+    {"fact_phrase_1": "the atomic number of Rhenium", "fact_value_1": 75, "fact_phrase_2": "the atomic number of Protactinium", "fact_value_2": 91, "answer": 166}
+  ],
+  "examples": [
+    {
+      "id": "carbon_plus_tungsten",
+      "fact_phrase_1": "the atomic number of carbon", "fact_value_1": 6,
+      "fact_phrase_2": "the atomic number of tungsten", "fact_value_2": 74,
+      "answer": 80,
+      "expected_intermediates": {"tungsten_atomic_number": "74", "carbon_atomic_number": "6", "sum": "80"},
+      "highlight_forms": {"tungsten_atomic_number": ["74", "seventy-four", "seventy four"], "carbon_atomic_number": ["6", "six"], "sum": ["80", "eighty"]}
+    }
+  ],
+  "sanity_prompts": [
+    {"id": "capital", "messages": [{"role": "user", "content": "The capital of France is"}]},
+    {"id": "arithmetic", "messages": [{"role": "user", "content": "Complete with only the answer: 17 + 25 ="}]},
+    {"id": "chinese", "messages": [{"role": "user", "content": "用一个词回答：中国的首都是"}]}
+  ]
+}

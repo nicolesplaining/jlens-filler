@@ -1,0 +1,75 @@
+{
+  "seed": 42,
+  "task_type": "repeated_squaring_mod",
+  "filler_type": "dots",
+  "filler_length": 10,
+  "few_shot": [
+    {"modulus": 55, "factorization_for_validation_only": [5, 11], "x": 2, "time_steps": 3, "answer": 36},
+    {"modulus": 77, "factorization_for_validation_only": [7, 11], "x": 3, "time_steps": 4, "answer": 25},
+    {"modulus": 143, "factorization_for_validation_only": [11, 13], "x": 5, "time_steps": 3, "answer": 92},
+    {"modulus": 221, "factorization_for_validation_only": [13, 17], "x": 7, "time_steps": 4, "answer": 35},
+    {"modulus": 247, "factorization_for_validation_only": [13, 19], "x": 11, "time_steps": 3, "answer": 178}
+  ],
+  "examples": [
+    {
+      "id": "repeated_squaring_n209_x24_t3",
+      "selection_reason": "Dots-only correct T=3 case.",
+      "modulus": 209,
+      "factorization_for_validation_only": [11, 19],
+      "x": 24,
+      "time_steps": 3,
+      "answer": 80,
+      "expected_intermediates": {"x_1": "158", "x_2": "93", "x_3": "80"},
+      "highlight_forms": {"x_1": ["158"], "x_2": ["93"], "x_3": ["80"]}
+    },
+    {
+      "id": "repeated_squaring_n407_x30_t4",
+      "selection_reason": "Dots-only correct T=4 case.",
+      "modulus": 407,
+      "factorization_for_validation_only": [11, 37],
+      "x": 30,
+      "time_steps": 4,
+      "answer": 256,
+      "expected_intermediates": {"x_1": "86", "x_2": "70", "x_3": "16", "x_4": "256"},
+      "highlight_forms": {"x_1": ["86"], "x_2": ["70"], "x_3": ["16"], "x_4": ["256"]}
+    },
+    {
+      "id": "repeated_squaring_n667_x41_t10",
+      "selection_reason": "Shortcut-controlled T=10 failure; dots rank the target 11 versus 7 without dots.",
+      "modulus": 667,
+      "factorization_for_validation_only": [23, 29],
+      "x": 41,
+      "time_steps": 10,
+      "answer": 639,
+      "expected_intermediates": {"x_1": "347", "x_2": "349", "x_3": "407", "x_4": "233", "x_5": "262", "x_6": "610", "x_7": "581", "x_8": "59", "x_9": "146", "x_10": "639"},
+      "highlight_forms": {"x_1": ["347"], "x_2": ["349"], "x_3": ["407"], "x_4": ["233"], "x_5": ["262"], "x_6": ["610"], "x_7": ["581"], "x_8": ["59"], "x_9": ["146"], "x_10": ["639"]}
+    },
+    {
+      "id": "repeated_squaring_n473_x31_t1",
+      "selection_reason": "No-dots-only correct T=1 negative control.",
+      "modulus": 473,
+      "factorization_for_validation_only": [11, 43],
+      "x": 31,
+      "time_steps": 1,
+      "answer": 15,
+      "expected_intermediates": {"x_1": "15"},
+      "highlight_forms": {"x_1": ["15"]}
+    },
+    {
+      "id": "repeated_squaring_n473_x31_t8",
+      "selection_reason": "Incorrect in both conditions, but dots improved target rank from 373 to 137.",
+      "modulus": 473,
+      "factorization_for_validation_only": [11, 43],
+      "x": 31,
+      "time_steps": 8,
+      "answer": 53,
+      "expected_intermediates": {"x_1": "15", "x_2": "225", "x_3": "14", "x_4": "196", "x_5": "103", "x_6": "203", "x_7": "58", "x_8": "53"},
+      "highlight_forms": {"x_1": ["15"], "x_2": ["225"], "x_3": ["14"], "x_4": ["196"], "x_5": ["103"], "x_6": ["203"], "x_7": ["58"], "x_8": ["53"]}
+    }
+  ],
+  "sanity_prompts": [
+    {"id": "capital", "messages": [{"role": "user", "content": "The capital of France is"}]},
+    {"id": "arithmetic", "messages": [{"role": "user", "content": "Complete with only the answer: 17 + 25 ="}]},
+    {"id": "chinese", "messages": [{"role": "user", "content": "用一个词回答：中国的首都是"}]}
+  ]
+}

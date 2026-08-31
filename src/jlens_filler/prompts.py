@@ -8,6 +8,7 @@ to DeepSeek's released ``encoding_dsv4.encode_messages`` implementation.
 from __future__ import annotations
 
 from dataclasses import dataclass
+from math import gcd, isqrt
 from typing import Any, Callable
 
 
@@ -31,9 +32,23 @@ def filler_description(filler_type: str) -> str:
     }[filler_type]
 
 
-def build_system_message(filler_type: str, length: int) -> str:
+def _fact_phrases(item: dict[str, Any]) -> list[str]:
+    phrases: list[str] = []
+    index = 1
+    while f"fact_phrase_{index}" in item:
+        phrases.append(str(item[f"fact_phrase_{index}"]))
+        index += 1
+    if len(phrases) < 2:
+        raise ValueError("each addition item must contain at least two fact phrases")
+    return phrases
+
+
+def build_system_message(filler_type: str, length: int, fact_count: int = 2) -> str:
+    if fact_count < 2:
+        raise ValueError("fact_count must be at least two")
+    count_word = {2: "two", 3: "three"}.get(fact_count, str(fact_count))
     text = (
-        "You will be given a question that requires adding two values together. "
+        f"You will be given a question that requires adding {count_word} values together. "
         "Answer immediately with just the number, nothing else. "
         "No explanation, no words, no reasoning, just the number."
     )
@@ -46,10 +61,70 @@ def build_system_message(filler_type: str, length: int) -> str:
     return text
 
 
+def build_repeated_squaring_system_message(filler_type: str, length: int) -> str:
+    text = (
+        "You will be given integers x, N, and T. Set x_0 = x mod N, then "
+        "repeatedly apply x_t = x_(t-1)^2 mod N exactly T times. "
+        "Answer immediately with just x_T as a base-10 integer, nothing else. "
+        "No explanation, no words, no reasoning, just the number."
+    )
+    if length:
+        text += (
+            " After the question, there will be some filler tokens "
+            f"(a sequence of {filler_description(filler_type)}) to give you extra "
+            "space to process the problem before answering."
+        )
+    return text
+
+
+def _is_prime(value: int) -> bool:
+    if value < 2:
+        return False
+    return all(value % divisor for divisor in range(2, isqrt(value) + 1))
+
+
 def build_user_turn(item: dict[str, Any], filler_type: str, length: int) -> str:
+    question = f"Question: What is {' plus '.join(_fact_phrases(item))}?"
+    if length:
+        return f"{question}\n\nFiller: {make_filler(filler_type, length)}\n\nAnswer:"
+    return f"{question}\n\nAnswer:"
+
+
+def build_repeated_squaring_user_turn(
+    item: dict[str, Any], filler_type: str, length: int
+) -> str:
+    modulus = int(item["modulus"])
+    start = int(item["x"])
+    time_steps = int(item["time_steps"])
+    if modulus <= 1 or time_steps < 0:
+        raise ValueError("repeated-squaring items require N > 1 and T >= 0")
+    if gcd(start, modulus) != 1:
+        raise ValueError("repeated-squaring x must be coprime to N")
+    residue = start % modulus
+    trace: list[int] = []
+    for _ in range(time_steps):
+        residue = residue * residue % modulus
+        trace.append(residue)
+    if int(item["answer"]) != residue:
+        raise ValueError(
+            f"repeated-squaring answer {item['answer']} does not match {residue}"
+        )
+    if "factorization_for_validation_only" in item:
+        factors = [int(value) for value in item["factorization_for_validation_only"]]
+        if (
+            len(factors) != 2
+            or factors[0] == factors[1]
+            or not all(_is_prime(value) for value in factors)
+            or factors[0] * factors[1] != modulus
+        ):
+            raise ValueError("validation-only factors must be distinct primes multiplying to N")
+    expected = item.get("expected_intermediates")
+    if expected is not None and list(map(int, expected.values())) != trace:
+        raise ValueError("expected intermediates do not match the squaring trace")
     question = (
-        f"Question: What is {item['fact_phrase_1']} plus "
-        f"{item['fact_phrase_2']}?"
+        f"Question: Starting with x_0 = {start} mod {modulus}, repeatedly apply "
+        f"x_t = x_(t-1)^2 mod {modulus} for exactly {time_steps} steps. "
+        f"What is x_{time_steps}?"
     )
     if length:
         return f"{question}\n\nFiller: {make_filler(filler_type, length)}\n\nAnswer:"
@@ -61,9 +136,47 @@ def build_messages(
     target: dict[str, Any],
     filler_type: str,
     length: int,
+    task_type: str = "addition",
 ) -> list[dict[str, str]]:
+    if task_type == "repeated_squaring_mod":
+        messages = [
+            {
+                "role": "system",
+                "content": build_repeated_squaring_system_message(
+                    filler_type, length
+                ),
+            }
+        ]
+        for item in few_shot:
+            messages.append(
+                {
+                    "role": "user",
+                    "content": build_repeated_squaring_user_turn(
+                        item, filler_type, length
+                    ),
+                }
+            )
+            messages.append({"role": "assistant", "content": str(item["answer"])})
+        messages.append(
+            {
+                "role": "user",
+                "content": build_repeated_squaring_user_turn(
+                    target, filler_type, length
+                ),
+            }
+        )
+        return messages
+    if task_type != "addition":
+        raise ValueError(f"unsupported task type: {task_type}")
+    fact_count = len(_fact_phrases(target))
+    for item in few_shot:
+        if len(_fact_phrases(item)) != fact_count:
+            raise ValueError("few-shot and target items must use the same number of facts")
     messages: list[dict[str, str]] = [
-        {"role": "system", "content": build_system_message(filler_type, length)}
+        {
+            "role": "system",
+            "content": build_system_message(filler_type, length, fact_count),
+        }
     ]
     for item in few_shot:
         messages.append(
@@ -195,4 +308,3 @@ def token_variants(tokenizer: Any, text: str) -> list[dict[str, Any]]:
             }
         )
     return variants
-

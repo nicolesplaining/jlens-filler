@@ -1,0 +1,54 @@
+{
+  "seed": 42,
+  "task_type": "repeated_squaring_mod",
+  "filler_type": "dots",
+  "filler_length": 10,
+  "few_shot": [
+    {"modulus": 55, "factorization_for_validation_only": [5, 11], "x": 2, "time_steps": 3, "answer": 36},
+    {"modulus": 77, "factorization_for_validation_only": [7, 11], "x": 3, "time_steps": 4, "answer": 25},
+    {"modulus": 143, "factorization_for_validation_only": [11, 13], "x": 5, "time_steps": 3, "answer": 92},
+    {"modulus": 221, "factorization_for_validation_only": [13, 17], "x": 7, "time_steps": 4, "answer": 35},
+    {"modulus": 247, "factorization_for_validation_only": [13, 19], "x": 11, "time_steps": 3, "answer": 178}
+  ],
+  "examples": [
+    {
+      "id": "repeated_squaring_n437_x12_t10",
+      "task_reference": "https://blog.tilderesearch.com/blog/one-layer-deeper",
+      "instance_note": "Fresh small-semiprime pilot selected for distinct single-token residues; not a cryptographic-size shortcut-resistance test.",
+      "modulus": 437,
+      "factorization_for_validation_only": [19, 23],
+      "x": 12,
+      "time_steps": 10,
+      "answer": 311,
+      "expected_intermediates": {
+        "x_1": "144",
+        "x_2": "197",
+        "x_3": "353",
+        "x_4": "64",
+        "x_5": "163",
+        "x_6": "349",
+        "x_7": "315",
+        "x_8": "26",
+        "x_9": "239",
+        "x_10": "311"
+      },
+      "highlight_forms": {
+        "x_1": ["144"],
+        "x_2": ["197"],
+        "x_3": ["353"],
+        "x_4": ["64"],
+        "x_5": ["163"],
+        "x_6": ["349"],
+        "x_7": ["315"],
+        "x_8": ["26"],
+        "x_9": ["239"],
+        "x_10": ["311"]
+      }
+    }
+  ],
+  "sanity_prompts": [
+    {"id": "capital", "messages": [{"role": "user", "content": "The capital of France is"}]},
+    {"id": "arithmetic", "messages": [{"role": "user", "content": "Complete with only the answer: 17 + 25 ="}]},
+    {"id": "chinese", "messages": [{"role": "user", "content": "用一个词回答：中国的首都是"}]}
+  ]
+}

@@ -29,6 +29,63 @@ its complete top-10 with probabilities/logits and the exact ranks of `74`, `6`, 
 generation position, so the layer-41 lens readout cannot be mistaken for the answer.
 The page also contains target-rank heatmaps and minimum-rank trajectories.
 
+## Three-fact and order ablations
+
+The follow-up experiment adds oxygen as a third retrieved fact and tracks the first-two
+partial sum (`80`) as well as the intended final sum (`88`). It runs both
+`tungsten → carbon → oxygen` and `carbon → tungsten → oxygen`, plus the matched
+two-fact `carbon → tungsten` swap. All three new conditions retain the same five-shot
+structure, ten dot tokens, and non-thinking encoding.
+
+- Combined Markdown summary: [`results/order-ablation-summary.md`](results/order-ablation-summary.md)
+- Machine-readable comparison: [`results/order-ablation-summary.csv`](results/order-ablation-summary.csv)
+- Three-fact W→C→O viewer: [`results/three-fact-order/tungsten-carbon-oxygen/viewer.html`](results/three-fact-order/tungsten-carbon-oxygen/viewer.html)
+- Three-fact C→W→O viewer: [`results/three-fact-order/carbon-tungsten-oxygen/viewer.html`](results/three-fact-order/carbon-tungsten-oxygen/viewer.html)
+- Two-fact C→W viewer: [`results/two-fact-swapped/carbon-plus-tungsten/viewer.html`](results/two-fact-swapped/carbon-plus-tungsten/viewer.html)
+
+The three-fact prompts are error-analysis cases: W→C→O generates `106` with filler
+and C→W→O generates `90`, rather than `88`. In W→C→O, however, J-Lens ranks the
+correct `88` token second at layer 27/filler 3, compared with rank 59 for the logit
+lens in that cell. This is evidence of a transported readout, not proof that the model
+used or causally relied on that candidate.
+
+## Repeated-squaring T-hop pilot
+
+The `T=10` repeated modular-squaring condition is complete. For `N=437`, `x=12`,
+the expected trace ends at `311`, but the model generated the first residue, `144`,
+with and without ten dot fillers. All ten residues were tracked at all 42 released
+J-Lens layers and all ten filler positions. Only `x_4 = 64` reached the J-Lens top
+10 (rank 8 at layer 35, filler 1); the readouts do not show the expected serial
+residue trajectory.
+
+- Interactive viewer: [`results/repeated-squaring-t10/viewer.html`](results/repeated-squaring-t10/viewer.html)
+- Qualitative report: [`results/repeated-squaring-t10/qualitative-report.md`](results/repeated-squaring-t10/qualitative-report.md)
+- Machine-readable cells: [`results/repeated-squaring-t10/readouts.jsonl`](results/repeated-squaring-t10/readouts.jsonl)
+- Complete extraction: [`results/repeated-squaring-t10/repeated_squaring_n437_x12_t10.json`](results/repeated-squaring-t10/repeated_squaring_n437_x12_t10.json)
+- Experiment report and reproduction: [`reports/repeated-squaring-t10.md`](reports/repeated-squaring-t10.md)
+
+The follow-up calibrated `T=1...10` sweep is also complete. It contains ten
+shortcut-controlled base instances at every T (100 paired problems). Dots scored
+5/100 versus 2/100 without dots, a directionally positive but inconclusive
+difference of +3 percentage points (95% paired-bootstrap interval -2 to +8;
+exact McNemar p=0.453). No condition solved a shortcut-controlled T=10 example.
+
+- Dot/no-dot evaluation report: [`results/repeated-squaring-dot-eval/evaluation-report.md`](results/repeated-squaring-dot-eval/evaluation-report.md)
+- Per-T metrics: [`results/repeated-squaring-dot-eval/summary.csv`](results/repeated-squaring-dot-eval/summary.csv)
+- All paired examples: [`results/repeated-squaring-dot-eval/pairs.csv`](results/repeated-squaring-dot-eval/pairs.csv)
+- Combined prompts, logits, ranks, and provenance: [`results/repeated-squaring-dot-eval/paired_task_eval.json`](results/repeated-squaring-dot-eval/paired_task_eval.json)
+- Selected J-Lens summary: [`results/repeated-squaring-lens-selected/summary.md`](results/repeated-squaring-lens-selected/summary.md)
+- Selected J-Lens/logit-lens ranks: [`results/repeated-squaring-lens-selected/lens-summary.csv`](results/repeated-squaring-lens-selected/lens-summary.csv)
+
+In the valid T=10 failure, J-Lens surfaces `gcd`, `φ`, `Carmichael`,
+`factoring`, and `totient` around filler 3/layers 30-38, but does not recover a
+serial residue trajectory. Across 26 selected intermediate targets, J-Lens beats
+the logit lens on best filler-cell rank for 8, loses on 17, and ties once.
+
+Both runs used two same-region two-H100 hosts with socket NCCL over their private
+network. The ordinary-prompt sanity gate passed and final-head closure remained
+within `9.7e-4` maximum absolute logit error across the selected examples.
+
 ## Remote environment used
 
 - 4 × NVIDIA H100 80 GB; observed extraction allocation about 42.7 GiB/GPU
@@ -121,6 +178,87 @@ torchrun --standalone --nproc-per-node=4 scripts/extract_dsv4.py \
 
 python scripts/build_artifacts.py results/filler/tungsten_plus_carbon.json \
   --output-dir results/filler
+```
+
+Run the three-fact and order-ablation configs with the same model/lens arguments:
+
+```bash
+torchrun --standalone --nproc-per-node=4 scripts/extract_dsv4.py \
+  --ckpt-path "$WORK/cache/model_mp4" \
+  --model-config "$WORK/cache/model_hf/inference/config.json" \
+  --reference-code-dir "$WORK/cache/model_hf/inference" \
+  --lens-path "$WORK/cache/lens_repo/deepseek-v4-flash/j-lens/lens.pt" \
+  --examples-config configs/three_fact_order_ablation.json \
+  --output-dir results/three-fact-order \
+  --phase all --layers all --top-k 10 --max-new-tokens 12 \
+  --model-revision 60d8d70770c6776ff598c94bb586a859a38244f1
+
+torchrun --standalone --nproc-per-node=4 scripts/extract_dsv4.py \
+  --ckpt-path "$WORK/cache/model_mp4" \
+  --model-config "$WORK/cache/model_hf/inference/config.json" \
+  --reference-code-dir "$WORK/cache/model_hf/inference" \
+  --lens-path "$WORK/cache/lens_repo/deepseek-v4-flash/j-lens/lens.pt" \
+  --examples-config configs/two_fact_swapped.json \
+  --output-dir results/two-fact-swapped \
+  --phase all --layers all --top-k 10 --max-new-tokens 12 \
+  --model-revision 60d8d70770c6776ff598c94bb586a859a38244f1
+
+python scripts/build_artifacts.py \
+  results/three-fact-order/tungsten_carbon_oxygen.json \
+  --output-dir results/three-fact-order/tungsten-carbon-oxygen
+python scripts/build_artifacts.py \
+  results/three-fact-order/carbon_tungsten_oxygen.json \
+  --output-dir results/three-fact-order/carbon-tungsten-oxygen
+python scripts/build_artifacts.py \
+  results/two-fact-swapped/carbon_plus_tungsten.json \
+  --output-dir results/two-fact-swapped/carbon-plus-tungsten
+python scripts/build_order_ablation_report.py
+```
+
+Evaluate the shortcut-controlled repeated-squaring sweep before extracting any
+lens readouts:
+
+```bash
+torchrun --standalone --nproc-per-node=4 scripts/extract_dsv4.py \
+  --ckpt-path "$WORK/cache/model_mp4" \
+  --model-config "$WORK/cache/model_hf/inference/config.json" \
+  --reference-code-dir "$WORK/cache/model_hf/inference" \
+  --lens-path "$WORK/cache/lens_repo/deepseek-v4-flash/j-lens/lens.pt" \
+  --examples-config configs/repeated_squaring_dot_eval.json \
+  --output-dir results/repeated-squaring-dot-eval \
+  --phase eval --top-k 10 --max-new-tokens 12 \
+  --model-revision 60d8d70770c6776ff598c94bb586a859a38244f1
+
+python3 scripts/build_repeated_squaring_eval_report.py \
+  results/repeated-squaring-dot-eval/paired_task_eval.json \
+  --output-dir results/repeated-squaring-dot-eval
+```
+
+Then extract the five preselected qualitative cases and build their viewers:
+
+```bash
+torchrun --standalone --nproc-per-node=4 scripts/extract_dsv4.py \
+  --ckpt-path "$WORK/cache/model_mp4" \
+  --model-config "$WORK/cache/model_hf/inference/config.json" \
+  --reference-code-dir "$WORK/cache/model_hf/inference" \
+  --lens-path "$WORK/cache/lens_repo/deepseek-v4-flash/j-lens/lens.pt" \
+  --examples-config configs/repeated_squaring_lens_selected.json \
+  --output-dir results/repeated-squaring-lens-selected \
+  --phase all --layers all --top-k 10 --max-new-tokens 12 \
+  --model-revision 60d8d70770c6776ff598c94bb586a859a38244f1
+
+for stem in repeated_squaring_n209_x24_t3 \
+  repeated_squaring_n407_x30_t4 repeated_squaring_n667_x41_t10 \
+  repeated_squaring_n473_x31_t1 repeated_squaring_n473_x31_t8; do
+  python3 scripts/build_artifacts.py \
+    "results/repeated-squaring-lens-selected/$stem.json" \
+    --output-dir "results/repeated-squaring-lens-selected/$stem"
+done
+
+python3 scripts/build_repeated_squaring_lens_summary.py \
+  results/repeated-squaring-lens-selected \
+  configs/repeated_squaring_lens_selected.json \
+  --output-dir results/repeated-squaring-lens-selected
 ```
 
 ## Scientific boundary before scaling

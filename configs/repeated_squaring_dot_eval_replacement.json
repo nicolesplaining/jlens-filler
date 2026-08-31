@@ -1,0 +1,24 @@
+{
+  "seed": 42,
+  "task_type": "repeated_squaring_mod",
+  "filler_type": "dots",
+  "filler_length": 10,
+  "few_shot": [
+    {"modulus": 55, "factorization_for_validation_only": [5, 11], "x": 2, "time_steps": 3, "answer": 36},
+    {"modulus": 77, "factorization_for_validation_only": [7, 11], "x": 3, "time_steps": 4, "answer": 25},
+    {"modulus": 143, "factorization_for_validation_only": [11, 13], "x": 5, "time_steps": 3, "answer": 92},
+    {"modulus": 221, "factorization_for_validation_only": [13, 17], "x": 7, "time_steps": 4, "answer": 35},
+    {"modulus": 247, "factorization_for_validation_only": [13, 19], "x": 11, "time_steps": 3, "answer": 178}
+  ],
+  "sweep": {
+    "time_steps": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "base_instances": [
+      {"modulus": 667, "factorization_for_validation_only": [23, 29], "x": 41}
+    ]
+  },
+  "sanity_prompts": [
+    {"id": "capital", "messages": [{"role": "user", "content": "The capital of France is"}]},
+    {"id": "arithmetic", "messages": [{"role": "user", "content": "Complete with only the answer: 17 + 25 ="}]},
+    {"id": "chinese", "messages": [{"role": "user", "content": "用一个词回答：中国的首都是"}]}
+  ]
+}

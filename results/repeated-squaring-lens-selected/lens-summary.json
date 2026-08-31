@@ -1,0 +1,589 @@
+{
+  "examples": [
+    {
+      "id": "repeated_squaring_n209_x24_t3",
+      "selection_reason": "Dots-only correct T=3 case.",
+      "time_steps": 3,
+      "expected_answer": 80,
+      "dots_answer": 80,
+      "dots_correct": true,
+      "no_dots_answer": 144,
+      "no_dots_correct": false,
+      "closure_max_absolute_error": 0.0
+    },
+    {
+      "id": "repeated_squaring_n407_x30_t4",
+      "selection_reason": "Dots-only correct T=4 case.",
+      "time_steps": 4,
+      "expected_answer": 256,
+      "dots_answer": 256,
+      "dots_correct": true,
+      "no_dots_answer": 16,
+      "no_dots_correct": false,
+      "closure_max_absolute_error": 0.0
+    },
+    {
+      "id": "repeated_squaring_n667_x41_t10",
+      "selection_reason": "Shortcut-controlled T=10 failure; dots rank the target 11 versus 7 without dots.",
+      "time_steps": 10,
+      "expected_answer": 639,
+      "dots_answer": 1,
+      "dots_correct": false,
+      "no_dots_answer": 41,
+      "no_dots_correct": false,
+      "closure_max_absolute_error": 0.0
+    },
+    {
+      "id": "repeated_squaring_n473_x31_t1",
+      "selection_reason": "No-dots-only correct T=1 negative control.",
+      "time_steps": 1,
+      "expected_answer": 15,
+      "dots_answer": 31,
+      "dots_correct": false,
+      "no_dots_answer": 15,
+      "no_dots_correct": true,
+      "closure_max_absolute_error": 7.62939453125e-06
+    },
+    {
+      "id": "repeated_squaring_n473_x31_t8",
+      "selection_reason": "Incorrect in both conditions, but dots improved target rank from 373 to 137.",
+      "time_steps": 8,
+      "expected_answer": 53,
+      "dots_answer": 256,
+      "dots_correct": false,
+      "no_dots_answer": 31,
+      "no_dots_correct": false,
+      "closure_max_absolute_error": 0.000965118408203125
+    }
+  ],
+  "comparison": {
+    "target_instances": 26,
+    "j_lens_better": 8,
+    "logit_lens_better": 17,
+    "tied": 1,
+    "j_lens_top_10": 1,
+    "logit_lens_top_10": 1
+  },
+  "records": [
+    {
+      "example_id": "repeated_squaring_n209_x24_t3",
+      "time_steps": 3,
+      "target": "x_1",
+      "surface": "158",
+      "method": "j_lens",
+      "best_rank": 51,
+      "best_layer": 37,
+      "best_filler_position": 3
+    },
+    {
+      "example_id": "repeated_squaring_n209_x24_t3",
+      "time_steps": 3,
+      "target": "x_1",
+      "surface": "158",
+      "method": "logit_lens",
+      "best_rank": 61,
+      "best_layer": 38,
+      "best_filler_position": 3
+    },
+    {
+      "example_id": "repeated_squaring_n209_x24_t3",
+      "time_steps": 3,
+      "target": "x_2",
+      "surface": "93",
+      "method": "j_lens",
+      "best_rank": 28,
+      "best_layer": 36,
+      "best_filler_position": 3
+    },
+    {
+      "example_id": "repeated_squaring_n209_x24_t3",
+      "time_steps": 3,
+      "target": "x_2",
+      "surface": "93",
+      "method": "logit_lens",
+      "best_rank": 67,
+      "best_layer": 37,
+      "best_filler_position": 3
+    },
+    {
+      "example_id": "repeated_squaring_n209_x24_t3",
+      "time_steps": 3,
+      "target": "x_3",
+      "surface": "80",
+      "method": "j_lens",
+      "best_rank": 411,
+      "best_layer": 35,
+      "best_filler_position": 3
+    },
+    {
+      "example_id": "repeated_squaring_n209_x24_t3",
+      "time_steps": 3,
+      "target": "x_3",
+      "surface": "80",
+      "method": "logit_lens",
+      "best_rank": 148,
+      "best_layer": 37,
+      "best_filler_position": 3
+    },
+    {
+      "example_id": "repeated_squaring_n407_x30_t4",
+      "time_steps": 4,
+      "target": "x_1",
+      "surface": "86",
+      "method": "j_lens",
+      "best_rank": 64,
+      "best_layer": 35,
+      "best_filler_position": 6
+    },
+    {
+      "example_id": "repeated_squaring_n407_x30_t4",
+      "time_steps": 4,
+      "target": "x_1",
+      "surface": "86",
+      "method": "logit_lens",
+      "best_rank": 65,
+      "best_layer": 41,
+      "best_filler_position": 10
+    },
+    {
+      "example_id": "repeated_squaring_n407_x30_t4",
+      "time_steps": 4,
+      "target": "x_2",
+      "surface": "70",
+      "method": "j_lens",
+      "best_rank": 337,
+      "best_layer": 41,
+      "best_filler_position": 10
+    },
+    {
+      "example_id": "repeated_squaring_n407_x30_t4",
+      "time_steps": 4,
+      "target": "x_2",
+      "surface": "70",
+      "method": "logit_lens",
+      "best_rank": 107,
+      "best_layer": 5,
+      "best_filler_position": 1
+    },
+    {
+      "example_id": "repeated_squaring_n407_x30_t4",
+      "time_steps": 4,
+      "target": "x_3",
+      "surface": "16",
+      "method": "j_lens",
+      "best_rank": 501,
+      "best_layer": 41,
+      "best_filler_position": 10
+    },
+    {
+      "example_id": "repeated_squaring_n407_x30_t4",
+      "time_steps": 4,
+      "target": "x_3",
+      "surface": "16",
+      "method": "logit_lens",
+      "best_rank": 501,
+      "best_layer": 41,
+      "best_filler_position": 10
+    },
+    {
+      "example_id": "repeated_squaring_n407_x30_t4",
+      "time_steps": 4,
+      "target": "x_4",
+      "surface": "256",
+      "method": "j_lens",
+      "best_rank": 201,
+      "best_layer": 41,
+      "best_filler_position": 10
+    },
+    {
+      "example_id": "repeated_squaring_n407_x30_t4",
+      "time_steps": 4,
+      "target": "x_4",
+      "surface": "256",
+      "method": "logit_lens",
+      "best_rank": 175,
+      "best_layer": 40,
+      "best_filler_position": 10
+    },
+    {
+      "example_id": "repeated_squaring_n667_x41_t10",
+      "time_steps": 10,
+      "target": "x_1",
+      "surface": "347",
+      "method": "j_lens",
+      "best_rank": 915,
+      "best_layer": 35,
+      "best_filler_position": 1
+    },
+    {
+      "example_id": "repeated_squaring_n667_x41_t10",
+      "time_steps": 10,
+      "target": "x_1",
+      "surface": "347",
+      "method": "logit_lens",
+      "best_rank": 844,
+      "best_layer": 35,
+      "best_filler_position": 1
+    },
+    {
+      "example_id": "repeated_squaring_n667_x41_t10",
+      "time_steps": 10,
+      "target": "x_2",
+      "surface": "349",
+      "method": "j_lens",
+      "best_rank": 178,
+      "best_layer": 37,
+      "best_filler_position": 1
+    },
+    {
+      "example_id": "repeated_squaring_n667_x41_t10",
+      "time_steps": 10,
+      "target": "x_2",
+      "surface": "349",
+      "method": "logit_lens",
+      "best_rank": 286,
+      "best_layer": 37,
+      "best_filler_position": 1
+    },
+    {
+      "example_id": "repeated_squaring_n667_x41_t10",
+      "time_steps": 10,
+      "target": "x_3",
+      "surface": "407",
+      "method": "j_lens",
+      "best_rank": 2769,
+      "best_layer": 35,
+      "best_filler_position": 1
+    },
+    {
+      "example_id": "repeated_squaring_n667_x41_t10",
+      "time_steps": 10,
+      "target": "x_3",
+      "surface": "407",
+      "method": "logit_lens",
+      "best_rank": 2374,
+      "best_layer": 35,
+      "best_filler_position": 1
+    },
+    {
+      "example_id": "repeated_squaring_n667_x41_t10",
+      "time_steps": 10,
+      "target": "x_4",
+      "surface": "233",
+      "method": "j_lens",
+      "best_rank": 1290,
+      "best_layer": 35,
+      "best_filler_position": 1
+    },
+    {
+      "example_id": "repeated_squaring_n667_x41_t10",
+      "time_steps": 10,
+      "target": "x_4",
+      "surface": "233",
+      "method": "logit_lens",
+      "best_rank": 119,
+      "best_layer": 4,
+      "best_filler_position": 4
+    },
+    {
+      "example_id": "repeated_squaring_n667_x41_t10",
+      "time_steps": 10,
+      "target": "x_5",
+      "surface": "262",
+      "method": "j_lens",
+      "best_rank": 121,
+      "best_layer": 36,
+      "best_filler_position": 1
+    },
+    {
+      "example_id": "repeated_squaring_n667_x41_t10",
+      "time_steps": 10,
+      "target": "x_5",
+      "surface": "262",
+      "method": "logit_lens",
+      "best_rank": 48,
+      "best_layer": 32,
+      "best_filler_position": 1
+    },
+    {
+      "example_id": "repeated_squaring_n667_x41_t10",
+      "time_steps": 10,
+      "target": "x_6",
+      "surface": "610",
+      "method": "j_lens",
+      "best_rank": 332,
+      "best_layer": 35,
+      "best_filler_position": 1
+    },
+    {
+      "example_id": "repeated_squaring_n667_x41_t10",
+      "time_steps": 10,
+      "target": "x_6",
+      "surface": "610",
+      "method": "logit_lens",
+      "best_rank": 174,
+      "best_layer": 13,
+      "best_filler_position": 9
+    },
+    {
+      "example_id": "repeated_squaring_n667_x41_t10",
+      "time_steps": 10,
+      "target": "x_7",
+      "surface": "581",
+      "method": "j_lens",
+      "best_rank": 167,
+      "best_layer": 35,
+      "best_filler_position": 1
+    },
+    {
+      "example_id": "repeated_squaring_n667_x41_t10",
+      "time_steps": 10,
+      "target": "x_7",
+      "surface": "581",
+      "method": "logit_lens",
+      "best_rank": 241,
+      "best_layer": 35,
+      "best_filler_position": 1
+    },
+    {
+      "example_id": "repeated_squaring_n667_x41_t10",
+      "time_steps": 10,
+      "target": "x_8",
+      "surface": "59",
+      "method": "j_lens",
+      "best_rank": 10,
+      "best_layer": 35,
+      "best_filler_position": 1
+    },
+    {
+      "example_id": "repeated_squaring_n667_x41_t10",
+      "time_steps": 10,
+      "target": "x_8",
+      "surface": "59",
+      "method": "logit_lens",
+      "best_rank": 54,
+      "best_layer": 35,
+      "best_filler_position": 1
+    },
+    {
+      "example_id": "repeated_squaring_n667_x41_t10",
+      "time_steps": 10,
+      "target": "x_9",
+      "surface": "146",
+      "method": "j_lens",
+      "best_rank": 3864,
+      "best_layer": 35,
+      "best_filler_position": 1
+    },
+    {
+      "example_id": "repeated_squaring_n667_x41_t10",
+      "time_steps": 10,
+      "target": "x_9",
+      "surface": "146",
+      "method": "logit_lens",
+      "best_rank": 487,
+      "best_layer": 4,
+      "best_filler_position": 4
+    },
+    {
+      "example_id": "repeated_squaring_n667_x41_t10",
+      "time_steps": 10,
+      "target": "x_10",
+      "surface": "639",
+      "method": "j_lens",
+      "best_rank": 328,
+      "best_layer": 35,
+      "best_filler_position": 1
+    },
+    {
+      "example_id": "repeated_squaring_n667_x41_t10",
+      "time_steps": 10,
+      "target": "x_10",
+      "surface": "639",
+      "method": "logit_lens",
+      "best_rank": 226,
+      "best_layer": 31,
+      "best_filler_position": 1
+    },
+    {
+      "example_id": "repeated_squaring_n473_x31_t1",
+      "time_steps": 1,
+      "target": "x_1",
+      "surface": "15",
+      "method": "j_lens",
+      "best_rank": 261,
+      "best_layer": 40,
+      "best_filler_position": 3
+    },
+    {
+      "example_id": "repeated_squaring_n473_x31_t1",
+      "time_steps": 1,
+      "target": "x_1",
+      "surface": "15",
+      "method": "logit_lens",
+      "best_rank": 158,
+      "best_layer": 38,
+      "best_filler_position": 3
+    },
+    {
+      "example_id": "repeated_squaring_n473_x31_t8",
+      "time_steps": 8,
+      "target": "x_1",
+      "surface": "15",
+      "method": "j_lens",
+      "best_rank": 2569,
+      "best_layer": 20,
+      "best_filler_position": 1
+    },
+    {
+      "example_id": "repeated_squaring_n473_x31_t8",
+      "time_steps": 8,
+      "target": "x_1",
+      "surface": "15",
+      "method": "logit_lens",
+      "best_rank": 178,
+      "best_layer": 5,
+      "best_filler_position": 1
+    },
+    {
+      "example_id": "repeated_squaring_n473_x31_t8",
+      "time_steps": 8,
+      "target": "x_2",
+      "surface": "225",
+      "method": "j_lens",
+      "best_rank": 23,
+      "best_layer": 36,
+      "best_filler_position": 4
+    },
+    {
+      "example_id": "repeated_squaring_n473_x31_t8",
+      "time_steps": 8,
+      "target": "x_2",
+      "surface": "225",
+      "method": "logit_lens",
+      "best_rank": 3,
+      "best_layer": 36,
+      "best_filler_position": 4
+    },
+    {
+      "example_id": "repeated_squaring_n473_x31_t8",
+      "time_steps": 8,
+      "target": "x_3",
+      "surface": "14",
+      "method": "j_lens",
+      "best_rank": 2898,
+      "best_layer": 21,
+      "best_filler_position": 4
+    },
+    {
+      "example_id": "repeated_squaring_n473_x31_t8",
+      "time_steps": 8,
+      "target": "x_3",
+      "surface": "14",
+      "method": "logit_lens",
+      "best_rank": 1036,
+      "best_layer": 24,
+      "best_filler_position": 4
+    },
+    {
+      "example_id": "repeated_squaring_n473_x31_t8",
+      "time_steps": 8,
+      "target": "x_4",
+      "surface": "196",
+      "method": "j_lens",
+      "best_rank": 366,
+      "best_layer": 35,
+      "best_filler_position": 4
+    },
+    {
+      "example_id": "repeated_squaring_n473_x31_t8",
+      "time_steps": 8,
+      "target": "x_4",
+      "surface": "196",
+      "method": "logit_lens",
+      "best_rank": 92,
+      "best_layer": 31,
+      "best_filler_position": 4
+    },
+    {
+      "example_id": "repeated_squaring_n473_x31_t8",
+      "time_steps": 8,
+      "target": "x_5",
+      "surface": "103",
+      "method": "j_lens",
+      "best_rank": 2157,
+      "best_layer": 36,
+      "best_filler_position": 4
+    },
+    {
+      "example_id": "repeated_squaring_n473_x31_t8",
+      "time_steps": 8,
+      "target": "x_5",
+      "surface": "103",
+      "method": "logit_lens",
+      "best_rank": 233,
+      "best_layer": 30,
+      "best_filler_position": 4
+    },
+    {
+      "example_id": "repeated_squaring_n473_x31_t8",
+      "time_steps": 8,
+      "target": "x_6",
+      "surface": "203",
+      "method": "j_lens",
+      "best_rank": 187,
+      "best_layer": 36,
+      "best_filler_position": 4
+    },
+    {
+      "example_id": "repeated_squaring_n473_x31_t8",
+      "time_steps": 8,
+      "target": "x_6",
+      "surface": "203",
+      "method": "logit_lens",
+      "best_rank": 76,
+      "best_layer": 36,
+      "best_filler_position": 4
+    },
+    {
+      "example_id": "repeated_squaring_n473_x31_t8",
+      "time_steps": 8,
+      "target": "x_7",
+      "surface": "58",
+      "method": "j_lens",
+      "best_rank": 148,
+      "best_layer": 35,
+      "best_filler_position": 4
+    },
+    {
+      "example_id": "repeated_squaring_n473_x31_t8",
+      "time_steps": 8,
+      "target": "x_7",
+      "surface": "58",
+      "method": "logit_lens",
+      "best_rank": 168,
+      "best_layer": 34,
+      "best_filler_position": 4
+    },
+    {
+      "example_id": "repeated_squaring_n473_x31_t8",
+      "time_steps": 8,
+      "target": "x_8",
+      "surface": "53",
+      "method": "j_lens",
+      "best_rank": 31,
+      "best_layer": 35,
+      "best_filler_position": 4
+    },
+    {
+      "example_id": "repeated_squaring_n473_x31_t8",
+      "time_steps": 8,
+      "target": "x_8",
+      "surface": "53",
+      "method": "logit_lens",
+      "best_rank": 58,
+      "best_layer": 34,
+      "best_filler_position": 4
+    }
+  ]
+}

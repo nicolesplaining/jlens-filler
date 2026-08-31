@@ -229,6 +229,41 @@ def full_logits_summary(
     }
 
 
+def target_logit_summary(
+    logits: torch.Tensor, tokenizer: Any, answer: int
+) -> dict[str, Any]:
+    """Exact first-token rank for every single-token rendering of an answer."""
+    scores = logits.float().cpu()
+    log_z = torch.logsumexp(scores, dim=-1)
+    variants = token_variants(tokenizer, str(answer))
+    ranked: list[dict[str, Any]] = []
+    for variant in variants:
+        record = dict(variant)
+        if variant["single_token"]:
+            token_id = int(variant["token_ids"][0])
+            score = scores[token_id]
+            record.update(
+                {
+                    "rank": int((scores > score).sum().item()) + 1,
+                    "logit": float(score),
+                    "log_probability": float(score - log_z),
+                    "probability": float(torch.exp(score - log_z)),
+                }
+            )
+            ranked.append(record)
+    if not ranked:
+        raise AssertionError(f"answer {answer} has no single-token tokenizer form")
+    best = min(ranked, key=lambda item: item["rank"])
+    return {
+        "answer": answer,
+        "best_rank": best["rank"],
+        "best_logit": best["logit"],
+        "best_log_probability": best["log_probability"],
+        "best_probability": best["probability"],
+        "variants": variants,
+    }
+
+
 @contextmanager
 def capture_layers(model: Any, layer_indices: list[int], positions: list[int]):
     captured: dict[int, torch.Tensor] = {}
@@ -487,6 +522,7 @@ def run_filler_example(
     example: dict[str, Any],
     filler_type: str,
     filler_length: int,
+    task_type: str,
     lens_j: dict[int, torch.Tensor],
     layers: list[int],
     top_k: int,
@@ -494,7 +530,9 @@ def run_filler_example(
     rank: int,
     world_size: int,
 ) -> dict[str, Any] | None:
-    messages = build_messages(few_shot, example, filler_type, filler_length)
+    messages = build_messages(
+        few_shot, example, filler_type, filler_length, task_type=task_type
+    )
     rendered, alignment = render_and_align(
         tokenizer, encode_messages, messages, filler_type, filler_length
     )
@@ -532,6 +570,17 @@ def run_filler_example(
         model, alignment.input_ids, capture_indices, selected_positions
     )
     variants = tracked_variants(tokenizer, example["expected_intermediates"])
+    if task_type == "repeated_squaring_mod":
+        multi_token_only = [
+            label
+            for label, forms in variants.items()
+            if not any(form["single_token"] for form in forms)
+        ]
+        if multi_token_only:
+            raise AssertionError(
+                "T-hop target residues lack single-token forms: "
+                + ", ".join(multi_token_only)
+            )
     readouts = read_layers(
         model=model,
         captured=captured,
@@ -554,7 +603,9 @@ def run_filler_example(
     filler_text = tokenizer.decode(completion_ids, skip_special_tokens=True)
     filler_prediction = parse_numeric_answer(filler_text)
 
-    baseline_messages = build_messages(few_shot, example, filler_type, 0)
+    baseline_messages = build_messages(
+        few_shot, example, filler_type, 0, task_type=task_type
+    )
     baseline_rendered = encode_messages(baseline_messages, thinking_mode="chat")
     baseline_ids = tokenizer.encode(baseline_rendered)
     baseline_completion_ids, baseline_logits = greedy_generate(
@@ -580,7 +631,11 @@ def run_filler_example(
     return {
         "schema_version": 1,
         "example": example,
-        "condition": {"filler_type": filler_type, "filler_length": filler_length},
+        "condition": {
+            "task_type": task_type,
+            "filler_type": filler_type,
+            "filler_length": filler_length,
+        },
         "messages": messages,
         "rendered_prompt": rendered,
         "alignment": alignment.to_dict(),
@@ -614,6 +669,250 @@ def run_filler_example(
     }
 
 
+def expand_experiment_examples(experiment: dict[str, Any]) -> list[dict[str, Any]]:
+    """Expand a compact repeated-squaring T sweep into ordinary example records."""
+    examples = experiment.get("examples")
+    sweep = experiment.get("sweep")
+    if examples is not None and sweep is not None:
+        raise ValueError("examples and sweep are mutually exclusive")
+    if examples is not None:
+        return list(examples)
+    if sweep is None:
+        raise ValueError("experiment must define examples or sweep")
+    if experiment.get("task_type") != "repeated_squaring_mod":
+        raise ValueError("compact sweep expansion is only supported for repeated squaring")
+
+    time_steps = [int(value) for value in sweep["time_steps"]]
+    if not time_steps or min(time_steps) < 1 or len(set(time_steps)) != len(time_steps):
+        raise ValueError("sweep time_steps must be unique positive integers")
+    maximum = max(time_steps)
+    expanded: list[dict[str, Any]] = []
+    for base in sweep["base_instances"]:
+        modulus = int(base["modulus"])
+        value = int(base["x"]) % modulus
+        trace: list[int] = []
+        for _ in range(maximum):
+            value = value * value % modulus
+            trace.append(value)
+        for step in time_steps:
+            intermediates = {
+                f"x_{index}": str(residue)
+                for index, residue in enumerate(trace[:step], start=1)
+            }
+            expanded.append(
+                {
+                    **base,
+                    "id": f"repeated_squaring_n{modulus}_x{base['x']}_t{step}",
+                    "time_steps": step,
+                    "answer": trace[step - 1],
+                    "expected_intermediates": intermediates,
+                    "highlight_forms": {
+                        label: [surface] for label, surface in intermediates.items()
+                    },
+                }
+            )
+    return expanded
+
+
+def paired_eval_summary(rows: list[dict[str, Any]]) -> dict[str, Any]:
+    def summarize(items: list[dict[str, Any]]) -> dict[str, Any]:
+        count = len(items)
+        dots_correct = sum(item["dots"]["correct"] for item in items)
+        no_dots_correct = sum(item["no_dots"]["correct"] for item in items)
+        dots_only = sum(
+            item["dots"]["correct"] and not item["no_dots"]["correct"]
+            for item in items
+        )
+        no_dots_only = sum(
+            item["no_dots"]["correct"] and not item["dots"]["correct"]
+            for item in items
+        )
+        both = sum(
+            item["dots"]["correct"] and item["no_dots"]["correct"]
+            for item in items
+        )
+        neither = count - dots_only - no_dots_only - both
+        improved_rank = sum(
+            item["dots"]["target"]["best_rank"]
+            < item["no_dots"]["target"]["best_rank"]
+            for item in items
+        )
+        worsened_rank = sum(
+            item["dots"]["target"]["best_rank"]
+            > item["no_dots"]["target"]["best_rank"]
+            for item in items
+        )
+        tied_rank = count - improved_rank - worsened_rank
+        return {
+            "n": count,
+            "dots_accuracy": dots_correct / count,
+            "no_dots_accuracy": no_dots_correct / count,
+            "accuracy_difference": (dots_correct - no_dots_correct) / count,
+            "paired_outcomes": {
+                "dots_only_correct": dots_only,
+                "no_dots_only_correct": no_dots_only,
+                "both_correct": both,
+                "neither_correct": neither,
+            },
+            "mean_reciprocal_rank": {
+                "dots": sum(1 / item["dots"]["target"]["best_rank"] for item in items)
+                / count,
+                "no_dots": sum(
+                    1 / item["no_dots"]["target"]["best_rank"] for item in items
+                )
+                / count,
+            },
+            "mean_target_log_probability": {
+                "dots": sum(
+                    item["dots"]["target"]["best_log_probability"]
+                    for item in items
+                )
+                / count,
+                "no_dots": sum(
+                    item["no_dots"]["target"]["best_log_probability"]
+                    for item in items
+                )
+                / count,
+            },
+            "target_rank_pairing": {
+                "dots_better": improved_rank,
+                "no_dots_better": worsened_rank,
+                "tied": tied_rank,
+            },
+        }
+
+    per_t = {}
+    for step in sorted({row["time_steps"] for row in rows}):
+        per_t[str(step)] = summarize(
+            [row for row in rows if row["time_steps"] == step]
+        )
+    return {"overall": summarize(rows), "by_time_steps": per_t}
+
+
+@torch.inference_mode()
+def run_paired_task_eval(
+    *,
+    model: Any,
+    tokenizer: Any,
+    encode_messages: Any,
+    few_shot: list[dict[str, Any]],
+    examples: list[dict[str, Any]],
+    filler_type: str,
+    filler_length: int,
+    task_type: str,
+    top_k: int,
+    max_new_tokens: int,
+    rank: int,
+) -> dict[str, Any] | None:
+    """Evaluate paired dot/no-dot generations without computing lens readouts."""
+    rows = [] if rank == 0 else None
+    for number, example in enumerate(examples, start=1):
+        if rank == 0:
+            print(
+                f"paired eval {number}/{len(examples)}: {example['id']}",
+                flush=True,
+            )
+        dots_messages = build_messages(
+            few_shot,
+            example,
+            filler_type,
+            filler_length,
+            task_type=task_type,
+        )
+        dots_rendered, alignment = render_and_align(
+            tokenizer,
+            encode_messages,
+            dots_messages,
+            filler_type,
+            filler_length,
+        )
+        if len(alignment.filler_token_indices) != filler_length:
+            raise AssertionError(
+                f"{example['id']}: {filler_length} visible dots mapped to "
+                f"{len(alignment.filler_token_indices)} tokens"
+            )
+        dots_ids, dots_logits = greedy_generate(
+            model,
+            alignment.input_ids,
+            max_new_tokens=max_new_tokens,
+            eos_id=tokenizer.eos_token_id,
+        )
+
+        no_dots_messages = build_messages(
+            few_shot, example, filler_type, 0, task_type=task_type
+        )
+        no_dots_rendered = encode_messages(no_dots_messages, thinking_mode="chat")
+        no_dots_input_ids = tokenizer.encode(no_dots_rendered)
+        no_dots_ids, no_dots_logits = greedy_generate(
+            model,
+            no_dots_input_ids,
+            max_new_tokens=max_new_tokens,
+            eos_id=tokenizer.eos_token_id,
+        )
+
+        if rank == 0:
+            assert rows is not None
+            dots_text = tokenizer.decode(dots_ids, skip_special_tokens=True)
+            no_dots_text = tokenizer.decode(no_dots_ids, skip_special_tokens=True)
+            dots_answer = parse_numeric_answer(dots_text)
+            no_dots_answer = parse_numeric_answer(no_dots_text)
+            rows.append(
+                {
+                    "id": example["id"],
+                    "modulus": example["modulus"],
+                    "x": example["x"],
+                    "time_steps": example["time_steps"],
+                    "expected_answer": example["answer"],
+                    "expected_intermediates": example["expected_intermediates"],
+                    "dots": {
+                        "rendered_prompt": dots_rendered,
+                        "input_ids": alignment.input_ids,
+                        "token_strings": alignment.token_strings,
+                        "filler_token_indices": alignment.filler_token_indices,
+                        "generated_token_ids": dots_ids,
+                        "generated_text": dots_text,
+                        "parsed_answer": dots_answer,
+                        "correct": dots_answer == example["answer"],
+                        "target": target_logit_summary(
+                            dots_logits[0], tokenizer, example["answer"]
+                        ),
+                        "top_tokens": full_logits_summary(
+                            dots_logits[0], tokenizer, top_k
+                        )["top_tokens"],
+                    },
+                    "no_dots": {
+                        "rendered_prompt": no_dots_rendered,
+                        "input_ids": no_dots_input_ids,
+                        "token_strings": [
+                            tokenizer.decode([token_id])
+                            for token_id in no_dots_input_ids
+                        ],
+                        "generated_token_ids": no_dots_ids,
+                        "generated_text": no_dots_text,
+                        "parsed_answer": no_dots_answer,
+                        "correct": no_dots_answer == example["answer"],
+                        "target": target_logit_summary(
+                            no_dots_logits[0], tokenizer, example["answer"]
+                        ),
+                        "top_tokens": full_logits_summary(
+                            no_dots_logits[0], tokenizer, top_k
+                        )["top_tokens"],
+                    },
+                }
+            )
+    if rank != 0:
+        return None
+    assert rows is not None
+    return {
+        "schema_version": 1,
+        "task_type": task_type,
+        "filler_type": filler_type,
+        "filler_length": filler_length,
+        "examples": rows,
+        "summary": paired_eval_summary(rows),
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--ckpt-path", type=Path, required=True)
@@ -622,13 +921,20 @@ def main() -> None:
     parser.add_argument("--lens-path", type=Path, required=True)
     parser.add_argument("--examples-config", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
-    parser.add_argument("--phase", choices=["sanity", "filler", "all"], default="all")
+    parser.add_argument(
+        "--phase", choices=["sanity", "eval", "filler", "all"], default="all"
+    )
     parser.add_argument("--layers", default="all")
     parser.add_argument("--sanity-layers", default="0,5,10,15,20,25,30,35,40,41")
     parser.add_argument("--top-k", type=int, default=10)
     parser.add_argument("--max-new-tokens", type=int, default=12)
     parser.add_argument("--max-seq-len", type=int, default=1024)
     parser.add_argument("--model-revision", default="unknown")
+    parser.add_argument(
+        "--example-ids",
+        default="",
+        help="optional comma-separated subset of configured example IDs",
+    )
     parser.add_argument("--process-group-timeout-minutes", type=int, default=30)
     args = parser.parse_args()
 
@@ -690,6 +996,14 @@ def main() -> None:
         raise AssertionError(f"lens target-layer anchor is not identity: {anchor_error}")
 
     experiment = json.loads(args.examples_config.read_text())
+    examples = expand_experiment_examples(experiment)
+    if args.example_ids:
+        requested = {value.strip() for value in args.example_ids.split(",") if value.strip()}
+        available = {example["id"] for example in examples}
+        missing = requested - available
+        if missing:
+            raise ValueError(f"requested example IDs are absent: {sorted(missing)}")
+        examples = [example for example in examples if example["id"] in requested]
     layers = parse_layers(args.layers, set(source_layers))
     sanity_layers = parse_layers(args.sanity_layers, set(source_layers))
     args.output_dir.mkdir(parents=True, exist_ok=True)
@@ -815,8 +1129,28 @@ def main() -> None:
         if int(gate_tensor.item()) != 1:
             raise SystemExit("sanity gate failed; refusing filler extraction")
 
+    if args.phase == "eval":
+        evaluation = run_paired_task_eval(
+            model=model,
+            tokenizer=tokenizer,
+            encode_messages=encode_messages,
+            few_shot=experiment["few_shot"],
+            examples=examples,
+            filler_type=experiment["filler_type"],
+            filler_length=experiment["filler_length"],
+            task_type=experiment.get("task_type", "addition"),
+            top_k=args.top_k,
+            max_new_tokens=args.max_new_tokens,
+            rank=rank,
+        )
+        if rank == 0:
+            assert evaluation is not None
+            path = args.output_dir / "paired_task_eval.json"
+            path.write_text(json.dumps(evaluation, indent=2, ensure_ascii=False))
+            print(f"wrote {path}", flush=True)
+
     if args.phase in {"filler", "all"}:
-        for example in experiment["examples"]:
+        for example in examples:
             result = run_filler_example(
                 model=model,
                 tokenizer=tokenizer,
@@ -825,6 +1159,7 @@ def main() -> None:
                 example=example,
                 filler_type=experiment["filler_type"],
                 filler_length=experiment["filler_length"],
+                task_type=experiment.get("task_type", "addition"),
                 lens_j=lens_j,
                 layers=layers,
                 top_k=args.top_k,
