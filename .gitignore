@@ -5,3 +5,6 @@ cache/
 outputs/
 results/filler_layer0_test/
 .DS_Store
+*.log
+*.pid
+tmp/

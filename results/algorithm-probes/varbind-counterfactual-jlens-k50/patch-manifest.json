@@ -1,0 +1,3167 @@
+{
+  "cells_per_stage": 16,
+  "directions": [
+    {
+      "donor_id": "varbind_cf_suv_072",
+      "target_id": "varbind_cf_suv_064",
+      "donor_expected": {
+        "base_value": "72",
+        "first_product": "144",
+        "bound_value": "135",
+        "second_product": "270",
+        "answer": "256"
+      },
+      "selections": {
+        "j_lens": {
+          "bound_value": [
+            {
+              "layer": 31,
+              "position": 33,
+              "absolute_index": 828,
+              "rank": 1,
+              "logit": 22.533620834350586,
+              "probability": 0.9858512878417969
+            },
+            {
+              "layer": 32,
+              "position": 33,
+              "absolute_index": 828,
+              "rank": 1,
+              "logit": 20.763893127441406,
+              "probability": 0.943642258644104
+            },
+            {
+              "layer": 30,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 1,
+              "logit": 16.676191329956055,
+              "probability": 0.2966613173484802
+            },
+            {
+              "layer": 31,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 2,
+              "logit": 21.823528289794922,
+              "probability": 0.008054275065660477
+            },
+            {
+              "layer": 32,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 2,
+              "logit": 18.39134407043457,
+              "probability": 0.0005179094732739031
+            },
+            {
+              "layer": 30,
+              "position": 33,
+              "absolute_index": 828,
+              "rank": 3,
+              "logit": 14.579798698425293,
+              "probability": 0.04621298611164093
+            },
+            {
+              "layer": 31,
+              "position": 21,
+              "absolute_index": 816,
+              "rank": 6,
+              "logit": 13.554998397827148,
+              "probability": 0.01617015339434147
+            },
+            {
+              "layer": 31,
+              "position": 43,
+              "absolute_index": 838,
+              "rank": 10,
+              "logit": 14.25631332397461,
+              "probability": 3.943496267311275e-05
+            },
+            {
+              "layer": 32,
+              "position": 21,
+              "absolute_index": 816,
+              "rank": 11,
+              "logit": 12.812240600585938,
+              "probability": 0.009934837929904461
+            },
+            {
+              "layer": 32,
+              "position": 15,
+              "absolute_index": 810,
+              "rank": 13,
+              "logit": 13.66683292388916,
+              "probability": 0.009545888751745224
+            },
+            {
+              "layer": 31,
+              "position": 15,
+              "absolute_index": 810,
+              "rank": 17,
+              "logit": 13.999584197998047,
+              "probability": 0.0018958077998831868
+            },
+            {
+              "layer": 31,
+              "position": 17,
+              "absolute_index": 812,
+              "rank": 44,
+              "logit": 11.635174751281738,
+              "probability": 0.0024109927471727133
+            },
+            {
+              "layer": 30,
+              "position": 43,
+              "absolute_index": 838,
+              "rank": 63,
+              "logit": 11.452380180358887,
+              "probability": 0.0021267361007630825
+            },
+            {
+              "layer": 32,
+              "position": 43,
+              "absolute_index": 838,
+              "rank": 65,
+              "logit": 11.896656036376953,
+              "probability": 3.272910907980986e-05
+            },
+            {
+              "layer": 30,
+              "position": 16,
+              "absolute_index": 811,
+              "rank": 94,
+              "logit": 10.63120174407959,
+              "probability": 0.0012413474032655358
+            },
+            {
+              "layer": 30,
+              "position": 17,
+              "absolute_index": 812,
+              "rank": 100,
+              "logit": 10.359830856323242,
+              "probability": 0.0012106746435165405
+            }
+          ],
+          "second_product": [
+            {
+              "layer": 33,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 1,
+              "logit": 28.963411331176758,
+              "probability": 0.9995995163917542
+            },
+            {
+              "layer": 31,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 1,
+              "logit": 26.635848999023438,
+              "probability": 0.9908108711242676
+            },
+            {
+              "layer": 32,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 1,
+              "logit": 25.95539665222168,
+              "probability": 0.9983439445495605
+            },
+            {
+              "layer": 33,
+              "position": 43,
+              "absolute_index": 838,
+              "rank": 1,
+              "logit": 25.637216567993164,
+              "probability": 0.9977537989616394
+            },
+            {
+              "layer": 31,
+              "position": 43,
+              "absolute_index": 838,
+              "rank": 1,
+              "logit": 24.391504287719727,
+              "probability": 0.9943493008613586
+            },
+            {
+              "layer": 32,
+              "position": 43,
+              "absolute_index": 838,
+              "rank": 1,
+              "logit": 22.20698356628418,
+              "probability": 0.983224093914032
+            },
+            {
+              "layer": 33,
+              "position": 1,
+              "absolute_index": 796,
+              "rank": 1,
+              "logit": 21.76307487487793,
+              "probability": 0.7482143640518188
+            },
+            {
+              "layer": 33,
+              "position": 40,
+              "absolute_index": 835,
+              "rank": 1,
+              "logit": 21.664875030517578,
+              "probability": 0.7888607382774353
+            },
+            {
+              "layer": 31,
+              "position": 1,
+              "absolute_index": 796,
+              "rank": 1,
+              "logit": 20.846891403198242,
+              "probability": 0.5386832356452942
+            },
+            {
+              "layer": 33,
+              "position": 28,
+              "absolute_index": 823,
+              "rank": 1,
+              "logit": 20.584331512451172,
+              "probability": 0.7904376983642578
+            },
+            {
+              "layer": 33,
+              "position": 41,
+              "absolute_index": 836,
+              "rank": 1,
+              "logit": 20.48261260986328,
+              "probability": 0.7667207717895508
+            },
+            {
+              "layer": 33,
+              "position": 38,
+              "absolute_index": 833,
+              "rank": 1,
+              "logit": 20.346403121948242,
+              "probability": 0.8740791082382202
+            },
+            {
+              "layer": 33,
+              "position": 14,
+              "absolute_index": 809,
+              "rank": 1,
+              "logit": 20.296775817871094,
+              "probability": 0.5697969198226929
+            },
+            {
+              "layer": 33,
+              "position": 16,
+              "absolute_index": 811,
+              "rank": 1,
+              "logit": 18.72430992126465,
+              "probability": 0.6950486898422241
+            },
+            {
+              "layer": 31,
+              "position": 38,
+              "absolute_index": 833,
+              "rank": 1,
+              "logit": 18.4799861907959,
+              "probability": 0.6117356419563293
+            },
+            {
+              "layer": 32,
+              "position": 1,
+              "absolute_index": 796,
+              "rank": 1,
+              "logit": 18.43182373046875,
+              "probability": 0.40453389286994934
+            }
+          ],
+          "answer": [
+            {
+              "layer": 38,
+              "position": 41,
+              "absolute_index": 836,
+              "rank": 1,
+              "logit": 28.890600204467773,
+              "probability": 0.9983248710632324
+            },
+            {
+              "layer": 38,
+              "position": 40,
+              "absolute_index": 835,
+              "rank": 1,
+              "logit": 28.03271484375,
+              "probability": 0.9988676905632019
+            },
+            {
+              "layer": 38,
+              "position": 14,
+              "absolute_index": 809,
+              "rank": 1,
+              "logit": 26.771516799926758,
+              "probability": 0.9955126047134399
+            },
+            {
+              "layer": 38,
+              "position": 28,
+              "absolute_index": 823,
+              "rank": 1,
+              "logit": 25.167430877685547,
+              "probability": 0.9969909191131592
+            },
+            {
+              "layer": 38,
+              "position": 12,
+              "absolute_index": 807,
+              "rank": 1,
+              "logit": 24.676416397094727,
+              "probability": 0.9811034798622131
+            },
+            {
+              "layer": 36,
+              "position": 40,
+              "absolute_index": 835,
+              "rank": 1,
+              "logit": 24.272274017333984,
+              "probability": 0.9535298347473145
+            },
+            {
+              "layer": 36,
+              "position": 1,
+              "absolute_index": 796,
+              "rank": 1,
+              "logit": 24.211627960205078,
+              "probability": 0.5848466157913208
+            },
+            {
+              "layer": 38,
+              "position": 1,
+              "absolute_index": 796,
+              "rank": 1,
+              "logit": 23.90932846069336,
+              "probability": 0.8564064502716064
+            },
+            {
+              "layer": 36,
+              "position": 14,
+              "absolute_index": 809,
+              "rank": 1,
+              "logit": 23.304513931274414,
+              "probability": 0.9247412085533142
+            },
+            {
+              "layer": 37,
+              "position": 40,
+              "absolute_index": 835,
+              "rank": 1,
+              "logit": 22.917530059814453,
+              "probability": 0.7911978960037231
+            },
+            {
+              "layer": 36,
+              "position": 12,
+              "absolute_index": 807,
+              "rank": 1,
+              "logit": 22.42548942565918,
+              "probability": 0.9417075514793396
+            },
+            {
+              "layer": 37,
+              "position": 14,
+              "absolute_index": 809,
+              "rank": 1,
+              "logit": 22.177173614501953,
+              "probability": 0.679642379283905
+            },
+            {
+              "layer": 37,
+              "position": 41,
+              "absolute_index": 836,
+              "rank": 1,
+              "logit": 21.721881866455078,
+              "probability": 0.7671098709106445
+            },
+            {
+              "layer": 37,
+              "position": 1,
+              "absolute_index": 796,
+              "rank": 1,
+              "logit": 21.536745071411133,
+              "probability": 0.4710664451122284
+            },
+            {
+              "layer": 38,
+              "position": 38,
+              "absolute_index": 833,
+              "rank": 1,
+              "logit": 21.433549880981445,
+              "probability": 0.7388009428977966
+            },
+            {
+              "layer": 36,
+              "position": 41,
+              "absolute_index": 836,
+              "rank": 1,
+              "logit": 21.202978134155273,
+              "probability": 0.7053480744361877
+            }
+          ]
+        },
+        "logit_lens": {
+          "bound_value": [
+            {
+              "layer": 29,
+              "position": 16,
+              "absolute_index": 811,
+              "rank": 1,
+              "logit": 15.083731651306152,
+              "probability": 0.20298241078853607
+            },
+            {
+              "layer": 28,
+              "position": 16,
+              "absolute_index": 811,
+              "rank": 1,
+              "logit": 15.032289505004883,
+              "probability": 0.24581189453601837
+            },
+            {
+              "layer": 28,
+              "position": 1,
+              "absolute_index": 796,
+              "rank": 1,
+              "logit": 14.939836502075195,
+              "probability": 0.1783919781446457
+            },
+            {
+              "layer": 30,
+              "position": 16,
+              "absolute_index": 811,
+              "rank": 1,
+              "logit": 13.046375274658203,
+              "probability": 0.0431608147919178
+            },
+            {
+              "layer": 30,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 2,
+              "logit": 15.437211990356445,
+              "probability": 0.12720049917697906
+            },
+            {
+              "layer": 29,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 2,
+              "logit": 15.38552474975586,
+              "probability": 0.13679690659046173
+            },
+            {
+              "layer": 30,
+              "position": 33,
+              "absolute_index": 828,
+              "rank": 2,
+              "logit": 14.599424362182617,
+              "probability": 0.11326746642589569
+            },
+            {
+              "layer": 29,
+              "position": 33,
+              "absolute_index": 828,
+              "rank": 3,
+              "logit": 13.04066276550293,
+              "probability": 0.03308446705341339
+            },
+            {
+              "layer": 28,
+              "position": 40,
+              "absolute_index": 835,
+              "rank": 4,
+              "logit": 14.352073669433594,
+              "probability": 0.04869956523180008
+            },
+            {
+              "layer": 30,
+              "position": 17,
+              "absolute_index": 812,
+              "rank": 5,
+              "logit": 11.717860221862793,
+              "probability": 0.005473687779158354
+            },
+            {
+              "layer": 28,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 6,
+              "logit": 12.925890922546387,
+              "probability": 0.019961707293987274
+            },
+            {
+              "layer": 29,
+              "position": 17,
+              "absolute_index": 812,
+              "rank": 6,
+              "logit": 11.640962600708008,
+              "probability": 0.010267931967973709
+            },
+            {
+              "layer": 29,
+              "position": 1,
+              "absolute_index": 796,
+              "rank": 8,
+              "logit": 12.24118709564209,
+              "probability": 0.014529419131577015
+            },
+            {
+              "layer": 28,
+              "position": 30,
+              "absolute_index": 825,
+              "rank": 8,
+              "logit": 11.346556663513184,
+              "probability": 0.00783219002187252
+            },
+            {
+              "layer": 28,
+              "position": 33,
+              "absolute_index": 828,
+              "rank": 9,
+              "logit": 11.676004409790039,
+              "probability": 0.007697413209825754
+            },
+            {
+              "layer": 29,
+              "position": 38,
+              "absolute_index": 833,
+              "rank": 11,
+              "logit": 11.40492057800293,
+              "probability": 0.010044893249869347
+            }
+          ],
+          "second_product": [
+            {
+              "layer": 32,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 1,
+              "logit": 19.351619720458984,
+              "probability": 0.8882130980491638
+            },
+            {
+              "layer": 33,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 1,
+              "logit": 19.17742919921875,
+              "probability": 0.901034414768219
+            },
+            {
+              "layer": 33,
+              "position": 16,
+              "absolute_index": 811,
+              "rank": 1,
+              "logit": 18.538799285888672,
+              "probability": 0.8850793838500977
+            },
+            {
+              "layer": 31,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 1,
+              "logit": 18.445430755615234,
+              "probability": 0.6494315266609192
+            },
+            {
+              "layer": 33,
+              "position": 14,
+              "absolute_index": 809,
+              "rank": 1,
+              "logit": 18.34165382385254,
+              "probability": 0.5177522301673889
+            },
+            {
+              "layer": 33,
+              "position": 40,
+              "absolute_index": 835,
+              "rank": 1,
+              "logit": 18.005823135375977,
+              "probability": 0.5356893539428711
+            },
+            {
+              "layer": 32,
+              "position": 16,
+              "absolute_index": 811,
+              "rank": 1,
+              "logit": 17.570356369018555,
+              "probability": 0.7299861907958984
+            },
+            {
+              "layer": 33,
+              "position": 28,
+              "absolute_index": 823,
+              "rank": 1,
+              "logit": 17.564916610717773,
+              "probability": 0.6351320743560791
+            },
+            {
+              "layer": 33,
+              "position": 1,
+              "absolute_index": 796,
+              "rank": 1,
+              "logit": 17.29882049560547,
+              "probability": 0.5047351121902466
+            },
+            {
+              "layer": 33,
+              "position": 43,
+              "absolute_index": 838,
+              "rank": 1,
+              "logit": 17.07396697998047,
+              "probability": 0.7569618821144104
+            },
+            {
+              "layer": 32,
+              "position": 43,
+              "absolute_index": 838,
+              "rank": 1,
+              "logit": 16.74530601501465,
+              "probability": 0.7134978771209717
+            },
+            {
+              "layer": 31,
+              "position": 16,
+              "absolute_index": 811,
+              "rank": 1,
+              "logit": 16.687353134155273,
+              "probability": 0.546488344669342
+            },
+            {
+              "layer": 33,
+              "position": 38,
+              "absolute_index": 833,
+              "rank": 1,
+              "logit": 16.134201049804688,
+              "probability": 0.4589306116104126
+            },
+            {
+              "layer": 33,
+              "position": 41,
+              "absolute_index": 836,
+              "rank": 1,
+              "logit": 15.968094825744629,
+              "probability": 0.4342147409915924
+            },
+            {
+              "layer": 31,
+              "position": 1,
+              "absolute_index": 796,
+              "rank": 1,
+              "logit": 15.921111106872559,
+              "probability": 0.1160191223025322
+            },
+            {
+              "layer": 31,
+              "position": 43,
+              "absolute_index": 838,
+              "rank": 1,
+              "logit": 15.808058738708496,
+              "probability": 0.47947999835014343
+            }
+          ],
+          "answer": [
+            {
+              "layer": 38,
+              "position": 41,
+              "absolute_index": 836,
+              "rank": 1,
+              "logit": 17.794187545776367,
+              "probability": 0.5075607895851135
+            },
+            {
+              "layer": 38,
+              "position": 40,
+              "absolute_index": 835,
+              "rank": 1,
+              "logit": 17.765869140625,
+              "probability": 0.4456005096435547
+            },
+            {
+              "layer": 38,
+              "position": 28,
+              "absolute_index": 823,
+              "rank": 1,
+              "logit": 15.681492805480957,
+              "probability": 0.18097034096717834
+            },
+            {
+              "layer": 38,
+              "position": 14,
+              "absolute_index": 809,
+              "rank": 2,
+              "logit": 17.840299606323242,
+              "probability": 0.07732690125703812
+            },
+            {
+              "layer": 38,
+              "position": 12,
+              "absolute_index": 807,
+              "rank": 2,
+              "logit": 16.391870498657227,
+              "probability": 0.01860697939991951
+            },
+            {
+              "layer": 36,
+              "position": 40,
+              "absolute_index": 835,
+              "rank": 2,
+              "logit": 16.18967628479004,
+              "probability": 0.0676407665014267
+            },
+            {
+              "layer": 38,
+              "position": 38,
+              "absolute_index": 833,
+              "rank": 2,
+              "logit": 13.612485885620117,
+              "probability": 0.034798167645931244
+            },
+            {
+              "layer": 36,
+              "position": 14,
+              "absolute_index": 809,
+              "rank": 3,
+              "logit": 16.069866180419922,
+              "probability": 0.053548071533441544
+            },
+            {
+              "layer": 36,
+              "position": 12,
+              "absolute_index": 807,
+              "rank": 3,
+              "logit": 15.236814498901367,
+              "probability": 0.03621619939804077
+            },
+            {
+              "layer": 37,
+              "position": 14,
+              "absolute_index": 809,
+              "rank": 3,
+              "logit": 15.18281364440918,
+              "probability": 0.028728442266583443
+            },
+            {
+              "layer": 37,
+              "position": 40,
+              "absolute_index": 835,
+              "rank": 3,
+              "logit": 14.957279205322266,
+              "probability": 0.04314402490854263
+            },
+            {
+              "layer": 37,
+              "position": 41,
+              "absolute_index": 836,
+              "rank": 3,
+              "logit": 14.020532608032227,
+              "probability": 0.041916120797395706
+            },
+            {
+              "layer": 36,
+              "position": 28,
+              "absolute_index": 823,
+              "rank": 3,
+              "logit": 13.784151077270508,
+              "probability": 0.045864250510931015
+            },
+            {
+              "layer": 36,
+              "position": 41,
+              "absolute_index": 836,
+              "rank": 5,
+              "logit": 13.982560157775879,
+              "probability": 0.027841774746775627
+            },
+            {
+              "layer": 36,
+              "position": 1,
+              "absolute_index": 796,
+              "rank": 6,
+              "logit": 14.607498168945312,
+              "probability": 0.0006831816863268614
+            },
+            {
+              "layer": 37,
+              "position": 12,
+              "absolute_index": 807,
+              "rank": 6,
+              "logit": 13.514447212219238,
+              "probability": 0.013228858821094036
+            }
+          ]
+        },
+        "random_layer_matched": {
+          "bound_value": [
+            {
+              "layer": 31,
+              "position": 32,
+              "absolute_index": 827,
+              "rank": 43569,
+              "logit": 0.6208823323249817,
+              "probability": 2.6106015127425053e-09
+            },
+            {
+              "layer": 32,
+              "position": 37,
+              "absolute_index": 832,
+              "rank": 22614,
+              "logit": 2.3517050743103027,
+              "probability": 3.3665465970500463e-09
+            },
+            {
+              "layer": 30,
+              "position": 5,
+              "absolute_index": 800,
+              "rank": 69526,
+              "logit": -1.1521717309951782,
+              "probability": 5.661287438840645e-09
+            },
+            {
+              "layer": 31,
+              "position": 25,
+              "absolute_index": 820,
+              "rank": 40014,
+              "logit": 0.7805773019790649,
+              "probability": 3.8176739991513386e-08
+            },
+            {
+              "layer": 32,
+              "position": 36,
+              "absolute_index": 831,
+              "rank": 27631,
+              "logit": 1.8462762832641602,
+              "probability": 4.4006075228253394e-08
+            },
+            {
+              "layer": 30,
+              "position": 20,
+              "absolute_index": 815,
+              "rank": 56120,
+              "logit": -0.3812386989593506,
+              "probability": 3.6363662303529054e-08
+            },
+            {
+              "layer": 31,
+              "position": 24,
+              "absolute_index": 819,
+              "rank": 17696,
+              "logit": 2.9107203483581543,
+              "probability": 1.8953690172907045e-08
+            },
+            {
+              "layer": 31,
+              "position": 3,
+              "absolute_index": 798,
+              "rank": 62019,
+              "logit": -0.665047824382782,
+              "probability": 1.2955480244158935e-08
+            },
+            {
+              "layer": 32,
+              "position": 44,
+              "absolute_index": 839,
+              "rank": 11734,
+              "logit": 3.817884922027588,
+              "probability": 8.545183227681719e-09
+            },
+            {
+              "layer": 32,
+              "position": 27,
+              "absolute_index": 822,
+              "rank": 41182,
+              "logit": 0.8772109150886536,
+              "probability": 6.500861360336785e-08
+            },
+            {
+              "layer": 31,
+              "position": 49,
+              "absolute_index": 844,
+              "rank": 84353,
+              "logit": -2.0642917156219482,
+              "probability": 4.6686873117485206e-12
+            },
+            {
+              "layer": 31,
+              "position": 19,
+              "absolute_index": 814,
+              "rank": 103479,
+              "logit": -3.6916747093200684,
+              "probability": 5.856666818182532e-10
+            },
+            {
+              "layer": 30,
+              "position": 49,
+              "absolute_index": 844,
+              "rank": 76008,
+              "logit": -1.3591911792755127,
+              "probability": 5.097197663950226e-11
+            },
+            {
+              "layer": 32,
+              "position": 28,
+              "absolute_index": 823,
+              "rank": 11662,
+              "logit": 4.262714862823486,
+              "probability": 1.034720071402262e-06
+            },
+            {
+              "layer": 30,
+              "position": 23,
+              "absolute_index": 818,
+              "rank": 31962,
+              "logit": 1.3025248050689697,
+              "probability": 4.796898434022978e-09
+            },
+            {
+              "layer": 30,
+              "position": 22,
+              "absolute_index": 817,
+              "rank": 20270,
+              "logit": 2.64186692237854,
+              "probability": 1.4044464258233802e-08
+            }
+          ],
+          "second_product": [
+            {
+              "layer": 33,
+              "position": 31,
+              "absolute_index": 826,
+              "rank": 86803,
+              "logit": -2.5057973861694336,
+              "probability": 1.0941694217336817e-09
+            },
+            {
+              "layer": 31,
+              "position": 27,
+              "absolute_index": 822,
+              "rank": 52259,
+              "logit": 0.07304508239030838,
+              "probability": 1.7748380543025633e-08
+            },
+            {
+              "layer": 32,
+              "position": 27,
+              "absolute_index": 822,
+              "rank": 57312,
+              "logit": -0.2163204699754715,
+              "probability": 2.1779932524168544e-08
+            },
+            {
+              "layer": 33,
+              "position": 22,
+              "absolute_index": 817,
+              "rank": 15697,
+              "logit": 3.1743552684783936,
+              "probability": 3.9683501995568804e-07
+            },
+            {
+              "layer": 31,
+              "position": 14,
+              "absolute_index": 809,
+              "rank": 6,
+              "logit": 16.417932510375977,
+              "probability": 0.04241959750652313
+            },
+            {
+              "layer": 32,
+              "position": 38,
+              "absolute_index": 833,
+              "rank": 1,
+              "logit": 15.288629531860352,
+              "probability": 0.11300463229417801
+            },
+            {
+              "layer": 33,
+              "position": 19,
+              "absolute_index": 814,
+              "rank": 99363,
+              "logit": -3.321976661682129,
+              "probability": 1.2091778689438115e-09
+            },
+            {
+              "layer": 33,
+              "position": 46,
+              "absolute_index": 841,
+              "rank": 111662,
+              "logit": -4.516667366027832,
+              "probability": 1.9833257258738968e-10
+            },
+            {
+              "layer": 31,
+              "position": 4,
+              "absolute_index": 799,
+              "rank": 111231,
+              "logit": -4.4412641525268555,
+              "probability": 1.4346851484603462e-10
+            },
+            {
+              "layer": 33,
+              "position": 27,
+              "absolute_index": 822,
+              "rank": 57060,
+              "logit": -0.22866521775722504,
+              "probability": 2.3247009650617656e-08
+            },
+            {
+              "layer": 33,
+              "position": 48,
+              "absolute_index": 843,
+              "rank": 115347,
+              "logit": -5.604674339294434,
+              "probability": 1.7474900693148498e-10
+            },
+            {
+              "layer": 33,
+              "position": 39,
+              "absolute_index": 834,
+              "rank": 5970,
+              "logit": 4.935920715332031,
+              "probability": 7.5442312663653865e-06
+            },
+            {
+              "layer": 33,
+              "position": 32,
+              "absolute_index": 827,
+              "rank": 58849,
+              "logit": -0.4736892282962799,
+              "probability": 4.469657532979454e-09
+            },
+            {
+              "layer": 33,
+              "position": 44,
+              "absolute_index": 839,
+              "rank": 43980,
+              "logit": 0.45374977588653564,
+              "probability": 8.544006058208709e-10
+            },
+            {
+              "layer": 31,
+              "position": 19,
+              "absolute_index": 814,
+              "rank": 111263,
+              "logit": -4.536458969116211,
+              "probability": 2.516318542422624e-10
+            },
+            {
+              "layer": 32,
+              "position": 41,
+              "absolute_index": 836,
+              "rank": 6,
+              "logit": 14.62877082824707,
+              "probability": 0.03445815667510033
+            }
+          ],
+          "answer": [
+            {
+              "layer": 38,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 47,
+              "logit": 13.88769817352295,
+              "probability": 3.743336410701008e-14
+            },
+            {
+              "layer": 38,
+              "position": 16,
+              "absolute_index": 811,
+              "rank": 92,
+              "logit": 11.744723320007324,
+              "probability": 2.249596263936837e-06
+            },
+            {
+              "layer": 38,
+              "position": 33,
+              "absolute_index": 828,
+              "rank": 91923,
+              "logit": -2.5231940746307373,
+              "probability": 2.9318608160175234e-16
+            },
+            {
+              "layer": 38,
+              "position": 20,
+              "absolute_index": 815,
+              "rank": 125861,
+              "logit": -7.684658050537109,
+              "probability": 1.6318148221561302e-11
+            },
+            {
+              "layer": 38,
+              "position": 11,
+              "absolute_index": 806,
+              "rank": 92255,
+              "logit": -2.5482587814331055,
+              "probability": 7.685474479046661e-10
+            },
+            {
+              "layer": 36,
+              "position": 16,
+              "absolute_index": 811,
+              "rank": 25,
+              "logit": 13.129680633544922,
+              "probability": 1.5554273886664305e-06
+            },
+            {
+              "layer": 36,
+              "position": 7,
+              "absolute_index": 802,
+              "rank": 78140,
+              "logit": -1.6410614252090454,
+              "probability": 9.043204518555115e-10
+            },
+            {
+              "layer": 38,
+              "position": 7,
+              "absolute_index": 802,
+              "rank": 116980,
+              "logit": -4.689463138580322,
+              "probability": 6.263456420185776e-11
+            },
+            {
+              "layer": 36,
+              "position": 3,
+              "absolute_index": 798,
+              "rank": 108329,
+              "logit": -4.149211406707764,
+              "probability": 2.1745251432836454e-10
+            },
+            {
+              "layer": 37,
+              "position": 6,
+              "absolute_index": 801,
+              "rank": 72053,
+              "logit": -1.3654292821884155,
+              "probability": 1.2908287772006588e-09
+            },
+            {
+              "layer": 36,
+              "position": 46,
+              "absolute_index": 841,
+              "rank": 49568,
+              "logit": -0.03405752778053284,
+              "probability": 3.53948301778928e-08
+            },
+            {
+              "layer": 37,
+              "position": 37,
+              "absolute_index": 832,
+              "rank": 94952,
+              "logit": -2.8592584133148193,
+              "probability": 1.2908458210756507e-13
+            },
+            {
+              "layer": 37,
+              "position": 46,
+              "absolute_index": 841,
+              "rank": 84788,
+              "logit": -2.218574047088623,
+              "probability": 2.5238613421407763e-09
+            },
+            {
+              "layer": 37,
+              "position": 5,
+              "absolute_index": 800,
+              "rank": 78207,
+              "logit": -1.677362322807312,
+              "probability": 9.362002728607877e-09
+            },
+            {
+              "layer": 38,
+              "position": 27,
+              "absolute_index": 822,
+              "rank": 117906,
+              "logit": -4.943960189819336,
+              "probability": 9.642645015794926e-11
+            },
+            {
+              "layer": 36,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 164,
+              "logit": 11.531526565551758,
+              "probability": 2.427069148821159e-15
+            }
+          ]
+        },
+        "complement_layer_matched": {
+          "bound_value": [
+            {
+              "layer": 31,
+              "position": 4,
+              "absolute_index": 799,
+              "rank": 109871,
+              "logit": -4.278390407562256,
+              "probability": 1.6884646458770192e-10
+            },
+            {
+              "layer": 32,
+              "position": 4,
+              "absolute_index": 799,
+              "rank": 111205,
+              "logit": -4.378833770751953,
+              "probability": 1.1826160883909864e-10
+            },
+            {
+              "layer": 30,
+              "position": 4,
+              "absolute_index": 799,
+              "rank": 113749,
+              "logit": -4.5934247970581055,
+              "probability": 1.6299150917831184e-10
+            },
+            {
+              "layer": 31,
+              "position": 19,
+              "absolute_index": 814,
+              "rank": 103479,
+              "logit": -3.6916747093200684,
+              "probability": 5.856666818182532e-10
+            },
+            {
+              "layer": 32,
+              "position": 19,
+              "absolute_index": 814,
+              "rank": 101531,
+              "logit": -3.4339826107025146,
+              "probability": 8.024238495885072e-10
+            },
+            {
+              "layer": 30,
+              "position": 9,
+              "absolute_index": 804,
+              "rank": 100110,
+              "logit": -3.419219970703125,
+              "probability": 3.1920191316536783e-12
+            },
+            {
+              "layer": 31,
+              "position": 2,
+              "absolute_index": 797,
+              "rank": 101915,
+              "logit": -3.444127321243286,
+              "probability": 8.195587264392401e-11
+            },
+            {
+              "layer": 31,
+              "position": 47,
+              "absolute_index": 842,
+              "rank": 100117,
+              "logit": -2.999939441680908,
+              "probability": 9.720423771453213e-11
+            },
+            {
+              "layer": 32,
+              "position": 47,
+              "absolute_index": 842,
+              "rank": 99230,
+              "logit": -3.006834030151367,
+              "probability": 1.1317430326229783e-10
+            },
+            {
+              "layer": 32,
+              "position": 49,
+              "absolute_index": 844,
+              "rank": 97364,
+              "logit": -3.1495466232299805,
+              "probability": 2.558829884091729e-12
+            },
+            {
+              "layer": 31,
+              "position": 9,
+              "absolute_index": 804,
+              "rank": 90432,
+              "logit": -2.717129945755005,
+              "probability": 5.85315754197957e-11
+            },
+            {
+              "layer": 31,
+              "position": 49,
+              "absolute_index": 844,
+              "rank": 84353,
+              "logit": -2.0642917156219482,
+              "probability": 4.6686873117485206e-12
+            },
+            {
+              "layer": 30,
+              "position": 19,
+              "absolute_index": 814,
+              "rank": 99424,
+              "logit": -3.300722122192383,
+              "probability": 9.689644642207895e-10
+            },
+            {
+              "layer": 32,
+              "position": 48,
+              "absolute_index": 843,
+              "rank": 92580,
+              "logit": -3.028864622116089,
+              "probability": 2.1696706653528963e-09
+            },
+            {
+              "layer": 30,
+              "position": 47,
+              "absolute_index": 842,
+              "rank": 94744,
+              "logit": -2.423386335372925,
+              "probability": 2.3672508397964975e-10
+            },
+            {
+              "layer": 30,
+              "position": 8,
+              "absolute_index": 803,
+              "rank": 93951,
+              "logit": -2.909074306488037,
+              "probability": 2.954880090610956e-11
+            }
+          ],
+          "second_product": [
+            {
+              "layer": 33,
+              "position": 2,
+              "absolute_index": 797,
+              "rank": 129054,
+              "logit": -11.352957725524902,
+              "probability": 1.0813656285517392e-14
+            },
+            {
+              "layer": 31,
+              "position": 2,
+              "absolute_index": 797,
+              "rank": 129102,
+              "logit": -11.685683250427246,
+              "probability": 2.1593236435566744e-14
+            },
+            {
+              "layer": 32,
+              "position": 2,
+              "absolute_index": 797,
+              "rank": 128597,
+              "logit": -11.29373550415039,
+              "probability": 1.5320142615453392e-13
+            },
+            {
+              "layer": 33,
+              "position": 47,
+              "absolute_index": 842,
+              "rank": 120349,
+              "logit": -5.910834789276123,
+              "probability": 1.7443622934987246e-11
+            },
+            {
+              "layer": 31,
+              "position": 46,
+              "absolute_index": 841,
+              "rank": 122619,
+              "logit": -6.211791038513184,
+              "probability": 1.2166536875191092e-11
+            },
+            {
+              "layer": 32,
+              "position": 48,
+              "absolute_index": 843,
+              "rank": 122614,
+              "logit": -6.904242515563965,
+              "probability": 4.501299333270481e-11
+            },
+            {
+              "layer": 33,
+              "position": 48,
+              "absolute_index": 843,
+              "rank": 115347,
+              "logit": -5.604674339294434,
+              "probability": 1.7474900693148498e-10
+            },
+            {
+              "layer": 33,
+              "position": 4,
+              "absolute_index": 799,
+              "rank": 114955,
+              "logit": -4.930558681488037,
+              "probability": 1.1477535588610976e-10
+            },
+            {
+              "layer": 31,
+              "position": 47,
+              "absolute_index": 842,
+              "rank": 121283,
+              "logit": -5.842434883117676,
+              "probability": 5.665070409305306e-12
+            },
+            {
+              "layer": 33,
+              "position": 49,
+              "absolute_index": 844,
+              "rank": 112100,
+              "logit": -4.716329097747803,
+              "probability": 3.789257536218615e-12
+            },
+            {
+              "layer": 33,
+              "position": 46,
+              "absolute_index": 841,
+              "rank": 111662,
+              "logit": -4.516667366027832,
+              "probability": 1.9833257258738968e-10
+            },
+            {
+              "layer": 33,
+              "position": 3,
+              "absolute_index": 798,
+              "rank": 99370,
+              "logit": -3.465993642807007,
+              "probability": 6.51766474124571e-10
+            },
+            {
+              "layer": 33,
+              "position": 19,
+              "absolute_index": 814,
+              "rank": 99363,
+              "logit": -3.321976661682129,
+              "probability": 1.2091778689438115e-09
+            },
+            {
+              "layer": 33,
+              "position": 9,
+              "absolute_index": 804,
+              "rank": 95360,
+              "logit": -3.0510199069976807,
+              "probability": 6.726558754444056e-10
+            },
+            {
+              "layer": 31,
+              "position": 49,
+              "absolute_index": 844,
+              "rank": 116627,
+              "logit": -5.168564796447754,
+              "probability": 2.0942388177357801e-13
+            },
+            {
+              "layer": 32,
+              "position": 47,
+              "absolute_index": 842,
+              "rank": 122212,
+              "logit": -6.1800665855407715,
+              "probability": 4.73838373052371e-12
+            }
+          ],
+          "answer": [
+            {
+              "layer": 38,
+              "position": 15,
+              "absolute_index": 810,
+              "rank": 126986,
+              "logit": -7.724215984344482,
+              "probability": 2.9946048895820865e-13
+            },
+            {
+              "layer": 38,
+              "position": 2,
+              "absolute_index": 797,
+              "rank": 126880,
+              "logit": -8.362227439880371,
+              "probability": 1.2000544872062258e-12
+            },
+            {
+              "layer": 38,
+              "position": 20,
+              "absolute_index": 815,
+              "rank": 125861,
+              "logit": -7.684658050537109,
+              "probability": 1.6318148221561302e-11
+            },
+            {
+              "layer": 38,
+              "position": 8,
+              "absolute_index": 803,
+              "rank": 123812,
+              "logit": -6.281874656677246,
+              "probability": 5.502051722214296e-13
+            },
+            {
+              "layer": 38,
+              "position": 3,
+              "absolute_index": 798,
+              "rank": 122551,
+              "logit": -5.788310527801514,
+              "probability": 6.514330741502761e-11
+            },
+            {
+              "layer": 36,
+              "position": 2,
+              "absolute_index": 797,
+              "rank": 118295,
+              "logit": -5.624022483825684,
+              "probability": 1.4489411059859236e-10
+            },
+            {
+              "layer": 36,
+              "position": 3,
+              "absolute_index": 798,
+              "rank": 108329,
+              "logit": -4.149211406707764,
+              "probability": 2.1745251432836454e-10
+            },
+            {
+              "layer": 38,
+              "position": 26,
+              "absolute_index": 821,
+              "rank": 118845,
+              "logit": -5.247374057769775,
+              "probability": 1.4371876085050861e-11
+            },
+            {
+              "layer": 36,
+              "position": 9,
+              "absolute_index": 804,
+              "rank": 104960,
+              "logit": -3.838066577911377,
+              "probability": 1.1222035106728256e-10
+            },
+            {
+              "layer": 37,
+              "position": 2,
+              "absolute_index": 797,
+              "rank": 128145,
+              "logit": -9.39925479888916,
+              "probability": 3.4340826487793893e-14
+            },
+            {
+              "layer": 36,
+              "position": 8,
+              "absolute_index": 803,
+              "rank": 104199,
+              "logit": -3.792261838912964,
+              "probability": 3.605147291807498e-10
+            },
+            {
+              "layer": 37,
+              "position": 15,
+              "absolute_index": 810,
+              "rank": 124668,
+              "logit": -6.688011646270752,
+              "probability": 5.0404677583463717e-14
+            },
+            {
+              "layer": 37,
+              "position": 20,
+              "absolute_index": 815,
+              "rank": 122155,
+              "logit": -6.580201625823975,
+              "probability": 4.0037445581120323e-11
+            },
+            {
+              "layer": 37,
+              "position": 8,
+              "absolute_index": 803,
+              "rank": 122083,
+              "logit": -6.154694557189941,
+              "probability": 3.4192351098909224e-13
+            },
+            {
+              "layer": 38,
+              "position": 9,
+              "absolute_index": 804,
+              "rank": 118669,
+              "logit": -5.146071910858154,
+              "probability": 8.933067827121555e-12
+            },
+            {
+              "layer": 36,
+              "position": 15,
+              "absolute_index": 810,
+              "rank": 100109,
+              "logit": -3.353558301925659,
+              "probability": 1.9865294305365655e-13
+            }
+          ]
+        }
+      }
+    },
+    {
+      "donor_id": "varbind_cf_suv_064",
+      "target_id": "varbind_cf_suv_072",
+      "donor_expected": {
+        "base_value": "64",
+        "first_product": "128",
+        "bound_value": "119",
+        "second_product": "238",
+        "answer": "224"
+      },
+      "selections": {
+        "j_lens": {
+          "bound_value": [
+            {
+              "layer": 31,
+              "position": 43,
+              "absolute_index": 838,
+              "rank": 1,
+              "logit": 22.44721031188965,
+              "probability": 0.991459310054779
+            },
+            {
+              "layer": 33,
+              "position": 43,
+              "absolute_index": 838,
+              "rank": 1,
+              "logit": 20.676799774169922,
+              "probability": 0.9654085636138916
+            },
+            {
+              "layer": 32,
+              "position": 43,
+              "absolute_index": 838,
+              "rank": 1,
+              "logit": 19.282316207885742,
+              "probability": 0.8815363049507141
+            },
+            {
+              "layer": 31,
+              "position": 15,
+              "absolute_index": 810,
+              "rank": 1,
+              "logit": 16.734697341918945,
+              "probability": 0.3993819057941437
+            },
+            {
+              "layer": 33,
+              "position": 15,
+              "absolute_index": 810,
+              "rank": 1,
+              "logit": 14.906060218811035,
+              "probability": 0.11588200181722641
+            },
+            {
+              "layer": 32,
+              "position": 15,
+              "absolute_index": 810,
+              "rank": 1,
+              "logit": 14.206254005432129,
+              "probability": 0.061629511415958405
+            },
+            {
+              "layer": 31,
+              "position": 17,
+              "absolute_index": 812,
+              "rank": 2,
+              "logit": 15.265542984008789,
+              "probability": 0.13994696736335754
+            },
+            {
+              "layer": 33,
+              "position": 17,
+              "absolute_index": 812,
+              "rank": 5,
+              "logit": 13.160967826843262,
+              "probability": 0.024197934195399284
+            },
+            {
+              "layer": 32,
+              "position": 17,
+              "absolute_index": 812,
+              "rank": 5,
+              "logit": 12.921178817749023,
+              "probability": 0.02197696454823017
+            },
+            {
+              "layer": 31,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 54,
+              "logit": 12.938115119934082,
+              "probability": 0.0005386274424381554
+            },
+            {
+              "layer": 32,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 75,
+              "logit": 11.608799934387207,
+              "probability": 0.0005069065373390913
+            },
+            {
+              "layer": 31,
+              "position": 44,
+              "absolute_index": 839,
+              "rank": 171,
+              "logit": 10.171998977661133,
+              "probability": 8.536127279512584e-05
+            },
+            {
+              "layer": 33,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 183,
+              "logit": 10.819387435913086,
+              "probability": 7.278988050529733e-06
+            },
+            {
+              "layer": 31,
+              "position": 41,
+              "absolute_index": 836,
+              "rank": 325,
+              "logit": 10.378762245178223,
+              "probability": 3.4324450098210946e-05
+            },
+            {
+              "layer": 32,
+              "position": 41,
+              "absolute_index": 836,
+              "rank": 422,
+              "logit": 9.500462532043457,
+              "probability": 0.00011191171506652609
+            },
+            {
+              "layer": 31,
+              "position": 22,
+              "absolute_index": 817,
+              "rank": 453,
+              "logit": 8.792168617248535,
+              "probability": 3.3916730899363756e-05
+            }
+          ],
+          "second_product": [
+            {
+              "layer": 33,
+              "position": 41,
+              "absolute_index": 836,
+              "rank": 1,
+              "logit": 19.988367080688477,
+              "probability": 0.46763598918914795
+            },
+            {
+              "layer": 33,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 2,
+              "logit": 21.00533676147461,
+              "probability": 0.19309569895267487
+            },
+            {
+              "layer": 33,
+              "position": 40,
+              "absolute_index": 835,
+              "rank": 2,
+              "logit": 18.438411712646484,
+              "probability": 0.21391405165195465
+            },
+            {
+              "layer": 32,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 2,
+              "logit": 17.266620635986328,
+              "probability": 0.1452406495809555
+            },
+            {
+              "layer": 32,
+              "position": 41,
+              "absolute_index": 836,
+              "rank": 2,
+              "logit": 16.528818130493164,
+              "probability": 0.12625588476657867
+            },
+            {
+              "layer": 31,
+              "position": 41,
+              "absolute_index": 836,
+              "rank": 3,
+              "logit": 18.249073028564453,
+              "probability": 0.08987443894147873
+            },
+            {
+              "layer": 31,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 4,
+              "logit": 18.273252487182617,
+              "probability": 0.11176586896181107
+            },
+            {
+              "layer": 33,
+              "position": 28,
+              "absolute_index": 823,
+              "rank": 4,
+              "logit": 17.401737213134766,
+              "probability": 0.07210052758455276
+            },
+            {
+              "layer": 31,
+              "position": 28,
+              "absolute_index": 823,
+              "rank": 4,
+              "logit": 16.81085777282715,
+              "probability": 0.032476626336574554
+            },
+            {
+              "layer": 32,
+              "position": 40,
+              "absolute_index": 835,
+              "rank": 4,
+              "logit": 15.198432922363281,
+              "probability": 0.028715623542666435
+            },
+            {
+              "layer": 31,
+              "position": 40,
+              "absolute_index": 835,
+              "rank": 7,
+              "logit": 17.23483657836914,
+              "probability": 0.025596287101507187
+            },
+            {
+              "layer": 32,
+              "position": 28,
+              "absolute_index": 823,
+              "rank": 10,
+              "logit": 14.186062812805176,
+              "probability": 0.019221533089876175
+            },
+            {
+              "layer": 33,
+              "position": 1,
+              "absolute_index": 796,
+              "rank": 19,
+              "logit": 13.383026123046875,
+              "probability": 0.007594774477183819
+            },
+            {
+              "layer": 31,
+              "position": 1,
+              "absolute_index": 796,
+              "rank": 38,
+              "logit": 13.459406852722168,
+              "probability": 0.0010239304974675179
+            },
+            {
+              "layer": 32,
+              "position": 1,
+              "absolute_index": 796,
+              "rank": 72,
+              "logit": 11.246504783630371,
+              "probability": 0.0016768351197242737
+            },
+            {
+              "layer": 33,
+              "position": 11,
+              "absolute_index": 806,
+              "rank": 94,
+              "logit": 11.182144165039062,
+              "probability": 0.0016458031022921205
+            }
+          ],
+          "answer": [
+            {
+              "layer": 33,
+              "position": 11,
+              "absolute_index": 806,
+              "rank": 1,
+              "logit": 14.499134063720703,
+              "probability": 0.0453866682946682
+            },
+            {
+              "layer": 31,
+              "position": 28,
+              "absolute_index": 823,
+              "rank": 6,
+              "logit": 16.045387268066406,
+              "probability": 0.015105366706848145
+            },
+            {
+              "layer": 31,
+              "position": 1,
+              "absolute_index": 796,
+              "rank": 9,
+              "logit": 16.379732131958008,
+              "probability": 0.01899116486310959
+            },
+            {
+              "layer": 31,
+              "position": 41,
+              "absolute_index": 836,
+              "rank": 11,
+              "logit": 16.118255615234375,
+              "probability": 0.01067170687019825
+            },
+            {
+              "layer": 31,
+              "position": 40,
+              "absolute_index": 835,
+              "rank": 13,
+              "logit": 15.14411449432373,
+              "probability": 0.0031636462081223726
+            },
+            {
+              "layer": 31,
+              "position": 11,
+              "absolute_index": 806,
+              "rank": 15,
+              "logit": 14.030816078186035,
+              "probability": 0.018279708921909332
+            },
+            {
+              "layer": 33,
+              "position": 28,
+              "absolute_index": 823,
+              "rank": 17,
+              "logit": 14.37354850769043,
+              "probability": 0.003489898284897208
+            },
+            {
+              "layer": 32,
+              "position": 28,
+              "absolute_index": 823,
+              "rank": 17,
+              "logit": 13.130619049072266,
+              "probability": 0.006689823232591152
+            },
+            {
+              "layer": 33,
+              "position": 1,
+              "absolute_index": 796,
+              "rank": 18,
+              "logit": 13.415251731872559,
+              "probability": 0.007843507453799248
+            },
+            {
+              "layer": 32,
+              "position": 1,
+              "absolute_index": 796,
+              "rank": 22,
+              "logit": 12.796555519104004,
+              "probability": 0.007900758646428585
+            },
+            {
+              "layer": 32,
+              "position": 41,
+              "absolute_index": 836,
+              "rank": 27,
+              "logit": 13.011510848999023,
+              "probability": 0.0037471794057637453
+            },
+            {
+              "layer": 32,
+              "position": 11,
+              "absolute_index": 806,
+              "rank": 28,
+              "logit": 11.890573501586914,
+              "probability": 0.004560523200780153
+            },
+            {
+              "layer": 33,
+              "position": 40,
+              "absolute_index": 835,
+              "rank": 29,
+              "logit": 13.36750316619873,
+              "probability": 0.0013426773948594928
+            },
+            {
+              "layer": 32,
+              "position": 40,
+              "absolute_index": 835,
+              "rank": 34,
+              "logit": 12.612091064453125,
+              "probability": 0.002162142191082239
+            },
+            {
+              "layer": 33,
+              "position": 41,
+              "absolute_index": 836,
+              "rank": 41,
+              "logit": 13.125382423400879,
+              "probability": 0.000489048077724874
+            },
+            {
+              "layer": 31,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 43,
+              "logit": 13.20053482055664,
+              "probability": 0.0007002545753493905
+            }
+          ]
+        },
+        "logit_lens": {
+          "bound_value": [
+            {
+              "layer": 31,
+              "position": 43,
+              "absolute_index": 838,
+              "rank": 1,
+              "logit": 15.928763389587402,
+              "probability": 0.4455074667930603
+            },
+            {
+              "layer": 31,
+              "position": 15,
+              "absolute_index": 810,
+              "rank": 1,
+              "logit": 14.974759101867676,
+              "probability": 0.2779901623725891
+            },
+            {
+              "layer": 29,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 2,
+              "logit": 14.869823455810547,
+              "probability": 0.08564549684524536
+            },
+            {
+              "layer": 29,
+              "position": 41,
+              "absolute_index": 836,
+              "rank": 7,
+              "logit": 12.233625411987305,
+              "probability": 0.015072616748511791
+            },
+            {
+              "layer": 31,
+              "position": 17,
+              "absolute_index": 812,
+              "rank": 9,
+              "logit": 11.622255325317383,
+              "probability": 0.0142965791746974
+            },
+            {
+              "layer": 29,
+              "position": 28,
+              "absolute_index": 823,
+              "rank": 14,
+              "logit": 11.70654582977295,
+              "probability": 0.008729960769414902
+            },
+            {
+              "layer": 30,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 16,
+              "logit": 12.172979354858398,
+              "probability": 0.010251748375594616
+            },
+            {
+              "layer": 30,
+              "position": 15,
+              "absolute_index": 810,
+              "rank": 16,
+              "logit": 11.204178810119629,
+              "probability": 0.00892904493957758
+            },
+            {
+              "layer": 29,
+              "position": 15,
+              "absolute_index": 810,
+              "rank": 16,
+              "logit": 11.050939559936523,
+              "probability": 0.0061592403799295425
+            },
+            {
+              "layer": 29,
+              "position": 40,
+              "absolute_index": 835,
+              "rank": 20,
+              "logit": 11.720880508422852,
+              "probability": 0.006473248358815908
+            },
+            {
+              "layer": 30,
+              "position": 41,
+              "absolute_index": 836,
+              "rank": 38,
+              "logit": 10.521410942077637,
+              "probability": 0.003572907531633973
+            },
+            {
+              "layer": 30,
+              "position": 43,
+              "absolute_index": 838,
+              "rank": 42,
+              "logit": 10.286116600036621,
+              "probability": 0.0030906018801033497
+            },
+            {
+              "layer": 29,
+              "position": 43,
+              "absolute_index": 838,
+              "rank": 65,
+              "logit": 9.69351863861084,
+              "probability": 0.001520904595963657
+            },
+            {
+              "layer": 29,
+              "position": 21,
+              "absolute_index": 816,
+              "rank": 78,
+              "logit": 9.83536434173584,
+              "probability": 0.0016711356583982706
+            },
+            {
+              "layer": 30,
+              "position": 40,
+              "absolute_index": 835,
+              "rank": 87,
+              "logit": 10.17562198638916,
+              "probability": 0.0013139380607753992
+            },
+            {
+              "layer": 30,
+              "position": 28,
+              "absolute_index": 823,
+              "rank": 133,
+              "logit": 9.238920211791992,
+              "probability": 0.0010150799062103033
+            }
+          ],
+          "second_product": [
+            {
+              "layer": 33,
+              "position": 41,
+              "absolute_index": 836,
+              "rank": 1,
+              "logit": 16.7015323638916,
+              "probability": 0.4211134910583496
+            },
+            {
+              "layer": 33,
+              "position": 40,
+              "absolute_index": 835,
+              "rank": 2,
+              "logit": 17.734561920166016,
+              "probability": 0.22054870426654816
+            },
+            {
+              "layer": 33,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 2,
+              "logit": 15.953725814819336,
+              "probability": 0.15753008425235748
+            },
+            {
+              "layer": 32,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 2,
+              "logit": 14.222403526306152,
+              "probability": 0.06993028521537781
+            },
+            {
+              "layer": 32,
+              "position": 41,
+              "absolute_index": 836,
+              "rank": 3,
+              "logit": 15.197617530822754,
+              "probability": 0.14221061766147614
+            },
+            {
+              "layer": 33,
+              "position": 28,
+              "absolute_index": 823,
+              "rank": 3,
+              "logit": 14.085871696472168,
+              "probability": 0.055627841502428055
+            },
+            {
+              "layer": 32,
+              "position": 40,
+              "absolute_index": 835,
+              "rank": 4,
+              "logit": 16.153661727905273,
+              "probability": 0.05769576504826546
+            },
+            {
+              "layer": 31,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 4,
+              "logit": 12.84399700164795,
+              "probability": 0.021241670474410057
+            },
+            {
+              "layer": 32,
+              "position": 28,
+              "absolute_index": 823,
+              "rank": 5,
+              "logit": 13.029584884643555,
+              "probability": 0.028300046920776367
+            },
+            {
+              "layer": 31,
+              "position": 41,
+              "absolute_index": 836,
+              "rank": 6,
+              "logit": 14.332083702087402,
+              "probability": 0.0540616512298584
+            },
+            {
+              "layer": 31,
+              "position": 40,
+              "absolute_index": 835,
+              "rank": 8,
+              "logit": 15.595730781555176,
+              "probability": 0.028107168152928352
+            },
+            {
+              "layer": 31,
+              "position": 28,
+              "absolute_index": 823,
+              "rank": 8,
+              "logit": 12.921930313110352,
+              "probability": 0.0202031172811985
+            },
+            {
+              "layer": 33,
+              "position": 15,
+              "absolute_index": 810,
+              "rank": 15,
+              "logit": 10.910603523254395,
+              "probability": 0.003894239664077759
+            },
+            {
+              "layer": 33,
+              "position": 11,
+              "absolute_index": 806,
+              "rank": 18,
+              "logit": 12.235201835632324,
+              "probability": 0.004642003681510687
+            },
+            {
+              "layer": 33,
+              "position": 1,
+              "absolute_index": 796,
+              "rank": 23,
+              "logit": 11.651355743408203,
+              "probability": 0.004384231753647327
+            },
+            {
+              "layer": 33,
+              "position": 42,
+              "absolute_index": 837,
+              "rank": 39,
+              "logit": 9.893707275390625,
+              "probability": 0.002542349509894848
+            }
+          ],
+          "answer": [
+            {
+              "layer": 31,
+              "position": 11,
+              "absolute_index": 806,
+              "rank": 2,
+              "logit": 15.704024314880371,
+              "probability": 0.11538267135620117
+            },
+            {
+              "layer": 31,
+              "position": 28,
+              "absolute_index": 823,
+              "rank": 3,
+              "logit": 14.025679588317871,
+              "probability": 0.06092149764299393
+            },
+            {
+              "layer": 32,
+              "position": 11,
+              "absolute_index": 806,
+              "rank": 5,
+              "logit": 15.194591522216797,
+              "probability": 0.0908513218164444
+            },
+            {
+              "layer": 31,
+              "position": 41,
+              "absolute_index": 836,
+              "rank": 5,
+              "logit": 14.63476276397705,
+              "probability": 0.07317136228084564
+            },
+            {
+              "layer": 31,
+              "position": 1,
+              "absolute_index": 796,
+              "rank": 6,
+              "logit": 14.671297073364258,
+              "probability": 0.05136071890592575
+            },
+            {
+              "layer": 32,
+              "position": 41,
+              "absolute_index": 836,
+              "rank": 6,
+              "logit": 13.186307907104492,
+              "probability": 0.01902967318892479
+            },
+            {
+              "layer": 31,
+              "position": 40,
+              "absolute_index": 835,
+              "rank": 7,
+              "logit": 15.958117485046387,
+              "probability": 0.040383100509643555
+            },
+            {
+              "layer": 32,
+              "position": 28,
+              "absolute_index": 823,
+              "rank": 7,
+              "logit": 12.793045043945312,
+              "probability": 0.02233876846730709
+            },
+            {
+              "layer": 32,
+              "position": 40,
+              "absolute_index": 835,
+              "rank": 8,
+              "logit": 15.114592552185059,
+              "probability": 0.02041183039546013
+            },
+            {
+              "layer": 31,
+              "position": 21,
+              "absolute_index": 816,
+              "rank": 8,
+              "logit": 12.570541381835938,
+              "probability": 0.018679270520806313
+            },
+            {
+              "layer": 32,
+              "position": 21,
+              "absolute_index": 816,
+              "rank": 8,
+              "logit": 12.191178321838379,
+              "probability": 0.012853044085204601
+            },
+            {
+              "layer": 30,
+              "position": 40,
+              "absolute_index": 835,
+              "rank": 9,
+              "logit": 12.736431121826172,
+              "probability": 0.01701062172651291
+            },
+            {
+              "layer": 30,
+              "position": 28,
+              "absolute_index": 823,
+              "rank": 9,
+              "logit": 11.978732109069824,
+              "probability": 0.01571757160127163
+            },
+            {
+              "layer": 32,
+              "position": 1,
+              "absolute_index": 796,
+              "rank": 12,
+              "logit": 13.061614990234375,
+              "probability": 0.018578751012682915
+            },
+            {
+              "layer": 30,
+              "position": 21,
+              "absolute_index": 816,
+              "rank": 13,
+              "logit": 11.682764053344727,
+              "probability": 0.009061695076525211
+            },
+            {
+              "layer": 30,
+              "position": 11,
+              "absolute_index": 806,
+              "rank": 14,
+              "logit": 11.595244407653809,
+              "probability": 0.004300265572965145
+            }
+          ]
+        },
+        "random_layer_matched": {
+          "bound_value": [
+            {
+              "layer": 31,
+              "position": 42,
+              "absolute_index": 837,
+              "rank": 7591,
+              "logit": 4.7794270515441895,
+              "probability": 8.526404826625367e-07
+            },
+            {
+              "layer": 33,
+              "position": 23,
+              "absolute_index": 818,
+              "rank": 68767,
+              "logit": -1.2204021215438843,
+              "probability": 4.675377862639607e-09
+            },
+            {
+              "layer": 32,
+              "position": 34,
+              "absolute_index": 829,
+              "rank": 13229,
+              "logit": 3.5086212158203125,
+              "probability": 4.3146874872945773e-07
+            },
+            {
+              "layer": 31,
+              "position": 28,
+              "absolute_index": 823,
+              "rank": 950,
+              "logit": 8.316568374633789,
+              "probability": 6.645809662586544e-06
+            },
+            {
+              "layer": 33,
+              "position": 40,
+              "absolute_index": 835,
+              "rank": 2036,
+              "logit": 7.246875286102295,
+              "probability": 2.9499658467102563e-06
+            },
+            {
+              "layer": 32,
+              "position": 4,
+              "absolute_index": 799,
+              "rank": 109511,
+              "logit": -4.183825492858887,
+              "probability": 1.0763334667984736e-12
+            },
+            {
+              "layer": 31,
+              "position": 14,
+              "absolute_index": 809,
+              "rank": 96455,
+              "logit": -3.155489444732666,
+              "probability": 2.491197872989126e-11
+            },
+            {
+              "layer": 33,
+              "position": 35,
+              "absolute_index": 830,
+              "rank": 6738,
+              "logit": 4.709004878997803,
+              "probability": 3.4960137895723165e-07
+            },
+            {
+              "layer": 32,
+              "position": 5,
+              "absolute_index": 800,
+              "rank": 109095,
+              "logit": -4.418062210083008,
+              "probability": 1.6954546100400592e-10
+            },
+            {
+              "layer": 31,
+              "position": 45,
+              "absolute_index": 840,
+              "rank": 98584,
+              "logit": -3.426630973815918,
+              "probability": 4.6986612517452286e-11
+            },
+            {
+              "layer": 32,
+              "position": 14,
+              "absolute_index": 809,
+              "rank": 100190,
+              "logit": -3.414257287979126,
+              "probability": 5.44368508603732e-11
+            },
+            {
+              "layer": 31,
+              "position": 40,
+              "absolute_index": 835,
+              "rank": 706,
+              "logit": 9.04829216003418,
+              "probability": 7.125344836822478e-06
+            },
+            {
+              "layer": 33,
+              "position": 33,
+              "absolute_index": 828,
+              "rank": 60580,
+              "logit": -0.5934017300605774,
+              "probability": 1.6781729783588162e-08
+            },
+            {
+              "layer": 31,
+              "position": 25,
+              "absolute_index": 820,
+              "rank": 82977,
+              "logit": -2.157989978790283,
+              "probability": 9.134824563439281e-10
+            },
+            {
+              "layer": 32,
+              "position": 40,
+              "absolute_index": 835,
+              "rank": 1014,
+              "logit": 8.070673942565918,
+              "probability": 2.304474219272379e-05
+            },
+            {
+              "layer": 31,
+              "position": 31,
+              "absolute_index": 826,
+              "rank": 78014,
+              "logit": -1.7065081596374512,
+              "probability": 1.141418737304889e-09
+            }
+          ],
+          "second_product": [
+            {
+              "layer": 33,
+              "position": 27,
+              "absolute_index": 822,
+              "rank": 53086,
+              "logit": -0.02145283855497837,
+              "probability": 4.7767507282969746e-08
+            },
+            {
+              "layer": 33,
+              "position": 38,
+              "absolute_index": 833,
+              "rank": 111703,
+              "logit": -4.690694332122803,
+              "probability": 3.7376152173251853e-10
+            },
+            {
+              "layer": 33,
+              "position": 23,
+              "absolute_index": 818,
+              "rank": 99845,
+              "logit": -3.4967141151428223,
+              "probability": 4.799842745484284e-10
+            },
+            {
+              "layer": 32,
+              "position": 9,
+              "absolute_index": 804,
+              "rank": 128179,
+              "logit": -10.160164833068848,
+              "probability": 4.5041198654651585e-17
+            },
+            {
+              "layer": 32,
+              "position": 45,
+              "absolute_index": 840,
+              "rank": 114198,
+              "logit": -4.999004364013672,
+              "probability": 2.053123816792013e-11
+            },
+            {
+              "layer": 31,
+              "position": 8,
+              "absolute_index": 803,
+              "rank": 126230,
+              "logit": -8.051788330078125,
+              "probability": 7.180057329941869e-12
+            },
+            {
+              "layer": 31,
+              "position": 13,
+              "absolute_index": 808,
+              "rank": 81805,
+              "logit": -2.0740115642547607,
+              "probability": 2.480035732332908e-09
+            },
+            {
+              "layer": 33,
+              "position": 31,
+              "absolute_index": 826,
+              "rank": 77188,
+              "logit": -1.7700551748275757,
+              "probability": 2.8125597406614133e-09
+            },
+            {
+              "layer": 31,
+              "position": 45,
+              "absolute_index": 840,
+              "rank": 117133,
+              "logit": -5.559700012207031,
+              "probability": 5.566656510747059e-12
+            },
+            {
+              "layer": 32,
+              "position": 30,
+              "absolute_index": 825,
+              "rank": 109086,
+              "logit": -4.39812707901001,
+              "probability": 2.7350141595938737e-10
+            },
+            {
+              "layer": 31,
+              "position": 9,
+              "absolute_index": 804,
+              "rank": 128123,
+              "logit": -10.323628425598145,
+              "probability": 3.6603847218769845e-17
+            },
+            {
+              "layer": 32,
+              "position": 49,
+              "absolute_index": 844,
+              "rank": 127520,
+              "logit": -8.500646591186523,
+              "probability": 1.4125203590608596e-14
+            },
+            {
+              "layer": 33,
+              "position": 34,
+              "absolute_index": 829,
+              "rank": 37537,
+              "logit": 1.010695457458496,
+              "probability": 7.55929079332418e-08
+            },
+            {
+              "layer": 31,
+              "position": 19,
+              "absolute_index": 814,
+              "rank": 127885,
+              "logit": -9.5068998336792,
+              "probability": 1.121012896225515e-12
+            },
+            {
+              "layer": 32,
+              "position": 3,
+              "absolute_index": 798,
+              "rank": 125225,
+              "logit": -7.403070449829102,
+              "probability": 9.932916468502473e-12
+            },
+            {
+              "layer": 33,
+              "position": 19,
+              "absolute_index": 814,
+              "rank": 125883,
+              "logit": -7.889589309692383,
+              "probability": 1.0115601065119328e-11
+            }
+          ],
+          "answer": [
+            {
+              "layer": 33,
+              "position": 10,
+              "absolute_index": 805,
+              "rank": 120,
+              "logit": 11.366366386413574,
+              "probability": 1.2578270798258018e-05
+            },
+            {
+              "layer": 31,
+              "position": 47,
+              "absolute_index": 842,
+              "rank": 112330,
+              "logit": -4.313936233520508,
+              "probability": 2.3742221730294055e-11
+            },
+            {
+              "layer": 31,
+              "position": 42,
+              "absolute_index": 837,
+              "rank": 59,
+              "logit": 11.506535530090332,
+              "probability": 0.0007117250352166593
+            },
+            {
+              "layer": 31,
+              "position": 7,
+              "absolute_index": 802,
+              "rank": 61304,
+              "logit": -0.7239992022514343,
+              "probability": 4.346317972192537e-09
+            },
+            {
+              "layer": 31,
+              "position": 46,
+              "absolute_index": 841,
+              "rank": 87440,
+              "logit": -2.047826051712036,
+              "probability": 1.1681746681091454e-09
+            },
+            {
+              "layer": 31,
+              "position": 8,
+              "absolute_index": 803,
+              "rank": 100237,
+              "logit": -3.498497486114502,
+              "probability": 6.817061359853938e-10
+            },
+            {
+              "layer": 33,
+              "position": 3,
+              "absolute_index": 798,
+              "rank": 54110,
+              "logit": -0.2014283537864685,
+              "probability": 1.2796755655131165e-08
+            },
+            {
+              "layer": 32,
+              "position": 26,
+              "absolute_index": 821,
+              "rank": 44506,
+              "logit": 0.6025308966636658,
+              "probability": 6.848947009530093e-08
+            },
+            {
+              "layer": 33,
+              "position": 43,
+              "absolute_index": 838,
+              "rank": 14007,
+              "logit": 3.547013759613037,
+              "probability": 3.510264079409353e-08
+            },
+            {
+              "layer": 32,
+              "position": 32,
+              "absolute_index": 827,
+              "rank": 67653,
+              "logit": -1.0163350105285645,
+              "probability": 1.667309312836096e-08
+            },
+            {
+              "layer": 32,
+              "position": 27,
+              "absolute_index": 822,
+              "rank": 35458,
+              "logit": 1.2764201164245605,
+              "probability": 1.5143984910537256e-07
+            },
+            {
+              "layer": 32,
+              "position": 50,
+              "absolute_index": 845,
+              "rank": 102443,
+              "logit": -3.5711772441864014,
+              "probability": 6.777977484828668e-12
+            },
+            {
+              "layer": 33,
+              "position": 30,
+              "absolute_index": 825,
+              "rank": 46609,
+              "logit": 0.3053523600101471,
+              "probability": 3.681925875298475e-08
+            },
+            {
+              "layer": 32,
+              "position": 19,
+              "absolute_index": 814,
+              "rank": 108314,
+              "logit": -4.126694202423096,
+              "probability": 3.069761389529191e-10
+            },
+            {
+              "layer": 33,
+              "position": 42,
+              "absolute_index": 837,
+              "rank": 165,
+              "logit": 9.969392776489258,
+              "probability": 0.0001558808726258576
+            },
+            {
+              "layer": 31,
+              "position": 45,
+              "absolute_index": 840,
+              "rank": 82445,
+              "logit": -2.1802573204040527,
+              "probability": 1.6340583053331414e-10
+            }
+          ]
+        },
+        "complement_layer_matched": {
+          "bound_value": [
+            {
+              "layer": 31,
+              "position": 2,
+              "absolute_index": 797,
+              "rank": 127597,
+              "logit": -9.351035118103027,
+              "probability": 1.8312882135197717e-13
+            },
+            {
+              "layer": 33,
+              "position": 2,
+              "absolute_index": 797,
+              "rank": 126962,
+              "logit": -8.580708503723145,
+              "probability": 1.1740178870300183e-13
+            },
+            {
+              "layer": 32,
+              "position": 2,
+              "absolute_index": 797,
+              "rank": 126952,
+              "logit": -8.713184356689453,
+              "probability": 1.6254429443043894e-12
+            },
+            {
+              "layer": 31,
+              "position": 20,
+              "absolute_index": 815,
+              "rank": 120429,
+              "logit": -6.156867504119873,
+              "probability": 9.679868712142436e-11
+            },
+            {
+              "layer": 33,
+              "position": 49,
+              "absolute_index": 844,
+              "rank": 116122,
+              "logit": -5.164962291717529,
+              "probability": 1.5257541324115165e-12
+            },
+            {
+              "layer": 32,
+              "position": 19,
+              "absolute_index": 814,
+              "rank": 119725,
+              "logit": -5.782322406768799,
+              "probability": 5.862386270871767e-11
+            },
+            {
+              "layer": 31,
+              "position": 19,
+              "absolute_index": 814,
+              "rank": 119358,
+              "logit": -5.825597286224365,
+              "probability": 4.4501981960598513e-11
+            },
+            {
+              "layer": 33,
+              "position": 5,
+              "absolute_index": 800,
+              "rank": 115618,
+              "logit": -5.3426055908203125,
+              "probability": 1.2202262811289444e-10
+            },
+            {
+              "layer": 32,
+              "position": 20,
+              "absolute_index": 815,
+              "rank": 118493,
+              "logit": -5.628514766693115,
+              "probability": 1.7666361429302668e-10
+            },
+            {
+              "layer": 31,
+              "position": 49,
+              "absolute_index": 844,
+              "rank": 115426,
+              "logit": -4.903178691864014,
+              "probability": 4.958134055231544e-13
+            },
+            {
+              "layer": 32,
+              "position": 49,
+              "absolute_index": 844,
+              "rank": 117844,
+              "logit": -5.402918815612793,
+              "probability": 3.1283921850602803e-13
+            },
+            {
+              "layer": 31,
+              "position": 46,
+              "absolute_index": 841,
+              "rank": 110845,
+              "logit": -4.208879470825195,
+              "probability": 1.3457814029838033e-10
+            },
+            {
+              "layer": 33,
+              "position": 19,
+              "absolute_index": 814,
+              "rank": 114164,
+              "logit": -4.952711582183838,
+              "probability": 1.907487362506899e-10
+            },
+            {
+              "layer": 31,
+              "position": 4,
+              "absolute_index": 799,
+              "rank": 110262,
+              "logit": -4.432628154754639,
+              "probability": 9.762585976170329e-14
+            },
+            {
+              "layer": 32,
+              "position": 4,
+              "absolute_index": 799,
+              "rank": 109511,
+              "logit": -4.183825492858887,
+              "probability": 1.0763334667984736e-12
+            },
+            {
+              "layer": 31,
+              "position": 3,
+              "absolute_index": 798,
+              "rank": 108126,
+              "logit": -4.263941764831543,
+              "probability": 1.9191105649074558e-10
+            }
+          ],
+          "second_product": [
+            {
+              "layer": 33,
+              "position": 49,
+              "absolute_index": 844,
+              "rank": 126017,
+              "logit": -7.6056647300720215,
+              "probability": 1.3289263895051306e-13
+            },
+            {
+              "layer": 33,
+              "position": 19,
+              "absolute_index": 814,
+              "rank": 125883,
+              "logit": -7.889589309692383,
+              "probability": 1.0115601065119328e-11
+            },
+            {
+              "layer": 33,
+              "position": 9,
+              "absolute_index": 804,
+              "rank": 123501,
+              "logit": -6.98933744430542,
+              "probability": 5.0654487928399744e-14
+            },
+            {
+              "layer": 32,
+              "position": 9,
+              "absolute_index": 804,
+              "rank": 128179,
+              "logit": -10.160164833068848,
+              "probability": 4.5041198654651585e-17
+            },
+            {
+              "layer": 32,
+              "position": 19,
+              "absolute_index": 814,
+              "rank": 127978,
+              "logit": -9.537395477294922,
+              "probability": 1.3717239150112803e-12
+            },
+            {
+              "layer": 31,
+              "position": 9,
+              "absolute_index": 804,
+              "rank": 128123,
+              "logit": -10.323628425598145,
+              "probability": 3.6603847218769845e-17
+            },
+            {
+              "layer": 31,
+              "position": 19,
+              "absolute_index": 814,
+              "rank": 127885,
+              "logit": -9.5068998336792,
+              "probability": 1.121012896225515e-12
+            },
+            {
+              "layer": 33,
+              "position": 8,
+              "absolute_index": 803,
+              "rank": 121863,
+              "logit": -6.366785049438477,
+              "probability": 7.665545281865249e-11
+            },
+            {
+              "layer": 31,
+              "position": 3,
+              "absolute_index": 798,
+              "rank": 126443,
+              "logit": -8.166619300842285,
+              "probability": 3.874266792797121e-12
+            },
+            {
+              "layer": 32,
+              "position": 49,
+              "absolute_index": 844,
+              "rank": 127520,
+              "logit": -8.500646591186523,
+              "probability": 1.4125203590608596e-14
+            },
+            {
+              "layer": 31,
+              "position": 8,
+              "absolute_index": 803,
+              "rank": 126230,
+              "logit": -8.051788330078125,
+              "probability": 7.180057329941869e-12
+            },
+            {
+              "layer": 32,
+              "position": 8,
+              "absolute_index": 803,
+              "rank": 125848,
+              "logit": -7.649080753326416,
+              "probability": 1.6560966140111155e-11
+            },
+            {
+              "layer": 33,
+              "position": 3,
+              "absolute_index": 798,
+              "rank": 121827,
+              "logit": -6.438734531402588,
+              "probability": 2.5019120455938015e-11
+            },
+            {
+              "layer": 31,
+              "position": 49,
+              "absolute_index": 844,
+              "rank": 125042,
+              "logit": -6.999114990234375,
+              "probability": 6.096279758132164e-14
+            },
+            {
+              "layer": 32,
+              "position": 3,
+              "absolute_index": 798,
+              "rank": 125225,
+              "logit": -7.403070449829102,
+              "probability": 9.932916468502473e-12
+            },
+            {
+              "layer": 33,
+              "position": 2,
+              "absolute_index": 797,
+              "rank": 119365,
+              "logit": -5.739022254943848,
+              "probability": 2.012812659601959e-12
+            }
+          ],
+          "answer": [
+            {
+              "layer": 33,
+              "position": 2,
+              "absolute_index": 797,
+              "rank": 105789,
+              "logit": -3.856682062149048,
+              "probability": 1.3221899269888482e-11
+            },
+            {
+              "layer": 31,
+              "position": 49,
+              "absolute_index": 844,
+              "rank": 115636,
+              "logit": -4.936337947845459,
+              "probability": 4.796422048598814e-13
+            },
+            {
+              "layer": 31,
+              "position": 2,
+              "absolute_index": 797,
+              "rank": 114461,
+              "logit": -4.825736999511719,
+              "probability": 1.690709898471976e-11
+            },
+            {
+              "layer": 31,
+              "position": 48,
+              "absolute_index": 843,
+              "rank": 114419,
+              "logit": -5.107435703277588,
+              "probability": 2.7983992900715293e-10
+            },
+            {
+              "layer": 31,
+              "position": 47,
+              "absolute_index": 842,
+              "rank": 112330,
+              "logit": -4.313936233520508,
+              "probability": 2.3742221730294055e-11
+            },
+            {
+              "layer": 31,
+              "position": 19,
+              "absolute_index": 814,
+              "rank": 108581,
+              "logit": -4.2369818687438965,
+              "probability": 2.1792460891401078e-10
+            },
+            {
+              "layer": 33,
+              "position": 47,
+              "absolute_index": 842,
+              "rank": 104627,
+              "logit": -3.6945440769195557,
+              "probability": 2.4607721416103345e-10
+            },
+            {
+              "layer": 32,
+              "position": 49,
+              "absolute_index": 844,
+              "rank": 119731,
+              "logit": -5.765587329864502,
+              "probability": 2.1767878027444815e-13
+            },
+            {
+              "layer": 33,
+              "position": 48,
+              "absolute_index": 843,
+              "rank": 103242,
+              "logit": -4.210175514221191,
+              "probability": 8.545325558273476e-10
+            },
+            {
+              "layer": 32,
+              "position": 48,
+              "absolute_index": 843,
+              "rank": 116181,
+              "logit": -5.629680156707764,
+              "probability": 1.7823777176406708e-10
+            },
+            {
+              "layer": 32,
+              "position": 2,
+              "absolute_index": 797,
+              "rank": 110363,
+              "logit": -4.346823692321777,
+              "probability": 1.2801404380979875e-10
+            },
+            {
+              "layer": 32,
+              "position": 47,
+              "absolute_index": 842,
+              "rank": 109186,
+              "logit": -4.013211250305176,
+              "probability": 4.272503878466338e-11
+            },
+            {
+              "layer": 33,
+              "position": 49,
+              "absolute_index": 844,
+              "rank": 102858,
+              "logit": -3.6577112674713135,
+              "probability": 6.8877230308128645e-12
+            },
+            {
+              "layer": 32,
+              "position": 19,
+              "absolute_index": 814,
+              "rank": 108314,
+              "logit": -4.126694202423096,
+              "probability": 3.069761389529191e-10
+            },
+            {
+              "layer": 33,
+              "position": 50,
+              "absolute_index": 845,
+              "rank": 91029,
+              "logit": -2.658759117126465,
+              "probability": 4.840475936740418e-11
+            },
+            {
+              "layer": 31,
+              "position": 8,
+              "absolute_index": 803,
+              "rank": 100237,
+              "logit": -3.498497486114502,
+              "probability": 6.817061359853938e-10
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,2378 @@
+{
+  "seed": 42,
+  "task_type": "addition",
+  "filler_type": "dots",
+  "filler_lengths": [
+    0,
+    5,
+    10,
+    25,
+    50,
+    100
+  ],
+  "source": {
+    "repository": "https://github.com/kaleybrauer/filler-token-reasoning",
+    "revision": "4ba4c75d5d9f04248749ec46b8bed8661b746715",
+    "path": "data/2fact_addition_dataset.json",
+    "selection": "deterministic unique atomic-fact pool; 5 disjoint few-shots and 20 held-out triples, each in three cyclic orders",
+    "probe_rationale": "Three independent retrievals distinguish concurrent fact recovery from an order-dependent prefix-sum algorithm."
+  },
+  "sanity_prompts": [
+    {
+      "id": "capital",
+      "messages": [
+        {
+          "role": "user",
+          "content": "The capital of France is"
+        }
+      ]
+    },
+    {
+      "id": "arithmetic",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Complete with only the answer: 17 + 25 ="
+        }
+      ]
+    },
+    {
+      "id": "chinese",
+      "messages": [
+        {
+          "role": "user",
+          "content": "用一个词回答：中国的首都是"
+        }
+      ]
+    }
+  ],
+  "few_shot": [
+    {
+      "answer": 28,
+      "expected_intermediates": {
+        "fact_1": "2",
+        "fact_2": "10",
+        "fact_3": "16",
+        "prefix_sum_12": "12",
+        "sum": "28"
+      },
+      "fact_phrase_1": "the atomic number of Helium",
+      "fact_value_1": 2,
+      "fact_phrase_2": "the atomic number of Neon",
+      "fact_value_2": 10,
+      "fact_phrase_3": "the atomic number of Sulfur",
+      "fact_value_3": 16,
+      "highlight_forms": {
+        "fact_1": [
+          "2"
+        ],
+        "fact_2": [
+          "10"
+        ],
+        "fact_3": [
+          "16"
+        ],
+        "prefix_sum_12": [
+          "12"
+        ],
+        "sum": [
+          "28"
+        ]
+      }
+    },
+    {
+      "answer": 122,
+      "expected_intermediates": {
+        "fact_1": "27",
+        "fact_2": "34",
+        "fact_3": "61",
+        "prefix_sum_12": "61",
+        "sum": "122"
+      },
+      "fact_phrase_1": "the atomic number of Cobalt",
+      "fact_value_1": 27,
+      "fact_phrase_2": "the atomic number of Selenium",
+      "fact_value_2": 34,
+      "fact_phrase_3": "the atomic number of Promethium",
+      "fact_value_3": 61,
+      "highlight_forms": {
+        "fact_1": [
+          "27"
+        ],
+        "fact_2": [
+          "34"
+        ],
+        "fact_3": [
+          "61"
+        ],
+        "prefix_sum_12": [
+          "61"
+        ],
+        "sum": [
+          "122"
+        ]
+      }
+    },
+    {
+      "answer": 211,
+      "expected_intermediates": {
+        "fact_1": "63",
+        "fact_2": "73",
+        "fact_3": "75",
+        "prefix_sum_12": "136",
+        "sum": "211"
+      },
+      "fact_phrase_1": "the atomic number of Europium",
+      "fact_value_1": 63,
+      "fact_phrase_2": "the atomic number of Tantalum",
+      "fact_value_2": 73,
+      "fact_phrase_3": "the atomic number of Rhenium",
+      "fact_value_3": 75,
+      "highlight_forms": {
+        "fact_1": [
+          "63"
+        ],
+        "fact_2": [
+          "73"
+        ],
+        "fact_3": [
+          "75"
+        ],
+        "prefix_sum_12": [
+          "136"
+        ],
+        "sum": [
+          "211"
+        ]
+      }
+    },
+    {
+      "answer": 233,
+      "expected_intermediates": {
+        "fact_1": "91",
+        "fact_2": "90",
+        "fact_3": "52",
+        "prefix_sum_12": "181",
+        "sum": "233"
+      },
+      "fact_phrase_1": "the atomic number of Protactinium",
+      "fact_value_1": 91,
+      "fact_phrase_2": "the atomic number of Thorium",
+      "fact_value_2": 90,
+      "fact_phrase_3": "the atomic number of Tellurium",
+      "fact_value_3": 52,
+      "highlight_forms": {
+        "fact_1": [
+          "91"
+        ],
+        "fact_2": [
+          "90"
+        ],
+        "fact_3": [
+          "52"
+        ],
+        "prefix_sum_12": [
+          "181"
+        ],
+        "sum": [
+          "233"
+        ]
+      }
+    },
+    {
+      "answer": 177,
+      "expected_intermediates": {
+        "fact_1": "93",
+        "fact_2": "5",
+        "fact_3": "79",
+        "prefix_sum_12": "98",
+        "sum": "177"
+      },
+      "fact_phrase_1": "the atomic number of Neptunium",
+      "fact_value_1": 93,
+      "fact_phrase_2": "the atomic number of Boron",
+      "fact_value_2": 5,
+      "fact_phrase_3": "the atomic number of Gold",
+      "fact_value_3": 79,
+      "highlight_forms": {
+        "fact_1": [
+          "93"
+        ],
+        "fact_2": [
+          "5"
+        ],
+        "fact_3": [
+          "79"
+        ],
+        "prefix_sum_12": [
+          "98"
+        ],
+        "sum": [
+          "177"
+        ]
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "three_fact_g00_p0",
+      "permutation_group": 0,
+      "cyclic_permutation": 0,
+      "answer": 156,
+      "expected_intermediates": {
+        "fact_1": "72",
+        "fact_2": "40",
+        "fact_3": "44",
+        "prefix_sum_12": "112",
+        "sum": "156"
+      },
+      "fact_phrase_1": "the atomic number of Hafnium",
+      "fact_value_1": 72,
+      "fact_phrase_2": "the atomic number of Zirconium",
+      "fact_value_2": 40,
+      "fact_phrase_3": "the atomic number of Ruthenium",
+      "fact_value_3": 44,
+      "highlight_forms": {
+        "fact_1": [
+          "72"
+        ],
+        "fact_2": [
+          "40"
+        ],
+        "fact_3": [
+          "44"
+        ],
+        "prefix_sum_12": [
+          "112"
+        ],
+        "sum": [
+          "156"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g00_p1",
+      "permutation_group": 0,
+      "cyclic_permutation": 1,
+      "answer": 156,
+      "expected_intermediates": {
+        "fact_1": "40",
+        "fact_2": "44",
+        "fact_3": "72",
+        "prefix_sum_12": "84",
+        "sum": "156"
+      },
+      "fact_phrase_1": "the atomic number of Zirconium",
+      "fact_value_1": 40,
+      "fact_phrase_2": "the atomic number of Ruthenium",
+      "fact_value_2": 44,
+      "fact_phrase_3": "the atomic number of Hafnium",
+      "fact_value_3": 72,
+      "highlight_forms": {
+        "fact_1": [
+          "40"
+        ],
+        "fact_2": [
+          "44"
+        ],
+        "fact_3": [
+          "72"
+        ],
+        "prefix_sum_12": [
+          "84"
+        ],
+        "sum": [
+          "156"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g00_p2",
+      "permutation_group": 0,
+      "cyclic_permutation": 2,
+      "answer": 156,
+      "expected_intermediates": {
+        "fact_1": "44",
+        "fact_2": "72",
+        "fact_3": "40",
+        "prefix_sum_12": "116",
+        "sum": "156"
+      },
+      "fact_phrase_1": "the atomic number of Ruthenium",
+      "fact_value_1": 44,
+      "fact_phrase_2": "the atomic number of Hafnium",
+      "fact_value_2": 72,
+      "fact_phrase_3": "the atomic number of Zirconium",
+      "fact_value_3": 40,
+      "highlight_forms": {
+        "fact_1": [
+          "44"
+        ],
+        "fact_2": [
+          "72"
+        ],
+        "fact_3": [
+          "40"
+        ],
+        "prefix_sum_12": [
+          "116"
+        ],
+        "sum": [
+          "156"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g01_p0",
+      "permutation_group": 1,
+      "cyclic_permutation": 0,
+      "answer": 273,
+      "expected_intermediates": {
+        "fact_1": "80",
+        "fact_2": "97",
+        "fact_3": "96",
+        "prefix_sum_12": "177",
+        "sum": "273"
+      },
+      "fact_phrase_1": "the atomic number of Mercury",
+      "fact_value_1": 80,
+      "fact_phrase_2": "the atomic number of Berkelium",
+      "fact_value_2": 97,
+      "fact_phrase_3": "the atomic number of Curium",
+      "fact_value_3": 96,
+      "highlight_forms": {
+        "fact_1": [
+          "80"
+        ],
+        "fact_2": [
+          "97"
+        ],
+        "fact_3": [
+          "96"
+        ],
+        "prefix_sum_12": [
+          "177"
+        ],
+        "sum": [
+          "273"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g01_p1",
+      "permutation_group": 1,
+      "cyclic_permutation": 1,
+      "answer": 273,
+      "expected_intermediates": {
+        "fact_1": "97",
+        "fact_2": "96",
+        "fact_3": "80",
+        "prefix_sum_12": "193",
+        "sum": "273"
+      },
+      "fact_phrase_1": "the atomic number of Berkelium",
+      "fact_value_1": 97,
+      "fact_phrase_2": "the atomic number of Curium",
+      "fact_value_2": 96,
+      "fact_phrase_3": "the atomic number of Mercury",
+      "fact_value_3": 80,
+      "highlight_forms": {
+        "fact_1": [
+          "97"
+        ],
+        "fact_2": [
+          "96"
+        ],
+        "fact_3": [
+          "80"
+        ],
+        "prefix_sum_12": [
+          "193"
+        ],
+        "sum": [
+          "273"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g01_p2",
+      "permutation_group": 1,
+      "cyclic_permutation": 2,
+      "answer": 273,
+      "expected_intermediates": {
+        "fact_1": "96",
+        "fact_2": "80",
+        "fact_3": "97",
+        "prefix_sum_12": "176",
+        "sum": "273"
+      },
+      "fact_phrase_1": "the atomic number of Curium",
+      "fact_value_1": 96,
+      "fact_phrase_2": "the atomic number of Mercury",
+      "fact_value_2": 80,
+      "fact_phrase_3": "the atomic number of Berkelium",
+      "fact_value_3": 97,
+      "highlight_forms": {
+        "fact_1": [
+          "96"
+        ],
+        "fact_2": [
+          "80"
+        ],
+        "fact_3": [
+          "97"
+        ],
+        "prefix_sum_12": [
+          "176"
+        ],
+        "sum": [
+          "273"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g02_p0",
+      "permutation_group": 2,
+      "cyclic_permutation": 0,
+      "answer": 125,
+      "expected_intermediates": {
+        "fact_1": "47",
+        "fact_2": "1",
+        "fact_3": "77",
+        "prefix_sum_12": "48",
+        "sum": "125"
+      },
+      "fact_phrase_1": "the atomic number of Silver",
+      "fact_value_1": 47,
+      "fact_phrase_2": "the atomic number of Hydrogen",
+      "fact_value_2": 1,
+      "fact_phrase_3": "the atomic number of Iridium",
+      "fact_value_3": 77,
+      "highlight_forms": {
+        "fact_1": [
+          "47"
+        ],
+        "fact_2": [
+          "1"
+        ],
+        "fact_3": [
+          "77"
+        ],
+        "prefix_sum_12": [
+          "48"
+        ],
+        "sum": [
+          "125"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g02_p1",
+      "permutation_group": 2,
+      "cyclic_permutation": 1,
+      "answer": 125,
+      "expected_intermediates": {
+        "fact_1": "1",
+        "fact_2": "77",
+        "fact_3": "47",
+        "prefix_sum_12": "78",
+        "sum": "125"
+      },
+      "fact_phrase_1": "the atomic number of Hydrogen",
+      "fact_value_1": 1,
+      "fact_phrase_2": "the atomic number of Iridium",
+      "fact_value_2": 77,
+      "fact_phrase_3": "the atomic number of Silver",
+      "fact_value_3": 47,
+      "highlight_forms": {
+        "fact_1": [
+          "1"
+        ],
+        "fact_2": [
+          "77"
+        ],
+        "fact_3": [
+          "47"
+        ],
+        "prefix_sum_12": [
+          "78"
+        ],
+        "sum": [
+          "125"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g02_p2",
+      "permutation_group": 2,
+      "cyclic_permutation": 2,
+      "answer": 125,
+      "expected_intermediates": {
+        "fact_1": "77",
+        "fact_2": "47",
+        "fact_3": "1",
+        "prefix_sum_12": "124",
+        "sum": "125"
+      },
+      "fact_phrase_1": "the atomic number of Iridium",
+      "fact_value_1": 77,
+      "fact_phrase_2": "the atomic number of Silver",
+      "fact_value_2": 47,
+      "fact_phrase_3": "the atomic number of Hydrogen",
+      "fact_value_3": 1,
+      "highlight_forms": {
+        "fact_1": [
+          "77"
+        ],
+        "fact_2": [
+          "47"
+        ],
+        "fact_3": [
+          "1"
+        ],
+        "prefix_sum_12": [
+          "124"
+        ],
+        "sum": [
+          "125"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g03_p0",
+      "permutation_group": 3,
+      "cyclic_permutation": 0,
+      "answer": 198,
+      "expected_intermediates": {
+        "fact_1": "51",
+        "fact_2": "76",
+        "fact_3": "71",
+        "prefix_sum_12": "127",
+        "sum": "198"
+      },
+      "fact_phrase_1": "the atomic number of Antimony",
+      "fact_value_1": 51,
+      "fact_phrase_2": "the atomic number of Osmium",
+      "fact_value_2": 76,
+      "fact_phrase_3": "the atomic number of Lutetium",
+      "fact_value_3": 71,
+      "highlight_forms": {
+        "fact_1": [
+          "51"
+        ],
+        "fact_2": [
+          "76"
+        ],
+        "fact_3": [
+          "71"
+        ],
+        "prefix_sum_12": [
+          "127"
+        ],
+        "sum": [
+          "198"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g03_p1",
+      "permutation_group": 3,
+      "cyclic_permutation": 1,
+      "answer": 198,
+      "expected_intermediates": {
+        "fact_1": "76",
+        "fact_2": "71",
+        "fact_3": "51",
+        "prefix_sum_12": "147",
+        "sum": "198"
+      },
+      "fact_phrase_1": "the atomic number of Osmium",
+      "fact_value_1": 76,
+      "fact_phrase_2": "the atomic number of Lutetium",
+      "fact_value_2": 71,
+      "fact_phrase_3": "the atomic number of Antimony",
+      "fact_value_3": 51,
+      "highlight_forms": {
+        "fact_1": [
+          "76"
+        ],
+        "fact_2": [
+          "71"
+        ],
+        "fact_3": [
+          "51"
+        ],
+        "prefix_sum_12": [
+          "147"
+        ],
+        "sum": [
+          "198"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g03_p2",
+      "permutation_group": 3,
+      "cyclic_permutation": 2,
+      "answer": 198,
+      "expected_intermediates": {
+        "fact_1": "71",
+        "fact_2": "51",
+        "fact_3": "76",
+        "prefix_sum_12": "122",
+        "sum": "198"
+      },
+      "fact_phrase_1": "the atomic number of Lutetium",
+      "fact_value_1": 71,
+      "fact_phrase_2": "the atomic number of Antimony",
+      "fact_value_2": 51,
+      "fact_phrase_3": "the atomic number of Osmium",
+      "fact_value_3": 76,
+      "highlight_forms": {
+        "fact_1": [
+          "71"
+        ],
+        "fact_2": [
+          "51"
+        ],
+        "fact_3": [
+          "76"
+        ],
+        "prefix_sum_12": [
+          "122"
+        ],
+        "sum": [
+          "198"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g04_p0",
+      "permutation_group": 4,
+      "cyclic_permutation": 0,
+      "answer": 172,
+      "expected_intermediates": {
+        "fact_1": "45",
+        "fact_2": "95",
+        "fact_3": "32",
+        "prefix_sum_12": "140",
+        "sum": "172"
+      },
+      "fact_phrase_1": "the atomic number of Rhodium",
+      "fact_value_1": 45,
+      "fact_phrase_2": "the atomic number of Americium",
+      "fact_value_2": 95,
+      "fact_phrase_3": "the atomic number of Germanium",
+      "fact_value_3": 32,
+      "highlight_forms": {
+        "fact_1": [
+          "45"
+        ],
+        "fact_2": [
+          "95"
+        ],
+        "fact_3": [
+          "32"
+        ],
+        "prefix_sum_12": [
+          "140"
+        ],
+        "sum": [
+          "172"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g04_p1",
+      "permutation_group": 4,
+      "cyclic_permutation": 1,
+      "answer": 172,
+      "expected_intermediates": {
+        "fact_1": "95",
+        "fact_2": "32",
+        "fact_3": "45",
+        "prefix_sum_12": "127",
+        "sum": "172"
+      },
+      "fact_phrase_1": "the atomic number of Americium",
+      "fact_value_1": 95,
+      "fact_phrase_2": "the atomic number of Germanium",
+      "fact_value_2": 32,
+      "fact_phrase_3": "the atomic number of Rhodium",
+      "fact_value_3": 45,
+      "highlight_forms": {
+        "fact_1": [
+          "95"
+        ],
+        "fact_2": [
+          "32"
+        ],
+        "fact_3": [
+          "45"
+        ],
+        "prefix_sum_12": [
+          "127"
+        ],
+        "sum": [
+          "172"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g04_p2",
+      "permutation_group": 4,
+      "cyclic_permutation": 2,
+      "answer": 172,
+      "expected_intermediates": {
+        "fact_1": "32",
+        "fact_2": "45",
+        "fact_3": "95",
+        "prefix_sum_12": "77",
+        "sum": "172"
+      },
+      "fact_phrase_1": "the atomic number of Germanium",
+      "fact_value_1": 32,
+      "fact_phrase_2": "the atomic number of Rhodium",
+      "fact_value_2": 45,
+      "fact_phrase_3": "the atomic number of Americium",
+      "fact_value_3": 95,
+      "highlight_forms": {
+        "fact_1": [
+          "32"
+        ],
+        "fact_2": [
+          "45"
+        ],
+        "fact_3": [
+          "95"
+        ],
+        "prefix_sum_12": [
+          "77"
+        ],
+        "sum": [
+          "172"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g05_p0",
+      "permutation_group": 5,
+      "cyclic_permutation": 0,
+      "answer": 108,
+      "expected_intermediates": {
+        "fact_1": "22",
+        "fact_2": "55",
+        "fact_3": "31",
+        "prefix_sum_12": "77",
+        "sum": "108"
+      },
+      "fact_phrase_1": "the atomic number of Titanium",
+      "fact_value_1": 22,
+      "fact_phrase_2": "the atomic number of Caesium",
+      "fact_value_2": 55,
+      "fact_phrase_3": "the atomic number of Gallium",
+      "fact_value_3": 31,
+      "highlight_forms": {
+        "fact_1": [
+          "22"
+        ],
+        "fact_2": [
+          "55"
+        ],
+        "fact_3": [
+          "31"
+        ],
+        "prefix_sum_12": [
+          "77"
+        ],
+        "sum": [
+          "108"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g05_p1",
+      "permutation_group": 5,
+      "cyclic_permutation": 1,
+      "answer": 108,
+      "expected_intermediates": {
+        "fact_1": "55",
+        "fact_2": "31",
+        "fact_3": "22",
+        "prefix_sum_12": "86",
+        "sum": "108"
+      },
+      "fact_phrase_1": "the atomic number of Caesium",
+      "fact_value_1": 55,
+      "fact_phrase_2": "the atomic number of Gallium",
+      "fact_value_2": 31,
+      "fact_phrase_3": "the atomic number of Titanium",
+      "fact_value_3": 22,
+      "highlight_forms": {
+        "fact_1": [
+          "55"
+        ],
+        "fact_2": [
+          "31"
+        ],
+        "fact_3": [
+          "22"
+        ],
+        "prefix_sum_12": [
+          "86"
+        ],
+        "sum": [
+          "108"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g05_p2",
+      "permutation_group": 5,
+      "cyclic_permutation": 2,
+      "answer": 108,
+      "expected_intermediates": {
+        "fact_1": "31",
+        "fact_2": "22",
+        "fact_3": "55",
+        "prefix_sum_12": "53",
+        "sum": "108"
+      },
+      "fact_phrase_1": "the atomic number of Gallium",
+      "fact_value_1": 31,
+      "fact_phrase_2": "the atomic number of Titanium",
+      "fact_value_2": 22,
+      "fact_phrase_3": "the atomic number of Caesium",
+      "fact_value_3": 55,
+      "highlight_forms": {
+        "fact_1": [
+          "31"
+        ],
+        "fact_2": [
+          "22"
+        ],
+        "fact_3": [
+          "55"
+        ],
+        "prefix_sum_12": [
+          "53"
+        ],
+        "sum": [
+          "108"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g06_p0",
+      "permutation_group": 6,
+      "cyclic_permutation": 0,
+      "answer": 240,
+      "expected_intermediates": {
+        "fact_1": "82",
+        "fact_2": "98",
+        "fact_3": "60",
+        "prefix_sum_12": "180",
+        "sum": "240"
+      },
+      "fact_phrase_1": "the atomic number of Lead",
+      "fact_value_1": 82,
+      "fact_phrase_2": "the atomic number of Californium",
+      "fact_value_2": 98,
+      "fact_phrase_3": "the atomic number of Neodymium",
+      "fact_value_3": 60,
+      "highlight_forms": {
+        "fact_1": [
+          "82"
+        ],
+        "fact_2": [
+          "98"
+        ],
+        "fact_3": [
+          "60"
+        ],
+        "prefix_sum_12": [
+          "180"
+        ],
+        "sum": [
+          "240"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g06_p1",
+      "permutation_group": 6,
+      "cyclic_permutation": 1,
+      "answer": 240,
+      "expected_intermediates": {
+        "fact_1": "98",
+        "fact_2": "60",
+        "fact_3": "82",
+        "prefix_sum_12": "158",
+        "sum": "240"
+      },
+      "fact_phrase_1": "the atomic number of Californium",
+      "fact_value_1": 98,
+      "fact_phrase_2": "the atomic number of Neodymium",
+      "fact_value_2": 60,
+      "fact_phrase_3": "the atomic number of Lead",
+      "fact_value_3": 82,
+      "highlight_forms": {
+        "fact_1": [
+          "98"
+        ],
+        "fact_2": [
+          "60"
+        ],
+        "fact_3": [
+          "82"
+        ],
+        "prefix_sum_12": [
+          "158"
+        ],
+        "sum": [
+          "240"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g06_p2",
+      "permutation_group": 6,
+      "cyclic_permutation": 2,
+      "answer": 240,
+      "expected_intermediates": {
+        "fact_1": "60",
+        "fact_2": "82",
+        "fact_3": "98",
+        "prefix_sum_12": "142",
+        "sum": "240"
+      },
+      "fact_phrase_1": "the atomic number of Neodymium",
+      "fact_value_1": 60,
+      "fact_phrase_2": "the atomic number of Lead",
+      "fact_value_2": 82,
+      "fact_phrase_3": "the atomic number of Californium",
+      "fact_value_3": 98,
+      "highlight_forms": {
+        "fact_1": [
+          "60"
+        ],
+        "fact_2": [
+          "82"
+        ],
+        "fact_3": [
+          "98"
+        ],
+        "prefix_sum_12": [
+          "142"
+        ],
+        "sum": [
+          "240"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g07_p0",
+      "permutation_group": 7,
+      "cyclic_permutation": 0,
+      "answer": 123,
+      "expected_intermediates": {
+        "fact_1": "38",
+        "fact_2": "19",
+        "fact_3": "66",
+        "prefix_sum_12": "57",
+        "sum": "123"
+      },
+      "fact_phrase_1": "the atomic number of Strontium",
+      "fact_value_1": 38,
+      "fact_phrase_2": "the atomic number of Potassium",
+      "fact_value_2": 19,
+      "fact_phrase_3": "the atomic number of Dysprosium",
+      "fact_value_3": 66,
+      "highlight_forms": {
+        "fact_1": [
+          "38"
+        ],
+        "fact_2": [
+          "19"
+        ],
+        "fact_3": [
+          "66"
+        ],
+        "prefix_sum_12": [
+          "57"
+        ],
+        "sum": [
+          "123"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g07_p1",
+      "permutation_group": 7,
+      "cyclic_permutation": 1,
+      "answer": 123,
+      "expected_intermediates": {
+        "fact_1": "19",
+        "fact_2": "66",
+        "fact_3": "38",
+        "prefix_sum_12": "85",
+        "sum": "123"
+      },
+      "fact_phrase_1": "the atomic number of Potassium",
+      "fact_value_1": 19,
+      "fact_phrase_2": "the atomic number of Dysprosium",
+      "fact_value_2": 66,
+      "fact_phrase_3": "the atomic number of Strontium",
+      "fact_value_3": 38,
+      "highlight_forms": {
+        "fact_1": [
+          "19"
+        ],
+        "fact_2": [
+          "66"
+        ],
+        "fact_3": [
+          "38"
+        ],
+        "prefix_sum_12": [
+          "85"
+        ],
+        "sum": [
+          "123"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g07_p2",
+      "permutation_group": 7,
+      "cyclic_permutation": 2,
+      "answer": 123,
+      "expected_intermediates": {
+        "fact_1": "66",
+        "fact_2": "38",
+        "fact_3": "19",
+        "prefix_sum_12": "104",
+        "sum": "123"
+      },
+      "fact_phrase_1": "the atomic number of Dysprosium",
+      "fact_value_1": 66,
+      "fact_phrase_2": "the atomic number of Strontium",
+      "fact_value_2": 38,
+      "fact_phrase_3": "the atomic number of Potassium",
+      "fact_value_3": 19,
+      "highlight_forms": {
+        "fact_1": [
+          "66"
+        ],
+        "fact_2": [
+          "38"
+        ],
+        "fact_3": [
+          "19"
+        ],
+        "prefix_sum_12": [
+          "104"
+        ],
+        "sum": [
+          "123"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g08_p0",
+      "permutation_group": 8,
+      "cyclic_permutation": 0,
+      "answer": 128,
+      "expected_intermediates": {
+        "fact_1": "49",
+        "fact_2": "20",
+        "fact_3": "59",
+        "prefix_sum_12": "69",
+        "sum": "128"
+      },
+      "fact_phrase_1": "the atomic number of Indium",
+      "fact_value_1": 49,
+      "fact_phrase_2": "the atomic number of Calcium",
+      "fact_value_2": 20,
+      "fact_phrase_3": "the atomic number of Praseodymium",
+      "fact_value_3": 59,
+      "highlight_forms": {
+        "fact_1": [
+          "49"
+        ],
+        "fact_2": [
+          "20"
+        ],
+        "fact_3": [
+          "59"
+        ],
+        "prefix_sum_12": [
+          "69"
+        ],
+        "sum": [
+          "128"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g08_p1",
+      "permutation_group": 8,
+      "cyclic_permutation": 1,
+      "answer": 128,
+      "expected_intermediates": {
+        "fact_1": "20",
+        "fact_2": "59",
+        "fact_3": "49",
+        "prefix_sum_12": "79",
+        "sum": "128"
+      },
+      "fact_phrase_1": "the atomic number of Calcium",
+      "fact_value_1": 20,
+      "fact_phrase_2": "the atomic number of Praseodymium",
+      "fact_value_2": 59,
+      "fact_phrase_3": "the atomic number of Indium",
+      "fact_value_3": 49,
+      "highlight_forms": {
+        "fact_1": [
+          "20"
+        ],
+        "fact_2": [
+          "59"
+        ],
+        "fact_3": [
+          "49"
+        ],
+        "prefix_sum_12": [
+          "79"
+        ],
+        "sum": [
+          "128"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g08_p2",
+      "permutation_group": 8,
+      "cyclic_permutation": 2,
+      "answer": 128,
+      "expected_intermediates": {
+        "fact_1": "59",
+        "fact_2": "49",
+        "fact_3": "20",
+        "prefix_sum_12": "108",
+        "sum": "128"
+      },
+      "fact_phrase_1": "the atomic number of Praseodymium",
+      "fact_value_1": 59,
+      "fact_phrase_2": "the atomic number of Indium",
+      "fact_value_2": 49,
+      "fact_phrase_3": "the atomic number of Calcium",
+      "fact_value_3": 20,
+      "highlight_forms": {
+        "fact_1": [
+          "59"
+        ],
+        "fact_2": [
+          "49"
+        ],
+        "fact_3": [
+          "20"
+        ],
+        "prefix_sum_12": [
+          "108"
+        ],
+        "sum": [
+          "128"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g09_p0",
+      "permutation_group": 9,
+      "cyclic_permutation": 0,
+      "answer": 108,
+      "expected_intermediates": {
+        "fact_1": "53",
+        "fact_2": "29",
+        "fact_3": "26",
+        "prefix_sum_12": "82",
+        "sum": "108"
+      },
+      "fact_phrase_1": "the atomic number of Iodine",
+      "fact_value_1": 53,
+      "fact_phrase_2": "the atomic number of Copper",
+      "fact_value_2": 29,
+      "fact_phrase_3": "the atomic number of Iron",
+      "fact_value_3": 26,
+      "highlight_forms": {
+        "fact_1": [
+          "53"
+        ],
+        "fact_2": [
+          "29"
+        ],
+        "fact_3": [
+          "26"
+        ],
+        "prefix_sum_12": [
+          "82"
+        ],
+        "sum": [
+          "108"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g09_p1",
+      "permutation_group": 9,
+      "cyclic_permutation": 1,
+      "answer": 108,
+      "expected_intermediates": {
+        "fact_1": "29",
+        "fact_2": "26",
+        "fact_3": "53",
+        "prefix_sum_12": "55",
+        "sum": "108"
+      },
+      "fact_phrase_1": "the atomic number of Copper",
+      "fact_value_1": 29,
+      "fact_phrase_2": "the atomic number of Iron",
+      "fact_value_2": 26,
+      "fact_phrase_3": "the atomic number of Iodine",
+      "fact_value_3": 53,
+      "highlight_forms": {
+        "fact_1": [
+          "29"
+        ],
+        "fact_2": [
+          "26"
+        ],
+        "fact_3": [
+          "53"
+        ],
+        "prefix_sum_12": [
+          "55"
+        ],
+        "sum": [
+          "108"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g09_p2",
+      "permutation_group": 9,
+      "cyclic_permutation": 2,
+      "answer": 108,
+      "expected_intermediates": {
+        "fact_1": "26",
+        "fact_2": "53",
+        "fact_3": "29",
+        "prefix_sum_12": "79",
+        "sum": "108"
+      },
+      "fact_phrase_1": "the atomic number of Iron",
+      "fact_value_1": 26,
+      "fact_phrase_2": "the atomic number of Iodine",
+      "fact_value_2": 53,
+      "fact_phrase_3": "the atomic number of Copper",
+      "fact_value_3": 29,
+      "highlight_forms": {
+        "fact_1": [
+          "26"
+        ],
+        "fact_2": [
+          "53"
+        ],
+        "fact_3": [
+          "29"
+        ],
+        "prefix_sum_12": [
+          "79"
+        ],
+        "sum": [
+          "108"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g10_p0",
+      "permutation_group": 10,
+      "cyclic_permutation": 0,
+      "answer": 183,
+      "expected_intermediates": {
+        "fact_1": "67",
+        "fact_2": "70",
+        "fact_3": "46",
+        "prefix_sum_12": "137",
+        "sum": "183"
+      },
+      "fact_phrase_1": "the atomic number of Holmium",
+      "fact_value_1": 67,
+      "fact_phrase_2": "the atomic number of Ytterbium",
+      "fact_value_2": 70,
+      "fact_phrase_3": "the atomic number of Palladium",
+      "fact_value_3": 46,
+      "highlight_forms": {
+        "fact_1": [
+          "67"
+        ],
+        "fact_2": [
+          "70"
+        ],
+        "fact_3": [
+          "46"
+        ],
+        "prefix_sum_12": [
+          "137"
+        ],
+        "sum": [
+          "183"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g10_p1",
+      "permutation_group": 10,
+      "cyclic_permutation": 1,
+      "answer": 183,
+      "expected_intermediates": {
+        "fact_1": "70",
+        "fact_2": "46",
+        "fact_3": "67",
+        "prefix_sum_12": "116",
+        "sum": "183"
+      },
+      "fact_phrase_1": "the atomic number of Ytterbium",
+      "fact_value_1": 70,
+      "fact_phrase_2": "the atomic number of Palladium",
+      "fact_value_2": 46,
+      "fact_phrase_3": "the atomic number of Holmium",
+      "fact_value_3": 67,
+      "highlight_forms": {
+        "fact_1": [
+          "70"
+        ],
+        "fact_2": [
+          "46"
+        ],
+        "fact_3": [
+          "67"
+        ],
+        "prefix_sum_12": [
+          "116"
+        ],
+        "sum": [
+          "183"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g10_p2",
+      "permutation_group": 10,
+      "cyclic_permutation": 2,
+      "answer": 183,
+      "expected_intermediates": {
+        "fact_1": "46",
+        "fact_2": "67",
+        "fact_3": "70",
+        "prefix_sum_12": "113",
+        "sum": "183"
+      },
+      "fact_phrase_1": "the atomic number of Palladium",
+      "fact_value_1": 46,
+      "fact_phrase_2": "the atomic number of Holmium",
+      "fact_value_2": 67,
+      "fact_phrase_3": "the atomic number of Ytterbium",
+      "fact_value_3": 70,
+      "highlight_forms": {
+        "fact_1": [
+          "46"
+        ],
+        "fact_2": [
+          "67"
+        ],
+        "fact_3": [
+          "70"
+        ],
+        "prefix_sum_12": [
+          "113"
+        ],
+        "sum": [
+          "183"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g11_p0",
+      "permutation_group": 11,
+      "cyclic_permutation": 0,
+      "answer": 70,
+      "expected_intermediates": {
+        "fact_1": "4",
+        "fact_2": "54",
+        "fact_3": "12",
+        "prefix_sum_12": "58",
+        "sum": "70"
+      },
+      "fact_phrase_1": "the atomic number of Beryllium",
+      "fact_value_1": 4,
+      "fact_phrase_2": "the atomic number of Xenon",
+      "fact_value_2": 54,
+      "fact_phrase_3": "the atomic number of Magnesium",
+      "fact_value_3": 12,
+      "highlight_forms": {
+        "fact_1": [
+          "4"
+        ],
+        "fact_2": [
+          "54"
+        ],
+        "fact_3": [
+          "12"
+        ],
+        "prefix_sum_12": [
+          "58"
+        ],
+        "sum": [
+          "70"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g11_p1",
+      "permutation_group": 11,
+      "cyclic_permutation": 1,
+      "answer": 70,
+      "expected_intermediates": {
+        "fact_1": "54",
+        "fact_2": "12",
+        "fact_3": "4",
+        "prefix_sum_12": "66",
+        "sum": "70"
+      },
+      "fact_phrase_1": "the atomic number of Xenon",
+      "fact_value_1": 54,
+      "fact_phrase_2": "the atomic number of Magnesium",
+      "fact_value_2": 12,
+      "fact_phrase_3": "the atomic number of Beryllium",
+      "fact_value_3": 4,
+      "highlight_forms": {
+        "fact_1": [
+          "54"
+        ],
+        "fact_2": [
+          "12"
+        ],
+        "fact_3": [
+          "4"
+        ],
+        "prefix_sum_12": [
+          "66"
+        ],
+        "sum": [
+          "70"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g11_p2",
+      "permutation_group": 11,
+      "cyclic_permutation": 2,
+      "answer": 70,
+      "expected_intermediates": {
+        "fact_1": "12",
+        "fact_2": "4",
+        "fact_3": "54",
+        "prefix_sum_12": "16",
+        "sum": "70"
+      },
+      "fact_phrase_1": "the atomic number of Magnesium",
+      "fact_value_1": 12,
+      "fact_phrase_2": "the atomic number of Beryllium",
+      "fact_value_2": 4,
+      "fact_phrase_3": "the atomic number of Xenon",
+      "fact_value_3": 54,
+      "highlight_forms": {
+        "fact_1": [
+          "12"
+        ],
+        "fact_2": [
+          "4"
+        ],
+        "fact_3": [
+          "54"
+        ],
+        "prefix_sum_12": [
+          "16"
+        ],
+        "sum": [
+          "70"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g12_p0",
+      "permutation_group": 12,
+      "cyclic_permutation": 0,
+      "answer": 98,
+      "expected_intermediates": {
+        "fact_1": "56",
+        "fact_2": "39",
+        "fact_3": "3",
+        "prefix_sum_12": "95",
+        "sum": "98"
+      },
+      "fact_phrase_1": "the atomic number of Barium",
+      "fact_value_1": 56,
+      "fact_phrase_2": "the atomic number of Yttrium",
+      "fact_value_2": 39,
+      "fact_phrase_3": "the atomic number of Lithium",
+      "fact_value_3": 3,
+      "highlight_forms": {
+        "fact_1": [
+          "56"
+        ],
+        "fact_2": [
+          "39"
+        ],
+        "fact_3": [
+          "3"
+        ],
+        "prefix_sum_12": [
+          "95"
+        ],
+        "sum": [
+          "98"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g12_p1",
+      "permutation_group": 12,
+      "cyclic_permutation": 1,
+      "answer": 98,
+      "expected_intermediates": {
+        "fact_1": "39",
+        "fact_2": "3",
+        "fact_3": "56",
+        "prefix_sum_12": "42",
+        "sum": "98"
+      },
+      "fact_phrase_1": "the atomic number of Yttrium",
+      "fact_value_1": 39,
+      "fact_phrase_2": "the atomic number of Lithium",
+      "fact_value_2": 3,
+      "fact_phrase_3": "the atomic number of Barium",
+      "fact_value_3": 56,
+      "highlight_forms": {
+        "fact_1": [
+          "39"
+        ],
+        "fact_2": [
+          "3"
+        ],
+        "fact_3": [
+          "56"
+        ],
+        "prefix_sum_12": [
+          "42"
+        ],
+        "sum": [
+          "98"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g12_p2",
+      "permutation_group": 12,
+      "cyclic_permutation": 2,
+      "answer": 98,
+      "expected_intermediates": {
+        "fact_1": "3",
+        "fact_2": "56",
+        "fact_3": "39",
+        "prefix_sum_12": "59",
+        "sum": "98"
+      },
+      "fact_phrase_1": "the atomic number of Lithium",
+      "fact_value_1": 3,
+      "fact_phrase_2": "the atomic number of Barium",
+      "fact_value_2": 56,
+      "fact_phrase_3": "the atomic number of Yttrium",
+      "fact_value_3": 39,
+      "highlight_forms": {
+        "fact_1": [
+          "3"
+        ],
+        "fact_2": [
+          "56"
+        ],
+        "fact_3": [
+          "39"
+        ],
+        "prefix_sum_12": [
+          "59"
+        ],
+        "sum": [
+          "98"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g13_p0",
+      "permutation_group": 13,
+      "cyclic_permutation": 0,
+      "answer": 112,
+      "expected_intermediates": {
+        "fact_1": "78",
+        "fact_2": "11",
+        "fact_3": "23",
+        "prefix_sum_12": "89",
+        "sum": "112"
+      },
+      "fact_phrase_1": "the atomic number of Platinum",
+      "fact_value_1": 78,
+      "fact_phrase_2": "the atomic number of Sodium",
+      "fact_value_2": 11,
+      "fact_phrase_3": "the atomic number of Vanadium",
+      "fact_value_3": 23,
+      "highlight_forms": {
+        "fact_1": [
+          "78"
+        ],
+        "fact_2": [
+          "11"
+        ],
+        "fact_3": [
+          "23"
+        ],
+        "prefix_sum_12": [
+          "89"
+        ],
+        "sum": [
+          "112"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g13_p1",
+      "permutation_group": 13,
+      "cyclic_permutation": 1,
+      "answer": 112,
+      "expected_intermediates": {
+        "fact_1": "11",
+        "fact_2": "23",
+        "fact_3": "78",
+        "prefix_sum_12": "34",
+        "sum": "112"
+      },
+      "fact_phrase_1": "the atomic number of Sodium",
+      "fact_value_1": 11,
+      "fact_phrase_2": "the atomic number of Vanadium",
+      "fact_value_2": 23,
+      "fact_phrase_3": "the atomic number of Platinum",
+      "fact_value_3": 78,
+      "highlight_forms": {
+        "fact_1": [
+          "11"
+        ],
+        "fact_2": [
+          "23"
+        ],
+        "fact_3": [
+          "78"
+        ],
+        "prefix_sum_12": [
+          "34"
+        ],
+        "sum": [
+          "112"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g13_p2",
+      "permutation_group": 13,
+      "cyclic_permutation": 2,
+      "answer": 112,
+      "expected_intermediates": {
+        "fact_1": "23",
+        "fact_2": "78",
+        "fact_3": "11",
+        "prefix_sum_12": "101",
+        "sum": "112"
+      },
+      "fact_phrase_1": "the atomic number of Vanadium",
+      "fact_value_1": 23,
+      "fact_phrase_2": "the atomic number of Platinum",
+      "fact_value_2": 78,
+      "fact_phrase_3": "the atomic number of Sodium",
+      "fact_value_3": 11,
+      "highlight_forms": {
+        "fact_1": [
+          "23"
+        ],
+        "fact_2": [
+          "78"
+        ],
+        "fact_3": [
+          "11"
+        ],
+        "prefix_sum_12": [
+          "101"
+        ],
+        "sum": [
+          "112"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g14_p0",
+      "permutation_group": 14,
+      "cyclic_permutation": 0,
+      "answer": 119,
+      "expected_intermediates": {
+        "fact_1": "21",
+        "fact_2": "6",
+        "fact_3": "92",
+        "prefix_sum_12": "27",
+        "sum": "119"
+      },
+      "fact_phrase_1": "the atomic number of Scandium",
+      "fact_value_1": 21,
+      "fact_phrase_2": "the atomic number of Carbon",
+      "fact_value_2": 6,
+      "fact_phrase_3": "the atomic number of Uranium",
+      "fact_value_3": 92,
+      "highlight_forms": {
+        "fact_1": [
+          "21"
+        ],
+        "fact_2": [
+          "6"
+        ],
+        "fact_3": [
+          "92"
+        ],
+        "prefix_sum_12": [
+          "27"
+        ],
+        "sum": [
+          "119"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g14_p1",
+      "permutation_group": 14,
+      "cyclic_permutation": 1,
+      "answer": 119,
+      "expected_intermediates": {
+        "fact_1": "6",
+        "fact_2": "92",
+        "fact_3": "21",
+        "prefix_sum_12": "98",
+        "sum": "119"
+      },
+      "fact_phrase_1": "the atomic number of Carbon",
+      "fact_value_1": 6,
+      "fact_phrase_2": "the atomic number of Uranium",
+      "fact_value_2": 92,
+      "fact_phrase_3": "the atomic number of Scandium",
+      "fact_value_3": 21,
+      "highlight_forms": {
+        "fact_1": [
+          "6"
+        ],
+        "fact_2": [
+          "92"
+        ],
+        "fact_3": [
+          "21"
+        ],
+        "prefix_sum_12": [
+          "98"
+        ],
+        "sum": [
+          "119"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g14_p2",
+      "permutation_group": 14,
+      "cyclic_permutation": 2,
+      "answer": 119,
+      "expected_intermediates": {
+        "fact_1": "92",
+        "fact_2": "21",
+        "fact_3": "6",
+        "prefix_sum_12": "113",
+        "sum": "119"
+      },
+      "fact_phrase_1": "the atomic number of Uranium",
+      "fact_value_1": 92,
+      "fact_phrase_2": "the atomic number of Scandium",
+      "fact_value_2": 21,
+      "fact_phrase_3": "the atomic number of Carbon",
+      "fact_value_3": 6,
+      "highlight_forms": {
+        "fact_1": [
+          "92"
+        ],
+        "fact_2": [
+          "21"
+        ],
+        "fact_3": [
+          "6"
+        ],
+        "prefix_sum_12": [
+          "113"
+        ],
+        "sum": [
+          "119"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g15_p0",
+      "permutation_group": 15,
+      "cyclic_permutation": 0,
+      "answer": 252,
+      "expected_intermediates": {
+        "fact_1": "83",
+        "fact_2": "85",
+        "fact_3": "84",
+        "prefix_sum_12": "168",
+        "sum": "252"
+      },
+      "fact_phrase_1": "the atomic number of Bismuth",
+      "fact_value_1": 83,
+      "fact_phrase_2": "the atomic number of Astatine",
+      "fact_value_2": 85,
+      "fact_phrase_3": "the atomic number of Polonium",
+      "fact_value_3": 84,
+      "highlight_forms": {
+        "fact_1": [
+          "83"
+        ],
+        "fact_2": [
+          "85"
+        ],
+        "fact_3": [
+          "84"
+        ],
+        "prefix_sum_12": [
+          "168"
+        ],
+        "sum": [
+          "252"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g15_p1",
+      "permutation_group": 15,
+      "cyclic_permutation": 1,
+      "answer": 252,
+      "expected_intermediates": {
+        "fact_1": "85",
+        "fact_2": "84",
+        "fact_3": "83",
+        "prefix_sum_12": "169",
+        "sum": "252"
+      },
+      "fact_phrase_1": "the atomic number of Astatine",
+      "fact_value_1": 85,
+      "fact_phrase_2": "the atomic number of Polonium",
+      "fact_value_2": 84,
+      "fact_phrase_3": "the atomic number of Bismuth",
+      "fact_value_3": 83,
+      "highlight_forms": {
+        "fact_1": [
+          "85"
+        ],
+        "fact_2": [
+          "84"
+        ],
+        "fact_3": [
+          "83"
+        ],
+        "prefix_sum_12": [
+          "169"
+        ],
+        "sum": [
+          "252"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g15_p2",
+      "permutation_group": 15,
+      "cyclic_permutation": 2,
+      "answer": 252,
+      "expected_intermediates": {
+        "fact_1": "84",
+        "fact_2": "83",
+        "fact_3": "85",
+        "prefix_sum_12": "167",
+        "sum": "252"
+      },
+      "fact_phrase_1": "the atomic number of Polonium",
+      "fact_value_1": 84,
+      "fact_phrase_2": "the atomic number of Bismuth",
+      "fact_value_2": 83,
+      "fact_phrase_3": "the atomic number of Astatine",
+      "fact_value_3": 85,
+      "highlight_forms": {
+        "fact_1": [
+          "84"
+        ],
+        "fact_2": [
+          "83"
+        ],
+        "fact_3": [
+          "85"
+        ],
+        "prefix_sum_12": [
+          "167"
+        ],
+        "sum": [
+          "252"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g16_p0",
+      "permutation_group": 16,
+      "cyclic_permutation": 0,
+      "answer": 192,
+      "expected_intermediates": {
+        "fact_1": "43",
+        "fact_2": "62",
+        "fact_3": "87",
+        "prefix_sum_12": "105",
+        "sum": "192"
+      },
+      "fact_phrase_1": "the atomic number of Technetium",
+      "fact_value_1": 43,
+      "fact_phrase_2": "the atomic number of Samarium",
+      "fact_value_2": 62,
+      "fact_phrase_3": "the atomic number of Francium",
+      "fact_value_3": 87,
+      "highlight_forms": {
+        "fact_1": [
+          "43"
+        ],
+        "fact_2": [
+          "62"
+        ],
+        "fact_3": [
+          "87"
+        ],
+        "prefix_sum_12": [
+          "105"
+        ],
+        "sum": [
+          "192"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g16_p1",
+      "permutation_group": 16,
+      "cyclic_permutation": 1,
+      "answer": 192,
+      "expected_intermediates": {
+        "fact_1": "62",
+        "fact_2": "87",
+        "fact_3": "43",
+        "prefix_sum_12": "149",
+        "sum": "192"
+      },
+      "fact_phrase_1": "the atomic number of Samarium",
+      "fact_value_1": 62,
+      "fact_phrase_2": "the atomic number of Francium",
+      "fact_value_2": 87,
+      "fact_phrase_3": "the atomic number of Technetium",
+      "fact_value_3": 43,
+      "highlight_forms": {
+        "fact_1": [
+          "62"
+        ],
+        "fact_2": [
+          "87"
+        ],
+        "fact_3": [
+          "43"
+        ],
+        "prefix_sum_12": [
+          "149"
+        ],
+        "sum": [
+          "192"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g16_p2",
+      "permutation_group": 16,
+      "cyclic_permutation": 2,
+      "answer": 192,
+      "expected_intermediates": {
+        "fact_1": "87",
+        "fact_2": "43",
+        "fact_3": "62",
+        "prefix_sum_12": "130",
+        "sum": "192"
+      },
+      "fact_phrase_1": "the atomic number of Francium",
+      "fact_value_1": 87,
+      "fact_phrase_2": "the atomic number of Technetium",
+      "fact_value_2": 43,
+      "fact_phrase_3": "the atomic number of Samarium",
+      "fact_value_3": 62,
+      "highlight_forms": {
+        "fact_1": [
+          "87"
+        ],
+        "fact_2": [
+          "43"
+        ],
+        "fact_3": [
+          "62"
+        ],
+        "prefix_sum_12": [
+          "130"
+        ],
+        "sum": [
+          "192"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g17_p0",
+      "permutation_group": 17,
+      "cyclic_permutation": 0,
+      "answer": 62,
+      "expected_intermediates": {
+        "fact_1": "17",
+        "fact_2": "37",
+        "fact_3": "8",
+        "prefix_sum_12": "54",
+        "sum": "62"
+      },
+      "fact_phrase_1": "the atomic number of Chlorine",
+      "fact_value_1": 17,
+      "fact_phrase_2": "the atomic number of Rubidium",
+      "fact_value_2": 37,
+      "fact_phrase_3": "the atomic number of Oxygen",
+      "fact_value_3": 8,
+      "highlight_forms": {
+        "fact_1": [
+          "17"
+        ],
+        "fact_2": [
+          "37"
+        ],
+        "fact_3": [
+          "8"
+        ],
+        "prefix_sum_12": [
+          "54"
+        ],
+        "sum": [
+          "62"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g17_p1",
+      "permutation_group": 17,
+      "cyclic_permutation": 1,
+      "answer": 62,
+      "expected_intermediates": {
+        "fact_1": "37",
+        "fact_2": "8",
+        "fact_3": "17",
+        "prefix_sum_12": "45",
+        "sum": "62"
+      },
+      "fact_phrase_1": "the atomic number of Rubidium",
+      "fact_value_1": 37,
+      "fact_phrase_2": "the atomic number of Oxygen",
+      "fact_value_2": 8,
+      "fact_phrase_3": "the atomic number of Chlorine",
+      "fact_value_3": 17,
+      "highlight_forms": {
+        "fact_1": [
+          "37"
+        ],
+        "fact_2": [
+          "8"
+        ],
+        "fact_3": [
+          "17"
+        ],
+        "prefix_sum_12": [
+          "45"
+        ],
+        "sum": [
+          "62"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g17_p2",
+      "permutation_group": 17,
+      "cyclic_permutation": 2,
+      "answer": 62,
+      "expected_intermediates": {
+        "fact_1": "8",
+        "fact_2": "17",
+        "fact_3": "37",
+        "prefix_sum_12": "25",
+        "sum": "62"
+      },
+      "fact_phrase_1": "the atomic number of Oxygen",
+      "fact_value_1": 8,
+      "fact_phrase_2": "the atomic number of Chlorine",
+      "fact_value_2": 17,
+      "fact_phrase_3": "the atomic number of Rubidium",
+      "fact_value_3": 37,
+      "highlight_forms": {
+        "fact_1": [
+          "8"
+        ],
+        "fact_2": [
+          "17"
+        ],
+        "fact_3": [
+          "37"
+        ],
+        "prefix_sum_12": [
+          "25"
+        ],
+        "sum": [
+          "62"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g18_p0",
+      "permutation_group": 18,
+      "cyclic_permutation": 0,
+      "answer": 189,
+      "expected_intermediates": {
+        "fact_1": "94",
+        "fact_2": "14",
+        "fact_3": "81",
+        "prefix_sum_12": "108",
+        "sum": "189"
+      },
+      "fact_phrase_1": "the atomic number of Plutonium",
+      "fact_value_1": 94,
+      "fact_phrase_2": "the atomic number of Silicon",
+      "fact_value_2": 14,
+      "fact_phrase_3": "the atomic number of Thallium",
+      "fact_value_3": 81,
+      "highlight_forms": {
+        "fact_1": [
+          "94"
+        ],
+        "fact_2": [
+          "14"
+        ],
+        "fact_3": [
+          "81"
+        ],
+        "prefix_sum_12": [
+          "108"
+        ],
+        "sum": [
+          "189"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g18_p1",
+      "permutation_group": 18,
+      "cyclic_permutation": 1,
+      "answer": 189,
+      "expected_intermediates": {
+        "fact_1": "14",
+        "fact_2": "81",
+        "fact_3": "94",
+        "prefix_sum_12": "95",
+        "sum": "189"
+      },
+      "fact_phrase_1": "the atomic number of Silicon",
+      "fact_value_1": 14,
+      "fact_phrase_2": "the atomic number of Thallium",
+      "fact_value_2": 81,
+      "fact_phrase_3": "the atomic number of Plutonium",
+      "fact_value_3": 94,
+      "highlight_forms": {
+        "fact_1": [
+          "14"
+        ],
+        "fact_2": [
+          "81"
+        ],
+        "fact_3": [
+          "94"
+        ],
+        "prefix_sum_12": [
+          "95"
+        ],
+        "sum": [
+          "189"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g18_p2",
+      "permutation_group": 18,
+      "cyclic_permutation": 2,
+      "answer": 189,
+      "expected_intermediates": {
+        "fact_1": "81",
+        "fact_2": "94",
+        "fact_3": "14",
+        "prefix_sum_12": "175",
+        "sum": "189"
+      },
+      "fact_phrase_1": "the atomic number of Thallium",
+      "fact_value_1": 81,
+      "fact_phrase_2": "the atomic number of Plutonium",
+      "fact_value_2": 94,
+      "fact_phrase_3": "the atomic number of Silicon",
+      "fact_value_3": 14,
+      "highlight_forms": {
+        "fact_1": [
+          "81"
+        ],
+        "fact_2": [
+          "94"
+        ],
+        "fact_3": [
+          "14"
+        ],
+        "prefix_sum_12": [
+          "175"
+        ],
+        "sum": [
+          "189"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g19_p0",
+      "permutation_group": 19,
+      "cyclic_permutation": 0,
+      "answer": 124,
+      "expected_intermediates": {
+        "fact_1": "15",
+        "fact_2": "41",
+        "fact_3": "68",
+        "prefix_sum_12": "56",
+        "sum": "124"
+      },
+      "fact_phrase_1": "the atomic number of Phosphorus",
+      "fact_value_1": 15,
+      "fact_phrase_2": "the atomic number of Niobium",
+      "fact_value_2": 41,
+      "fact_phrase_3": "the atomic number of Erbium",
+      "fact_value_3": 68,
+      "highlight_forms": {
+        "fact_1": [
+          "15"
+        ],
+        "fact_2": [
+          "41"
+        ],
+        "fact_3": [
+          "68"
+        ],
+        "prefix_sum_12": [
+          "56"
+        ],
+        "sum": [
+          "124"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g19_p1",
+      "permutation_group": 19,
+      "cyclic_permutation": 1,
+      "answer": 124,
+      "expected_intermediates": {
+        "fact_1": "41",
+        "fact_2": "68",
+        "fact_3": "15",
+        "prefix_sum_12": "109",
+        "sum": "124"
+      },
+      "fact_phrase_1": "the atomic number of Niobium",
+      "fact_value_1": 41,
+      "fact_phrase_2": "the atomic number of Erbium",
+      "fact_value_2": 68,
+      "fact_phrase_3": "the atomic number of Phosphorus",
+      "fact_value_3": 15,
+      "highlight_forms": {
+        "fact_1": [
+          "41"
+        ],
+        "fact_2": [
+          "68"
+        ],
+        "fact_3": [
+          "15"
+        ],
+        "prefix_sum_12": [
+          "109"
+        ],
+        "sum": [
+          "124"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g19_p2",
+      "permutation_group": 19,
+      "cyclic_permutation": 2,
+      "answer": 124,
+      "expected_intermediates": {
+        "fact_1": "68",
+        "fact_2": "15",
+        "fact_3": "41",
+        "prefix_sum_12": "83",
+        "sum": "124"
+      },
+      "fact_phrase_1": "the atomic number of Erbium",
+      "fact_value_1": 68,
+      "fact_phrase_2": "the atomic number of Phosphorus",
+      "fact_value_2": 15,
+      "fact_phrase_3": "the atomic number of Niobium",
+      "fact_value_3": 41,
+      "highlight_forms": {
+        "fact_1": [
+          "68"
+        ],
+        "fact_2": [
+          "15"
+        ],
+        "fact_3": [
+          "41"
+        ],
+        "prefix_sum_12": [
+          "83"
+        ],
+        "sum": [
+          "124"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "seed": 42,
+  "task_type": "addition",
+  "filler_type": "dots",
+  "filler_length": 100,
+  "source": {
+    "repository": "https://github.com/kaleybrauer/filler-token-reasoning",
+    "revision": "4ba4c75d5d9f04248749ec46b8bed8661b746715",
+    "path": "data/2fact_addition_dataset.json",
+    "selection": "Behaviorally selected two_fact_0007 from the first 100 released examples",
+    "prompt_note": "Uses the paper PDF exact-count suffix, not the current repository main suffix. This example is wrong at k=0,1,5,10 and correct at k=25,50,100 in the fixed sweep."
+  },
+  "few_shot": [
+    {
+      "fact_phrase_1": "the atomic number of Helium",
+      "fact_value_1": 2,
+      "fact_phrase_2": "the atomic number of Neon",
+      "fact_value_2": 10,
+      "answer": 12
+    },
+    {
+      "fact_phrase_1": "the atomic number of Sulfur",
+      "fact_value_1": 16,
+      "fact_phrase_2": "the atomic number of Cobalt",
+      "fact_value_2": 27,
+      "answer": 43
+    },
+    {
+      "fact_phrase_1": "the atomic number of Selenium",
+      "fact_value_1": 34,
+      "fact_phrase_2": "the atomic number of Promethium",
+      "fact_value_2": 61,
+      "answer": 95
+    },
+    {
+      "fact_phrase_1": "the atomic number of Europium",
+      "fact_value_1": 63,
+      "fact_phrase_2": "the atomic number of Tantalum",
+      "fact_value_2": 73,
+      "answer": 136
+    },
+    {
+      "fact_phrase_1": "the atomic number of Rhenium",
+      "fact_value_1": 75,
+      "fact_phrase_2": "the atomic number of Protactinium",
+      "fact_value_2": 91,
+      "answer": 166
+    }
+  ],
+  "examples": [
+    {
+      "id": "two_fact_0007",
+      "fact_phrase_1": "the atomic number of Iridium",
+      "fact_value_1": 77,
+      "fact_phrase_2": "the atomic number of Antimony",
+      "fact_value_2": 51,
+      "answer": 128,
+      "expected_intermediates": {
+        "fact_1": "77",
+        "fact_2": "51",
+        "sum": "128"
+      },
+      "highlight_forms": {
+        "fact_1": ["77"],
+        "fact_2": ["51"],
+        "sum": ["128"]
+      }
+    }
+  ],
+  "sanity_prompts": [
+    {
+      "id": "capital",
+      "messages": [
+        {"role": "user", "content": "The capital of France is"}
+      ]
+    },
+    {
+      "id": "arithmetic",
+      "messages": [
+        {"role": "user", "content": "Complete with only the answer: 17 + 25 ="}
+      ]
+    },
+    {
+      "id": "chinese",
+      "messages": [
+        {"role": "user", "content": "用一个词回答：中国的首都是"}
+      ]
+    }
+  ]
+}

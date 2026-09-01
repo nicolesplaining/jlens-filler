@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "example_id": "varbind_scale_f05_kur_064",
+  "description": "Preselected cells for formal sparse nonnegative J-space decomposition. Choices cover correct, incorrect, competing-candidate, intermediate, and matched low-signal readout states.",
+  "sites": [
+    {
+      "id": "k05_l36_f02_correct_narrow",
+      "filler_length": 5,
+      "layer": 36,
+      "filler_ordinal": 2,
+      "expected_output": 235,
+      "reason": "Correct narrow-workspace regime: J-Lens answer 235 is rank 1 and sibling answer 185 is rank 16."
+    },
+    {
+      "id": "k10_l36_f02_wrong_sibling",
+      "filler_length": 10,
+      "layer": 36,
+      "filler_ordinal": 2,
+      "expected_output": 185,
+      "reason": "Incorrect regime: sibling-consistent answer 185 is rank 7 while requested answer 235 is rank 2608."
+    },
+    {
+      "id": "k25_l36_f10_requested_intermediates",
+      "filler_length": 25,
+      "layer": 36,
+      "filler_ordinal": 10,
+      "expected_output": 185,
+      "reason": "Incorrect output despite a clean requested route: bound 125 is rank 1 and product 250 is rank 2."
+    },
+    {
+      "id": "k25_l38_f21_wrong_answer",
+      "filler_length": 25,
+      "layer": 38,
+      "filler_ordinal": 21,
+      "expected_output": 185,
+      "reason": "Incorrect regime answer state: sibling answer 185 is rank 1 and requested answer 235 is rank 26."
+    },
+    {
+      "id": "k50_l31_f14_joint_candidates",
+      "filler_length": 50,
+      "layer": 31,
+      "filler_ordinal": 14,
+      "expected_output": 235,
+      "reason": "Correct regime with both candidates in one readout: requested 235 is rank 1 and sibling 185 is rank 2."
+    },
+    {
+      "id": "k50_l31_f25_same_layer_control",
+      "filler_length": 50,
+      "layer": 31,
+      "filler_ordinal": 25,
+      "expected_output": 235,
+      "reason": "Same prompt and layer as the joint-candidate cell, but a nonselected filler destination."
+    },
+    {
+      "id": "k50_l33_f43_requested_product",
+      "filler_length": 50,
+      "layer": 33,
+      "filler_ordinal": 43,
+      "expected_output": 235,
+      "reason": "Correct requested-route intermediate: product 250 is J-Lens rank 1."
+    },
+    {
+      "id": "k50_l15_f14_early_control",
+      "filler_length": 50,
+      "layer": 15,
+      "filler_ordinal": 14,
+      "expected_output": 235,
+      "reason": "Same prompt and position as the joint-candidate cell before the observed workspace band."
+    },
+    {
+      "id": "k100_l33_f19_requested_product",
+      "filler_length": 100,
+      "layer": 33,
+      "filler_ordinal": 19,
+      "expected_output": 235,
+      "reason": "Wide correct-workspace regime: requested product 250 is J-Lens rank 1."
+    },
+    {
+      "id": "k100_l36_f19_joint_candidates",
+      "filler_length": 100,
+      "layer": 36,
+      "filler_ordinal": 19,
+      "expected_output": 235,
+      "reason": "Wide correct-workspace regime with requested answer 235 rank 1 and sibling answer 185 rank 2."
+    }
+  ]
+}

@@ -1,0 +1,410 @@
+{
+  "seed": 42,
+  "task_type": "variable_binding",
+  "filler_type": "dots",
+  "filler_lengths": [
+    0,
+    5,
+    10,
+    25,
+    50,
+    100
+  ],
+  "source": {
+    "repository": "https://github.com/kaleybrauer/filler-token-reasoning",
+    "revision": "4ba4c75d5d9f04248749ec46b8bed8661b746715",
+    "path": "data/chained_var_binding_easy_dataset.json",
+    "selection": "6 independent templates rescued by k=50; 8 exact-structure numeric counterfactuals per template; singled out varbind_scale_f05_kur_064 at all configured positive filler lengths for a dot-count resonance readout, plus one collision-free shuffled-value control",
+    "probe_rationale": "Behavior-gate independent variable-binding templates before any representational or causal analysis.",
+    "families": [
+      {
+        "family": 0,
+        "source_template_id": "varbind_heldout_0052",
+        "varied_term": "xal",
+        "original_value": 79
+      },
+      {
+        "family": 1,
+        "source_template_id": "varbind_heldout_0053",
+        "varied_term": "mul",
+        "original_value": 75
+      },
+      {
+        "family": 2,
+        "source_template_id": "varbind_heldout_0055",
+        "varied_term": "diz",
+        "original_value": 31
+      },
+      {
+        "family": 3,
+        "source_template_id": "varbind_heldout_0057",
+        "varied_term": "riw",
+        "original_value": 97
+      },
+      {
+        "family": 4,
+        "source_template_id": "varbind_heldout_0059",
+        "varied_term": "kik",
+        "original_value": 63
+      },
+      {
+        "family": 5,
+        "source_template_id": "varbind_heldout_0060",
+        "varied_term": "kur",
+        "original_value": 99
+      }
+    ],
+    "prompt_note": "Within a family, only the numeric literal feeding the queried variable changes. Exact one-token layout is checked after official DeepSeek encoding.",
+    "primary_example_id": "varbind_scale_f05_kur_064"
+  },
+  "sanity_prompts": [
+    {
+      "id": "capital",
+      "messages": [
+        {
+          "role": "user",
+          "content": "The capital of France is"
+        }
+      ]
+    },
+    {
+      "id": "arithmetic",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Complete with only the answer: 17 + 25 ="
+        }
+      ]
+    },
+    {
+      "id": "chinese",
+      "messages": [
+        {
+          "role": "user",
+          "content": "用一个词回答：中国的首都是"
+        }
+      ]
+    }
+  ],
+  "few_shot": [
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "zab",
+          45
+        ],
+        [
+          "piy",
+          43
+        ],
+        [
+          "xoc",
+          "twice the number for zab plus 7"
+        ],
+        [
+          "lej",
+          "twice the number for zab plus 3"
+        ],
+        [
+          "kox",
+          45
+        ]
+      ],
+      "queried_term": "xoc",
+      "queried_value": 97,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 18,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xoc minus 18?",
+      "answer": 176
+    },
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "cem",
+          20
+        ],
+        [
+          "pij",
+          "twice the number for cem plus 20"
+        ],
+        [
+          "kes",
+          "twice the number for pij minus 30"
+        ],
+        [
+          "kaq",
+          "twice the number for cem minus 21"
+        ],
+        [
+          "ciq",
+          "twice the number for kaq plus 7"
+        ]
+      ],
+      "queried_term": "kaq",
+      "queried_value": 19,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 21,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for kaq plus 21?",
+      "answer": 59
+    },
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "gew",
+          78
+        ],
+        [
+          "xop",
+          "twice the number for gew plus 17"
+        ],
+        [
+          "doq",
+          "twice the number for gew minus 18"
+        ],
+        [
+          "ful",
+          "twice the number for gew plus 10"
+        ],
+        [
+          "biv",
+          "twice the number for ful plus 28"
+        ]
+      ],
+      "queried_term": "xop",
+      "queried_value": 173,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xop plus 5?",
+      "answer": 351
+    },
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "mec",
+          40
+        ],
+        [
+          "xad",
+          "twice the number for mec plus 25"
+        ],
+        [
+          "gow",
+          "twice the number for mec minus 17"
+        ],
+        [
+          "juj",
+          "twice the number for xad minus 22"
+        ],
+        [
+          "vof",
+          "twice the number for juj plus 3"
+        ]
+      ],
+      "queried_term": "xad",
+      "queried_value": 105,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 19,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xad plus 19?",
+      "answer": 229
+    },
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "kac",
+          52
+        ],
+        [
+          "duk",
+          "twice the number for kac minus 7"
+        ],
+        [
+          "jaf",
+          "twice the number for duk minus 14"
+        ],
+        [
+          "cac",
+          "twice the number for jaf minus 26"
+        ],
+        [
+          "zub",
+          "twice the number for duk plus 6"
+        ]
+      ],
+      "queried_term": "duk",
+      "queried_value": 97,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 16,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for duk minus 16?",
+      "answer": 178
+    }
+  ],
+  "examples": [
+    {
+      "idx": "varbind_scale_f05_kur_064",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "qin",
+          67
+        ],
+        [
+          "xag",
+          23
+        ],
+        [
+          "kur",
+          64
+        ],
+        [
+          "rek",
+          "twice the number for kur minus 28"
+        ],
+        [
+          "xav",
+          "twice the number for kur minus 3"
+        ]
+      ],
+      "queried_term": "xav",
+      "queried_value": 125,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 15,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xav minus 15?",
+      "answer": 235,
+      "id": "varbind_scale_f05_kur_064",
+      "expected_intermediates": {
+        "base_value": "64",
+        "first_product": "128",
+        "bound_value": "125",
+        "second_product": "250",
+        "answer": "235"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "64"
+        ],
+        "first_product": [
+          "128"
+        ],
+        "bound_value": [
+          "125"
+        ],
+        "second_product": [
+          "250"
+        ],
+        "answer": [
+          "235"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0060",
+      "counterfactual_family": 5,
+      "varied_term": "kur",
+      "varied_value": 64,
+      "tracked_controls": {
+        "control_base_value": "52",
+        "control_first_product": "104",
+        "control_bound_value": "118",
+        "control_second_product": "236",
+        "control_answer": "255",
+        "distractor_bound": "100",
+        "distractor_second_product": "200",
+        "distractor_answer": "185"
+      },
+      "control_donor_id": "varbind_scale_f00_xal_052"
+    },
+    {
+      "idx": "varbind_scale_f00_xal_052",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "zem",
+          14
+        ],
+        [
+          "yoh",
+          "twice the number for zem plus 27"
+        ],
+        [
+          "xal",
+          52
+        ],
+        [
+          "puc",
+          "twice the number for xal plus 14"
+        ],
+        [
+          "dof",
+          "twice the number for puc plus 26"
+        ]
+      ],
+      "queried_term": "puc",
+      "queried_value": 118,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 19,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for puc plus 19?",
+      "answer": 255,
+      "id": "varbind_scale_f00_xal_052",
+      "expected_intermediates": {
+        "base_value": "52",
+        "first_product": "104",
+        "bound_value": "118",
+        "second_product": "236",
+        "answer": "255"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "52"
+        ],
+        "first_product": [
+          "104"
+        ],
+        "bound_value": [
+          "118"
+        ],
+        "second_product": [
+          "236"
+        ],
+        "answer": [
+          "255"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0052",
+      "counterfactual_family": 0,
+      "varied_term": "xal",
+      "varied_value": 52,
+      "tracked_controls": {
+        "control_base_value": "64",
+        "control_first_product": "128",
+        "control_bound_value": "125",
+        "control_second_product": "250",
+        "control_answer": "235"
+      },
+      "control_donor_id": "varbind_scale_f05_kur_064"
+    }
+  ]
+}

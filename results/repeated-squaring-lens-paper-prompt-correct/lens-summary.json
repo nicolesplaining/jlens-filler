@@ -1,0 +1,105 @@
+{
+  "examples": [
+    {
+      "id": "repeated_squaring_n407_x30_t4",
+      "selection_reason": "Dots-only correct T=4 case.",
+      "time_steps": 4,
+      "expected_answer": 256,
+      "dots_answer": 256,
+      "dots_correct": true,
+      "no_dots_answer": 16,
+      "no_dots_correct": false,
+      "closure_max_absolute_error": 0.0
+    }
+  ],
+  "comparison": {
+    "target_instances": 4,
+    "j_lens_better": 1,
+    "logit_lens_better": 3,
+    "tied": 0,
+    "j_lens_top_10": 0,
+    "logit_lens_top_10": 0
+  },
+  "records": [
+    {
+      "example_id": "repeated_squaring_n407_x30_t4",
+      "time_steps": 4,
+      "target": "x_1",
+      "surface": "86",
+      "method": "j_lens",
+      "best_rank": 80,
+      "best_layer": 35,
+      "best_filler_position": 1
+    },
+    {
+      "example_id": "repeated_squaring_n407_x30_t4",
+      "time_steps": 4,
+      "target": "x_1",
+      "surface": "86",
+      "method": "logit_lens",
+      "best_rank": 151,
+      "best_layer": 41,
+      "best_filler_position": 10
+    },
+    {
+      "example_id": "repeated_squaring_n407_x30_t4",
+      "time_steps": 4,
+      "target": "x_2",
+      "surface": "70",
+      "method": "j_lens",
+      "best_rank": 302,
+      "best_layer": 27,
+      "best_filler_position": 7
+    },
+    {
+      "example_id": "repeated_squaring_n407_x30_t4",
+      "time_steps": 4,
+      "target": "x_2",
+      "surface": "70",
+      "method": "logit_lens",
+      "best_rank": 118,
+      "best_layer": 5,
+      "best_filler_position": 1
+    },
+    {
+      "example_id": "repeated_squaring_n407_x30_t4",
+      "time_steps": 4,
+      "target": "x_3",
+      "surface": "16",
+      "method": "j_lens",
+      "best_rank": 341,
+      "best_layer": 35,
+      "best_filler_position": 1
+    },
+    {
+      "example_id": "repeated_squaring_n407_x30_t4",
+      "time_steps": 4,
+      "target": "x_3",
+      "surface": "16",
+      "method": "logit_lens",
+      "best_rank": 170,
+      "best_layer": 35,
+      "best_filler_position": 1
+    },
+    {
+      "example_id": "repeated_squaring_n407_x30_t4",
+      "time_steps": 4,
+      "target": "x_4",
+      "surface": "256",
+      "method": "j_lens",
+      "best_rank": 362,
+      "best_layer": 40,
+      "best_filler_position": 10
+    },
+    {
+      "example_id": "repeated_squaring_n407_x30_t4",
+      "time_steps": 4,
+      "target": "x_4",
+      "surface": "256",
+      "method": "logit_lens",
+      "best_rank": 183,
+      "best_layer": 40,
+      "best_filler_position": 10
+    }
+  ]
+}

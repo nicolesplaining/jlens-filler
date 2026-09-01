@@ -1,0 +1,307 @@
+{
+  "overall": {
+    "by_length": {
+      "0": {
+        "n": 36,
+        "correct": 34,
+        "accuracy": 0.9444444444444444,
+        "mrr": 0.9606481481481483,
+        "recall_at_1": 0.9444444444444444,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "5": {
+        "n": 36,
+        "correct": 33,
+        "accuracy": 0.9166666666666666,
+        "mrr": 0.9537037037037037,
+        "recall_at_1": 0.9166666666666666,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "10": {
+        "n": 36,
+        "correct": 34,
+        "accuracy": 0.9444444444444444,
+        "mrr": 0.9675925925925927,
+        "recall_at_1": 0.9444444444444444,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "25": {
+        "n": 36,
+        "correct": 33,
+        "accuracy": 0.9166666666666666,
+        "mrr": 0.9537037037037037,
+        "recall_at_1": 0.9166666666666666,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "50": {
+        "n": 36,
+        "correct": 34,
+        "accuracy": 0.9444444444444444,
+        "mrr": 0.9722222222222222,
+        "recall_at_1": 0.9444444444444444,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      }
+    },
+    "paired_vs_k0": {
+      "5": {
+        "helped_count": 0,
+        "hurt_count": 1,
+        "net_correct": -1,
+        "helped_ids": [],
+        "hurt_ids": [
+          "branch_varbind_016"
+        ],
+        "mean_log10_rank_gain": 0.0,
+        "largest_rank_gain_ids": [
+          "branch_varbind_018",
+          "branch_varbind_035",
+          "branch_varbind_034",
+          "branch_varbind_033",
+          "branch_varbind_032",
+          "branch_varbind_031",
+          "branch_varbind_030",
+          "branch_varbind_029",
+          "branch_varbind_028",
+          "branch_varbind_027"
+        ]
+      },
+      "10": {
+        "helped_count": 1,
+        "hurt_count": 1,
+        "net_correct": 0,
+        "helped_ids": [
+          "branch_varbind_018"
+        ],
+        "hurt_ids": [
+          "branch_varbind_030"
+        ],
+        "mean_log10_rank_gain": 0.008361944323999478,
+        "largest_rank_gain_ids": [
+          "branch_varbind_018",
+          "branch_varbind_035",
+          "branch_varbind_034",
+          "branch_varbind_033",
+          "branch_varbind_032",
+          "branch_varbind_031",
+          "branch_varbind_029",
+          "branch_varbind_028",
+          "branch_varbind_027",
+          "branch_varbind_026"
+        ]
+      },
+      "25": {
+        "helped_count": 1,
+        "hurt_count": 2,
+        "net_correct": -1,
+        "helped_ids": [
+          "branch_varbind_018"
+        ],
+        "hurt_ids": [
+          "branch_varbind_027",
+          "branch_varbind_030"
+        ],
+        "mean_log10_rank_gain": 0.0,
+        "largest_rank_gain_ids": [
+          "branch_varbind_018",
+          "branch_varbind_026",
+          "branch_varbind_035",
+          "branch_varbind_034",
+          "branch_varbind_033",
+          "branch_varbind_032",
+          "branch_varbind_031",
+          "branch_varbind_029",
+          "branch_varbind_028",
+          "branch_varbind_025"
+        ]
+      },
+      "50": {
+        "helped_count": 1,
+        "hurt_count": 1,
+        "net_correct": 0,
+        "helped_ids": [
+          "branch_varbind_018"
+        ],
+        "hurt_ids": [
+          "branch_varbind_030"
+        ],
+        "mean_log10_rank_gain": 0.01325336818665729,
+        "largest_rank_gain_ids": [
+          "branch_varbind_018",
+          "branch_varbind_026",
+          "branch_varbind_035",
+          "branch_varbind_034",
+          "branch_varbind_033",
+          "branch_varbind_032",
+          "branch_varbind_031",
+          "branch_varbind_029",
+          "branch_varbind_028",
+          "branch_varbind_027"
+        ]
+      }
+    }
+  },
+  "group_field": "topology",
+  "groups": {
+    "parallel_branches": {
+      "by_length": {
+        "0": {
+          "n": 36,
+          "correct": 34,
+          "accuracy": 0.9444444444444444,
+          "mrr": 0.9606481481481483,
+          "recall_at_1": 0.9444444444444444,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_50": 1.0
+        },
+        "5": {
+          "n": 36,
+          "correct": 33,
+          "accuracy": 0.9166666666666666,
+          "mrr": 0.9537037037037037,
+          "recall_at_1": 0.9166666666666666,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_50": 1.0
+        },
+        "10": {
+          "n": 36,
+          "correct": 34,
+          "accuracy": 0.9444444444444444,
+          "mrr": 0.9675925925925927,
+          "recall_at_1": 0.9444444444444444,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_50": 1.0
+        },
+        "25": {
+          "n": 36,
+          "correct": 33,
+          "accuracy": 0.9166666666666666,
+          "mrr": 0.9537037037037037,
+          "recall_at_1": 0.9166666666666666,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_50": 1.0
+        },
+        "50": {
+          "n": 36,
+          "correct": 34,
+          "accuracy": 0.9444444444444444,
+          "mrr": 0.9722222222222222,
+          "recall_at_1": 0.9444444444444444,
+          "recall_at_5": 1.0,
+          "recall_at_10": 1.0,
+          "recall_at_50": 1.0
+        }
+      },
+      "paired_vs_k0": {
+        "5": {
+          "helped_count": 0,
+          "hurt_count": 1,
+          "net_correct": -1,
+          "helped_ids": [],
+          "hurt_ids": [
+            "branch_varbind_016"
+          ],
+          "mean_log10_rank_gain": 0.0,
+          "largest_rank_gain_ids": [
+            "branch_varbind_018",
+            "branch_varbind_035",
+            "branch_varbind_034",
+            "branch_varbind_033",
+            "branch_varbind_032",
+            "branch_varbind_031",
+            "branch_varbind_030",
+            "branch_varbind_029",
+            "branch_varbind_028",
+            "branch_varbind_027"
+          ]
+        },
+        "10": {
+          "helped_count": 1,
+          "hurt_count": 1,
+          "net_correct": 0,
+          "helped_ids": [
+            "branch_varbind_018"
+          ],
+          "hurt_ids": [
+            "branch_varbind_030"
+          ],
+          "mean_log10_rank_gain": 0.008361944323999478,
+          "largest_rank_gain_ids": [
+            "branch_varbind_018",
+            "branch_varbind_035",
+            "branch_varbind_034",
+            "branch_varbind_033",
+            "branch_varbind_032",
+            "branch_varbind_031",
+            "branch_varbind_029",
+            "branch_varbind_028",
+            "branch_varbind_027",
+            "branch_varbind_026"
+          ]
+        },
+        "25": {
+          "helped_count": 1,
+          "hurt_count": 2,
+          "net_correct": -1,
+          "helped_ids": [
+            "branch_varbind_018"
+          ],
+          "hurt_ids": [
+            "branch_varbind_027",
+            "branch_varbind_030"
+          ],
+          "mean_log10_rank_gain": 0.0,
+          "largest_rank_gain_ids": [
+            "branch_varbind_018",
+            "branch_varbind_026",
+            "branch_varbind_035",
+            "branch_varbind_034",
+            "branch_varbind_033",
+            "branch_varbind_032",
+            "branch_varbind_031",
+            "branch_varbind_029",
+            "branch_varbind_028",
+            "branch_varbind_025"
+          ]
+        },
+        "50": {
+          "helped_count": 1,
+          "hurt_count": 1,
+          "net_correct": 0,
+          "helped_ids": [
+            "branch_varbind_018"
+          ],
+          "hurt_ids": [
+            "branch_varbind_030"
+          ],
+          "mean_log10_rank_gain": 0.01325336818665729,
+          "largest_rank_gain_ids": [
+            "branch_varbind_018",
+            "branch_varbind_026",
+            "branch_varbind_035",
+            "branch_varbind_034",
+            "branch_varbind_033",
+            "branch_varbind_032",
+            "branch_varbind_031",
+            "branch_varbind_029",
+            "branch_varbind_028",
+            "branch_varbind_027"
+          ]
+        }
+      }
+    }
+  }
+}

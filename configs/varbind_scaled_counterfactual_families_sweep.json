@@ -1,0 +1,3334 @@
+{
+  "seed": 42,
+  "task_type": "variable_binding",
+  "filler_type": "dots",
+  "filler_lengths": [
+    0,
+    5,
+    10,
+    25,
+    50,
+    100
+  ],
+  "source": {
+    "repository": "https://github.com/kaleybrauer/filler-token-reasoning",
+    "revision": "4ba4c75d5d9f04248749ec46b8bed8661b746715",
+    "path": "data/chained_var_binding_easy_dataset.json",
+    "selection": "6 independent templates rescued by k=50; 8 exact-structure numeric counterfactuals per template",
+    "probe_rationale": "Behavior-gate independent variable-binding templates before any representational or causal analysis.",
+    "families": [
+      {
+        "family": 0,
+        "source_template_id": "varbind_heldout_0052",
+        "varied_term": "xal",
+        "original_value": 79
+      },
+      {
+        "family": 1,
+        "source_template_id": "varbind_heldout_0053",
+        "varied_term": "mul",
+        "original_value": 75
+      },
+      {
+        "family": 2,
+        "source_template_id": "varbind_heldout_0055",
+        "varied_term": "diz",
+        "original_value": 31
+      },
+      {
+        "family": 3,
+        "source_template_id": "varbind_heldout_0057",
+        "varied_term": "riw",
+        "original_value": 97
+      },
+      {
+        "family": 4,
+        "source_template_id": "varbind_heldout_0059",
+        "varied_term": "kik",
+        "original_value": 63
+      },
+      {
+        "family": 5,
+        "source_template_id": "varbind_heldout_0060",
+        "varied_term": "kur",
+        "original_value": 99
+      }
+    ],
+    "prompt_note": "Within a family, only the numeric literal feeding the queried variable changes. Exact one-token layout is checked after official DeepSeek encoding."
+  },
+  "sanity_prompts": [
+    {
+      "id": "capital",
+      "messages": [
+        {
+          "role": "user",
+          "content": "The capital of France is"
+        }
+      ]
+    },
+    {
+      "id": "arithmetic",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Complete with only the answer: 17 + 25 ="
+        }
+      ]
+    },
+    {
+      "id": "chinese",
+      "messages": [
+        {
+          "role": "user",
+          "content": "用一个词回答：中国的首都是"
+        }
+      ]
+    }
+  ],
+  "few_shot": [
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "zab",
+          45
+        ],
+        [
+          "piy",
+          43
+        ],
+        [
+          "xoc",
+          "twice the number for zab plus 7"
+        ],
+        [
+          "lej",
+          "twice the number for zab plus 3"
+        ],
+        [
+          "kox",
+          45
+        ]
+      ],
+      "queried_term": "xoc",
+      "queried_value": 97,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 18,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xoc minus 18?",
+      "answer": 176
+    },
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "cem",
+          20
+        ],
+        [
+          "pij",
+          "twice the number for cem plus 20"
+        ],
+        [
+          "kes",
+          "twice the number for pij minus 30"
+        ],
+        [
+          "kaq",
+          "twice the number for cem minus 21"
+        ],
+        [
+          "ciq",
+          "twice the number for kaq plus 7"
+        ]
+      ],
+      "queried_term": "kaq",
+      "queried_value": 19,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 21,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for kaq plus 21?",
+      "answer": 59
+    },
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "gew",
+          78
+        ],
+        [
+          "xop",
+          "twice the number for gew plus 17"
+        ],
+        [
+          "doq",
+          "twice the number for gew minus 18"
+        ],
+        [
+          "ful",
+          "twice the number for gew plus 10"
+        ],
+        [
+          "biv",
+          "twice the number for ful plus 28"
+        ]
+      ],
+      "queried_term": "xop",
+      "queried_value": 173,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xop plus 5?",
+      "answer": 351
+    },
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "mec",
+          40
+        ],
+        [
+          "xad",
+          "twice the number for mec plus 25"
+        ],
+        [
+          "gow",
+          "twice the number for mec minus 17"
+        ],
+        [
+          "juj",
+          "twice the number for xad minus 22"
+        ],
+        [
+          "vof",
+          "twice the number for juj plus 3"
+        ]
+      ],
+      "queried_term": "xad",
+      "queried_value": 105,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 19,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xad plus 19?",
+      "answer": 229
+    },
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "kac",
+          52
+        ],
+        [
+          "duk",
+          "twice the number for kac minus 7"
+        ],
+        [
+          "jaf",
+          "twice the number for duk minus 14"
+        ],
+        [
+          "cac",
+          "twice the number for jaf minus 26"
+        ],
+        [
+          "zub",
+          "twice the number for duk plus 6"
+        ]
+      ],
+      "queried_term": "duk",
+      "queried_value": 97,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 16,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for duk minus 16?",
+      "answer": 178
+    }
+  ],
+  "examples": [
+    {
+      "idx": "varbind_scale_f00_xal_052",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "zem",
+          14
+        ],
+        [
+          "yoh",
+          "twice the number for zem plus 27"
+        ],
+        [
+          "xal",
+          52
+        ],
+        [
+          "puc",
+          "twice the number for xal plus 14"
+        ],
+        [
+          "dof",
+          "twice the number for puc plus 26"
+        ]
+      ],
+      "queried_term": "puc",
+      "queried_value": 118,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 19,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for puc plus 19?",
+      "answer": 255,
+      "id": "varbind_scale_f00_xal_052",
+      "expected_intermediates": {
+        "base_value": "52",
+        "first_product": "104",
+        "bound_value": "118",
+        "second_product": "236",
+        "answer": "255"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "52"
+        ],
+        "first_product": [
+          "104"
+        ],
+        "bound_value": [
+          "118"
+        ],
+        "second_product": [
+          "236"
+        ],
+        "answer": [
+          "255"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0052",
+      "counterfactual_family": 0,
+      "varied_term": "xal",
+      "varied_value": 52
+    },
+    {
+      "idx": "varbind_scale_f00_xal_056",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "zem",
+          14
+        ],
+        [
+          "yoh",
+          "twice the number for zem plus 27"
+        ],
+        [
+          "xal",
+          56
+        ],
+        [
+          "puc",
+          "twice the number for xal plus 14"
+        ],
+        [
+          "dof",
+          "twice the number for puc plus 26"
+        ]
+      ],
+      "queried_term": "puc",
+      "queried_value": 126,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 19,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for puc plus 19?",
+      "answer": 271,
+      "id": "varbind_scale_f00_xal_056",
+      "expected_intermediates": {
+        "base_value": "56",
+        "first_product": "112",
+        "bound_value": "126",
+        "second_product": "252",
+        "answer": "271"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "56"
+        ],
+        "first_product": [
+          "112"
+        ],
+        "bound_value": [
+          "126"
+        ],
+        "second_product": [
+          "252"
+        ],
+        "answer": [
+          "271"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0052",
+      "counterfactual_family": 0,
+      "varied_term": "xal",
+      "varied_value": 56
+    },
+    {
+      "idx": "varbind_scale_f00_xal_060",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "zem",
+          14
+        ],
+        [
+          "yoh",
+          "twice the number for zem plus 27"
+        ],
+        [
+          "xal",
+          60
+        ],
+        [
+          "puc",
+          "twice the number for xal plus 14"
+        ],
+        [
+          "dof",
+          "twice the number for puc plus 26"
+        ]
+      ],
+      "queried_term": "puc",
+      "queried_value": 134,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 19,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for puc plus 19?",
+      "answer": 287,
+      "id": "varbind_scale_f00_xal_060",
+      "expected_intermediates": {
+        "base_value": "60",
+        "first_product": "120",
+        "bound_value": "134",
+        "second_product": "268",
+        "answer": "287"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "60"
+        ],
+        "first_product": [
+          "120"
+        ],
+        "bound_value": [
+          "134"
+        ],
+        "second_product": [
+          "268"
+        ],
+        "answer": [
+          "287"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0052",
+      "counterfactual_family": 0,
+      "varied_term": "xal",
+      "varied_value": 60
+    },
+    {
+      "idx": "varbind_scale_f00_xal_064",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "zem",
+          14
+        ],
+        [
+          "yoh",
+          "twice the number for zem plus 27"
+        ],
+        [
+          "xal",
+          64
+        ],
+        [
+          "puc",
+          "twice the number for xal plus 14"
+        ],
+        [
+          "dof",
+          "twice the number for puc plus 26"
+        ]
+      ],
+      "queried_term": "puc",
+      "queried_value": 142,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 19,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for puc plus 19?",
+      "answer": 303,
+      "id": "varbind_scale_f00_xal_064",
+      "expected_intermediates": {
+        "base_value": "64",
+        "first_product": "128",
+        "bound_value": "142",
+        "second_product": "284",
+        "answer": "303"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "64"
+        ],
+        "first_product": [
+          "128"
+        ],
+        "bound_value": [
+          "142"
+        ],
+        "second_product": [
+          "284"
+        ],
+        "answer": [
+          "303"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0052",
+      "counterfactual_family": 0,
+      "varied_term": "xal",
+      "varied_value": 64
+    },
+    {
+      "idx": "varbind_scale_f00_xal_068",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "zem",
+          14
+        ],
+        [
+          "yoh",
+          "twice the number for zem plus 27"
+        ],
+        [
+          "xal",
+          68
+        ],
+        [
+          "puc",
+          "twice the number for xal plus 14"
+        ],
+        [
+          "dof",
+          "twice the number for puc plus 26"
+        ]
+      ],
+      "queried_term": "puc",
+      "queried_value": 150,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 19,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for puc plus 19?",
+      "answer": 319,
+      "id": "varbind_scale_f00_xal_068",
+      "expected_intermediates": {
+        "base_value": "68",
+        "first_product": "136",
+        "bound_value": "150",
+        "second_product": "300",
+        "answer": "319"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "68"
+        ],
+        "first_product": [
+          "136"
+        ],
+        "bound_value": [
+          "150"
+        ],
+        "second_product": [
+          "300"
+        ],
+        "answer": [
+          "319"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0052",
+      "counterfactual_family": 0,
+      "varied_term": "xal",
+      "varied_value": 68
+    },
+    {
+      "idx": "varbind_scale_f00_xal_072",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "zem",
+          14
+        ],
+        [
+          "yoh",
+          "twice the number for zem plus 27"
+        ],
+        [
+          "xal",
+          72
+        ],
+        [
+          "puc",
+          "twice the number for xal plus 14"
+        ],
+        [
+          "dof",
+          "twice the number for puc plus 26"
+        ]
+      ],
+      "queried_term": "puc",
+      "queried_value": 158,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 19,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for puc plus 19?",
+      "answer": 335,
+      "id": "varbind_scale_f00_xal_072",
+      "expected_intermediates": {
+        "base_value": "72",
+        "first_product": "144",
+        "bound_value": "158",
+        "second_product": "316",
+        "answer": "335"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "72"
+        ],
+        "first_product": [
+          "144"
+        ],
+        "bound_value": [
+          "158"
+        ],
+        "second_product": [
+          "316"
+        ],
+        "answer": [
+          "335"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0052",
+      "counterfactual_family": 0,
+      "varied_term": "xal",
+      "varied_value": 72
+    },
+    {
+      "idx": "varbind_scale_f00_xal_076",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "zem",
+          14
+        ],
+        [
+          "yoh",
+          "twice the number for zem plus 27"
+        ],
+        [
+          "xal",
+          76
+        ],
+        [
+          "puc",
+          "twice the number for xal plus 14"
+        ],
+        [
+          "dof",
+          "twice the number for puc plus 26"
+        ]
+      ],
+      "queried_term": "puc",
+      "queried_value": 166,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 19,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for puc plus 19?",
+      "answer": 351,
+      "id": "varbind_scale_f00_xal_076",
+      "expected_intermediates": {
+        "base_value": "76",
+        "first_product": "152",
+        "bound_value": "166",
+        "second_product": "332",
+        "answer": "351"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "76"
+        ],
+        "first_product": [
+          "152"
+        ],
+        "bound_value": [
+          "166"
+        ],
+        "second_product": [
+          "332"
+        ],
+        "answer": [
+          "351"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0052",
+      "counterfactual_family": 0,
+      "varied_term": "xal",
+      "varied_value": 76
+    },
+    {
+      "idx": "varbind_scale_f00_xal_080",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "zem",
+          14
+        ],
+        [
+          "yoh",
+          "twice the number for zem plus 27"
+        ],
+        [
+          "xal",
+          80
+        ],
+        [
+          "puc",
+          "twice the number for xal plus 14"
+        ],
+        [
+          "dof",
+          "twice the number for puc plus 26"
+        ]
+      ],
+      "queried_term": "puc",
+      "queried_value": 174,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 19,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for puc plus 19?",
+      "answer": 367,
+      "id": "varbind_scale_f00_xal_080",
+      "expected_intermediates": {
+        "base_value": "80",
+        "first_product": "160",
+        "bound_value": "174",
+        "second_product": "348",
+        "answer": "367"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "80"
+        ],
+        "first_product": [
+          "160"
+        ],
+        "bound_value": [
+          "174"
+        ],
+        "second_product": [
+          "348"
+        ],
+        "answer": [
+          "367"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0052",
+      "counterfactual_family": 0,
+      "varied_term": "xal",
+      "varied_value": 80
+    },
+    {
+      "idx": "varbind_scale_f01_mul_052",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "daq",
+          75
+        ],
+        [
+          "neq",
+          72
+        ],
+        [
+          "mul",
+          52
+        ],
+        [
+          "ciz",
+          "twice the number for mul plus 8"
+        ],
+        [
+          "ziz",
+          63
+        ]
+      ],
+      "queried_term": "ciz",
+      "queried_value": 112,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 15,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for ciz minus 15?",
+      "answer": 209,
+      "id": "varbind_scale_f01_mul_052",
+      "expected_intermediates": {
+        "base_value": "52",
+        "first_product": "104",
+        "bound_value": "112",
+        "second_product": "224",
+        "answer": "209"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "52"
+        ],
+        "first_product": [
+          "104"
+        ],
+        "bound_value": [
+          "112"
+        ],
+        "second_product": [
+          "224"
+        ],
+        "answer": [
+          "209"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0053",
+      "counterfactual_family": 1,
+      "varied_term": "mul",
+      "varied_value": 52
+    },
+    {
+      "idx": "varbind_scale_f01_mul_056",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "daq",
+          75
+        ],
+        [
+          "neq",
+          72
+        ],
+        [
+          "mul",
+          56
+        ],
+        [
+          "ciz",
+          "twice the number for mul plus 8"
+        ],
+        [
+          "ziz",
+          63
+        ]
+      ],
+      "queried_term": "ciz",
+      "queried_value": 120,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 15,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for ciz minus 15?",
+      "answer": 225,
+      "id": "varbind_scale_f01_mul_056",
+      "expected_intermediates": {
+        "base_value": "56",
+        "first_product": "112",
+        "bound_value": "120",
+        "second_product": "240",
+        "answer": "225"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "56"
+        ],
+        "first_product": [
+          "112"
+        ],
+        "bound_value": [
+          "120"
+        ],
+        "second_product": [
+          "240"
+        ],
+        "answer": [
+          "225"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0053",
+      "counterfactual_family": 1,
+      "varied_term": "mul",
+      "varied_value": 56
+    },
+    {
+      "idx": "varbind_scale_f01_mul_060",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "daq",
+          75
+        ],
+        [
+          "neq",
+          72
+        ],
+        [
+          "mul",
+          60
+        ],
+        [
+          "ciz",
+          "twice the number for mul plus 8"
+        ],
+        [
+          "ziz",
+          63
+        ]
+      ],
+      "queried_term": "ciz",
+      "queried_value": 128,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 15,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for ciz minus 15?",
+      "answer": 241,
+      "id": "varbind_scale_f01_mul_060",
+      "expected_intermediates": {
+        "base_value": "60",
+        "first_product": "120",
+        "bound_value": "128",
+        "second_product": "256",
+        "answer": "241"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "60"
+        ],
+        "first_product": [
+          "120"
+        ],
+        "bound_value": [
+          "128"
+        ],
+        "second_product": [
+          "256"
+        ],
+        "answer": [
+          "241"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0053",
+      "counterfactual_family": 1,
+      "varied_term": "mul",
+      "varied_value": 60
+    },
+    {
+      "idx": "varbind_scale_f01_mul_064",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "daq",
+          75
+        ],
+        [
+          "neq",
+          72
+        ],
+        [
+          "mul",
+          64
+        ],
+        [
+          "ciz",
+          "twice the number for mul plus 8"
+        ],
+        [
+          "ziz",
+          63
+        ]
+      ],
+      "queried_term": "ciz",
+      "queried_value": 136,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 15,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for ciz minus 15?",
+      "answer": 257,
+      "id": "varbind_scale_f01_mul_064",
+      "expected_intermediates": {
+        "base_value": "64",
+        "first_product": "128",
+        "bound_value": "136",
+        "second_product": "272",
+        "answer": "257"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "64"
+        ],
+        "first_product": [
+          "128"
+        ],
+        "bound_value": [
+          "136"
+        ],
+        "second_product": [
+          "272"
+        ],
+        "answer": [
+          "257"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0053",
+      "counterfactual_family": 1,
+      "varied_term": "mul",
+      "varied_value": 64
+    },
+    {
+      "idx": "varbind_scale_f01_mul_068",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "daq",
+          75
+        ],
+        [
+          "neq",
+          72
+        ],
+        [
+          "mul",
+          68
+        ],
+        [
+          "ciz",
+          "twice the number for mul plus 8"
+        ],
+        [
+          "ziz",
+          63
+        ]
+      ],
+      "queried_term": "ciz",
+      "queried_value": 144,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 15,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for ciz minus 15?",
+      "answer": 273,
+      "id": "varbind_scale_f01_mul_068",
+      "expected_intermediates": {
+        "base_value": "68",
+        "first_product": "136",
+        "bound_value": "144",
+        "second_product": "288",
+        "answer": "273"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "68"
+        ],
+        "first_product": [
+          "136"
+        ],
+        "bound_value": [
+          "144"
+        ],
+        "second_product": [
+          "288"
+        ],
+        "answer": [
+          "273"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0053",
+      "counterfactual_family": 1,
+      "varied_term": "mul",
+      "varied_value": 68
+    },
+    {
+      "idx": "varbind_scale_f01_mul_072",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "daq",
+          75
+        ],
+        [
+          "neq",
+          72
+        ],
+        [
+          "mul",
+          72
+        ],
+        [
+          "ciz",
+          "twice the number for mul plus 8"
+        ],
+        [
+          "ziz",
+          63
+        ]
+      ],
+      "queried_term": "ciz",
+      "queried_value": 152,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 15,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for ciz minus 15?",
+      "answer": 289,
+      "id": "varbind_scale_f01_mul_072",
+      "expected_intermediates": {
+        "base_value": "72",
+        "first_product": "144",
+        "bound_value": "152",
+        "second_product": "304",
+        "answer": "289"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "72"
+        ],
+        "first_product": [
+          "144"
+        ],
+        "bound_value": [
+          "152"
+        ],
+        "second_product": [
+          "304"
+        ],
+        "answer": [
+          "289"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0053",
+      "counterfactual_family": 1,
+      "varied_term": "mul",
+      "varied_value": 72
+    },
+    {
+      "idx": "varbind_scale_f01_mul_076",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "daq",
+          75
+        ],
+        [
+          "neq",
+          72
+        ],
+        [
+          "mul",
+          76
+        ],
+        [
+          "ciz",
+          "twice the number for mul plus 8"
+        ],
+        [
+          "ziz",
+          63
+        ]
+      ],
+      "queried_term": "ciz",
+      "queried_value": 160,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 15,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for ciz minus 15?",
+      "answer": 305,
+      "id": "varbind_scale_f01_mul_076",
+      "expected_intermediates": {
+        "base_value": "76",
+        "first_product": "152",
+        "bound_value": "160",
+        "second_product": "320",
+        "answer": "305"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "76"
+        ],
+        "first_product": [
+          "152"
+        ],
+        "bound_value": [
+          "160"
+        ],
+        "second_product": [
+          "320"
+        ],
+        "answer": [
+          "305"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0053",
+      "counterfactual_family": 1,
+      "varied_term": "mul",
+      "varied_value": 76
+    },
+    {
+      "idx": "varbind_scale_f01_mul_080",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "daq",
+          75
+        ],
+        [
+          "neq",
+          72
+        ],
+        [
+          "mul",
+          80
+        ],
+        [
+          "ciz",
+          "twice the number for mul plus 8"
+        ],
+        [
+          "ziz",
+          63
+        ]
+      ],
+      "queried_term": "ciz",
+      "queried_value": 168,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 15,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for ciz minus 15?",
+      "answer": 321,
+      "id": "varbind_scale_f01_mul_080",
+      "expected_intermediates": {
+        "base_value": "80",
+        "first_product": "160",
+        "bound_value": "168",
+        "second_product": "336",
+        "answer": "321"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "80"
+        ],
+        "first_product": [
+          "160"
+        ],
+        "bound_value": [
+          "168"
+        ],
+        "second_product": [
+          "336"
+        ],
+        "answer": [
+          "321"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0053",
+      "counterfactual_family": 1,
+      "varied_term": "mul",
+      "varied_value": 80
+    },
+    {
+      "idx": "varbind_scale_f02_diz_052",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "vub",
+          88
+        ],
+        [
+          "diz",
+          52
+        ],
+        [
+          "kod",
+          "twice the number for diz plus 11"
+        ],
+        [
+          "zaf",
+          "twice the number for diz plus 16"
+        ],
+        [
+          "xev",
+          97
+        ]
+      ],
+      "queried_term": "zaf",
+      "queried_value": 120,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 12,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for zaf minus 12?",
+      "answer": 228,
+      "id": "varbind_scale_f02_diz_052",
+      "expected_intermediates": {
+        "base_value": "52",
+        "first_product": "104",
+        "bound_value": "120",
+        "second_product": "240",
+        "answer": "228"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "52"
+        ],
+        "first_product": [
+          "104"
+        ],
+        "bound_value": [
+          "120"
+        ],
+        "second_product": [
+          "240"
+        ],
+        "answer": [
+          "228"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0055",
+      "counterfactual_family": 2,
+      "varied_term": "diz",
+      "varied_value": 52
+    },
+    {
+      "idx": "varbind_scale_f02_diz_056",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "vub",
+          88
+        ],
+        [
+          "diz",
+          56
+        ],
+        [
+          "kod",
+          "twice the number for diz plus 11"
+        ],
+        [
+          "zaf",
+          "twice the number for diz plus 16"
+        ],
+        [
+          "xev",
+          97
+        ]
+      ],
+      "queried_term": "zaf",
+      "queried_value": 128,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 12,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for zaf minus 12?",
+      "answer": 244,
+      "id": "varbind_scale_f02_diz_056",
+      "expected_intermediates": {
+        "base_value": "56",
+        "first_product": "112",
+        "bound_value": "128",
+        "second_product": "256",
+        "answer": "244"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "56"
+        ],
+        "first_product": [
+          "112"
+        ],
+        "bound_value": [
+          "128"
+        ],
+        "second_product": [
+          "256"
+        ],
+        "answer": [
+          "244"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0055",
+      "counterfactual_family": 2,
+      "varied_term": "diz",
+      "varied_value": 56
+    },
+    {
+      "idx": "varbind_scale_f02_diz_060",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "vub",
+          88
+        ],
+        [
+          "diz",
+          60
+        ],
+        [
+          "kod",
+          "twice the number for diz plus 11"
+        ],
+        [
+          "zaf",
+          "twice the number for diz plus 16"
+        ],
+        [
+          "xev",
+          97
+        ]
+      ],
+      "queried_term": "zaf",
+      "queried_value": 136,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 12,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for zaf minus 12?",
+      "answer": 260,
+      "id": "varbind_scale_f02_diz_060",
+      "expected_intermediates": {
+        "base_value": "60",
+        "first_product": "120",
+        "bound_value": "136",
+        "second_product": "272",
+        "answer": "260"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "60"
+        ],
+        "first_product": [
+          "120"
+        ],
+        "bound_value": [
+          "136"
+        ],
+        "second_product": [
+          "272"
+        ],
+        "answer": [
+          "260"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0055",
+      "counterfactual_family": 2,
+      "varied_term": "diz",
+      "varied_value": 60
+    },
+    {
+      "idx": "varbind_scale_f02_diz_064",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "vub",
+          88
+        ],
+        [
+          "diz",
+          64
+        ],
+        [
+          "kod",
+          "twice the number for diz plus 11"
+        ],
+        [
+          "zaf",
+          "twice the number for diz plus 16"
+        ],
+        [
+          "xev",
+          97
+        ]
+      ],
+      "queried_term": "zaf",
+      "queried_value": 144,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 12,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for zaf minus 12?",
+      "answer": 276,
+      "id": "varbind_scale_f02_diz_064",
+      "expected_intermediates": {
+        "base_value": "64",
+        "first_product": "128",
+        "bound_value": "144",
+        "second_product": "288",
+        "answer": "276"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "64"
+        ],
+        "first_product": [
+          "128"
+        ],
+        "bound_value": [
+          "144"
+        ],
+        "second_product": [
+          "288"
+        ],
+        "answer": [
+          "276"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0055",
+      "counterfactual_family": 2,
+      "varied_term": "diz",
+      "varied_value": 64
+    },
+    {
+      "idx": "varbind_scale_f02_diz_068",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "vub",
+          88
+        ],
+        [
+          "diz",
+          68
+        ],
+        [
+          "kod",
+          "twice the number for diz plus 11"
+        ],
+        [
+          "zaf",
+          "twice the number for diz plus 16"
+        ],
+        [
+          "xev",
+          97
+        ]
+      ],
+      "queried_term": "zaf",
+      "queried_value": 152,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 12,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for zaf minus 12?",
+      "answer": 292,
+      "id": "varbind_scale_f02_diz_068",
+      "expected_intermediates": {
+        "base_value": "68",
+        "first_product": "136",
+        "bound_value": "152",
+        "second_product": "304",
+        "answer": "292"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "68"
+        ],
+        "first_product": [
+          "136"
+        ],
+        "bound_value": [
+          "152"
+        ],
+        "second_product": [
+          "304"
+        ],
+        "answer": [
+          "292"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0055",
+      "counterfactual_family": 2,
+      "varied_term": "diz",
+      "varied_value": 68
+    },
+    {
+      "idx": "varbind_scale_f02_diz_072",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "vub",
+          88
+        ],
+        [
+          "diz",
+          72
+        ],
+        [
+          "kod",
+          "twice the number for diz plus 11"
+        ],
+        [
+          "zaf",
+          "twice the number for diz plus 16"
+        ],
+        [
+          "xev",
+          97
+        ]
+      ],
+      "queried_term": "zaf",
+      "queried_value": 160,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 12,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for zaf minus 12?",
+      "answer": 308,
+      "id": "varbind_scale_f02_diz_072",
+      "expected_intermediates": {
+        "base_value": "72",
+        "first_product": "144",
+        "bound_value": "160",
+        "second_product": "320",
+        "answer": "308"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "72"
+        ],
+        "first_product": [
+          "144"
+        ],
+        "bound_value": [
+          "160"
+        ],
+        "second_product": [
+          "320"
+        ],
+        "answer": [
+          "308"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0055",
+      "counterfactual_family": 2,
+      "varied_term": "diz",
+      "varied_value": 72
+    },
+    {
+      "idx": "varbind_scale_f02_diz_076",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "vub",
+          88
+        ],
+        [
+          "diz",
+          76
+        ],
+        [
+          "kod",
+          "twice the number for diz plus 11"
+        ],
+        [
+          "zaf",
+          "twice the number for diz plus 16"
+        ],
+        [
+          "xev",
+          97
+        ]
+      ],
+      "queried_term": "zaf",
+      "queried_value": 168,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 12,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for zaf minus 12?",
+      "answer": 324,
+      "id": "varbind_scale_f02_diz_076",
+      "expected_intermediates": {
+        "base_value": "76",
+        "first_product": "152",
+        "bound_value": "168",
+        "second_product": "336",
+        "answer": "324"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "76"
+        ],
+        "first_product": [
+          "152"
+        ],
+        "bound_value": [
+          "168"
+        ],
+        "second_product": [
+          "336"
+        ],
+        "answer": [
+          "324"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0055",
+      "counterfactual_family": 2,
+      "varied_term": "diz",
+      "varied_value": 76
+    },
+    {
+      "idx": "varbind_scale_f02_diz_080",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "vub",
+          88
+        ],
+        [
+          "diz",
+          80
+        ],
+        [
+          "kod",
+          "twice the number for diz plus 11"
+        ],
+        [
+          "zaf",
+          "twice the number for diz plus 16"
+        ],
+        [
+          "xev",
+          97
+        ]
+      ],
+      "queried_term": "zaf",
+      "queried_value": 176,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 12,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for zaf minus 12?",
+      "answer": 340,
+      "id": "varbind_scale_f02_diz_080",
+      "expected_intermediates": {
+        "base_value": "80",
+        "first_product": "160",
+        "bound_value": "176",
+        "second_product": "352",
+        "answer": "340"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "80"
+        ],
+        "first_product": [
+          "160"
+        ],
+        "bound_value": [
+          "176"
+        ],
+        "second_product": [
+          "352"
+        ],
+        "answer": [
+          "340"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0055",
+      "counterfactual_family": 2,
+      "varied_term": "diz",
+      "varied_value": 80
+    },
+    {
+      "idx": "varbind_scale_f03_riw_052",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "mur",
+          64
+        ],
+        [
+          "riw",
+          52
+        ],
+        [
+          "bij",
+          "twice the number for riw plus 26"
+        ],
+        [
+          "zuw",
+          "twice the number for riw minus 3"
+        ],
+        [
+          "wiq",
+          85
+        ]
+      ],
+      "queried_term": "bij",
+      "queried_value": 130,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 23,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for bij minus 23?",
+      "answer": 237,
+      "id": "varbind_scale_f03_riw_052",
+      "expected_intermediates": {
+        "base_value": "52",
+        "first_product": "104",
+        "bound_value": "130",
+        "second_product": "260",
+        "answer": "237"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "52"
+        ],
+        "first_product": [
+          "104"
+        ],
+        "bound_value": [
+          "130"
+        ],
+        "second_product": [
+          "260"
+        ],
+        "answer": [
+          "237"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0057",
+      "counterfactual_family": 3,
+      "varied_term": "riw",
+      "varied_value": 52
+    },
+    {
+      "idx": "varbind_scale_f03_riw_056",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "mur",
+          64
+        ],
+        [
+          "riw",
+          56
+        ],
+        [
+          "bij",
+          "twice the number for riw plus 26"
+        ],
+        [
+          "zuw",
+          "twice the number for riw minus 3"
+        ],
+        [
+          "wiq",
+          85
+        ]
+      ],
+      "queried_term": "bij",
+      "queried_value": 138,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 23,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for bij minus 23?",
+      "answer": 253,
+      "id": "varbind_scale_f03_riw_056",
+      "expected_intermediates": {
+        "base_value": "56",
+        "first_product": "112",
+        "bound_value": "138",
+        "second_product": "276",
+        "answer": "253"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "56"
+        ],
+        "first_product": [
+          "112"
+        ],
+        "bound_value": [
+          "138"
+        ],
+        "second_product": [
+          "276"
+        ],
+        "answer": [
+          "253"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0057",
+      "counterfactual_family": 3,
+      "varied_term": "riw",
+      "varied_value": 56
+    },
+    {
+      "idx": "varbind_scale_f03_riw_060",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "mur",
+          64
+        ],
+        [
+          "riw",
+          60
+        ],
+        [
+          "bij",
+          "twice the number for riw plus 26"
+        ],
+        [
+          "zuw",
+          "twice the number for riw minus 3"
+        ],
+        [
+          "wiq",
+          85
+        ]
+      ],
+      "queried_term": "bij",
+      "queried_value": 146,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 23,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for bij minus 23?",
+      "answer": 269,
+      "id": "varbind_scale_f03_riw_060",
+      "expected_intermediates": {
+        "base_value": "60",
+        "first_product": "120",
+        "bound_value": "146",
+        "second_product": "292",
+        "answer": "269"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "60"
+        ],
+        "first_product": [
+          "120"
+        ],
+        "bound_value": [
+          "146"
+        ],
+        "second_product": [
+          "292"
+        ],
+        "answer": [
+          "269"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0057",
+      "counterfactual_family": 3,
+      "varied_term": "riw",
+      "varied_value": 60
+    },
+    {
+      "idx": "varbind_scale_f03_riw_064",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "mur",
+          64
+        ],
+        [
+          "riw",
+          64
+        ],
+        [
+          "bij",
+          "twice the number for riw plus 26"
+        ],
+        [
+          "zuw",
+          "twice the number for riw minus 3"
+        ],
+        [
+          "wiq",
+          85
+        ]
+      ],
+      "queried_term": "bij",
+      "queried_value": 154,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 23,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for bij minus 23?",
+      "answer": 285,
+      "id": "varbind_scale_f03_riw_064",
+      "expected_intermediates": {
+        "base_value": "64",
+        "first_product": "128",
+        "bound_value": "154",
+        "second_product": "308",
+        "answer": "285"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "64"
+        ],
+        "first_product": [
+          "128"
+        ],
+        "bound_value": [
+          "154"
+        ],
+        "second_product": [
+          "308"
+        ],
+        "answer": [
+          "285"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0057",
+      "counterfactual_family": 3,
+      "varied_term": "riw",
+      "varied_value": 64
+    },
+    {
+      "idx": "varbind_scale_f03_riw_068",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "mur",
+          64
+        ],
+        [
+          "riw",
+          68
+        ],
+        [
+          "bij",
+          "twice the number for riw plus 26"
+        ],
+        [
+          "zuw",
+          "twice the number for riw minus 3"
+        ],
+        [
+          "wiq",
+          85
+        ]
+      ],
+      "queried_term": "bij",
+      "queried_value": 162,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 23,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for bij minus 23?",
+      "answer": 301,
+      "id": "varbind_scale_f03_riw_068",
+      "expected_intermediates": {
+        "base_value": "68",
+        "first_product": "136",
+        "bound_value": "162",
+        "second_product": "324",
+        "answer": "301"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "68"
+        ],
+        "first_product": [
+          "136"
+        ],
+        "bound_value": [
+          "162"
+        ],
+        "second_product": [
+          "324"
+        ],
+        "answer": [
+          "301"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0057",
+      "counterfactual_family": 3,
+      "varied_term": "riw",
+      "varied_value": 68
+    },
+    {
+      "idx": "varbind_scale_f03_riw_072",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "mur",
+          64
+        ],
+        [
+          "riw",
+          72
+        ],
+        [
+          "bij",
+          "twice the number for riw plus 26"
+        ],
+        [
+          "zuw",
+          "twice the number for riw minus 3"
+        ],
+        [
+          "wiq",
+          85
+        ]
+      ],
+      "queried_term": "bij",
+      "queried_value": 170,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 23,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for bij minus 23?",
+      "answer": 317,
+      "id": "varbind_scale_f03_riw_072",
+      "expected_intermediates": {
+        "base_value": "72",
+        "first_product": "144",
+        "bound_value": "170",
+        "second_product": "340",
+        "answer": "317"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "72"
+        ],
+        "first_product": [
+          "144"
+        ],
+        "bound_value": [
+          "170"
+        ],
+        "second_product": [
+          "340"
+        ],
+        "answer": [
+          "317"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0057",
+      "counterfactual_family": 3,
+      "varied_term": "riw",
+      "varied_value": 72
+    },
+    {
+      "idx": "varbind_scale_f03_riw_076",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "mur",
+          64
+        ],
+        [
+          "riw",
+          76
+        ],
+        [
+          "bij",
+          "twice the number for riw plus 26"
+        ],
+        [
+          "zuw",
+          "twice the number for riw minus 3"
+        ],
+        [
+          "wiq",
+          85
+        ]
+      ],
+      "queried_term": "bij",
+      "queried_value": 178,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 23,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for bij minus 23?",
+      "answer": 333,
+      "id": "varbind_scale_f03_riw_076",
+      "expected_intermediates": {
+        "base_value": "76",
+        "first_product": "152",
+        "bound_value": "178",
+        "second_product": "356",
+        "answer": "333"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "76"
+        ],
+        "first_product": [
+          "152"
+        ],
+        "bound_value": [
+          "178"
+        ],
+        "second_product": [
+          "356"
+        ],
+        "answer": [
+          "333"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0057",
+      "counterfactual_family": 3,
+      "varied_term": "riw",
+      "varied_value": 76
+    },
+    {
+      "idx": "varbind_scale_f03_riw_080",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "mur",
+          64
+        ],
+        [
+          "riw",
+          80
+        ],
+        [
+          "bij",
+          "twice the number for riw plus 26"
+        ],
+        [
+          "zuw",
+          "twice the number for riw minus 3"
+        ],
+        [
+          "wiq",
+          85
+        ]
+      ],
+      "queried_term": "bij",
+      "queried_value": 186,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 23,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for bij minus 23?",
+      "answer": 349,
+      "id": "varbind_scale_f03_riw_080",
+      "expected_intermediates": {
+        "base_value": "80",
+        "first_product": "160",
+        "bound_value": "186",
+        "second_product": "372",
+        "answer": "349"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "80"
+        ],
+        "first_product": [
+          "160"
+        ],
+        "bound_value": [
+          "186"
+        ],
+        "second_product": [
+          "372"
+        ],
+        "answer": [
+          "349"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0057",
+      "counterfactual_family": 3,
+      "varied_term": "riw",
+      "varied_value": 80
+    },
+    {
+      "idx": "varbind_scale_f04_kik_052",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "jix",
+          48
+        ],
+        [
+          "kik",
+          52
+        ],
+        [
+          "xif",
+          "twice the number for kik plus 8"
+        ],
+        [
+          "qas",
+          "twice the number for kik minus 11"
+        ],
+        [
+          "rak",
+          "twice the number for xif plus 11"
+        ]
+      ],
+      "queried_term": "xif",
+      "queried_value": 112,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 28,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xif minus 28?",
+      "answer": 196,
+      "id": "varbind_scale_f04_kik_052",
+      "expected_intermediates": {
+        "base_value": "52",
+        "first_product": "104",
+        "bound_value": "112",
+        "second_product": "224",
+        "answer": "196"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "52"
+        ],
+        "first_product": [
+          "104"
+        ],
+        "bound_value": [
+          "112"
+        ],
+        "second_product": [
+          "224"
+        ],
+        "answer": [
+          "196"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0059",
+      "counterfactual_family": 4,
+      "varied_term": "kik",
+      "varied_value": 52
+    },
+    {
+      "idx": "varbind_scale_f04_kik_056",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "jix",
+          48
+        ],
+        [
+          "kik",
+          56
+        ],
+        [
+          "xif",
+          "twice the number for kik plus 8"
+        ],
+        [
+          "qas",
+          "twice the number for kik minus 11"
+        ],
+        [
+          "rak",
+          "twice the number for xif plus 11"
+        ]
+      ],
+      "queried_term": "xif",
+      "queried_value": 120,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 28,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xif minus 28?",
+      "answer": 212,
+      "id": "varbind_scale_f04_kik_056",
+      "expected_intermediates": {
+        "base_value": "56",
+        "first_product": "112",
+        "bound_value": "120",
+        "second_product": "240",
+        "answer": "212"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "56"
+        ],
+        "first_product": [
+          "112"
+        ],
+        "bound_value": [
+          "120"
+        ],
+        "second_product": [
+          "240"
+        ],
+        "answer": [
+          "212"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0059",
+      "counterfactual_family": 4,
+      "varied_term": "kik",
+      "varied_value": 56
+    },
+    {
+      "idx": "varbind_scale_f04_kik_060",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "jix",
+          48
+        ],
+        [
+          "kik",
+          60
+        ],
+        [
+          "xif",
+          "twice the number for kik plus 8"
+        ],
+        [
+          "qas",
+          "twice the number for kik minus 11"
+        ],
+        [
+          "rak",
+          "twice the number for xif plus 11"
+        ]
+      ],
+      "queried_term": "xif",
+      "queried_value": 128,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 28,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xif minus 28?",
+      "answer": 228,
+      "id": "varbind_scale_f04_kik_060",
+      "expected_intermediates": {
+        "base_value": "60",
+        "first_product": "120",
+        "bound_value": "128",
+        "second_product": "256",
+        "answer": "228"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "60"
+        ],
+        "first_product": [
+          "120"
+        ],
+        "bound_value": [
+          "128"
+        ],
+        "second_product": [
+          "256"
+        ],
+        "answer": [
+          "228"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0059",
+      "counterfactual_family": 4,
+      "varied_term": "kik",
+      "varied_value": 60
+    },
+    {
+      "idx": "varbind_scale_f04_kik_064",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "jix",
+          48
+        ],
+        [
+          "kik",
+          64
+        ],
+        [
+          "xif",
+          "twice the number for kik plus 8"
+        ],
+        [
+          "qas",
+          "twice the number for kik minus 11"
+        ],
+        [
+          "rak",
+          "twice the number for xif plus 11"
+        ]
+      ],
+      "queried_term": "xif",
+      "queried_value": 136,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 28,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xif minus 28?",
+      "answer": 244,
+      "id": "varbind_scale_f04_kik_064",
+      "expected_intermediates": {
+        "base_value": "64",
+        "first_product": "128",
+        "bound_value": "136",
+        "second_product": "272",
+        "answer": "244"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "64"
+        ],
+        "first_product": [
+          "128"
+        ],
+        "bound_value": [
+          "136"
+        ],
+        "second_product": [
+          "272"
+        ],
+        "answer": [
+          "244"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0059",
+      "counterfactual_family": 4,
+      "varied_term": "kik",
+      "varied_value": 64
+    },
+    {
+      "idx": "varbind_scale_f04_kik_068",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "jix",
+          48
+        ],
+        [
+          "kik",
+          68
+        ],
+        [
+          "xif",
+          "twice the number for kik plus 8"
+        ],
+        [
+          "qas",
+          "twice the number for kik minus 11"
+        ],
+        [
+          "rak",
+          "twice the number for xif plus 11"
+        ]
+      ],
+      "queried_term": "xif",
+      "queried_value": 144,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 28,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xif minus 28?",
+      "answer": 260,
+      "id": "varbind_scale_f04_kik_068",
+      "expected_intermediates": {
+        "base_value": "68",
+        "first_product": "136",
+        "bound_value": "144",
+        "second_product": "288",
+        "answer": "260"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "68"
+        ],
+        "first_product": [
+          "136"
+        ],
+        "bound_value": [
+          "144"
+        ],
+        "second_product": [
+          "288"
+        ],
+        "answer": [
+          "260"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0059",
+      "counterfactual_family": 4,
+      "varied_term": "kik",
+      "varied_value": 68
+    },
+    {
+      "idx": "varbind_scale_f04_kik_072",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "jix",
+          48
+        ],
+        [
+          "kik",
+          72
+        ],
+        [
+          "xif",
+          "twice the number for kik plus 8"
+        ],
+        [
+          "qas",
+          "twice the number for kik minus 11"
+        ],
+        [
+          "rak",
+          "twice the number for xif plus 11"
+        ]
+      ],
+      "queried_term": "xif",
+      "queried_value": 152,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 28,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xif minus 28?",
+      "answer": 276,
+      "id": "varbind_scale_f04_kik_072",
+      "expected_intermediates": {
+        "base_value": "72",
+        "first_product": "144",
+        "bound_value": "152",
+        "second_product": "304",
+        "answer": "276"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "72"
+        ],
+        "first_product": [
+          "144"
+        ],
+        "bound_value": [
+          "152"
+        ],
+        "second_product": [
+          "304"
+        ],
+        "answer": [
+          "276"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0059",
+      "counterfactual_family": 4,
+      "varied_term": "kik",
+      "varied_value": 72
+    },
+    {
+      "idx": "varbind_scale_f04_kik_076",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "jix",
+          48
+        ],
+        [
+          "kik",
+          76
+        ],
+        [
+          "xif",
+          "twice the number for kik plus 8"
+        ],
+        [
+          "qas",
+          "twice the number for kik minus 11"
+        ],
+        [
+          "rak",
+          "twice the number for xif plus 11"
+        ]
+      ],
+      "queried_term": "xif",
+      "queried_value": 160,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 28,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xif minus 28?",
+      "answer": 292,
+      "id": "varbind_scale_f04_kik_076",
+      "expected_intermediates": {
+        "base_value": "76",
+        "first_product": "152",
+        "bound_value": "160",
+        "second_product": "320",
+        "answer": "292"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "76"
+        ],
+        "first_product": [
+          "152"
+        ],
+        "bound_value": [
+          "160"
+        ],
+        "second_product": [
+          "320"
+        ],
+        "answer": [
+          "292"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0059",
+      "counterfactual_family": 4,
+      "varied_term": "kik",
+      "varied_value": 76
+    },
+    {
+      "idx": "varbind_scale_f04_kik_080",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "jix",
+          48
+        ],
+        [
+          "kik",
+          80
+        ],
+        [
+          "xif",
+          "twice the number for kik plus 8"
+        ],
+        [
+          "qas",
+          "twice the number for kik minus 11"
+        ],
+        [
+          "rak",
+          "twice the number for xif plus 11"
+        ]
+      ],
+      "queried_term": "xif",
+      "queried_value": 168,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 28,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xif minus 28?",
+      "answer": 308,
+      "id": "varbind_scale_f04_kik_080",
+      "expected_intermediates": {
+        "base_value": "80",
+        "first_product": "160",
+        "bound_value": "168",
+        "second_product": "336",
+        "answer": "308"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "80"
+        ],
+        "first_product": [
+          "160"
+        ],
+        "bound_value": [
+          "168"
+        ],
+        "second_product": [
+          "336"
+        ],
+        "answer": [
+          "308"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0059",
+      "counterfactual_family": 4,
+      "varied_term": "kik",
+      "varied_value": 80
+    },
+    {
+      "idx": "varbind_scale_f05_kur_052",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "qin",
+          67
+        ],
+        [
+          "xag",
+          23
+        ],
+        [
+          "kur",
+          52
+        ],
+        [
+          "rek",
+          "twice the number for kur minus 28"
+        ],
+        [
+          "xav",
+          "twice the number for kur minus 3"
+        ]
+      ],
+      "queried_term": "xav",
+      "queried_value": 101,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 15,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xav minus 15?",
+      "answer": 187,
+      "id": "varbind_scale_f05_kur_052",
+      "expected_intermediates": {
+        "base_value": "52",
+        "first_product": "104",
+        "bound_value": "101",
+        "second_product": "202",
+        "answer": "187"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "52"
+        ],
+        "first_product": [
+          "104"
+        ],
+        "bound_value": [
+          "101"
+        ],
+        "second_product": [
+          "202"
+        ],
+        "answer": [
+          "187"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0060",
+      "counterfactual_family": 5,
+      "varied_term": "kur",
+      "varied_value": 52
+    },
+    {
+      "idx": "varbind_scale_f05_kur_056",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "qin",
+          67
+        ],
+        [
+          "xag",
+          23
+        ],
+        [
+          "kur",
+          56
+        ],
+        [
+          "rek",
+          "twice the number for kur minus 28"
+        ],
+        [
+          "xav",
+          "twice the number for kur minus 3"
+        ]
+      ],
+      "queried_term": "xav",
+      "queried_value": 109,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 15,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xav minus 15?",
+      "answer": 203,
+      "id": "varbind_scale_f05_kur_056",
+      "expected_intermediates": {
+        "base_value": "56",
+        "first_product": "112",
+        "bound_value": "109",
+        "second_product": "218",
+        "answer": "203"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "56"
+        ],
+        "first_product": [
+          "112"
+        ],
+        "bound_value": [
+          "109"
+        ],
+        "second_product": [
+          "218"
+        ],
+        "answer": [
+          "203"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0060",
+      "counterfactual_family": 5,
+      "varied_term": "kur",
+      "varied_value": 56
+    },
+    {
+      "idx": "varbind_scale_f05_kur_060",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "qin",
+          67
+        ],
+        [
+          "xag",
+          23
+        ],
+        [
+          "kur",
+          60
+        ],
+        [
+          "rek",
+          "twice the number for kur minus 28"
+        ],
+        [
+          "xav",
+          "twice the number for kur minus 3"
+        ]
+      ],
+      "queried_term": "xav",
+      "queried_value": 117,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 15,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xav minus 15?",
+      "answer": 219,
+      "id": "varbind_scale_f05_kur_060",
+      "expected_intermediates": {
+        "base_value": "60",
+        "first_product": "120",
+        "bound_value": "117",
+        "second_product": "234",
+        "answer": "219"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "60"
+        ],
+        "first_product": [
+          "120"
+        ],
+        "bound_value": [
+          "117"
+        ],
+        "second_product": [
+          "234"
+        ],
+        "answer": [
+          "219"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0060",
+      "counterfactual_family": 5,
+      "varied_term": "kur",
+      "varied_value": 60
+    },
+    {
+      "idx": "varbind_scale_f05_kur_064",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "qin",
+          67
+        ],
+        [
+          "xag",
+          23
+        ],
+        [
+          "kur",
+          64
+        ],
+        [
+          "rek",
+          "twice the number for kur minus 28"
+        ],
+        [
+          "xav",
+          "twice the number for kur minus 3"
+        ]
+      ],
+      "queried_term": "xav",
+      "queried_value": 125,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 15,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xav minus 15?",
+      "answer": 235,
+      "id": "varbind_scale_f05_kur_064",
+      "expected_intermediates": {
+        "base_value": "64",
+        "first_product": "128",
+        "bound_value": "125",
+        "second_product": "250",
+        "answer": "235"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "64"
+        ],
+        "first_product": [
+          "128"
+        ],
+        "bound_value": [
+          "125"
+        ],
+        "second_product": [
+          "250"
+        ],
+        "answer": [
+          "235"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0060",
+      "counterfactual_family": 5,
+      "varied_term": "kur",
+      "varied_value": 64
+    },
+    {
+      "idx": "varbind_scale_f05_kur_068",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "qin",
+          67
+        ],
+        [
+          "xag",
+          23
+        ],
+        [
+          "kur",
+          68
+        ],
+        [
+          "rek",
+          "twice the number for kur minus 28"
+        ],
+        [
+          "xav",
+          "twice the number for kur minus 3"
+        ]
+      ],
+      "queried_term": "xav",
+      "queried_value": 133,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 15,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xav minus 15?",
+      "answer": 251,
+      "id": "varbind_scale_f05_kur_068",
+      "expected_intermediates": {
+        "base_value": "68",
+        "first_product": "136",
+        "bound_value": "133",
+        "second_product": "266",
+        "answer": "251"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "68"
+        ],
+        "first_product": [
+          "136"
+        ],
+        "bound_value": [
+          "133"
+        ],
+        "second_product": [
+          "266"
+        ],
+        "answer": [
+          "251"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0060",
+      "counterfactual_family": 5,
+      "varied_term": "kur",
+      "varied_value": 68
+    },
+    {
+      "idx": "varbind_scale_f05_kur_072",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "qin",
+          67
+        ],
+        [
+          "xag",
+          23
+        ],
+        [
+          "kur",
+          72
+        ],
+        [
+          "rek",
+          "twice the number for kur minus 28"
+        ],
+        [
+          "xav",
+          "twice the number for kur minus 3"
+        ]
+      ],
+      "queried_term": "xav",
+      "queried_value": 141,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 15,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xav minus 15?",
+      "answer": 267,
+      "id": "varbind_scale_f05_kur_072",
+      "expected_intermediates": {
+        "base_value": "72",
+        "first_product": "144",
+        "bound_value": "141",
+        "second_product": "282",
+        "answer": "267"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "72"
+        ],
+        "first_product": [
+          "144"
+        ],
+        "bound_value": [
+          "141"
+        ],
+        "second_product": [
+          "282"
+        ],
+        "answer": [
+          "267"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0060",
+      "counterfactual_family": 5,
+      "varied_term": "kur",
+      "varied_value": 72
+    },
+    {
+      "idx": "varbind_scale_f05_kur_076",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "qin",
+          67
+        ],
+        [
+          "xag",
+          23
+        ],
+        [
+          "kur",
+          76
+        ],
+        [
+          "rek",
+          "twice the number for kur minus 28"
+        ],
+        [
+          "xav",
+          "twice the number for kur minus 3"
+        ]
+      ],
+      "queried_term": "xav",
+      "queried_value": 149,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 15,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xav minus 15?",
+      "answer": 283,
+      "id": "varbind_scale_f05_kur_076",
+      "expected_intermediates": {
+        "base_value": "76",
+        "first_product": "152",
+        "bound_value": "149",
+        "second_product": "298",
+        "answer": "283"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "76"
+        ],
+        "first_product": [
+          "152"
+        ],
+        "bound_value": [
+          "149"
+        ],
+        "second_product": [
+          "298"
+        ],
+        "answer": [
+          "283"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0060",
+      "counterfactual_family": 5,
+      "varied_term": "kur",
+      "varied_value": 76
+    },
+    {
+      "idx": "varbind_scale_f05_kur_080",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "qin",
+          67
+        ],
+        [
+          "xag",
+          23
+        ],
+        [
+          "kur",
+          80
+        ],
+        [
+          "rek",
+          "twice the number for kur minus 28"
+        ],
+        [
+          "xav",
+          "twice the number for kur minus 3"
+        ]
+      ],
+      "queried_term": "xav",
+      "queried_value": 157,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 15,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xav minus 15?",
+      "answer": 299,
+      "id": "varbind_scale_f05_kur_080",
+      "expected_intermediates": {
+        "base_value": "80",
+        "first_product": "160",
+        "bound_value": "157",
+        "second_product": "314",
+        "answer": "299"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "80"
+        ],
+        "first_product": [
+          "160"
+        ],
+        "bound_value": [
+          "157"
+        ],
+        "second_product": [
+          "314"
+        ],
+        "answer": [
+          "299"
+        ]
+      },
+      "source_template_id": "varbind_heldout_0060",
+      "counterfactual_family": 5,
+      "varied_term": "kur",
+      "varied_value": 80
+    }
+  ]
+}

@@ -1,0 +1,4411 @@
+{
+  "seed": 42,
+  "task_type": "variable_binding",
+  "filler_type": "dots",
+  "filler_lengths": [
+    0,
+    10,
+    25,
+    50
+  ],
+  "source": {
+    "kind": "deterministic two-branch depth-2 variable-binding DAG",
+    "seed": 274193,
+    "selection": "40 held-out examples and 5 disjoint few-shots",
+    "behavioral_gate": "Do not extract lens readouts unless at least one positive dot length has helped_count > hurt_count and >= 0.10 absolute accuracy gain.",
+    "probe_rationale": "The depth-1 branch task saturated and showed no filler benefit. This calibrated extension gives each independent branch two affine steps before the addition merge, while retaining the released dot-responsive variable-binding language."
+  },
+  "sanity_prompts": [
+    {
+      "id": "capital",
+      "messages": [
+        {
+          "role": "user",
+          "content": "The capital of France is"
+        }
+      ]
+    },
+    {
+      "id": "arithmetic",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Complete with only the answer: 17 + 25 ="
+        }
+      ]
+    },
+    {
+      "id": "chinese",
+      "messages": [
+        {
+          "role": "user",
+          "content": "用一个词回答：中国的首都是"
+        }
+      ]
+    }
+  ],
+  "few_shot": [
+    {
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "jul",
+          17
+        ],
+        [
+          "vgc",
+          "twice the number for jul plus 5"
+        ],
+        [
+          "lcz",
+          "twice the number for vgc minus 1"
+        ],
+        [
+          "tsn",
+          13
+        ],
+        [
+          "chv",
+          "twice the number for tsn minus 5"
+        ],
+        [
+          "ahi",
+          "three times the number for chv minus 5"
+        ]
+      ],
+      "question": "What is the number for lcz plus the number for ahi?",
+      "answer": 135,
+      "expected_intermediates": {
+        "branch_a_product_1": "34",
+        "branch_a_value_1": "39",
+        "branch_a_product_2": "78",
+        "branch_a_value_2": "77",
+        "branch_b_product_1": "26",
+        "branch_b_value_1": "21",
+        "branch_b_product_2": "63",
+        "branch_b_value_2": "58",
+        "answer": "135"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "34"
+        ],
+        "branch_a_value_1": [
+          "39"
+        ],
+        "branch_a_product_2": [
+          "78"
+        ],
+        "branch_a_value_2": [
+          "77"
+        ],
+        "branch_b_product_1": [
+          "26"
+        ],
+        "branch_b_value_1": [
+          "21"
+        ],
+        "branch_b_product_2": [
+          "63"
+        ],
+        "branch_b_value_2": [
+          "58"
+        ],
+        "answer": [
+          "135"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          17,
+          13
+        ],
+        "coefficients": [
+          2,
+          2,
+          2,
+          3
+        ],
+        "constants": [
+          5,
+          1,
+          5,
+          5
+        ],
+        "operations": [
+          "plus",
+          "minus",
+          "minus",
+          "minus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "rtc",
+          17
+        ],
+        [
+          "hmp",
+          "twice the number for rtc plus 1"
+        ],
+        [
+          "jbp",
+          "twice the number for hmp minus 4"
+        ],
+        [
+          "nbw",
+          15
+        ],
+        [
+          "hyf",
+          "twice the number for nbw plus 1"
+        ],
+        [
+          "xmc",
+          "twice the number for hyf minus 4"
+        ]
+      ],
+      "question": "What is the number for jbp plus the number for xmc?",
+      "answer": 124,
+      "expected_intermediates": {
+        "branch_a_product_1": "34",
+        "branch_a_value_1": "35",
+        "branch_a_product_2": "70",
+        "branch_a_value_2": "66",
+        "branch_b_product_1": "30",
+        "branch_b_value_1": "31",
+        "branch_b_product_2": "62",
+        "branch_b_value_2": "58",
+        "answer": "124"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "34"
+        ],
+        "branch_a_value_1": [
+          "35"
+        ],
+        "branch_a_product_2": [
+          "70"
+        ],
+        "branch_a_value_2": [
+          "66"
+        ],
+        "branch_b_product_1": [
+          "30"
+        ],
+        "branch_b_value_1": [
+          "31"
+        ],
+        "branch_b_product_2": [
+          "62"
+        ],
+        "branch_b_value_2": [
+          "58"
+        ],
+        "answer": [
+          "124"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          17,
+          15
+        ],
+        "coefficients": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "constants": [
+          1,
+          4,
+          1,
+          4
+        ],
+        "operations": [
+          "plus",
+          "minus",
+          "plus",
+          "minus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "xjh",
+          14
+        ],
+        [
+          "ikx",
+          "twice the number for xjh plus 7"
+        ],
+        [
+          "mug",
+          "three times the number for ikx plus 6"
+        ],
+        [
+          "eez",
+          11
+        ],
+        [
+          "mnj",
+          "three times the number for eez plus 6"
+        ],
+        [
+          "sxs",
+          "three times the number for mnj minus 5"
+        ]
+      ],
+      "question": "What is the number for mug plus the number for sxs?",
+      "answer": 223,
+      "expected_intermediates": {
+        "branch_a_product_1": "28",
+        "branch_a_value_1": "35",
+        "branch_a_product_2": "105",
+        "branch_a_value_2": "111",
+        "branch_b_product_1": "33",
+        "branch_b_value_1": "39",
+        "branch_b_product_2": "117",
+        "branch_b_value_2": "112",
+        "answer": "223"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "28"
+        ],
+        "branch_a_value_1": [
+          "35"
+        ],
+        "branch_a_product_2": [
+          "105"
+        ],
+        "branch_a_value_2": [
+          "111"
+        ],
+        "branch_b_product_1": [
+          "33"
+        ],
+        "branch_b_value_1": [
+          "39"
+        ],
+        "branch_b_product_2": [
+          "117"
+        ],
+        "branch_b_value_2": [
+          "112"
+        ],
+        "answer": [
+          "223"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          14,
+          11
+        ],
+        "coefficients": [
+          2,
+          3,
+          3,
+          3
+        ],
+        "constants": [
+          7,
+          6,
+          6,
+          5
+        ],
+        "operations": [
+          "plus",
+          "plus",
+          "plus",
+          "minus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "szs",
+          11
+        ],
+        [
+          "dkg",
+          "twice the number for szs plus 4"
+        ],
+        [
+          "dle",
+          "twice the number for dkg plus 1"
+        ],
+        [
+          "fzq",
+          17
+        ],
+        [
+          "vgv",
+          "three times the number for fzq plus 3"
+        ],
+        [
+          "cun",
+          "three times the number for vgv minus 3"
+        ]
+      ],
+      "question": "What is the number for dle plus the number for cun?",
+      "answer": 212,
+      "expected_intermediates": {
+        "branch_a_product_1": "22",
+        "branch_a_value_1": "26",
+        "branch_a_product_2": "52",
+        "branch_a_value_2": "53",
+        "branch_b_product_1": "51",
+        "branch_b_value_1": "54",
+        "branch_b_product_2": "162",
+        "branch_b_value_2": "159",
+        "answer": "212"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "22"
+        ],
+        "branch_a_value_1": [
+          "26"
+        ],
+        "branch_a_product_2": [
+          "52"
+        ],
+        "branch_a_value_2": [
+          "53"
+        ],
+        "branch_b_product_1": [
+          "51"
+        ],
+        "branch_b_value_1": [
+          "54"
+        ],
+        "branch_b_product_2": [
+          "162"
+        ],
+        "branch_b_value_2": [
+          "159"
+        ],
+        "answer": [
+          "212"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          11,
+          17
+        ],
+        "coefficients": [
+          2,
+          2,
+          3,
+          3
+        ],
+        "constants": [
+          4,
+          1,
+          3,
+          3
+        ],
+        "operations": [
+          "plus",
+          "plus",
+          "plus",
+          "minus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "kro",
+          8
+        ],
+        [
+          "oaz",
+          "twice the number for kro minus 3"
+        ],
+        [
+          "wgt",
+          "twice the number for oaz minus 5"
+        ],
+        [
+          "zxy",
+          14
+        ],
+        [
+          "kkq",
+          "twice the number for zxy minus 6"
+        ],
+        [
+          "rgy",
+          "three times the number for kkq minus 7"
+        ]
+      ],
+      "question": "What is the number for wgt plus the number for rgy?",
+      "answer": 80,
+      "expected_intermediates": {
+        "branch_a_product_1": "16",
+        "branch_a_value_1": "13",
+        "branch_a_product_2": "26",
+        "branch_a_value_2": "21",
+        "branch_b_product_1": "28",
+        "branch_b_value_1": "22",
+        "branch_b_product_2": "66",
+        "branch_b_value_2": "59",
+        "answer": "80"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "16"
+        ],
+        "branch_a_value_1": [
+          "13"
+        ],
+        "branch_a_product_2": [
+          "26"
+        ],
+        "branch_a_value_2": [
+          "21"
+        ],
+        "branch_b_product_1": [
+          "28"
+        ],
+        "branch_b_value_1": [
+          "22"
+        ],
+        "branch_b_product_2": [
+          "66"
+        ],
+        "branch_b_value_2": [
+          "59"
+        ],
+        "answer": [
+          "80"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          8,
+          14
+        ],
+        "coefficients": [
+          2,
+          2,
+          2,
+          3
+        ],
+        "constants": [
+          3,
+          5,
+          6,
+          7
+        ],
+        "operations": [
+          "minus",
+          "minus",
+          "minus",
+          "minus"
+        ],
+        "merge": "addition"
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "branch_depth2_000",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "ywc",
+          17
+        ],
+        [
+          "btc",
+          "three times the number for ywc plus 1"
+        ],
+        [
+          "omo",
+          "twice the number for btc minus 5"
+        ],
+        [
+          "kmd",
+          10
+        ],
+        [
+          "awz",
+          "three times the number for kmd minus 3"
+        ],
+        [
+          "jdq",
+          "twice the number for awz plus 2"
+        ]
+      ],
+      "question": "What is the number for omo plus the number for jdq?",
+      "answer": 155,
+      "expected_intermediates": {
+        "branch_a_product_1": "51",
+        "branch_a_value_1": "52",
+        "branch_a_product_2": "104",
+        "branch_a_value_2": "99",
+        "branch_b_product_1": "30",
+        "branch_b_value_1": "27",
+        "branch_b_product_2": "54",
+        "branch_b_value_2": "56",
+        "answer": "155"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "51"
+        ],
+        "branch_a_value_1": [
+          "52"
+        ],
+        "branch_a_product_2": [
+          "104"
+        ],
+        "branch_a_value_2": [
+          "99"
+        ],
+        "branch_b_product_1": [
+          "30"
+        ],
+        "branch_b_value_1": [
+          "27"
+        ],
+        "branch_b_product_2": [
+          "54"
+        ],
+        "branch_b_value_2": [
+          "56"
+        ],
+        "answer": [
+          "155"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          17,
+          10
+        ],
+        "coefficients": [
+          3,
+          2,
+          3,
+          2
+        ],
+        "constants": [
+          1,
+          5,
+          3,
+          2
+        ],
+        "operations": [
+          "plus",
+          "minus",
+          "minus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_001",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "pfb",
+          5
+        ],
+        [
+          "pyi",
+          "twice the number for pfb plus 5"
+        ],
+        [
+          "tjn",
+          "twice the number for pyi plus 5"
+        ],
+        [
+          "qzu",
+          14
+        ],
+        [
+          "woq",
+          "twice the number for qzu minus 2"
+        ],
+        [
+          "esp",
+          "twice the number for woq minus 5"
+        ]
+      ],
+      "question": "What is the number for tjn plus the number for esp?",
+      "answer": 82,
+      "expected_intermediates": {
+        "branch_a_product_1": "10",
+        "branch_a_value_1": "15",
+        "branch_a_product_2": "30",
+        "branch_a_value_2": "35",
+        "branch_b_product_1": "28",
+        "branch_b_value_1": "26",
+        "branch_b_product_2": "52",
+        "branch_b_value_2": "47",
+        "answer": "82"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "10"
+        ],
+        "branch_a_value_1": [
+          "15"
+        ],
+        "branch_a_product_2": [
+          "30"
+        ],
+        "branch_a_value_2": [
+          "35"
+        ],
+        "branch_b_product_1": [
+          "28"
+        ],
+        "branch_b_value_1": [
+          "26"
+        ],
+        "branch_b_product_2": [
+          "52"
+        ],
+        "branch_b_value_2": [
+          "47"
+        ],
+        "answer": [
+          "82"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          5,
+          14
+        ],
+        "coefficients": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "constants": [
+          5,
+          5,
+          2,
+          5
+        ],
+        "operations": [
+          "plus",
+          "plus",
+          "minus",
+          "minus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_002",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "qvj",
+          15
+        ],
+        [
+          "tpc",
+          "three times the number for qvj minus 3"
+        ],
+        [
+          "ueb",
+          "twice the number for tpc minus 4"
+        ],
+        [
+          "jsn",
+          15
+        ],
+        [
+          "ugv",
+          "twice the number for jsn plus 7"
+        ],
+        [
+          "uia",
+          "three times the number for ugv minus 1"
+        ]
+      ],
+      "question": "What is the number for ueb plus the number for uia?",
+      "answer": 190,
+      "expected_intermediates": {
+        "branch_a_product_1": "45",
+        "branch_a_value_1": "42",
+        "branch_a_product_2": "84",
+        "branch_a_value_2": "80",
+        "branch_b_product_1": "30",
+        "branch_b_value_1": "37",
+        "branch_b_product_2": "111",
+        "branch_b_value_2": "110",
+        "answer": "190"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "45"
+        ],
+        "branch_a_value_1": [
+          "42"
+        ],
+        "branch_a_product_2": [
+          "84"
+        ],
+        "branch_a_value_2": [
+          "80"
+        ],
+        "branch_b_product_1": [
+          "30"
+        ],
+        "branch_b_value_1": [
+          "37"
+        ],
+        "branch_b_product_2": [
+          "111"
+        ],
+        "branch_b_value_2": [
+          "110"
+        ],
+        "answer": [
+          "190"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          15,
+          15
+        ],
+        "coefficients": [
+          3,
+          2,
+          2,
+          3
+        ],
+        "constants": [
+          3,
+          4,
+          7,
+          1
+        ],
+        "operations": [
+          "minus",
+          "minus",
+          "plus",
+          "minus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_003",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "xex",
+          11
+        ],
+        [
+          "tji",
+          "three times the number for xex minus 6"
+        ],
+        [
+          "nds",
+          "twice the number for tji minus 2"
+        ],
+        [
+          "xqf",
+          10
+        ],
+        [
+          "fif",
+          "three times the number for xqf plus 1"
+        ],
+        [
+          "gym",
+          "twice the number for fif minus 1"
+        ]
+      ],
+      "question": "What is the number for nds plus the number for gym?",
+      "answer": 113,
+      "expected_intermediates": {
+        "branch_a_product_1": "33",
+        "branch_a_value_1": "27",
+        "branch_a_product_2": "54",
+        "branch_a_value_2": "52",
+        "branch_b_product_1": "30",
+        "branch_b_value_1": "31",
+        "branch_b_product_2": "62",
+        "branch_b_value_2": "61",
+        "answer": "113"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "33"
+        ],
+        "branch_a_value_1": [
+          "27"
+        ],
+        "branch_a_product_2": [
+          "54"
+        ],
+        "branch_a_value_2": [
+          "52"
+        ],
+        "branch_b_product_1": [
+          "30"
+        ],
+        "branch_b_value_1": [
+          "31"
+        ],
+        "branch_b_product_2": [
+          "62"
+        ],
+        "branch_b_value_2": [
+          "61"
+        ],
+        "answer": [
+          "113"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          11,
+          10
+        ],
+        "coefficients": [
+          3,
+          2,
+          3,
+          2
+        ],
+        "constants": [
+          6,
+          2,
+          1,
+          1
+        ],
+        "operations": [
+          "minus",
+          "minus",
+          "plus",
+          "minus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_004",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "hbq",
+          17
+        ],
+        [
+          "eut",
+          "twice the number for hbq minus 1"
+        ],
+        [
+          "gbc",
+          "twice the number for eut minus 7"
+        ],
+        [
+          "brr",
+          10
+        ],
+        [
+          "rbb",
+          "twice the number for brr minus 1"
+        ],
+        [
+          "ekb",
+          "three times the number for rbb plus 1"
+        ]
+      ],
+      "question": "What is the number for gbc plus the number for ekb?",
+      "answer": 117,
+      "expected_intermediates": {
+        "branch_a_product_1": "34",
+        "branch_a_value_1": "33",
+        "branch_a_product_2": "66",
+        "branch_a_value_2": "59",
+        "branch_b_product_1": "20",
+        "branch_b_value_1": "19",
+        "branch_b_product_2": "57",
+        "branch_b_value_2": "58",
+        "answer": "117"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "34"
+        ],
+        "branch_a_value_1": [
+          "33"
+        ],
+        "branch_a_product_2": [
+          "66"
+        ],
+        "branch_a_value_2": [
+          "59"
+        ],
+        "branch_b_product_1": [
+          "20"
+        ],
+        "branch_b_value_1": [
+          "19"
+        ],
+        "branch_b_product_2": [
+          "57"
+        ],
+        "branch_b_value_2": [
+          "58"
+        ],
+        "answer": [
+          "117"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          17,
+          10
+        ],
+        "coefficients": [
+          2,
+          2,
+          2,
+          3
+        ],
+        "constants": [
+          1,
+          7,
+          1,
+          1
+        ],
+        "operations": [
+          "minus",
+          "minus",
+          "minus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_005",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "sxn",
+          9
+        ],
+        [
+          "gwd",
+          "twice the number for sxn minus 3"
+        ],
+        [
+          "hde",
+          "three times the number for gwd plus 3"
+        ],
+        [
+          "syw",
+          13
+        ],
+        [
+          "xud",
+          "three times the number for syw plus 7"
+        ],
+        [
+          "inm",
+          "three times the number for xud plus 2"
+        ]
+      ],
+      "question": "What is the number for hde plus the number for inm?",
+      "answer": 188,
+      "expected_intermediates": {
+        "branch_a_product_1": "18",
+        "branch_a_value_1": "15",
+        "branch_a_product_2": "45",
+        "branch_a_value_2": "48",
+        "branch_b_product_1": "39",
+        "branch_b_value_1": "46",
+        "branch_b_product_2": "138",
+        "branch_b_value_2": "140",
+        "answer": "188"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "18"
+        ],
+        "branch_a_value_1": [
+          "15"
+        ],
+        "branch_a_product_2": [
+          "45"
+        ],
+        "branch_a_value_2": [
+          "48"
+        ],
+        "branch_b_product_1": [
+          "39"
+        ],
+        "branch_b_value_1": [
+          "46"
+        ],
+        "branch_b_product_2": [
+          "138"
+        ],
+        "branch_b_value_2": [
+          "140"
+        ],
+        "answer": [
+          "188"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          9,
+          13
+        ],
+        "coefficients": [
+          2,
+          3,
+          3,
+          3
+        ],
+        "constants": [
+          3,
+          3,
+          7,
+          2
+        ],
+        "operations": [
+          "minus",
+          "plus",
+          "plus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_006",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "qqn",
+          13
+        ],
+        [
+          "wit",
+          "three times the number for qqn minus 2"
+        ],
+        [
+          "xlx",
+          "three times the number for wit minus 3"
+        ],
+        [
+          "nwu",
+          6
+        ],
+        [
+          "xpe",
+          "twice the number for nwu plus 7"
+        ],
+        [
+          "wsl",
+          "three times the number for xpe plus 6"
+        ]
+      ],
+      "question": "What is the number for xlx plus the number for wsl?",
+      "answer": 171,
+      "expected_intermediates": {
+        "branch_a_product_1": "39",
+        "branch_a_value_1": "37",
+        "branch_a_product_2": "111",
+        "branch_a_value_2": "108",
+        "branch_b_product_1": "12",
+        "branch_b_value_1": "19",
+        "branch_b_product_2": "57",
+        "branch_b_value_2": "63",
+        "answer": "171"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "39"
+        ],
+        "branch_a_value_1": [
+          "37"
+        ],
+        "branch_a_product_2": [
+          "111"
+        ],
+        "branch_a_value_2": [
+          "108"
+        ],
+        "branch_b_product_1": [
+          "12"
+        ],
+        "branch_b_value_1": [
+          "19"
+        ],
+        "branch_b_product_2": [
+          "57"
+        ],
+        "branch_b_value_2": [
+          "63"
+        ],
+        "answer": [
+          "171"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          13,
+          6
+        ],
+        "coefficients": [
+          3,
+          3,
+          2,
+          3
+        ],
+        "constants": [
+          2,
+          3,
+          7,
+          6
+        ],
+        "operations": [
+          "minus",
+          "minus",
+          "plus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_007",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "men",
+          17
+        ],
+        [
+          "nqy",
+          "three times the number for men plus 4"
+        ],
+        [
+          "jvv",
+          "twice the number for nqy minus 5"
+        ],
+        [
+          "bta",
+          13
+        ],
+        [
+          "gxk",
+          "three times the number for bta plus 6"
+        ],
+        [
+          "prh",
+          "three times the number for gxk plus 6"
+        ]
+      ],
+      "question": "What is the number for jvv plus the number for prh?",
+      "answer": 246,
+      "expected_intermediates": {
+        "branch_a_product_1": "51",
+        "branch_a_value_1": "55",
+        "branch_a_product_2": "110",
+        "branch_a_value_2": "105",
+        "branch_b_product_1": "39",
+        "branch_b_value_1": "45",
+        "branch_b_product_2": "135",
+        "branch_b_value_2": "141",
+        "answer": "246"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "51"
+        ],
+        "branch_a_value_1": [
+          "55"
+        ],
+        "branch_a_product_2": [
+          "110"
+        ],
+        "branch_a_value_2": [
+          "105"
+        ],
+        "branch_b_product_1": [
+          "39"
+        ],
+        "branch_b_value_1": [
+          "45"
+        ],
+        "branch_b_product_2": [
+          "135"
+        ],
+        "branch_b_value_2": [
+          "141"
+        ],
+        "answer": [
+          "246"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          17,
+          13
+        ],
+        "coefficients": [
+          3,
+          2,
+          3,
+          3
+        ],
+        "constants": [
+          4,
+          5,
+          6,
+          6
+        ],
+        "operations": [
+          "plus",
+          "minus",
+          "plus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_008",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "rdx",
+          11
+        ],
+        [
+          "qgh",
+          "twice the number for rdx plus 3"
+        ],
+        [
+          "eqk",
+          "twice the number for qgh minus 5"
+        ],
+        [
+          "xga",
+          12
+        ],
+        [
+          "whz",
+          "three times the number for xga plus 6"
+        ],
+        [
+          "icg",
+          "twice the number for whz plus 7"
+        ]
+      ],
+      "question": "What is the number for eqk plus the number for icg?",
+      "answer": 136,
+      "expected_intermediates": {
+        "branch_a_product_1": "22",
+        "branch_a_value_1": "25",
+        "branch_a_product_2": "50",
+        "branch_a_value_2": "45",
+        "branch_b_product_1": "36",
+        "branch_b_value_1": "42",
+        "branch_b_product_2": "84",
+        "branch_b_value_2": "91",
+        "answer": "136"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "22"
+        ],
+        "branch_a_value_1": [
+          "25"
+        ],
+        "branch_a_product_2": [
+          "50"
+        ],
+        "branch_a_value_2": [
+          "45"
+        ],
+        "branch_b_product_1": [
+          "36"
+        ],
+        "branch_b_value_1": [
+          "42"
+        ],
+        "branch_b_product_2": [
+          "84"
+        ],
+        "branch_b_value_2": [
+          "91"
+        ],
+        "answer": [
+          "136"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          11,
+          12
+        ],
+        "coefficients": [
+          2,
+          2,
+          3,
+          2
+        ],
+        "constants": [
+          3,
+          5,
+          6,
+          7
+        ],
+        "operations": [
+          "plus",
+          "minus",
+          "plus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_009",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "cmy",
+          11
+        ],
+        [
+          "aql",
+          "three times the number for cmy plus 1"
+        ],
+        [
+          "uwj",
+          "twice the number for aql plus 1"
+        ],
+        [
+          "vpz",
+          5
+        ],
+        [
+          "fcf",
+          "three times the number for vpz plus 5"
+        ],
+        [
+          "mri",
+          "twice the number for fcf plus 2"
+        ]
+      ],
+      "question": "What is the number for uwj plus the number for mri?",
+      "answer": 111,
+      "expected_intermediates": {
+        "branch_a_product_1": "33",
+        "branch_a_value_1": "34",
+        "branch_a_product_2": "68",
+        "branch_a_value_2": "69",
+        "branch_b_product_1": "15",
+        "branch_b_value_1": "20",
+        "branch_b_product_2": "40",
+        "branch_b_value_2": "42",
+        "answer": "111"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "33"
+        ],
+        "branch_a_value_1": [
+          "34"
+        ],
+        "branch_a_product_2": [
+          "68"
+        ],
+        "branch_a_value_2": [
+          "69"
+        ],
+        "branch_b_product_1": [
+          "15"
+        ],
+        "branch_b_value_1": [
+          "20"
+        ],
+        "branch_b_product_2": [
+          "40"
+        ],
+        "branch_b_value_2": [
+          "42"
+        ],
+        "answer": [
+          "111"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          11,
+          5
+        ],
+        "coefficients": [
+          3,
+          2,
+          3,
+          2
+        ],
+        "constants": [
+          1,
+          1,
+          5,
+          2
+        ],
+        "operations": [
+          "plus",
+          "plus",
+          "plus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_010",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "czc",
+          12
+        ],
+        [
+          "wct",
+          "twice the number for czc minus 5"
+        ],
+        [
+          "ymc",
+          "twice the number for wct plus 3"
+        ],
+        [
+          "ibw",
+          13
+        ],
+        [
+          "veq",
+          "twice the number for ibw plus 6"
+        ],
+        [
+          "ghc",
+          "three times the number for veq minus 2"
+        ]
+      ],
+      "question": "What is the number for ymc plus the number for ghc?",
+      "answer": 135,
+      "expected_intermediates": {
+        "branch_a_product_1": "24",
+        "branch_a_value_1": "19",
+        "branch_a_product_2": "38",
+        "branch_a_value_2": "41",
+        "branch_b_product_1": "26",
+        "branch_b_value_1": "32",
+        "branch_b_product_2": "96",
+        "branch_b_value_2": "94",
+        "answer": "135"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "24"
+        ],
+        "branch_a_value_1": [
+          "19"
+        ],
+        "branch_a_product_2": [
+          "38"
+        ],
+        "branch_a_value_2": [
+          "41"
+        ],
+        "branch_b_product_1": [
+          "26"
+        ],
+        "branch_b_value_1": [
+          "32"
+        ],
+        "branch_b_product_2": [
+          "96"
+        ],
+        "branch_b_value_2": [
+          "94"
+        ],
+        "answer": [
+          "135"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          12,
+          13
+        ],
+        "coefficients": [
+          2,
+          2,
+          2,
+          3
+        ],
+        "constants": [
+          5,
+          3,
+          6,
+          2
+        ],
+        "operations": [
+          "minus",
+          "plus",
+          "plus",
+          "minus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_011",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "fwh",
+          14
+        ],
+        [
+          "cjn",
+          "three times the number for fwh plus 5"
+        ],
+        [
+          "hbb",
+          "twice the number for cjn plus 6"
+        ],
+        [
+          "lto",
+          6
+        ],
+        [
+          "khk",
+          "twice the number for lto plus 6"
+        ],
+        [
+          "ket",
+          "three times the number for khk plus 7"
+        ]
+      ],
+      "question": "What is the number for hbb plus the number for ket?",
+      "answer": 161,
+      "expected_intermediates": {
+        "branch_a_product_1": "42",
+        "branch_a_value_1": "47",
+        "branch_a_product_2": "94",
+        "branch_a_value_2": "100",
+        "branch_b_product_1": "12",
+        "branch_b_value_1": "18",
+        "branch_b_product_2": "54",
+        "branch_b_value_2": "61",
+        "answer": "161"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "42"
+        ],
+        "branch_a_value_1": [
+          "47"
+        ],
+        "branch_a_product_2": [
+          "94"
+        ],
+        "branch_a_value_2": [
+          "100"
+        ],
+        "branch_b_product_1": [
+          "12"
+        ],
+        "branch_b_value_1": [
+          "18"
+        ],
+        "branch_b_product_2": [
+          "54"
+        ],
+        "branch_b_value_2": [
+          "61"
+        ],
+        "answer": [
+          "161"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          14,
+          6
+        ],
+        "coefficients": [
+          3,
+          2,
+          2,
+          3
+        ],
+        "constants": [
+          5,
+          6,
+          6,
+          7
+        ],
+        "operations": [
+          "plus",
+          "plus",
+          "plus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_012",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "yzw",
+          11
+        ],
+        [
+          "qox",
+          "twice the number for yzw plus 5"
+        ],
+        [
+          "diz",
+          "three times the number for qox plus 3"
+        ],
+        [
+          "ohp",
+          6
+        ],
+        [
+          "tox",
+          "three times the number for ohp minus 1"
+        ],
+        [
+          "vhz",
+          "three times the number for tox plus 3"
+        ]
+      ],
+      "question": "What is the number for diz plus the number for vhz?",
+      "answer": 138,
+      "expected_intermediates": {
+        "branch_a_product_1": "22",
+        "branch_a_value_1": "27",
+        "branch_a_product_2": "81",
+        "branch_a_value_2": "84",
+        "branch_b_product_1": "18",
+        "branch_b_value_1": "17",
+        "branch_b_product_2": "51",
+        "branch_b_value_2": "54",
+        "answer": "138"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "22"
+        ],
+        "branch_a_value_1": [
+          "27"
+        ],
+        "branch_a_product_2": [
+          "81"
+        ],
+        "branch_a_value_2": [
+          "84"
+        ],
+        "branch_b_product_1": [
+          "18"
+        ],
+        "branch_b_value_1": [
+          "17"
+        ],
+        "branch_b_product_2": [
+          "51"
+        ],
+        "branch_b_value_2": [
+          "54"
+        ],
+        "answer": [
+          "138"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          11,
+          6
+        ],
+        "coefficients": [
+          2,
+          3,
+          3,
+          3
+        ],
+        "constants": [
+          5,
+          3,
+          1,
+          3
+        ],
+        "operations": [
+          "plus",
+          "plus",
+          "minus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_013",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "bug",
+          16
+        ],
+        [
+          "hbb",
+          "three times the number for bug minus 4"
+        ],
+        [
+          "flg",
+          "three times the number for hbb minus 3"
+        ],
+        [
+          "bfz",
+          13
+        ],
+        [
+          "txj",
+          "twice the number for bfz minus 3"
+        ],
+        [
+          "utc",
+          "twice the number for txj plus 7"
+        ]
+      ],
+      "question": "What is the number for flg plus the number for utc?",
+      "answer": 182,
+      "expected_intermediates": {
+        "branch_a_product_1": "48",
+        "branch_a_value_1": "44",
+        "branch_a_product_2": "132",
+        "branch_a_value_2": "129",
+        "branch_b_product_1": "26",
+        "branch_b_value_1": "23",
+        "branch_b_product_2": "46",
+        "branch_b_value_2": "53",
+        "answer": "182"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "48"
+        ],
+        "branch_a_value_1": [
+          "44"
+        ],
+        "branch_a_product_2": [
+          "132"
+        ],
+        "branch_a_value_2": [
+          "129"
+        ],
+        "branch_b_product_1": [
+          "26"
+        ],
+        "branch_b_value_1": [
+          "23"
+        ],
+        "branch_b_product_2": [
+          "46"
+        ],
+        "branch_b_value_2": [
+          "53"
+        ],
+        "answer": [
+          "182"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          16,
+          13
+        ],
+        "coefficients": [
+          3,
+          3,
+          2,
+          2
+        ],
+        "constants": [
+          4,
+          3,
+          3,
+          7
+        ],
+        "operations": [
+          "minus",
+          "minus",
+          "minus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_014",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "mua",
+          14
+        ],
+        [
+          "myq",
+          "three times the number for mua minus 6"
+        ],
+        [
+          "wbq",
+          "twice the number for myq minus 4"
+        ],
+        [
+          "odl",
+          15
+        ],
+        [
+          "axc",
+          "twice the number for odl minus 5"
+        ],
+        [
+          "grt",
+          "twice the number for axc plus 3"
+        ]
+      ],
+      "question": "What is the number for wbq plus the number for grt?",
+      "answer": 121,
+      "expected_intermediates": {
+        "branch_a_product_1": "42",
+        "branch_a_value_1": "36",
+        "branch_a_product_2": "72",
+        "branch_a_value_2": "68",
+        "branch_b_product_1": "30",
+        "branch_b_value_1": "25",
+        "branch_b_product_2": "50",
+        "branch_b_value_2": "53",
+        "answer": "121"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "42"
+        ],
+        "branch_a_value_1": [
+          "36"
+        ],
+        "branch_a_product_2": [
+          "72"
+        ],
+        "branch_a_value_2": [
+          "68"
+        ],
+        "branch_b_product_1": [
+          "30"
+        ],
+        "branch_b_value_1": [
+          "25"
+        ],
+        "branch_b_product_2": [
+          "50"
+        ],
+        "branch_b_value_2": [
+          "53"
+        ],
+        "answer": [
+          "121"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          14,
+          15
+        ],
+        "coefficients": [
+          3,
+          2,
+          2,
+          2
+        ],
+        "constants": [
+          6,
+          4,
+          5,
+          3
+        ],
+        "operations": [
+          "minus",
+          "minus",
+          "minus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_015",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "tce",
+          6
+        ],
+        [
+          "lrn",
+          "twice the number for tce plus 2"
+        ],
+        [
+          "jpc",
+          "twice the number for lrn plus 4"
+        ],
+        [
+          "rsc",
+          16
+        ],
+        [
+          "jdl",
+          "three times the number for rsc plus 2"
+        ],
+        [
+          "nci",
+          "three times the number for jdl plus 7"
+        ]
+      ],
+      "question": "What is the number for jpc plus the number for nci?",
+      "answer": 189,
+      "expected_intermediates": {
+        "branch_a_product_1": "12",
+        "branch_a_value_1": "14",
+        "branch_a_product_2": "28",
+        "branch_a_value_2": "32",
+        "branch_b_product_1": "48",
+        "branch_b_value_1": "50",
+        "branch_b_product_2": "150",
+        "branch_b_value_2": "157",
+        "answer": "189"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "12"
+        ],
+        "branch_a_value_1": [
+          "14"
+        ],
+        "branch_a_product_2": [
+          "28"
+        ],
+        "branch_a_value_2": [
+          "32"
+        ],
+        "branch_b_product_1": [
+          "48"
+        ],
+        "branch_b_value_1": [
+          "50"
+        ],
+        "branch_b_product_2": [
+          "150"
+        ],
+        "branch_b_value_2": [
+          "157"
+        ],
+        "answer": [
+          "189"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          6,
+          16
+        ],
+        "coefficients": [
+          2,
+          2,
+          3,
+          3
+        ],
+        "constants": [
+          2,
+          4,
+          2,
+          7
+        ],
+        "operations": [
+          "plus",
+          "plus",
+          "plus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_016",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "kyu",
+          10
+        ],
+        [
+          "pcy",
+          "twice the number for kyu minus 4"
+        ],
+        [
+          "pik",
+          "three times the number for pcy minus 4"
+        ],
+        [
+          "adn",
+          12
+        ],
+        [
+          "iet",
+          "three times the number for adn plus 3"
+        ],
+        [
+          "blt",
+          "three times the number for iet plus 3"
+        ]
+      ],
+      "question": "What is the number for pik plus the number for blt?",
+      "answer": 164,
+      "expected_intermediates": {
+        "branch_a_product_1": "20",
+        "branch_a_value_1": "16",
+        "branch_a_product_2": "48",
+        "branch_a_value_2": "44",
+        "branch_b_product_1": "36",
+        "branch_b_value_1": "39",
+        "branch_b_product_2": "117",
+        "branch_b_value_2": "120",
+        "answer": "164"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "20"
+        ],
+        "branch_a_value_1": [
+          "16"
+        ],
+        "branch_a_product_2": [
+          "48"
+        ],
+        "branch_a_value_2": [
+          "44"
+        ],
+        "branch_b_product_1": [
+          "36"
+        ],
+        "branch_b_value_1": [
+          "39"
+        ],
+        "branch_b_product_2": [
+          "117"
+        ],
+        "branch_b_value_2": [
+          "120"
+        ],
+        "answer": [
+          "164"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          10,
+          12
+        ],
+        "coefficients": [
+          2,
+          3,
+          3,
+          3
+        ],
+        "constants": [
+          4,
+          4,
+          3,
+          3
+        ],
+        "operations": [
+          "minus",
+          "minus",
+          "plus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_017",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "ocp",
+          13
+        ],
+        [
+          "ajz",
+          "twice the number for ocp minus 6"
+        ],
+        [
+          "sdk",
+          "three times the number for ajz minus 5"
+        ],
+        [
+          "oty",
+          5
+        ],
+        [
+          "vym",
+          "three times the number for oty plus 7"
+        ],
+        [
+          "ppn",
+          "three times the number for vym minus 3"
+        ]
+      ],
+      "question": "What is the number for sdk plus the number for ppn?",
+      "answer": 118,
+      "expected_intermediates": {
+        "branch_a_product_1": "26",
+        "branch_a_value_1": "20",
+        "branch_a_product_2": "60",
+        "branch_a_value_2": "55",
+        "branch_b_product_1": "15",
+        "branch_b_value_1": "22",
+        "branch_b_product_2": "66",
+        "branch_b_value_2": "63",
+        "answer": "118"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "26"
+        ],
+        "branch_a_value_1": [
+          "20"
+        ],
+        "branch_a_product_2": [
+          "60"
+        ],
+        "branch_a_value_2": [
+          "55"
+        ],
+        "branch_b_product_1": [
+          "15"
+        ],
+        "branch_b_value_1": [
+          "22"
+        ],
+        "branch_b_product_2": [
+          "66"
+        ],
+        "branch_b_value_2": [
+          "63"
+        ],
+        "answer": [
+          "118"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          13,
+          5
+        ],
+        "coefficients": [
+          2,
+          3,
+          3,
+          3
+        ],
+        "constants": [
+          6,
+          5,
+          7,
+          3
+        ],
+        "operations": [
+          "minus",
+          "minus",
+          "plus",
+          "minus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_018",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "kwr",
+          16
+        ],
+        [
+          "ftl",
+          "three times the number for kwr plus 4"
+        ],
+        [
+          "juz",
+          "three times the number for ftl plus 7"
+        ],
+        [
+          "jct",
+          17
+        ],
+        [
+          "mzs",
+          "three times the number for jct minus 1"
+        ],
+        [
+          "ohf",
+          "three times the number for mzs plus 5"
+        ]
+      ],
+      "question": "What is the number for juz plus the number for ohf?",
+      "answer": 318,
+      "expected_intermediates": {
+        "branch_a_product_1": "48",
+        "branch_a_value_1": "52",
+        "branch_a_product_2": "156",
+        "branch_a_value_2": "163",
+        "branch_b_product_1": "51",
+        "branch_b_value_1": "50",
+        "branch_b_product_2": "150",
+        "branch_b_value_2": "155",
+        "answer": "318"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "48"
+        ],
+        "branch_a_value_1": [
+          "52"
+        ],
+        "branch_a_product_2": [
+          "156"
+        ],
+        "branch_a_value_2": [
+          "163"
+        ],
+        "branch_b_product_1": [
+          "51"
+        ],
+        "branch_b_value_1": [
+          "50"
+        ],
+        "branch_b_product_2": [
+          "150"
+        ],
+        "branch_b_value_2": [
+          "155"
+        ],
+        "answer": [
+          "318"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          16,
+          17
+        ],
+        "coefficients": [
+          3,
+          3,
+          3,
+          3
+        ],
+        "constants": [
+          4,
+          7,
+          1,
+          5
+        ],
+        "operations": [
+          "plus",
+          "plus",
+          "minus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_019",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "ljn",
+          11
+        ],
+        [
+          "fpv",
+          "twice the number for ljn plus 1"
+        ],
+        [
+          "tfw",
+          "three times the number for fpv minus 4"
+        ],
+        [
+          "tyt",
+          6
+        ],
+        [
+          "cad",
+          "twice the number for tyt minus 7"
+        ],
+        [
+          "xet",
+          "twice the number for cad plus 6"
+        ]
+      ],
+      "question": "What is the number for tfw plus the number for xet?",
+      "answer": 81,
+      "expected_intermediates": {
+        "branch_a_product_1": "22",
+        "branch_a_value_1": "23",
+        "branch_a_product_2": "69",
+        "branch_a_value_2": "65",
+        "branch_b_product_1": "12",
+        "branch_b_value_1": "5",
+        "branch_b_product_2": "10",
+        "branch_b_value_2": "16",
+        "answer": "81"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "22"
+        ],
+        "branch_a_value_1": [
+          "23"
+        ],
+        "branch_a_product_2": [
+          "69"
+        ],
+        "branch_a_value_2": [
+          "65"
+        ],
+        "branch_b_product_1": [
+          "12"
+        ],
+        "branch_b_value_1": [
+          "5"
+        ],
+        "branch_b_product_2": [
+          "10"
+        ],
+        "branch_b_value_2": [
+          "16"
+        ],
+        "answer": [
+          "81"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          11,
+          6
+        ],
+        "coefficients": [
+          2,
+          3,
+          2,
+          2
+        ],
+        "constants": [
+          1,
+          4,
+          7,
+          6
+        ],
+        "operations": [
+          "plus",
+          "minus",
+          "minus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_020",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "mvs",
+          17
+        ],
+        [
+          "bah",
+          "three times the number for mvs plus 1"
+        ],
+        [
+          "yvl",
+          "twice the number for bah plus 4"
+        ],
+        [
+          "nkc",
+          12
+        ],
+        [
+          "ohu",
+          "three times the number for nkc minus 4"
+        ],
+        [
+          "bni",
+          "twice the number for ohu plus 3"
+        ]
+      ],
+      "question": "What is the number for yvl plus the number for bni?",
+      "answer": 175,
+      "expected_intermediates": {
+        "branch_a_product_1": "51",
+        "branch_a_value_1": "52",
+        "branch_a_product_2": "104",
+        "branch_a_value_2": "108",
+        "branch_b_product_1": "36",
+        "branch_b_value_1": "32",
+        "branch_b_product_2": "64",
+        "branch_b_value_2": "67",
+        "answer": "175"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "51"
+        ],
+        "branch_a_value_1": [
+          "52"
+        ],
+        "branch_a_product_2": [
+          "104"
+        ],
+        "branch_a_value_2": [
+          "108"
+        ],
+        "branch_b_product_1": [
+          "36"
+        ],
+        "branch_b_value_1": [
+          "32"
+        ],
+        "branch_b_product_2": [
+          "64"
+        ],
+        "branch_b_value_2": [
+          "67"
+        ],
+        "answer": [
+          "175"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          17,
+          12
+        ],
+        "coefficients": [
+          3,
+          2,
+          3,
+          2
+        ],
+        "constants": [
+          1,
+          4,
+          4,
+          3
+        ],
+        "operations": [
+          "plus",
+          "plus",
+          "minus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_021",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "ckh",
+          16
+        ],
+        [
+          "doi",
+          "twice the number for ckh minus 5"
+        ],
+        [
+          "xaw",
+          "three times the number for doi minus 1"
+        ],
+        [
+          "shg",
+          13
+        ],
+        [
+          "fmk",
+          "twice the number for shg minus 7"
+        ],
+        [
+          "psc",
+          "twice the number for fmk plus 5"
+        ]
+      ],
+      "question": "What is the number for xaw plus the number for psc?",
+      "answer": 123,
+      "expected_intermediates": {
+        "branch_a_product_1": "32",
+        "branch_a_value_1": "27",
+        "branch_a_product_2": "81",
+        "branch_a_value_2": "80",
+        "branch_b_product_1": "26",
+        "branch_b_value_1": "19",
+        "branch_b_product_2": "38",
+        "branch_b_value_2": "43",
+        "answer": "123"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "32"
+        ],
+        "branch_a_value_1": [
+          "27"
+        ],
+        "branch_a_product_2": [
+          "81"
+        ],
+        "branch_a_value_2": [
+          "80"
+        ],
+        "branch_b_product_1": [
+          "26"
+        ],
+        "branch_b_value_1": [
+          "19"
+        ],
+        "branch_b_product_2": [
+          "38"
+        ],
+        "branch_b_value_2": [
+          "43"
+        ],
+        "answer": [
+          "123"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          16,
+          13
+        ],
+        "coefficients": [
+          2,
+          3,
+          2,
+          2
+        ],
+        "constants": [
+          5,
+          1,
+          7,
+          5
+        ],
+        "operations": [
+          "minus",
+          "minus",
+          "minus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_022",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "hlu",
+          13
+        ],
+        [
+          "cqk",
+          "three times the number for hlu plus 2"
+        ],
+        [
+          "mdh",
+          "twice the number for cqk plus 2"
+        ],
+        [
+          "xmf",
+          8
+        ],
+        [
+          "szj",
+          "three times the number for xmf minus 4"
+        ],
+        [
+          "sqa",
+          "three times the number for szj plus 3"
+        ]
+      ],
+      "question": "What is the number for mdh plus the number for sqa?",
+      "answer": 147,
+      "expected_intermediates": {
+        "branch_a_product_1": "39",
+        "branch_a_value_1": "41",
+        "branch_a_product_2": "82",
+        "branch_a_value_2": "84",
+        "branch_b_product_1": "24",
+        "branch_b_value_1": "20",
+        "branch_b_product_2": "60",
+        "branch_b_value_2": "63",
+        "answer": "147"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "39"
+        ],
+        "branch_a_value_1": [
+          "41"
+        ],
+        "branch_a_product_2": [
+          "82"
+        ],
+        "branch_a_value_2": [
+          "84"
+        ],
+        "branch_b_product_1": [
+          "24"
+        ],
+        "branch_b_value_1": [
+          "20"
+        ],
+        "branch_b_product_2": [
+          "60"
+        ],
+        "branch_b_value_2": [
+          "63"
+        ],
+        "answer": [
+          "147"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          13,
+          8
+        ],
+        "coefficients": [
+          3,
+          2,
+          3,
+          3
+        ],
+        "constants": [
+          2,
+          2,
+          4,
+          3
+        ],
+        "operations": [
+          "plus",
+          "plus",
+          "minus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_023",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "sca",
+          7
+        ],
+        [
+          "gqa",
+          "twice the number for sca plus 1"
+        ],
+        [
+          "ksn",
+          "twice the number for gqa minus 2"
+        ],
+        [
+          "hca",
+          11
+        ],
+        [
+          "edq",
+          "three times the number for hca minus 7"
+        ],
+        [
+          "qlp",
+          "three times the number for edq minus 6"
+        ]
+      ],
+      "question": "What is the number for ksn plus the number for qlp?",
+      "answer": 100,
+      "expected_intermediates": {
+        "branch_a_product_1": "14",
+        "branch_a_value_1": "15",
+        "branch_a_product_2": "30",
+        "branch_a_value_2": "28",
+        "branch_b_product_1": "33",
+        "branch_b_value_1": "26",
+        "branch_b_product_2": "78",
+        "branch_b_value_2": "72",
+        "answer": "100"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "14"
+        ],
+        "branch_a_value_1": [
+          "15"
+        ],
+        "branch_a_product_2": [
+          "30"
+        ],
+        "branch_a_value_2": [
+          "28"
+        ],
+        "branch_b_product_1": [
+          "33"
+        ],
+        "branch_b_value_1": [
+          "26"
+        ],
+        "branch_b_product_2": [
+          "78"
+        ],
+        "branch_b_value_2": [
+          "72"
+        ],
+        "answer": [
+          "100"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          7,
+          11
+        ],
+        "coefficients": [
+          2,
+          2,
+          3,
+          3
+        ],
+        "constants": [
+          1,
+          2,
+          7,
+          6
+        ],
+        "operations": [
+          "plus",
+          "minus",
+          "minus",
+          "minus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_024",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "nfw",
+          12
+        ],
+        [
+          "pun",
+          "three times the number for nfw minus 4"
+        ],
+        [
+          "hlv",
+          "twice the number for pun minus 6"
+        ],
+        [
+          "rdh",
+          18
+        ],
+        [
+          "ldb",
+          "three times the number for rdh plus 2"
+        ],
+        [
+          "ngy",
+          "three times the number for ldb plus 5"
+        ]
+      ],
+      "question": "What is the number for hlv plus the number for ngy?",
+      "answer": 231,
+      "expected_intermediates": {
+        "branch_a_product_1": "36",
+        "branch_a_value_1": "32",
+        "branch_a_product_2": "64",
+        "branch_a_value_2": "58",
+        "branch_b_product_1": "54",
+        "branch_b_value_1": "56",
+        "branch_b_product_2": "168",
+        "branch_b_value_2": "173",
+        "answer": "231"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "36"
+        ],
+        "branch_a_value_1": [
+          "32"
+        ],
+        "branch_a_product_2": [
+          "64"
+        ],
+        "branch_a_value_2": [
+          "58"
+        ],
+        "branch_b_product_1": [
+          "54"
+        ],
+        "branch_b_value_1": [
+          "56"
+        ],
+        "branch_b_product_2": [
+          "168"
+        ],
+        "branch_b_value_2": [
+          "173"
+        ],
+        "answer": [
+          "231"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          12,
+          18
+        ],
+        "coefficients": [
+          3,
+          2,
+          3,
+          3
+        ],
+        "constants": [
+          4,
+          6,
+          2,
+          5
+        ],
+        "operations": [
+          "minus",
+          "minus",
+          "plus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_025",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "tdd",
+          10
+        ],
+        [
+          "qbt",
+          "three times the number for tdd plus 1"
+        ],
+        [
+          "umf",
+          "twice the number for qbt minus 5"
+        ],
+        [
+          "zjc",
+          10
+        ],
+        [
+          "ryq",
+          "twice the number for zjc minus 1"
+        ],
+        [
+          "abi",
+          "twice the number for ryq plus 6"
+        ]
+      ],
+      "question": "What is the number for umf plus the number for abi?",
+      "answer": 101,
+      "expected_intermediates": {
+        "branch_a_product_1": "30",
+        "branch_a_value_1": "31",
+        "branch_a_product_2": "62",
+        "branch_a_value_2": "57",
+        "branch_b_product_1": "20",
+        "branch_b_value_1": "19",
+        "branch_b_product_2": "38",
+        "branch_b_value_2": "44",
+        "answer": "101"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "30"
+        ],
+        "branch_a_value_1": [
+          "31"
+        ],
+        "branch_a_product_2": [
+          "62"
+        ],
+        "branch_a_value_2": [
+          "57"
+        ],
+        "branch_b_product_1": [
+          "20"
+        ],
+        "branch_b_value_1": [
+          "19"
+        ],
+        "branch_b_product_2": [
+          "38"
+        ],
+        "branch_b_value_2": [
+          "44"
+        ],
+        "answer": [
+          "101"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          10,
+          10
+        ],
+        "coefficients": [
+          3,
+          2,
+          2,
+          2
+        ],
+        "constants": [
+          1,
+          5,
+          1,
+          6
+        ],
+        "operations": [
+          "plus",
+          "minus",
+          "minus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_026",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "goi",
+          8
+        ],
+        [
+          "hji",
+          "twice the number for goi plus 6"
+        ],
+        [
+          "xal",
+          "three times the number for hji minus 1"
+        ],
+        [
+          "jwx",
+          9
+        ],
+        [
+          "qna",
+          "three times the number for jwx minus 6"
+        ],
+        [
+          "eja",
+          "three times the number for qna plus 4"
+        ]
+      ],
+      "question": "What is the number for xal plus the number for eja?",
+      "answer": 132,
+      "expected_intermediates": {
+        "branch_a_product_1": "16",
+        "branch_a_value_1": "22",
+        "branch_a_product_2": "66",
+        "branch_a_value_2": "65",
+        "branch_b_product_1": "27",
+        "branch_b_value_1": "21",
+        "branch_b_product_2": "63",
+        "branch_b_value_2": "67",
+        "answer": "132"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "16"
+        ],
+        "branch_a_value_1": [
+          "22"
+        ],
+        "branch_a_product_2": [
+          "66"
+        ],
+        "branch_a_value_2": [
+          "65"
+        ],
+        "branch_b_product_1": [
+          "27"
+        ],
+        "branch_b_value_1": [
+          "21"
+        ],
+        "branch_b_product_2": [
+          "63"
+        ],
+        "branch_b_value_2": [
+          "67"
+        ],
+        "answer": [
+          "132"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          8,
+          9
+        ],
+        "coefficients": [
+          2,
+          3,
+          3,
+          3
+        ],
+        "constants": [
+          6,
+          1,
+          6,
+          4
+        ],
+        "operations": [
+          "plus",
+          "minus",
+          "minus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_027",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "skb",
+          12
+        ],
+        [
+          "bim",
+          "twice the number for skb minus 7"
+        ],
+        [
+          "fto",
+          "three times the number for bim plus 7"
+        ],
+        [
+          "tij",
+          9
+        ],
+        [
+          "fvq",
+          "three times the number for tij minus 2"
+        ],
+        [
+          "okg",
+          "twice the number for fvq plus 7"
+        ]
+      ],
+      "question": "What is the number for fto plus the number for okg?",
+      "answer": 115,
+      "expected_intermediates": {
+        "branch_a_product_1": "24",
+        "branch_a_value_1": "17",
+        "branch_a_product_2": "51",
+        "branch_a_value_2": "58",
+        "branch_b_product_1": "27",
+        "branch_b_value_1": "25",
+        "branch_b_product_2": "50",
+        "branch_b_value_2": "57",
+        "answer": "115"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "24"
+        ],
+        "branch_a_value_1": [
+          "17"
+        ],
+        "branch_a_product_2": [
+          "51"
+        ],
+        "branch_a_value_2": [
+          "58"
+        ],
+        "branch_b_product_1": [
+          "27"
+        ],
+        "branch_b_value_1": [
+          "25"
+        ],
+        "branch_b_product_2": [
+          "50"
+        ],
+        "branch_b_value_2": [
+          "57"
+        ],
+        "answer": [
+          "115"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          12,
+          9
+        ],
+        "coefficients": [
+          2,
+          3,
+          3,
+          2
+        ],
+        "constants": [
+          7,
+          7,
+          2,
+          7
+        ],
+        "operations": [
+          "minus",
+          "plus",
+          "minus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_028",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "mjb",
+          12
+        ],
+        [
+          "sqx",
+          "three times the number for mjb plus 6"
+        ],
+        [
+          "iov",
+          "three times the number for sqx plus 5"
+        ],
+        [
+          "zpq",
+          11
+        ],
+        [
+          "vqk",
+          "twice the number for zpq plus 7"
+        ],
+        [
+          "wiq",
+          "three times the number for vqk plus 2"
+        ]
+      ],
+      "question": "What is the number for iov plus the number for wiq?",
+      "answer": 220,
+      "expected_intermediates": {
+        "branch_a_product_1": "36",
+        "branch_a_value_1": "42",
+        "branch_a_product_2": "126",
+        "branch_a_value_2": "131",
+        "branch_b_product_1": "22",
+        "branch_b_value_1": "29",
+        "branch_b_product_2": "87",
+        "branch_b_value_2": "89",
+        "answer": "220"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "36"
+        ],
+        "branch_a_value_1": [
+          "42"
+        ],
+        "branch_a_product_2": [
+          "126"
+        ],
+        "branch_a_value_2": [
+          "131"
+        ],
+        "branch_b_product_1": [
+          "22"
+        ],
+        "branch_b_value_1": [
+          "29"
+        ],
+        "branch_b_product_2": [
+          "87"
+        ],
+        "branch_b_value_2": [
+          "89"
+        ],
+        "answer": [
+          "220"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          12,
+          11
+        ],
+        "coefficients": [
+          3,
+          3,
+          2,
+          3
+        ],
+        "constants": [
+          6,
+          5,
+          7,
+          2
+        ],
+        "operations": [
+          "plus",
+          "plus",
+          "plus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_029",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "yny",
+          12
+        ],
+        [
+          "trg",
+          "three times the number for yny plus 6"
+        ],
+        [
+          "hut",
+          "twice the number for trg minus 2"
+        ],
+        [
+          "mkl",
+          12
+        ],
+        [
+          "vjl",
+          "twice the number for mkl plus 4"
+        ],
+        [
+          "oul",
+          "twice the number for vjl plus 5"
+        ]
+      ],
+      "question": "What is the number for hut plus the number for oul?",
+      "answer": 143,
+      "expected_intermediates": {
+        "branch_a_product_1": "36",
+        "branch_a_value_1": "42",
+        "branch_a_product_2": "84",
+        "branch_a_value_2": "82",
+        "branch_b_product_1": "24",
+        "branch_b_value_1": "28",
+        "branch_b_product_2": "56",
+        "branch_b_value_2": "61",
+        "answer": "143"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "36"
+        ],
+        "branch_a_value_1": [
+          "42"
+        ],
+        "branch_a_product_2": [
+          "84"
+        ],
+        "branch_a_value_2": [
+          "82"
+        ],
+        "branch_b_product_1": [
+          "24"
+        ],
+        "branch_b_value_1": [
+          "28"
+        ],
+        "branch_b_product_2": [
+          "56"
+        ],
+        "branch_b_value_2": [
+          "61"
+        ],
+        "answer": [
+          "143"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          12,
+          12
+        ],
+        "coefficients": [
+          3,
+          2,
+          2,
+          2
+        ],
+        "constants": [
+          6,
+          2,
+          4,
+          5
+        ],
+        "operations": [
+          "plus",
+          "minus",
+          "plus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_030",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "jgo",
+          12
+        ],
+        [
+          "fps",
+          "twice the number for jgo plus 7"
+        ],
+        [
+          "xrb",
+          "three times the number for fps plus 1"
+        ],
+        [
+          "yol",
+          18
+        ],
+        [
+          "jtg",
+          "three times the number for yol plus 3"
+        ],
+        [
+          "zkr",
+          "twice the number for jtg minus 7"
+        ]
+      ],
+      "question": "What is the number for xrb plus the number for zkr?",
+      "answer": 201,
+      "expected_intermediates": {
+        "branch_a_product_1": "24",
+        "branch_a_value_1": "31",
+        "branch_a_product_2": "93",
+        "branch_a_value_2": "94",
+        "branch_b_product_1": "54",
+        "branch_b_value_1": "57",
+        "branch_b_product_2": "114",
+        "branch_b_value_2": "107",
+        "answer": "201"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "24"
+        ],
+        "branch_a_value_1": [
+          "31"
+        ],
+        "branch_a_product_2": [
+          "93"
+        ],
+        "branch_a_value_2": [
+          "94"
+        ],
+        "branch_b_product_1": [
+          "54"
+        ],
+        "branch_b_value_1": [
+          "57"
+        ],
+        "branch_b_product_2": [
+          "114"
+        ],
+        "branch_b_value_2": [
+          "107"
+        ],
+        "answer": [
+          "201"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          12,
+          18
+        ],
+        "coefficients": [
+          2,
+          3,
+          3,
+          2
+        ],
+        "constants": [
+          7,
+          1,
+          3,
+          7
+        ],
+        "operations": [
+          "plus",
+          "plus",
+          "plus",
+          "minus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_031",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "exw",
+          13
+        ],
+        [
+          "rtu",
+          "three times the number for exw plus 1"
+        ],
+        [
+          "oqw",
+          "twice the number for rtu minus 3"
+        ],
+        [
+          "ffs",
+          17
+        ],
+        [
+          "pto",
+          "three times the number for ffs minus 5"
+        ],
+        [
+          "sgb",
+          "three times the number for pto minus 5"
+        ]
+      ],
+      "question": "What is the number for oqw plus the number for sgb?",
+      "answer": 210,
+      "expected_intermediates": {
+        "branch_a_product_1": "39",
+        "branch_a_value_1": "40",
+        "branch_a_product_2": "80",
+        "branch_a_value_2": "77",
+        "branch_b_product_1": "51",
+        "branch_b_value_1": "46",
+        "branch_b_product_2": "138",
+        "branch_b_value_2": "133",
+        "answer": "210"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "39"
+        ],
+        "branch_a_value_1": [
+          "40"
+        ],
+        "branch_a_product_2": [
+          "80"
+        ],
+        "branch_a_value_2": [
+          "77"
+        ],
+        "branch_b_product_1": [
+          "51"
+        ],
+        "branch_b_value_1": [
+          "46"
+        ],
+        "branch_b_product_2": [
+          "138"
+        ],
+        "branch_b_value_2": [
+          "133"
+        ],
+        "answer": [
+          "210"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          13,
+          17
+        ],
+        "coefficients": [
+          3,
+          2,
+          3,
+          3
+        ],
+        "constants": [
+          1,
+          3,
+          5,
+          5
+        ],
+        "operations": [
+          "plus",
+          "minus",
+          "minus",
+          "minus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_032",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "bhg",
+          9
+        ],
+        [
+          "xxj",
+          "three times the number for bhg plus 5"
+        ],
+        [
+          "jbt",
+          "three times the number for xxj minus 3"
+        ],
+        [
+          "nth",
+          17
+        ],
+        [
+          "hci",
+          "three times the number for nth plus 2"
+        ],
+        [
+          "hly",
+          "three times the number for hci minus 3"
+        ]
+      ],
+      "question": "What is the number for jbt plus the number for hly?",
+      "answer": 249,
+      "expected_intermediates": {
+        "branch_a_product_1": "27",
+        "branch_a_value_1": "32",
+        "branch_a_product_2": "96",
+        "branch_a_value_2": "93",
+        "branch_b_product_1": "51",
+        "branch_b_value_1": "53",
+        "branch_b_product_2": "159",
+        "branch_b_value_2": "156",
+        "answer": "249"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "27"
+        ],
+        "branch_a_value_1": [
+          "32"
+        ],
+        "branch_a_product_2": [
+          "96"
+        ],
+        "branch_a_value_2": [
+          "93"
+        ],
+        "branch_b_product_1": [
+          "51"
+        ],
+        "branch_b_value_1": [
+          "53"
+        ],
+        "branch_b_product_2": [
+          "159"
+        ],
+        "branch_b_value_2": [
+          "156"
+        ],
+        "answer": [
+          "249"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          9,
+          17
+        ],
+        "coefficients": [
+          3,
+          3,
+          3,
+          3
+        ],
+        "constants": [
+          5,
+          3,
+          2,
+          3
+        ],
+        "operations": [
+          "plus",
+          "minus",
+          "plus",
+          "minus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_033",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "eya",
+          10
+        ],
+        [
+          "lfp",
+          "three times the number for eya plus 4"
+        ],
+        [
+          "hsp",
+          "three times the number for lfp minus 5"
+        ],
+        [
+          "pvj",
+          7
+        ],
+        [
+          "htg",
+          "twice the number for pvj plus 6"
+        ],
+        [
+          "zcp",
+          "three times the number for htg plus 1"
+        ]
+      ],
+      "question": "What is the number for hsp plus the number for zcp?",
+      "answer": 158,
+      "expected_intermediates": {
+        "branch_a_product_1": "30",
+        "branch_a_value_1": "34",
+        "branch_a_product_2": "102",
+        "branch_a_value_2": "97",
+        "branch_b_product_1": "14",
+        "branch_b_value_1": "20",
+        "branch_b_product_2": "60",
+        "branch_b_value_2": "61",
+        "answer": "158"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "30"
+        ],
+        "branch_a_value_1": [
+          "34"
+        ],
+        "branch_a_product_2": [
+          "102"
+        ],
+        "branch_a_value_2": [
+          "97"
+        ],
+        "branch_b_product_1": [
+          "14"
+        ],
+        "branch_b_value_1": [
+          "20"
+        ],
+        "branch_b_product_2": [
+          "60"
+        ],
+        "branch_b_value_2": [
+          "61"
+        ],
+        "answer": [
+          "158"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          10,
+          7
+        ],
+        "coefficients": [
+          3,
+          3,
+          2,
+          3
+        ],
+        "constants": [
+          4,
+          5,
+          6,
+          1
+        ],
+        "operations": [
+          "plus",
+          "minus",
+          "plus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_034",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "iax",
+          12
+        ],
+        [
+          "miz",
+          "twice the number for iax plus 4"
+        ],
+        [
+          "ksq",
+          "three times the number for miz plus 5"
+        ],
+        [
+          "hdk",
+          16
+        ],
+        [
+          "ykz",
+          "twice the number for hdk plus 3"
+        ],
+        [
+          "rzm",
+          "twice the number for ykz plus 3"
+        ]
+      ],
+      "question": "What is the number for ksq plus the number for rzm?",
+      "answer": 162,
+      "expected_intermediates": {
+        "branch_a_product_1": "24",
+        "branch_a_value_1": "28",
+        "branch_a_product_2": "84",
+        "branch_a_value_2": "89",
+        "branch_b_product_1": "32",
+        "branch_b_value_1": "35",
+        "branch_b_product_2": "70",
+        "branch_b_value_2": "73",
+        "answer": "162"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "24"
+        ],
+        "branch_a_value_1": [
+          "28"
+        ],
+        "branch_a_product_2": [
+          "84"
+        ],
+        "branch_a_value_2": [
+          "89"
+        ],
+        "branch_b_product_1": [
+          "32"
+        ],
+        "branch_b_value_1": [
+          "35"
+        ],
+        "branch_b_product_2": [
+          "70"
+        ],
+        "branch_b_value_2": [
+          "73"
+        ],
+        "answer": [
+          "162"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          12,
+          16
+        ],
+        "coefficients": [
+          2,
+          3,
+          2,
+          2
+        ],
+        "constants": [
+          4,
+          5,
+          3,
+          3
+        ],
+        "operations": [
+          "plus",
+          "plus",
+          "plus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_035",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "dvx",
+          13
+        ],
+        [
+          "czx",
+          "three times the number for dvx plus 3"
+        ],
+        [
+          "vnx",
+          "three times the number for czx plus 6"
+        ],
+        [
+          "qps",
+          5
+        ],
+        [
+          "mzw",
+          "twice the number for qps minus 1"
+        ],
+        [
+          "yjk",
+          "twice the number for mzw plus 5"
+        ]
+      ],
+      "question": "What is the number for vnx plus the number for yjk?",
+      "answer": 155,
+      "expected_intermediates": {
+        "branch_a_product_1": "39",
+        "branch_a_value_1": "42",
+        "branch_a_product_2": "126",
+        "branch_a_value_2": "132",
+        "branch_b_product_1": "10",
+        "branch_b_value_1": "9",
+        "branch_b_product_2": "18",
+        "branch_b_value_2": "23",
+        "answer": "155"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "39"
+        ],
+        "branch_a_value_1": [
+          "42"
+        ],
+        "branch_a_product_2": [
+          "126"
+        ],
+        "branch_a_value_2": [
+          "132"
+        ],
+        "branch_b_product_1": [
+          "10"
+        ],
+        "branch_b_value_1": [
+          "9"
+        ],
+        "branch_b_product_2": [
+          "18"
+        ],
+        "branch_b_value_2": [
+          "23"
+        ],
+        "answer": [
+          "155"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          13,
+          5
+        ],
+        "coefficients": [
+          3,
+          3,
+          2,
+          2
+        ],
+        "constants": [
+          3,
+          6,
+          1,
+          5
+        ],
+        "operations": [
+          "plus",
+          "plus",
+          "minus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_036",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "qtm",
+          17
+        ],
+        [
+          "kud",
+          "twice the number for qtm minus 5"
+        ],
+        [
+          "eiw",
+          "three times the number for kud plus 4"
+        ],
+        [
+          "lco",
+          11
+        ],
+        [
+          "res",
+          "three times the number for lco minus 1"
+        ],
+        [
+          "bhz",
+          "three times the number for res minus 3"
+        ]
+      ],
+      "question": "What is the number for eiw plus the number for bhz?",
+      "answer": 184,
+      "expected_intermediates": {
+        "branch_a_product_1": "34",
+        "branch_a_value_1": "29",
+        "branch_a_product_2": "87",
+        "branch_a_value_2": "91",
+        "branch_b_product_1": "33",
+        "branch_b_value_1": "32",
+        "branch_b_product_2": "96",
+        "branch_b_value_2": "93",
+        "answer": "184"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "34"
+        ],
+        "branch_a_value_1": [
+          "29"
+        ],
+        "branch_a_product_2": [
+          "87"
+        ],
+        "branch_a_value_2": [
+          "91"
+        ],
+        "branch_b_product_1": [
+          "33"
+        ],
+        "branch_b_value_1": [
+          "32"
+        ],
+        "branch_b_product_2": [
+          "96"
+        ],
+        "branch_b_value_2": [
+          "93"
+        ],
+        "answer": [
+          "184"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          17,
+          11
+        ],
+        "coefficients": [
+          2,
+          3,
+          3,
+          3
+        ],
+        "constants": [
+          5,
+          4,
+          1,
+          3
+        ],
+        "operations": [
+          "minus",
+          "plus",
+          "minus",
+          "minus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_037",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "xie",
+          14
+        ],
+        [
+          "oaz",
+          "three times the number for xie plus 4"
+        ],
+        [
+          "xom",
+          "three times the number for oaz minus 3"
+        ],
+        [
+          "mbr",
+          6
+        ],
+        [
+          "yym",
+          "three times the number for mbr plus 7"
+        ],
+        [
+          "zfm",
+          "twice the number for yym plus 6"
+        ]
+      ],
+      "question": "What is the number for xom plus the number for zfm?",
+      "answer": 191,
+      "expected_intermediates": {
+        "branch_a_product_1": "42",
+        "branch_a_value_1": "46",
+        "branch_a_product_2": "138",
+        "branch_a_value_2": "135",
+        "branch_b_product_1": "18",
+        "branch_b_value_1": "25",
+        "branch_b_product_2": "50",
+        "branch_b_value_2": "56",
+        "answer": "191"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "42"
+        ],
+        "branch_a_value_1": [
+          "46"
+        ],
+        "branch_a_product_2": [
+          "138"
+        ],
+        "branch_a_value_2": [
+          "135"
+        ],
+        "branch_b_product_1": [
+          "18"
+        ],
+        "branch_b_value_1": [
+          "25"
+        ],
+        "branch_b_product_2": [
+          "50"
+        ],
+        "branch_b_value_2": [
+          "56"
+        ],
+        "answer": [
+          "191"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          14,
+          6
+        ],
+        "coefficients": [
+          3,
+          3,
+          3,
+          2
+        ],
+        "constants": [
+          4,
+          3,
+          7,
+          6
+        ],
+        "operations": [
+          "plus",
+          "minus",
+          "plus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_038",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "dqi",
+          14
+        ],
+        [
+          "dvp",
+          "twice the number for dqi plus 7"
+        ],
+        [
+          "tyv",
+          "three times the number for dvp plus 4"
+        ],
+        [
+          "sbw",
+          18
+        ],
+        [
+          "jjq",
+          "three times the number for sbw plus 6"
+        ],
+        [
+          "yrk",
+          "twice the number for jjq plus 6"
+        ]
+      ],
+      "question": "What is the number for tyv plus the number for yrk?",
+      "answer": 235,
+      "expected_intermediates": {
+        "branch_a_product_1": "28",
+        "branch_a_value_1": "35",
+        "branch_a_product_2": "105",
+        "branch_a_value_2": "109",
+        "branch_b_product_1": "54",
+        "branch_b_value_1": "60",
+        "branch_b_product_2": "120",
+        "branch_b_value_2": "126",
+        "answer": "235"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "28"
+        ],
+        "branch_a_value_1": [
+          "35"
+        ],
+        "branch_a_product_2": [
+          "105"
+        ],
+        "branch_a_value_2": [
+          "109"
+        ],
+        "branch_b_product_1": [
+          "54"
+        ],
+        "branch_b_value_1": [
+          "60"
+        ],
+        "branch_b_product_2": [
+          "120"
+        ],
+        "branch_b_value_2": [
+          "126"
+        ],
+        "answer": [
+          "235"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          14,
+          18
+        ],
+        "coefficients": [
+          2,
+          3,
+          3,
+          2
+        ],
+        "constants": [
+          7,
+          4,
+          6,
+          6
+        ],
+        "operations": [
+          "plus",
+          "plus",
+          "plus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    },
+    {
+      "id": "branch_depth2_039",
+      "topology": "parallel_depth2",
+      "definitions": [
+        [
+          "lcg",
+          18
+        ],
+        [
+          "bby",
+          "twice the number for lcg minus 2"
+        ],
+        [
+          "qgn",
+          "twice the number for bby plus 6"
+        ],
+        [
+          "zsr",
+          14
+        ],
+        [
+          "rjv",
+          "twice the number for zsr minus 6"
+        ],
+        [
+          "htg",
+          "twice the number for rjv plus 4"
+        ]
+      ],
+      "question": "What is the number for qgn plus the number for htg?",
+      "answer": 122,
+      "expected_intermediates": {
+        "branch_a_product_1": "36",
+        "branch_a_value_1": "34",
+        "branch_a_product_2": "68",
+        "branch_a_value_2": "74",
+        "branch_b_product_1": "28",
+        "branch_b_value_1": "22",
+        "branch_b_product_2": "44",
+        "branch_b_value_2": "48",
+        "answer": "122"
+      },
+      "highlight_forms": {
+        "branch_a_product_1": [
+          "36"
+        ],
+        "branch_a_value_1": [
+          "34"
+        ],
+        "branch_a_product_2": [
+          "68"
+        ],
+        "branch_a_value_2": [
+          "74"
+        ],
+        "branch_b_product_1": [
+          "28"
+        ],
+        "branch_b_value_1": [
+          "22"
+        ],
+        "branch_b_product_2": [
+          "44"
+        ],
+        "branch_b_value_2": [
+          "48"
+        ],
+        "answer": [
+          "122"
+        ]
+      },
+      "construction_for_validation": {
+        "bases": [
+          18,
+          14
+        ],
+        "coefficients": [
+          2,
+          2,
+          2,
+          2
+        ],
+        "constants": [
+          2,
+          6,
+          6,
+          4
+        ],
+        "operations": [
+          "minus",
+          "plus",
+          "minus",
+          "plus"
+        ],
+        "merge": "addition"
+      }
+    }
+  ]
+}

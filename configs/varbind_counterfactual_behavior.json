@@ -1,0 +1,699 @@
+{
+  "seed": 42,
+  "task_type": "variable_binding",
+  "filler_type": "dots",
+  "source": {
+    "repository": "https://github.com/kaleybrauer/filler-token-reasoning",
+    "revision": "4ba4c75d5d9f04248749ec46b8bed8661b746715",
+    "path": "data/chained_var_binding_easy_dataset.json",
+    "selection": "controlled counterfactuals derived from varbind_easy_0002; only the single-token numeric literal bound to suv changes",
+    "prompt_note": "Behavior screen for exact-structure donor/target residual patching. Token lengths and filler indices are validated after inference."
+  },
+  "sanity_prompts": [
+    {
+      "id": "capital",
+      "messages": [
+        {
+          "role": "user",
+          "content": "The capital of France is"
+        }
+      ]
+    },
+    {
+      "id": "arithmetic",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Complete with only the answer: 17 + 25 ="
+        }
+      ]
+    },
+    {
+      "id": "chinese",
+      "messages": [
+        {
+          "role": "user",
+          "content": "用一个词回答：中国的首都是"
+        }
+      ]
+    }
+  ],
+  "few_shot": [
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "zab",
+          45
+        ],
+        [
+          "piy",
+          43
+        ],
+        [
+          "xoc",
+          "twice the number for zab plus 7"
+        ],
+        [
+          "lej",
+          "twice the number for zab plus 3"
+        ],
+        [
+          "kox",
+          45
+        ]
+      ],
+      "queried_term": "xoc",
+      "queried_value": 97,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 18,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xoc minus 18?",
+      "answer": 176
+    },
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "cem",
+          20
+        ],
+        [
+          "pij",
+          "twice the number for cem plus 20"
+        ],
+        [
+          "kes",
+          "twice the number for pij minus 30"
+        ],
+        [
+          "kaq",
+          "twice the number for cem minus 21"
+        ],
+        [
+          "ciq",
+          "twice the number for kaq plus 7"
+        ]
+      ],
+      "queried_term": "kaq",
+      "queried_value": 19,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 21,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for kaq plus 21?",
+      "answer": 59
+    },
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "gew",
+          78
+        ],
+        [
+          "xop",
+          "twice the number for gew plus 17"
+        ],
+        [
+          "doq",
+          "twice the number for gew minus 18"
+        ],
+        [
+          "ful",
+          "twice the number for gew plus 10"
+        ],
+        [
+          "biv",
+          "twice the number for ful plus 28"
+        ]
+      ],
+      "queried_term": "xop",
+      "queried_value": 173,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xop plus 5?",
+      "answer": 351
+    },
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "mec",
+          40
+        ],
+        [
+          "xad",
+          "twice the number for mec plus 25"
+        ],
+        [
+          "gow",
+          "twice the number for mec minus 17"
+        ],
+        [
+          "juj",
+          "twice the number for xad minus 22"
+        ],
+        [
+          "vof",
+          "twice the number for juj plus 3"
+        ]
+      ],
+      "queried_term": "xad",
+      "queried_value": 105,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 19,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xad plus 19?",
+      "answer": 229
+    },
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "kac",
+          52
+        ],
+        [
+          "duk",
+          "twice the number for kac minus 7"
+        ],
+        [
+          "jaf",
+          "twice the number for duk minus 14"
+        ],
+        [
+          "cac",
+          "twice the number for jaf minus 26"
+        ],
+        [
+          "zub",
+          "twice the number for duk plus 6"
+        ]
+      ],
+      "queried_term": "duk",
+      "queried_value": 97,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 16,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for duk minus 16?",
+      "answer": 178
+    }
+  ],
+  "examples": [
+    {
+      "idx": "varbind_cf_suv_052",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "niw",
+          20
+        ],
+        [
+          "kog",
+          37
+        ],
+        [
+          "suv",
+          52
+        ],
+        [
+          "woh",
+          "twice the number for suv minus 9"
+        ],
+        [
+          "voz",
+          "twice the number for woh minus 15"
+        ]
+      ],
+      "queried_term": "woh",
+      "queried_value": 95,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 14,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for woh minus 14?",
+      "answer": 176,
+      "id": "varbind_cf_suv_052",
+      "expected_intermediates": {
+        "base_value": "52",
+        "first_product": "104",
+        "bound_value": "95",
+        "second_product": "190",
+        "answer": "176"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "52"
+        ],
+        "first_product": [
+          "104"
+        ],
+        "bound_value": [
+          "95"
+        ],
+        "second_product": [
+          "190"
+        ],
+        "answer": [
+          "176"
+        ]
+      }
+    },
+    {
+      "idx": "varbind_cf_suv_056",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "niw",
+          20
+        ],
+        [
+          "kog",
+          37
+        ],
+        [
+          "suv",
+          56
+        ],
+        [
+          "woh",
+          "twice the number for suv minus 9"
+        ],
+        [
+          "voz",
+          "twice the number for woh minus 15"
+        ]
+      ],
+      "queried_term": "woh",
+      "queried_value": 103,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 14,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for woh minus 14?",
+      "answer": 192,
+      "id": "varbind_cf_suv_056",
+      "expected_intermediates": {
+        "base_value": "56",
+        "first_product": "112",
+        "bound_value": "103",
+        "second_product": "206",
+        "answer": "192"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "56"
+        ],
+        "first_product": [
+          "112"
+        ],
+        "bound_value": [
+          "103"
+        ],
+        "second_product": [
+          "206"
+        ],
+        "answer": [
+          "192"
+        ]
+      }
+    },
+    {
+      "idx": "varbind_cf_suv_060",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "niw",
+          20
+        ],
+        [
+          "kog",
+          37
+        ],
+        [
+          "suv",
+          60
+        ],
+        [
+          "woh",
+          "twice the number for suv minus 9"
+        ],
+        [
+          "voz",
+          "twice the number for woh minus 15"
+        ]
+      ],
+      "queried_term": "woh",
+      "queried_value": 111,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 14,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for woh minus 14?",
+      "answer": 208,
+      "id": "varbind_cf_suv_060",
+      "expected_intermediates": {
+        "base_value": "60",
+        "first_product": "120",
+        "bound_value": "111",
+        "second_product": "222",
+        "answer": "208"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "60"
+        ],
+        "first_product": [
+          "120"
+        ],
+        "bound_value": [
+          "111"
+        ],
+        "second_product": [
+          "222"
+        ],
+        "answer": [
+          "208"
+        ]
+      }
+    },
+    {
+      "idx": "varbind_cf_suv_064",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "niw",
+          20
+        ],
+        [
+          "kog",
+          37
+        ],
+        [
+          "suv",
+          64
+        ],
+        [
+          "woh",
+          "twice the number for suv minus 9"
+        ],
+        [
+          "voz",
+          "twice the number for woh minus 15"
+        ]
+      ],
+      "queried_term": "woh",
+      "queried_value": 119,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 14,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for woh minus 14?",
+      "answer": 224,
+      "id": "varbind_cf_suv_064",
+      "expected_intermediates": {
+        "base_value": "64",
+        "first_product": "128",
+        "bound_value": "119",
+        "second_product": "238",
+        "answer": "224"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "64"
+        ],
+        "first_product": [
+          "128"
+        ],
+        "bound_value": [
+          "119"
+        ],
+        "second_product": [
+          "238"
+        ],
+        "answer": [
+          "224"
+        ]
+      }
+    },
+    {
+      "idx": "varbind_cf_suv_068",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "niw",
+          20
+        ],
+        [
+          "kog",
+          37
+        ],
+        [
+          "suv",
+          68
+        ],
+        [
+          "woh",
+          "twice the number for suv minus 9"
+        ],
+        [
+          "voz",
+          "twice the number for woh minus 15"
+        ]
+      ],
+      "queried_term": "woh",
+      "queried_value": 127,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 14,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for woh minus 14?",
+      "answer": 240,
+      "id": "varbind_cf_suv_068",
+      "expected_intermediates": {
+        "base_value": "68",
+        "first_product": "136",
+        "bound_value": "127",
+        "second_product": "254",
+        "answer": "240"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "68"
+        ],
+        "first_product": [
+          "136"
+        ],
+        "bound_value": [
+          "127"
+        ],
+        "second_product": [
+          "254"
+        ],
+        "answer": [
+          "240"
+        ]
+      }
+    },
+    {
+      "idx": "varbind_cf_suv_072",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "niw",
+          20
+        ],
+        [
+          "kog",
+          37
+        ],
+        [
+          "suv",
+          72
+        ],
+        [
+          "woh",
+          "twice the number for suv minus 9"
+        ],
+        [
+          "voz",
+          "twice the number for woh minus 15"
+        ]
+      ],
+      "queried_term": "woh",
+      "queried_value": 135,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 14,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for woh minus 14?",
+      "answer": 256,
+      "id": "varbind_cf_suv_072",
+      "expected_intermediates": {
+        "base_value": "72",
+        "first_product": "144",
+        "bound_value": "135",
+        "second_product": "270",
+        "answer": "256"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "72"
+        ],
+        "first_product": [
+          "144"
+        ],
+        "bound_value": [
+          "135"
+        ],
+        "second_product": [
+          "270"
+        ],
+        "answer": [
+          "256"
+        ]
+      }
+    },
+    {
+      "idx": "varbind_cf_suv_076",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "niw",
+          20
+        ],
+        [
+          "kog",
+          37
+        ],
+        [
+          "suv",
+          76
+        ],
+        [
+          "woh",
+          "twice the number for suv minus 9"
+        ],
+        [
+          "voz",
+          "twice the number for woh minus 15"
+        ]
+      ],
+      "queried_term": "woh",
+      "queried_value": 143,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 14,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for woh minus 14?",
+      "answer": 272,
+      "id": "varbind_cf_suv_076",
+      "expected_intermediates": {
+        "base_value": "76",
+        "first_product": "152",
+        "bound_value": "143",
+        "second_product": "286",
+        "answer": "272"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "76"
+        ],
+        "first_product": [
+          "152"
+        ],
+        "bound_value": [
+          "143"
+        ],
+        "second_product": [
+          "286"
+        ],
+        "answer": [
+          "272"
+        ]
+      }
+    },
+    {
+      "idx": "varbind_cf_suv_080",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "niw",
+          20
+        ],
+        [
+          "kog",
+          37
+        ],
+        [
+          "suv",
+          80
+        ],
+        [
+          "woh",
+          "twice the number for suv minus 9"
+        ],
+        [
+          "voz",
+          "twice the number for woh minus 15"
+        ]
+      ],
+      "queried_term": "woh",
+      "queried_value": 151,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 14,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for woh minus 14?",
+      "answer": 288,
+      "id": "varbind_cf_suv_080",
+      "expected_intermediates": {
+        "base_value": "80",
+        "first_product": "160",
+        "bound_value": "151",
+        "second_product": "302",
+        "answer": "288"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "80"
+        ],
+        "first_product": [
+          "160"
+        ],
+        "bound_value": [
+          "151"
+        ],
+        "second_product": [
+          "302"
+        ],
+        "answer": [
+          "288"
+        ]
+      }
+    }
+  ],
+  "filler_lengths": [
+    0,
+    50
+  ]
+}

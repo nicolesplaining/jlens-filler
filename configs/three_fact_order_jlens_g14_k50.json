@@ -1,0 +1,319 @@
+{
+  "seed": 42,
+  "task_type": "addition",
+  "filler_type": "dots",
+  "source": {
+    "repository": "https://github.com/kaleybrauer/filler-token-reasoning",
+    "revision": "4ba4c75d5d9f04248749ec46b8bed8661b746715",
+    "path": "data/2fact_addition_dataset.json",
+    "selection": "deterministic unique atomic-fact pool; 5 disjoint few-shots and 20 held-out triples, each in three cyclic orders; readout selection at k=50: three_fact_g14_p0, three_fact_g14_p1, three_fact_g14_p2",
+    "probe_rationale": "Three independent retrievals distinguish concurrent fact recovery from an order-dependent prefix-sum algorithm."
+  },
+  "sanity_prompts": [
+    {
+      "id": "capital",
+      "messages": [
+        {
+          "role": "user",
+          "content": "The capital of France is"
+        }
+      ]
+    },
+    {
+      "id": "arithmetic",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Complete with only the answer: 17 + 25 ="
+        }
+      ]
+    },
+    {
+      "id": "chinese",
+      "messages": [
+        {
+          "role": "user",
+          "content": "用一个词回答：中国的首都是"
+        }
+      ]
+    }
+  ],
+  "few_shot": [
+    {
+      "answer": 28,
+      "expected_intermediates": {
+        "fact_1": "2",
+        "fact_2": "10",
+        "fact_3": "16",
+        "prefix_sum_12": "12",
+        "sum": "28"
+      },
+      "fact_phrase_1": "the atomic number of Helium",
+      "fact_value_1": 2,
+      "fact_phrase_2": "the atomic number of Neon",
+      "fact_value_2": 10,
+      "fact_phrase_3": "the atomic number of Sulfur",
+      "fact_value_3": 16,
+      "highlight_forms": {
+        "fact_1": [
+          "2"
+        ],
+        "fact_2": [
+          "10"
+        ],
+        "fact_3": [
+          "16"
+        ],
+        "prefix_sum_12": [
+          "12"
+        ],
+        "sum": [
+          "28"
+        ]
+      }
+    },
+    {
+      "answer": 122,
+      "expected_intermediates": {
+        "fact_1": "27",
+        "fact_2": "34",
+        "fact_3": "61",
+        "prefix_sum_12": "61",
+        "sum": "122"
+      },
+      "fact_phrase_1": "the atomic number of Cobalt",
+      "fact_value_1": 27,
+      "fact_phrase_2": "the atomic number of Selenium",
+      "fact_value_2": 34,
+      "fact_phrase_3": "the atomic number of Promethium",
+      "fact_value_3": 61,
+      "highlight_forms": {
+        "fact_1": [
+          "27"
+        ],
+        "fact_2": [
+          "34"
+        ],
+        "fact_3": [
+          "61"
+        ],
+        "prefix_sum_12": [
+          "61"
+        ],
+        "sum": [
+          "122"
+        ]
+      }
+    },
+    {
+      "answer": 211,
+      "expected_intermediates": {
+        "fact_1": "63",
+        "fact_2": "73",
+        "fact_3": "75",
+        "prefix_sum_12": "136",
+        "sum": "211"
+      },
+      "fact_phrase_1": "the atomic number of Europium",
+      "fact_value_1": 63,
+      "fact_phrase_2": "the atomic number of Tantalum",
+      "fact_value_2": 73,
+      "fact_phrase_3": "the atomic number of Rhenium",
+      "fact_value_3": 75,
+      "highlight_forms": {
+        "fact_1": [
+          "63"
+        ],
+        "fact_2": [
+          "73"
+        ],
+        "fact_3": [
+          "75"
+        ],
+        "prefix_sum_12": [
+          "136"
+        ],
+        "sum": [
+          "211"
+        ]
+      }
+    },
+    {
+      "answer": 233,
+      "expected_intermediates": {
+        "fact_1": "91",
+        "fact_2": "90",
+        "fact_3": "52",
+        "prefix_sum_12": "181",
+        "sum": "233"
+      },
+      "fact_phrase_1": "the atomic number of Protactinium",
+      "fact_value_1": 91,
+      "fact_phrase_2": "the atomic number of Thorium",
+      "fact_value_2": 90,
+      "fact_phrase_3": "the atomic number of Tellurium",
+      "fact_value_3": 52,
+      "highlight_forms": {
+        "fact_1": [
+          "91"
+        ],
+        "fact_2": [
+          "90"
+        ],
+        "fact_3": [
+          "52"
+        ],
+        "prefix_sum_12": [
+          "181"
+        ],
+        "sum": [
+          "233"
+        ]
+      }
+    },
+    {
+      "answer": 177,
+      "expected_intermediates": {
+        "fact_1": "93",
+        "fact_2": "5",
+        "fact_3": "79",
+        "prefix_sum_12": "98",
+        "sum": "177"
+      },
+      "fact_phrase_1": "the atomic number of Neptunium",
+      "fact_value_1": 93,
+      "fact_phrase_2": "the atomic number of Boron",
+      "fact_value_2": 5,
+      "fact_phrase_3": "the atomic number of Gold",
+      "fact_value_3": 79,
+      "highlight_forms": {
+        "fact_1": [
+          "93"
+        ],
+        "fact_2": [
+          "5"
+        ],
+        "fact_3": [
+          "79"
+        ],
+        "prefix_sum_12": [
+          "98"
+        ],
+        "sum": [
+          "177"
+        ]
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "three_fact_g14_p0",
+      "permutation_group": 14,
+      "cyclic_permutation": 0,
+      "answer": 119,
+      "expected_intermediates": {
+        "fact_1": "21",
+        "fact_2": "6",
+        "fact_3": "92",
+        "prefix_sum_12": "27",
+        "sum": "119"
+      },
+      "fact_phrase_1": "the atomic number of Scandium",
+      "fact_value_1": 21,
+      "fact_phrase_2": "the atomic number of Carbon",
+      "fact_value_2": 6,
+      "fact_phrase_3": "the atomic number of Uranium",
+      "fact_value_3": 92,
+      "highlight_forms": {
+        "fact_1": [
+          "21"
+        ],
+        "fact_2": [
+          "6"
+        ],
+        "fact_3": [
+          "92"
+        ],
+        "prefix_sum_12": [
+          "27"
+        ],
+        "sum": [
+          "119"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g14_p1",
+      "permutation_group": 14,
+      "cyclic_permutation": 1,
+      "answer": 119,
+      "expected_intermediates": {
+        "fact_1": "6",
+        "fact_2": "92",
+        "fact_3": "21",
+        "prefix_sum_12": "98",
+        "sum": "119"
+      },
+      "fact_phrase_1": "the atomic number of Carbon",
+      "fact_value_1": 6,
+      "fact_phrase_2": "the atomic number of Uranium",
+      "fact_value_2": 92,
+      "fact_phrase_3": "the atomic number of Scandium",
+      "fact_value_3": 21,
+      "highlight_forms": {
+        "fact_1": [
+          "6"
+        ],
+        "fact_2": [
+          "92"
+        ],
+        "fact_3": [
+          "21"
+        ],
+        "prefix_sum_12": [
+          "98"
+        ],
+        "sum": [
+          "119"
+        ]
+      }
+    },
+    {
+      "id": "three_fact_g14_p2",
+      "permutation_group": 14,
+      "cyclic_permutation": 2,
+      "answer": 119,
+      "expected_intermediates": {
+        "fact_1": "92",
+        "fact_2": "21",
+        "fact_3": "6",
+        "prefix_sum_12": "113",
+        "sum": "119"
+      },
+      "fact_phrase_1": "the atomic number of Uranium",
+      "fact_value_1": 92,
+      "fact_phrase_2": "the atomic number of Scandium",
+      "fact_value_2": 21,
+      "fact_phrase_3": "the atomic number of Carbon",
+      "fact_value_3": 6,
+      "highlight_forms": {
+        "fact_1": [
+          "92"
+        ],
+        "fact_2": [
+          "21"
+        ],
+        "fact_3": [
+          "6"
+        ],
+        "prefix_sum_12": [
+          "113"
+        ],
+        "sum": [
+          "119"
+        ]
+      }
+    }
+  ],
+  "filler_length": 50
+}

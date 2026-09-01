@@ -1,0 +1,851 @@
+{
+  "schema_version": 1,
+  "example_id": "varbind_scale_f05_kur_064",
+  "expected_intermediates": {
+    "base_value": "64",
+    "first_product": "128",
+    "bound_value": "125",
+    "second_product": "250",
+    "answer": "235"
+  },
+  "lengths": [
+    {
+      "filler_length": 5,
+      "example_id": "varbind_scale_f05_kur_064",
+      "correct": true,
+      "generated_text": "235",
+      "answer_rank": 1,
+      "methods": {
+        "j_lens": {
+          "base_value": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          },
+          "bound_value": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          },
+          "second_product": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          },
+          "answer": {
+            "rank1_cells": 3,
+            "top10_cells": 5,
+            "first_rank1_layer": 36,
+            "first_rank1_position": 2,
+            "rank1_positions": [
+              2
+            ],
+            "top10_strength": 4.6
+          },
+          "distractor_bound": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          },
+          "distractor_second_product": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          },
+          "distractor_answer": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          }
+        },
+        "logit_lens": {
+          "base_value": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          },
+          "bound_value": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          },
+          "second_product": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          },
+          "answer": {
+            "rank1_cells": 0,
+            "top10_cells": 1,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0.3
+          },
+          "distractor_bound": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          },
+          "distractor_second_product": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          },
+          "distractor_answer": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          }
+        }
+      }
+    },
+    {
+      "filler_length": 10,
+      "example_id": "varbind_scale_f05_kur_064",
+      "correct": false,
+      "generated_text": "185",
+      "answer_rank": 76,
+      "methods": {
+        "j_lens": {
+          "base_value": {
+            "rank1_cells": 7,
+            "top10_cells": 12,
+            "first_rank1_layer": 22,
+            "first_rank1_position": 1,
+            "rank1_positions": [
+              1
+            ],
+            "top10_strength": 10.5
+          },
+          "bound_value": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          },
+          "second_product": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          },
+          "answer": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          },
+          "distractor_bound": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          },
+          "distractor_second_product": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          },
+          "distractor_answer": {
+            "rank1_cells": 0,
+            "top10_cells": 2,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 1.0
+          }
+        },
+        "logit_lens": {
+          "base_value": {
+            "rank1_cells": 11,
+            "top10_cells": 14,
+            "first_rank1_layer": 24,
+            "first_rank1_position": 1,
+            "rank1_positions": [
+              1
+            ],
+            "top10_strength": 12.700000000000001
+          },
+          "bound_value": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          },
+          "second_product": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          },
+          "answer": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          },
+          "distractor_bound": {
+            "rank1_cells": 0,
+            "top10_cells": 1,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0.1
+          },
+          "distractor_second_product": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          },
+          "distractor_answer": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          }
+        }
+      }
+    },
+    {
+      "filler_length": 25,
+      "example_id": "varbind_scale_f05_kur_064",
+      "correct": false,
+      "generated_text": "185",
+      "answer_rank": 12,
+      "methods": {
+        "j_lens": {
+          "base_value": {
+            "rank1_cells": 12,
+            "top10_cells": 15,
+            "first_rank1_layer": 24,
+            "first_rank1_position": 8,
+            "rank1_positions": [
+              8
+            ],
+            "top10_strength": 13.700000000000001
+          },
+          "bound_value": {
+            "rank1_cells": 4,
+            "top10_cells": 10,
+            "first_rank1_layer": 35,
+            "first_rank1_position": 10,
+            "rank1_positions": [
+              10
+            ],
+            "top10_strength": 7.1
+          },
+          "second_product": {
+            "rank1_cells": 0,
+            "top10_cells": 3,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 2.0
+          },
+          "answer": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          },
+          "distractor_bound": {
+            "rank1_cells": 0,
+            "top10_cells": 1,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0.7
+          },
+          "distractor_second_product": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          },
+          "distractor_answer": {
+            "rank1_cells": 7,
+            "top10_cells": 13,
+            "first_rank1_layer": 37,
+            "first_rank1_position": 2,
+            "rank1_positions": [
+              2,
+              21
+            ],
+            "top10_strength": 11.700000000000001
+          }
+        },
+        "logit_lens": {
+          "base_value": {
+            "rank1_cells": 9,
+            "top10_cells": 25,
+            "first_rank1_layer": 27,
+            "first_rank1_position": 8,
+            "rank1_positions": [
+              8
+            ],
+            "top10_strength": 17.400000000000002
+          },
+          "bound_value": {
+            "rank1_cells": 5,
+            "top10_cells": 9,
+            "first_rank1_layer": 35,
+            "first_rank1_position": 10,
+            "rank1_positions": [
+              10
+            ],
+            "top10_strength": 6.8999999999999995
+          },
+          "second_product": {
+            "rank1_cells": 0,
+            "top10_cells": 2,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0.8
+          },
+          "answer": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          },
+          "distractor_bound": {
+            "rank1_cells": 0,
+            "top10_cells": 1,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0.5
+          },
+          "distractor_second_product": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          },
+          "distractor_answer": {
+            "rank1_cells": 6,
+            "top10_cells": 11,
+            "first_rank1_layer": 38,
+            "first_rank1_position": 2,
+            "rank1_positions": [
+              2,
+              21
+            ],
+            "top10_strength": 10.200000000000001
+          }
+        }
+      }
+    },
+    {
+      "filler_length": 50,
+      "example_id": "varbind_scale_f05_kur_064",
+      "correct": true,
+      "generated_text": "235",
+      "answer_rank": 1,
+      "methods": {
+        "j_lens": {
+          "base_value": {
+            "rank1_cells": 36,
+            "top10_cells": 57,
+            "first_rank1_layer": 23,
+            "first_rank1_position": 44,
+            "rank1_positions": [
+              10,
+              22,
+              29,
+              33,
+              44
+            ],
+            "top10_strength": 46.1
+          },
+          "bound_value": {
+            "rank1_cells": 20,
+            "top10_cells": 38,
+            "first_rank1_layer": 31,
+            "first_rank1_position": 13,
+            "rank1_positions": [
+              10,
+              13,
+              21,
+              43
+            ],
+            "top10_strength": 31.999999999999996
+          },
+          "second_product": {
+            "rank1_cells": 13,
+            "top10_cells": 32,
+            "first_rank1_layer": 32,
+            "first_rank1_position": 43,
+            "rank1_positions": [
+              21,
+              41,
+              43
+            ],
+            "top10_strength": 26.1
+          },
+          "answer": {
+            "rank1_cells": 24,
+            "top10_cells": 46,
+            "first_rank1_layer": 31,
+            "first_rank1_position": 14,
+            "rank1_positions": [
+              14,
+              40,
+              41
+            ],
+            "top10_strength": 37.6
+          },
+          "distractor_bound": {
+            "rank1_cells": 3,
+            "top10_cells": 5,
+            "first_rank1_layer": 35,
+            "first_rank1_position": 33,
+            "rank1_positions": [
+              33
+            ],
+            "top10_strength": 4.2
+          },
+          "distractor_second_product": {
+            "rank1_cells": 0,
+            "top10_cells": 0,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0
+          },
+          "distractor_answer": {
+            "rank1_cells": 21,
+            "top10_cells": 64,
+            "first_rank1_layer": 31,
+            "first_rank1_position": 15,
+            "rank1_positions": [
+              1,
+              12,
+              15,
+              42
+            ],
+            "top10_strength": 48.099999999999994
+          }
+        },
+        "logit_lens": {
+          "base_value": {
+            "rank1_cells": 38,
+            "top10_cells": 63,
+            "first_rank1_layer": 25,
+            "first_rank1_position": 1,
+            "rank1_positions": [
+              1,
+              10,
+              12,
+              22,
+              29,
+              33,
+              40,
+              44
+            ],
+            "top10_strength": 53.89999999999999
+          },
+          "bound_value": {
+            "rank1_cells": 17,
+            "top10_cells": 41,
+            "first_rank1_layer": 31,
+            "first_rank1_position": 13,
+            "rank1_positions": [
+              10,
+              13,
+              21,
+              41,
+              43
+            ],
+            "top10_strength": 31.499999999999993
+          },
+          "second_product": {
+            "rank1_cells": 13,
+            "top10_cells": 32,
+            "first_rank1_layer": 32,
+            "first_rank1_position": 43,
+            "rank1_positions": [
+              21,
+              41,
+              43
+            ],
+            "top10_strength": 27.799999999999994
+          },
+          "answer": {
+            "rank1_cells": 22,
+            "top10_cells": 46,
+            "first_rank1_layer": 31,
+            "first_rank1_position": 14,
+            "rank1_positions": [
+              14,
+              40,
+              41
+            ],
+            "top10_strength": 37.1
+          },
+          "distractor_bound": {
+            "rank1_cells": 2,
+            "top10_cells": 6,
+            "first_rank1_layer": 37,
+            "first_rank1_position": 33,
+            "rank1_positions": [
+              33
+            ],
+            "top10_strength": 3.8
+          },
+          "distractor_second_product": {
+            "rank1_cells": 0,
+            "top10_cells": 1,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 0.5
+          },
+          "distractor_answer": {
+            "rank1_cells": 24,
+            "top10_cells": 72,
+            "first_rank1_layer": 31,
+            "first_rank1_position": 12,
+            "rank1_positions": [
+              1,
+              12,
+              15,
+              33,
+              42
+            ],
+            "top10_strength": 56.0
+          }
+        }
+      }
+    },
+    {
+      "filler_length": 100,
+      "example_id": "varbind_scale_f05_kur_064",
+      "correct": true,
+      "generated_text": "235",
+      "answer_rank": 1,
+      "methods": {
+        "j_lens": {
+          "base_value": {
+            "rank1_cells": 37,
+            "top10_cells": 94,
+            "first_rank1_layer": 24,
+            "first_rank1_position": 8,
+            "rank1_positions": [
+              8,
+              14,
+              26,
+              34,
+              48,
+              66,
+              80,
+              82,
+              92
+            ],
+            "top10_strength": 76.4
+          },
+          "bound_value": {
+            "rank1_cells": 71,
+            "top10_cells": 128,
+            "first_rank1_layer": 30,
+            "first_rank1_position": 5,
+            "rank1_positions": [
+              5,
+              14,
+              15,
+              28,
+              34,
+              66,
+              72,
+              85,
+              86,
+              92
+            ],
+            "top10_strength": 109.50000000000004
+          },
+          "second_product": {
+            "rank1_cells": 36,
+            "top10_cells": 97,
+            "first_rank1_layer": 32,
+            "first_rank1_position": 19,
+            "rank1_positions": [
+              14,
+              15,
+              19,
+              23,
+              36,
+              39,
+              43,
+              54,
+              59,
+              84,
+              92
+            ],
+            "top10_strength": 75.5
+          },
+          "answer": {
+            "rank1_cells": 60,
+            "top10_cells": 106,
+            "first_rank1_layer": 31,
+            "first_rank1_position": 20,
+            "rank1_positions": [
+              19,
+              20,
+              23,
+              35,
+              36,
+              39,
+              43,
+              52,
+              58,
+              59,
+              84,
+              87,
+              95
+            ],
+            "top10_strength": 87.40000000000002
+          },
+          "distractor_bound": {
+            "rank1_cells": 5,
+            "top10_cells": 9,
+            "first_rank1_layer": 35,
+            "first_rank1_position": 80,
+            "rank1_positions": [
+              8,
+              80
+            ],
+            "top10_strength": 7.7
+          },
+          "distractor_second_product": {
+            "rank1_cells": 0,
+            "top10_cells": 4,
+            "first_rank1_layer": null,
+            "first_rank1_position": null,
+            "rank1_positions": [],
+            "top10_strength": 3.4
+          },
+          "distractor_answer": {
+            "rank1_cells": 24,
+            "top10_cells": 96,
+            "first_rank1_layer": 31,
+            "first_rank1_position": 52,
+            "rank1_positions": [
+              1,
+              22,
+              23,
+              28,
+              33,
+              38,
+              42,
+              52,
+              77,
+              94
+            ],
+            "top10_strength": 69.60000000000002
+          }
+        },
+        "logit_lens": {
+          "base_value": {
+            "rank1_cells": 77,
+            "top10_cells": 177,
+            "first_rank1_layer": 24,
+            "first_rank1_position": 23,
+            "rank1_positions": [
+              1,
+              8,
+              23,
+              26,
+              34,
+              39,
+              42,
+              48,
+              52,
+              58,
+              59,
+              66,
+              72,
+              77,
+              78,
+              79,
+              80,
+              82,
+              85,
+              92,
+              94
+            ],
+            "top10_strength": 140.89999999999992
+          },
+          "bound_value": {
+            "rank1_cells": 63,
+            "top10_cells": 147,
+            "first_rank1_layer": 29,
+            "first_rank1_position": 5,
+            "rank1_positions": [
+              5,
+              14,
+              15,
+              28,
+              34,
+              42,
+              58,
+              59,
+              66,
+              72,
+              85,
+              86,
+              92
+            ],
+            "top10_strength": 115.90000000000003
+          },
+          "second_product": {
+            "rank1_cells": 33,
+            "top10_cells": 113,
+            "first_rank1_layer": 32,
+            "first_rank1_position": 23,
+            "rank1_positions": [
+              14,
+              15,
+              19,
+              23,
+              39,
+              43,
+              59,
+              84,
+              86,
+              92
+            ],
+            "top10_strength": 82.3
+          },
+          "answer": {
+            "rank1_cells": 41,
+            "top10_cells": 107,
+            "first_rank1_layer": 35,
+            "first_rank1_position": 59,
+            "rank1_positions": [
+              19,
+              20,
+              23,
+              35,
+              36,
+              39,
+              58,
+              59,
+              78,
+              84,
+              95
+            ],
+            "top10_strength": 86.69999999999999
+          },
+          "distractor_bound": {
+            "rank1_cells": 4,
+            "top10_cells": 18,
+            "first_rank1_layer": 35,
+            "first_rank1_position": 80,
+            "rank1_positions": [
+              80
+            ],
+            "top10_strength": 10.099999999999998
+          },
+          "distractor_second_product": {
+            "rank1_cells": 2,
+            "top10_cells": 6,
+            "first_rank1_layer": 37,
+            "first_rank1_position": 42,
+            "rank1_positions": [
+              42
+            ],
+            "top10_strength": 4.8
+          },
+          "distractor_answer": {
+            "rank1_cells": 31,
+            "top10_cells": 106,
+            "first_rank1_layer": 31,
+            "first_rank1_position": 1,
+            "rank1_positions": [
+              1,
+              22,
+              23,
+              28,
+              33,
+              38,
+              42,
+              52,
+              58,
+              77,
+              94
+            ],
+            "top10_strength": 78.50000000000001
+          }
+        }
+      }
+    }
+  ]
+}

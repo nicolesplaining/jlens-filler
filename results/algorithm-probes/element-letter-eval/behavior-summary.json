@@ -1,0 +1,180 @@
+{
+  "overall": {
+    "by_length": {
+      "0": {
+        "n": 50,
+        "correct": 46,
+        "accuracy": 0.92,
+        "mrr": 0.9466666666666668,
+        "recall_at_1": 0.92,
+        "recall_at_5": 0.96,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "5": {
+        "n": 50,
+        "correct": 46,
+        "accuracy": 0.92,
+        "mrr": 0.9422222222222223,
+        "recall_at_1": 0.92,
+        "recall_at_5": 0.96,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "10": {
+        "n": 50,
+        "correct": 47,
+        "accuracy": 0.94,
+        "mrr": 0.9590000000000001,
+        "recall_at_1": 0.94,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "25": {
+        "n": 50,
+        "correct": 47,
+        "accuracy": 0.94,
+        "mrr": 0.9545238095238094,
+        "recall_at_1": 0.94,
+        "recall_at_5": 0.98,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "50": {
+        "n": 50,
+        "correct": 47,
+        "accuracy": 0.94,
+        "mrr": 0.9606666666666667,
+        "recall_at_1": 0.94,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "100": {
+        "n": 50,
+        "correct": 47,
+        "accuracy": 0.94,
+        "mrr": 0.9595238095238094,
+        "recall_at_1": 0.94,
+        "recall_at_5": 0.98,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      }
+    },
+    "paired_vs_k0": {
+      "5": {
+        "helped_count": 1,
+        "hurt_count": 1,
+        "net_correct": 0,
+        "helped_ids": [
+          "element_letter_0044"
+        ],
+        "hurt_ids": [
+          "element_letter_0046"
+        ],
+        "mean_log10_rank_gain": -0.007043650362227249,
+        "largest_rank_gain_ids": [
+          "element_letter_0044",
+          "element_letter_0049",
+          "element_letter_0048",
+          "element_letter_0047",
+          "element_letter_0043",
+          "element_letter_0042",
+          "element_letter_0041",
+          "element_letter_0040",
+          "element_letter_0038",
+          "element_letter_0037"
+        ]
+      },
+      "10": {
+        "helped_count": 1,
+        "hurt_count": 0,
+        "net_correct": 1,
+        "helped_ids": [
+          "element_letter_0044"
+        ],
+        "hurt_ids": [],
+        "mean_log10_rank_gain": 0.011126050015345746,
+        "largest_rank_gain_ids": [
+          "element_letter_0044",
+          "element_letter_0045",
+          "element_letter_0002",
+          "element_letter_0049",
+          "element_letter_0048",
+          "element_letter_0047",
+          "element_letter_0046",
+          "element_letter_0043",
+          "element_letter_0042",
+          "element_letter_0041"
+        ]
+      },
+      "25": {
+        "helped_count": 1,
+        "hurt_count": 0,
+        "net_correct": 1,
+        "helped_ids": [
+          "element_letter_0044"
+        ],
+        "hurt_ids": [],
+        "mean_log10_rank_gain": 0.00468166412066736,
+        "largest_rank_gain_ids": [
+          "element_letter_0044",
+          "element_letter_0045",
+          "element_letter_0049",
+          "element_letter_0048",
+          "element_letter_0047",
+          "element_letter_0046",
+          "element_letter_0043",
+          "element_letter_0042",
+          "element_letter_0041",
+          "element_letter_0040"
+        ]
+      },
+      "50": {
+        "helped_count": 1,
+        "hurt_count": 0,
+        "net_correct": 1,
+        "helped_ids": [
+          "element_letter_0044"
+        ],
+        "hurt_ids": [],
+        "mean_log10_rank_gain": 0.013624824747511744,
+        "largest_rank_gain_ids": [
+          "element_letter_0045",
+          "element_letter_0044",
+          "element_letter_0002",
+          "element_letter_0049",
+          "element_letter_0048",
+          "element_letter_0047",
+          "element_letter_0046",
+          "element_letter_0043",
+          "element_letter_0042",
+          "element_letter_0041"
+        ]
+      },
+      "100": {
+        "helped_count": 1,
+        "hurt_count": 0,
+        "net_correct": 1,
+        "helped_ids": [
+          "element_letter_0044"
+        ],
+        "hurt_ids": [],
+        "mean_log10_rank_gain": 0.010702264033946984,
+        "largest_rank_gain_ids": [
+          "element_letter_0045",
+          "element_letter_0044",
+          "element_letter_0049",
+          "element_letter_0048",
+          "element_letter_0047",
+          "element_letter_0046",
+          "element_letter_0043",
+          "element_letter_0042",
+          "element_letter_0041",
+          "element_letter_0040"
+        ]
+      }
+    }
+  }
+}

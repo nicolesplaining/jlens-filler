@@ -1,0 +1,127 @@
+{
+  "seed": 42,
+  "task_type": "letter_position",
+  "filler_type": "dots",
+  "source": {
+    "repository": "https://github.com/kaleybrauer/filler-token-reasoning",
+    "revision": "4ba4c75d5d9f04248749ec46b8bed8661b746715",
+    "path": "data/element_letter_positions.json",
+    "selection": "first 50 examples in released order; readout selection at k=10: element_letter_0000, element_letter_0044",
+    "prompt_note": "Released letter-position scaffold with the paper PDF exact-count filler suffix."
+  },
+  "sanity_prompts": [
+    {
+      "id": "capital",
+      "messages": [
+        {
+          "role": "user",
+          "content": "The capital of France is"
+        }
+      ]
+    },
+    {
+      "id": "arithmetic",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Complete with only the answer: 17 + 25 ="
+        }
+      ]
+    },
+    {
+      "id": "chinese",
+      "messages": [
+        {
+          "role": "user",
+          "content": "用一个词回答：中国的首都是"
+        }
+      ]
+    }
+  ],
+  "few_shot": [
+    {
+      "element": "Beryllium",
+      "atomic_number": 4,
+      "position": "third",
+      "question": "What is the third letter of the chemical element with atomic number 4?",
+      "answer": "r"
+    },
+    {
+      "element": "Phosphorus",
+      "atomic_number": 15,
+      "position": "last",
+      "question": "What is the last letter of the chemical element with atomic number 15?",
+      "answer": "s"
+    },
+    {
+      "element": "Krypton",
+      "atomic_number": 36,
+      "position": "second",
+      "question": "What is the second letter of the chemical element with atomic number 36?",
+      "answer": "r"
+    },
+    {
+      "element": "Lead",
+      "atomic_number": 82,
+      "position": "third",
+      "question": "What is the third letter of the chemical element with atomic number 82?",
+      "answer": "a"
+    },
+    {
+      "element": "Americium",
+      "atomic_number": 95,
+      "position": "last",
+      "question": "What is the last letter of the chemical element with atomic number 95?",
+      "answer": "m"
+    }
+  ],
+  "examples": [
+    {
+      "type": "letter_position",
+      "question": "What is the third letter of the chemical element with atomic number 47?",
+      "answer": "l",
+      "element": "Silver",
+      "atomic_number": 47,
+      "position": "third",
+      "id": "element_letter_0000",
+      "expected_intermediates": {
+        "retrieved_name": "Silver",
+        "answer_letter": "l"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Silver"
+        ],
+        "answer_letter": [
+          "l"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the second letter of the chemical element with atomic number 37?",
+      "answer": "u",
+      "element": "Rubidium",
+      "atomic_number": 37,
+      "position": "second",
+      "id": "element_letter_0044",
+      "expected_intermediates": {
+        "retrieved_prefix": "Rub",
+        "retrieved_suffix": "idium",
+        "answer_letter": "u"
+      },
+      "highlight_forms": {
+        "retrieved_prefix": [
+          "Rub"
+        ],
+        "retrieved_suffix": [
+          "idium"
+        ],
+        "answer_letter": [
+          "u"
+        ]
+      }
+    }
+  ],
+  "filler_length": 10
+}

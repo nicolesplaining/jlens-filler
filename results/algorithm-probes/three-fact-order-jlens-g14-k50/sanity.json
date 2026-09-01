@@ -1,0 +1,5384 @@
+[
+  {
+    "id": "capital",
+    "rendered_prompt": "<｜begin▁of▁sentence｜><｜User｜>The capital of France is<｜Assistant｜></think>",
+    "input_ids": [
+      0,
+      128803,
+      671,
+      6102,
+      294,
+      8760,
+      344,
+      128804,
+      128822
+    ],
+    "token_strings": [
+      "<｜begin▁of▁sentence｜>",
+      "<｜User｜>",
+      "The",
+      " capital",
+      " of",
+      " France",
+      " is",
+      "<｜Assistant｜>",
+      "</think>"
+    ],
+    "generation_position": 8,
+    "readouts": {
+      "j_lens": {
+        "0": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 8,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 68210,
+                "token": " للمعارف",
+                "logit": 15.371119499206543,
+                "probability": 0.07971877604722977
+              },
+              {
+                "rank": 2,
+                "token_id": 23044,
+                "token": "ivals",
+                "logit": 15.098891258239746,
+                "probability": 0.06072022765874863
+              },
+              {
+                "rank": 3,
+                "token_id": 126158,
+                "token": "zyw",
+                "logit": 14.522655487060547,
+                "probability": 0.03412536904215813
+              },
+              {
+                "rank": 4,
+                "token_id": 101076,
+                "token": " politic",
+                "logit": 14.183656692504883,
+                "probability": 0.024313757196068764
+              },
+              {
+                "rank": 5,
+                "token_id": 89944,
+                "token": "trigger",
+                "logit": 14.094877243041992,
+                "probability": 0.022248240187764168
+              },
+              {
+                "rank": 6,
+                "token_id": 25035,
+                "token": " folks",
+                "logit": 14.066211700439453,
+                "probability": 0.021619535982608795
+              },
+              {
+                "rank": 7,
+                "token_id": 108167,
+                "token": "olem",
+                "logit": 13.75655460357666,
+                "probability": 0.015862220898270607
+              },
+              {
+                "rank": 8,
+                "token_id": 58200,
+                "token": " NL",
+                "logit": 13.653030395507812,
+                "probability": 0.014302237890660763
+              },
+              {
+                "rank": 9,
+                "token_id": 64432,
+                "token": "TreeLabel",
+                "logit": 13.636296272277832,
+                "probability": 0.014064894057810307
+              },
+              {
+                "rank": 10,
+                "token_id": 47575,
+                "token": "yarakat",
+                "logit": 13.627121925354004,
+                "probability": 0.013936447910964489
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "5": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 8,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 11272,
+                "token": "表面",
+                "logit": 14.295550346374512,
+                "probability": 0.09615185856819153
+              },
+              {
+                "rank": 2,
+                "token_id": 53890,
+                "token": "锁定",
+                "logit": 12.851341247558594,
+                "probability": 0.022685358300805092
+              },
+              {
+                "rank": 3,
+                "token_id": 32967,
+                "token": " cheer",
+                "logit": 12.495150566101074,
+                "probability": 0.015887442976236343
+              },
+              {
+                "rank": 4,
+                "token_id": 31908,
+                "token": "挪",
+                "logit": 12.469192504882812,
+                "probability": 0.01548034232109785
+              },
+              {
+                "rank": 5,
+                "token_id": 97050,
+                "token": " Tears",
+                "logit": 12.24476146697998,
+                "probability": 0.0123683400452137
+              },
+              {
+                "rank": 6,
+                "token_id": 84722,
+                "token": "cape",
+                "logit": 12.15989875793457,
+                "probability": 0.011362032033503056
+              },
+              {
+                "rank": 7,
+                "token_id": 105066,
+                "token": "泓",
+                "logit": 11.888558387756348,
+                "probability": 0.008661923930048943
+              },
+              {
+                "rank": 8,
+                "token_id": 51286,
+                "token": "表面的",
+                "logit": 11.881708145141602,
+                "probability": 0.008602790534496307
+              },
+              {
+                "rank": 9,
+                "token_id": 59482,
+                "token": "并能",
+                "logit": 11.869842529296875,
+                "probability": 0.008501316420733929
+              },
+              {
+                "rank": 10,
+                "token_id": 2885,
+                "token": "ait",
+                "logit": 11.826386451721191,
+                "probability": 0.008139794692397118
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "10": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 8,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 53890,
+                "token": "锁定",
+                "logit": 13.270289421081543,
+                "probability": 0.03812209889292717
+              },
+              {
+                "rank": 2,
+                "token_id": 32967,
+                "token": " cheer",
+                "logit": 13.232187271118164,
+                "probability": 0.036696892231702805
+              },
+              {
+                "rank": 3,
+                "token_id": 97050,
+                "token": " Tears",
+                "logit": 12.47745418548584,
+                "probability": 0.01725253276526928
+              },
+              {
+                "rank": 4,
+                "token_id": 84722,
+                "token": "cape",
+                "logit": 12.336172103881836,
+                "probability": 0.014979413710534573
+              },
+              {
+                "rank": 5,
+                "token_id": 2885,
+                "token": "ait",
+                "logit": 12.298748016357422,
+                "probability": 0.014429183676838875
+              },
+              {
+                "rank": 6,
+                "token_id": 28513,
+                "token": " Walker",
+                "logit": 12.148356437683105,
+                "probability": 0.012414450757205486
+              },
+              {
+                "rank": 7,
+                "token_id": 31908,
+                "token": "挪",
+                "logit": 12.05756950378418,
+                "probability": 0.011337028816342354
+              },
+              {
+                "rank": 8,
+                "token_id": 115881,
+                "token": "Walker",
+                "logit": 11.906410217285156,
+                "probability": 0.009746565483510494
+              },
+              {
+                "rank": 9,
+                "token_id": 91472,
+                "token": " wig",
+                "logit": 11.82272720336914,
+                "probability": 0.008964138105511665
+              },
+              {
+                "rank": 10,
+                "token_id": 16122,
+                "token": "勾",
+                "logit": 11.791393280029297,
+                "probability": 0.008687611669301987
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "15": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 8,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 32967,
+                "token": " cheer",
+                "logit": 13.244461059570312,
+                "probability": 0.037353284657001495
+              },
+              {
+                "rank": 2,
+                "token_id": 53890,
+                "token": "锁定",
+                "logit": 13.21226692199707,
+                "probability": 0.036169879138469696
+              },
+              {
+                "rank": 3,
+                "token_id": 97050,
+                "token": " Tears",
+                "logit": 12.561410903930664,
+                "probability": 0.018866175785660744
+              },
+              {
+                "rank": 4,
+                "token_id": 2885,
+                "token": "ait",
+                "logit": 12.361681938171387,
+                "probability": 0.015450505539774895
+              },
+              {
+                "rank": 5,
+                "token_id": 84722,
+                "token": "cape",
+                "logit": 12.351181030273438,
+                "probability": 0.015289110131561756
+              },
+              {
+                "rank": 6,
+                "token_id": 31908,
+                "token": "挪",
+                "logit": 12.1398286819458,
+                "probability": 0.012376363389194012
+              },
+              {
+                "rank": 7,
+                "token_id": 28513,
+                "token": " Walker",
+                "logit": 12.112743377685547,
+                "probability": 0.012045644223690033
+              },
+              {
+                "rank": 8,
+                "token_id": 115881,
+                "token": "Walker",
+                "logit": 11.916441917419434,
+                "probability": 0.009898683056235313
+              },
+              {
+                "rank": 9,
+                "token_id": 91472,
+                "token": " wig",
+                "logit": 11.873653411865234,
+                "probability": 0.009484066627919674
+              },
+              {
+                "rank": 10,
+                "token_id": 16122,
+                "token": "勾",
+                "logit": 11.834044456481934,
+                "probability": 0.009115754626691341
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "20": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 8,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 14868,
+                "token": "�乐",
+                "logit": 16.179224014282227,
+                "probability": 0.14064699411392212
+              },
+              {
+                "rank": 2,
+                "token_id": 120674,
+                "token": "(migrations",
+                "logit": 15.834787368774414,
+                "probability": 0.09966520220041275
+              },
+              {
+                "rank": 3,
+                "token_id": 60846,
+                "token": "aplenty",
+                "logit": 15.419772148132324,
+                "probability": 0.06581194698810577
+              },
+              {
+                "rank": 4,
+                "token_id": 31501,
+                "token": "ucl",
+                "logit": 14.337652206420898,
+                "probability": 0.022302111610770226
+              },
+              {
+                "rank": 5,
+                "token_id": 84777,
+                "token": "人以",
+                "logit": 14.199579238891602,
+                "probability": 0.019425923004746437
+              },
+              {
+                "rank": 6,
+                "token_id": 99660,
+                "token": "ongsTo",
+                "logit": 14.18022346496582,
+                "probability": 0.019053535535931587
+              },
+              {
+                "rank": 7,
+                "token_id": 77834,
+                "token": " سرعه",
+                "logit": 14.155488967895508,
+                "probability": 0.01858803629875183
+              },
+              {
+                "rank": 8,
+                "token_id": 50396,
+                "token": "izo",
+                "logit": 14.121940612792969,
+                "probability": 0.01797478273510933
+              },
+              {
+                "rank": 9,
+                "token_id": 124727,
+                "token": "aharoa",
+                "logit": 13.788826942443848,
+                "probability": 0.012882323935627937
+              },
+              {
+                "rank": 10,
+                "token_id": 104774,
+                "token": "羞辱",
+                "logit": 13.721318244934082,
+                "probability": 0.012041360139846802
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "25": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 8,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 27527,
+                "token": " medief",
+                "logit": 14.957464218139648,
+                "probability": 0.050156597048044205
+              },
+              {
+                "rank": 2,
+                "token_id": 62868,
+                "token": " GPT",
+                "logit": 14.782732009887695,
+                "probability": 0.04211558401584625
+              },
+              {
+                "rank": 3,
+                "token_id": 86050,
+                "token": " OpenAI",
+                "logit": 14.585813522338867,
+                "probability": 0.03458774462342262
+              },
+              {
+                "rank": 4,
+                "token_id": 117852,
+                "token": "udeau",
+                "logit": 14.550369262695312,
+                "probability": 0.03338327631354332
+              },
+              {
+                "rank": 5,
+                "token_id": 106177,
+                "token": " پاسخ",
+                "logit": 14.542333602905273,
+                "probability": 0.03311609476804733
+              },
+              {
+                "rank": 6,
+                "token_id": 111136,
+                "token": " forcibly",
+                "logit": 14.395339012145996,
+                "probability": 0.02858908101916313
+              },
+              {
+                "rank": 7,
+                "token_id": 97084,
+                "token": "自然地",
+                "logit": 14.342763900756836,
+                "probability": 0.027124835178256035
+              },
+              {
+                "rank": 8,
+                "token_id": 27551,
+                "token": " licensierad",
+                "logit": 14.298477172851562,
+                "probability": 0.02594977803528309
+              },
+              {
+                "rank": 9,
+                "token_id": 914,
+                "token": "�",
+                "logit": 14.17092514038086,
+                "probability": 0.022842230275273323
+              },
+              {
+                "rank": 10,
+                "token_id": 126891,
+                "token": " উত্তর",
+                "logit": 13.93873405456543,
+                "probability": 0.018109196797013283
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "30": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 8,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 15792,
+                "token": " correctly",
+                "logit": 18.079790115356445,
+                "probability": 0.18787042796611786
+              },
+              {
+                "rank": 2,
+                "token_id": 57648,
+                "token": "antsay",
+                "logit": 17.851234436035156,
+                "probability": 0.14948511123657227
+              },
+              {
+                "rank": 3,
+                "token_id": 49541,
+                "token": "correct",
+                "logit": 17.748157501220703,
+                "probability": 0.13484418392181396
+              },
+              {
+                "rank": 4,
+                "token_id": 75395,
+                "token": "正确地",
+                "logit": 16.932519912719727,
+                "probability": 0.05964929237961769
+              },
+              {
+                "rank": 5,
+                "token_id": 36942,
+                "token": "正确答案",
+                "logit": 16.851621627807617,
+                "probability": 0.05501379817724228
+              },
+              {
+                "rank": 6,
+                "token_id": 22173,
+                "token": " incorrect",
+                "logit": 16.118820190429688,
+                "probability": 0.02643747627735138
+              },
+              {
+                "rank": 7,
+                "token_id": 34187,
+                "token": "誤",
+                "logit": 15.945510864257812,
+                "probability": 0.02223067730665207
+              },
+              {
+                "rank": 8,
+                "token_id": 6775,
+                "token": "正确",
+                "logit": 15.859457015991211,
+                "probability": 0.020397644490003586
+              },
+              {
+                "rank": 9,
+                "token_id": 4813,
+                "token": " correct",
+                "logit": 15.804462432861328,
+                "probability": 0.01930617168545723
+              },
+              {
+                "rank": 10,
+                "token_id": 58724,
+                "token": "西湖",
+                "logit": 15.643341064453125,
+                "probability": 0.016433196142315865
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "35": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 8,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 79666,
+                "token": "capital",
+                "logit": 24.991249084472656,
+                "probability": 0.7206659913063049
+              },
+              {
+                "rank": 2,
+                "token_id": 6102,
+                "token": " capital",
+                "logit": 23.736066818237305,
+                "probability": 0.2054070234298706
+              },
+              {
+                "rank": 3,
+                "token_id": 112837,
+                "token": " capitalized",
+                "logit": 21.342708587646484,
+                "probability": 0.01875828020274639
+              },
+              {
+                "rank": 4,
+                "token_id": 113213,
+                "token": " capitale",
+                "logit": 21.29894256591797,
+                "probability": 0.017955010756850243
+              },
+              {
+                "rank": 5,
+                "token_id": 59201,
+                "token": "Capital",
+                "logit": 20.59029769897461,
+                "probability": 0.008839447982609272
+              },
+              {
+                "rank": 6,
+                "token_id": 41175,
+                "token": "首都",
+                "logit": 20.581775665283203,
+                "probability": 0.008764437399804592
+              },
+              {
+                "rank": 7,
+                "token_id": 18904,
+                "token": " Capital",
+                "logit": 20.399023056030273,
+                "probability": 0.0073005505837500095
+              },
+              {
+                "rank": 8,
+                "token_id": 76288,
+                "token": " capitalize",
+                "logit": 19.31700897216797,
+                "probability": 0.00247424584813416
+              },
+              {
+                "rank": 9,
+                "token_id": 98446,
+                "token": " capitals",
+                "logit": 19.30111312866211,
+                "probability": 0.0024352266918867826
+              },
+              {
+                "rank": 10,
+                "token_id": 72538,
+                "token": " капита",
+                "logit": 19.09109115600586,
+                "probability": 0.001973913051187992
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "40": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 8,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 51119,
+                "token": "Paris",
+                "logit": 28.404762268066406,
+                "probability": 0.8174272179603577
+              },
+              {
+                "rank": 2,
+                "token_id": 11111,
+                "token": " Paris",
+                "logit": 26.839920043945312,
+                "probability": 0.17094120383262634
+              },
+              {
+                "rank": 3,
+                "token_id": 33870,
+                "token": "巴黎",
+                "logit": 24.05375862121582,
+                "probability": 0.010539796203374863
+              },
+              {
+                "rank": 4,
+                "token_id": 117031,
+                "token": " Marseille",
+                "logit": 20.34684944152832,
+                "probability": 0.0002587867493275553
+              },
+              {
+                "rank": 5,
+                "token_id": 671,
+                "token": "The",
+                "logit": 20.239709854125977,
+                "probability": 0.00023249407240655273
+              },
+              {
+                "rank": 6,
+                "token_id": 61130,
+                "token": " Lyon",
+                "logit": 19.319276809692383,
+                "probability": 9.261320519726723e-05
+              },
+              {
+                "rank": 7,
+                "token_id": 51725,
+                "token": "France",
+                "logit": 18.925662994384766,
+                "probability": 6.247821147553623e-05
+              },
+              {
+                "rank": 8,
+                "token_id": 74473,
+                "token": "Obviously",
+                "logit": 18.452491760253906,
+                "probability": 3.892538734362461e-05
+              },
+              {
+                "rank": 9,
+                "token_id": 27571,
+                "token": "London",
+                "logit": 18.367639541625977,
+                "probability": 3.575873051886447e-05
+              },
+              {
+                "rank": 10,
+                "token_id": 46630,
+                "token": "PAR",
+                "logit": 18.238855361938477,
+                "probability": 3.143777576042339e-05
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "41": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 8,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 51119,
+                "token": "Paris",
+                "logit": 22.144468307495117,
+                "probability": 0.7529975175857544
+              },
+              {
+                "rank": 2,
+                "token_id": 11111,
+                "token": " Paris",
+                "logit": 20.188623428344727,
+                "probability": 0.10650768131017685
+              },
+              {
+                "rank": 3,
+                "token_id": 104822,
+                "token": "Certainly",
+                "logit": 19.562942504882812,
+                "probability": 0.05697064846754074
+              },
+              {
+                "rank": 4,
+                "token_id": 33870,
+                "token": "巴黎",
+                "logit": 18.574851989746094,
+                "probability": 0.02120942436158657
+              },
+              {
+                "rank": 5,
+                "token_id": 9544,
+                "token": "Here",
+                "logit": 18.145275115966797,
+                "probability": 0.01380276307463646
+              },
+              {
+                "rank": 6,
+                "token_id": 57465,
+                "token": "当然是",
+                "logit": 17.383193969726562,
+                "probability": 0.0064416686072945595
+              },
+              {
+                "rank": 7,
+                "token_id": 74473,
+                "token": "Obviously",
+                "logit": 17.0642032623291,
+                "probability": 0.0046823350712656975
+              },
+              {
+                "rank": 8,
+                "token_id": 15754,
+                "token": "显然",
+                "logit": 17.034067153930664,
+                "probability": 0.004543332848697901
+              },
+              {
+                "rank": 9,
+                "token_id": 56776,
+                "token": " Certainly",
+                "logit": 16.9405517578125,
+                "probability": 0.004137722309678793
+              },
+              {
+                "rank": 10,
+                "token_id": 6959,
+                "token": "当然",
+                "logit": 16.545867919921875,
+                "probability": 0.002788382116705179
+              }
+            ],
+            "targets": {}
+          }
+        ]
+      },
+      "logit_lens": {
+        "0": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 8,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 83484,
+                "token": " الشعاعيه",
+                "logit": 15.700418472290039,
+                "probability": 0.35213881731033325
+              },
+              {
+                "rank": 2,
+                "token_id": 124155,
+                "token": " hilabihan",
+                "logit": 14.382793426513672,
+                "probability": 0.09429238736629486
+              },
+              {
+                "rank": 3,
+                "token_id": 37892,
+                "token": "uesta",
+                "logit": 13.629737854003906,
+                "probability": 0.04440468177199364
+              },
+              {
+                "rank": 4,
+                "token_id": 95104,
+                "token": " turnaround",
+                "logit": 13.353500366210938,
+                "probability": 0.033686842769384384
+              },
+              {
+                "rank": 5,
+                "token_id": 58053,
+                "token": "阵阵",
+                "logit": 13.037017822265625,
+                "probability": 0.024547863751649857
+              },
+              {
+                "rank": 6,
+                "token_id": 73843,
+                "token": "uestas",
+                "logit": 12.883572578430176,
+                "probability": 0.021055875346064568
+              },
+              {
+                "rank": 7,
+                "token_id": 64811,
+                "token": "ahanay",
+                "logit": 12.074990272521973,
+                "probability": 0.009380164556205273
+              },
+              {
+                "rank": 8,
+                "token_id": 57329,
+                "token": " thereto",
+                "logit": 12.065215110778809,
+                "probability": 0.009288918226957321
+              },
+              {
+                "rank": 9,
+                "token_id": 19934,
+                "token": "arty",
+                "logit": 11.818479537963867,
+                "probability": 0.007257871329784393
+              },
+              {
+                "rank": 10,
+                "token_id": 117551,
+                "token": "充斥着",
+                "logit": 11.81295394897461,
+                "probability": 0.007217878010123968
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "5": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 8,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 83484,
+                "token": " الشعاعيه",
+                "logit": 17.390445709228516,
+                "probability": 0.7774931788444519
+              },
+              {
+                "rank": 2,
+                "token_id": 37892,
+                "token": "uesta",
+                "logit": 13.646600723266602,
+                "probability": 0.018397778272628784
+              },
+              {
+                "rank": 3,
+                "token_id": 58053,
+                "token": "阵阵",
+                "logit": 13.214925765991211,
+                "probability": 0.011947893537580967
+              },
+              {
+                "rank": 4,
+                "token_id": 95104,
+                "token": " turnaround",
+                "logit": 12.714717864990234,
+                "probability": 0.007245257031172514
+              },
+              {
+                "rank": 5,
+                "token_id": 73843,
+                "token": "uestas",
+                "logit": 12.42039966583252,
+                "probability": 0.005398001987487078
+              },
+              {
+                "rank": 6,
+                "token_id": 108762,
+                "token": "呼喊",
+                "logit": 11.861018180847168,
+                "probability": 0.0030852952040731907
+              },
+              {
+                "rank": 7,
+                "token_id": 38593,
+                "token": "-only",
+                "logit": 11.747480392456055,
+                "probability": 0.0027541520539671183
+              },
+              {
+                "rank": 8,
+                "token_id": 77276,
+                "token": "็จ",
+                "logit": 11.701333999633789,
+                "probability": 0.0026299457531422377
+              },
+              {
+                "rank": 9,
+                "token_id": 79760,
+                "token": " marching",
+                "logit": 11.70051383972168,
+                "probability": 0.002627789508551359
+              },
+              {
+                "rank": 10,
+                "token_id": 10482,
+                "token": "应的",
+                "logit": 11.543072700500488,
+                "probability": 0.002244991948828101
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "10": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 8,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 83484,
+                "token": " الشعاعيه",
+                "logit": 17.083354949951172,
+                "probability": 0.7392660975456238
+              },
+              {
+                "rank": 2,
+                "token_id": 58053,
+                "token": "阵阵",
+                "logit": 12.668502807617188,
+                "probability": 0.008942415937781334
+              },
+              {
+                "rank": 3,
+                "token_id": 95104,
+                "token": " turnaround",
+                "logit": 12.57893180847168,
+                "probability": 0.008176259696483612
+              },
+              {
+                "rank": 4,
+                "token_id": 37892,
+                "token": "uesta",
+                "logit": 12.168035507202148,
+                "probability": 0.005421315785497427
+              },
+              {
+                "rank": 5,
+                "token_id": 73571,
+                "token": "山林",
+                "logit": 11.909529685974121,
+                "probability": 0.004186364356428385
+              },
+              {
+                "rank": 6,
+                "token_id": 117551,
+                "token": "充斥着",
+                "logit": 11.822588920593262,
+                "probability": 0.003837771713733673
+              },
+              {
+                "rank": 7,
+                "token_id": 38593,
+                "token": "-only",
+                "logit": 11.74322509765625,
+                "probability": 0.003544964361935854
+              },
+              {
+                "rank": 8,
+                "token_id": 102479,
+                "token": "迅速的",
+                "logit": 11.685154914855957,
+                "probability": 0.003344970755279064
+              },
+              {
+                "rank": 9,
+                "token_id": 108762,
+                "token": "呼喊",
+                "logit": 11.644147872924805,
+                "probability": 0.0032105776481330395
+              },
+              {
+                "rank": 10,
+                "token_id": 77276,
+                "token": "็จ",
+                "logit": 11.496038436889648,
+                "probability": 0.002768599195405841
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "15": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 8,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 83484,
+                "token": " الشعاعيه",
+                "logit": 16.856361389160156,
+                "probability": 0.6836519837379456
+              },
+              {
+                "rank": 2,
+                "token_id": 58053,
+                "token": "阵阵",
+                "logit": 12.284026145935059,
+                "probability": 0.007064722944051027
+              },
+              {
+                "rank": 3,
+                "token_id": 37892,
+                "token": "uesta",
+                "logit": 12.266584396362305,
+                "probability": 0.006942570209503174
+              },
+              {
+                "rank": 4,
+                "token_id": 117551,
+                "token": "充斥着",
+                "logit": 12.158330917358398,
+                "probability": 0.006230263039469719
+              },
+              {
+                "rank": 5,
+                "token_id": 95104,
+                "token": " turnaround",
+                "logit": 12.064053535461426,
+                "probability": 0.005669728387147188
+              },
+              {
+                "rank": 6,
+                "token_id": 38593,
+                "token": "-only",
+                "logit": 12.010398864746094,
+                "probability": 0.005373538006097078
+              },
+              {
+                "rank": 7,
+                "token_id": 1196,
+                "token": "物",
+                "logit": 11.858564376831055,
+                "probability": 0.004616570193320513
+              },
+              {
+                "rank": 8,
+                "token_id": 69146,
+                "token": " económ",
+                "logit": 11.78988265991211,
+                "probability": 0.004310139454901218
+              },
+              {
+                "rank": 9,
+                "token_id": 83077,
+                "token": "三元",
+                "logit": 11.782248497009277,
+                "probability": 0.004277360625565052
+              },
+              {
+                "rank": 10,
+                "token_id": 10482,
+                "token": "应的",
+                "logit": 11.72860336303711,
+                "probability": 0.004053947050124407
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "20": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 8,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 108527,
+                "token": "erer",
+                "logit": 16.82221794128418,
+                "probability": 0.43186941742897034
+              },
+              {
+                "rank": 2,
+                "token_id": 1196,
+                "token": "物",
+                "logit": 15.423933029174805,
+                "probability": 0.1066804975271225
+              },
+              {
+                "rank": 3,
+                "token_id": 54973,
+                "token": "-wise",
+                "logit": 14.518049240112305,
+                "probability": 0.04311860352754593
+              },
+              {
+                "rank": 4,
+                "token_id": 98751,
+                "token": " etxek",
+                "logit": 13.924671173095703,
+                "probability": 0.023821212351322174
+              },
+              {
+                "rank": 5,
+                "token_id": 33657,
+                "token": "的核心",
+                "logit": 13.89276123046875,
+                "probability": 0.02307307906448841
+              },
+              {
+                "rank": 6,
+                "token_id": 9301,
+                "token": "物的",
+                "logit": 13.828022956848145,
+                "probability": 0.02162669040262699
+              },
+              {
+                "rank": 7,
+                "token_id": 118752,
+                "token": "пенно",
+                "logit": 12.636750221252441,
+                "probability": 0.0065709310583770275
+              },
+              {
+                "rank": 8,
+                "token_id": 20518,
+                "token": "-quality",
+                "logit": 12.588747024536133,
+                "probability": 0.006262956187129021
+              },
+              {
+                "rank": 9,
+                "token_id": 9977,
+                "token": "徒",
+                "logit": 12.401473045349121,
+                "probability": 0.00519334664568305
+              },
+              {
+                "rank": 10,
+                "token_id": 22347,
+                "token": "ologically",
+                "logit": 12.354838371276855,
+                "probability": 0.004956717137247324
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "25": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 8,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 72404,
+                "token": "的正确",
+                "logit": 16.78127098083496,
+                "probability": 0.19436199963092804
+              },
+              {
+                "rank": 2,
+                "token_id": 108527,
+                "token": "erer",
+                "logit": 16.039104461669922,
+                "probability": 0.09253212064504623
+              },
+              {
+                "rank": 3,
+                "token_id": 33657,
+                "token": "的核心",
+                "logit": 15.882116317749023,
+                "probability": 0.07908851653337479
+              },
+              {
+                "rank": 4,
+                "token_id": 75395,
+                "token": "正确地",
+                "logit": 15.625448226928711,
+                "probability": 0.061184849590063095
+              },
+              {
+                "rank": 5,
+                "token_id": 15792,
+                "token": " correctly",
+                "logit": 15.408595085144043,
+                "probability": 0.04925675317645073
+              },
+              {
+                "rank": 6,
+                "token_id": 122445,
+                "token": " dekameters",
+                "logit": 15.07992935180664,
+                "probability": 0.03545912727713585
+              },
+              {
+                "rank": 7,
+                "token_id": 62163,
+                "token": "yel",
+                "logit": 14.879607200622559,
+                "probability": 0.029022129252552986
+              },
+              {
+                "rank": 8,
+                "token_id": 6775,
+                "token": "正确",
+                "logit": 14.57870864868164,
+                "probability": 0.02148081175982952
+              },
+              {
+                "rank": 9,
+                "token_id": 122234,
+                "token": "-serving",
+                "logit": 14.573821067810059,
+                "probability": 0.021376078948378563
+              },
+              {
+                "rank": 10,
+                "token_id": 36942,
+                "token": "正确答案",
+                "logit": 14.473175048828125,
+                "probability": 0.019329383969306946
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "30": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 8,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 34521,
+                "token": " neperian",
+                "logit": 19.136117935180664,
+                "probability": 0.525859534740448
+              },
+              {
+                "rank": 2,
+                "token_id": 122445,
+                "token": " dekameters",
+                "logit": 17.624088287353516,
+                "probability": 0.11593207716941833
+              },
+              {
+                "rank": 3,
+                "token_id": 57648,
+                "token": "antsay",
+                "logit": 17.07478141784668,
+                "probability": 0.06693336367607117
+              },
+              {
+                "rank": 4,
+                "token_id": 69146,
+                "token": " económ",
+                "logit": 16.70909881591797,
+                "probability": 0.0464332140982151
+              },
+              {
+                "rank": 5,
+                "token_id": 124208,
+                "token": " buruj",
+                "logit": 15.852641105651855,
+                "probability": 0.01971849985420704
+              },
+              {
+                "rank": 6,
+                "token_id": 72404,
+                "token": "的正确",
+                "logit": 15.744278907775879,
+                "probability": 0.01769345998764038
+              },
+              {
+                "rank": 7,
+                "token_id": 15792,
+                "token": " correctly",
+                "logit": 15.397809028625488,
+                "probability": 0.01251246314495802
+              },
+              {
+                "rank": 8,
+                "token_id": 36942,
+                "token": "正确答案",
+                "logit": 15.222612380981445,
+                "probability": 0.010501610115170479
+              },
+              {
+                "rank": 9,
+                "token_id": 108151,
+                "token": "\\nThe",
+                "logit": 15.22023868560791,
+                "probability": 0.010476711206138134
+              },
+              {
+                "rank": 10,
+                "token_id": 87423,
+                "token": "已回答",
+                "logit": 14.875150680541992,
+                "probability": 0.007419167552143335
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "35": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 8,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 79666,
+                "token": "capital",
+                "logit": 23.211185455322266,
+                "probability": 0.7010239958763123
+              },
+              {
+                "rank": 2,
+                "token_id": 6102,
+                "token": " capital",
+                "logit": 21.85526466369629,
+                "probability": 0.18066081404685974
+              },
+              {
+                "rank": 3,
+                "token_id": 59201,
+                "token": "Capital",
+                "logit": 20.71070098876953,
+                "probability": 0.05751568078994751
+              },
+              {
+                "rank": 4,
+                "token_id": 69146,
+                "token": " económ",
+                "logit": 19.810171127319336,
+                "probability": 0.02337174490094185
+              },
+              {
+                "rank": 5,
+                "token_id": 113213,
+                "token": " capitale",
+                "logit": 19.257192611694336,
+                "probability": 0.013444219715893269
+              },
+              {
+                "rank": 6,
+                "token_id": 18904,
+                "token": " Capital",
+                "logit": 18.99674415588379,
+                "probability": 0.01036153919994831
+              },
+              {
+                "rank": 7,
+                "token_id": 112837,
+                "token": " capitalized",
+                "logit": 18.189983367919922,
+                "probability": 0.00462436955422163
+              },
+              {
+                "rank": 8,
+                "token_id": 72538,
+                "token": " капита",
+                "logit": 17.24212074279785,
+                "probability": 0.001792259979993105
+              },
+              {
+                "rank": 9,
+                "token_id": 41175,
+                "token": "首都",
+                "logit": 16.278091430664062,
+                "probability": 0.0006834840751253068
+              },
+              {
+                "rank": 10,
+                "token_id": 114595,
+                "token": "apital",
+                "logit": 16.136606216430664,
+                "probability": 0.0005933106876909733
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "40": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 8,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 51119,
+                "token": "Paris",
+                "logit": 23.926334381103516,
+                "probability": 0.7836195826530457
+              },
+              {
+                "rank": 2,
+                "token_id": 11111,
+                "token": " Paris",
+                "logit": 21.81918716430664,
+                "probability": 0.09527585655450821
+              },
+              {
+                "rank": 3,
+                "token_id": 33870,
+                "token": "巴黎",
+                "logit": 21.281452178955078,
+                "probability": 0.05564773827791214
+              },
+              {
+                "rank": 4,
+                "token_id": 671,
+                "token": "The",
+                "logit": 21.079429626464844,
+                "probability": 0.04546846076846123
+              },
+              {
+                "rank": 5,
+                "token_id": 104822,
+                "token": "Certainly",
+                "logit": 18.54210090637207,
+                "probability": 0.0035955256316810846
+              },
+              {
+                "rank": 6,
+                "token_id": 9544,
+                "token": "Here",
+                "logit": 18.355545043945312,
+                "probability": 0.002983611077070236
+              },
+              {
+                "rank": 7,
+                "token_id": 51725,
+                "token": "France",
+                "logit": 17.741605758666992,
+                "probability": 0.001614773995243013
+              },
+              {
+                "rank": 8,
+                "token_id": 74473,
+                "token": "Obviously",
+                "logit": 17.642074584960938,
+                "probability": 0.0014617930864915252
+              },
+              {
+                "rank": 9,
+                "token_id": 12688,
+                "token": "According",
+                "logit": 17.515670776367188,
+                "probability": 0.0012882181908935308
+              },
+              {
+                "rank": 10,
+                "token_id": 117031,
+                "token": " Marseille",
+                "logit": 16.9710693359375,
+                "probability": 0.0007472605211660266
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "41": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 8,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 51119,
+                "token": "Paris",
+                "logit": 22.144468307495117,
+                "probability": 0.7529975175857544
+              },
+              {
+                "rank": 2,
+                "token_id": 11111,
+                "token": " Paris",
+                "logit": 20.188623428344727,
+                "probability": 0.10650768131017685
+              },
+              {
+                "rank": 3,
+                "token_id": 104822,
+                "token": "Certainly",
+                "logit": 19.562942504882812,
+                "probability": 0.05697064846754074
+              },
+              {
+                "rank": 4,
+                "token_id": 33870,
+                "token": "巴黎",
+                "logit": 18.574851989746094,
+                "probability": 0.02120942436158657
+              },
+              {
+                "rank": 5,
+                "token_id": 9544,
+                "token": "Here",
+                "logit": 18.145275115966797,
+                "probability": 0.01380276307463646
+              },
+              {
+                "rank": 6,
+                "token_id": 57465,
+                "token": "当然是",
+                "logit": 17.383193969726562,
+                "probability": 0.0064416686072945595
+              },
+              {
+                "rank": 7,
+                "token_id": 74473,
+                "token": "Obviously",
+                "logit": 17.0642032623291,
+                "probability": 0.0046823350712656975
+              },
+              {
+                "rank": 8,
+                "token_id": 15754,
+                "token": "显然",
+                "logit": 17.034067153930664,
+                "probability": 0.004543332848697901
+              },
+              {
+                "rank": 9,
+                "token_id": 56776,
+                "token": " Certainly",
+                "logit": 16.9405517578125,
+                "probability": 0.004137722309678793
+              },
+              {
+                "rank": 10,
+                "token_id": 6959,
+                "token": "当然",
+                "logit": 16.545867919921875,
+                "probability": 0.002788382116705179
+              }
+            ],
+            "targets": {}
+          }
+        ]
+      }
+    },
+    "actual_next_token": {
+      "top_tokens": [
+        {
+          "rank": 1,
+          "token_id": 671,
+          "token": "The",
+          "logit": 38.23736572265625,
+          "probability": 0.8310920000076294
+        },
+        {
+          "rank": 2,
+          "token_id": 51119,
+          "token": "Paris",
+          "logit": 36.64055252075195,
+          "probability": 0.16833016276359558
+        },
+        {
+          "rank": 3,
+          "token_id": 9544,
+          "token": "Here",
+          "logit": 30.894580841064453,
+          "probability": 0.0005379205686040223
+        },
+        {
+          "rank": 4,
+          "token_id": 6932,
+          "token": "Of",
+          "logit": 26.34612464904785,
+          "probability": 5.693098955816822e-06
+        },
+        {
+          "rank": 5,
+          "token_id": 104822,
+          "token": "Certainly",
+          "logit": 26.16708755493164,
+          "probability": 4.759856892633252e-06
+        },
+        {
+          "rank": 6,
+          "token_id": 12688,
+          "token": "According",
+          "logit": 25.914257049560547,
+          "probability": 3.6965025174140465e-06
+        },
+        {
+          "rank": 7,
+          "token_id": 1805,
+          "token": "the",
+          "logit": 25.866262435913086,
+          "probability": 3.52328038388805e-06
+        },
+        {
+          "rank": 8,
+          "token_id": 51725,
+          "token": "France",
+          "logit": 25.588085174560547,
+          "probability": 2.6676962079363875e-06
+        },
+        {
+          "rank": 9,
+          "token_id": 11111,
+          "token": " Paris",
+          "logit": 25.578094482421875,
+          "probability": 2.6411767066747416e-06
+        },
+        {
+          "rank": 10,
+          "token_id": 53624,
+          "token": "Sure",
+          "logit": 25.40807342529297,
+          "probability": 2.2282210920820944e-06
+        }
+      ]
+    },
+    "layer_42_closure": {
+      "max_absolute_logit_error": 0.0,
+      "top_tokens": [
+        {
+          "rank": 1,
+          "token_id": 671,
+          "token": "The",
+          "logit": 38.23736572265625,
+          "probability": 0.8310936093330383
+        },
+        {
+          "rank": 2,
+          "token_id": 51119,
+          "token": "Paris",
+          "logit": 36.64055252075195,
+          "probability": 0.16833049058914185
+        },
+        {
+          "rank": 3,
+          "token_id": 9544,
+          "token": "Here",
+          "logit": 30.894580841064453,
+          "probability": 0.0005379216163419187
+        },
+        {
+          "rank": 4,
+          "token_id": 6932,
+          "token": "Of",
+          "logit": 26.34612464904785,
+          "probability": 5.693109869753243e-06
+        },
+        {
+          "rank": 5,
+          "token_id": 104822,
+          "token": "Certainly",
+          "logit": 26.16708755493164,
+          "probability": 4.7598664423276205e-06
+        },
+        {
+          "rank": 6,
+          "token_id": 12688,
+          "token": "According",
+          "logit": 25.914257049560547,
+          "probability": 3.6965097933716606e-06
+        },
+        {
+          "rank": 7,
+          "token_id": 1805,
+          "token": "the",
+          "logit": 25.866262435913086,
+          "probability": 3.5232874324719887e-06
+        },
+        {
+          "rank": 8,
+          "token_id": 51725,
+          "token": "France",
+          "logit": 25.588085174560547,
+          "probability": 2.6677014375309227e-06
+        },
+        {
+          "rank": 9,
+          "token_id": 11111,
+          "token": " Paris",
+          "logit": 25.578094482421875,
+          "probability": 2.6411819362692768e-06
+        },
+        {
+          "rank": 10,
+          "token_id": 53624,
+          "token": "Sure",
+          "logit": 25.40807342529297,
+          "probability": 2.228225412181928e-06
+        }
+      ],
+      "top1_matches_actual": true
+    },
+    "late_layer_checks": {
+      "layer_41_j_vs_ll_topk_overlap": 10,
+      "layer_41_j_vs_ll_ordered_topk_exact": true,
+      "layer_41_j_vs_actual_topk_overlap": 4
+    }
+  },
+  {
+    "id": "arithmetic",
+    "rendered_prompt": "<｜begin▁of▁sentence｜><｜User｜>Complete with only the answer: 17 + 25 =<｜Assistant｜></think>",
+    "input_ids": [
+      0,
+      128803,
+      41174,
+      418,
+      1353,
+      270,
+      3287,
+      28,
+      223,
+      1002,
+      940,
+      223,
+      1069,
+      438,
+      128804,
+      128822
+    ],
+    "token_strings": [
+      "<｜begin▁of▁sentence｜>",
+      "<｜User｜>",
+      "Complete",
+      " with",
+      " only",
+      " the",
+      " answer",
+      ":",
+      " ",
+      "17",
+      " +",
+      " ",
+      "25",
+      " =",
+      "<｜Assistant｜>",
+      "</think>"
+    ],
+    "generation_position": 15,
+    "readouts": {
+      "j_lens": {
+        "0": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 15,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 23044,
+                "token": "ivals",
+                "logit": 16.050260543823242,
+                "probability": 0.13093623518943787
+              },
+              {
+                "rank": 2,
+                "token_id": 68210,
+                "token": " للمعارف",
+                "logit": 15.68643569946289,
+                "probability": 0.09100237488746643
+              },
+              {
+                "rank": 3,
+                "token_id": 126158,
+                "token": "zyw",
+                "logit": 14.66191291809082,
+                "probability": 0.03266691789031029
+              },
+              {
+                "rank": 4,
+                "token_id": 101076,
+                "token": " politic",
+                "logit": 14.505284309387207,
+                "probability": 0.027930917218327522
+              },
+              {
+                "rank": 5,
+                "token_id": 60846,
+                "token": "aplenty",
+                "logit": 14.33960247039795,
+                "probability": 0.02366630733013153
+              },
+              {
+                "rank": 6,
+                "token_id": 86378,
+                "token": "osz",
+                "logit": 14.233192443847656,
+                "probability": 0.021277334541082382
+              },
+              {
+                "rank": 7,
+                "token_id": 120674,
+                "token": "(migrations",
+                "logit": 14.179244995117188,
+                "probability": 0.02015988901257515
+              },
+              {
+                "rank": 8,
+                "token_id": 44690,
+                "token": "трен",
+                "logit": 14.127647399902344,
+                "probability": 0.019146066159009933
+              },
+              {
+                "rank": 9,
+                "token_id": 89944,
+                "token": "trigger",
+                "logit": 14.064115524291992,
+                "probability": 0.01796751655638218
+              },
+              {
+                "rank": 10,
+                "token_id": 64432,
+                "token": "TreeLabel",
+                "logit": 13.590352058410645,
+                "probability": 0.011187554337084293
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "5": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 15,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 11272,
+                "token": "表面",
+                "logit": 14.955141067504883,
+                "probability": 0.16467341780662537
+              },
+              {
+                "rank": 2,
+                "token_id": 53890,
+                "token": "锁定",
+                "logit": 12.758106231689453,
+                "probability": 0.01830051839351654
+              },
+              {
+                "rank": 3,
+                "token_id": 51286,
+                "token": "表面的",
+                "logit": 12.459883689880371,
+                "probability": 0.013581477105617523
+              },
+              {
+                "rank": 4,
+                "token_id": 31908,
+                "token": "挪",
+                "logit": 12.42996597290039,
+                "probability": 0.013181167654693127
+              },
+              {
+                "rank": 5,
+                "token_id": 25708,
+                "token": "Surface",
+                "logit": 12.294259071350098,
+                "probability": 0.0115084582939744
+              },
+              {
+                "rank": 6,
+                "token_id": 33943,
+                "token": " Surface",
+                "logit": 12.271381378173828,
+                "probability": 0.011248160153627396
+              },
+              {
+                "rank": 7,
+                "token_id": 32967,
+                "token": " cheer",
+                "logit": 12.194829940795898,
+                "probability": 0.010419229976832867
+              },
+              {
+                "rank": 8,
+                "token_id": 84722,
+                "token": "cape",
+                "logit": 12.130960464477539,
+                "probability": 0.009774565696716309
+              },
+              {
+                "rank": 9,
+                "token_id": 97050,
+                "token": " Tears",
+                "logit": 12.103490829467773,
+                "probability": 0.009509716182947159
+              },
+              {
+                "rank": 10,
+                "token_id": 34681,
+                "token": "甸",
+                "logit": 12.000139236450195,
+                "probability": 0.008575955405831337
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "10": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 15,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 53890,
+                "token": "锁定",
+                "logit": 13.194863319396973,
+                "probability": 0.03502834215760231
+              },
+              {
+                "rank": 2,
+                "token_id": 32967,
+                "token": " cheer",
+                "logit": 13.160417556762695,
+                "probability": 0.0338423065841198
+              },
+              {
+                "rank": 3,
+                "token_id": 97050,
+                "token": " Tears",
+                "logit": 12.407559394836426,
+                "probability": 0.0159403495490551
+              },
+              {
+                "rank": 4,
+                "token_id": 84722,
+                "token": "cape",
+                "logit": 12.357244491577148,
+                "probability": 0.015158155001699924
+              },
+              {
+                "rank": 5,
+                "token_id": 2885,
+                "token": "ait",
+                "logit": 12.275866508483887,
+                "probability": 0.013973471708595753
+              },
+              {
+                "rank": 6,
+                "token_id": 28513,
+                "token": " Walker",
+                "logit": 12.215194702148438,
+                "probability": 0.01315088290721178
+              },
+              {
+                "rank": 7,
+                "token_id": 115881,
+                "token": "Walker",
+                "logit": 12.02709674835205,
+                "probability": 0.010895946994423866
+              },
+              {
+                "rank": 8,
+                "token_id": 91472,
+                "token": " wig",
+                "logit": 11.925000190734863,
+                "probability": 0.009838412515819073
+              },
+              {
+                "rank": 9,
+                "token_id": 31908,
+                "token": "挪",
+                "logit": 11.916858673095703,
+                "probability": 0.009758638218045235
+              },
+              {
+                "rank": 10,
+                "token_id": 85089,
+                "token": "忑",
+                "logit": 11.671436309814453,
+                "probability": 0.0076349047012627125
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "15": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 15,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 32967,
+                "token": " cheer",
+                "logit": 13.11098575592041,
+                "probability": 0.03268882632255554
+              },
+              {
+                "rank": 2,
+                "token_id": 53890,
+                "token": "锁定",
+                "logit": 13.05014419555664,
+                "probability": 0.030759278684854507
+              },
+              {
+                "rank": 3,
+                "token_id": 97050,
+                "token": " Tears",
+                "logit": 12.548319816589355,
+                "probability": 0.018622441217303276
+              },
+              {
+                "rank": 4,
+                "token_id": 84722,
+                "token": "cape",
+                "logit": 12.404282569885254,
+                "probability": 0.016124341636896133
+              },
+              {
+                "rank": 5,
+                "token_id": 2885,
+                "token": "ait",
+                "logit": 12.379288673400879,
+                "probability": 0.015726327896118164
+              },
+              {
+                "rank": 6,
+                "token_id": 28513,
+                "token": " Walker",
+                "logit": 12.17442798614502,
+                "probability": 0.012813194654881954
+              },
+              {
+                "rank": 7,
+                "token_id": 31908,
+                "token": "挪",
+                "logit": 12.031220436096191,
+                "probability": 0.011103584431111813
+              },
+              {
+                "rank": 8,
+                "token_id": 115881,
+                "token": "Walker",
+                "logit": 12.0200834274292,
+                "probability": 0.010980609804391861
+              },
+              {
+                "rank": 9,
+                "token_id": 91472,
+                "token": " wig",
+                "logit": 11.979637145996094,
+                "probability": 0.010545345954596996
+              },
+              {
+                "rank": 10,
+                "token_id": 85089,
+                "token": "忑",
+                "logit": 11.875245094299316,
+                "probability": 0.009500008076429367
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "20": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 15,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 64432,
+                "token": "TreeLabel",
+                "logit": 16.41051483154297,
+                "probability": 0.13687051832675934
+              },
+              {
+                "rank": 2,
+                "token_id": 64469,
+                "token": "_response",
+                "logit": 16.03737449645996,
+                "probability": 0.09424474090337753
+              },
+              {
+                "rank": 3,
+                "token_id": 14868,
+                "token": "�乐",
+                "logit": 15.607752799987793,
+                "probability": 0.06133025512099266
+              },
+              {
+                "rank": 4,
+                "token_id": 78837,
+                "token": "-response",
+                "logit": 15.426279067993164,
+                "probability": 0.05115189775824547
+              },
+              {
+                "rank": 5,
+                "token_id": 6012,
+                "token": "ponse",
+                "logit": 15.200032234191895,
+                "probability": 0.040794722735881805
+              },
+              {
+                "rank": 6,
+                "token_id": 17206,
+                "token": "�果",
+                "logit": 15.067793846130371,
+                "probability": 0.035741567611694336
+              },
+              {
+                "rank": 7,
+                "token_id": 11632,
+                "token": " responses",
+                "logit": 14.823050498962402,
+                "probability": 0.02798226661980152
+              },
+              {
+                "rank": 8,
+                "token_id": 124727,
+                "token": "aharoa",
+                "logit": 14.663009643554688,
+                "probability": 0.02384394221007824
+              },
+              {
+                "rank": 9,
+                "token_id": 60060,
+                "token": "zv",
+                "logit": 14.365558624267578,
+                "probability": 0.01770910806953907
+              },
+              {
+                "rank": 10,
+                "token_id": 80575,
+                "token": ".response",
+                "logit": 14.137991905212402,
+                "probability": 0.014104761183261871
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "25": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 15,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 124727,
+                "token": "aharoa",
+                "logit": 15.303009033203125,
+                "probability": 0.08499521017074585
+              },
+              {
+                "rank": 2,
+                "token_id": 64328,
+                "token": " المطلع",
+                "logit": 14.872735023498535,
+                "probability": 0.05527500808238983
+              },
+              {
+                "rank": 3,
+                "token_id": 117852,
+                "token": "udeau",
+                "logit": 14.812193870544434,
+                "probability": 0.052027881145477295
+              },
+              {
+                "rank": 4,
+                "token_id": 31501,
+                "token": "ucl",
+                "logit": 14.668844223022461,
+                "probability": 0.045079611241817474
+              },
+              {
+                "rank": 5,
+                "token_id": 104774,
+                "token": "羞辱",
+                "logit": 14.178278923034668,
+                "probability": 0.02760135382413864
+              },
+              {
+                "rank": 6,
+                "token_id": 70190,
+                "token": " pennyweights",
+                "logit": 14.117290496826172,
+                "probability": 0.025968294590711594
+              },
+              {
+                "rank": 7,
+                "token_id": 7802,
+                "token": "迷",
+                "logit": 13.877368927001953,
+                "probability": 0.020428987219929695
+              },
+              {
+                "rank": 8,
+                "token_id": 64432,
+                "token": "TreeLabel",
+                "logit": 13.432645797729492,
+                "probability": 0.013095015659928322
+              },
+              {
+                "rank": 9,
+                "token_id": 23044,
+                "token": "ivals",
+                "logit": 13.37413501739502,
+                "probability": 0.012350800447165966
+              },
+              {
+                "rank": 10,
+                "token_id": 80437,
+                "token": "}<?",
+                "logit": 13.229803085327148,
+                "probability": 0.010690857656300068
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "30": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 15,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 94767,
+                "token": "答案是",
+                "logit": 19.482791900634766,
+                "probability": 0.39589089155197144
+              },
+              {
+                "rank": 2,
+                "token_id": 94523,
+                "token": "_answer",
+                "logit": 18.568504333496094,
+                "probability": 0.15867388248443604
+              },
+              {
+                "rank": 3,
+                "token_id": 102092,
+                "token": "(answer",
+                "logit": 17.62994384765625,
+                "probability": 0.062071725726127625
+              },
+              {
+                "rank": 4,
+                "token_id": 9361,
+                "token": " Answer",
+                "logit": 17.585079193115234,
+                "probability": 0.059348445385694504
+              },
+              {
+                "rank": 5,
+                "token_id": 83198,
+                "token": "回答道",
+                "logit": 17.00575828552246,
+                "probability": 0.03325166925787926
+              },
+              {
+                "rank": 6,
+                "token_id": 112779,
+                "token": "每分钟",
+                "logit": 16.866052627563477,
+                "probability": 0.028916122391819954
+              },
+              {
+                "rank": 7,
+                "token_id": 44480,
+                "token": " seventeen",
+                "logit": 16.6287899017334,
+                "probability": 0.022808576002717018
+              },
+              {
+                "rank": 8,
+                "token_id": 3287,
+                "token": " answer",
+                "logit": 16.315269470214844,
+                "probability": 0.016670091077685356
+              },
+              {
+                "rank": 9,
+                "token_id": 19995,
+                "token": "answer",
+                "logit": 16.16193199157715,
+                "probability": 0.014300273731350899
+              },
+              {
+                "rank": 10,
+                "token_id": 91186,
+                "token": " ANSWER",
+                "logit": 16.037189483642578,
+                "probability": 0.0126231973990798
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "35": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 15,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 9361,
+                "token": " Answer",
+                "logit": 18.463802337646484,
+                "probability": 0.3144191801548004
+              },
+              {
+                "rank": 2,
+                "token_id": 119061,
+                "token": " Septy",
+                "logit": 17.549379348754883,
+                "probability": 0.12600278854370117
+              },
+              {
+                "rank": 3,
+                "token_id": 27551,
+                "token": " licensierad",
+                "logit": 17.543447494506836,
+                "probability": 0.12525758147239685
+              },
+              {
+                "rank": 4,
+                "token_id": 94767,
+                "token": "答案是",
+                "logit": 17.070096969604492,
+                "probability": 0.07802440971136093
+              },
+              {
+                "rank": 5,
+                "token_id": 3287,
+                "token": " answer",
+                "logit": 15.772089004516602,
+                "probability": 0.021306533366441727
+              },
+              {
+                "rank": 6,
+                "token_id": 27142,
+                "token": "708",
+                "logit": 15.475868225097656,
+                "probability": 0.015844034031033516
+              },
+              {
+                "rank": 7,
+                "token_id": 28051,
+                "token": "587",
+                "logit": 15.26275634765625,
+                "probability": 0.01280301995575428
+              },
+              {
+                "rank": 8,
+                "token_id": 83198,
+                "token": "回答道",
+                "logit": 15.137893676757812,
+                "probability": 0.011300177313387394
+              },
+              {
+                "rank": 9,
+                "token_id": 91186,
+                "token": " ANSWER",
+                "logit": 15.125929832458496,
+                "probability": 0.01116578932851553
+              },
+              {
+                "rank": 10,
+                "token_id": 102092,
+                "token": "(answer",
+                "logit": 14.952205657958984,
+                "probability": 0.009385166689753532
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "40": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 15,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 3180,
+                "token": "42",
+                "logit": 33.974212646484375,
+                "probability": 0.9999923706054688
+              },
+              {
+                "rank": 2,
+                "token_id": 12062,
+                "token": " forty",
+                "logit": 21.91744613647461,
+                "probability": 5.805097771371948e-06
+              },
+              {
+                "rank": 3,
+                "token_id": 3354,
+                "token": "43",
+                "logit": 18.988967895507812,
+                "probability": 3.104470920334279e-07
+              },
+              {
+                "rank": 4,
+                "token_id": 3286,
+                "token": "41",
+                "logit": 18.475399017333984,
+                "probability": 1.8575796900677233e-07
+              },
+              {
+                "rank": 5,
+                "token_id": 2240,
+                "token": "44",
+                "logit": 15.495777130126953,
+                "probability": 9.438742232248387e-09
+              },
+              {
+                "rank": 6,
+                "token_id": 32940,
+                "token": "四十",
+                "logit": 15.463894844055176,
+                "probability": 9.14255071648995e-09
+              },
+              {
+                "rank": 7,
+                "token_id": 53713,
+                "token": " Forty",
+                "logit": 15.184684753417969,
+                "probability": 6.9152581438913785e-09
+              },
+              {
+                "rank": 8,
+                "token_id": 1484,
+                "token": "40",
+                "logit": 15.08810043334961,
+                "probability": 6.278593644992725e-09
+              },
+              {
+                "rank": 9,
+                "token_id": 1942,
+                "token": "37",
+                "logit": 14.93710708618164,
+                "probability": 5.398669955525293e-09
+              },
+              {
+                "rank": 10,
+                "token_id": 126581,
+                "token": " mosunod",
+                "logit": 14.406401634216309,
+                "probability": 3.1754461282673674e-09
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "41": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 15,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 3180,
+                "token": "42",
+                "logit": 22.20942497253418,
+                "probability": 0.9960082769393921
+              },
+              {
+                "rank": 2,
+                "token_id": 13533,
+                "token": " definitely",
+                "logit": 14.869897842407227,
+                "probability": 0.0006467654602602124
+              },
+              {
+                "rank": 3,
+                "token_id": 12062,
+                "token": " forty",
+                "logit": 14.685430526733398,
+                "probability": 0.0005378159694373608
+              },
+              {
+                "rank": 4,
+                "token_id": 10381,
+                "token": " certainly",
+                "logit": 14.353590965270996,
+                "probability": 0.0003859380376525223
+              },
+              {
+                "rank": 5,
+                "token_id": 128822,
+                "token": "</think>",
+                "logit": 13.972516059875488,
+                "probability": 0.00026364458608441055
+              },
+              {
+                "rank": 6,
+                "token_id": 96386,
+                "token": "ابراین",
+                "logit": 13.486263275146484,
+                "probability": 0.00016212199989240617
+              },
+              {
+                "rank": 7,
+                "token_id": 128821,
+                "token": "<think>",
+                "logit": 13.368070602416992,
+                "probability": 0.0001440494233975187
+              },
+              {
+                "rank": 8,
+                "token_id": 223,
+                "token": " ",
+                "logit": 12.784379005432129,
+                "probability": 8.03558505140245e-05
+              },
+              {
+                "rank": 9,
+                "token_id": 67796,
+                "token": "算式",
+                "logit": 12.487074851989746,
+                "probability": 5.968977347947657e-05
+              },
+              {
+                "rank": 10,
+                "token_id": 125146,
+                "token": "————————————————————\n\n",
+                "logit": 12.264580726623535,
+                "probability": 4.778283982886933e-05
+              }
+            ],
+            "targets": {}
+          }
+        ]
+      },
+      "logit_lens": {
+        "0": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 15,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 83484,
+                "token": " الشعاعيه",
+                "logit": 15.558635711669922,
+                "probability": 0.28497061133384705
+              },
+              {
+                "rank": 2,
+                "token_id": 37892,
+                "token": "uesta",
+                "logit": 14.889984130859375,
+                "probability": 0.14601866900920868
+              },
+              {
+                "rank": 3,
+                "token_id": 73843,
+                "token": "uestas",
+                "logit": 14.247488975524902,
+                "probability": 0.07680266350507736
+              },
+              {
+                "rank": 4,
+                "token_id": 95104,
+                "token": " turnaround",
+                "logit": 13.447086334228516,
+                "probability": 0.034495770931243896
+              },
+              {
+                "rank": 5,
+                "token_id": 124155,
+                "token": " hilabihan",
+                "logit": 13.076021194458008,
+                "probability": 0.023802047595381737
+              },
+              {
+                "rank": 6,
+                "token_id": 64811,
+                "token": "ahanay",
+                "logit": 13.072477340698242,
+                "probability": 0.023717844858765602
+              },
+              {
+                "rank": 7,
+                "token_id": 57329,
+                "token": " thereto",
+                "logit": 12.730302810668945,
+                "probability": 0.016844987869262695
+              },
+              {
+                "rank": 8,
+                "token_id": 58053,
+                "token": "阵阵",
+                "logit": 12.298558235168457,
+                "probability": 0.010938717983663082
+              },
+              {
+                "rank": 9,
+                "token_id": 102479,
+                "token": "迅速的",
+                "logit": 11.867076873779297,
+                "probability": 0.007105202414095402
+              },
+              {
+                "rank": 10,
+                "token_id": 104556,
+                "token": "aer",
+                "logit": 11.753681182861328,
+                "probability": 0.006343505810946226
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "5": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 15,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 83484,
+                "token": " الشعاعيه",
+                "logit": 17.421001434326172,
+                "probability": 0.7391448616981506
+              },
+              {
+                "rank": 2,
+                "token_id": 37892,
+                "token": "uesta",
+                "logit": 14.70682144165039,
+                "probability": 0.04897519573569298
+              },
+              {
+                "rank": 3,
+                "token_id": 73843,
+                "token": "uestas",
+                "logit": 13.559736251831055,
+                "probability": 0.015552613884210587
+              },
+              {
+                "rank": 4,
+                "token_id": 95104,
+                "token": " turnaround",
+                "logit": 13.312823295593262,
+                "probability": 0.012149837799370289
+              },
+              {
+                "rank": 5,
+                "token_id": 102479,
+                "token": "迅速的",
+                "logit": 12.895572662353516,
+                "probability": 0.0080049904063344
+              },
+              {
+                "rank": 6,
+                "token_id": 58053,
+                "token": "阵阵",
+                "logit": 12.611932754516602,
+                "probability": 0.006028059870004654
+              },
+              {
+                "rank": 7,
+                "token_id": 64811,
+                "token": "ahanay",
+                "logit": 12.251222610473633,
+                "probability": 0.004202649462968111
+              },
+              {
+                "rank": 8,
+                "token_id": 36551,
+                "token": "Turn",
+                "logit": 11.977278709411621,
+                "probability": 0.003195588244125247
+              },
+              {
+                "rank": 9,
+                "token_id": 52544,
+                "token": "KL",
+                "logit": 11.957108497619629,
+                "probability": 0.00313177821226418
+              },
+              {
+                "rank": 10,
+                "token_id": 108762,
+                "token": "呼喊",
+                "logit": 11.914444923400879,
+                "probability": 0.003000975586473942
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "10": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 15,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 83484,
+                "token": " الشعاعيه",
+                "logit": 16.8815975189209,
+                "probability": 0.6634781956672668
+              },
+              {
+                "rank": 2,
+                "token_id": 37892,
+                "token": "uesta",
+                "logit": 14.016643524169922,
+                "probability": 0.03780880570411682
+              },
+              {
+                "rank": 3,
+                "token_id": 102479,
+                "token": "迅速的",
+                "logit": 12.924453735351562,
+                "probability": 0.012684138491749763
+              },
+              {
+                "rank": 4,
+                "token_id": 95104,
+                "token": " turnaround",
+                "logit": 12.832635879516602,
+                "probability": 0.011571375653147697
+              },
+              {
+                "rank": 5,
+                "token_id": 73843,
+                "token": "uestas",
+                "logit": 12.706926345825195,
+                "probability": 0.01020445954054594
+              },
+              {
+                "rank": 6,
+                "token_id": 58053,
+                "token": "阵阵",
+                "logit": 12.493431091308594,
+                "probability": 0.008242713287472725
+              },
+              {
+                "rank": 7,
+                "token_id": 64811,
+                "token": "ahanay",
+                "logit": 11.835165023803711,
+                "probability": 0.004267651122063398
+              },
+              {
+                "rank": 8,
+                "token_id": 45430,
+                "token": " cultivated",
+                "logit": 11.610810279846191,
+                "probability": 0.0034099880140274763
+              },
+              {
+                "rank": 9,
+                "token_id": 1196,
+                "token": "物",
+                "logit": 11.606046676635742,
+                "probability": 0.0033937827683985233
+              },
+              {
+                "rank": 10,
+                "token_id": 108762,
+                "token": "呼喊",
+                "logit": 11.507204055786133,
+                "probability": 0.0030743777751922607
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "15": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 15,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 83484,
+                "token": " الشعاعيه",
+                "logit": 16.909135818481445,
+                "probability": 0.664205014705658
+              },
+              {
+                "rank": 2,
+                "token_id": 37892,
+                "token": "uesta",
+                "logit": 13.165970802307129,
+                "probability": 0.015727736055850983
+              },
+              {
+                "rank": 3,
+                "token_id": 69146,
+                "token": " económ",
+                "logit": 13.160910606384277,
+                "probability": 0.01564835198223591
+              },
+              {
+                "rank": 4,
+                "token_id": 102479,
+                "token": "迅速的",
+                "logit": 12.742377281188965,
+                "probability": 0.010296790860593319
+              },
+              {
+                "rank": 5,
+                "token_id": 1196,
+                "token": "物",
+                "logit": 12.405256271362305,
+                "probability": 0.007350080646574497
+              },
+              {
+                "rank": 6,
+                "token_id": 73843,
+                "token": "uestas",
+                "logit": 12.349008560180664,
+                "probability": 0.006948067806661129
+              },
+              {
+                "rank": 7,
+                "token_id": 95104,
+                "token": " turnaround",
+                "logit": 12.14387035369873,
+                "probability": 0.0056594423949718475
+              },
+              {
+                "rank": 8,
+                "token_id": 94811,
+                "token": "击中",
+                "logit": 12.11816120147705,
+                "probability": 0.005515797529369593
+              },
+              {
+                "rank": 9,
+                "token_id": 45430,
+                "token": " cultivated",
+                "logit": 11.919732093811035,
+                "probability": 0.004523052833974361
+              },
+              {
+                "rank": 10,
+                "token_id": 58053,
+                "token": "阵阵",
+                "logit": 11.78226375579834,
+                "probability": 0.0039421203546226025
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "20": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 15,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 118752,
+                "token": "пенно",
+                "logit": 14.171259880065918,
+                "probability": 0.08389202505350113
+              },
+              {
+                "rank": 2,
+                "token_id": 118956,
+                "token": " Woodward",
+                "logit": 13.632630348205566,
+                "probability": 0.04895497485995293
+              },
+              {
+                "rank": 3,
+                "token_id": 108527,
+                "token": "erer",
+                "logit": 13.451087951660156,
+                "probability": 0.04082760959863663
+              },
+              {
+                "rank": 4,
+                "token_id": 1196,
+                "token": "物",
+                "logit": 12.92389965057373,
+                "probability": 0.024098997935652733
+              },
+              {
+                "rank": 5,
+                "token_id": 9977,
+                "token": "徒",
+                "logit": 12.689529418945312,
+                "probability": 0.01906396821141243
+              },
+              {
+                "rank": 6,
+                "token_id": 4770,
+                "token": "质量",
+                "logit": 12.41254711151123,
+                "probability": 0.01445178221911192
+              },
+              {
+                "rank": 7,
+                "token_id": 92162,
+                "token": "_labels",
+                "logit": 12.41024112701416,
+                "probability": 0.014418494887650013
+              },
+              {
+                "rank": 8,
+                "token_id": 43953,
+                "token": " cubed",
+                "logit": 12.331953048706055,
+                "probability": 0.01333275344222784
+              },
+              {
+                "rank": 9,
+                "token_id": 14496,
+                "token": " neur",
+                "logit": 12.296651840209961,
+                "probability": 0.0128703024238348
+              },
+              {
+                "rank": 10,
+                "token_id": 1361,
+                "token": "�",
+                "logit": 12.247660636901855,
+                "probability": 0.012254966422915459
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "25": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 15,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 124208,
+                "token": " buruj",
+                "logit": 18.878114700317383,
+                "probability": 0.5402307510375977
+              },
+              {
+                "rank": 2,
+                "token_id": 60484,
+                "token": " nadika",
+                "logit": 18.141639709472656,
+                "probability": 0.25866180658340454
+              },
+              {
+                "rank": 3,
+                "token_id": 69146,
+                "token": " económ",
+                "logit": 17.19672966003418,
+                "probability": 0.10054560005664825
+              },
+              {
+                "rank": 4,
+                "token_id": 92548,
+                "token": "답",
+                "logit": 14.047406196594238,
+                "probability": 0.004311508499085903
+              },
+              {
+                "rank": 5,
+                "token_id": 123475,
+                "token": " Garrison",
+                "logit": 13.877982139587402,
+                "probability": 0.003639563685283065
+              },
+              {
+                "rank": 6,
+                "token_id": 14649,
+                "token": " volunte",
+                "logit": 13.81473159790039,
+                "probability": 0.0034164886455982924
+              },
+              {
+                "rank": 7,
+                "token_id": 33832,
+                "token": " Duodecimal",
+                "logit": 13.808042526245117,
+                "probability": 0.003393711755052209
+              },
+              {
+                "rank": 8,
+                "token_id": 102092,
+                "token": "(answer",
+                "logit": 13.516441345214844,
+                "probability": 0.002535328036174178
+              },
+              {
+                "rank": 9,
+                "token_id": 94523,
+                "token": "_answer",
+                "logit": 13.399020195007324,
+                "probability": 0.0022544406820088625
+              },
+              {
+                "rank": 10,
+                "token_id": 54150,
+                "token": "意料",
+                "logit": 13.38952922821045,
+                "probability": 0.002233145060017705
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "30": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 15,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 60484,
+                "token": " nadika",
+                "logit": 18.731016159057617,
+                "probability": 0.37875157594680786
+              },
+              {
+                "rank": 2,
+                "token_id": 14649,
+                "token": " volunte",
+                "logit": 17.961715698242188,
+                "probability": 0.1754896491765976
+              },
+              {
+                "rank": 3,
+                "token_id": 69146,
+                "token": " económ",
+                "logit": 17.541765213012695,
+                "probability": 0.11531062424182892
+              },
+              {
+                "rank": 4,
+                "token_id": 124208,
+                "token": " buruj",
+                "logit": 17.382238388061523,
+                "probability": 0.09830773621797562
+              },
+              {
+                "rank": 5,
+                "token_id": 94767,
+                "token": "答案是",
+                "logit": 16.16642189025879,
+                "probability": 0.02914508245885372
+              },
+              {
+                "rank": 6,
+                "token_id": 33031,
+                "token": " cryptocur",
+                "logit": 15.61863899230957,
+                "probability": 0.016852572560310364
+              },
+              {
+                "rank": 7,
+                "token_id": 94523,
+                "token": "_answer",
+                "logit": 15.491418838500977,
+                "probability": 0.014839360490441322
+              },
+              {
+                "rank": 8,
+                "token_id": 17221,
+                "token": " lifest",
+                "logit": 15.079741477966309,
+                "probability": 0.009831640869379044
+              },
+              {
+                "rank": 9,
+                "token_id": 33832,
+                "token": " Duodecimal",
+                "logit": 15.042481422424316,
+                "probability": 0.009472053498029709
+              },
+              {
+                "rank": 10,
+                "token_id": 102092,
+                "token": "(answer",
+                "logit": 14.680785179138184,
+                "probability": 0.00659722788259387
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "35": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 15,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 69146,
+                "token": " económ",
+                "logit": 18.695409774780273,
+                "probability": 0.3129073679447174
+              },
+              {
+                "rank": 2,
+                "token_id": 33031,
+                "token": " cryptocur",
+                "logit": 18.307483673095703,
+                "probability": 0.21229590475559235
+              },
+              {
+                "rank": 3,
+                "token_id": 9361,
+                "token": " Answer",
+                "logit": 17.69528579711914,
+                "probability": 0.11509791761636734
+              },
+              {
+                "rank": 4,
+                "token_id": 1002,
+                "token": "17",
+                "logit": 16.700223922729492,
+                "probability": 0.04255176708102226
+              },
+              {
+                "rank": 5,
+                "token_id": 28051,
+                "token": "587",
+                "logit": 15.808248519897461,
+                "probability": 0.017439642921090126
+              },
+              {
+                "rank": 6,
+                "token_id": 779,
+                "token": "11",
+                "logit": 15.669201850891113,
+                "probability": 0.015175757929682732
+              },
+              {
+                "rank": 7,
+                "token_id": 124208,
+                "token": " buruj",
+                "logit": 15.59557819366455,
+                "probability": 0.014098601415753365
+              },
+              {
+                "rank": 8,
+                "token_id": 25,
+                "token": "7",
+                "logit": 15.51593017578125,
+                "probability": 0.013019231148064137
+              },
+              {
+                "rank": 9,
+                "token_id": 20996,
+                "token": "504",
+                "logit": 15.242058753967285,
+                "probability": 0.009900212287902832
+              },
+              {
+                "rank": 10,
+                "token_id": 26513,
+                "token": "584",
+                "logit": 15.198989868164062,
+                "probability": 0.009482872672379017
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "40": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 15,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 3180,
+                "token": "42",
+                "logit": 30.958349227905273,
+                "probability": 0.9999961853027344
+              },
+              {
+                "rank": 2,
+                "token_id": 12062,
+                "token": " forty",
+                "logit": 18.02207374572754,
+                "probability": 2.4090470560622634e-06
+              },
+              {
+                "rank": 3,
+                "token_id": 3286,
+                "token": "41",
+                "logit": 16.55694580078125,
+                "probability": 5.566065510720364e-07
+              },
+              {
+                "rank": 4,
+                "token_id": 3354,
+                "token": "43",
+                "logit": 16.49256134033203,
+                "probability": 5.218990395405854e-07
+              },
+              {
+                "rank": 5,
+                "token_id": 223,
+                "token": " ",
+                "logit": 15.643149375915527,
+                "probability": 2.2319865422559815e-07
+              },
+              {
+                "rank": 6,
+                "token_id": 1942,
+                "token": "37",
+                "logit": 13.561845779418945,
+                "probability": 2.7847928407709333e-08
+              },
+              {
+                "rank": 7,
+                "token_id": 2240,
+                "token": "44",
+                "logit": 13.304183006286621,
+                "probability": 2.152241229680385e-08
+              },
+              {
+                "rank": 8,
+                "token_id": 10,
+                "token": "(",
+                "logit": 13.297886848449707,
+                "probability": 2.1387370097158964e-08
+              },
+              {
+                "rank": 9,
+                "token_id": 32940,
+                "token": "四十",
+                "logit": 13.116606712341309,
+                "probability": 1.7841346178215645e-08
+              },
+              {
+                "rank": 10,
+                "token_id": 10381,
+                "token": " certainly",
+                "logit": 13.006524085998535,
+                "probability": 1.598159649063291e-08
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "41": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 15,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 3180,
+                "token": "42",
+                "logit": 22.20942497253418,
+                "probability": 0.9960082769393921
+              },
+              {
+                "rank": 2,
+                "token_id": 13533,
+                "token": " definitely",
+                "logit": 14.869897842407227,
+                "probability": 0.0006467654602602124
+              },
+              {
+                "rank": 3,
+                "token_id": 12062,
+                "token": " forty",
+                "logit": 14.685430526733398,
+                "probability": 0.0005378159694373608
+              },
+              {
+                "rank": 4,
+                "token_id": 10381,
+                "token": " certainly",
+                "logit": 14.353590965270996,
+                "probability": 0.0003859380376525223
+              },
+              {
+                "rank": 5,
+                "token_id": 128822,
+                "token": "</think>",
+                "logit": 13.972516059875488,
+                "probability": 0.00026364458608441055
+              },
+              {
+                "rank": 6,
+                "token_id": 96386,
+                "token": "ابراین",
+                "logit": 13.486263275146484,
+                "probability": 0.00016212199989240617
+              },
+              {
+                "rank": 7,
+                "token_id": 128821,
+                "token": "<think>",
+                "logit": 13.368070602416992,
+                "probability": 0.0001440494233975187
+              },
+              {
+                "rank": 8,
+                "token_id": 223,
+                "token": " ",
+                "logit": 12.784379005432129,
+                "probability": 8.03558505140245e-05
+              },
+              {
+                "rank": 9,
+                "token_id": 67796,
+                "token": "算式",
+                "logit": 12.487074851989746,
+                "probability": 5.968977347947657e-05
+              },
+              {
+                "rank": 10,
+                "token_id": 125146,
+                "token": "————————————————————\n\n",
+                "logit": 12.264580726623535,
+                "probability": 4.778283982886933e-05
+              }
+            ],
+            "targets": {}
+          }
+        ]
+      }
+    },
+    "actual_next_token": {
+      "top_tokens": [
+        {
+          "rank": 1,
+          "token_id": 3180,
+          "token": "42",
+          "logit": 36.55080032348633,
+          "probability": 0.9892996549606323
+        },
+        {
+          "rank": 2,
+          "token_id": 1002,
+          "token": "17",
+          "logit": 31.98146629333496,
+          "probability": 0.01025395281612873
+        },
+        {
+          "rank": 3,
+          "token_id": 3354,
+          "token": "43",
+          "logit": 27.263269424438477,
+          "probability": 9.15807977435179e-05
+        },
+        {
+          "rank": 4,
+          "token_id": 25,
+          "token": "7",
+          "logit": 27.170591354370117,
+          "probability": 8.347470429725945e-05
+        },
+        {
+          "rank": 5,
+          "token_id": 2491,
+          "token": "47",
+          "logit": 27.04466438293457,
+          "probability": 7.359790470218286e-05
+        },
+        {
+          "rank": 6,
+          "token_id": 1942,
+          "token": "37",
+          "logit": 26.47015953063965,
+          "probability": 4.1434410377405584e-05
+        },
+        {
+          "rank": 7,
+          "token_id": 1883,
+          "token": "45",
+          "logit": 25.86653709411621,
+          "probability": 2.2657462977804244e-05
+        },
+        {
+          "rank": 8,
+          "token_id": 3286,
+          "token": "41",
+          "logit": 25.34021759033203,
+          "probability": 1.3385470992943738e-05
+        },
+        {
+          "rank": 9,
+          "token_id": 2080,
+          "token": "38",
+          "logit": 25.31458854675293,
+          "probability": 1.3046772437519394e-05
+        },
+        {
+          "rank": 10,
+          "token_id": 22,
+          "token": "4",
+          "logit": 24.870744705200195,
+          "probability": 8.370359864784405e-06
+        }
+      ]
+    },
+    "layer_42_closure": {
+      "max_absolute_logit_error": 0.0,
+      "top_tokens": [
+        {
+          "rank": 1,
+          "token_id": 3180,
+          "token": "42",
+          "logit": 36.55080032348633,
+          "probability": 0.9893001914024353
+        },
+        {
+          "rank": 2,
+          "token_id": 1002,
+          "token": "17",
+          "logit": 31.98146629333496,
+          "probability": 0.010253958404064178
+        },
+        {
+          "rank": 3,
+          "token_id": 3354,
+          "token": "43",
+          "logit": 27.263269424438477,
+          "probability": 9.158085595117882e-05
+        },
+        {
+          "rank": 4,
+          "token_id": 25,
+          "token": "7",
+          "logit": 27.170591354370117,
+          "probability": 8.347474795300514e-05
+        },
+        {
+          "rank": 5,
+          "token_id": 2491,
+          "token": "47",
+          "logit": 27.04466438293457,
+          "probability": 7.359794835792854e-05
+        },
+        {
+          "rank": 6,
+          "token_id": 1942,
+          "token": "37",
+          "logit": 26.47015953063965,
+          "probability": 4.1434435843257234e-05
+        },
+        {
+          "rank": 7,
+          "token_id": 1883,
+          "token": "45",
+          "logit": 25.86653709411621,
+          "probability": 2.265747571073007e-05
+        },
+        {
+          "rank": 8,
+          "token_id": 3286,
+          "token": "41",
+          "logit": 25.34021759033203,
+          "probability": 1.3385478268901352e-05
+        },
+        {
+          "rank": 9,
+          "token_id": 2080,
+          "token": "38",
+          "logit": 25.31458854675293,
+          "probability": 1.3046779713477008e-05
+        },
+        {
+          "rank": 10,
+          "token_id": 22,
+          "token": "4",
+          "logit": 24.870744705200195,
+          "probability": 8.370365321752615e-06
+        }
+      ],
+      "top1_matches_actual": true
+    },
+    "late_layer_checks": {
+      "layer_41_j_vs_ll_topk_overlap": 10,
+      "layer_41_j_vs_ll_ordered_topk_exact": true,
+      "layer_41_j_vs_actual_topk_overlap": 1
+    }
+  },
+  {
+    "id": "chinese",
+    "rendered_prompt": "<｜begin▁of▁sentence｜><｜User｜>用一个词回答：中国的首都是<｜Assistant｜></think>",
+    "input_ids": [
+      0,
+      128803,
+      68141,
+      4055,
+      9090,
+      768,
+      17607,
+      2793,
+      3139,
+      128804,
+      128822
+    ],
+    "token_strings": [
+      "<｜begin▁of▁sentence｜>",
+      "<｜User｜>",
+      "用一个",
+      "词",
+      "回答",
+      "：",
+      "中国的",
+      "首",
+      "都是",
+      "<｜Assistant｜>",
+      "</think>"
+    ],
+    "generation_position": 10,
+    "readouts": {
+      "j_lens": {
+        "0": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 10,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 33943,
+                "token": " Surface",
+                "logit": 20.686857223510742,
+                "probability": 0.44923675060272217
+              },
+              {
+                "rank": 2,
+                "token_id": 25708,
+                "token": "Surface",
+                "logit": 20.579097747802734,
+                "probability": 0.4033443033695221
+              },
+              {
+                "rank": 3,
+                "token_id": 11272,
+                "token": "表面",
+                "logit": 18.57765007019043,
+                "probability": 0.054507751017808914
+              },
+              {
+                "rank": 4,
+                "token_id": 4433,
+                "token": " surface",
+                "logit": 18.19926643371582,
+                "probability": 0.03733604773879051
+              },
+              {
+                "rank": 5,
+                "token_id": 53359,
+                "token": "urface",
+                "logit": 17.80031967163086,
+                "probability": 0.025053473189473152
+              },
+              {
+                "rank": 6,
+                "token_id": 94506,
+                "token": "surface",
+                "logit": 16.768844604492188,
+                "probability": 0.008931080810725689
+              },
+              {
+                "rank": 7,
+                "token_id": 97457,
+                "token": "-surface",
+                "logit": 15.73966121673584,
+                "probability": 0.0031910629477351904
+              },
+              {
+                "rank": 8,
+                "token_id": 41355,
+                "token": " поверх",
+                "logit": 14.659172058105469,
+                "probability": 0.0010831407271325588
+              },
+              {
+                "rank": 9,
+                "token_id": 51286,
+                "token": "表面的",
+                "logit": 14.513236045837402,
+                "probability": 0.0009360642870888114
+              },
+              {
+                "rank": 10,
+                "token_id": 8421,
+                "token": " trend",
+                "logit": 14.428059577941895,
+                "probability": 0.0008596348343417048
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "5": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 10,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 11272,
+                "token": "表面",
+                "logit": 13.858945846557617,
+                "probability": 0.06618991494178772
+              },
+              {
+                "rank": 2,
+                "token_id": 53890,
+                "token": "锁定",
+                "logit": 12.730267524719238,
+                "probability": 0.02140982262790203
+              },
+              {
+                "rank": 3,
+                "token_id": 31908,
+                "token": "挪",
+                "logit": 12.571542739868164,
+                "probability": 0.018267527222633362
+              },
+              {
+                "rank": 4,
+                "token_id": 32967,
+                "token": " cheer",
+                "logit": 12.520352363586426,
+                "probability": 0.017355937510728836
+              },
+              {
+                "rank": 5,
+                "token_id": 84722,
+                "token": "cape",
+                "logit": 12.193937301635742,
+                "probability": 0.012522406876087189
+              },
+              {
+                "rank": 6,
+                "token_id": 97050,
+                "token": " Tears",
+                "logit": 12.152274131774902,
+                "probability": 0.01201140321791172
+              },
+              {
+                "rank": 7,
+                "token_id": 105066,
+                "token": "泓",
+                "logit": 12.018794059753418,
+                "probability": 0.010510517284274101
+              },
+              {
+                "rank": 8,
+                "token_id": 2885,
+                "token": "ait",
+                "logit": 11.879077911376953,
+                "probability": 0.009139998815953732
+              },
+              {
+                "rank": 9,
+                "token_id": 59482,
+                "token": "并能",
+                "logit": 11.811717987060547,
+                "probability": 0.00854460708796978
+              },
+              {
+                "rank": 10,
+                "token_id": 110360,
+                "token": " Agri",
+                "logit": 11.750133514404297,
+                "probability": 0.008034267462790012
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "10": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 10,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 53890,
+                "token": "锁定",
+                "logit": 13.169486045837402,
+                "probability": 0.03632325306534767
+              },
+              {
+                "rank": 2,
+                "token_id": 32967,
+                "token": " cheer",
+                "logit": 13.16880989074707,
+                "probability": 0.03629870340228081
+              },
+              {
+                "rank": 3,
+                "token_id": 2885,
+                "token": "ait",
+                "logit": 12.296968460083008,
+                "probability": 0.01517941989004612
+              },
+              {
+                "rank": 4,
+                "token_id": 84722,
+                "token": "cape",
+                "logit": 12.184459686279297,
+                "probability": 0.013564170338213444
+              },
+              {
+                "rank": 5,
+                "token_id": 97050,
+                "token": " Tears",
+                "logit": 12.162734985351562,
+                "probability": 0.013272671028971672
+              },
+              {
+                "rank": 6,
+                "token_id": 31908,
+                "token": "挪",
+                "logit": 12.068205833435059,
+                "probability": 0.012075492180883884
+              },
+              {
+                "rank": 7,
+                "token_id": 28513,
+                "token": " Walker",
+                "logit": 12.051151275634766,
+                "probability": 0.011871295981109142
+              },
+              {
+                "rank": 8,
+                "token_id": 115881,
+                "token": "Walker",
+                "logit": 11.808858871459961,
+                "probability": 0.00931690912693739
+              },
+              {
+                "rank": 9,
+                "token_id": 14088,
+                "token": " smile",
+                "logit": 11.724637985229492,
+                "probability": 0.008564366027712822
+              },
+              {
+                "rank": 10,
+                "token_id": 91472,
+                "token": " wig",
+                "logit": 11.705635070800781,
+                "probability": 0.008403155021369457
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "15": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 10,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 32967,
+                "token": " cheer",
+                "logit": 13.144499778747559,
+                "probability": 0.03548561781644821
+              },
+              {
+                "rank": 2,
+                "token_id": 53890,
+                "token": "锁定",
+                "logit": 13.09099292755127,
+                "probability": 0.03363679721951485
+              },
+              {
+                "rank": 3,
+                "token_id": 2885,
+                "token": "ait",
+                "logit": 12.455710411071777,
+                "probability": 0.017820296809077263
+              },
+              {
+                "rank": 4,
+                "token_id": 97050,
+                "token": " Tears",
+                "logit": 12.190954208374023,
+                "probability": 0.013675171881914139
+              },
+              {
+                "rank": 5,
+                "token_id": 31908,
+                "token": "挪",
+                "logit": 12.18502140045166,
+                "probability": 0.013594279997050762
+              },
+              {
+                "rank": 6,
+                "token_id": 84722,
+                "token": "cape",
+                "logit": 12.180315971374512,
+                "probability": 0.013530462980270386
+              },
+              {
+                "rank": 7,
+                "token_id": 28513,
+                "token": " Walker",
+                "logit": 12.097359657287598,
+                "probability": 0.012453321367502213
+              },
+              {
+                "rank": 8,
+                "token_id": 115881,
+                "token": "Walker",
+                "logit": 11.839662551879883,
+                "probability": 0.009624291211366653
+              },
+              {
+                "rank": 9,
+                "token_id": 14088,
+                "token": " smile",
+                "logit": 11.784234046936035,
+                "probability": 0.009105346165597439
+              },
+              {
+                "rank": 10,
+                "token_id": 91472,
+                "token": " wig",
+                "logit": 11.779987335205078,
+                "probability": 0.009066760540008545
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "20": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 10,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 39219,
+                "token": "联合国",
+                "logit": 16.426345825195312,
+                "probability": 0.2062573879957199
+              },
+              {
+                "rank": 2,
+                "token_id": 36228,
+                "token": " notably",
+                "logit": 15.566131591796875,
+                "probability": 0.0872616097331047
+              },
+              {
+                "rank": 3,
+                "token_id": 126852,
+                "token": "远超",
+                "logit": 14.52521800994873,
+                "probability": 0.03081486001610756
+              },
+              {
+                "rank": 4,
+                "token_id": 85382,
+                "token": "大概率",
+                "logit": 14.186439514160156,
+                "probability": 0.021959910169243813
+              },
+              {
+                "rank": 5,
+                "token_id": 106714,
+                "token": " Kyiv",
+                "logit": 14.026213645935059,
+                "probability": 0.01870877481997013
+              },
+              {
+                "rank": 6,
+                "token_id": 27127,
+                "token": " Moscow",
+                "logit": 13.87673568725586,
+                "probability": 0.01611120067536831
+              },
+              {
+                "rank": 7,
+                "token_id": 77482,
+                "token": " �",
+                "logit": 13.857048988342285,
+                "probability": 0.015797125175595284
+              },
+              {
+                "rank": 8,
+                "token_id": 101076,
+                "token": " politic",
+                "logit": 13.735825538635254,
+                "probability": 0.013993662782013416
+              },
+              {
+                "rank": 9,
+                "token_id": 64432,
+                "token": "TreeLabel",
+                "logit": 13.730466842651367,
+                "probability": 0.01391887478530407
+              },
+              {
+                "rank": 10,
+                "token_id": 127656,
+                "token": " HttpResponse",
+                "logit": 13.620227813720703,
+                "probability": 0.012466023676097393
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "25": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 10,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 51744,
+                "token": " ChatGPT",
+                "logit": 21.025104522705078,
+                "probability": 0.3289307653903961
+              },
+              {
+                "rank": 2,
+                "token_id": 77579,
+                "token": " �",
+                "logit": 20.6334285736084,
+                "probability": 0.2223319113254547
+              },
+              {
+                "rank": 3,
+                "token_id": 53007,
+                "token": "答复",
+                "logit": 19.40749168395996,
+                "probability": 0.06525055319070816
+              },
+              {
+                "rank": 4,
+                "token_id": 85382,
+                "token": "大概率",
+                "logit": 19.28679656982422,
+                "probability": 0.05783183127641678
+              },
+              {
+                "rank": 5,
+                "token_id": 16063,
+                "token": "同意",
+                "logit": 19.22730827331543,
+                "probability": 0.05449184402823448
+              },
+              {
+                "rank": 6,
+                "token_id": 9090,
+                "token": "回答",
+                "logit": 19.203760147094727,
+                "probability": 0.05322365462779999
+              },
+              {
+                "rank": 7,
+                "token_id": 75701,
+                "token": "的回答",
+                "logit": 18.89299774169922,
+                "probability": 0.039006978273391724
+              },
+              {
+                "rank": 8,
+                "token_id": 36026,
+                "token": " Wikidata",
+                "logit": 18.103580474853516,
+                "probability": 0.017713433131575584
+              },
+              {
+                "rank": 9,
+                "token_id": 52583,
+                "token": " replies",
+                "logit": 18.102983474731445,
+                "probability": 0.01770286075770855
+              },
+              {
+                "rank": 10,
+                "token_id": 3243,
+                "token": "答",
+                "logit": 17.708816528320312,
+                "probability": 0.011936003342270851
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "30": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 10,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 5794,
+                "token": " China",
+                "logit": 26.217710494995117,
+                "probability": 0.6131795048713684
+              },
+              {
+                "rank": 2,
+                "token_id": 17607,
+                "token": "中国的",
+                "logit": 24.8492431640625,
+                "probability": 0.15605217218399048
+              },
+              {
+                "rank": 3,
+                "token_id": 31814,
+                "token": "China",
+                "logit": 24.815887451171875,
+                "probability": 0.15093278884887695
+              },
+              {
+                "rank": 4,
+                "token_id": 29660,
+                "token": " Beijing",
+                "logit": 23.527677536010742,
+                "probability": 0.04162182658910751
+              },
+              {
+                "rank": 5,
+                "token_id": 117668,
+                "token": "china",
+                "logit": 21.793500900268555,
+                "probability": 0.007348146289587021
+              },
+              {
+                "rank": 6,
+                "token_id": 121458,
+                "token": "Beijing",
+                "logit": 21.779483795166016,
+                "probability": 0.007245865184813738
+              },
+              {
+                "rank": 7,
+                "token_id": 7891,
+                "token": " Chinese",
+                "logit": 20.931684494018555,
+                "probability": 0.003103814087808132
+              },
+              {
+                "rank": 8,
+                "token_id": 106230,
+                "token": "中国政府",
+                "logit": 20.842388153076172,
+                "probability": 0.0028386691119521856
+              },
+              {
+                "rank": 9,
+                "token_id": 100154,
+                "token": "จีน",
+                "logit": 20.756216049194336,
+                "probability": 0.0026042982935905457
+              },
+              {
+                "rank": 10,
+                "token_id": 94520,
+                "token": " 중국",
+                "logit": 20.717023849487305,
+                "probability": 0.002504204399883747
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "35": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 10,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 102323,
+                "token": "北京的",
+                "logit": 27.014352798461914,
+                "probability": 0.5465748310089111
+              },
+              {
+                "rank": 2,
+                "token_id": 29660,
+                "token": " Beijing",
+                "logit": 26.465463638305664,
+                "probability": 0.31569674611091614
+              },
+              {
+                "rank": 3,
+                "token_id": 6127,
+                "token": "北京",
+                "logit": 25.160480499267578,
+                "probability": 0.08560973405838013
+              },
+              {
+                "rank": 4,
+                "token_id": 121458,
+                "token": "Beijing",
+                "logit": 24.186227798461914,
+                "probability": 0.03231547772884369
+              },
+              {
+                "rank": 5,
+                "token_id": 57078,
+                "token": "您好",
+                "logit": 22.26354217529297,
+                "probability": 0.004724967293441296
+              },
+              {
+                "rank": 6,
+                "token_id": 127432,
+                "token": " Nanjing",
+                "logit": 21.854412078857422,
+                "probability": 0.003138454630970955
+              },
+              {
+                "rank": 7,
+                "token_id": 113047,
+                "token": " Peking",
+                "logit": 21.75017738342285,
+                "probability": 0.002827791031450033
+              },
+              {
+                "rank": 8,
+                "token_id": 5794,
+                "token": " China",
+                "logit": 21.371339797973633,
+                "probability": 0.0019360663136467338
+              },
+              {
+                "rank": 9,
+                "token_id": 39813,
+                "token": "东京",
+                "logit": 21.194194793701172,
+                "probability": 0.0016217620577663183
+              },
+              {
+                "rank": 10,
+                "token_id": 30703,
+                "token": "北京市",
+                "logit": 21.050886154174805,
+                "probability": 0.0014052351471036673
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "40": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 10,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 6127,
+                "token": "北京",
+                "logit": 37.7851448059082,
+                "probability": 0.9999504089355469
+              },
+              {
+                "rank": 2,
+                "token_id": 29660,
+                "token": " Beijing",
+                "logit": 27.68588638305664,
+                "probability": 4.110799272893928e-05
+              },
+              {
+                "rank": 3,
+                "token_id": 102323,
+                "token": "北京的",
+                "logit": 25.133880615234375,
+                "probability": 3.2033487968874397e-06
+              },
+              {
+                "rank": 4,
+                "token_id": 7241,
+                "token": "上海",
+                "logit": 24.75101661682129,
+                "probability": 2.1843816284672357e-06
+              },
+              {
+                "rank": 5,
+                "token_id": 121458,
+                "token": "Beijing",
+                "logit": 23.610084533691406,
+                "probability": 6.979559543651703e-07
+              },
+              {
+                "rank": 6,
+                "token_id": 30703,
+                "token": "北京市",
+                "logit": 23.364990234375,
+                "probability": 5.462417789203755e-07
+              },
+              {
+                "rank": 7,
+                "token_id": 80219,
+                "token": "北平",
+                "logit": 22.45890235900879,
+                "probability": 2.2073740524319874e-07
+              },
+              {
+                "rank": 8,
+                "token_id": 39813,
+                "token": "东京",
+                "logit": 20.041860580444336,
+                "probability": 1.9686478225366955e-08
+              },
+              {
+                "rank": 9,
+                "token_id": 23872,
+                "token": "西安",
+                "logit": 19.399389266967773,
+                "probability": 1.0354908930310103e-08
+              },
+              {
+                "rank": 10,
+                "token_id": 113047,
+                "token": " Peking",
+                "logit": 18.978923797607422,
+                "probability": 6.800493945746666e-09
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "41": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 10,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 6127,
+                "token": "北京",
+                "logit": 32.924102783203125,
+                "probability": 0.9998741149902344
+              },
+              {
+                "rank": 2,
+                "token_id": 29660,
+                "token": " Beijing",
+                "logit": 23.54190444946289,
+                "probability": 8.41992805362679e-05
+              },
+              {
+                "rank": 3,
+                "token_id": 102323,
+                "token": "北京的",
+                "logit": 22.45444679260254,
+                "probability": 2.8381249649100937e-05
+              },
+              {
+                "rank": 4,
+                "token_id": 30703,
+                "token": "北京市",
+                "logit": 21.320537567138672,
+                "probability": 9.13231724553043e-06
+              },
+              {
+                "rank": 5,
+                "token_id": 7241,
+                "token": "上海",
+                "logit": 19.977108001708984,
+                "probability": 2.3830707505112514e-06
+              },
+              {
+                "rank": 6,
+                "token_id": 121458,
+                "token": "Beijing",
+                "logit": 19.28333854675293,
+                "probability": 1.1907941370736808e-06
+              },
+              {
+                "rank": 7,
+                "token_id": 80219,
+                "token": "北平",
+                "logit": 18.499313354492188,
+                "probability": 5.436743890641083e-07
+              },
+              {
+                "rank": 8,
+                "token_id": 17607,
+                "token": "中国的",
+                "logit": 17.221738815307617,
+                "probability": 1.5152883747759915e-07
+              },
+              {
+                "rank": 9,
+                "token_id": 3655,
+                "token": "根据",
+                "logit": 17.151304244995117,
+                "probability": 1.412231682706988e-07
+              },
+              {
+                "rank": 10,
+                "token_id": 2069,
+                "token": "中国",
+                "logit": 16.8931884765625,
+                "probability": 1.0909571557249365e-07
+              }
+            ],
+            "targets": {}
+          }
+        ]
+      },
+      "logit_lens": {
+        "0": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 10,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 83484,
+                "token": " الشعاعيه",
+                "logit": 17.524656295776367,
+                "probability": 0.7963241934776306
+              },
+              {
+                "rank": 2,
+                "token_id": 58053,
+                "token": "阵阵",
+                "logit": 13.353580474853516,
+                "probability": 0.01229177787899971
+              },
+              {
+                "rank": 3,
+                "token_id": 95104,
+                "token": " turnaround",
+                "logit": 13.175657272338867,
+                "probability": 0.010288300924003124
+              },
+              {
+                "rank": 4,
+                "token_id": 37892,
+                "token": "uesta",
+                "logit": 12.325048446655273,
+                "probability": 0.0043946970254182816
+              },
+              {
+                "rank": 5,
+                "token_id": 102479,
+                "token": "迅速的",
+                "logit": 12.317449569702148,
+                "probability": 0.004361428786069155
+              },
+              {
+                "rank": 6,
+                "token_id": 124155,
+                "token": " hilabihan",
+                "logit": 12.100671768188477,
+                "probability": 0.0035114248748868704
+              },
+              {
+                "rank": 7,
+                "token_id": 12071,
+                "token": "ió",
+                "logit": 12.019372940063477,
+                "probability": 0.0032372463028877974
+              },
+              {
+                "rank": 8,
+                "token_id": 73843,
+                "token": "uestas",
+                "logit": 11.965630531311035,
+                "probability": 0.0030678613111376762
+              },
+              {
+                "rank": 9,
+                "token_id": 61446,
+                "token": "kv",
+                "logit": 11.852834701538086,
+                "probability": 0.0027406217996031046
+              },
+              {
+                "rank": 10,
+                "token_id": 19934,
+                "token": "arty",
+                "logit": 11.811529159545898,
+                "probability": 0.002629725029692054
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "5": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 10,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 83484,
+                "token": " الشعاعيه",
+                "logit": 18.618709564208984,
+                "probability": 0.9214329719543457
+              },
+              {
+                "rank": 2,
+                "token_id": 58053,
+                "token": "阵阵",
+                "logit": 13.457117080688477,
+                "probability": 0.005282172933220863
+              },
+              {
+                "rank": 3,
+                "token_id": 95104,
+                "token": " turnaround",
+                "logit": 12.904928207397461,
+                "probability": 0.0030408853199332952
+              },
+              {
+                "rank": 4,
+                "token_id": 63298,
+                "token": " الساعيه",
+                "logit": 12.246536254882812,
+                "probability": 0.0015742150135338306
+              },
+              {
+                "rank": 5,
+                "token_id": 36551,
+                "token": "Turn",
+                "logit": 12.204228401184082,
+                "probability": 0.0015090025262907147
+              },
+              {
+                "rank": 6,
+                "token_id": 73843,
+                "token": "uestas",
+                "logit": 12.135910987854004,
+                "probability": 0.001409354037605226
+              },
+              {
+                "rank": 7,
+                "token_id": 37892,
+                "token": "uesta",
+                "logit": 12.041706085205078,
+                "probability": 0.0012826478341594338
+              },
+              {
+                "rank": 8,
+                "token_id": 45430,
+                "token": " cultivated",
+                "logit": 11.86475658416748,
+                "probability": 0.001074630650691688
+              },
+              {
+                "rank": 9,
+                "token_id": 36703,
+                "token": "包裹",
+                "logit": 11.846439361572266,
+                "probability": 0.0010551256127655506
+              },
+              {
+                "rank": 10,
+                "token_id": 52544,
+                "token": "KL",
+                "logit": 11.630875587463379,
+                "probability": 0.0008505228906869888
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "10": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 10,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 83484,
+                "token": " الشعاعيه",
+                "logit": 17.894760131835938,
+                "probability": 0.8221462368965149
+              },
+              {
+                "rank": 2,
+                "token_id": 63298,
+                "token": " الساعيه",
+                "logit": 14.444833755493164,
+                "probability": 0.026101475581526756
+              },
+              {
+                "rank": 3,
+                "token_id": 36551,
+                "token": "Turn",
+                "logit": 12.873467445373535,
+                "probability": 0.0054228720255196095
+              },
+              {
+                "rank": 4,
+                "token_id": 95104,
+                "token": " turnaround",
+                "logit": 12.839512825012207,
+                "probability": 0.005241831298917532
+              },
+              {
+                "rank": 5,
+                "token_id": 58053,
+                "token": "阵阵",
+                "logit": 12.689224243164062,
+                "probability": 0.004510384518653154
+              },
+              {
+                "rank": 6,
+                "token_id": 100866,
+                "token": " mirrored",
+                "logit": 12.677665710449219,
+                "probability": 0.004458550829440355
+              },
+              {
+                "rank": 7,
+                "token_id": 77994,
+                "token": " لجرم",
+                "logit": 12.563014030456543,
+                "probability": 0.003975586034357548
+              },
+              {
+                "rank": 8,
+                "token_id": 94811,
+                "token": "击中",
+                "logit": 12.51388168334961,
+                "probability": 0.003784976899623871
+              },
+              {
+                "rank": 9,
+                "token_id": 53559,
+                "token": " centralized",
+                "logit": 12.368955612182617,
+                "probability": 0.0032743315678089857
+              },
+              {
+                "rank": 10,
+                "token_id": 36703,
+                "token": "包裹",
+                "logit": 12.243125915527344,
+                "probability": 0.002887191018089652
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "15": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 10,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 83484,
+                "token": " الشعاعيه",
+                "logit": 17.1911678314209,
+                "probability": 0.6802869439125061
+              },
+              {
+                "rank": 2,
+                "token_id": 63298,
+                "token": " الساعيه",
+                "logit": 14.685630798339844,
+                "probability": 0.05553301423788071
+              },
+              {
+                "rank": 3,
+                "token_id": 53559,
+                "token": " centralized",
+                "logit": 12.817676544189453,
+                "probability": 0.008576478809118271
+              },
+              {
+                "rank": 4,
+                "token_id": 108140,
+                "token": " Tract",
+                "logit": 12.791374206542969,
+                "probability": 0.00835383776575327
+              },
+              {
+                "rank": 5,
+                "token_id": 36551,
+                "token": "Turn",
+                "logit": 12.732355117797852,
+                "probability": 0.007875069975852966
+              },
+              {
+                "rank": 6,
+                "token_id": 100866,
+                "token": " mirrored",
+                "logit": 12.569317817687988,
+                "probability": 0.006690340116620064
+              },
+              {
+                "rank": 7,
+                "token_id": 95104,
+                "token": " turnaround",
+                "logit": 12.559370994567871,
+                "probability": 0.006624122150242329
+              },
+              {
+                "rank": 8,
+                "token_id": 58053,
+                "token": "阵阵",
+                "logit": 12.532144546508789,
+                "probability": 0.006446204148232937
+              },
+              {
+                "rank": 9,
+                "token_id": 94811,
+                "token": "击中",
+                "logit": 12.325939178466797,
+                "probability": 0.005245056934654713
+              },
+              {
+                "rank": 10,
+                "token_id": 29822,
+                "token": "拐",
+                "logit": 12.225421905517578,
+                "probability": 0.004743469413369894
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "20": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 10,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 47220,
+                "token": "要说",
+                "logit": 15.537134170532227,
+                "probability": 0.1894548088312149
+              },
+              {
+                "rank": 2,
+                "token_id": 107735,
+                "token": "中提到",
+                "logit": 14.128631591796875,
+                "probability": 0.04632343351840973
+              },
+              {
+                "rank": 3,
+                "token_id": 120250,
+                "token": "必然是",
+                "logit": 13.563360214233398,
+                "probability": 0.026321249082684517
+              },
+              {
+                "rank": 4,
+                "token_id": 26214,
+                "token": ".write",
+                "logit": 13.387088775634766,
+                "probability": 0.0220674816519022
+              },
+              {
+                "rank": 5,
+                "token_id": 60774,
+                "token": "-bearing",
+                "logit": 13.353057861328125,
+                "probability": 0.021329140290617943
+              },
+              {
+                "rank": 6,
+                "token_id": 57078,
+                "token": "您好",
+                "logit": 13.318912506103516,
+                "probability": 0.02061314322054386
+              },
+              {
+                "rank": 7,
+                "token_id": 63298,
+                "token": " الساعيه",
+                "logit": 13.164546012878418,
+                "probability": 0.017664596438407898
+              },
+              {
+                "rank": 8,
+                "token_id": 94857,
+                "token": "bearing",
+                "logit": 13.037362098693848,
+                "probability": 0.0155549431219697
+              },
+              {
+                "rank": 9,
+                "token_id": 87545,
+                "token": "vole",
+                "logit": 12.978907585144043,
+                "probability": 0.01467175129801035
+              },
+              {
+                "rank": 10,
+                "token_id": 47426,
+                "token": "自豪",
+                "logit": 12.788614273071289,
+                "probability": 0.012129380367696285
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "25": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 10,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 57078,
+                "token": "您好",
+                "logit": 17.17728614807129,
+                "probability": 0.45107588171958923
+              },
+              {
+                "rank": 2,
+                "token_id": 3243,
+                "token": "答",
+                "logit": 15.168344497680664,
+                "probability": 0.06050305813550949
+              },
+              {
+                "rank": 3,
+                "token_id": 16520,
+                "token": "yes",
+                "logit": 14.719825744628906,
+                "probability": 0.03863564133644104
+              },
+              {
+                "rank": 4,
+                "token_id": 47220,
+                "token": "要说",
+                "logit": 14.613658905029297,
+                "probability": 0.03474405035376549
+              },
+              {
+                "rank": 5,
+                "token_id": 120250,
+                "token": "必然是",
+                "logit": 14.000631332397461,
+                "probability": 0.018821140751242638
+              },
+              {
+                "rank": 6,
+                "token_id": 99470,
+                "token": "一个字",
+                "logit": 13.768624305725098,
+                "probability": 0.014924046583473682
+              },
+              {
+                "rank": 7,
+                "token_id": 123675,
+                "token": "-giving",
+                "logit": 13.495721817016602,
+                "probability": 0.011359691619873047
+              },
+              {
+                "rank": 8,
+                "token_id": 50673,
+                "token": "抱歉",
+                "logit": 13.016633033752441,
+                "probability": 0.0070355962961912155
+              },
+              {
+                "rank": 9,
+                "token_id": 95350,
+                "token": "的确是",
+                "logit": 12.974827766418457,
+                "probability": 0.0067475344985723495
+              },
+              {
+                "rank": 10,
+                "token_id": 14914,
+                "token": " serving",
+                "logit": 12.972240447998047,
+                "probability": 0.006730099208652973
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "30": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 10,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 117668,
+                "token": "china",
+                "logit": 19.88262939453125,
+                "probability": 0.410367876291275
+              },
+              {
+                "rank": 2,
+                "token_id": 57078,
+                "token": "您好",
+                "logit": 19.518522262573242,
+                "probability": 0.28513047099113464
+              },
+              {
+                "rank": 3,
+                "token_id": 17607,
+                "token": "中国的",
+                "logit": 18.956832885742188,
+                "probability": 0.16259419918060303
+              },
+              {
+                "rank": 4,
+                "token_id": 114726,
+                "token": "中国大陆",
+                "logit": 17.211212158203125,
+                "probability": 0.028378639370203018
+              },
+              {
+                "rank": 5,
+                "token_id": 106230,
+                "token": "中国政府",
+                "logit": 16.54551124572754,
+                "probability": 0.01458415761590004
+              },
+              {
+                "rank": 6,
+                "token_id": 5794,
+                "token": " China",
+                "logit": 16.274776458740234,
+                "probability": 0.011125069111585617
+              },
+              {
+                "rank": 7,
+                "token_id": 31814,
+                "token": "China",
+                "logit": 16.265913009643555,
+                "probability": 0.0110268983989954
+              },
+              {
+                "rank": 8,
+                "token_id": 90371,
+                "token": " china",
+                "logit": 15.998505592346191,
+                "probability": 0.008439560420811176
+              },
+              {
+                "rank": 9,
+                "token_id": 113720,
+                "token": "在中国的",
+                "logit": 15.329050064086914,
+                "probability": 0.004320947453379631
+              },
+              {
+                "rank": 10,
+                "token_id": 50673,
+                "token": "抱歉",
+                "logit": 15.186236381530762,
+                "probability": 0.0037458965089172125
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "35": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 10,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 57078,
+                "token": "您好",
+                "logit": 24.737855911254883,
+                "probability": 0.8641709685325623
+              },
+              {
+                "rank": 2,
+                "token_id": 38238,
+                "token": "对不起",
+                "logit": 22.445688247680664,
+                "probability": 0.08732204884290695
+              },
+              {
+                "rank": 3,
+                "token_id": 50673,
+                "token": "抱歉",
+                "logit": 21.387866973876953,
+                "probability": 0.03031921572983265
+              },
+              {
+                "rank": 4,
+                "token_id": 102323,
+                "token": "北京的",
+                "logit": 19.836301803588867,
+                "probability": 0.006425127852708101
+              },
+              {
+                "rank": 5,
+                "token_id": 6127,
+                "token": "北京",
+                "logit": 19.411022186279297,
+                "probability": 0.004199380055069923
+              },
+              {
+                "rank": 6,
+                "token_id": 57465,
+                "token": "当然是",
+                "logit": 18.297086715698242,
+                "probability": 0.001378507586196065
+              },
+              {
+                "rank": 7,
+                "token_id": 39437,
+                "token": "不好意思",
+                "logit": 18.0902156829834,
+                "probability": 0.0011208982905372977
+              },
+              {
+                "rank": 8,
+                "token_id": 121077,
+                "token": "中华人民共和",
+                "logit": 17.889909744262695,
+                "probability": 0.0009174331789836287
+              },
+              {
+                "rank": 9,
+                "token_id": 114726,
+                "token": "中国大陆",
+                "logit": 17.321386337280273,
+                "probability": 0.0005195984849706292
+              },
+              {
+                "rank": 10,
+                "token_id": 106230,
+                "token": "中国政府",
+                "logit": 16.847265243530273,
+                "probability": 0.00032341465703211725
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "40": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 10,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 6127,
+                "token": "北京",
+                "logit": 33.16067123413086,
+                "probability": 0.9999504089355469
+              },
+              {
+                "rank": 2,
+                "token_id": 30703,
+                "token": "北京市",
+                "logit": 22.068187713623047,
+                "probability": 1.522558795841178e-05
+              },
+              {
+                "rank": 3,
+                "token_id": 7241,
+                "token": "上海",
+                "logit": 21.998321533203125,
+                "probability": 1.4198144526744727e-05
+              },
+              {
+                "rank": 4,
+                "token_id": 29660,
+                "token": " Beijing",
+                "logit": 21.817129135131836,
+                "probability": 1.1845154403999913e-05
+              },
+              {
+                "rank": 5,
+                "token_id": 102323,
+                "token": "北京的",
+                "logit": 20.966232299804688,
+                "probability": 5.058257556811441e-06
+              },
+              {
+                "rank": 6,
+                "token_id": 80219,
+                "token": "北平",
+                "logit": 19.8051700592041,
+                "probability": 1.5840103060327237e-06
+              },
+              {
+                "rank": 7,
+                "token_id": 2069,
+                "token": "中国",
+                "logit": 19.062559127807617,
+                "probability": 7.537827286796528e-07
+              },
+              {
+                "rank": 8,
+                "token_id": 121458,
+                "token": "Beijing",
+                "logit": 18.00897216796875,
+                "probability": 2.6283257170689467e-07
+              },
+              {
+                "rank": 9,
+                "token_id": 17607,
+                "token": "中国的",
+                "logit": 17.620973587036133,
+                "probability": 1.7830910792326904e-07
+              },
+              {
+                "rank": 10,
+                "token_id": 39813,
+                "token": "东京",
+                "logit": 17.193218231201172,
+                "probability": 1.1625234463963352e-07
+              }
+            ],
+            "targets": {}
+          }
+        ],
+        "41": [
+          {
+            "position_kind": "answer_prediction",
+            "absolute_index": 10,
+            "surface": "</think>",
+            "top_tokens": [
+              {
+                "rank": 1,
+                "token_id": 6127,
+                "token": "北京",
+                "logit": 32.924102783203125,
+                "probability": 0.9998741149902344
+              },
+              {
+                "rank": 2,
+                "token_id": 29660,
+                "token": " Beijing",
+                "logit": 23.54190444946289,
+                "probability": 8.41992805362679e-05
+              },
+              {
+                "rank": 3,
+                "token_id": 102323,
+                "token": "北京的",
+                "logit": 22.45444679260254,
+                "probability": 2.8381249649100937e-05
+              },
+              {
+                "rank": 4,
+                "token_id": 30703,
+                "token": "北京市",
+                "logit": 21.320537567138672,
+                "probability": 9.13231724553043e-06
+              },
+              {
+                "rank": 5,
+                "token_id": 7241,
+                "token": "上海",
+                "logit": 19.977108001708984,
+                "probability": 2.3830707505112514e-06
+              },
+              {
+                "rank": 6,
+                "token_id": 121458,
+                "token": "Beijing",
+                "logit": 19.28333854675293,
+                "probability": 1.1907941370736808e-06
+              },
+              {
+                "rank": 7,
+                "token_id": 80219,
+                "token": "北平",
+                "logit": 18.499313354492188,
+                "probability": 5.436743890641083e-07
+              },
+              {
+                "rank": 8,
+                "token_id": 17607,
+                "token": "中国的",
+                "logit": 17.221738815307617,
+                "probability": 1.5152883747759915e-07
+              },
+              {
+                "rank": 9,
+                "token_id": 3655,
+                "token": "根据",
+                "logit": 17.151304244995117,
+                "probability": 1.412231682706988e-07
+              },
+              {
+                "rank": 10,
+                "token_id": 2069,
+                "token": "中国",
+                "logit": 16.8931884765625,
+                "probability": 1.0909571557249365e-07
+              }
+            ],
+            "targets": {}
+          }
+        ]
+      }
+    },
+    "actual_next_token": {
+      "top_tokens": [
+        {
+          "rank": 1,
+          "token_id": 6127,
+          "token": "北京",
+          "logit": 38.81510543823242,
+          "probability": 0.9999368190765381
+        },
+        {
+          "rank": 2,
+          "token_id": 30703,
+          "token": "北京市",
+          "logit": 28.427656173706055,
+          "probability": 3.081489194300957e-05
+        },
+        {
+          "rank": 3,
+          "token_id": 2069,
+          "token": "中国",
+          "logit": 27.212522506713867,
+          "probability": 9.141865120909642e-06
+        },
+        {
+          "rank": 4,
+          "token_id": 17607,
+          "token": "中国的",
+          "logit": 27.13611602783203,
+          "probability": 8.469385647913441e-06
+        },
+        {
+          "rank": 5,
+          "token_id": 7241,
+          "token": "上海",
+          "logit": 26.72036361694336,
+          "probability": 5.5884702305775136e-06
+        },
+        {
+          "rank": 6,
+          "token_id": 102323,
+          "token": "北京的",
+          "logit": 26.665008544921875,
+          "probability": 5.287526164465817e-06
+        },
+        {
+          "rank": 7,
+          "token_id": 3655,
+          "token": "根据",
+          "logit": 25.48618507385254,
+          "probability": 1.626657081033045e-06
+        },
+        {
+          "rank": 8,
+          "token_id": 80219,
+          "token": "北平",
+          "logit": 24.848724365234375,
+          "probability": 8.599047305324348e-07
+        },
+        {
+          "rank": 9,
+          "token_id": 6959,
+          "token": "当然",
+          "logit": 23.210744857788086,
+          "probability": 1.6714172090814827e-07
+        },
+        {
+          "rank": 10,
+          "token_id": 38238,
+          "token": "对不起",
+          "logit": 23.076030731201172,
+          "probability": 1.4607614673423086e-07
+        }
+      ]
+    },
+    "layer_42_closure": {
+      "max_absolute_logit_error": 0.0,
+      "top_tokens": [
+        {
+          "rank": 1,
+          "token_id": 6127,
+          "token": "北京",
+          "logit": 38.81510543823242,
+          "probability": 0.9999351501464844
+        },
+        {
+          "rank": 2,
+          "token_id": 30703,
+          "token": "北京市",
+          "logit": 28.427656173706055,
+          "probability": 3.081484101130627e-05
+        },
+        {
+          "rank": 3,
+          "token_id": 2069,
+          "token": "中国",
+          "logit": 27.212522506713867,
+          "probability": 9.141849659499712e-06
+        },
+        {
+          "rank": 4,
+          "token_id": 17607,
+          "token": "中国的",
+          "logit": 27.13611602783203,
+          "probability": 8.469371095998213e-06
+        },
+        {
+          "rank": 5,
+          "token_id": 7241,
+          "token": "上海",
+          "logit": 26.72036361694336,
+          "probability": 5.588460680883145e-06
+        },
+        {
+          "rank": 6,
+          "token_id": 102323,
+          "token": "北京的",
+          "logit": 26.665008544921875,
+          "probability": 5.287517069518799e-06
+        },
+        {
+          "rank": 7,
+          "token_id": 3655,
+          "token": "根据",
+          "logit": 25.48618507385254,
+          "probability": 1.6266543525489396e-06
+        },
+        {
+          "rank": 8,
+          "token_id": 80219,
+          "token": "北平",
+          "logit": 24.848724365234375,
+          "probability": 8.599032526035444e-07
+        },
+        {
+          "rank": 9,
+          "token_id": 6959,
+          "token": "当然",
+          "logit": 23.210744857788086,
+          "probability": 1.6714143669105397e-07
+        },
+        {
+          "rank": 10,
+          "token_id": 38238,
+          "token": "对不起",
+          "logit": 23.076030731201172,
+          "probability": 1.46075890938846e-07
+        }
+      ],
+      "top1_matches_actual": true
+    },
+    "late_layer_checks": {
+      "layer_41_j_vs_ll_topk_overlap": 10,
+      "layer_41_j_vs_ll_ordered_topk_exact": true,
+      "layer_41_j_vs_actual_topk_overlap": 8
+    }
+  }
+]

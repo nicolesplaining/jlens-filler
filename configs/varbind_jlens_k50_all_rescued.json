@@ -1,0 +1,1251 @@
+{
+  "seed": 42,
+  "task_type": "variable_binding",
+  "filler_type": "dots",
+  "source": {
+    "repository": "https://github.com/kaleybrauer/filler-token-reasoning",
+    "revision": "4ba4c75d5d9f04248749ec46b8bed8661b746715",
+    "path": "data/chained_var_binding_easy_dataset.json",
+    "selection": "first 50 examples in released order; deep-dive extraction of all k=50 rescued examples plus all k=50 failures; each target has a collision-free, stage-matched deranged control",
+    "prompt_note": "Released variable-binding scaffold with the paper PDF exact-count filler suffix. Five tracked values are derived and validated from the released definitions."
+  },
+  "sanity_prompts": [
+    {
+      "id": "capital",
+      "messages": [
+        {
+          "role": "user",
+          "content": "The capital of France is"
+        }
+      ]
+    },
+    {
+      "id": "arithmetic",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Complete with only the answer: 17 + 25 ="
+        }
+      ]
+    },
+    {
+      "id": "chinese",
+      "messages": [
+        {
+          "role": "user",
+          "content": "用一个词回答：中国的首都是"
+        }
+      ]
+    }
+  ],
+  "few_shot": [
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "zab",
+          45
+        ],
+        [
+          "piy",
+          43
+        ],
+        [
+          "xoc",
+          "twice the number for zab plus 7"
+        ],
+        [
+          "lej",
+          "twice the number for zab plus 3"
+        ],
+        [
+          "kox",
+          45
+        ]
+      ],
+      "queried_term": "xoc",
+      "queried_value": 97,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 18,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xoc minus 18?",
+      "answer": 176
+    },
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "cem",
+          20
+        ],
+        [
+          "pij",
+          "twice the number for cem plus 20"
+        ],
+        [
+          "kes",
+          "twice the number for pij minus 30"
+        ],
+        [
+          "kaq",
+          "twice the number for cem minus 21"
+        ],
+        [
+          "ciq",
+          "twice the number for kaq plus 7"
+        ]
+      ],
+      "queried_term": "kaq",
+      "queried_value": 19,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 21,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for kaq plus 21?",
+      "answer": 59
+    },
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "gew",
+          78
+        ],
+        [
+          "xop",
+          "twice the number for gew plus 17"
+        ],
+        [
+          "doq",
+          "twice the number for gew minus 18"
+        ],
+        [
+          "ful",
+          "twice the number for gew plus 10"
+        ],
+        [
+          "biv",
+          "twice the number for ful plus 28"
+        ]
+      ],
+      "queried_term": "xop",
+      "queried_value": 173,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xop plus 5?",
+      "answer": 351
+    },
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "mec",
+          40
+        ],
+        [
+          "xad",
+          "twice the number for mec plus 25"
+        ],
+        [
+          "gow",
+          "twice the number for mec minus 17"
+        ],
+        [
+          "juj",
+          "twice the number for xad minus 22"
+        ],
+        [
+          "vof",
+          "twice the number for juj plus 3"
+        ]
+      ],
+      "queried_term": "xad",
+      "queried_value": 105,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 19,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xad plus 19?",
+      "answer": 229
+    },
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "kac",
+          52
+        ],
+        [
+          "duk",
+          "twice the number for kac minus 7"
+        ],
+        [
+          "jaf",
+          "twice the number for duk minus 14"
+        ],
+        [
+          "cac",
+          "twice the number for jaf minus 26"
+        ],
+        [
+          "zub",
+          "twice the number for duk plus 6"
+        ]
+      ],
+      "queried_term": "duk",
+      "queried_value": 97,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 16,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for duk minus 16?",
+      "answer": 178
+    }
+  ],
+  "examples": [
+    {
+      "idx": 2,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "niw",
+          20
+        ],
+        [
+          "kog",
+          37
+        ],
+        [
+          "suv",
+          64
+        ],
+        [
+          "woh",
+          "twice the number for suv minus 9"
+        ],
+        [
+          "voz",
+          "twice the number for woh minus 15"
+        ]
+      ],
+      "queried_term": "woh",
+      "queried_value": 119,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 14,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for woh minus 14?",
+      "answer": 224,
+      "id": "varbind_easy_0002",
+      "expected_intermediates": {
+        "base_value": "64",
+        "first_product": "128",
+        "bound_value": "119",
+        "second_product": "238",
+        "answer": "224"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "64"
+        ],
+        "first_product": [
+          "128"
+        ],
+        "bound_value": [
+          "119"
+        ],
+        "second_product": [
+          "238"
+        ],
+        "answer": [
+          "224"
+        ]
+      },
+      "behavior_cohort": "rescued",
+      "tracked_controls": {
+        "control_base_value": "82",
+        "control_first_product": "164",
+        "control_bound_value": "161",
+        "control_second_product": "322",
+        "control_answer": "294"
+      },
+      "control_donor_id": "varbind_easy_0005"
+    },
+    {
+      "idx": 5,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "muf",
+          82
+        ],
+        [
+          "ciw",
+          "twice the number for muf minus 3"
+        ],
+        [
+          "zog",
+          "twice the number for ciw plus 24"
+        ],
+        [
+          "luw",
+          "twice the number for zog minus 14"
+        ],
+        [
+          "lok",
+          "twice the number for zog minus 11"
+        ]
+      ],
+      "queried_term": "ciw",
+      "queried_value": 161,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 28,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for ciw minus 28?",
+      "answer": 294,
+      "id": "varbind_easy_0005",
+      "expected_intermediates": {
+        "base_value": "82",
+        "first_product": "164",
+        "bound_value": "161",
+        "second_product": "322",
+        "answer": "294"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "82"
+        ],
+        "first_product": [
+          "164"
+        ],
+        "bound_value": [
+          "161"
+        ],
+        "second_product": [
+          "322"
+        ],
+        "answer": [
+          "294"
+        ]
+      },
+      "behavior_cohort": "rescued",
+      "tracked_controls": {
+        "control_base_value": "59",
+        "control_first_product": "118",
+        "control_bound_value": "107",
+        "control_second_product": "214",
+        "control_answer": "213"
+      },
+      "control_donor_id": "varbind_easy_0011"
+    },
+    {
+      "idx": 11,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "sug",
+          59
+        ],
+        [
+          "xif",
+          66
+        ],
+        [
+          "tes",
+          "twice the number for sug minus 11"
+        ],
+        [
+          "sij",
+          "twice the number for tes minus 8"
+        ],
+        [
+          "qoz",
+          "twice the number for tes minus 2"
+        ]
+      ],
+      "queried_term": "tes",
+      "queried_value": 107,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 1,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for tes minus 1?",
+      "answer": 213,
+      "id": "varbind_easy_0011",
+      "expected_intermediates": {
+        "base_value": "59",
+        "first_product": "118",
+        "bound_value": "107",
+        "second_product": "214",
+        "answer": "213"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "59"
+        ],
+        "first_product": [
+          "118"
+        ],
+        "bound_value": [
+          "107"
+        ],
+        "second_product": [
+          "214"
+        ],
+        "answer": [
+          "213"
+        ]
+      },
+      "behavior_cohort": "rescued",
+      "tracked_controls": {
+        "control_base_value": "96",
+        "control_first_product": "192",
+        "control_bound_value": "194",
+        "control_second_product": "388",
+        "control_answer": "392"
+      },
+      "control_donor_id": "varbind_easy_0015"
+    },
+    {
+      "idx": 15,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "taf",
+          40
+        ],
+        [
+          "qif",
+          96
+        ],
+        [
+          "puz",
+          "twice the number for qif plus 13"
+        ],
+        [
+          "zof",
+          "twice the number for qif plus 2"
+        ],
+        [
+          "qop",
+          "twice the number for qif plus 29"
+        ]
+      ],
+      "queried_term": "zof",
+      "queried_value": 194,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 4,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for zof plus 4?",
+      "answer": 392,
+      "id": "varbind_easy_0015",
+      "expected_intermediates": {
+        "base_value": "96",
+        "first_product": "192",
+        "bound_value": "194",
+        "second_product": "388",
+        "answer": "392"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "96"
+        ],
+        "first_product": [
+          "192"
+        ],
+        "bound_value": [
+          "194"
+        ],
+        "second_product": [
+          "388"
+        ],
+        "answer": [
+          "392"
+        ]
+      },
+      "behavior_cohort": "rescued",
+      "tracked_controls": {
+        "control_base_value": "63",
+        "control_first_product": "126",
+        "control_bound_value": "98",
+        "control_second_product": "196",
+        "control_answer": "206"
+      },
+      "control_donor_id": "varbind_easy_0026"
+    },
+    {
+      "idx": 26,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "pex",
+          63
+        ],
+        [
+          "wuv",
+          "twice the number for pex minus 28"
+        ],
+        [
+          "pib",
+          "twice the number for wuv plus 12"
+        ],
+        [
+          "nec",
+          55
+        ],
+        [
+          "soz",
+          "twice the number for wuv plus 3"
+        ]
+      ],
+      "queried_term": "wuv",
+      "queried_value": 98,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 10,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for wuv plus 10?",
+      "answer": 206,
+      "id": "varbind_easy_0026",
+      "expected_intermediates": {
+        "base_value": "63",
+        "first_product": "126",
+        "bound_value": "98",
+        "second_product": "196",
+        "answer": "206"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "63"
+        ],
+        "first_product": [
+          "126"
+        ],
+        "bound_value": [
+          "98"
+        ],
+        "second_product": [
+          "196"
+        ],
+        "answer": [
+          "206"
+        ]
+      },
+      "behavior_cohort": "rescued",
+      "tracked_controls": {
+        "control_base_value": "79",
+        "control_first_product": "158",
+        "control_bound_value": "186",
+        "control_second_product": "372",
+        "control_answer": "352"
+      },
+      "control_donor_id": "varbind_easy_0027"
+    },
+    {
+      "idx": 27,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "muq",
+          79
+        ],
+        [
+          "zem",
+          "twice the number for muq plus 28"
+        ],
+        [
+          "yoh",
+          "twice the number for zem minus 15"
+        ],
+        [
+          "qoq",
+          "twice the number for zem plus 16"
+        ],
+        [
+          "vid",
+          "twice the number for zem plus 14"
+        ]
+      ],
+      "queried_term": "zem",
+      "queried_value": 186,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 20,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for zem minus 20?",
+      "answer": 352,
+      "id": "varbind_easy_0027",
+      "expected_intermediates": {
+        "base_value": "79",
+        "first_product": "158",
+        "bound_value": "186",
+        "second_product": "372",
+        "answer": "352"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "79"
+        ],
+        "first_product": [
+          "158"
+        ],
+        "bound_value": [
+          "186"
+        ],
+        "second_product": [
+          "372"
+        ],
+        "answer": [
+          "352"
+        ]
+      },
+      "behavior_cohort": "rescued",
+      "tracked_controls": {
+        "control_base_value": "26",
+        "control_first_product": "52",
+        "control_bound_value": "44",
+        "control_second_product": "88",
+        "control_answer": "90"
+      },
+      "control_donor_id": "varbind_easy_0031"
+    },
+    {
+      "idx": 31,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "xij",
+          30
+        ],
+        [
+          "baq",
+          "twice the number for xij plus 7"
+        ],
+        [
+          "niq",
+          26
+        ],
+        [
+          "puw",
+          "twice the number for niq minus 8"
+        ],
+        [
+          "qur",
+          "twice the number for puw plus 27"
+        ]
+      ],
+      "queried_term": "puw",
+      "queried_value": 44,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 2,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for puw plus 2?",
+      "answer": 90,
+      "id": "varbind_easy_0031",
+      "expected_intermediates": {
+        "base_value": "26",
+        "first_product": "52",
+        "bound_value": "44",
+        "second_product": "88",
+        "answer": "90"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "26"
+        ],
+        "first_product": [
+          "52"
+        ],
+        "bound_value": [
+          "44"
+        ],
+        "second_product": [
+          "88"
+        ],
+        "answer": [
+          "90"
+        ]
+      },
+      "behavior_cohort": "rescued",
+      "tracked_controls": {
+        "control_base_value": "16",
+        "control_first_product": "32",
+        "control_bound_value": "29",
+        "control_second_product": "58",
+        "control_answer": "41"
+      },
+      "control_donor_id": "varbind_easy_0032"
+    },
+    {
+      "idx": 32,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "sul",
+          89
+        ],
+        [
+          "paq",
+          16
+        ],
+        [
+          "xuj",
+          "twice the number for paq minus 3"
+        ],
+        [
+          "quc",
+          "twice the number for xuj plus 5"
+        ],
+        [
+          "gaq",
+          "twice the number for paq minus 18"
+        ]
+      ],
+      "queried_term": "xuj",
+      "queried_value": 29,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 17,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xuj minus 17?",
+      "answer": 41,
+      "id": "varbind_easy_0032",
+      "expected_intermediates": {
+        "base_value": "16",
+        "first_product": "32",
+        "bound_value": "29",
+        "second_product": "58",
+        "answer": "41"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "16"
+        ],
+        "first_product": [
+          "32"
+        ],
+        "bound_value": [
+          "29"
+        ],
+        "second_product": [
+          "58"
+        ],
+        "answer": [
+          "41"
+        ]
+      },
+      "behavior_cohort": "rescued",
+      "tracked_controls": {
+        "control_base_value": "72",
+        "control_first_product": "144",
+        "control_bound_value": "133",
+        "control_second_product": "266",
+        "control_answer": "252"
+      },
+      "control_donor_id": "varbind_easy_0033"
+    },
+    {
+      "idx": 33,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "vuw",
+          72
+        ],
+        [
+          "xit",
+          "twice the number for vuw minus 11"
+        ],
+        [
+          "xiz",
+          "twice the number for xit minus 9"
+        ],
+        [
+          "xec",
+          "twice the number for xiz plus 17"
+        ],
+        [
+          "gec",
+          "twice the number for xec plus 1"
+        ]
+      ],
+      "queried_term": "xit",
+      "queried_value": 133,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 14,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xit minus 14?",
+      "answer": 252,
+      "id": "varbind_easy_0033",
+      "expected_intermediates": {
+        "base_value": "72",
+        "first_product": "144",
+        "bound_value": "133",
+        "second_product": "266",
+        "answer": "252"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "72"
+        ],
+        "first_product": [
+          "144"
+        ],
+        "bound_value": [
+          "133"
+        ],
+        "second_product": [
+          "266"
+        ],
+        "answer": [
+          "252"
+        ]
+      },
+      "behavior_cohort": "rescued",
+      "tracked_controls": {
+        "control_base_value": "97",
+        "control_first_product": "194",
+        "control_bound_value": "173",
+        "control_second_product": "346",
+        "control_answer": "374"
+      },
+      "control_donor_id": "varbind_easy_0035"
+    },
+    {
+      "idx": 35,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "zuk",
+          78
+        ],
+        [
+          "xuf",
+          "twice the number for zuk minus 15"
+        ],
+        [
+          "nof",
+          97
+        ],
+        [
+          "hoz",
+          "twice the number for nof minus 21"
+        ],
+        [
+          "hoh",
+          "twice the number for nof minus 26"
+        ]
+      ],
+      "queried_term": "hoz",
+      "queried_value": 173,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 28,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for hoz plus 28?",
+      "answer": 374,
+      "id": "varbind_easy_0035",
+      "expected_intermediates": {
+        "base_value": "97",
+        "first_product": "194",
+        "bound_value": "173",
+        "second_product": "346",
+        "answer": "374"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "97"
+        ],
+        "first_product": [
+          "194"
+        ],
+        "bound_value": [
+          "173"
+        ],
+        "second_product": [
+          "346"
+        ],
+        "answer": [
+          "374"
+        ]
+      },
+      "behavior_cohort": "rescued",
+      "tracked_controls": {
+        "control_base_value": "50",
+        "control_first_product": "100",
+        "control_bound_value": "128",
+        "control_second_product": "256",
+        "control_answer": "258"
+      },
+      "control_donor_id": "varbind_easy_0040"
+    },
+    {
+      "idx": 37,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "yav",
+          67
+        ],
+        [
+          "vif",
+          91
+        ],
+        [
+          "miy",
+          "twice the number for vif plus 5"
+        ],
+        [
+          "yir",
+          "twice the number for miy plus 25"
+        ],
+        [
+          "duf",
+          "twice the number for yir plus 19"
+        ]
+      ],
+      "queried_term": "miy",
+      "queried_value": 187,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 11,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for miy plus 11?",
+      "answer": 385,
+      "id": "varbind_easy_0037",
+      "expected_intermediates": {
+        "base_value": "91",
+        "first_product": "182",
+        "bound_value": "187",
+        "second_product": "374",
+        "answer": "385"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "91"
+        ],
+        "first_product": [
+          "182"
+        ],
+        "bound_value": [
+          "187"
+        ],
+        "second_product": [
+          "374"
+        ],
+        "answer": [
+          "385"
+        ]
+      },
+      "behavior_cohort": "filler_failure",
+      "tracked_controls": {
+        "control_base_value": "50",
+        "control_first_product": "100",
+        "control_bound_value": "128",
+        "control_second_product": "256",
+        "control_answer": "258"
+      },
+      "control_donor_id": "varbind_easy_0040"
+    },
+    {
+      "idx": 40,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "goc",
+          81
+        ],
+        [
+          "zas",
+          57
+        ],
+        [
+          "pov",
+          50
+        ],
+        [
+          "moh",
+          "twice the number for pov plus 28"
+        ],
+        [
+          "wug",
+          "twice the number for moh plus 9"
+        ]
+      ],
+      "queried_term": "moh",
+      "queried_value": 128,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 2,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for moh plus 2?",
+      "answer": 258,
+      "id": "varbind_easy_0040",
+      "expected_intermediates": {
+        "base_value": "50",
+        "first_product": "100",
+        "bound_value": "128",
+        "second_product": "256",
+        "answer": "258"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "50"
+        ],
+        "first_product": [
+          "100"
+        ],
+        "bound_value": [
+          "128"
+        ],
+        "second_product": [
+          "256"
+        ],
+        "answer": [
+          "258"
+        ]
+      },
+      "behavior_cohort": "rescued",
+      "tracked_controls": {
+        "control_base_value": "17",
+        "control_first_product": "34",
+        "control_bound_value": "35",
+        "control_second_product": "70",
+        "control_answer": "73"
+      },
+      "control_donor_id": "varbind_easy_0043"
+    },
+    {
+      "idx": 43,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "vop",
+          17
+        ],
+        [
+          "doq",
+          "twice the number for vop minus 2"
+        ],
+        [
+          "yut",
+          "twice the number for vop plus 1"
+        ],
+        [
+          "bav",
+          "twice the number for yut minus 1"
+        ],
+        [
+          "xek",
+          "twice the number for bav plus 21"
+        ]
+      ],
+      "queried_term": "yut",
+      "queried_value": 35,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 3,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for yut plus 3?",
+      "answer": 73,
+      "id": "varbind_easy_0043",
+      "expected_intermediates": {
+        "base_value": "17",
+        "first_product": "34",
+        "bound_value": "35",
+        "second_product": "70",
+        "answer": "73"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "17"
+        ],
+        "first_product": [
+          "34"
+        ],
+        "bound_value": [
+          "35"
+        ],
+        "second_product": [
+          "70"
+        ],
+        "answer": [
+          "73"
+        ]
+      },
+      "behavior_cohort": "rescued",
+      "tracked_controls": {
+        "control_base_value": "62",
+        "control_first_product": "124",
+        "control_bound_value": "146",
+        "control_second_product": "292",
+        "control_answer": "277"
+      },
+      "control_donor_id": "varbind_easy_0046"
+    },
+    {
+      "idx": 46,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "lom",
+          71
+        ],
+        [
+          "maq",
+          52
+        ],
+        [
+          "qam",
+          62
+        ],
+        [
+          "qaw",
+          "twice the number for qam plus 22"
+        ],
+        [
+          "lez",
+          "twice the number for qaw plus 15"
+        ]
+      ],
+      "queried_term": "qaw",
+      "queried_value": 146,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 15,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for qaw minus 15?",
+      "answer": 277,
+      "id": "varbind_easy_0046",
+      "expected_intermediates": {
+        "base_value": "62",
+        "first_product": "124",
+        "bound_value": "146",
+        "second_product": "292",
+        "answer": "277"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "62"
+        ],
+        "first_product": [
+          "124"
+        ],
+        "bound_value": [
+          "146"
+        ],
+        "second_product": [
+          "292"
+        ],
+        "answer": [
+          "277"
+        ]
+      },
+      "behavior_cohort": "rescued",
+      "tracked_controls": {
+        "control_base_value": "86",
+        "control_first_product": "172",
+        "control_bound_value": "198",
+        "control_second_product": "396",
+        "control_answer": "384"
+      },
+      "control_donor_id": "varbind_easy_0048"
+    },
+    {
+      "idx": 48,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "kuv",
+          81
+        ],
+        [
+          "qas",
+          86
+        ],
+        [
+          "tuq",
+          "twice the number for qas plus 26"
+        ],
+        [
+          "fep",
+          "twice the number for qas plus 19"
+        ],
+        [
+          "zon",
+          "twice the number for fep plus 1"
+        ]
+      ],
+      "queried_term": "tuq",
+      "queried_value": 198,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 12,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for tuq minus 12?",
+      "answer": 384,
+      "id": "varbind_easy_0048",
+      "expected_intermediates": {
+        "base_value": "86",
+        "first_product": "172",
+        "bound_value": "198",
+        "second_product": "396",
+        "answer": "384"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "86"
+        ],
+        "first_product": [
+          "172"
+        ],
+        "bound_value": [
+          "198"
+        ],
+        "second_product": [
+          "396"
+        ],
+        "answer": [
+          "384"
+        ]
+      },
+      "behavior_cohort": "rescued",
+      "tracked_controls": {
+        "control_base_value": "64",
+        "control_first_product": "128",
+        "control_bound_value": "119",
+        "control_second_product": "238",
+        "control_answer": "224"
+      },
+      "control_donor_id": "varbind_easy_0002"
+    }
+  ],
+  "filler_length": 50
+}

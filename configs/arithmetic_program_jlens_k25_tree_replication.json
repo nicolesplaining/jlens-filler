@@ -1,0 +1,882 @@
+{
+  "seed": 42,
+  "task_type": "arithmetic_program",
+  "filler_type": "dots",
+  "source": {
+    "kind": "deterministic synthetic seven-operation integer programs",
+    "seed": 62217,
+    "selection": "24 balanced-tree and 24 matched left-deep serial programs; 4 mixed-topology few-shots; full readout at k=25, up to 3 cases per topology, prioritizing dot-helped then correct-in-both examples; cross-example stage-matched target values included as tracked controls",
+    "probe_rationale": "The balanced program has four independent first-level branches, then two merges, then a root. The serial control has seven strict dependencies. Both expose eight literal inputs and seven operation lines. Every hidden intermediate is unique and absent from the target's literal inputs. Concurrent branch onsets followed by merge onsets would support tree-parallel execution; a depth-ordered state ladder would support serial execution."
+  },
+  "sanity_prompts": [
+    {
+      "id": "capital",
+      "messages": [
+        {
+          "role": "user",
+          "content": "The capital of France is"
+        }
+      ]
+    },
+    {
+      "id": "arithmetic",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Complete with only the answer: 17 + 25 ="
+        }
+      ]
+    },
+    {
+      "id": "chinese",
+      "messages": [
+        {
+          "role": "user",
+          "content": "用一个词回答：中国的首都是"
+        }
+      ]
+    }
+  ],
+  "few_shot": [
+    {
+      "inputs": [
+        [
+          "a",
+          4
+        ],
+        [
+          "b",
+          3
+        ],
+        [
+          "c",
+          12
+        ],
+        [
+          "d",
+          4
+        ],
+        [
+          "e",
+          11
+        ],
+        [
+          "f",
+          11
+        ],
+        [
+          "g",
+          12
+        ],
+        [
+          "h",
+          10
+        ]
+      ],
+      "operations": [
+        [
+          "p1",
+          "a",
+          "add",
+          "b"
+        ],
+        [
+          "p2",
+          "c",
+          "subtract",
+          "d"
+        ],
+        [
+          "p3",
+          "e",
+          "add",
+          "f"
+        ],
+        [
+          "p4",
+          "g",
+          "subtract",
+          "h"
+        ],
+        [
+          "m1",
+          "p1",
+          "multiply",
+          "p2"
+        ],
+        [
+          "m2",
+          "p3",
+          "multiply",
+          "p4"
+        ],
+        [
+          "y",
+          "m1",
+          "add",
+          "m2"
+        ]
+      ],
+      "topology": "balanced_tree",
+      "query": "y",
+      "answer": 100,
+      "expected_intermediates": {
+        "p1": "7",
+        "p2": "8",
+        "p3": "22",
+        "p4": "2",
+        "m1": "56",
+        "m2": "44",
+        "y": "100"
+      },
+      "highlight_forms": {
+        "p1": [
+          "7"
+        ],
+        "p2": [
+          "8"
+        ],
+        "p3": [
+          "22"
+        ],
+        "p4": [
+          "2"
+        ],
+        "m1": [
+          "56"
+        ],
+        "m2": [
+          "44"
+        ],
+        "y": [
+          "100"
+        ]
+      }
+    },
+    {
+      "inputs": [
+        [
+          "x0",
+          6
+        ],
+        [
+          "a",
+          6
+        ],
+        [
+          "b",
+          3
+        ],
+        [
+          "c",
+          9
+        ],
+        [
+          "d",
+          6
+        ],
+        [
+          "e",
+          3
+        ],
+        [
+          "f",
+          5
+        ],
+        [
+          "g",
+          7
+        ]
+      ],
+      "operations": [
+        [
+          "x1",
+          "x0",
+          "add",
+          "a"
+        ],
+        [
+          "x2",
+          "x1",
+          "multiply",
+          "b"
+        ],
+        [
+          "x3",
+          "x2",
+          "subtract",
+          "c"
+        ],
+        [
+          "x4",
+          "x3",
+          "add",
+          "d"
+        ],
+        [
+          "x5",
+          "x4",
+          "multiply",
+          "e"
+        ],
+        [
+          "x6",
+          "x5",
+          "subtract",
+          "f"
+        ],
+        [
+          "y",
+          "x6",
+          "add",
+          "g"
+        ]
+      ],
+      "topology": "serial_chain",
+      "query": "y",
+      "answer": 101,
+      "expected_intermediates": {
+        "x1": "12",
+        "x2": "36",
+        "x3": "27",
+        "x4": "33",
+        "x5": "99",
+        "x6": "94",
+        "y": "101"
+      },
+      "highlight_forms": {
+        "x1": [
+          "12"
+        ],
+        "x2": [
+          "36"
+        ],
+        "x3": [
+          "27"
+        ],
+        "x4": [
+          "33"
+        ],
+        "x5": [
+          "99"
+        ],
+        "x6": [
+          "94"
+        ],
+        "y": [
+          "101"
+        ]
+      }
+    },
+    {
+      "inputs": [
+        [
+          "a",
+          11
+        ],
+        [
+          "b",
+          6
+        ],
+        [
+          "c",
+          10
+        ],
+        [
+          "d",
+          8
+        ],
+        [
+          "e",
+          10
+        ],
+        [
+          "f",
+          6
+        ],
+        [
+          "g",
+          11
+        ],
+        [
+          "h",
+          6
+        ]
+      ],
+      "operations": [
+        [
+          "p1",
+          "a",
+          "add",
+          "b"
+        ],
+        [
+          "p2",
+          "c",
+          "subtract",
+          "d"
+        ],
+        [
+          "p3",
+          "e",
+          "add",
+          "f"
+        ],
+        [
+          "p4",
+          "g",
+          "subtract",
+          "h"
+        ],
+        [
+          "m1",
+          "p1",
+          "multiply",
+          "p2"
+        ],
+        [
+          "m2",
+          "p3",
+          "multiply",
+          "p4"
+        ],
+        [
+          "y",
+          "m1",
+          "add",
+          "m2"
+        ]
+      ],
+      "topology": "balanced_tree",
+      "query": "y",
+      "answer": 114,
+      "expected_intermediates": {
+        "p1": "17",
+        "p2": "2",
+        "p3": "16",
+        "p4": "5",
+        "m1": "34",
+        "m2": "80",
+        "y": "114"
+      },
+      "highlight_forms": {
+        "p1": [
+          "17"
+        ],
+        "p2": [
+          "2"
+        ],
+        "p3": [
+          "16"
+        ],
+        "p4": [
+          "5"
+        ],
+        "m1": [
+          "34"
+        ],
+        "m2": [
+          "80"
+        ],
+        "y": [
+          "114"
+        ]
+      }
+    },
+    {
+      "inputs": [
+        [
+          "x0",
+          9
+        ],
+        [
+          "a",
+          6
+        ],
+        [
+          "b",
+          2
+        ],
+        [
+          "c",
+          6
+        ],
+        [
+          "d",
+          3
+        ],
+        [
+          "e",
+          3
+        ],
+        [
+          "f",
+          8
+        ],
+        [
+          "g",
+          7
+        ]
+      ],
+      "operations": [
+        [
+          "x1",
+          "x0",
+          "add",
+          "a"
+        ],
+        [
+          "x2",
+          "x1",
+          "multiply",
+          "b"
+        ],
+        [
+          "x3",
+          "x2",
+          "subtract",
+          "c"
+        ],
+        [
+          "x4",
+          "x3",
+          "add",
+          "d"
+        ],
+        [
+          "x5",
+          "x4",
+          "multiply",
+          "e"
+        ],
+        [
+          "x6",
+          "x5",
+          "subtract",
+          "f"
+        ],
+        [
+          "y",
+          "x6",
+          "add",
+          "g"
+        ]
+      ],
+      "topology": "serial_chain",
+      "query": "y",
+      "answer": 80,
+      "expected_intermediates": {
+        "x1": "15",
+        "x2": "30",
+        "x3": "24",
+        "x4": "27",
+        "x5": "81",
+        "x6": "73",
+        "y": "80"
+      },
+      "highlight_forms": {
+        "x1": [
+          "15"
+        ],
+        "x2": [
+          "30"
+        ],
+        "x3": [
+          "24"
+        ],
+        "x4": [
+          "27"
+        ],
+        "x5": [
+          "81"
+        ],
+        "x6": [
+          "73"
+        ],
+        "y": [
+          "80"
+        ]
+      }
+    }
+  ],
+  "examples": [
+    {
+      "inputs": [
+        [
+          "a",
+          12
+        ],
+        [
+          "b",
+          10
+        ],
+        [
+          "c",
+          9
+        ],
+        [
+          "d",
+          4
+        ],
+        [
+          "e",
+          3
+        ],
+        [
+          "f",
+          12
+        ],
+        [
+          "g",
+          11
+        ],
+        [
+          "h",
+          9
+        ]
+      ],
+      "operations": [
+        [
+          "p1",
+          "a",
+          "add",
+          "b"
+        ],
+        [
+          "p2",
+          "c",
+          "subtract",
+          "d"
+        ],
+        [
+          "p3",
+          "e",
+          "add",
+          "f"
+        ],
+        [
+          "p4",
+          "g",
+          "subtract",
+          "h"
+        ],
+        [
+          "m1",
+          "p1",
+          "multiply",
+          "p2"
+        ],
+        [
+          "m2",
+          "p3",
+          "multiply",
+          "p4"
+        ],
+        [
+          "y",
+          "m1",
+          "add",
+          "m2"
+        ]
+      ],
+      "id": "arithmetic_tree_002",
+      "topology": "balanced_tree",
+      "query": "y",
+      "answer": 140,
+      "expected_intermediates": {
+        "p1": "22",
+        "p2": "5",
+        "p3": "15",
+        "p4": "2",
+        "m1": "110",
+        "m2": "30",
+        "y": "140"
+      },
+      "highlight_forms": {
+        "p1": [
+          "22"
+        ],
+        "p2": [
+          "5"
+        ],
+        "p3": [
+          "15"
+        ],
+        "p4": [
+          "2"
+        ],
+        "m1": [
+          "110"
+        ],
+        "m2": [
+          "30"
+        ],
+        "y": [
+          "140"
+        ]
+      },
+      "tracked_controls": {
+        "control_p1": "12",
+        "control_p2": "3",
+        "control_p3": "16",
+        "control_p4": "4",
+        "control_m1": "36",
+        "control_m2": "64",
+        "control_y": "100"
+      },
+      "control_donor_id": "arithmetic_tree_011"
+    },
+    {
+      "inputs": [
+        [
+          "a",
+          12
+        ],
+        [
+          "b",
+          9
+        ],
+        [
+          "c",
+          11
+        ],
+        [
+          "d",
+          6
+        ],
+        [
+          "e",
+          8
+        ],
+        [
+          "f",
+          12
+        ],
+        [
+          "g",
+          9
+        ],
+        [
+          "h",
+          6
+        ]
+      ],
+      "operations": [
+        [
+          "p1",
+          "a",
+          "add",
+          "b"
+        ],
+        [
+          "p2",
+          "c",
+          "subtract",
+          "d"
+        ],
+        [
+          "p3",
+          "e",
+          "add",
+          "f"
+        ],
+        [
+          "p4",
+          "g",
+          "subtract",
+          "h"
+        ],
+        [
+          "m1",
+          "p1",
+          "multiply",
+          "p2"
+        ],
+        [
+          "m2",
+          "p3",
+          "multiply",
+          "p4"
+        ],
+        [
+          "y",
+          "m1",
+          "add",
+          "m2"
+        ]
+      ],
+      "id": "arithmetic_tree_004",
+      "topology": "balanced_tree",
+      "query": "y",
+      "answer": 165,
+      "expected_intermediates": {
+        "p1": "21",
+        "p2": "5",
+        "p3": "20",
+        "p4": "3",
+        "m1": "105",
+        "m2": "60",
+        "y": "165"
+      },
+      "highlight_forms": {
+        "p1": [
+          "21"
+        ],
+        "p2": [
+          "5"
+        ],
+        "p3": [
+          "20"
+        ],
+        "p4": [
+          "3"
+        ],
+        "m1": [
+          "105"
+        ],
+        "m2": [
+          "60"
+        ],
+        "y": [
+          "165"
+        ]
+      },
+      "tracked_controls": {
+        "control_p1": "12",
+        "control_p3": "16",
+        "control_p4": "4",
+        "control_m1": "36",
+        "control_m2": "64",
+        "control_y": "100"
+      },
+      "control_donor_id": "arithmetic_tree_011"
+    },
+    {
+      "inputs": [
+        [
+          "a",
+          7
+        ],
+        [
+          "b",
+          5
+        ],
+        [
+          "c",
+          9
+        ],
+        [
+          "d",
+          6
+        ],
+        [
+          "e",
+          7
+        ],
+        [
+          "f",
+          9
+        ],
+        [
+          "g",
+          9
+        ],
+        [
+          "h",
+          5
+        ]
+      ],
+      "operations": [
+        [
+          "p1",
+          "a",
+          "add",
+          "b"
+        ],
+        [
+          "p2",
+          "c",
+          "subtract",
+          "d"
+        ],
+        [
+          "p3",
+          "e",
+          "add",
+          "f"
+        ],
+        [
+          "p4",
+          "g",
+          "subtract",
+          "h"
+        ],
+        [
+          "m1",
+          "p1",
+          "multiply",
+          "p2"
+        ],
+        [
+          "m2",
+          "p3",
+          "multiply",
+          "p4"
+        ],
+        [
+          "y",
+          "m1",
+          "add",
+          "m2"
+        ]
+      ],
+      "id": "arithmetic_tree_011",
+      "topology": "balanced_tree",
+      "query": "y",
+      "answer": 100,
+      "expected_intermediates": {
+        "p1": "12",
+        "p2": "3",
+        "p3": "16",
+        "p4": "4",
+        "m1": "36",
+        "m2": "64",
+        "y": "100"
+      },
+      "highlight_forms": {
+        "p1": [
+          "12"
+        ],
+        "p2": [
+          "3"
+        ],
+        "p3": [
+          "16"
+        ],
+        "p4": [
+          "4"
+        ],
+        "m1": [
+          "36"
+        ],
+        "m2": [
+          "64"
+        ],
+        "y": [
+          "100"
+        ]
+      },
+      "tracked_controls": {
+        "control_p1": "22",
+        "control_p2": "5",
+        "control_p3": "15",
+        "control_p4": "2",
+        "control_m1": "110",
+        "control_m2": "30",
+        "control_y": "140"
+      },
+      "control_donor_id": "arithmetic_tree_002"
+    }
+  ],
+  "filler_length": 25
+}

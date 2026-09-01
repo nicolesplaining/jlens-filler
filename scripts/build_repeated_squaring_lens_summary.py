@@ -36,11 +36,31 @@ def main() -> None:
     parser.add_argument("results_dir", type=Path)
     parser.add_argument("config", type=Path)
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument(
+        "--example-ids",
+        help="Optional comma-separated subset of config example IDs.",
+    )
     args = parser.parse_args()
     config = json.loads(args.config.read_text())
+    selected_ids = (
+        {value.strip() for value in args.example_ids.split(",") if value.strip()}
+        if args.example_ids
+        else None
+    )
+    selected_examples = [
+        example
+        for example in config["examples"]
+        if selected_ids is None or example["id"] in selected_ids
+    ]
+    if selected_ids is not None:
+        missing = selected_ids - {example["id"] for example in selected_examples}
+        if missing:
+            raise ValueError(f"unknown example IDs: {sorted(missing)}")
+    if not selected_examples:
+        raise ValueError("no examples selected")
     records = []
     examples = []
-    for example in config["examples"]:
+    for example in selected_examples:
         path = args.results_dir / f"{example['id']}.json"
         data = json.loads(path.read_text())
         filler_indices = {

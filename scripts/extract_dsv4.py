@@ -77,6 +77,40 @@ def parse_numeric_answer(text: str) -> int | None:
     return int(match.group()) if match else None
 
 
+def parse_model_answer(text: str, expected: Any) -> int | str | None:
+    """Parse only the answer type declared by the dataset.
+
+    Numeric tasks retain the released repository's first-integer convention.
+    Letter-position tasks accept a bare lowercase/uppercase letter or the last
+    standalone letter in a more verbose completion, then normalize case.
+    """
+    if isinstance(expected, int) and not isinstance(expected, bool):
+        return parse_numeric_answer(text)
+    expected_text = str(expected).strip()
+    if len(expected_text) == 1 and expected_text.isalpha():
+        stripped = text.strip()
+        if len(stripped) == 1 and stripped.isalpha():
+            return stripped.lower()
+        matches = re.findall(r"(?<![A-Za-z])([A-Za-z])(?![A-Za-z])", text)
+        return matches[-1].lower() if matches else None
+    stripped = text.strip()
+    return stripped if stripped else None
+
+
+def answer_is_correct(parsed: int | str | None, expected: Any) -> bool:
+    if isinstance(expected, int) and not isinstance(expected, bool):
+        return parsed == expected
+    return parsed == str(expected).strip().lower()
+
+
+def filler_placement_for_task(task_type: str) -> str:
+    return (
+        "before_question"
+        if task_type == "variable_binding_pre_filler"
+        else "between_question_answer"
+    )
+
+
 def distributed_setup(timeout_minutes: int) -> tuple[int, int, int]:
     world_size = int(os.environ.get("WORLD_SIZE", "1"))
     rank = int(os.environ.get("RANK", "0"))
@@ -230,12 +264,13 @@ def full_logits_summary(
 
 
 def target_logit_summary(
-    logits: torch.Tensor, tokenizer: Any, answer: int
+    logits: torch.Tensor, tokenizer: Any, answer: Any
 ) -> dict[str, Any]:
     """Exact first-token rank for every single-token rendering of an answer."""
     scores = logits.float().cpu()
     log_z = torch.logsumexp(scores, dim=-1)
-    variants = token_variants(tokenizer, str(answer))
+    answer_text = str(answer)
+    variants = token_variants(tokenizer, answer_text)
     ranked: list[dict[str, Any]] = []
     for variant in variants:
         record = dict(variant)
@@ -252,7 +287,7 @@ def target_logit_summary(
             )
             ranked.append(record)
     if not ranked:
-        raise AssertionError(f"answer {answer} has no single-token tokenizer form")
+        raise AssertionError(f"answer {answer_text} has no single-token tokenizer form")
     best = min(ranked, key=lambda item: item["rank"])
     return {
         "answer": answer,
@@ -534,7 +569,12 @@ def run_filler_example(
         few_shot, example, filler_type, filler_length, task_type=task_type
     )
     rendered, alignment = render_and_align(
-        tokenizer, encode_messages, messages, filler_type, filler_length
+        tokenizer,
+        encode_messages,
+        messages,
+        filler_type,
+        filler_length,
+        filler_placement=filler_placement_for_task(task_type),
     )
     answer_cue_position = alignment.answer_cue_token_indices[-1]
     selected_positions = alignment.filler_token_indices + [
@@ -569,7 +609,13 @@ def run_filler_example(
     captured, actual_logits = run_forward_capture(
         model, alignment.input_ids, capture_indices, selected_positions
     )
-    variants = tracked_variants(tokenizer, example["expected_intermediates"])
+    tracked_surfaces = dict(example["expected_intermediates"])
+    controls = example.get("tracked_controls", {})
+    overlap = set(tracked_surfaces) & set(controls)
+    if overlap:
+        raise ValueError(f"tracked control labels collide with targets: {sorted(overlap)}")
+    tracked_surfaces.update({str(label): str(value) for label, value in controls.items()})
+    variants = tracked_variants(tokenizer, tracked_surfaces)
     if task_type == "repeated_squaring_mod":
         multi_token_only = [
             label
@@ -601,7 +647,7 @@ def run_filler_example(
         eos_id=tokenizer.eos_token_id,
     )
     filler_text = tokenizer.decode(completion_ids, skip_special_tokens=True)
-    filler_prediction = parse_numeric_answer(filler_text)
+    filler_prediction = parse_model_answer(filler_text, example["answer"])
 
     baseline_messages = build_messages(
         few_shot, example, filler_type, 0, task_type=task_type
@@ -615,7 +661,7 @@ def run_filler_example(
         eos_id=tokenizer.eos_token_id,
     )
     baseline_text = tokenizer.decode(baseline_completion_ids, skip_special_tokens=True)
-    baseline_prediction = parse_numeric_answer(baseline_text)
+    baseline_prediction = parse_model_answer(baseline_text, example["answer"])
 
     collapsed_final = collapse_streams(model, captured[42])[0]
     final_local = local_unembed(model, collapsed_final[-1:])
@@ -648,7 +694,7 @@ def run_filler_example(
             "generated_token_ids": completion_ids,
             "generated_text": filler_text,
             "parsed_answer": filler_prediction,
-            "correct": filler_prediction == example["answer"],
+            "correct": answer_is_correct(filler_prediction, example["answer"]),
         },
         "no_filler_control": {
             "rendered_prompt": baseline_rendered,
@@ -657,7 +703,7 @@ def run_filler_example(
             "generated_token_ids": baseline_completion_ids,
             "generated_text": baseline_text,
             "parsed_answer": baseline_prediction,
-            "correct": baseline_prediction == example["answer"],
+            "correct": answer_is_correct(baseline_prediction, example["answer"]),
         },
         "compatibility_checks": {
             "raw_layer_shape": list(captured[layers[0]].shape),
@@ -787,6 +833,142 @@ def paired_eval_summary(rows: list[dict[str, Any]]) -> dict[str, Any]:
             [row for row in rows if row["time_steps"] == step]
         )
     return {"overall": summarize(rows), "by_time_steps": per_t}
+
+
+def configured_filler_lengths(experiment: dict[str, Any]) -> list[int] | None:
+    """Validate an optional behavioral filler-length sweep."""
+    raw = experiment.get("filler_lengths")
+    if raw is None:
+        return None
+    if "filler_length" in experiment:
+        raise ValueError("filler_length and filler_lengths are mutually exclusive")
+    lengths = [int(value) for value in raw]
+    if not lengths or lengths != sorted(set(lengths)):
+        raise ValueError("filler_lengths must be unique and increasing")
+    if lengths[0] != 0:
+        raise ValueError("filler_lengths must begin with the no-filler baseline 0")
+    return lengths
+
+
+@torch.inference_mode()
+def run_filler_length_sweep(
+    *,
+    model: Any,
+    tokenizer: Any,
+    encode_messages: Any,
+    few_shot: list[dict[str, Any]],
+    examples: list[dict[str, Any]],
+    filler_type: str,
+    filler_lengths: list[int],
+    task_type: str,
+    top_k: int,
+    max_new_tokens: int,
+    rank: int,
+) -> dict[str, Any] | None:
+    """Evaluate each example once at every configured filler length.
+
+    Unlike ``run_paired_task_eval``, this computes the k=0 condition only once
+    and reuses it as the paired baseline for every positive length.
+    """
+    rows = [] if rank == 0 else None
+    for number, example in enumerate(examples, start=1):
+        if rank == 0:
+            print(
+                f"length sweep {number}/{len(examples)}: {example['id']}",
+                flush=True,
+            )
+        conditions: dict[str, Any] | None = {} if rank == 0 else None
+        for filler_length in filler_lengths:
+            messages = build_messages(
+                few_shot,
+                example,
+                filler_type,
+                filler_length,
+                task_type=task_type,
+            )
+            if filler_length:
+                rendered, alignment = render_and_align(
+                    tokenizer,
+                    encode_messages,
+                    messages,
+                    filler_type,
+                    filler_length,
+                    filler_placement=filler_placement_for_task(task_type),
+                )
+                if len(alignment.filler_token_indices) != filler_length:
+                    raise AssertionError(
+                        f"{example['id']} at k={filler_length}: "
+                        f"{filler_length} visible fillers mapped to "
+                        f"{len(alignment.filler_token_indices)} tokens"
+                    )
+                input_ids = alignment.input_ids
+                token_strings = alignment.token_strings
+                filler_token_indices = alignment.filler_token_indices
+            else:
+                rendered = encode_messages(messages, thinking_mode="chat")
+                input_ids = tokenizer.encode(rendered)
+                token_strings = [tokenizer.decode([token_id]) for token_id in input_ids]
+                filler_token_indices = []
+            if len(input_ids) >= model.max_seq_len:
+                raise AssertionError(
+                    f"{example['id']} at k={filler_length}: prompt has "
+                    f"{len(input_ids)} tokens, model limit is {model.max_seq_len}"
+                )
+
+            completion_ids, first_logits = greedy_generate(
+                model,
+                input_ids,
+                max_new_tokens=max_new_tokens,
+                eos_id=tokenizer.eos_token_id,
+            )
+            if rank == 0:
+                assert conditions is not None
+                generated_text = tokenizer.decode(
+                    completion_ids, skip_special_tokens=True
+                )
+                parsed_answer = parse_model_answer(generated_text, example["answer"])
+                conditions[str(filler_length)] = {
+                    "filler_length": filler_length,
+                    "rendered_prompt": rendered,
+                    "input_ids": input_ids,
+                    "token_strings": token_strings,
+                    "filler_token_indices": filler_token_indices,
+                    "generated_token_ids": completion_ids,
+                    "generated_text": generated_text,
+                    "parsed_answer": parsed_answer,
+                    "correct": answer_is_correct(parsed_answer, example["answer"]),
+                    "target": target_logit_summary(
+                        first_logits[0], tokenizer, example["answer"]
+                    ),
+                    "top_tokens": full_logits_summary(
+                        first_logits[0], tokenizer, top_k
+                    )["top_tokens"],
+                }
+
+        if rank == 0:
+            assert rows is not None and conditions is not None
+            rows.append(
+                {
+                    "id": example["id"],
+                    "example": example,
+                    "expected_answer": example["answer"],
+                    "expected_intermediates": example.get(
+                        "expected_intermediates", {}
+                    ),
+                    "conditions": conditions,
+                }
+            )
+
+    if rank != 0:
+        return None
+    assert rows is not None
+    return {
+        "schema_version": 1,
+        "task_type": task_type,
+        "filler_type": filler_type,
+        "filler_lengths": filler_lengths,
+        "examples": rows,
+    }
 
 
 @torch.inference_mode()
@@ -996,6 +1178,7 @@ def main() -> None:
         raise AssertionError(f"lens target-layer anchor is not identity: {anchor_error}")
 
     experiment = json.loads(args.examples_config.read_text())
+    filler_lengths = configured_filler_lengths(experiment)
     examples = expand_experiment_examples(experiment)
     if args.example_ids:
         requested = {value.strip() for value in args.example_ids.split(",") if value.strip()}
@@ -1039,6 +1222,18 @@ def main() -> None:
                 for idx in range(torch.cuda.device_count())
             ],
             "model_revision": args.model_revision,
+            "experiment_config": {
+                "path": str(args.examples_config),
+                "sha256": file_sha256(args.examples_config),
+            },
+            "inference": {
+                "seed": 42,
+                "top_k": args.top_k,
+                "max_new_tokens": args.max_new_tokens,
+                "max_seq_len": args.max_seq_len,
+                "thinking_mode": "chat (official non-thinking renderer)",
+                "decoding": "greedy",
+            },
             "model_config": vars(model_args),
             "tokenizer": {
                 "class": type(tokenizer).__name__,
@@ -1130,49 +1325,85 @@ def main() -> None:
             raise SystemExit("sanity gate failed; refusing filler extraction")
 
     if args.phase == "eval":
-        evaluation = run_paired_task_eval(
-            model=model,
-            tokenizer=tokenizer,
-            encode_messages=encode_messages,
-            few_shot=experiment["few_shot"],
-            examples=examples,
-            filler_type=experiment["filler_type"],
-            filler_length=experiment["filler_length"],
-            task_type=experiment.get("task_type", "addition"),
-            top_k=args.top_k,
-            max_new_tokens=args.max_new_tokens,
-            rank=rank,
-        )
-        if rank == 0:
-            assert evaluation is not None
-            path = args.output_dir / "paired_task_eval.json"
-            path.write_text(json.dumps(evaluation, indent=2, ensure_ascii=False))
-            print(f"wrote {path}", flush=True)
-
-    if args.phase in {"filler", "all"}:
-        for example in examples:
-            result = run_filler_example(
+        if filler_lengths is not None:
+            evaluation = run_filler_length_sweep(
                 model=model,
                 tokenizer=tokenizer,
                 encode_messages=encode_messages,
                 few_shot=experiment["few_shot"],
-                example=example,
+                examples=examples,
                 filler_type=experiment["filler_type"],
-                filler_length=experiment["filler_length"],
+                filler_lengths=filler_lengths,
                 task_type=experiment.get("task_type", "addition"),
-                lens_j=lens_j,
-                layers=layers,
                 top_k=args.top_k,
                 max_new_tokens=args.max_new_tokens,
                 rank=rank,
-                world_size=world_size,
+            )
+            output_name = "filler_length_sweep.json"
+        else:
+            evaluation = run_paired_task_eval(
+                model=model,
+                tokenizer=tokenizer,
+                encode_messages=encode_messages,
+                few_shot=experiment["few_shot"],
+                examples=examples,
+                filler_type=experiment["filler_type"],
+                filler_length=experiment["filler_length"],
+                task_type=experiment.get("task_type", "addition"),
+                top_k=args.top_k,
+                max_new_tokens=args.max_new_tokens,
+                rank=rank,
+            )
+            output_name = "paired_task_eval.json"
+        if rank == 0:
+            assert evaluation is not None
+            path = args.output_dir / output_name
+            path.write_text(json.dumps(evaluation, indent=2, ensure_ascii=False))
+            print(f"wrote {path}", flush=True)
+
+    if args.phase in {"filler", "all"}:
+        extraction_lengths = (
+            [length for length in filler_lengths if length > 0]
+            if filler_lengths is not None
+            else [int(experiment["filler_length"])]
+        )
+        if not extraction_lengths:
+            raise ValueError("filler extraction requires at least one positive length")
+        multi_length = filler_lengths is not None
+        for filler_length in extraction_lengths:
+            length_output_dir = (
+                args.output_dir / f"k{filler_length}"
+                if multi_length
+                else args.output_dir
             )
             if rank == 0:
-                assert result is not None
-                result["runtime_file"] = "runtime.json"
-                path = args.output_dir / f"{example['id']}.json"
-                path.write_text(json.dumps(result, indent=2, ensure_ascii=False))
-                print(f"wrote {path}", flush=True)
+                length_output_dir.mkdir(parents=True, exist_ok=True)
+            barrier()
+            for example in examples:
+                result = run_filler_example(
+                    model=model,
+                    tokenizer=tokenizer,
+                    encode_messages=encode_messages,
+                    few_shot=experiment["few_shot"],
+                    example=example,
+                    filler_type=experiment["filler_type"],
+                    filler_length=filler_length,
+                    task_type=experiment.get("task_type", "addition"),
+                    lens_j=lens_j,
+                    layers=layers,
+                    top_k=args.top_k,
+                    max_new_tokens=args.max_new_tokens,
+                    rank=rank,
+                    world_size=world_size,
+                )
+                if rank == 0:
+                    assert result is not None
+                    result["runtime_file"] = (
+                        "../runtime.json" if multi_length else "runtime.json"
+                    )
+                    path = length_output_dir / f"{example['id']}.json"
+                    path.write_text(json.dumps(result, indent=2, ensure_ascii=False))
+                    print(f"wrote {path}", flush=True)
 
     barrier()
     if dist.is_initialized():

@@ -1,0 +1,482 @@
+{
+  "overall": {
+    "by_length": {
+      "0": {
+        "n": 48,
+        "correct": 9,
+        "accuracy": 0.1875,
+        "mrr": 0.2945538519912459,
+        "recall_at_1": 0.1875,
+        "recall_at_5": 0.4375,
+        "recall_at_10": 0.5625,
+        "recall_at_50": 0.9583333333333334
+      },
+      "5": {
+        "n": 48,
+        "correct": 5,
+        "accuracy": 0.10416666666666667,
+        "mrr": 0.2535093122446185,
+        "recall_at_1": 0.10416666666666667,
+        "recall_at_5": 0.4375,
+        "recall_at_10": 0.6041666666666666,
+        "recall_at_50": 0.9166666666666666
+      },
+      "10": {
+        "n": 48,
+        "correct": 5,
+        "accuracy": 0.10416666666666667,
+        "mrr": 0.23392422834156354,
+        "recall_at_1": 0.10416666666666667,
+        "recall_at_5": 0.375,
+        "recall_at_10": 0.5208333333333334,
+        "recall_at_50": 0.9375
+      },
+      "25": {
+        "n": 48,
+        "correct": 8,
+        "accuracy": 0.16666666666666666,
+        "mrr": 0.29602873979734956,
+        "recall_at_1": 0.16666666666666666,
+        "recall_at_5": 0.4375,
+        "recall_at_10": 0.6458333333333334,
+        "recall_at_50": 0.9583333333333334
+      },
+      "50": {
+        "n": 48,
+        "correct": 6,
+        "accuracy": 0.125,
+        "mrr": 0.2952550060580644,
+        "recall_at_1": 0.125,
+        "recall_at_5": 0.4791666666666667,
+        "recall_at_10": 0.625,
+        "recall_at_50": 0.9166666666666666
+      }
+    },
+    "paired_vs_k0": {
+      "5": {
+        "helped_count": 1,
+        "hurt_count": 5,
+        "net_correct": -4,
+        "helped_ids": [
+          "arithmetic_tree_001"
+        ],
+        "hurt_ids": [
+          "arithmetic_tree_002",
+          "arithmetic_tree_003",
+          "arithmetic_tree_004",
+          "arithmetic_tree_011",
+          "arithmetic_serial_022"
+        ],
+        "mean_log10_rank_gain": -0.0241236428093957,
+        "largest_rank_gain_ids": [
+          "arithmetic_tree_012",
+          "arithmetic_serial_016",
+          "arithmetic_serial_003",
+          "arithmetic_serial_007",
+          "arithmetic_serial_019",
+          "arithmetic_tree_005",
+          "arithmetic_tree_001",
+          "arithmetic_serial_017",
+          "arithmetic_serial_023",
+          "arithmetic_tree_019"
+        ]
+      },
+      "10": {
+        "helped_count": 1,
+        "hurt_count": 5,
+        "net_correct": -4,
+        "helped_ids": [
+          "arithmetic_serial_006"
+        ],
+        "hurt_ids": [
+          "arithmetic_tree_002",
+          "arithmetic_tree_003",
+          "arithmetic_tree_004",
+          "arithmetic_tree_011",
+          "arithmetic_serial_022"
+        ],
+        "mean_log10_rank_gain": -0.07351565270546113,
+        "largest_rank_gain_ids": [
+          "arithmetic_serial_006",
+          "arithmetic_serial_016",
+          "arithmetic_serial_003",
+          "arithmetic_tree_010",
+          "arithmetic_serial_017",
+          "arithmetic_tree_023",
+          "arithmetic_serial_007",
+          "arithmetic_tree_008",
+          "arithmetic_tree_012",
+          "arithmetic_tree_018"
+        ]
+      },
+      "25": {
+        "helped_count": 3,
+        "hurt_count": 4,
+        "net_correct": -1,
+        "helped_ids": [
+          "arithmetic_tree_000",
+          "arithmetic_tree_017",
+          "arithmetic_serial_014"
+        ],
+        "hurt_ids": [
+          "arithmetic_tree_003",
+          "arithmetic_tree_021",
+          "arithmetic_serial_018",
+          "arithmetic_serial_022"
+        ],
+        "mean_log10_rank_gain": 0.031379600732217704,
+        "largest_rank_gain_ids": [
+          "arithmetic_serial_016",
+          "arithmetic_tree_000",
+          "arithmetic_tree_017",
+          "arithmetic_serial_007",
+          "arithmetic_tree_013",
+          "arithmetic_serial_014",
+          "arithmetic_tree_019",
+          "arithmetic_tree_022",
+          "arithmetic_serial_003",
+          "arithmetic_tree_008"
+        ]
+      },
+      "50": {
+        "helped_count": 1,
+        "hurt_count": 4,
+        "net_correct": -3,
+        "helped_ids": [
+          "arithmetic_tree_001"
+        ],
+        "hurt_ids": [
+          "arithmetic_tree_003",
+          "arithmetic_tree_011",
+          "arithmetic_tree_021",
+          "arithmetic_serial_022"
+        ],
+        "mean_log10_rank_gain": 0.03518757142162972,
+        "largest_rank_gain_ids": [
+          "arithmetic_serial_007",
+          "arithmetic_serial_016",
+          "arithmetic_serial_001",
+          "arithmetic_tree_023",
+          "arithmetic_serial_023",
+          "arithmetic_tree_008",
+          "arithmetic_tree_017",
+          "arithmetic_serial_010",
+          "arithmetic_tree_018",
+          "arithmetic_serial_008"
+        ]
+      }
+    }
+  },
+  "group_field": "topology",
+  "groups": {
+    "balanced_tree": {
+      "by_length": {
+        "0": {
+          "n": 24,
+          "correct": 6,
+          "accuracy": 0.25,
+          "mrr": 0.3356471112126885,
+          "recall_at_1": 0.25,
+          "recall_at_5": 0.375,
+          "recall_at_10": 0.5416666666666666,
+          "recall_at_50": 0.9583333333333334
+        },
+        "5": {
+          "n": 24,
+          "correct": 3,
+          "accuracy": 0.125,
+          "mrr": 0.2627563674201847,
+          "recall_at_1": 0.125,
+          "recall_at_5": 0.4166666666666667,
+          "recall_at_10": 0.5416666666666666,
+          "recall_at_50": 0.875
+        },
+        "10": {
+          "n": 24,
+          "correct": 2,
+          "accuracy": 0.08333333333333333,
+          "mrr": 0.19536343868180475,
+          "recall_at_1": 0.08333333333333333,
+          "recall_at_5": 0.3333333333333333,
+          "recall_at_10": 0.4166666666666667,
+          "recall_at_50": 0.875
+        },
+        "25": {
+          "n": 24,
+          "correct": 6,
+          "accuracy": 0.25,
+          "mrr": 0.3518249366254041,
+          "recall_at_1": 0.25,
+          "recall_at_5": 0.4583333333333333,
+          "recall_at_10": 0.625,
+          "recall_at_50": 0.9166666666666666
+        },
+        "50": {
+          "n": 24,
+          "correct": 4,
+          "accuracy": 0.16666666666666666,
+          "mrr": 0.3061373582122248,
+          "recall_at_1": 0.16666666666666666,
+          "recall_at_5": 0.375,
+          "recall_at_10": 0.5,
+          "recall_at_50": 0.8333333333333334
+        }
+      },
+      "paired_vs_k0": {
+        "5": {
+          "helped_count": 1,
+          "hurt_count": 4,
+          "net_correct": -3,
+          "helped_ids": [
+            "arithmetic_tree_001"
+          ],
+          "hurt_ids": [
+            "arithmetic_tree_002",
+            "arithmetic_tree_003",
+            "arithmetic_tree_004",
+            "arithmetic_tree_011"
+          ],
+          "mean_log10_rank_gain": -0.08694246057283812,
+          "largest_rank_gain_ids": [
+            "arithmetic_tree_012",
+            "arithmetic_tree_005",
+            "arithmetic_tree_001",
+            "arithmetic_tree_019",
+            "arithmetic_tree_023",
+            "arithmetic_tree_015",
+            "arithmetic_tree_022",
+            "arithmetic_tree_013",
+            "arithmetic_tree_021",
+            "arithmetic_tree_014"
+          ]
+        },
+        "10": {
+          "helped_count": 0,
+          "hurt_count": 4,
+          "net_correct": -4,
+          "helped_ids": [],
+          "hurt_ids": [
+            "arithmetic_tree_002",
+            "arithmetic_tree_003",
+            "arithmetic_tree_004",
+            "arithmetic_tree_011"
+          ],
+          "mean_log10_rank_gain": -0.20694770429085255,
+          "largest_rank_gain_ids": [
+            "arithmetic_tree_010",
+            "arithmetic_tree_023",
+            "arithmetic_tree_008",
+            "arithmetic_tree_012",
+            "arithmetic_tree_018",
+            "arithmetic_tree_019",
+            "arithmetic_tree_015",
+            "arithmetic_tree_017",
+            "arithmetic_tree_016",
+            "arithmetic_tree_021"
+          ]
+        },
+        "25": {
+          "helped_count": 2,
+          "hurt_count": 2,
+          "net_correct": 0,
+          "helped_ids": [
+            "arithmetic_tree_000",
+            "arithmetic_tree_017"
+          ],
+          "hurt_ids": [
+            "arithmetic_tree_003",
+            "arithmetic_tree_021"
+          ],
+          "mean_log10_rank_gain": 0.021396395728706136,
+          "largest_rank_gain_ids": [
+            "arithmetic_tree_000",
+            "arithmetic_tree_017",
+            "arithmetic_tree_013",
+            "arithmetic_tree_019",
+            "arithmetic_tree_022",
+            "arithmetic_tree_008",
+            "arithmetic_tree_023",
+            "arithmetic_tree_018",
+            "arithmetic_tree_014",
+            "arithmetic_tree_011"
+          ]
+        },
+        "50": {
+          "helped_count": 1,
+          "hurt_count": 3,
+          "net_correct": -2,
+          "helped_ids": [
+            "arithmetic_tree_001"
+          ],
+          "hurt_ids": [
+            "arithmetic_tree_003",
+            "arithmetic_tree_011",
+            "arithmetic_tree_021"
+          ],
+          "mean_log10_rank_gain": -0.09626040802297985,
+          "largest_rank_gain_ids": [
+            "arithmetic_tree_023",
+            "arithmetic_tree_008",
+            "arithmetic_tree_017",
+            "arithmetic_tree_018",
+            "arithmetic_tree_001",
+            "arithmetic_tree_022",
+            "arithmetic_tree_014",
+            "arithmetic_tree_004",
+            "arithmetic_tree_002",
+            "arithmetic_tree_015"
+          ]
+        }
+      }
+    },
+    "serial_chain": {
+      "by_length": {
+        "0": {
+          "n": 24,
+          "correct": 3,
+          "accuracy": 0.125,
+          "mrr": 0.2534605927698033,
+          "recall_at_1": 0.125,
+          "recall_at_5": 0.5,
+          "recall_at_10": 0.5833333333333334,
+          "recall_at_50": 0.9583333333333334
+        },
+        "5": {
+          "n": 24,
+          "correct": 2,
+          "accuracy": 0.08333333333333333,
+          "mrr": 0.24426225706905222,
+          "recall_at_1": 0.08333333333333333,
+          "recall_at_5": 0.4583333333333333,
+          "recall_at_10": 0.6666666666666666,
+          "recall_at_50": 0.9583333333333334
+        },
+        "10": {
+          "n": 24,
+          "correct": 3,
+          "accuracy": 0.125,
+          "mrr": 0.27248501800132235,
+          "recall_at_1": 0.125,
+          "recall_at_5": 0.4166666666666667,
+          "recall_at_10": 0.625,
+          "recall_at_50": 1.0
+        },
+        "25": {
+          "n": 24,
+          "correct": 2,
+          "accuracy": 0.08333333333333333,
+          "mrr": 0.240232542969295,
+          "recall_at_1": 0.08333333333333333,
+          "recall_at_5": 0.4166666666666667,
+          "recall_at_10": 0.6666666666666666,
+          "recall_at_50": 1.0
+        },
+        "50": {
+          "n": 24,
+          "correct": 2,
+          "accuracy": 0.08333333333333333,
+          "mrr": 0.2843726539039039,
+          "recall_at_1": 0.08333333333333333,
+          "recall_at_5": 0.5833333333333334,
+          "recall_at_10": 0.75,
+          "recall_at_50": 1.0
+        }
+      },
+      "paired_vs_k0": {
+        "5": {
+          "helped_count": 0,
+          "hurt_count": 1,
+          "net_correct": -1,
+          "helped_ids": [],
+          "hurt_ids": [
+            "arithmetic_serial_022"
+          ],
+          "mean_log10_rank_gain": 0.038695174954046736,
+          "largest_rank_gain_ids": [
+            "arithmetic_serial_016",
+            "arithmetic_serial_003",
+            "arithmetic_serial_007",
+            "arithmetic_serial_019",
+            "arithmetic_serial_017",
+            "arithmetic_serial_023",
+            "arithmetic_serial_014",
+            "arithmetic_serial_011",
+            "arithmetic_serial_000",
+            "arithmetic_serial_021"
+          ]
+        },
+        "10": {
+          "helped_count": 1,
+          "hurt_count": 1,
+          "net_correct": 0,
+          "helped_ids": [
+            "arithmetic_serial_006"
+          ],
+          "hurt_ids": [
+            "arithmetic_serial_022"
+          ],
+          "mean_log10_rank_gain": 0.059916398879930305,
+          "largest_rank_gain_ids": [
+            "arithmetic_serial_006",
+            "arithmetic_serial_016",
+            "arithmetic_serial_003",
+            "arithmetic_serial_017",
+            "arithmetic_serial_007",
+            "arithmetic_serial_021",
+            "arithmetic_serial_014",
+            "arithmetic_serial_004",
+            "arithmetic_serial_011",
+            "arithmetic_serial_019"
+          ]
+        },
+        "25": {
+          "helped_count": 1,
+          "hurt_count": 2,
+          "net_correct": -1,
+          "helped_ids": [
+            "arithmetic_serial_014"
+          ],
+          "hurt_ids": [
+            "arithmetic_serial_018",
+            "arithmetic_serial_022"
+          ],
+          "mean_log10_rank_gain": 0.041362805735729265,
+          "largest_rank_gain_ids": [
+            "arithmetic_serial_016",
+            "arithmetic_serial_007",
+            "arithmetic_serial_014",
+            "arithmetic_serial_003",
+            "arithmetic_serial_011",
+            "arithmetic_serial_019",
+            "arithmetic_serial_009",
+            "arithmetic_serial_001",
+            "arithmetic_serial_017",
+            "arithmetic_serial_023"
+          ]
+        },
+        "50": {
+          "helped_count": 0,
+          "hurt_count": 1,
+          "net_correct": -1,
+          "helped_ids": [],
+          "hurt_ids": [
+            "arithmetic_serial_022"
+          ],
+          "mean_log10_rank_gain": 0.16663555086623927,
+          "largest_rank_gain_ids": [
+            "arithmetic_serial_007",
+            "arithmetic_serial_016",
+            "arithmetic_serial_001",
+            "arithmetic_serial_023",
+            "arithmetic_serial_010",
+            "arithmetic_serial_008",
+            "arithmetic_serial_011",
+            "arithmetic_serial_003",
+            "arithmetic_serial_004",
+            "arithmetic_serial_019"
+          ]
+        }
+      }
+    }
+  }
+}

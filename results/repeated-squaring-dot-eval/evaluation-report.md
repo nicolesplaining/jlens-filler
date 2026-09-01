@@ -48,6 +48,8 @@ This is directionally positive but not conclusive. Absolute accuracy is very low
 
 The final set contains ten independent small-semiprime base instances at each T from 1 through 10. Within every base, the first ten residues are distinct and none equals x_0. The initial N=299, x=35 base was excluded in full because x_10=x_0 made its apparent T=10 success copy-solvable; it was replaced by N=667, x=41.
 
+This is a legacy prompt run: its system message says only “some filler tokens” and adds an extra-space rationale. It predates the exact Appendix A prompt match and should not be pooled with the paper-matched results.
+
 The comparison follows the filler-paper-style convention already used in this repository: the filler condition mentions dots in the system message and places ten dots in every demonstration and target; the no-filler condition removes that clause and those dots throughout. It therefore measures the complete prompting condition, not a target-only insertion.
 
 These small moduli make all target residues single tokenizer tokens and are appropriate for this readout pilot. They are not cryptographic-size instances, so the result should not be generalized to the benchmark's strong no-shortcut setting. All generations are greedy and non-thinking.

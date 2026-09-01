@@ -1,0 +1,9 @@
+example_id,time_steps,target,surface,method,best_rank,best_layer,best_filler_position
+repeated_squaring_n407_x30_t4,4,x_1,86,j_lens,80,35,1
+repeated_squaring_n407_x30_t4,4,x_1,86,logit_lens,151,41,10
+repeated_squaring_n407_x30_t4,4,x_2,70,j_lens,302,27,7
+repeated_squaring_n407_x30_t4,4,x_2,70,logit_lens,118,5,1
+repeated_squaring_n407_x30_t4,4,x_3,16,j_lens,341,35,1
+repeated_squaring_n407_x30_t4,4,x_3,16,logit_lens,170,35,1
+repeated_squaring_n407_x30_t4,4,x_4,256,j_lens,362,40,10
+repeated_squaring_n407_x30_t4,4,x_4,256,logit_lens,183,40,10

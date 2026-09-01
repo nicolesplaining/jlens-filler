@@ -1,0 +1,1028 @@
+{
+  "seed": 42,
+  "task_type": "letter_position",
+  "filler_type": "dots",
+  "filler_lengths": [
+    0,
+    5,
+    10,
+    25,
+    50,
+    100
+  ],
+  "source": {
+    "repository": "https://github.com/kaleybrauer/filler-token-reasoning",
+    "revision": "4ba4c75d5d9f04248749ec46b8bed8661b746715",
+    "path": "data/capital_letter_position.json",
+    "selection": "first 50 examples in released order",
+    "prompt_note": "Released letter-position scaffold with the paper PDF exact-count filler suffix."
+  },
+  "sanity_prompts": [
+    {
+      "id": "capital",
+      "messages": [
+        {
+          "role": "user",
+          "content": "The capital of France is"
+        }
+      ]
+    },
+    {
+      "id": "arithmetic",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Complete with only the answer: 17 + 25 ="
+        }
+      ]
+    },
+    {
+      "id": "chinese",
+      "messages": [
+        {
+          "role": "user",
+          "content": "用一个词回答：中国的首都是"
+        }
+      ]
+    }
+  ],
+  "few_shot": [
+    {
+      "question": "What is the last letter of the name of the capital of the Czech Republic?",
+      "answer": "e",
+      "intermediate": "Prague"
+    },
+    {
+      "question": "What is the last letter of the name of the capital of India?",
+      "answer": "i",
+      "intermediate": "New Delhi"
+    },
+    {
+      "question": "What is the last letter of the name of the capital of South Africa?",
+      "answer": "a",
+      "intermediate": "Pretoria"
+    },
+    {
+      "question": "What is the last letter of the name of the capital of Honduras?",
+      "answer": "a",
+      "intermediate": "Tegucigalpa"
+    },
+    {
+      "question": "What is the last letter of the name of the capital of the Mexican state of Tamaulipas?",
+      "answer": "a",
+      "intermediate": "Ciudad Victoria"
+    }
+  ],
+  "examples": [
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Germany?",
+      "answer": "n",
+      "intermediate": "Berlin",
+      "id": "capital_letter_0000",
+      "expected_intermediates": {
+        "retrieved_name": "Berlin",
+        "answer_letter": "n"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Berlin"
+        ],
+        "answer_letter": [
+          "n"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of France?",
+      "answer": "s",
+      "intermediate": "Paris",
+      "id": "capital_letter_0001",
+      "expected_intermediates": {
+        "retrieved_name": "Paris",
+        "answer_letter": "s"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Paris"
+        ],
+        "answer_letter": [
+          "s"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Italy?",
+      "answer": "e",
+      "intermediate": "Rome",
+      "id": "capital_letter_0002",
+      "expected_intermediates": {
+        "retrieved_name": "Rome",
+        "answer_letter": "e"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Rome"
+        ],
+        "answer_letter": [
+          "e"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Spain?",
+      "answer": "d",
+      "intermediate": "Madrid",
+      "id": "capital_letter_0003",
+      "expected_intermediates": {
+        "retrieved_name": "Madrid",
+        "answer_letter": "d"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Madrid"
+        ],
+        "answer_letter": [
+          "d"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Portugal?",
+      "answer": "n",
+      "intermediate": "Lisbon",
+      "id": "capital_letter_0004",
+      "expected_intermediates": {
+        "retrieved_name": "Lisbon",
+        "answer_letter": "n"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Lisbon"
+        ],
+        "answer_letter": [
+          "n"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of the United Kingdom?",
+      "answer": "n",
+      "intermediate": "London",
+      "id": "capital_letter_0005",
+      "expected_intermediates": {
+        "retrieved_name": "London",
+        "answer_letter": "n"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "London"
+        ],
+        "answer_letter": [
+          "n"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Ireland?",
+      "answer": "n",
+      "intermediate": "Dublin",
+      "id": "capital_letter_0006",
+      "expected_intermediates": {
+        "retrieved_name": "Dublin",
+        "answer_letter": "n"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Dublin"
+        ],
+        "answer_letter": [
+          "n"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of the Netherlands?",
+      "answer": "m",
+      "intermediate": "Amsterdam",
+      "id": "capital_letter_0007",
+      "expected_intermediates": {
+        "retrieved_name": "Amsterdam",
+        "answer_letter": "m"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Amsterdam"
+        ],
+        "answer_letter": [
+          "m"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Belgium?",
+      "answer": "s",
+      "intermediate": "Brussels",
+      "id": "capital_letter_0008",
+      "expected_intermediates": {
+        "retrieved_name": "Brussels",
+        "answer_letter": "s"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Brussels"
+        ],
+        "answer_letter": [
+          "s"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Switzerland?",
+      "answer": "n",
+      "intermediate": "Bern",
+      "id": "capital_letter_0009",
+      "expected_intermediates": {
+        "retrieved_name": "Bern",
+        "answer_letter": "n"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Bern"
+        ],
+        "answer_letter": [
+          "n"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Austria?",
+      "answer": "a",
+      "intermediate": "Vienna",
+      "id": "capital_letter_0010",
+      "expected_intermediates": {
+        "retrieved_name": "Vienna",
+        "answer_letter": "a"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Vienna"
+        ],
+        "answer_letter": [
+          "a"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Poland?",
+      "answer": "w",
+      "intermediate": "Warsaw",
+      "id": "capital_letter_0011",
+      "expected_intermediates": {
+        "retrieved_name": "Warsaw",
+        "answer_letter": "w"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Warsaw"
+        ],
+        "answer_letter": [
+          "w"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Slovakia?",
+      "answer": "a",
+      "intermediate": "Bratislava",
+      "id": "capital_letter_0012",
+      "expected_intermediates": {
+        "retrieved_name": "Bratislava",
+        "answer_letter": "a"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Bratislava"
+        ],
+        "answer_letter": [
+          "a"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Hungary?",
+      "answer": "t",
+      "intermediate": "Budapest",
+      "id": "capital_letter_0013",
+      "expected_intermediates": {
+        "retrieved_name": "Budapest",
+        "answer_letter": "t"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Budapest"
+        ],
+        "answer_letter": [
+          "t"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Romania?",
+      "answer": "t",
+      "intermediate": "Bucharest",
+      "id": "capital_letter_0014",
+      "expected_intermediates": {
+        "retrieved_name": "Bucharest",
+        "answer_letter": "t"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Bucharest"
+        ],
+        "answer_letter": [
+          "t"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Bulgaria?",
+      "answer": "a",
+      "intermediate": "Sofia",
+      "id": "capital_letter_0015",
+      "expected_intermediates": {
+        "retrieved_name": "Sofia",
+        "answer_letter": "a"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Sofia"
+        ],
+        "answer_letter": [
+          "a"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Greece?",
+      "answer": "s",
+      "intermediate": "Athens",
+      "id": "capital_letter_0016",
+      "expected_intermediates": {
+        "retrieved_name": "Athens",
+        "answer_letter": "s"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Athens"
+        ],
+        "answer_letter": [
+          "s"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Serbia?",
+      "answer": "e",
+      "intermediate": "Belgrade",
+      "id": "capital_letter_0017",
+      "expected_intermediates": {
+        "retrieved_name": "Belgrade",
+        "answer_letter": "e"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Belgrade"
+        ],
+        "answer_letter": [
+          "e"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Croatia?",
+      "answer": "b",
+      "intermediate": "Zagreb",
+      "id": "capital_letter_0018",
+      "expected_intermediates": {
+        "retrieved_name": "Zagreb",
+        "answer_letter": "b"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Zagreb"
+        ],
+        "answer_letter": [
+          "b"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Slovenia?",
+      "answer": "a",
+      "intermediate": "Ljubljana",
+      "id": "capital_letter_0019",
+      "expected_intermediates": {
+        "retrieved_name": "Ljubljana",
+        "answer_letter": "a"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Ljubljana"
+        ],
+        "answer_letter": [
+          "a"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Bosnia and Herzegovina?",
+      "answer": "o",
+      "intermediate": "Sarajevo",
+      "id": "capital_letter_0020",
+      "expected_intermediates": {
+        "retrieved_name": "Sarajevo",
+        "answer_letter": "o"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Sarajevo"
+        ],
+        "answer_letter": [
+          "o"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Montenegro?",
+      "answer": "a",
+      "intermediate": "Podgorica",
+      "id": "capital_letter_0021",
+      "expected_intermediates": {
+        "retrieved_name": "Podgorica",
+        "answer_letter": "a"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Podgorica"
+        ],
+        "answer_letter": [
+          "a"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of North Macedonia?",
+      "answer": "e",
+      "intermediate": "Skopje",
+      "id": "capital_letter_0022",
+      "expected_intermediates": {
+        "retrieved_name": "Skopje",
+        "answer_letter": "e"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Skopje"
+        ],
+        "answer_letter": [
+          "e"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Albania?",
+      "answer": "a",
+      "intermediate": "Tirana",
+      "id": "capital_letter_0023",
+      "expected_intermediates": {
+        "retrieved_name": "Tirana",
+        "answer_letter": "a"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Tirana"
+        ],
+        "answer_letter": [
+          "a"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Kosovo?",
+      "answer": "a",
+      "intermediate": "Pristina",
+      "id": "capital_letter_0024",
+      "expected_intermediates": {
+        "retrieved_name": "Pristina",
+        "answer_letter": "a"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Pristina"
+        ],
+        "answer_letter": [
+          "a"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Denmark?",
+      "answer": "n",
+      "intermediate": "Copenhagen",
+      "id": "capital_letter_0025",
+      "expected_intermediates": {
+        "retrieved_name": "Copenhagen",
+        "answer_letter": "n"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Copenhagen"
+        ],
+        "answer_letter": [
+          "n"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Sweden?",
+      "answer": "m",
+      "intermediate": "Stockholm",
+      "id": "capital_letter_0026",
+      "expected_intermediates": {
+        "retrieved_name": "Stockholm",
+        "answer_letter": "m"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Stockholm"
+        ],
+        "answer_letter": [
+          "m"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Norway?",
+      "answer": "o",
+      "intermediate": "Oslo",
+      "id": "capital_letter_0027",
+      "expected_intermediates": {
+        "retrieved_name": "Oslo",
+        "answer_letter": "o"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Oslo"
+        ],
+        "answer_letter": [
+          "o"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Finland?",
+      "answer": "i",
+      "intermediate": "Helsinki",
+      "id": "capital_letter_0028",
+      "expected_intermediates": {
+        "retrieved_name": "Helsinki",
+        "answer_letter": "i"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Helsinki"
+        ],
+        "answer_letter": [
+          "i"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Iceland?",
+      "answer": "k",
+      "intermediate": "Reykjavik",
+      "id": "capital_letter_0029",
+      "expected_intermediates": {
+        "retrieved_name": "Reykjavik",
+        "answer_letter": "k"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Reykjavik"
+        ],
+        "answer_letter": [
+          "k"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Estonia?",
+      "answer": "n",
+      "intermediate": "Tallinn",
+      "id": "capital_letter_0030",
+      "expected_intermediates": {
+        "retrieved_name": "Tallinn",
+        "answer_letter": "n"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Tallinn"
+        ],
+        "answer_letter": [
+          "n"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Latvia?",
+      "answer": "a",
+      "intermediate": "Riga",
+      "id": "capital_letter_0031",
+      "expected_intermediates": {
+        "retrieved_name": "Riga",
+        "answer_letter": "a"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Riga"
+        ],
+        "answer_letter": [
+          "a"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Lithuania?",
+      "answer": "s",
+      "intermediate": "Vilnius",
+      "id": "capital_letter_0032",
+      "expected_intermediates": {
+        "retrieved_name": "Vilnius",
+        "answer_letter": "s"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Vilnius"
+        ],
+        "answer_letter": [
+          "s"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Belarus?",
+      "answer": "k",
+      "intermediate": "Minsk",
+      "id": "capital_letter_0033",
+      "expected_intermediates": {
+        "retrieved_name": "Minsk",
+        "answer_letter": "k"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Minsk"
+        ],
+        "answer_letter": [
+          "k"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Ukraine?",
+      "answer": "v",
+      "intermediate": "Kyiv",
+      "id": "capital_letter_0034",
+      "expected_intermediates": {
+        "retrieved_name": "Kyiv",
+        "answer_letter": "v"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Kyiv"
+        ],
+        "answer_letter": [
+          "v"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Moldova?",
+      "answer": "u",
+      "intermediate": "Chisinau",
+      "id": "capital_letter_0035",
+      "expected_intermediates": {
+        "retrieved_name": "Chisinau",
+        "answer_letter": "u"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Chisinau"
+        ],
+        "answer_letter": [
+          "u"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Russia?",
+      "answer": "w",
+      "intermediate": "Moscow",
+      "id": "capital_letter_0036",
+      "expected_intermediates": {
+        "retrieved_name": "Moscow",
+        "answer_letter": "w"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Moscow"
+        ],
+        "answer_letter": [
+          "w"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Malta?",
+      "answer": "a",
+      "intermediate": "Valletta",
+      "id": "capital_letter_0037",
+      "expected_intermediates": {
+        "retrieved_name": "Valletta",
+        "answer_letter": "a"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Valletta"
+        ],
+        "answer_letter": [
+          "a"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Cyprus?",
+      "answer": "a",
+      "intermediate": "Nicosia",
+      "id": "capital_letter_0038",
+      "expected_intermediates": {
+        "retrieved_name": "Nicosia",
+        "answer_letter": "a"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Nicosia"
+        ],
+        "answer_letter": [
+          "a"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Liechtenstein?",
+      "answer": "z",
+      "intermediate": "Vaduz",
+      "id": "capital_letter_0039",
+      "expected_intermediates": {
+        "retrieved_name": "Vaduz",
+        "answer_letter": "z"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Vaduz"
+        ],
+        "answer_letter": [
+          "z"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of China?",
+      "answer": "g",
+      "intermediate": "Beijing",
+      "id": "capital_letter_0040",
+      "expected_intermediates": {
+        "retrieved_name": "Beijing",
+        "answer_letter": "g"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Beijing"
+        ],
+        "answer_letter": [
+          "g"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Japan?",
+      "answer": "o",
+      "intermediate": "Tokyo",
+      "id": "capital_letter_0041",
+      "expected_intermediates": {
+        "retrieved_name": "Tokyo",
+        "answer_letter": "o"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Tokyo"
+        ],
+        "answer_letter": [
+          "o"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of South Korea?",
+      "answer": "l",
+      "intermediate": "Seoul",
+      "id": "capital_letter_0042",
+      "expected_intermediates": {
+        "retrieved_name": "Seoul",
+        "answer_letter": "l"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Seoul"
+        ],
+        "answer_letter": [
+          "l"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of North Korea?",
+      "answer": "g",
+      "intermediate": "Pyongyang",
+      "id": "capital_letter_0043",
+      "expected_intermediates": {
+        "retrieved_name": "Pyongyang",
+        "answer_letter": "g"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Pyongyang"
+        ],
+        "answer_letter": [
+          "g"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Mongolia?",
+      "answer": "r",
+      "intermediate": "Ulaanbaatar",
+      "id": "capital_letter_0044",
+      "expected_intermediates": {
+        "retrieved_name": "Ulaanbaatar",
+        "answer_letter": "r"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Ulaanbaatar"
+        ],
+        "answer_letter": [
+          "r"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Taiwan?",
+      "answer": "i",
+      "intermediate": "Taipei",
+      "id": "capital_letter_0045",
+      "expected_intermediates": {
+        "retrieved_name": "Taipei",
+        "answer_letter": "i"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Taipei"
+        ],
+        "answer_letter": [
+          "i"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Vietnam?",
+      "answer": "i",
+      "intermediate": "Hanoi",
+      "id": "capital_letter_0046",
+      "expected_intermediates": {
+        "retrieved_name": "Hanoi",
+        "answer_letter": "i"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Hanoi"
+        ],
+        "answer_letter": [
+          "i"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Thailand?",
+      "answer": "k",
+      "intermediate": "Bangkok",
+      "id": "capital_letter_0047",
+      "expected_intermediates": {
+        "retrieved_name": "Bangkok",
+        "answer_letter": "k"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Bangkok"
+        ],
+        "answer_letter": [
+          "k"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Cambodia?",
+      "answer": "h",
+      "intermediate": "Phnom Penh",
+      "id": "capital_letter_0048",
+      "expected_intermediates": {
+        "retrieved_name": "Phnom Penh",
+        "answer_letter": "h"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Phnom Penh"
+        ],
+        "answer_letter": [
+          "h"
+        ]
+      }
+    },
+    {
+      "type": "last_letter",
+      "question": "What is the last letter of the name of the capital of Laos?",
+      "answer": "e",
+      "intermediate": "Vientiane",
+      "id": "capital_letter_0049",
+      "expected_intermediates": {
+        "retrieved_name": "Vientiane",
+        "answer_letter": "e"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Vientiane"
+        ],
+        "answer_letter": [
+          "e"
+        ]
+      }
+    }
+  ]
+}

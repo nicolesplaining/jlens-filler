@@ -195,12 +195,14 @@ python3 scripts/build_artifacts.py \
 
 ## Recommendation
 
-The recommended T=1 through T=10 calibration has now been run on 100 matched,
-shortcut-controlled examples. Dots scored 5% versus 2% without dots, but the
-paired confidence interval includes zero and no T=10 example was correct. See
-[`results/repeated-squaring-dot-eval/evaluation-report.md`](../results/repeated-squaring-dot-eval/evaluation-report.md)
-and the selected-readout
-[`summary.md`](../results/repeated-squaring-lens-selected/summary.md).
+The paper-matched T=1 through T=10 calibration has now been run on 100 matched,
+shortcut-controlled examples. Dots scored 7% versus 2% without dots (exact
+McNemar p=0.062), and no T=10 example was correct. See the
+[`evaluation report`](../results/repeated-squaring-dot-eval-paper-prompt/evaluation-report.md)
+and the corrected-prompt
+[`T=4 viewer`](../results/repeated-squaring-lens-paper-prompt-correct/repeated_squaring_n407_x30_t4/viewer.html).
+This original T=10 extraction and the earlier 5%-versus-2% sweep used the legacy
+“some filler tokens” wording and are retained only as a prompt-wording ablation.
 
 The next useful step is prompt/task calibration rather than scale: test whether a
 format closer to the original benchmark can raise nontrivial T>=5 accuracy while

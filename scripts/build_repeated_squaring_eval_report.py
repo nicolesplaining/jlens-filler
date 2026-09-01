@@ -321,6 +321,21 @@ def write_markdown(
     by_t: dict[str, dict[str, Any]],
 ) -> None:
     interval = overall["paired_bootstrap_95_percent_intervals"]
+    paper_sentence = (
+        "After the question, there will be 10 filler tokens "
+        "(a sequence of dots) before you answer."
+    )
+    paper_matched = paper_sentence in rows[0]["dots"]["rendered_prompt"]
+    prompt_boundary = (
+        "The dots system instruction uses the Appendix A wording for k=10 "
+        f'exactly: “{paper_sentence}” Ten spaced periods appear after `Filler:` '
+        "in every demonstration and target."
+        if paper_matched
+        else
+        "This is a legacy prompt run: its system message says only “some filler "
+        "tokens” and adds an extra-space rationale. It predates the exact Appendix A "
+        "prompt match and should not be pooled with the paper-matched results."
+    )
     lines = [
         "# Do dot fillers improve repeated squaring?",
         "",
@@ -403,6 +418,8 @@ def write_markdown(
             "distinct and none equals x_0. The initial N=299, x=35 base was excluded in "
             "full because x_10=x_0 made its apparent T=10 success copy-solvable; it was "
             "replaced by N=667, x=41.",
+            "",
+            prompt_boundary,
             "",
             "The comparison follows the filler-paper-style convention already used in "
             "this repository: the filler condition mentions dots in the system message "

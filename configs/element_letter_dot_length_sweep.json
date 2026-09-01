@@ -1,0 +1,1138 @@
+{
+  "seed": 42,
+  "task_type": "letter_position",
+  "filler_type": "dots",
+  "filler_lengths": [
+    0,
+    5,
+    10,
+    25,
+    50,
+    100
+  ],
+  "source": {
+    "repository": "https://github.com/kaleybrauer/filler-token-reasoning",
+    "revision": "4ba4c75d5d9f04248749ec46b8bed8661b746715",
+    "path": "data/element_letter_positions.json",
+    "selection": "first 50 examples in released order",
+    "prompt_note": "Released letter-position scaffold with the paper PDF exact-count filler suffix."
+  },
+  "sanity_prompts": [
+    {
+      "id": "capital",
+      "messages": [
+        {
+          "role": "user",
+          "content": "The capital of France is"
+        }
+      ]
+    },
+    {
+      "id": "arithmetic",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Complete with only the answer: 17 + 25 ="
+        }
+      ]
+    },
+    {
+      "id": "chinese",
+      "messages": [
+        {
+          "role": "user",
+          "content": "用一个词回答：中国的首都是"
+        }
+      ]
+    }
+  ],
+  "few_shot": [
+    {
+      "element": "Beryllium",
+      "atomic_number": 4,
+      "position": "third",
+      "question": "What is the third letter of the chemical element with atomic number 4?",
+      "answer": "r"
+    },
+    {
+      "element": "Phosphorus",
+      "atomic_number": 15,
+      "position": "last",
+      "question": "What is the last letter of the chemical element with atomic number 15?",
+      "answer": "s"
+    },
+    {
+      "element": "Krypton",
+      "atomic_number": 36,
+      "position": "second",
+      "question": "What is the second letter of the chemical element with atomic number 36?",
+      "answer": "r"
+    },
+    {
+      "element": "Lead",
+      "atomic_number": 82,
+      "position": "third",
+      "question": "What is the third letter of the chemical element with atomic number 82?",
+      "answer": "a"
+    },
+    {
+      "element": "Americium",
+      "atomic_number": 95,
+      "position": "last",
+      "question": "What is the last letter of the chemical element with atomic number 95?",
+      "answer": "m"
+    }
+  ],
+  "examples": [
+    {
+      "type": "letter_position",
+      "question": "What is the third letter of the chemical element with atomic number 47?",
+      "answer": "l",
+      "element": "Silver",
+      "atomic_number": 47,
+      "position": "third",
+      "id": "element_letter_0000",
+      "expected_intermediates": {
+        "retrieved_name": "Silver",
+        "answer_letter": "l"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Silver"
+        ],
+        "answer_letter": [
+          "l"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the last letter of the chemical element with atomic number 81?",
+      "answer": "m",
+      "element": "Thallium",
+      "atomic_number": 81,
+      "position": "last",
+      "id": "element_letter_0001",
+      "expected_intermediates": {
+        "retrieved_name": "Thallium",
+        "answer_letter": "m"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Thallium"
+        ],
+        "answer_letter": [
+          "m"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the third letter of the chemical element with atomic number 69?",
+      "answer": "u",
+      "element": "Thulium",
+      "atomic_number": 69,
+      "position": "third",
+      "id": "element_letter_0002",
+      "expected_intermediates": {
+        "retrieved_name": "Thulium",
+        "answer_letter": "u"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Thulium"
+        ],
+        "answer_letter": [
+          "u"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the last letter of the chemical element with atomic number 44?",
+      "answer": "m",
+      "element": "Ruthenium",
+      "atomic_number": 44,
+      "position": "last",
+      "id": "element_letter_0003",
+      "expected_intermediates": {
+        "retrieved_name": "Ruthenium",
+        "answer_letter": "m"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Ruthenium"
+        ],
+        "answer_letter": [
+          "m"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the last letter of the chemical element with atomic number 32?",
+      "answer": "m",
+      "element": "Germanium",
+      "atomic_number": 32,
+      "position": "last",
+      "id": "element_letter_0004",
+      "expected_intermediates": {
+        "retrieved_name": "Germanium",
+        "answer_letter": "m"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Germanium"
+        ],
+        "answer_letter": [
+          "m"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the second letter of the chemical element with atomic number 44?",
+      "answer": "u",
+      "element": "Ruthenium",
+      "atomic_number": 44,
+      "position": "second",
+      "id": "element_letter_0005",
+      "expected_intermediates": {
+        "retrieved_name": "Ruthenium",
+        "answer_letter": "u"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Ruthenium"
+        ],
+        "answer_letter": [
+          "u"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the last letter of the chemical element with atomic number 79?",
+      "answer": "d",
+      "element": "Gold",
+      "atomic_number": 79,
+      "position": "last",
+      "id": "element_letter_0006",
+      "expected_intermediates": {
+        "retrieved_name": "Gold",
+        "answer_letter": "d"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Gold"
+        ],
+        "answer_letter": [
+          "d"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the second letter of the chemical element with atomic number 56?",
+      "answer": "a",
+      "element": "Barium",
+      "atomic_number": 56,
+      "position": "second",
+      "id": "element_letter_0007",
+      "expected_intermediates": {
+        "retrieved_name": "Barium",
+        "answer_letter": "a"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Barium"
+        ],
+        "answer_letter": [
+          "a"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the last letter of the chemical element with atomic number 24?",
+      "answer": "m",
+      "element": "Chromium",
+      "atomic_number": 24,
+      "position": "last",
+      "id": "element_letter_0008",
+      "expected_intermediates": {
+        "retrieved_name": "Chromium",
+        "answer_letter": "m"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Chromium"
+        ],
+        "answer_letter": [
+          "m"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the last letter of the chemical element with atomic number 31?",
+      "answer": "m",
+      "element": "Gallium",
+      "atomic_number": 31,
+      "position": "last",
+      "id": "element_letter_0009",
+      "expected_intermediates": {
+        "retrieved_name": "Gallium",
+        "answer_letter": "m"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Gallium"
+        ],
+        "answer_letter": [
+          "m"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the second letter of the chemical element with atomic number 89?",
+      "answer": "c",
+      "element": "Actinium",
+      "atomic_number": 89,
+      "position": "second",
+      "id": "element_letter_0010",
+      "expected_intermediates": {
+        "retrieved_name": "Actinium",
+        "answer_letter": "c"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Actinium"
+        ],
+        "answer_letter": [
+          "c"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the last letter of the chemical element with atomic number 89?",
+      "answer": "m",
+      "element": "Actinium",
+      "atomic_number": 89,
+      "position": "last",
+      "id": "element_letter_0011",
+      "expected_intermediates": {
+        "retrieved_name": "Actinium",
+        "answer_letter": "m"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Actinium"
+        ],
+        "answer_letter": [
+          "m"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the last letter of the chemical element with atomic number 90?",
+      "answer": "m",
+      "element": "Thorium",
+      "atomic_number": 90,
+      "position": "last",
+      "id": "element_letter_0012",
+      "expected_intermediates": {
+        "retrieved_name": "Thorium",
+        "answer_letter": "m"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Thorium"
+        ],
+        "answer_letter": [
+          "m"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the last letter of the chemical element with atomic number 71?",
+      "answer": "m",
+      "element": "Lutetium",
+      "atomic_number": 71,
+      "position": "last",
+      "id": "element_letter_0013",
+      "expected_intermediates": {
+        "retrieved_name": "Lutetium",
+        "answer_letter": "m"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Lutetium"
+        ],
+        "answer_letter": [
+          "m"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the last letter of the chemical element with atomic number 80?",
+      "answer": "y",
+      "element": "Mercury",
+      "atomic_number": 80,
+      "position": "last",
+      "id": "element_letter_0014",
+      "expected_intermediates": {
+        "retrieved_name": "Mercury",
+        "answer_letter": "y"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Mercury"
+        ],
+        "answer_letter": [
+          "y"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the second letter of the chemical element with atomic number 42?",
+      "answer": "o",
+      "element": "Molybdenum",
+      "atomic_number": 42,
+      "position": "second",
+      "id": "element_letter_0015",
+      "expected_intermediates": {
+        "retrieved_name": "Molybdenum",
+        "answer_letter": "o"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Molybdenum"
+        ],
+        "answer_letter": [
+          "o"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the third letter of the chemical element with atomic number 19?",
+      "answer": "t",
+      "element": "Potassium",
+      "atomic_number": 19,
+      "position": "third",
+      "id": "element_letter_0016",
+      "expected_intermediates": {
+        "retrieved_name": "Potassium",
+        "answer_letter": "t"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Potassium"
+        ],
+        "answer_letter": [
+          "t"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the last letter of the chemical element with atomic number 2?",
+      "answer": "m",
+      "element": "Helium",
+      "atomic_number": 2,
+      "position": "last",
+      "id": "element_letter_0017",
+      "expected_intermediates": {
+        "retrieved_name": "Helium",
+        "answer_letter": "m"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Helium"
+        ],
+        "answer_letter": [
+          "m"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the last letter of the chemical element with atomic number 19?",
+      "answer": "m",
+      "element": "Potassium",
+      "atomic_number": 19,
+      "position": "last",
+      "id": "element_letter_0018",
+      "expected_intermediates": {
+        "retrieved_name": "Potassium",
+        "answer_letter": "m"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Potassium"
+        ],
+        "answer_letter": [
+          "m"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the second letter of the chemical element with atomic number 91?",
+      "answer": "r",
+      "element": "Protactinium",
+      "atomic_number": 91,
+      "position": "second",
+      "id": "element_letter_0019",
+      "expected_intermediates": {
+        "retrieved_name": "Protactinium",
+        "answer_letter": "r"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Protactinium"
+        ],
+        "answer_letter": [
+          "r"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the last letter of the chemical element with atomic number 34?",
+      "answer": "m",
+      "element": "Selenium",
+      "atomic_number": 34,
+      "position": "last",
+      "id": "element_letter_0020",
+      "expected_intermediates": {
+        "retrieved_name": "Selenium",
+        "answer_letter": "m"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Selenium"
+        ],
+        "answer_letter": [
+          "m"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the last letter of the chemical element with atomic number 73?",
+      "answer": "m",
+      "element": "Tantalum",
+      "atomic_number": 73,
+      "position": "last",
+      "id": "element_letter_0021",
+      "expected_intermediates": {
+        "retrieved_name": "Tantalum",
+        "answer_letter": "m"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Tantalum"
+        ],
+        "answer_letter": [
+          "m"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the third letter of the chemical element with atomic number 52?",
+      "answer": "l",
+      "element": "Tellurium",
+      "atomic_number": 52,
+      "position": "third",
+      "id": "element_letter_0022",
+      "expected_intermediates": {
+        "retrieved_name": "Tellurium",
+        "answer_letter": "l"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Tellurium"
+        ],
+        "answer_letter": [
+          "l"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the third letter of the chemical element with atomic number 29?",
+      "answer": "p",
+      "element": "Copper",
+      "atomic_number": 29,
+      "position": "third",
+      "id": "element_letter_0023",
+      "expected_intermediates": {
+        "retrieved_name": "Copper",
+        "answer_letter": "p"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Copper"
+        ],
+        "answer_letter": [
+          "p"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the last letter of the chemical element with atomic number 66?",
+      "answer": "m",
+      "element": "Dysprosium",
+      "atomic_number": 66,
+      "position": "last",
+      "id": "element_letter_0024",
+      "expected_intermediates": {
+        "retrieved_name": "Dysprosium",
+        "answer_letter": "m"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Dysprosium"
+        ],
+        "answer_letter": [
+          "m"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the last letter of the chemical element with atomic number 65?",
+      "answer": "m",
+      "element": "Terbium",
+      "atomic_number": 65,
+      "position": "last",
+      "id": "element_letter_0025",
+      "expected_intermediates": {
+        "retrieved_name": "Terbium",
+        "answer_letter": "m"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Terbium"
+        ],
+        "answer_letter": [
+          "m"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the last letter of the chemical element with atomic number 100?",
+      "answer": "m",
+      "element": "Fermium",
+      "atomic_number": 100,
+      "position": "last",
+      "id": "element_letter_0026",
+      "expected_intermediates": {
+        "retrieved_name": "Fermium",
+        "answer_letter": "m"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Fermium"
+        ],
+        "answer_letter": [
+          "m"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the third letter of the chemical element with atomic number 48?",
+      "answer": "d",
+      "element": "Cadmium",
+      "atomic_number": 48,
+      "position": "third",
+      "id": "element_letter_0027",
+      "expected_intermediates": {
+        "retrieved_name": "Cadmium",
+        "answer_letter": "d"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Cadmium"
+        ],
+        "answer_letter": [
+          "d"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the second letter of the chemical element with atomic number 88?",
+      "answer": "a",
+      "element": "Radium",
+      "atomic_number": 88,
+      "position": "second",
+      "id": "element_letter_0028",
+      "expected_intermediates": {
+        "retrieved_name": "Radium",
+        "answer_letter": "a"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Radium"
+        ],
+        "answer_letter": [
+          "a"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the second letter of the chemical element with atomic number 48?",
+      "answer": "a",
+      "element": "Cadmium",
+      "atomic_number": 48,
+      "position": "second",
+      "id": "element_letter_0029",
+      "expected_intermediates": {
+        "retrieved_name": "Cadmium",
+        "answer_letter": "a"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Cadmium"
+        ],
+        "answer_letter": [
+          "a"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the second letter of the chemical element with atomic number 1?",
+      "answer": "y",
+      "element": "Hydrogen",
+      "atomic_number": 1,
+      "position": "second",
+      "id": "element_letter_0030",
+      "expected_intermediates": {
+        "retrieved_name": "Hydrogen",
+        "answer_letter": "y"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Hydrogen"
+        ],
+        "answer_letter": [
+          "y"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the second letter of the chemical element with atomic number 45?",
+      "answer": "h",
+      "element": "Rhodium",
+      "atomic_number": 45,
+      "position": "second",
+      "id": "element_letter_0031",
+      "expected_intermediates": {
+        "retrieved_name": "Rhodium",
+        "answer_letter": "h"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Rhodium"
+        ],
+        "answer_letter": [
+          "h"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the second letter of the chemical element with atomic number 93?",
+      "answer": "e",
+      "element": "Neptunium",
+      "atomic_number": 93,
+      "position": "second",
+      "id": "element_letter_0032",
+      "expected_intermediates": {
+        "retrieved_name": "Neptunium",
+        "answer_letter": "e"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Neptunium"
+        ],
+        "answer_letter": [
+          "e"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the second letter of the chemical element with atomic number 31?",
+      "answer": "a",
+      "element": "Gallium",
+      "atomic_number": 31,
+      "position": "second",
+      "id": "element_letter_0033",
+      "expected_intermediates": {
+        "retrieved_name": "Gallium",
+        "answer_letter": "a"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Gallium"
+        ],
+        "answer_letter": [
+          "a"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the third letter of the chemical element with atomic number 71?",
+      "answer": "t",
+      "element": "Lutetium",
+      "atomic_number": 71,
+      "position": "third",
+      "id": "element_letter_0034",
+      "expected_intermediates": {
+        "retrieved_name": "Lutetium",
+        "answer_letter": "t"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Lutetium"
+        ],
+        "answer_letter": [
+          "t"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the second letter of the chemical element with atomic number 14?",
+      "answer": "i",
+      "element": "Silicon",
+      "atomic_number": 14,
+      "position": "second",
+      "id": "element_letter_0035",
+      "expected_intermediates": {
+        "retrieved_name": "Silicon",
+        "answer_letter": "i"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Silicon"
+        ],
+        "answer_letter": [
+          "i"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the second letter of the chemical element with atomic number 9?",
+      "answer": "l",
+      "element": "Fluorine",
+      "atomic_number": 9,
+      "position": "second",
+      "id": "element_letter_0036",
+      "expected_intermediates": {
+        "retrieved_name": "Fluorine",
+        "answer_letter": "l"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Fluorine"
+        ],
+        "answer_letter": [
+          "l"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the second letter of the chemical element with atomic number 30?",
+      "answer": "i",
+      "element": "Zinc",
+      "atomic_number": 30,
+      "position": "second",
+      "id": "element_letter_0037",
+      "expected_intermediates": {
+        "retrieved_name": "Zinc",
+        "answer_letter": "i"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Zinc"
+        ],
+        "answer_letter": [
+          "i"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the last letter of the chemical element with atomic number 91?",
+      "answer": "m",
+      "element": "Protactinium",
+      "atomic_number": 91,
+      "position": "last",
+      "id": "element_letter_0038",
+      "expected_intermediates": {
+        "retrieved_name": "Protactinium",
+        "answer_letter": "m"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Protactinium"
+        ],
+        "answer_letter": [
+          "m"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the third letter of the chemical element with atomic number 3?",
+      "answer": "t",
+      "element": "Lithium",
+      "atomic_number": 3,
+      "position": "third",
+      "id": "element_letter_0039",
+      "expected_intermediates": {
+        "retrieved_name": "Lithium",
+        "answer_letter": "t"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Lithium"
+        ],
+        "answer_letter": [
+          "t"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the third letter of the chemical element with atomic number 55?",
+      "answer": "s",
+      "element": "Cesium",
+      "atomic_number": 55,
+      "position": "third",
+      "id": "element_letter_0040",
+      "expected_intermediates": {
+        "retrieved_name": "Cesium",
+        "answer_letter": "s"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Cesium"
+        ],
+        "answer_letter": [
+          "s"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the last letter of the chemical element with atomic number 10?",
+      "answer": "n",
+      "element": "Neon",
+      "atomic_number": 10,
+      "position": "last",
+      "id": "element_letter_0041",
+      "expected_intermediates": {
+        "retrieved_name": "Neon",
+        "answer_letter": "n"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Neon"
+        ],
+        "answer_letter": [
+          "n"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the second letter of the chemical element with atomic number 99?",
+      "answer": "i",
+      "element": "Einsteinium",
+      "atomic_number": 99,
+      "position": "second",
+      "id": "element_letter_0042",
+      "expected_intermediates": {
+        "retrieved_name": "Einsteinium",
+        "answer_letter": "i"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Einsteinium"
+        ],
+        "answer_letter": [
+          "i"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the second letter of the chemical element with atomic number 66?",
+      "answer": "y",
+      "element": "Dysprosium",
+      "atomic_number": 66,
+      "position": "second",
+      "id": "element_letter_0043",
+      "expected_intermediates": {
+        "retrieved_name": "Dysprosium",
+        "answer_letter": "y"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Dysprosium"
+        ],
+        "answer_letter": [
+          "y"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the second letter of the chemical element with atomic number 37?",
+      "answer": "u",
+      "element": "Rubidium",
+      "atomic_number": 37,
+      "position": "second",
+      "id": "element_letter_0044",
+      "expected_intermediates": {
+        "retrieved_name": "Rubidium",
+        "answer_letter": "u"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Rubidium"
+        ],
+        "answer_letter": [
+          "u"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the third letter of the chemical element with atomic number 74?",
+      "answer": "n",
+      "element": "Tungsten",
+      "atomic_number": 74,
+      "position": "third",
+      "id": "element_letter_0045",
+      "expected_intermediates": {
+        "retrieved_name": "Tungsten",
+        "answer_letter": "n"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Tungsten"
+        ],
+        "answer_letter": [
+          "n"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the last letter of the chemical element with atomic number 60?",
+      "answer": "m",
+      "element": "Neodymium",
+      "atomic_number": 60,
+      "position": "last",
+      "id": "element_letter_0046",
+      "expected_intermediates": {
+        "retrieved_name": "Neodymium",
+        "answer_letter": "m"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Neodymium"
+        ],
+        "answer_letter": [
+          "m"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the third letter of the chemical element with atomic number 39?",
+      "answer": "t",
+      "element": "Yttrium",
+      "atomic_number": 39,
+      "position": "third",
+      "id": "element_letter_0047",
+      "expected_intermediates": {
+        "retrieved_name": "Yttrium",
+        "answer_letter": "t"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Yttrium"
+        ],
+        "answer_letter": [
+          "t"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the last letter of the chemical element with atomic number 88?",
+      "answer": "m",
+      "element": "Radium",
+      "atomic_number": 88,
+      "position": "last",
+      "id": "element_letter_0048",
+      "expected_intermediates": {
+        "retrieved_name": "Radium",
+        "answer_letter": "m"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Radium"
+        ],
+        "answer_letter": [
+          "m"
+        ]
+      }
+    },
+    {
+      "type": "letter_position",
+      "question": "What is the second letter of the chemical element with atomic number 13?",
+      "answer": "l",
+      "element": "Aluminum",
+      "atomic_number": 13,
+      "position": "second",
+      "id": "element_letter_0049",
+      "expected_intermediates": {
+        "retrieved_name": "Aluminum",
+        "answer_letter": "l"
+      },
+      "highlight_forms": {
+        "retrieved_name": [
+          "Aluminum"
+        ],
+        "answer_letter": [
+          "l"
+        ]
+      }
+    }
+  ]
+}
