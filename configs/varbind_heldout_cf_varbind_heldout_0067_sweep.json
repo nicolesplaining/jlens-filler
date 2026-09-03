@@ -1,0 +1,1405 @@
+{
+  "seed": 42,
+  "task_type": "variable_binding",
+  "filler_type": "dots",
+  "source": {
+    "repository": "https://github.com/kaleybrauer/filler-token-reasoning",
+    "revision": "4ba4c75d5d9f04248749ec46b8bed8661b746715",
+    "path": "data/chained_var_binding_easy_dataset.json",
+    "selection": "held-out released examples [50, 150); disjoint from the original first-50 exploration",
+    "probe_rationale": "Behavior-gate independent variable-binding templates before any representational or causal analysis."
+  },
+  "sanity_prompts": [
+    {
+      "id": "capital",
+      "messages": [
+        {
+          "role": "user",
+          "content": "The capital of France is"
+        }
+      ]
+    },
+    {
+      "id": "arithmetic",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Complete with only the answer: 17 + 25 ="
+        }
+      ]
+    },
+    {
+      "id": "chinese",
+      "messages": [
+        {
+          "role": "user",
+          "content": "\u7528\u4e00\u4e2a\u8bcd\u56de\u7b54\uff1a\u4e2d\u56fd\u7684\u9996\u90fd\u662f"
+        }
+      ]
+    }
+  ],
+  "few_shot": [
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "zab",
+          45
+        ],
+        [
+          "piy",
+          43
+        ],
+        [
+          "xoc",
+          "twice the number for zab plus 7"
+        ],
+        [
+          "lej",
+          "twice the number for zab plus 3"
+        ],
+        [
+          "kox",
+          45
+        ]
+      ],
+      "queried_term": "xoc",
+      "queried_value": 97,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 18,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xoc minus 18?",
+      "answer": 176
+    },
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "cem",
+          20
+        ],
+        [
+          "pij",
+          "twice the number for cem plus 20"
+        ],
+        [
+          "kes",
+          "twice the number for pij minus 30"
+        ],
+        [
+          "kaq",
+          "twice the number for cem minus 21"
+        ],
+        [
+          "ciq",
+          "twice the number for kaq plus 7"
+        ]
+      ],
+      "queried_term": "kaq",
+      "queried_value": 19,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 21,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for kaq plus 21?",
+      "answer": 59
+    },
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "gew",
+          78
+        ],
+        [
+          "xop",
+          "twice the number for gew plus 17"
+        ],
+        [
+          "doq",
+          "twice the number for gew minus 18"
+        ],
+        [
+          "ful",
+          "twice the number for gew plus 10"
+        ],
+        [
+          "biv",
+          "twice the number for ful plus 28"
+        ]
+      ],
+      "queried_term": "xop",
+      "queried_value": 173,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xop plus 5?",
+      "answer": 351
+    },
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "mec",
+          40
+        ],
+        [
+          "xad",
+          "twice the number for mec plus 25"
+        ],
+        [
+          "gow",
+          "twice the number for mec minus 17"
+        ],
+        [
+          "juj",
+          "twice the number for xad minus 22"
+        ],
+        [
+          "vof",
+          "twice the number for juj plus 3"
+        ]
+      ],
+      "queried_term": "xad",
+      "queried_value": 105,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 19,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for xad plus 19?",
+      "answer": 229
+    },
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "kac",
+          52
+        ],
+        [
+          "duk",
+          "twice the number for kac minus 7"
+        ],
+        [
+          "jaf",
+          "twice the number for duk minus 14"
+        ],
+        [
+          "cac",
+          "twice the number for jaf minus 26"
+        ],
+        [
+          "zub",
+          "twice the number for duk plus 6"
+        ]
+      ],
+      "queried_term": "duk",
+      "queried_value": 97,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 16,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for duk minus 16?",
+      "answer": 178
+    }
+  ],
+  "filler_lengths": [
+    0,
+    5,
+    10,
+    25,
+    50,
+    100
+  ],
+  "examples": [
+    {
+      "idx": 67,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ruw",
+          43
+        ],
+        [
+          "mik",
+          "twice the number for ruw plus 13"
+        ],
+        [
+          "los",
+          "twice the number for mik plus 27"
+        ],
+        [
+          "qot",
+          "twice the number for mik plus 21"
+        ],
+        [
+          "jez",
+          "twice the number for mik plus 16"
+        ]
+      ],
+      "queried_term": "mik",
+      "queried_value": 99,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for mik plus 5?",
+      "answer": 203,
+      "id": "varbind_heldout_0067_cf_0067_043_orig",
+      "expected_intermediates": {
+        "base_value": "43",
+        "first_product": "86",
+        "bound_value": "99",
+        "second_product": "198",
+        "answer": "203"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "43"
+        ],
+        "first_product": [
+          "86"
+        ],
+        "bound_value": [
+          "99"
+        ],
+        "second_product": [
+          "198"
+        ],
+        "answer": [
+          "203"
+        ]
+      }
+    },
+    {
+      "idx": 67,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ruw",
+          13
+        ],
+        [
+          "mik",
+          "twice the number for ruw plus 13"
+        ],
+        [
+          "los",
+          "twice the number for mik plus 27"
+        ],
+        [
+          "qot",
+          "twice the number for mik plus 21"
+        ],
+        [
+          "jez",
+          "twice the number for mik plus 16"
+        ]
+      ],
+      "queried_term": "mik",
+      "queried_value": 39,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for mik plus 5?",
+      "answer": 83,
+      "id": "varbind_heldout_0067_cf_ruw_013",
+      "expected_intermediates": {
+        "base_value": "13",
+        "first_product": "26",
+        "bound_value": "39",
+        "second_product": "78",
+        "answer": "83"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "13"
+        ],
+        "first_product": [
+          "26"
+        ],
+        "bound_value": [
+          "39"
+        ],
+        "second_product": [
+          "78"
+        ],
+        "answer": [
+          "83"
+        ]
+      },
+      "counterfactual_of": "varbind_heldout_0067",
+      "changed_literal": {
+        "name": "ruw",
+        "from": 43,
+        "to": 13
+      }
+    },
+    {
+      "idx": 67,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ruw",
+          23
+        ],
+        [
+          "mik",
+          "twice the number for ruw plus 13"
+        ],
+        [
+          "los",
+          "twice the number for mik plus 27"
+        ],
+        [
+          "qot",
+          "twice the number for mik plus 21"
+        ],
+        [
+          "jez",
+          "twice the number for mik plus 16"
+        ]
+      ],
+      "queried_term": "mik",
+      "queried_value": 59,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for mik plus 5?",
+      "answer": 123,
+      "id": "varbind_heldout_0067_cf_ruw_023",
+      "expected_intermediates": {
+        "base_value": "23",
+        "first_product": "46",
+        "bound_value": "59",
+        "second_product": "118",
+        "answer": "123"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "23"
+        ],
+        "first_product": [
+          "46"
+        ],
+        "bound_value": [
+          "59"
+        ],
+        "second_product": [
+          "118"
+        ],
+        "answer": [
+          "123"
+        ]
+      },
+      "counterfactual_of": "varbind_heldout_0067",
+      "changed_literal": {
+        "name": "ruw",
+        "from": 43,
+        "to": 23
+      }
+    },
+    {
+      "idx": 67,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ruw",
+          33
+        ],
+        [
+          "mik",
+          "twice the number for ruw plus 13"
+        ],
+        [
+          "los",
+          "twice the number for mik plus 27"
+        ],
+        [
+          "qot",
+          "twice the number for mik plus 21"
+        ],
+        [
+          "jez",
+          "twice the number for mik plus 16"
+        ]
+      ],
+      "queried_term": "mik",
+      "queried_value": 79,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for mik plus 5?",
+      "answer": 163,
+      "id": "varbind_heldout_0067_cf_ruw_033",
+      "expected_intermediates": {
+        "base_value": "33",
+        "first_product": "66",
+        "bound_value": "79",
+        "second_product": "158",
+        "answer": "163"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "33"
+        ],
+        "first_product": [
+          "66"
+        ],
+        "bound_value": [
+          "79"
+        ],
+        "second_product": [
+          "158"
+        ],
+        "answer": [
+          "163"
+        ]
+      },
+      "counterfactual_of": "varbind_heldout_0067",
+      "changed_literal": {
+        "name": "ruw",
+        "from": 43,
+        "to": 33
+      }
+    },
+    {
+      "idx": 67,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ruw",
+          40
+        ],
+        [
+          "mik",
+          "twice the number for ruw plus 13"
+        ],
+        [
+          "los",
+          "twice the number for mik plus 27"
+        ],
+        [
+          "qot",
+          "twice the number for mik plus 21"
+        ],
+        [
+          "jez",
+          "twice the number for mik plus 16"
+        ]
+      ],
+      "queried_term": "mik",
+      "queried_value": 93,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for mik plus 5?",
+      "answer": 191,
+      "id": "varbind_heldout_0067_cf_ruw_040",
+      "expected_intermediates": {
+        "base_value": "40",
+        "first_product": "80",
+        "bound_value": "93",
+        "second_product": "186",
+        "answer": "191"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "40"
+        ],
+        "first_product": [
+          "80"
+        ],
+        "bound_value": [
+          "93"
+        ],
+        "second_product": [
+          "186"
+        ],
+        "answer": [
+          "191"
+        ]
+      },
+      "counterfactual_of": "varbind_heldout_0067",
+      "changed_literal": {
+        "name": "ruw",
+        "from": 43,
+        "to": 40
+      }
+    },
+    {
+      "idx": 67,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ruw",
+          41
+        ],
+        [
+          "mik",
+          "twice the number for ruw plus 13"
+        ],
+        [
+          "los",
+          "twice the number for mik plus 27"
+        ],
+        [
+          "qot",
+          "twice the number for mik plus 21"
+        ],
+        [
+          "jez",
+          "twice the number for mik plus 16"
+        ]
+      ],
+      "queried_term": "mik",
+      "queried_value": 95,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for mik plus 5?",
+      "answer": 195,
+      "id": "varbind_heldout_0067_cf_ruw_041",
+      "expected_intermediates": {
+        "base_value": "41",
+        "first_product": "82",
+        "bound_value": "95",
+        "second_product": "190",
+        "answer": "195"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "41"
+        ],
+        "first_product": [
+          "82"
+        ],
+        "bound_value": [
+          "95"
+        ],
+        "second_product": [
+          "190"
+        ],
+        "answer": [
+          "195"
+        ]
+      },
+      "counterfactual_of": "varbind_heldout_0067",
+      "changed_literal": {
+        "name": "ruw",
+        "from": 43,
+        "to": 41
+      }
+    },
+    {
+      "idx": 67,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ruw",
+          42
+        ],
+        [
+          "mik",
+          "twice the number for ruw plus 13"
+        ],
+        [
+          "los",
+          "twice the number for mik plus 27"
+        ],
+        [
+          "qot",
+          "twice the number for mik plus 21"
+        ],
+        [
+          "jez",
+          "twice the number for mik plus 16"
+        ]
+      ],
+      "queried_term": "mik",
+      "queried_value": 97,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for mik plus 5?",
+      "answer": 199,
+      "id": "varbind_heldout_0067_cf_ruw_042",
+      "expected_intermediates": {
+        "base_value": "42",
+        "first_product": "84",
+        "bound_value": "97",
+        "second_product": "194",
+        "answer": "199"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "42"
+        ],
+        "first_product": [
+          "84"
+        ],
+        "bound_value": [
+          "97"
+        ],
+        "second_product": [
+          "194"
+        ],
+        "answer": [
+          "199"
+        ]
+      },
+      "counterfactual_of": "varbind_heldout_0067",
+      "changed_literal": {
+        "name": "ruw",
+        "from": 43,
+        "to": 42
+      }
+    },
+    {
+      "idx": 67,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ruw",
+          44
+        ],
+        [
+          "mik",
+          "twice the number for ruw plus 13"
+        ],
+        [
+          "los",
+          "twice the number for mik plus 27"
+        ],
+        [
+          "qot",
+          "twice the number for mik plus 21"
+        ],
+        [
+          "jez",
+          "twice the number for mik plus 16"
+        ]
+      ],
+      "queried_term": "mik",
+      "queried_value": 101,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for mik plus 5?",
+      "answer": 207,
+      "id": "varbind_heldout_0067_cf_ruw_044",
+      "expected_intermediates": {
+        "base_value": "44",
+        "first_product": "88",
+        "bound_value": "101",
+        "second_product": "202",
+        "answer": "207"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "44"
+        ],
+        "first_product": [
+          "88"
+        ],
+        "bound_value": [
+          "101"
+        ],
+        "second_product": [
+          "202"
+        ],
+        "answer": [
+          "207"
+        ]
+      },
+      "counterfactual_of": "varbind_heldout_0067",
+      "changed_literal": {
+        "name": "ruw",
+        "from": 43,
+        "to": 44
+      }
+    },
+    {
+      "idx": 67,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ruw",
+          45
+        ],
+        [
+          "mik",
+          "twice the number for ruw plus 13"
+        ],
+        [
+          "los",
+          "twice the number for mik plus 27"
+        ],
+        [
+          "qot",
+          "twice the number for mik plus 21"
+        ],
+        [
+          "jez",
+          "twice the number for mik plus 16"
+        ]
+      ],
+      "queried_term": "mik",
+      "queried_value": 103,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for mik plus 5?",
+      "answer": 211,
+      "id": "varbind_heldout_0067_cf_ruw_045",
+      "expected_intermediates": {
+        "base_value": "45",
+        "first_product": "90",
+        "bound_value": "103",
+        "second_product": "206",
+        "answer": "211"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "45"
+        ],
+        "first_product": [
+          "90"
+        ],
+        "bound_value": [
+          "103"
+        ],
+        "second_product": [
+          "206"
+        ],
+        "answer": [
+          "211"
+        ]
+      },
+      "counterfactual_of": "varbind_heldout_0067",
+      "changed_literal": {
+        "name": "ruw",
+        "from": 43,
+        "to": 45
+      }
+    },
+    {
+      "idx": 67,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ruw",
+          46
+        ],
+        [
+          "mik",
+          "twice the number for ruw plus 13"
+        ],
+        [
+          "los",
+          "twice the number for mik plus 27"
+        ],
+        [
+          "qot",
+          "twice the number for mik plus 21"
+        ],
+        [
+          "jez",
+          "twice the number for mik plus 16"
+        ]
+      ],
+      "queried_term": "mik",
+      "queried_value": 105,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for mik plus 5?",
+      "answer": 215,
+      "id": "varbind_heldout_0067_cf_ruw_046",
+      "expected_intermediates": {
+        "base_value": "46",
+        "first_product": "92",
+        "bound_value": "105",
+        "second_product": "210",
+        "answer": "215"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "46"
+        ],
+        "first_product": [
+          "92"
+        ],
+        "bound_value": [
+          "105"
+        ],
+        "second_product": [
+          "210"
+        ],
+        "answer": [
+          "215"
+        ]
+      },
+      "counterfactual_of": "varbind_heldout_0067",
+      "changed_literal": {
+        "name": "ruw",
+        "from": 43,
+        "to": 46
+      }
+    },
+    {
+      "idx": 67,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ruw",
+          47
+        ],
+        [
+          "mik",
+          "twice the number for ruw plus 13"
+        ],
+        [
+          "los",
+          "twice the number for mik plus 27"
+        ],
+        [
+          "qot",
+          "twice the number for mik plus 21"
+        ],
+        [
+          "jez",
+          "twice the number for mik plus 16"
+        ]
+      ],
+      "queried_term": "mik",
+      "queried_value": 107,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for mik plus 5?",
+      "answer": 219,
+      "id": "varbind_heldout_0067_cf_ruw_047",
+      "expected_intermediates": {
+        "base_value": "47",
+        "first_product": "94",
+        "bound_value": "107",
+        "second_product": "214",
+        "answer": "219"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "47"
+        ],
+        "first_product": [
+          "94"
+        ],
+        "bound_value": [
+          "107"
+        ],
+        "second_product": [
+          "214"
+        ],
+        "answer": [
+          "219"
+        ]
+      },
+      "counterfactual_of": "varbind_heldout_0067",
+      "changed_literal": {
+        "name": "ruw",
+        "from": 43,
+        "to": 47
+      }
+    },
+    {
+      "idx": 67,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ruw",
+          48
+        ],
+        [
+          "mik",
+          "twice the number for ruw plus 13"
+        ],
+        [
+          "los",
+          "twice the number for mik plus 27"
+        ],
+        [
+          "qot",
+          "twice the number for mik plus 21"
+        ],
+        [
+          "jez",
+          "twice the number for mik plus 16"
+        ]
+      ],
+      "queried_term": "mik",
+      "queried_value": 109,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for mik plus 5?",
+      "answer": 223,
+      "id": "varbind_heldout_0067_cf_ruw_048",
+      "expected_intermediates": {
+        "base_value": "48",
+        "first_product": "96",
+        "bound_value": "109",
+        "second_product": "218",
+        "answer": "223"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "48"
+        ],
+        "first_product": [
+          "96"
+        ],
+        "bound_value": [
+          "109"
+        ],
+        "second_product": [
+          "218"
+        ],
+        "answer": [
+          "223"
+        ]
+      },
+      "counterfactual_of": "varbind_heldout_0067",
+      "changed_literal": {
+        "name": "ruw",
+        "from": 43,
+        "to": 48
+      }
+    },
+    {
+      "idx": 67,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ruw",
+          49
+        ],
+        [
+          "mik",
+          "twice the number for ruw plus 13"
+        ],
+        [
+          "los",
+          "twice the number for mik plus 27"
+        ],
+        [
+          "qot",
+          "twice the number for mik plus 21"
+        ],
+        [
+          "jez",
+          "twice the number for mik plus 16"
+        ]
+      ],
+      "queried_term": "mik",
+      "queried_value": 111,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for mik plus 5?",
+      "answer": 227,
+      "id": "varbind_heldout_0067_cf_ruw_049",
+      "expected_intermediates": {
+        "base_value": "49",
+        "first_product": "98",
+        "bound_value": "111",
+        "second_product": "222",
+        "answer": "227"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "49"
+        ],
+        "first_product": [
+          "98"
+        ],
+        "bound_value": [
+          "111"
+        ],
+        "second_product": [
+          "222"
+        ],
+        "answer": [
+          "227"
+        ]
+      },
+      "counterfactual_of": "varbind_heldout_0067",
+      "changed_literal": {
+        "name": "ruw",
+        "from": 43,
+        "to": 49
+      }
+    },
+    {
+      "idx": 67,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ruw",
+          53
+        ],
+        [
+          "mik",
+          "twice the number for ruw plus 13"
+        ],
+        [
+          "los",
+          "twice the number for mik plus 27"
+        ],
+        [
+          "qot",
+          "twice the number for mik plus 21"
+        ],
+        [
+          "jez",
+          "twice the number for mik plus 16"
+        ]
+      ],
+      "queried_term": "mik",
+      "queried_value": 119,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for mik plus 5?",
+      "answer": 243,
+      "id": "varbind_heldout_0067_cf_ruw_053",
+      "expected_intermediates": {
+        "base_value": "53",
+        "first_product": "106",
+        "bound_value": "119",
+        "second_product": "238",
+        "answer": "243"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "53"
+        ],
+        "first_product": [
+          "106"
+        ],
+        "bound_value": [
+          "119"
+        ],
+        "second_product": [
+          "238"
+        ],
+        "answer": [
+          "243"
+        ]
+      },
+      "counterfactual_of": "varbind_heldout_0067",
+      "changed_literal": {
+        "name": "ruw",
+        "from": 43,
+        "to": 53
+      }
+    },
+    {
+      "idx": 67,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ruw",
+          63
+        ],
+        [
+          "mik",
+          "twice the number for ruw plus 13"
+        ],
+        [
+          "los",
+          "twice the number for mik plus 27"
+        ],
+        [
+          "qot",
+          "twice the number for mik plus 21"
+        ],
+        [
+          "jez",
+          "twice the number for mik plus 16"
+        ]
+      ],
+      "queried_term": "mik",
+      "queried_value": 139,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for mik plus 5?",
+      "answer": 283,
+      "id": "varbind_heldout_0067_cf_ruw_063",
+      "expected_intermediates": {
+        "base_value": "63",
+        "first_product": "126",
+        "bound_value": "139",
+        "second_product": "278",
+        "answer": "283"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "63"
+        ],
+        "first_product": [
+          "126"
+        ],
+        "bound_value": [
+          "139"
+        ],
+        "second_product": [
+          "278"
+        ],
+        "answer": [
+          "283"
+        ]
+      },
+      "counterfactual_of": "varbind_heldout_0067",
+      "changed_literal": {
+        "name": "ruw",
+        "from": 43,
+        "to": 63
+      }
+    },
+    {
+      "idx": 67,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ruw",
+          73
+        ],
+        [
+          "mik",
+          "twice the number for ruw plus 13"
+        ],
+        [
+          "los",
+          "twice the number for mik plus 27"
+        ],
+        [
+          "qot",
+          "twice the number for mik plus 21"
+        ],
+        [
+          "jez",
+          "twice the number for mik plus 16"
+        ]
+      ],
+      "queried_term": "mik",
+      "queried_value": 159,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for mik plus 5?",
+      "answer": 323,
+      "id": "varbind_heldout_0067_cf_ruw_073",
+      "expected_intermediates": {
+        "base_value": "73",
+        "first_product": "146",
+        "bound_value": "159",
+        "second_product": "318",
+        "answer": "323"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "73"
+        ],
+        "first_product": [
+          "146"
+        ],
+        "bound_value": [
+          "159"
+        ],
+        "second_product": [
+          "318"
+        ],
+        "answer": [
+          "323"
+        ]
+      },
+      "counterfactual_of": "varbind_heldout_0067",
+      "changed_literal": {
+        "name": "ruw",
+        "from": 43,
+        "to": 73
+      }
+    },
+    {
+      "idx": 67,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ruw",
+          83
+        ],
+        [
+          "mik",
+          "twice the number for ruw plus 13"
+        ],
+        [
+          "los",
+          "twice the number for mik plus 27"
+        ],
+        [
+          "qot",
+          "twice the number for mik plus 21"
+        ],
+        [
+          "jez",
+          "twice the number for mik plus 16"
+        ]
+      ],
+      "queried_term": "mik",
+      "queried_value": 179,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for mik plus 5?",
+      "answer": 363,
+      "id": "varbind_heldout_0067_cf_ruw_083",
+      "expected_intermediates": {
+        "base_value": "83",
+        "first_product": "166",
+        "bound_value": "179",
+        "second_product": "358",
+        "answer": "363"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "83"
+        ],
+        "first_product": [
+          "166"
+        ],
+        "bound_value": [
+          "179"
+        ],
+        "second_product": [
+          "358"
+        ],
+        "answer": [
+          "363"
+        ]
+      },
+      "counterfactual_of": "varbind_heldout_0067",
+      "changed_literal": {
+        "name": "ruw",
+        "from": 43,
+        "to": 83
+      }
+    },
+    {
+      "idx": 67,
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ruw",
+          93
+        ],
+        [
+          "mik",
+          "twice the number for ruw plus 13"
+        ],
+        [
+          "los",
+          "twice the number for mik plus 27"
+        ],
+        [
+          "qot",
+          "twice the number for mik plus 21"
+        ],
+        [
+          "jez",
+          "twice the number for mik plus 16"
+        ]
+      ],
+      "queried_term": "mik",
+      "queried_value": 199,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 1,
+      "question": "What is twice the number for mik plus 5?",
+      "answer": 403,
+      "id": "varbind_heldout_0067_cf_ruw_093",
+      "expected_intermediates": {
+        "base_value": "93",
+        "first_product": "186",
+        "bound_value": "199",
+        "second_product": "398",
+        "answer": "403"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "93"
+        ],
+        "first_product": [
+          "186"
+        ],
+        "bound_value": [
+          "199"
+        ],
+        "second_product": [
+          "398"
+        ],
+        "answer": [
+          "403"
+        ]
+      },
+      "counterfactual_of": "varbind_heldout_0067",
+      "changed_literal": {
+        "name": "ruw",
+        "from": 43,
+        "to": 93
+      }
+    }
+  ]
+}

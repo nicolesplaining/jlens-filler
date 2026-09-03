@@ -136,6 +136,38 @@ repeated squaring remains a harder serial-computation stress test.
 - Two-fact per-example table: [`results/two-fact-addition-dot-length-sweep-paper-prompt/examples.csv`](results/two-fact-addition-dot-length-sweep-paper-prompt/examples.csv)
 - Selected qualitative cases: [`results/two-fact-addition-dot-length-sweep-paper-prompt/selected-examples.json`](results/two-fact-addition-dot-length-sweep-paper-prompt/selected-examples.json)
 
+## Open models up to 35B: null result
+
+`scripts/extract_hf.py` ports the behavioral sweep to single-GPU Transformers
+checkpoints. On the released variable-binding items, ten open models from 4B to
+35B (Qwen3/3.5/3.6 dense and MoE, Llama-3.1-8B, Gemma-3-27B, OLMo-3.1-32B) score
+0–14% at every filler length with no placement-specific gain in accuracy or
+log-probability; on a new one-step
+variant where they sit at 50–85%, dots have no effect (200-item held-out
+replication on Qwen3.5-4B: every length within ±3 correct of baseline). No lens
+readouts were extracted because the behavior gate was not met.
+
+- PDF report (screen, training, causal tests, dot anatomy): [`reports/pdf/filler-tokens-open-models.pdf`](reports/pdf/filler-tokens-open-models.pdf) (source: `filler-tokens-open-models.tex`, figures under `results/report-figures/`)
+- Findings note: [`reports/small-open-model-null-result.md`](reports/small-open-model-null-result.md)
+
+The follow-up trains Qwen3.5-9B with LoRA to solve the task with dots present
+(`scripts/train_varbind_lora.py`, `scripts/build_varbind_sft_data.py`). Mixed-k,
+chain-length-2, dots-only, and k=0-only variants all learn the task as a direct
+computation: the dots-only model scores 40/50 with no dots at all. Logit-lens grids
+on held-out items (`scripts/extract_hf.py --phase filler --adapter`) and all-layer
+dot lesions (`scripts/patch_varbind_hf.py --lesion-all-dots --lesion-all-layers`)
+show the dot positions decode to the dot token, carry no stage-specific content
+beyond a faint late leak, and can be wiped at every block without changing the
+answer. The computation resolves at the answer position in the last three blocks.
+
+- Training records: `results/qwen3.5-9b/lora-{mixedk,c2-mixedk,dotsonly,k0only}/`, `results/qwen3.5-4b/lora-mixedk/`
+- Held-out lens grids and viewers: `results/qwen3.5-9b/lens-heldout-k50/<model>/<item>/viewer.html`
+- Dot-position anatomy (variance decomposition, probes, attention heatmaps, entropy): `results/qwen3.5-9b/dot-dump/analysis/`
+- Lesions and single-cell patch grids: `results/qwen3.5-9b/lora-*/lesion-all-layers/`, `results/qwen3.5-9b/patch-heldout-0067/`
+- One-step config generator: [`scripts/build_onestep_varbind_configs.py`](scripts/build_onestep_varbind_configs.py)
+- Screen driver: [`scripts/screen_models.sh`](scripts/screen_models.sh)
+- Result directories: `results/<model>/` for each of the ten models
+
 ## Remote environment used
 
 - 4 × NVIDIA H100 80 GB; observed extraction allocation about 42.7 GiB/GPU

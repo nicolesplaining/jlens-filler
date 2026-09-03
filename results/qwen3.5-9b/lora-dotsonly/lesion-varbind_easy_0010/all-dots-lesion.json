@@ -1,0 +1,259 @@
+{
+ "schema_version": 1,
+ "intervention": "all filler residuals at one layer replaced by their mean over filler positions (target prompt only)",
+ "model_id": "/home/ubuntu/cache/qwen3.5-9b",
+ "adapter": "results/qwen3.5-9b/lora-dotsonly/adapter-step500",
+ "target_id": "varbind_easy_0010",
+ "filler_length": 50,
+ "filler_token_indices": [
+  859,
+  860,
+  861,
+  862,
+  863,
+  864,
+  865,
+  866,
+  867,
+  868,
+  869,
+  870,
+  871,
+  872,
+  873,
+  874,
+  875,
+  876,
+  877,
+  878,
+  879,
+  880,
+  881,
+  882,
+  883,
+  884,
+  885,
+  886,
+  887,
+  888,
+  889,
+  890,
+  891,
+  892,
+  893,
+  894,
+  895,
+  896,
+  897,
+  898,
+  899,
+  900,
+  901,
+  902,
+  903,
+  904,
+  905,
+  906,
+  907,
+  908
+ ],
+ "unpatched_target": {
+  "sequence_log_probability": -0.13605853205081075,
+  "first_token_rank": 1,
+  "n_tokens": 3
+ },
+ "layers": [
+  {
+   "layer": 0,
+   "target_log_probability_change": 0.01175672875251621,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 1,
+   "target_log_probability_change": -0.12144674331648275,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 2,
+   "target_log_probability_change": -0.09492611995665357,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 3,
+   "target_log_probability_change": -0.09565813397057354,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 4,
+   "target_log_probability_change": -0.09505245159380138,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 5,
+   "target_log_probability_change": -0.09579744061920792,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 6,
+   "target_log_probability_change": -0.07264370424672961,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 7,
+   "target_log_probability_change": -0.09504604409448802,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 8,
+   "target_log_probability_change": -0.0953393098898232,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 9,
+   "target_log_probability_change": -0.07264631171710789,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 10,
+   "target_log_probability_change": -0.09595032595098019,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 11,
+   "target_log_probability_change": -0.07264370424672961,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 12,
+   "target_log_probability_change": -0.07264090050011873,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 13,
+   "target_log_probability_change": -0.12157037912402302,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 14,
+   "target_log_probability_change": -0.09579828998539597,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 15,
+   "target_log_probability_change": -0.09579805296380073,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 16,
+   "target_log_probability_change": -0.09595317265484482,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 17,
+   "target_log_probability_change": -0.07264698250219226,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 18,
+   "target_log_probability_change": -0.03261094004847109,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 19,
+   "target_log_probability_change": -0.015063648344948888,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 20,
+   "target_log_probability_change": -0.015066016698256135,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 21,
+   "target_log_probability_change": -0.014861058909446001,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 22,
+   "target_log_probability_change": -0.032613222720101476,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 23,
+   "target_log_probability_change": -0.03261261177249253,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 24,
+   "target_log_probability_change": -0.032412423286587,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 25,
+   "target_log_probability_change": -0.03241052897647023,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 26,
+   "target_log_probability_change": -0.03144984599202871,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 27,
+   "target_log_probability_change": -0.013897854834794998,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 28,
+   "target_log_probability_change": -0.03223674953915179,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 29,
+   "target_log_probability_change": 0.00033238634932786226,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 30,
+   "target_log_probability_change": 0.0001759999431669712,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  },
+  {
+   "layer": 31,
+   "target_log_probability_change": 0.0,
+   "target_first_token_rank": 1,
+   "top1_after_lesion": "3"
+  }
+ ]
+}

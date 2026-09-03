@@ -1,0 +1,443 @@
+{
+ "schema_version": 1,
+ "intervention": "all filler residuals replaced by their mean over filler positions (or zeros), at one layer at a time and at all layers simultaneously",
+ "model_id": "/home/ubuntu/cache/qwen3.5-9b",
+ "adapter": "results/qwen3.5-9b/lora-k0only/adapter-step500",
+ "filler_length": 50,
+ "layers": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  19,
+  20,
+  21,
+  22,
+  23,
+  24,
+  25,
+  26,
+  27,
+  28,
+  29,
+  30,
+  31
+ ],
+ "targets": [
+  {
+   "target_id": "varbind_easy_0001",
+   "answer": 116,
+   "unpatched": {
+    "sequence_log_probability": -1.704468496958043,
+    "first_token_rank": 1,
+    "n_tokens": 3,
+    "greedy": "120"
+   },
+   "per_layer_mean": [],
+   "all_layers": {
+    "mean": {
+     "delta_logp": -0.9950688768871032,
+     "first_token_rank": 1,
+     "greedy": "124",
+     "still_correct": false
+    },
+    "zero": {
+     "delta_logp": -0.6562443223065202,
+     "first_token_rank": 1,
+     "greedy": "124",
+     "still_correct": false
+    }
+   }
+  },
+  {
+   "target_id": "varbind_easy_0003",
+   "answer": 259,
+   "unpatched": {
+    "sequence_log_probability": -0.8689544312655642,
+    "first_token_rank": 1,
+    "n_tokens": 3,
+    "greedy": "263"
+   },
+   "per_layer_mean": [],
+   "all_layers": {
+    "mean": {
+     "delta_logp": 0.23810924962165814,
+     "first_token_rank": 1,
+     "greedy": "259",
+     "still_correct": true
+    },
+    "zero": {
+     "delta_logp": 0.4286472164100985,
+     "first_token_rank": 1,
+     "greedy": "259",
+     "still_correct": true
+    }
+   }
+  },
+  {
+   "target_id": "varbind_easy_0005",
+   "answer": 294,
+   "unpatched": {
+    "sequence_log_probability": -1.6206009376546717,
+    "first_token_rank": 1,
+    "n_tokens": 3,
+    "greedy": "290"
+   },
+   "per_layer_mean": [],
+   "all_layers": {
+    "mean": {
+     "delta_logp": 0.10790354046912398,
+     "first_token_rank": 1,
+     "greedy": "290",
+     "still_correct": false
+    },
+    "zero": {
+     "delta_logp": -0.274566233598307,
+     "first_token_rank": 1,
+     "greedy": "286",
+     "still_correct": false
+    }
+   }
+  },
+  {
+   "target_id": "varbind_easy_0006",
+   "answer": 288,
+   "unpatched": {
+    "sequence_log_probability": -0.9113859993012738,
+    "first_token_rank": 1,
+    "n_tokens": 3,
+    "greedy": "292"
+   },
+   "per_layer_mean": [],
+   "all_layers": {
+    "mean": {
+     "delta_logp": 0.18144776683766395,
+     "first_token_rank": 1,
+     "greedy": "288",
+     "still_correct": true
+    },
+    "zero": {
+     "delta_logp": -1.0353951419747318,
+     "first_token_rank": 1,
+     "greedy": "292",
+     "still_correct": false
+    }
+   }
+  },
+  {
+   "target_id": "varbind_easy_0014",
+   "answer": 212,
+   "unpatched": {
+    "sequence_log_probability": -4.088122337539971,
+    "first_token_rank": 1,
+    "n_tokens": 3,
+    "greedy": "208"
+   },
+   "per_layer_mean": [],
+   "all_layers": {
+    "mean": {
+     "delta_logp": -0.1015458997389942,
+     "first_token_rank": 1,
+     "greedy": "208",
+     "still_correct": false
+    },
+    "zero": {
+     "delta_logp": 0.4963669813096203,
+     "first_token_rank": 1,
+     "greedy": "208",
+     "still_correct": false
+    }
+   }
+  },
+  {
+   "target_id": "varbind_easy_0015",
+   "answer": 392,
+   "unpatched": {
+    "sequence_log_probability": -0.7583234087360324,
+    "first_token_rank": 1,
+    "n_tokens": 3,
+    "greedy": "396"
+   },
+   "per_layer_mean": [],
+   "all_layers": {
+    "mean": {
+     "delta_logp": 0.06429416588071035,
+     "first_token_rank": 1,
+     "greedy": "392",
+     "still_correct": true
+    },
+    "zero": {
+     "delta_logp": 0.12348834348085802,
+     "first_token_rank": 1,
+     "greedy": "392",
+     "still_correct": true
+    }
+   }
+  },
+  {
+   "target_id": "varbind_easy_0017",
+   "answer": 200,
+   "unpatched": {
+    "sequence_log_probability": -4.6423814170902915,
+    "first_token_rank": 2,
+    "n_tokens": 3,
+    "greedy": "196"
+   },
+   "per_layer_mean": [],
+   "all_layers": {
+    "mean": {
+     "delta_logp": 0.9843420148818041,
+     "first_token_rank": 2,
+     "greedy": "196",
+     "still_correct": false
+    },
+    "zero": {
+     "delta_logp": -0.7448920965343859,
+     "first_token_rank": 2,
+     "greedy": "196",
+     "still_correct": false
+    }
+   }
+  },
+  {
+   "target_id": "varbind_easy_0023",
+   "answer": 174,
+   "unpatched": {
+    "sequence_log_probability": -1.9307951349765062,
+    "first_token_rank": 1,
+    "n_tokens": 3,
+    "greedy": "178"
+   },
+   "per_layer_mean": [],
+   "all_layers": {
+    "mean": {
+     "delta_logp": -0.2342043351382017,
+     "first_token_rank": 1,
+     "greedy": "178",
+     "still_correct": false
+    },
+    "zero": {
+     "delta_logp": 0.047098668292193224,
+     "first_token_rank": 1,
+     "greedy": "178",
+     "still_correct": false
+    }
+   }
+  },
+  {
+   "target_id": "varbind_easy_0027",
+   "answer": 352,
+   "unpatched": {
+    "sequence_log_probability": -1.3475953601300148,
+    "first_token_rank": 1,
+    "n_tokens": 3,
+    "greedy": "348"
+   },
+   "per_layer_mean": [],
+   "all_layers": {
+    "mean": {
+     "delta_logp": -0.18888389319175758,
+     "first_token_rank": 1,
+     "greedy": "348",
+     "still_correct": false
+    },
+    "zero": {
+     "delta_logp": -0.4111077599225723,
+     "first_token_rank": 1,
+     "greedy": "348",
+     "still_correct": false
+    }
+   }
+  },
+  {
+   "target_id": "varbind_easy_0030",
+   "answer": 339,
+   "unpatched": {
+    "sequence_log_probability": -1.4129336378537047,
+    "first_token_rank": 1,
+    "n_tokens": 3,
+    "greedy": "343"
+   },
+   "per_layer_mean": [],
+   "all_layers": {
+    "mean": {
+     "delta_logp": 0.2673828122206032,
+     "first_token_rank": 1,
+     "greedy": "343",
+     "still_correct": false
+    },
+    "zero": {
+     "delta_logp": 1.0481213233434161,
+     "first_token_rank": 1,
+     "greedy": "339",
+     "still_correct": true
+    }
+   }
+  },
+  {
+   "target_id": "varbind_easy_0000",
+   "answer": 219,
+   "unpatched": {
+    "sequence_log_probability": -0.18079588003320168,
+    "first_token_rank": 1,
+    "n_tokens": 3,
+    "greedy": "219"
+   },
+   "per_layer_mean": [],
+   "all_layers": {
+    "mean": {
+     "delta_logp": 0.017551064493090962,
+     "first_token_rank": 1,
+     "greedy": "219",
+     "still_correct": true
+    },
+    "zero": {
+     "delta_logp": -2.5179782199888905,
+     "first_token_rank": 1,
+     "greedy": "215",
+     "still_correct": false
+    }
+   }
+  },
+  {
+   "target_id": "varbind_easy_0004",
+   "answer": 53,
+   "unpatched": {
+    "sequence_log_probability": -0.2888643662445247,
+    "first_token_rank": 1,
+    "n_tokens": 2,
+    "greedy": "53"
+   },
+   "per_layer_mean": [],
+   "all_layers": {
+    "mean": {
+     "delta_logp": -0.34607299976050854,
+     "first_token_rank": 1,
+     "greedy": "53",
+     "still_correct": true
+    },
+    "zero": {
+     "delta_logp": -0.6882473381701857,
+     "first_token_rank": 2,
+     "greedy": "49",
+     "still_correct": false
+    }
+   }
+  },
+  {
+   "target_id": "varbind_easy_0008",
+   "answer": 52,
+   "unpatched": {
+    "sequence_log_probability": -0.5257336208596826,
+    "first_token_rank": 1,
+    "n_tokens": 2,
+    "greedy": "52"
+   },
+   "per_layer_mean": [],
+   "all_layers": {
+    "mean": {
+     "delta_logp": 0.13514023087918758,
+     "first_token_rank": 1,
+     "greedy": "52",
+     "still_correct": true
+    },
+    "zero": {
+     "delta_logp": 0.38803298491984606,
+     "first_token_rank": 1,
+     "greedy": "52",
+     "still_correct": true
+    }
+   }
+  },
+  {
+   "target_id": "varbind_easy_0010",
+   "answer": 393,
+   "unpatched": {
+    "sequence_log_probability": -0.7012876441003755,
+    "first_token_rank": 1,
+    "n_tokens": 3,
+    "greedy": "389"
+   },
+   "per_layer_mean": [],
+   "all_layers": {
+    "mean": {
+     "delta_logp": -0.20499488158384338,
+     "first_token_rank": 1,
+     "greedy": "389",
+     "still_correct": false
+    },
+    "zero": {
+     "delta_logp": 0.5226679065963253,
+     "first_token_rank": 1,
+     "greedy": "393",
+     "still_correct": true
+    }
+   }
+  },
+  {
+   "target_id": "varbind_easy_0011",
+   "answer": 213,
+   "unpatched": {
+    "sequence_log_probability": -0.38762329039650467,
+    "first_token_rank": 1,
+    "n_tokens": 3,
+    "greedy": "213"
+   },
+   "per_layer_mean": [],
+   "all_layers": {
+    "mean": {
+     "delta_logp": 0.1613305124649287,
+     "first_token_rank": 1,
+     "greedy": "213",
+     "still_correct": true
+    },
+    "zero": {
+     "delta_logp": 0.31975301538000167,
+     "first_token_rank": 1,
+     "greedy": "213",
+     "still_correct": true
+    }
+   }
+  },
+  {
+   "target_id": "varbind_easy_0013",
+   "answer": 413,
+   "unpatched": {
+    "sequence_log_probability": -0.4121258472732734,
+    "first_token_rank": 1,
+    "n_tokens": 3,
+    "greedy": "413"
+   },
+   "per_layer_mean": [],
+   "all_layers": {
+    "mean": {
+     "delta_logp": -0.13283995787787717,
+     "first_token_rank": 1,
+     "greedy": "413",
+     "still_correct": true
+    },
+    "zero": {
+     "delta_logp": -0.10777719065663405,
+     "first_token_rank": 1,
+     "greedy": "413",
+     "still_correct": true
+    }
+   }
+  }
+ ]
+}

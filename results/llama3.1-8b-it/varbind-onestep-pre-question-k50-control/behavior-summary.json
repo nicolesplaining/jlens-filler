@@ -1,0 +1,53 @@
+{
+  "overall": {
+    "by_length": {
+      "0": {
+        "n": 50,
+        "correct": 26,
+        "accuracy": 0.52,
+        "mrr": 0.6288448013974329,
+        "recall_at_1": 0.52,
+        "recall_at_5": 0.8,
+        "recall_at_10": 0.86,
+        "recall_at_50": 1.0
+      },
+      "50": {
+        "n": 50,
+        "correct": 29,
+        "accuracy": 0.58,
+        "mrr": 0.6725400689781494,
+        "recall_at_1": 0.58,
+        "recall_at_5": 0.82,
+        "recall_at_10": 0.88,
+        "recall_at_50": 1.0
+      }
+    },
+    "paired_vs_k0": {
+      "50": {
+        "helped_count": 3,
+        "hurt_count": 0,
+        "net_correct": 3,
+        "exact_mcnemar_p": 0.25,
+        "helped_ids": [
+          "varbind_onestep_0000",
+          "varbind_onestep_0011",
+          "varbind_onestep_0012"
+        ],
+        "hurt_ids": [],
+        "mean_log10_rank_gain": 0.05001715485606962,
+        "largest_rank_gain_ids": [
+          "varbind_onestep_0011",
+          "varbind_onestep_0032",
+          "varbind_onestep_0000",
+          "varbind_onestep_0003",
+          "varbind_onestep_0037",
+          "varbind_onestep_0012",
+          "varbind_onestep_0026",
+          "varbind_onestep_0013",
+          "varbind_onestep_0038",
+          "varbind_onestep_0033"
+        ]
+      }
+    }
+  }
+}

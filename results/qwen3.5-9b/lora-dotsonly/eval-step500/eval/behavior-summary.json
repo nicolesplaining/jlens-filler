@@ -1,0 +1,197 @@
+{
+ "by_length": {
+  "0": {
+   "n": 50,
+   "correct": 40,
+   "accuracy": 0.8,
+   "mrr": 0.97,
+   "recall_at_1": 0.94,
+   "recall_at_5": 1.0,
+   "recall_at_10": 1.0,
+   "recall_at_50": 1.0
+  },
+  "5": {
+   "n": 50,
+   "correct": 42,
+   "accuracy": 0.84,
+   "mrr": 0.99,
+   "recall_at_1": 0.98,
+   "recall_at_5": 1.0,
+   "recall_at_10": 1.0,
+   "recall_at_50": 1.0
+  },
+  "10": {
+   "n": 50,
+   "correct": 39,
+   "accuracy": 0.78,
+   "mrr": 0.99,
+   "recall_at_1": 0.98,
+   "recall_at_5": 1.0,
+   "recall_at_10": 1.0,
+   "recall_at_50": 1.0
+  },
+  "25": {
+   "n": 50,
+   "correct": 41,
+   "accuracy": 0.82,
+   "mrr": 0.98,
+   "recall_at_1": 0.96,
+   "recall_at_5": 1.0,
+   "recall_at_10": 1.0,
+   "recall_at_50": 1.0
+  },
+  "50": {
+   "n": 50,
+   "correct": 40,
+   "accuracy": 0.8,
+   "mrr": 0.98,
+   "recall_at_1": 0.96,
+   "recall_at_5": 1.0,
+   "recall_at_10": 1.0,
+   "recall_at_50": 1.0
+  },
+  "100": {
+   "n": 50,
+   "correct": 40,
+   "accuracy": 0.8,
+   "mrr": 0.97,
+   "recall_at_1": 0.94,
+   "recall_at_5": 1.0,
+   "recall_at_10": 1.0,
+   "recall_at_50": 1.0
+  }
+ },
+ "paired_vs_k0": {
+  "5": {
+   "helped_count": 3,
+   "hurt_count": 1,
+   "net_correct": 2,
+   "exact_mcnemar_p": 0.625,
+   "helped_ids": [
+    "varbind_easy_0020",
+    "varbind_easy_0029",
+    "varbind_easy_0039"
+   ],
+   "hurt_ids": [
+    "varbind_easy_0003"
+   ],
+   "mean_log10_rank_gain": 0.012041199826559247,
+   "largest_rank_gain_ids": [
+    "varbind_easy_0029",
+    "varbind_easy_0020",
+    "varbind_easy_0049",
+    "varbind_easy_0048",
+    "varbind_easy_0047",
+    "varbind_easy_0046",
+    "varbind_easy_0045",
+    "varbind_easy_0044",
+    "varbind_easy_0043",
+    "varbind_easy_0042"
+   ]
+  },
+  "10": {
+   "helped_count": 2,
+   "hurt_count": 3,
+   "net_correct": -1,
+   "exact_mcnemar_p": 1.0,
+   "helped_ids": [
+    "varbind_easy_0020",
+    "varbind_easy_0029"
+   ],
+   "hurt_ids": [
+    "varbind_easy_0003",
+    "varbind_easy_0018",
+    "varbind_easy_0048"
+   ],
+   "mean_log10_rank_gain": 0.012041199826559247,
+   "largest_rank_gain_ids": [
+    "varbind_easy_0029",
+    "varbind_easy_0020",
+    "varbind_easy_0049",
+    "varbind_easy_0048",
+    "varbind_easy_0047",
+    "varbind_easy_0046",
+    "varbind_easy_0045",
+    "varbind_easy_0044",
+    "varbind_easy_0043",
+    "varbind_easy_0042"
+   ]
+  },
+  "25": {
+   "helped_count": 2,
+   "hurt_count": 1,
+   "net_correct": 1,
+   "exact_mcnemar_p": 1.0,
+   "helped_ids": [
+    "varbind_easy_0020",
+    "varbind_easy_0039"
+   ],
+   "hurt_ids": [
+    "varbind_easy_0018"
+   ],
+   "mean_log10_rank_gain": 0.0060205999132796235,
+   "largest_rank_gain_ids": [
+    "varbind_easy_0020",
+    "varbind_easy_0049",
+    "varbind_easy_0048",
+    "varbind_easy_0047",
+    "varbind_easy_0046",
+    "varbind_easy_0045",
+    "varbind_easy_0044",
+    "varbind_easy_0043",
+    "varbind_easy_0042",
+    "varbind_easy_0041"
+   ]
+  },
+  "50": {
+   "helped_count": 1,
+   "hurt_count": 1,
+   "net_correct": 0,
+   "exact_mcnemar_p": 1.0,
+   "helped_ids": [
+    "varbind_easy_0020"
+   ],
+   "hurt_ids": [
+    "varbind_easy_0018"
+   ],
+   "mean_log10_rank_gain": 0.0060205999132796235,
+   "largest_rank_gain_ids": [
+    "varbind_easy_0020",
+    "varbind_easy_0049",
+    "varbind_easy_0048",
+    "varbind_easy_0047",
+    "varbind_easy_0046",
+    "varbind_easy_0045",
+    "varbind_easy_0044",
+    "varbind_easy_0043",
+    "varbind_easy_0042",
+    "varbind_easy_0041"
+   ]
+  },
+  "100": {
+   "helped_count": 1,
+   "hurt_count": 1,
+   "net_correct": 0,
+   "exact_mcnemar_p": 1.0,
+   "helped_ids": [
+    "varbind_easy_0039"
+   ],
+   "hurt_ids": [
+    "varbind_easy_0018"
+   ],
+   "mean_log10_rank_gain": 0.0,
+   "largest_rank_gain_ids": [
+    "varbind_easy_0049",
+    "varbind_easy_0048",
+    "varbind_easy_0047",
+    "varbind_easy_0046",
+    "varbind_easy_0045",
+    "varbind_easy_0044",
+    "varbind_easy_0043",
+    "varbind_easy_0042",
+    "varbind_easy_0041",
+    "varbind_easy_0040"
+   ]
+  }
+ }
+}

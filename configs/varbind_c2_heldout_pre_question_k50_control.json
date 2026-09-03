@@ -1,0 +1,7077 @@
+{
+  "seed": 42,
+  "task_type": "variable_binding_pre_filler",
+  "filler_type": "dots",
+  "filler_lengths": [
+    0,
+    50
+  ],
+  "sanity_prompts": [
+    {
+      "id": "capital",
+      "messages": [
+        {
+          "role": "user",
+          "content": "The capital of France is"
+        }
+      ]
+    },
+    {
+      "id": "arithmetic",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Complete with only the answer: 17 + 25 ="
+        }
+      ]
+    },
+    {
+      "id": "chinese",
+      "messages": [
+        {
+          "role": "user",
+          "content": "\u7528\u4e00\u4e2a\u8bcd\u56de\u7b54\uff1a\u4e2d\u56fd\u7684\u9996\u90fd\u662f"
+        }
+      ]
+    }
+  ],
+  "source": {
+    "kind": "synthetic chain_len=2 variable binding",
+    "seed": 777,
+    "selection": "100 held-out items and 5 disjoint few-shots, disjoint from the seed-20260904 training set; placement control with identical dots before the definitions/question"
+  },
+  "few_shot": [
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ool",
+          98
+        ],
+        [
+          "sik",
+          "twice the number for ool minus 29"
+        ],
+        [
+          "ryb",
+          "twice the number for sik minus 27"
+        ],
+        [
+          "ovt",
+          46
+        ],
+        [
+          "rmt",
+          "twice the number for sik plus 21"
+        ]
+      ],
+      "queried_term": "rmt",
+      "queried_value": 355,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 17,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for rmt plus 17?",
+      "answer": 727,
+      "expected_intermediates": {
+        "base_value": "98",
+        "hop1_product": "196",
+        "hop1_value": "167",
+        "hop2_product": "334",
+        "hop2_value": "355",
+        "final_product": "710",
+        "answer": "727"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "98"
+        ],
+        "hop1_product": [
+          "196"
+        ],
+        "hop1_value": [
+          "167"
+        ],
+        "hop2_product": [
+          "334"
+        ],
+        "hop2_value": [
+          "355"
+        ],
+        "final_product": [
+          "710"
+        ],
+        "answer": [
+          "727"
+        ]
+      }
+    },
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "szb",
+          31
+        ],
+        [
+          "lte",
+          "twice the number for szb minus 15"
+        ],
+        [
+          "sqc",
+          37
+        ],
+        [
+          "rrv",
+          94
+        ],
+        [
+          "iyw",
+          "twice the number for lte plus 13"
+        ]
+      ],
+      "queried_term": "iyw",
+      "queried_value": 107,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 24,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for iyw plus 24?",
+      "answer": 238,
+      "expected_intermediates": {
+        "base_value": "31",
+        "hop1_product": "62",
+        "hop1_value": "47",
+        "hop2_product": "94",
+        "hop2_value": "107",
+        "final_product": "214",
+        "answer": "238"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "31"
+        ],
+        "hop1_product": [
+          "62"
+        ],
+        "hop1_value": [
+          "47"
+        ],
+        "hop2_product": [
+          "94"
+        ],
+        "hop2_value": [
+          "107"
+        ],
+        "final_product": [
+          "214"
+        ],
+        "answer": [
+          "238"
+        ]
+      }
+    },
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "mrk",
+          99
+        ],
+        [
+          "jgd",
+          25
+        ],
+        [
+          "fdr",
+          "twice the number for jgd plus 13"
+        ],
+        [
+          "sba",
+          93
+        ],
+        [
+          "psi",
+          "twice the number for fdr minus 14"
+        ]
+      ],
+      "queried_term": "psi",
+      "queried_value": 112,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 11,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for psi minus 11?",
+      "answer": 213,
+      "expected_intermediates": {
+        "base_value": "25",
+        "hop1_product": "50",
+        "hop1_value": "63",
+        "hop2_product": "126",
+        "hop2_value": "112",
+        "final_product": "224",
+        "answer": "213"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "25"
+        ],
+        "hop1_product": [
+          "50"
+        ],
+        "hop1_value": [
+          "63"
+        ],
+        "hop2_product": [
+          "126"
+        ],
+        "hop2_value": [
+          "112"
+        ],
+        "final_product": [
+          "224"
+        ],
+        "answer": [
+          "213"
+        ]
+      }
+    },
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "tqb",
+          11
+        ],
+        [
+          "tzb",
+          45
+        ],
+        [
+          "ljs",
+          72
+        ],
+        [
+          "qwn",
+          "twice the number for tzb minus 17"
+        ],
+        [
+          "evj",
+          "twice the number for qwn minus 3"
+        ]
+      ],
+      "queried_term": "evj",
+      "queried_value": 143,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 10,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for evj minus 10?",
+      "answer": 276,
+      "expected_intermediates": {
+        "base_value": "45",
+        "hop1_product": "90",
+        "hop1_value": "73",
+        "hop2_product": "146",
+        "hop2_value": "143",
+        "final_product": "286",
+        "answer": "276"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "45"
+        ],
+        "hop1_product": [
+          "90"
+        ],
+        "hop1_value": [
+          "73"
+        ],
+        "hop2_product": [
+          "146"
+        ],
+        "hop2_value": [
+          "143"
+        ],
+        "final_product": [
+          "286"
+        ],
+        "answer": [
+          "276"
+        ]
+      }
+    },
+    {
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "rso",
+          92
+        ],
+        [
+          "sfc",
+          "twice the number for rso minus 20"
+        ],
+        [
+          "oyc",
+          69
+        ],
+        [
+          "kdm",
+          "twice the number for sfc minus 18"
+        ],
+        [
+          "vtx",
+          "twice the number for sfc minus 30"
+        ]
+      ],
+      "queried_term": "kdm",
+      "queried_value": 310,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 29,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for kdm plus 29?",
+      "answer": 649,
+      "expected_intermediates": {
+        "base_value": "92",
+        "hop1_product": "184",
+        "hop1_value": "164",
+        "hop2_product": "328",
+        "hop2_value": "310",
+        "final_product": "620",
+        "answer": "649"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "92"
+        ],
+        "hop1_product": [
+          "184"
+        ],
+        "hop1_value": [
+          "164"
+        ],
+        "hop2_product": [
+          "328"
+        ],
+        "hop2_value": [
+          "310"
+        ],
+        "final_product": [
+          "620"
+        ],
+        "answer": [
+          "649"
+        ]
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "varbind_c2_heldout_0000",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "pxl",
+          26
+        ],
+        [
+          "ziv",
+          88
+        ],
+        [
+          "zbu",
+          18
+        ],
+        [
+          "npi",
+          "twice the number for pxl plus 30"
+        ],
+        [
+          "ckb",
+          "twice the number for npi plus 10"
+        ]
+      ],
+      "queried_term": "ckb",
+      "queried_value": 174,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 16,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for ckb plus 16?",
+      "answer": 364,
+      "expected_intermediates": {
+        "base_value": "26",
+        "hop1_product": "52",
+        "hop1_value": "82",
+        "hop2_product": "164",
+        "hop2_value": "174",
+        "final_product": "348",
+        "answer": "364"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "26"
+        ],
+        "hop1_product": [
+          "52"
+        ],
+        "hop1_value": [
+          "82"
+        ],
+        "hop2_product": [
+          "164"
+        ],
+        "hop2_value": [
+          "174"
+        ],
+        "final_product": [
+          "348"
+        ],
+        "answer": [
+          "364"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0001",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "zkg",
+          70
+        ],
+        [
+          "yoh",
+          59
+        ],
+        [
+          "ysm",
+          47
+        ],
+        [
+          "xvu",
+          "twice the number for yoh plus 7"
+        ],
+        [
+          "gbi",
+          "twice the number for xvu plus 21"
+        ]
+      ],
+      "queried_term": "gbi",
+      "queried_value": 271,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 13,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for gbi minus 13?",
+      "answer": 529,
+      "expected_intermediates": {
+        "base_value": "59",
+        "hop1_product": "118",
+        "hop1_value": "125",
+        "hop2_product": "250",
+        "hop2_value": "271",
+        "final_product": "542",
+        "answer": "529"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "59"
+        ],
+        "hop1_product": [
+          "118"
+        ],
+        "hop1_value": [
+          "125"
+        ],
+        "hop2_product": [
+          "250"
+        ],
+        "hop2_value": [
+          "271"
+        ],
+        "final_product": [
+          "542"
+        ],
+        "answer": [
+          "529"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0002",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "opl",
+          91
+        ],
+        [
+          "axi",
+          "twice the number for opl minus 10"
+        ],
+        [
+          "grn",
+          "twice the number for axi plus 6"
+        ],
+        [
+          "poy",
+          "twice the number for grn minus 19"
+        ],
+        [
+          "rwn",
+          "twice the number for axi minus 14"
+        ]
+      ],
+      "queried_term": "rwn",
+      "queried_value": 330,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 28,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for rwn minus 28?",
+      "answer": 632,
+      "expected_intermediates": {
+        "base_value": "91",
+        "hop1_product": "182",
+        "hop1_value": "172",
+        "hop2_product": "344",
+        "hop2_value": "330",
+        "final_product": "660",
+        "answer": "632"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "91"
+        ],
+        "hop1_product": [
+          "182"
+        ],
+        "hop1_value": [
+          "172"
+        ],
+        "hop2_product": [
+          "344"
+        ],
+        "hop2_value": [
+          "330"
+        ],
+        "final_product": [
+          "660"
+        ],
+        "answer": [
+          "632"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0003",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "xux",
+          90
+        ],
+        [
+          "dxj",
+          91
+        ],
+        [
+          "vgc",
+          "twice the number for xux minus 27"
+        ],
+        [
+          "mvs",
+          "twice the number for xux plus 4"
+        ],
+        [
+          "aao",
+          "twice the number for mvs minus 6"
+        ]
+      ],
+      "queried_term": "aao",
+      "queried_value": 362,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 13,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for aao minus 13?",
+      "answer": 711,
+      "expected_intermediates": {
+        "base_value": "90",
+        "hop1_product": "180",
+        "hop1_value": "184",
+        "hop2_product": "368",
+        "hop2_value": "362",
+        "final_product": "724",
+        "answer": "711"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "90"
+        ],
+        "hop1_product": [
+          "180"
+        ],
+        "hop1_value": [
+          "184"
+        ],
+        "hop2_product": [
+          "368"
+        ],
+        "hop2_value": [
+          "362"
+        ],
+        "final_product": [
+          "724"
+        ],
+        "answer": [
+          "711"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0004",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "nxs",
+          66
+        ],
+        [
+          "lmq",
+          "twice the number for nxs plus 8"
+        ],
+        [
+          "qez",
+          "twice the number for lmq plus 24"
+        ],
+        [
+          "aew",
+          "twice the number for nxs minus 22"
+        ],
+        [
+          "cyx",
+          "twice the number for lmq minus 21"
+        ]
+      ],
+      "queried_term": "cyx",
+      "queried_value": 259,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 30,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for cyx minus 30?",
+      "answer": 488,
+      "expected_intermediates": {
+        "base_value": "66",
+        "hop1_product": "132",
+        "hop1_value": "140",
+        "hop2_product": "280",
+        "hop2_value": "259",
+        "final_product": "518",
+        "answer": "488"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "66"
+        ],
+        "hop1_product": [
+          "132"
+        ],
+        "hop1_value": [
+          "140"
+        ],
+        "hop2_product": [
+          "280"
+        ],
+        "hop2_value": [
+          "259"
+        ],
+        "final_product": [
+          "518"
+        ],
+        "answer": [
+          "488"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0005",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "zys",
+          62
+        ],
+        [
+          "hws",
+          "twice the number for zys plus 15"
+        ],
+        [
+          "lwr",
+          "twice the number for hws minus 7"
+        ],
+        [
+          "otu",
+          94
+        ],
+        [
+          "xae",
+          41
+        ]
+      ],
+      "queried_term": "lwr",
+      "queried_value": 271,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 11,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for lwr plus 11?",
+      "answer": 553,
+      "expected_intermediates": {
+        "base_value": "62",
+        "hop1_product": "124",
+        "hop1_value": "139",
+        "hop2_product": "278",
+        "hop2_value": "271",
+        "final_product": "542",
+        "answer": "553"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "62"
+        ],
+        "hop1_product": [
+          "124"
+        ],
+        "hop1_value": [
+          "139"
+        ],
+        "hop2_product": [
+          "278"
+        ],
+        "hop2_value": [
+          "271"
+        ],
+        "final_product": [
+          "542"
+        ],
+        "answer": [
+          "553"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0006",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "zcl",
+          34
+        ],
+        [
+          "wat",
+          "twice the number for zcl minus 26"
+        ],
+        [
+          "tjv",
+          58
+        ],
+        [
+          "xwa",
+          "twice the number for wat minus 6"
+        ],
+        [
+          "ogh",
+          "twice the number for wat minus 12"
+        ]
+      ],
+      "queried_term": "xwa",
+      "queried_value": 78,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 29,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for xwa plus 29?",
+      "answer": 185,
+      "expected_intermediates": {
+        "base_value": "34",
+        "hop1_product": "68",
+        "hop1_value": "42",
+        "hop2_product": "84",
+        "hop2_value": "78",
+        "final_product": "156",
+        "answer": "185"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "34"
+        ],
+        "hop1_product": [
+          "68"
+        ],
+        "hop1_value": [
+          "42"
+        ],
+        "hop2_product": [
+          "84"
+        ],
+        "hop2_value": [
+          "78"
+        ],
+        "final_product": [
+          "156"
+        ],
+        "answer": [
+          "185"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0007",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "eem",
+          11
+        ],
+        [
+          "tja",
+          97
+        ],
+        [
+          "kjf",
+          "twice the number for eem plus 27"
+        ],
+        [
+          "zyw",
+          "twice the number for kjf plus 14"
+        ],
+        [
+          "tqm",
+          "twice the number for tja minus 1"
+        ]
+      ],
+      "queried_term": "zyw",
+      "queried_value": 112,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 27,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for zyw minus 27?",
+      "answer": 197,
+      "expected_intermediates": {
+        "base_value": "11",
+        "hop1_product": "22",
+        "hop1_value": "49",
+        "hop2_product": "98",
+        "hop2_value": "112",
+        "final_product": "224",
+        "answer": "197"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "11"
+        ],
+        "hop1_product": [
+          "22"
+        ],
+        "hop1_value": [
+          "49"
+        ],
+        "hop2_product": [
+          "98"
+        ],
+        "hop2_value": [
+          "112"
+        ],
+        "final_product": [
+          "224"
+        ],
+        "answer": [
+          "197"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0008",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "bkn",
+          65
+        ],
+        [
+          "cdx",
+          55
+        ],
+        [
+          "ymz",
+          "twice the number for bkn minus 15"
+        ],
+        [
+          "rhl",
+          "twice the number for ymz minus 19"
+        ],
+        [
+          "vcp",
+          41
+        ]
+      ],
+      "queried_term": "rhl",
+      "queried_value": 211,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 15,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for rhl minus 15?",
+      "answer": 407,
+      "expected_intermediates": {
+        "base_value": "65",
+        "hop1_product": "130",
+        "hop1_value": "115",
+        "hop2_product": "230",
+        "hop2_value": "211",
+        "final_product": "422",
+        "answer": "407"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "65"
+        ],
+        "hop1_product": [
+          "130"
+        ],
+        "hop1_value": [
+          "115"
+        ],
+        "hop2_product": [
+          "230"
+        ],
+        "hop2_value": [
+          "211"
+        ],
+        "final_product": [
+          "422"
+        ],
+        "answer": [
+          "407"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0009",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "qcs",
+          70
+        ],
+        [
+          "hwn",
+          94
+        ],
+        [
+          "scd",
+          "twice the number for qcs plus 19"
+        ],
+        [
+          "gzp",
+          "twice the number for scd minus 18"
+        ],
+        [
+          "omg",
+          "twice the number for scd minus 8"
+        ]
+      ],
+      "queried_term": "omg",
+      "queried_value": 310,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 10,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for omg plus 10?",
+      "answer": 630,
+      "expected_intermediates": {
+        "base_value": "70",
+        "hop1_product": "140",
+        "hop1_value": "159",
+        "hop2_product": "318",
+        "hop2_value": "310",
+        "final_product": "620",
+        "answer": "630"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "70"
+        ],
+        "hop1_product": [
+          "140"
+        ],
+        "hop1_value": [
+          "159"
+        ],
+        "hop2_product": [
+          "318"
+        ],
+        "hop2_value": [
+          "310"
+        ],
+        "final_product": [
+          "620"
+        ],
+        "answer": [
+          "630"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0010",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "pux",
+          59
+        ],
+        [
+          "hvn",
+          72
+        ],
+        [
+          "iyz",
+          "twice the number for hvn plus 18"
+        ],
+        [
+          "eja",
+          16
+        ],
+        [
+          "mkl",
+          "twice the number for iyz minus 21"
+        ]
+      ],
+      "queried_term": "mkl",
+      "queried_value": 303,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 26,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for mkl plus 26?",
+      "answer": 632,
+      "expected_intermediates": {
+        "base_value": "72",
+        "hop1_product": "144",
+        "hop1_value": "162",
+        "hop2_product": "324",
+        "hop2_value": "303",
+        "final_product": "606",
+        "answer": "632"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "72"
+        ],
+        "hop1_product": [
+          "144"
+        ],
+        "hop1_value": [
+          "162"
+        ],
+        "hop2_product": [
+          "324"
+        ],
+        "hop2_value": [
+          "303"
+        ],
+        "final_product": [
+          "606"
+        ],
+        "answer": [
+          "632"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0011",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "wde",
+          53
+        ],
+        [
+          "mli",
+          95
+        ],
+        [
+          "nci",
+          "twice the number for mli plus 13"
+        ],
+        [
+          "xhp",
+          "twice the number for nci minus 11"
+        ],
+        [
+          "xyw",
+          37
+        ]
+      ],
+      "queried_term": "xhp",
+      "queried_value": 395,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 26,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for xhp minus 26?",
+      "answer": 764,
+      "expected_intermediates": {
+        "base_value": "95",
+        "hop1_product": "190",
+        "hop1_value": "203",
+        "hop2_product": "406",
+        "hop2_value": "395",
+        "final_product": "790",
+        "answer": "764"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "95"
+        ],
+        "hop1_product": [
+          "190"
+        ],
+        "hop1_value": [
+          "203"
+        ],
+        "hop2_product": [
+          "406"
+        ],
+        "hop2_value": [
+          "395"
+        ],
+        "final_product": [
+          "790"
+        ],
+        "answer": [
+          "764"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0012",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "kbr",
+          21
+        ],
+        [
+          "coy",
+          15
+        ],
+        [
+          "zyr",
+          74
+        ],
+        [
+          "fnx",
+          "twice the number for kbr minus 19"
+        ],
+        [
+          "koo",
+          "twice the number for fnx minus 9"
+        ]
+      ],
+      "queried_term": "koo",
+      "queried_value": 37,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for koo plus 5?",
+      "answer": 79,
+      "expected_intermediates": {
+        "base_value": "21",
+        "hop1_product": "42",
+        "hop1_value": "23",
+        "hop2_product": "46",
+        "hop2_value": "37",
+        "final_product": "74",
+        "answer": "79"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "21"
+        ],
+        "hop1_product": [
+          "42"
+        ],
+        "hop1_value": [
+          "23"
+        ],
+        "hop2_product": [
+          "46"
+        ],
+        "hop2_value": [
+          "37"
+        ],
+        "final_product": [
+          "74"
+        ],
+        "answer": [
+          "79"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0013",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "mef",
+          79
+        ],
+        [
+          "ftw",
+          34
+        ],
+        [
+          "hgr",
+          "twice the number for ftw plus 3"
+        ],
+        [
+          "qrx",
+          "twice the number for hgr plus 20"
+        ],
+        [
+          "oiw",
+          76
+        ]
+      ],
+      "queried_term": "qrx",
+      "queried_value": 162,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 17,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for qrx plus 17?",
+      "answer": 341,
+      "expected_intermediates": {
+        "base_value": "34",
+        "hop1_product": "68",
+        "hop1_value": "71",
+        "hop2_product": "142",
+        "hop2_value": "162",
+        "final_product": "324",
+        "answer": "341"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "34"
+        ],
+        "hop1_product": [
+          "68"
+        ],
+        "hop1_value": [
+          "71"
+        ],
+        "hop2_product": [
+          "142"
+        ],
+        "hop2_value": [
+          "162"
+        ],
+        "final_product": [
+          "324"
+        ],
+        "answer": [
+          "341"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0014",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "bcv",
+          61
+        ],
+        [
+          "nzj",
+          "twice the number for bcv minus 26"
+        ],
+        [
+          "cuu",
+          "twice the number for nzj minus 15"
+        ],
+        [
+          "rcr",
+          "twice the number for cuu minus 10"
+        ],
+        [
+          "oer",
+          24
+        ]
+      ],
+      "queried_term": "cuu",
+      "queried_value": 177,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 13,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for cuu plus 13?",
+      "answer": 367,
+      "expected_intermediates": {
+        "base_value": "61",
+        "hop1_product": "122",
+        "hop1_value": "96",
+        "hop2_product": "192",
+        "hop2_value": "177",
+        "final_product": "354",
+        "answer": "367"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "61"
+        ],
+        "hop1_product": [
+          "122"
+        ],
+        "hop1_value": [
+          "96"
+        ],
+        "hop2_product": [
+          "192"
+        ],
+        "hop2_value": [
+          "177"
+        ],
+        "final_product": [
+          "354"
+        ],
+        "answer": [
+          "367"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0015",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "soy",
+          80
+        ],
+        [
+          "vmc",
+          61
+        ],
+        [
+          "ehh",
+          "twice the number for soy minus 9"
+        ],
+        [
+          "uyy",
+          45
+        ],
+        [
+          "ydn",
+          "twice the number for ehh plus 11"
+        ]
+      ],
+      "queried_term": "ydn",
+      "queried_value": 313,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 14,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for ydn plus 14?",
+      "answer": 640,
+      "expected_intermediates": {
+        "base_value": "80",
+        "hop1_product": "160",
+        "hop1_value": "151",
+        "hop2_product": "302",
+        "hop2_value": "313",
+        "final_product": "626",
+        "answer": "640"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "80"
+        ],
+        "hop1_product": [
+          "160"
+        ],
+        "hop1_value": [
+          "151"
+        ],
+        "hop2_product": [
+          "302"
+        ],
+        "hop2_value": [
+          "313"
+        ],
+        "final_product": [
+          "626"
+        ],
+        "answer": [
+          "640"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0016",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "vag",
+          90
+        ],
+        [
+          "ezf",
+          "twice the number for vag minus 16"
+        ],
+        [
+          "krj",
+          "twice the number for ezf minus 25"
+        ],
+        [
+          "rwq",
+          "twice the number for ezf minus 11"
+        ],
+        [
+          "mag",
+          "twice the number for vag minus 29"
+        ]
+      ],
+      "queried_term": "krj",
+      "queried_value": 303,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 14,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for krj minus 14?",
+      "answer": 592,
+      "expected_intermediates": {
+        "base_value": "90",
+        "hop1_product": "180",
+        "hop1_value": "164",
+        "hop2_product": "328",
+        "hop2_value": "303",
+        "final_product": "606",
+        "answer": "592"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "90"
+        ],
+        "hop1_product": [
+          "180"
+        ],
+        "hop1_value": [
+          "164"
+        ],
+        "hop2_product": [
+          "328"
+        ],
+        "hop2_value": [
+          "303"
+        ],
+        "final_product": [
+          "606"
+        ],
+        "answer": [
+          "592"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0017",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "abn",
+          48
+        ],
+        [
+          "bje",
+          "twice the number for abn plus 26"
+        ],
+        [
+          "ozg",
+          "twice the number for bje plus 12"
+        ],
+        [
+          "pwd",
+          89
+        ],
+        [
+          "tdj",
+          20
+        ]
+      ],
+      "queried_term": "ozg",
+      "queried_value": 256,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 30,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for ozg minus 30?",
+      "answer": 482,
+      "expected_intermediates": {
+        "base_value": "48",
+        "hop1_product": "96",
+        "hop1_value": "122",
+        "hop2_product": "244",
+        "hop2_value": "256",
+        "final_product": "512",
+        "answer": "482"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "48"
+        ],
+        "hop1_product": [
+          "96"
+        ],
+        "hop1_value": [
+          "122"
+        ],
+        "hop2_product": [
+          "244"
+        ],
+        "hop2_value": [
+          "256"
+        ],
+        "final_product": [
+          "512"
+        ],
+        "answer": [
+          "482"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0018",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ezl",
+          10
+        ],
+        [
+          "jxl",
+          "twice the number for ezl plus 29"
+        ],
+        [
+          "qhm",
+          "twice the number for jxl minus 5"
+        ],
+        [
+          "aqw",
+          "twice the number for jxl plus 16"
+        ],
+        [
+          "pmv",
+          "twice the number for aqw plus 7"
+        ]
+      ],
+      "queried_term": "aqw",
+      "queried_value": 114,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 3,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for aqw plus 3?",
+      "answer": 231,
+      "expected_intermediates": {
+        "base_value": "10",
+        "hop1_product": "20",
+        "hop1_value": "49",
+        "hop2_product": "98",
+        "hop2_value": "114",
+        "final_product": "228",
+        "answer": "231"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "10"
+        ],
+        "hop1_product": [
+          "20"
+        ],
+        "hop1_value": [
+          "49"
+        ],
+        "hop2_product": [
+          "98"
+        ],
+        "hop2_value": [
+          "114"
+        ],
+        "final_product": [
+          "228"
+        ],
+        "answer": [
+          "231"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0019",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "zkr",
+          44
+        ],
+        [
+          "lun",
+          "twice the number for zkr minus 26"
+        ],
+        [
+          "wtq",
+          "twice the number for lun minus 20"
+        ],
+        [
+          "wgg",
+          64
+        ],
+        [
+          "euf",
+          "twice the number for lun minus 24"
+        ]
+      ],
+      "queried_term": "wtq",
+      "queried_value": 104,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 3,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for wtq plus 3?",
+      "answer": 211,
+      "expected_intermediates": {
+        "base_value": "44",
+        "hop1_product": "88",
+        "hop1_value": "62",
+        "hop2_product": "124",
+        "hop2_value": "104",
+        "final_product": "208",
+        "answer": "211"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "44"
+        ],
+        "hop1_product": [
+          "88"
+        ],
+        "hop1_value": [
+          "62"
+        ],
+        "hop2_product": [
+          "124"
+        ],
+        "hop2_value": [
+          "104"
+        ],
+        "final_product": [
+          "208"
+        ],
+        "answer": [
+          "211"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0020",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "qpo",
+          62
+        ],
+        [
+          "cfd",
+          "twice the number for qpo plus 25"
+        ],
+        [
+          "fca",
+          29
+        ],
+        [
+          "ndo",
+          "twice the number for cfd minus 10"
+        ],
+        [
+          "war",
+          "twice the number for ndo minus 10"
+        ]
+      ],
+      "queried_term": "ndo",
+      "queried_value": 288,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 6,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for ndo minus 6?",
+      "answer": 570,
+      "expected_intermediates": {
+        "base_value": "62",
+        "hop1_product": "124",
+        "hop1_value": "149",
+        "hop2_product": "298",
+        "hop2_value": "288",
+        "final_product": "576",
+        "answer": "570"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "62"
+        ],
+        "hop1_product": [
+          "124"
+        ],
+        "hop1_value": [
+          "149"
+        ],
+        "hop2_product": [
+          "298"
+        ],
+        "hop2_value": [
+          "288"
+        ],
+        "final_product": [
+          "576"
+        ],
+        "answer": [
+          "570"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0021",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "gyk",
+          73
+        ],
+        [
+          "nfz",
+          "twice the number for gyk plus 8"
+        ],
+        [
+          "rrd",
+          "twice the number for nfz plus 29"
+        ],
+        [
+          "mnw",
+          "twice the number for rrd minus 12"
+        ],
+        [
+          "ult",
+          "twice the number for rrd minus 6"
+        ]
+      ],
+      "queried_term": "rrd",
+      "queried_value": 337,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 2,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for rrd plus 2?",
+      "answer": 676,
+      "expected_intermediates": {
+        "base_value": "73",
+        "hop1_product": "146",
+        "hop1_value": "154",
+        "hop2_product": "308",
+        "hop2_value": "337",
+        "final_product": "674",
+        "answer": "676"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "73"
+        ],
+        "hop1_product": [
+          "146"
+        ],
+        "hop1_value": [
+          "154"
+        ],
+        "hop2_product": [
+          "308"
+        ],
+        "hop2_value": [
+          "337"
+        ],
+        "final_product": [
+          "674"
+        ],
+        "answer": [
+          "676"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0022",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "dlq",
+          76
+        ],
+        [
+          "cbg",
+          "twice the number for dlq plus 11"
+        ],
+        [
+          "jwt",
+          "twice the number for cbg minus 10"
+        ],
+        [
+          "iuz",
+          "twice the number for cbg minus 27"
+        ],
+        [
+          "woz",
+          40
+        ]
+      ],
+      "queried_term": "jwt",
+      "queried_value": 316,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 12,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for jwt minus 12?",
+      "answer": 620,
+      "expected_intermediates": {
+        "base_value": "76",
+        "hop1_product": "152",
+        "hop1_value": "163",
+        "hop2_product": "326",
+        "hop2_value": "316",
+        "final_product": "632",
+        "answer": "620"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "76"
+        ],
+        "hop1_product": [
+          "152"
+        ],
+        "hop1_value": [
+          "163"
+        ],
+        "hop2_product": [
+          "326"
+        ],
+        "hop2_value": [
+          "316"
+        ],
+        "final_product": [
+          "632"
+        ],
+        "answer": [
+          "620"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0023",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "lav",
+          25
+        ],
+        [
+          "mvu",
+          "twice the number for lav plus 17"
+        ],
+        [
+          "tnb",
+          95
+        ],
+        [
+          "qxu",
+          64
+        ],
+        [
+          "nnk",
+          "twice the number for mvu plus 29"
+        ]
+      ],
+      "queried_term": "nnk",
+      "queried_value": 163,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 8,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for nnk plus 8?",
+      "answer": 334,
+      "expected_intermediates": {
+        "base_value": "25",
+        "hop1_product": "50",
+        "hop1_value": "67",
+        "hop2_product": "134",
+        "hop2_value": "163",
+        "final_product": "326",
+        "answer": "334"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "25"
+        ],
+        "hop1_product": [
+          "50"
+        ],
+        "hop1_value": [
+          "67"
+        ],
+        "hop2_product": [
+          "134"
+        ],
+        "hop2_value": [
+          "163"
+        ],
+        "final_product": [
+          "326"
+        ],
+        "answer": [
+          "334"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0024",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "thk",
+          62
+        ],
+        [
+          "yvl",
+          "twice the number for thk plus 9"
+        ],
+        [
+          "wbs",
+          "twice the number for yvl plus 30"
+        ],
+        [
+          "ulo",
+          "twice the number for wbs minus 11"
+        ],
+        [
+          "yer",
+          "twice the number for yvl plus 17"
+        ]
+      ],
+      "queried_term": "yer",
+      "queried_value": 283,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 4,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for yer minus 4?",
+      "answer": 562,
+      "expected_intermediates": {
+        "base_value": "62",
+        "hop1_product": "124",
+        "hop1_value": "133",
+        "hop2_product": "266",
+        "hop2_value": "283",
+        "final_product": "566",
+        "answer": "562"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "62"
+        ],
+        "hop1_product": [
+          "124"
+        ],
+        "hop1_value": [
+          "133"
+        ],
+        "hop2_product": [
+          "266"
+        ],
+        "hop2_value": [
+          "283"
+        ],
+        "final_product": [
+          "566"
+        ],
+        "answer": [
+          "562"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0025",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "yow",
+          20
+        ],
+        [
+          "axs",
+          "twice the number for yow minus 27"
+        ],
+        [
+          "owz",
+          "twice the number for yow plus 2"
+        ],
+        [
+          "vea",
+          "twice the number for owz plus 8"
+        ],
+        [
+          "zgg",
+          "twice the number for vea minus 28"
+        ]
+      ],
+      "queried_term": "vea",
+      "queried_value": 92,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 26,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for vea plus 26?",
+      "answer": 210,
+      "expected_intermediates": {
+        "base_value": "20",
+        "hop1_product": "40",
+        "hop1_value": "42",
+        "hop2_product": "84",
+        "hop2_value": "92",
+        "final_product": "184",
+        "answer": "210"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "20"
+        ],
+        "hop1_product": [
+          "40"
+        ],
+        "hop1_value": [
+          "42"
+        ],
+        "hop2_product": [
+          "84"
+        ],
+        "hop2_value": [
+          "92"
+        ],
+        "final_product": [
+          "184"
+        ],
+        "answer": [
+          "210"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0026",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "rdo",
+          20
+        ],
+        [
+          "vvl",
+          "twice the number for rdo plus 26"
+        ],
+        [
+          "jir",
+          52
+        ],
+        [
+          "rvy",
+          "twice the number for jir plus 12"
+        ],
+        [
+          "fmp",
+          "twice the number for rvy minus 26"
+        ]
+      ],
+      "queried_term": "fmp",
+      "queried_value": 206,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 11,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for fmp plus 11?",
+      "answer": 423,
+      "expected_intermediates": {
+        "base_value": "52",
+        "hop1_product": "104",
+        "hop1_value": "116",
+        "hop2_product": "232",
+        "hop2_value": "206",
+        "final_product": "412",
+        "answer": "423"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "52"
+        ],
+        "hop1_product": [
+          "104"
+        ],
+        "hop1_value": [
+          "116"
+        ],
+        "hop2_product": [
+          "232"
+        ],
+        "hop2_value": [
+          "206"
+        ],
+        "final_product": [
+          "412"
+        ],
+        "answer": [
+          "423"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0027",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "tou",
+          61
+        ],
+        [
+          "kef",
+          "twice the number for tou minus 11"
+        ],
+        [
+          "hfb",
+          "twice the number for kef minus 23"
+        ],
+        [
+          "xhb",
+          "twice the number for kef plus 24"
+        ],
+        [
+          "jkw",
+          "twice the number for hfb plus 14"
+        ]
+      ],
+      "queried_term": "hfb",
+      "queried_value": 199,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 1,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for hfb plus 1?",
+      "answer": 399,
+      "expected_intermediates": {
+        "base_value": "61",
+        "hop1_product": "122",
+        "hop1_value": "111",
+        "hop2_product": "222",
+        "hop2_value": "199",
+        "final_product": "398",
+        "answer": "399"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "61"
+        ],
+        "hop1_product": [
+          "122"
+        ],
+        "hop1_value": [
+          "111"
+        ],
+        "hop2_product": [
+          "222"
+        ],
+        "hop2_value": [
+          "199"
+        ],
+        "final_product": [
+          "398"
+        ],
+        "answer": [
+          "399"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0028",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "uxj",
+          63
+        ],
+        [
+          "zfk",
+          "twice the number for uxj minus 10"
+        ],
+        [
+          "vpn",
+          98
+        ],
+        [
+          "nch",
+          "twice the number for zfk minus 13"
+        ],
+        [
+          "txl",
+          50
+        ]
+      ],
+      "queried_term": "nch",
+      "queried_value": 219,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 10,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for nch plus 10?",
+      "answer": 448,
+      "expected_intermediates": {
+        "base_value": "63",
+        "hop1_product": "126",
+        "hop1_value": "116",
+        "hop2_product": "232",
+        "hop2_value": "219",
+        "final_product": "438",
+        "answer": "448"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "63"
+        ],
+        "hop1_product": [
+          "126"
+        ],
+        "hop1_value": [
+          "116"
+        ],
+        "hop2_product": [
+          "232"
+        ],
+        "hop2_value": [
+          "219"
+        ],
+        "final_product": [
+          "438"
+        ],
+        "answer": [
+          "448"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0029",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "wuk",
+          22
+        ],
+        [
+          "ugd",
+          "twice the number for wuk minus 25"
+        ],
+        [
+          "ajl",
+          33
+        ],
+        [
+          "drm",
+          "twice the number for ugd minus 23"
+        ],
+        [
+          "pdz",
+          49
+        ]
+      ],
+      "queried_term": "drm",
+      "queried_value": 15,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 17,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for drm minus 17?",
+      "answer": 13,
+      "expected_intermediates": {
+        "base_value": "22",
+        "hop1_product": "44",
+        "hop1_value": "19",
+        "hop2_product": "38",
+        "hop2_value": "15",
+        "final_product": "30",
+        "answer": "13"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "22"
+        ],
+        "hop1_product": [
+          "44"
+        ],
+        "hop1_value": [
+          "19"
+        ],
+        "hop2_product": [
+          "38"
+        ],
+        "hop2_value": [
+          "15"
+        ],
+        "final_product": [
+          "30"
+        ],
+        "answer": [
+          "13"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0030",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ahh",
+          37
+        ],
+        [
+          "tmj",
+          "twice the number for ahh plus 8"
+        ],
+        [
+          "oed",
+          "twice the number for ahh plus 17"
+        ],
+        [
+          "agh",
+          61
+        ],
+        [
+          "rol",
+          "twice the number for tmj plus 25"
+        ]
+      ],
+      "queried_term": "rol",
+      "queried_value": 189,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 23,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for rol minus 23?",
+      "answer": 355,
+      "expected_intermediates": {
+        "base_value": "37",
+        "hop1_product": "74",
+        "hop1_value": "82",
+        "hop2_product": "164",
+        "hop2_value": "189",
+        "final_product": "378",
+        "answer": "355"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "37"
+        ],
+        "hop1_product": [
+          "74"
+        ],
+        "hop1_value": [
+          "82"
+        ],
+        "hop2_product": [
+          "164"
+        ],
+        "hop2_value": [
+          "189"
+        ],
+        "final_product": [
+          "378"
+        ],
+        "answer": [
+          "355"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0031",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ymp",
+          76
+        ],
+        [
+          "ybb",
+          "twice the number for ymp minus 7"
+        ],
+        [
+          "cke",
+          "twice the number for ybb plus 20"
+        ],
+        [
+          "ziq",
+          "twice the number for ymp minus 30"
+        ],
+        [
+          "ama",
+          "twice the number for ziq plus 17"
+        ]
+      ],
+      "queried_term": "ama",
+      "queried_value": 261,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 12,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for ama plus 12?",
+      "answer": 534,
+      "expected_intermediates": {
+        "base_value": "76",
+        "hop1_product": "152",
+        "hop1_value": "122",
+        "hop2_product": "244",
+        "hop2_value": "261",
+        "final_product": "522",
+        "answer": "534"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "76"
+        ],
+        "hop1_product": [
+          "152"
+        ],
+        "hop1_value": [
+          "122"
+        ],
+        "hop2_product": [
+          "244"
+        ],
+        "hop2_value": [
+          "261"
+        ],
+        "final_product": [
+          "522"
+        ],
+        "answer": [
+          "534"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0032",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "hdi",
+          81
+        ],
+        [
+          "eef",
+          "twice the number for hdi plus 8"
+        ],
+        [
+          "mqz",
+          "twice the number for hdi minus 17"
+        ],
+        [
+          "fql",
+          "twice the number for mqz plus 4"
+        ],
+        [
+          "hqk",
+          "twice the number for eef plus 24"
+        ]
+      ],
+      "queried_term": "hqk",
+      "queried_value": 364,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 19,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for hqk minus 19?",
+      "answer": 709,
+      "expected_intermediates": {
+        "base_value": "81",
+        "hop1_product": "162",
+        "hop1_value": "170",
+        "hop2_product": "340",
+        "hop2_value": "364",
+        "final_product": "728",
+        "answer": "709"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "81"
+        ],
+        "hop1_product": [
+          "162"
+        ],
+        "hop1_value": [
+          "170"
+        ],
+        "hop2_product": [
+          "340"
+        ],
+        "hop2_value": [
+          "364"
+        ],
+        "final_product": [
+          "728"
+        ],
+        "answer": [
+          "709"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0033",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "eva",
+          88
+        ],
+        [
+          "xip",
+          "twice the number for eva minus 18"
+        ],
+        [
+          "oxu",
+          94
+        ],
+        [
+          "fbd",
+          17
+        ],
+        [
+          "wcj",
+          "twice the number for xip plus 1"
+        ]
+      ],
+      "queried_term": "wcj",
+      "queried_value": 317,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 27,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for wcj plus 27?",
+      "answer": 661,
+      "expected_intermediates": {
+        "base_value": "88",
+        "hop1_product": "176",
+        "hop1_value": "158",
+        "hop2_product": "316",
+        "hop2_value": "317",
+        "final_product": "634",
+        "answer": "661"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "88"
+        ],
+        "hop1_product": [
+          "176"
+        ],
+        "hop1_value": [
+          "158"
+        ],
+        "hop2_product": [
+          "316"
+        ],
+        "hop2_value": [
+          "317"
+        ],
+        "final_product": [
+          "634"
+        ],
+        "answer": [
+          "661"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0034",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "bxo",
+          87
+        ],
+        [
+          "cdp",
+          "twice the number for bxo plus 27"
+        ],
+        [
+          "uyi",
+          "twice the number for cdp plus 8"
+        ],
+        [
+          "dbe",
+          24
+        ],
+        [
+          "elu",
+          "twice the number for cdp plus 22"
+        ]
+      ],
+      "queried_term": "elu",
+      "queried_value": 424,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 13,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for elu plus 13?",
+      "answer": 861,
+      "expected_intermediates": {
+        "base_value": "87",
+        "hop1_product": "174",
+        "hop1_value": "201",
+        "hop2_product": "402",
+        "hop2_value": "424",
+        "final_product": "848",
+        "answer": "861"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "87"
+        ],
+        "hop1_product": [
+          "174"
+        ],
+        "hop1_value": [
+          "201"
+        ],
+        "hop2_product": [
+          "402"
+        ],
+        "hop2_value": [
+          "424"
+        ],
+        "final_product": [
+          "848"
+        ],
+        "answer": [
+          "861"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0035",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ltk",
+          37
+        ],
+        [
+          "fsn",
+          "twice the number for ltk plus 27"
+        ],
+        [
+          "dqz",
+          "twice the number for fsn minus 6"
+        ],
+        [
+          "qlp",
+          70
+        ],
+        [
+          "pgz",
+          "twice the number for fsn minus 5"
+        ]
+      ],
+      "queried_term": "pgz",
+      "queried_value": 197,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 26,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for pgz plus 26?",
+      "answer": 420,
+      "expected_intermediates": {
+        "base_value": "37",
+        "hop1_product": "74",
+        "hop1_value": "101",
+        "hop2_product": "202",
+        "hop2_value": "197",
+        "final_product": "394",
+        "answer": "420"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "37"
+        ],
+        "hop1_product": [
+          "74"
+        ],
+        "hop1_value": [
+          "101"
+        ],
+        "hop2_product": [
+          "202"
+        ],
+        "hop2_value": [
+          "197"
+        ],
+        "final_product": [
+          "394"
+        ],
+        "answer": [
+          "420"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0036",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ywt",
+          20
+        ],
+        [
+          "gjp",
+          "twice the number for ywt plus 4"
+        ],
+        [
+          "sbt",
+          48
+        ],
+        [
+          "vqc",
+          "twice the number for gjp plus 1"
+        ],
+        [
+          "vqn",
+          "twice the number for gjp plus 15"
+        ]
+      ],
+      "queried_term": "vqn",
+      "queried_value": 103,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 10,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for vqn minus 10?",
+      "answer": 196,
+      "expected_intermediates": {
+        "base_value": "20",
+        "hop1_product": "40",
+        "hop1_value": "44",
+        "hop2_product": "88",
+        "hop2_value": "103",
+        "final_product": "206",
+        "answer": "196"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "20"
+        ],
+        "hop1_product": [
+          "40"
+        ],
+        "hop1_value": [
+          "44"
+        ],
+        "hop2_product": [
+          "88"
+        ],
+        "hop2_value": [
+          "103"
+        ],
+        "final_product": [
+          "206"
+        ],
+        "answer": [
+          "196"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0037",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "wnr",
+          35
+        ],
+        [
+          "odc",
+          "twice the number for wnr plus 3"
+        ],
+        [
+          "leh",
+          "twice the number for odc plus 4"
+        ],
+        [
+          "yvb",
+          90
+        ],
+        [
+          "say",
+          "twice the number for leh plus 11"
+        ]
+      ],
+      "queried_term": "leh",
+      "queried_value": 150,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 23,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for leh minus 23?",
+      "answer": 277,
+      "expected_intermediates": {
+        "base_value": "35",
+        "hop1_product": "70",
+        "hop1_value": "73",
+        "hop2_product": "146",
+        "hop2_value": "150",
+        "final_product": "300",
+        "answer": "277"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "35"
+        ],
+        "hop1_product": [
+          "70"
+        ],
+        "hop1_value": [
+          "73"
+        ],
+        "hop2_product": [
+          "146"
+        ],
+        "hop2_value": [
+          "150"
+        ],
+        "final_product": [
+          "300"
+        ],
+        "answer": [
+          "277"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0038",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "myf",
+          66
+        ],
+        [
+          "iar",
+          "twice the number for myf plus 4"
+        ],
+        [
+          "abz",
+          "twice the number for iar minus 26"
+        ],
+        [
+          "mkb",
+          "twice the number for myf minus 2"
+        ],
+        [
+          "jrj",
+          "twice the number for myf plus 5"
+        ]
+      ],
+      "queried_term": "abz",
+      "queried_value": 246,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 9,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for abz plus 9?",
+      "answer": 501,
+      "expected_intermediates": {
+        "base_value": "66",
+        "hop1_product": "132",
+        "hop1_value": "136",
+        "hop2_product": "272",
+        "hop2_value": "246",
+        "final_product": "492",
+        "answer": "501"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "66"
+        ],
+        "hop1_product": [
+          "132"
+        ],
+        "hop1_value": [
+          "136"
+        ],
+        "hop2_product": [
+          "272"
+        ],
+        "hop2_value": [
+          "246"
+        ],
+        "final_product": [
+          "492"
+        ],
+        "answer": [
+          "501"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0039",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "rwk",
+          19
+        ],
+        [
+          "aqq",
+          58
+        ],
+        [
+          "ydx",
+          "twice the number for rwk minus 29"
+        ],
+        [
+          "lku",
+          "twice the number for ydx plus 25"
+        ],
+        [
+          "ghk",
+          "twice the number for ydx plus 17"
+        ]
+      ],
+      "queried_term": "ghk",
+      "queried_value": 35,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 25,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for ghk plus 25?",
+      "answer": 95,
+      "expected_intermediates": {
+        "base_value": "19",
+        "hop1_product": "38",
+        "hop1_value": "9",
+        "hop2_product": "18",
+        "hop2_value": "35",
+        "final_product": "70",
+        "answer": "95"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "19"
+        ],
+        "hop1_product": [
+          "38"
+        ],
+        "hop1_value": [
+          "9"
+        ],
+        "hop2_product": [
+          "18"
+        ],
+        "hop2_value": [
+          "35"
+        ],
+        "final_product": [
+          "70"
+        ],
+        "answer": [
+          "95"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0040",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "tpe",
+          92
+        ],
+        [
+          "bna",
+          "twice the number for tpe minus 18"
+        ],
+        [
+          "uby",
+          "twice the number for bna plus 19"
+        ],
+        [
+          "eet",
+          47
+        ],
+        [
+          "kat",
+          "twice the number for uby plus 18"
+        ]
+      ],
+      "queried_term": "uby",
+      "queried_value": 351,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 6,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for uby plus 6?",
+      "answer": 708,
+      "expected_intermediates": {
+        "base_value": "92",
+        "hop1_product": "184",
+        "hop1_value": "166",
+        "hop2_product": "332",
+        "hop2_value": "351",
+        "final_product": "702",
+        "answer": "708"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "92"
+        ],
+        "hop1_product": [
+          "184"
+        ],
+        "hop1_value": [
+          "166"
+        ],
+        "hop2_product": [
+          "332"
+        ],
+        "hop2_value": [
+          "351"
+        ],
+        "final_product": [
+          "702"
+        ],
+        "answer": [
+          "708"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0041",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "mjm",
+          50
+        ],
+        [
+          "sti",
+          65
+        ],
+        [
+          "fmb",
+          10
+        ],
+        [
+          "ryh",
+          "twice the number for mjm plus 5"
+        ],
+        [
+          "dci",
+          "twice the number for ryh minus 16"
+        ]
+      ],
+      "queried_term": "dci",
+      "queried_value": 194,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 20,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for dci plus 20?",
+      "answer": 408,
+      "expected_intermediates": {
+        "base_value": "50",
+        "hop1_product": "100",
+        "hop1_value": "105",
+        "hop2_product": "210",
+        "hop2_value": "194",
+        "final_product": "388",
+        "answer": "408"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "50"
+        ],
+        "hop1_product": [
+          "100"
+        ],
+        "hop1_value": [
+          "105"
+        ],
+        "hop2_product": [
+          "210"
+        ],
+        "hop2_value": [
+          "194"
+        ],
+        "final_product": [
+          "388"
+        ],
+        "answer": [
+          "408"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0042",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "sta",
+          23
+        ],
+        [
+          "iea",
+          30
+        ],
+        [
+          "igc",
+          55
+        ],
+        [
+          "eyb",
+          "twice the number for igc minus 15"
+        ],
+        [
+          "jee",
+          "twice the number for eyb minus 2"
+        ]
+      ],
+      "queried_term": "jee",
+      "queried_value": 188,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 1,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for jee minus 1?",
+      "answer": 375,
+      "expected_intermediates": {
+        "base_value": "55",
+        "hop1_product": "110",
+        "hop1_value": "95",
+        "hop2_product": "190",
+        "hop2_value": "188",
+        "final_product": "376",
+        "answer": "375"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "55"
+        ],
+        "hop1_product": [
+          "110"
+        ],
+        "hop1_value": [
+          "95"
+        ],
+        "hop2_product": [
+          "190"
+        ],
+        "hop2_value": [
+          "188"
+        ],
+        "final_product": [
+          "376"
+        ],
+        "answer": [
+          "375"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0043",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ueg",
+          62
+        ],
+        [
+          "hob",
+          "twice the number for ueg plus 12"
+        ],
+        [
+          "xsv",
+          "twice the number for hob minus 21"
+        ],
+        [
+          "muc",
+          "twice the number for hob minus 12"
+        ],
+        [
+          "ocw",
+          "twice the number for muc plus 2"
+        ]
+      ],
+      "queried_term": "muc",
+      "queried_value": 260,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for muc plus 5?",
+      "answer": 525,
+      "expected_intermediates": {
+        "base_value": "62",
+        "hop1_product": "124",
+        "hop1_value": "136",
+        "hop2_product": "272",
+        "hop2_value": "260",
+        "final_product": "520",
+        "answer": "525"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "62"
+        ],
+        "hop1_product": [
+          "124"
+        ],
+        "hop1_value": [
+          "136"
+        ],
+        "hop2_product": [
+          "272"
+        ],
+        "hop2_value": [
+          "260"
+        ],
+        "final_product": [
+          "520"
+        ],
+        "answer": [
+          "525"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0044",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "uhp",
+          73
+        ],
+        [
+          "eqq",
+          55
+        ],
+        [
+          "evo",
+          "twice the number for uhp minus 11"
+        ],
+        [
+          "yvh",
+          "twice the number for evo plus 27"
+        ],
+        [
+          "xni",
+          "twice the number for eqq minus 19"
+        ]
+      ],
+      "queried_term": "yvh",
+      "queried_value": 297,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for yvh minus 5?",
+      "answer": 589,
+      "expected_intermediates": {
+        "base_value": "73",
+        "hop1_product": "146",
+        "hop1_value": "135",
+        "hop2_product": "270",
+        "hop2_value": "297",
+        "final_product": "594",
+        "answer": "589"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "73"
+        ],
+        "hop1_product": [
+          "146"
+        ],
+        "hop1_value": [
+          "135"
+        ],
+        "hop2_product": [
+          "270"
+        ],
+        "hop2_value": [
+          "297"
+        ],
+        "final_product": [
+          "594"
+        ],
+        "answer": [
+          "589"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0045",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "gms",
+          21
+        ],
+        [
+          "cou",
+          "twice the number for gms plus 6"
+        ],
+        [
+          "lbz",
+          "twice the number for cou minus 20"
+        ],
+        [
+          "vzj",
+          "twice the number for lbz minus 1"
+        ],
+        [
+          "uon",
+          "twice the number for lbz plus 6"
+        ]
+      ],
+      "queried_term": "lbz",
+      "queried_value": 76,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 22,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for lbz minus 22?",
+      "answer": 130,
+      "expected_intermediates": {
+        "base_value": "21",
+        "hop1_product": "42",
+        "hop1_value": "48",
+        "hop2_product": "96",
+        "hop2_value": "76",
+        "final_product": "152",
+        "answer": "130"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "21"
+        ],
+        "hop1_product": [
+          "42"
+        ],
+        "hop1_value": [
+          "48"
+        ],
+        "hop2_product": [
+          "96"
+        ],
+        "hop2_value": [
+          "76"
+        ],
+        "final_product": [
+          "152"
+        ],
+        "answer": [
+          "130"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0046",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "rjl",
+          41
+        ],
+        [
+          "kob",
+          "twice the number for rjl minus 10"
+        ],
+        [
+          "xmh",
+          "twice the number for kob plus 11"
+        ],
+        [
+          "fao",
+          "twice the number for xmh minus 13"
+        ],
+        [
+          "wqz",
+          35
+        ]
+      ],
+      "queried_term": "xmh",
+      "queried_value": 155,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 18,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for xmh plus 18?",
+      "answer": 328,
+      "expected_intermediates": {
+        "base_value": "41",
+        "hop1_product": "82",
+        "hop1_value": "72",
+        "hop2_product": "144",
+        "hop2_value": "155",
+        "final_product": "310",
+        "answer": "328"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "41"
+        ],
+        "hop1_product": [
+          "82"
+        ],
+        "hop1_value": [
+          "72"
+        ],
+        "hop2_product": [
+          "144"
+        ],
+        "hop2_value": [
+          "155"
+        ],
+        "final_product": [
+          "310"
+        ],
+        "answer": [
+          "328"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0047",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "vmk",
+          13
+        ],
+        [
+          "cah",
+          "twice the number for vmk plus 23"
+        ],
+        [
+          "sqc",
+          "twice the number for cah minus 4"
+        ],
+        [
+          "vhc",
+          "twice the number for sqc plus 29"
+        ],
+        [
+          "qxz",
+          "twice the number for vmk minus 5"
+        ]
+      ],
+      "queried_term": "sqc",
+      "queried_value": 94,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 21,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for sqc plus 21?",
+      "answer": 209,
+      "expected_intermediates": {
+        "base_value": "13",
+        "hop1_product": "26",
+        "hop1_value": "49",
+        "hop2_product": "98",
+        "hop2_value": "94",
+        "final_product": "188",
+        "answer": "209"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "13"
+        ],
+        "hop1_product": [
+          "26"
+        ],
+        "hop1_value": [
+          "49"
+        ],
+        "hop2_product": [
+          "98"
+        ],
+        "hop2_value": [
+          "94"
+        ],
+        "final_product": [
+          "188"
+        ],
+        "answer": [
+          "209"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0048",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "zuw",
+          54
+        ],
+        [
+          "wtb",
+          "twice the number for zuw minus 12"
+        ],
+        [
+          "xzs",
+          21
+        ],
+        [
+          "bfn",
+          68
+        ],
+        [
+          "use",
+          "twice the number for wtb minus 23"
+        ]
+      ],
+      "queried_term": "use",
+      "queried_value": 169,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 18,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for use minus 18?",
+      "answer": 320,
+      "expected_intermediates": {
+        "base_value": "54",
+        "hop1_product": "108",
+        "hop1_value": "96",
+        "hop2_product": "192",
+        "hop2_value": "169",
+        "final_product": "338",
+        "answer": "320"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "54"
+        ],
+        "hop1_product": [
+          "108"
+        ],
+        "hop1_value": [
+          "96"
+        ],
+        "hop2_product": [
+          "192"
+        ],
+        "hop2_value": [
+          "169"
+        ],
+        "final_product": [
+          "338"
+        ],
+        "answer": [
+          "320"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0049",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "wpz",
+          41
+        ],
+        [
+          "wuz",
+          "twice the number for wpz plus 16"
+        ],
+        [
+          "zyx",
+          "twice the number for wuz minus 25"
+        ],
+        [
+          "ujt",
+          34
+        ],
+        [
+          "ivw",
+          87
+        ]
+      ],
+      "queried_term": "zyx",
+      "queried_value": 171,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 30,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for zyx plus 30?",
+      "answer": 372,
+      "expected_intermediates": {
+        "base_value": "41",
+        "hop1_product": "82",
+        "hop1_value": "98",
+        "hop2_product": "196",
+        "hop2_value": "171",
+        "final_product": "342",
+        "answer": "372"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "41"
+        ],
+        "hop1_product": [
+          "82"
+        ],
+        "hop1_value": [
+          "98"
+        ],
+        "hop2_product": [
+          "196"
+        ],
+        "hop2_value": [
+          "171"
+        ],
+        "final_product": [
+          "342"
+        ],
+        "answer": [
+          "372"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0050",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "huc",
+          30
+        ],
+        [
+          "qrw",
+          "twice the number for huc minus 8"
+        ],
+        [
+          "lcp",
+          "twice the number for qrw minus 1"
+        ],
+        [
+          "wbv",
+          "twice the number for qrw plus 19"
+        ],
+        [
+          "sst",
+          "twice the number for wbv minus 24"
+        ]
+      ],
+      "queried_term": "lcp",
+      "queried_value": 103,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 6,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for lcp minus 6?",
+      "answer": 200,
+      "expected_intermediates": {
+        "base_value": "30",
+        "hop1_product": "60",
+        "hop1_value": "52",
+        "hop2_product": "104",
+        "hop2_value": "103",
+        "final_product": "206",
+        "answer": "200"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "30"
+        ],
+        "hop1_product": [
+          "60"
+        ],
+        "hop1_value": [
+          "52"
+        ],
+        "hop2_product": [
+          "104"
+        ],
+        "hop2_value": [
+          "103"
+        ],
+        "final_product": [
+          "206"
+        ],
+        "answer": [
+          "200"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0051",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "smg",
+          70
+        ],
+        [
+          "brb",
+          "twice the number for smg minus 5"
+        ],
+        [
+          "dmd",
+          41
+        ],
+        [
+          "txt",
+          "twice the number for smg plus 7"
+        ],
+        [
+          "xtx",
+          "twice the number for brb minus 3"
+        ]
+      ],
+      "queried_term": "xtx",
+      "queried_value": 267,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 14,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for xtx plus 14?",
+      "answer": 548,
+      "expected_intermediates": {
+        "base_value": "70",
+        "hop1_product": "140",
+        "hop1_value": "135",
+        "hop2_product": "270",
+        "hop2_value": "267",
+        "final_product": "534",
+        "answer": "548"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "70"
+        ],
+        "hop1_product": [
+          "140"
+        ],
+        "hop1_value": [
+          "135"
+        ],
+        "hop2_product": [
+          "270"
+        ],
+        "hop2_value": [
+          "267"
+        ],
+        "final_product": [
+          "534"
+        ],
+        "answer": [
+          "548"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0052",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "cjr",
+          56
+        ],
+        [
+          "ozk",
+          99
+        ],
+        [
+          "puq",
+          "twice the number for ozk minus 5"
+        ],
+        [
+          "kle",
+          "twice the number for puq minus 13"
+        ],
+        [
+          "eon",
+          "twice the number for kle minus 23"
+        ]
+      ],
+      "queried_term": "kle",
+      "queried_value": 373,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 7,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for kle plus 7?",
+      "answer": 753,
+      "expected_intermediates": {
+        "base_value": "99",
+        "hop1_product": "198",
+        "hop1_value": "193",
+        "hop2_product": "386",
+        "hop2_value": "373",
+        "final_product": "746",
+        "answer": "753"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "99"
+        ],
+        "hop1_product": [
+          "198"
+        ],
+        "hop1_value": [
+          "193"
+        ],
+        "hop2_product": [
+          "386"
+        ],
+        "hop2_value": [
+          "373"
+        ],
+        "final_product": [
+          "746"
+        ],
+        "answer": [
+          "753"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0053",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "xvn",
+          62
+        ],
+        [
+          "yse",
+          "twice the number for xvn plus 17"
+        ],
+        [
+          "qtn",
+          52
+        ],
+        [
+          "cma",
+          68
+        ],
+        [
+          "zbw",
+          "twice the number for yse plus 22"
+        ]
+      ],
+      "queried_term": "zbw",
+      "queried_value": 304,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 25,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for zbw plus 25?",
+      "answer": 633,
+      "expected_intermediates": {
+        "base_value": "62",
+        "hop1_product": "124",
+        "hop1_value": "141",
+        "hop2_product": "282",
+        "hop2_value": "304",
+        "final_product": "608",
+        "answer": "633"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "62"
+        ],
+        "hop1_product": [
+          "124"
+        ],
+        "hop1_value": [
+          "141"
+        ],
+        "hop2_product": [
+          "282"
+        ],
+        "hop2_value": [
+          "304"
+        ],
+        "final_product": [
+          "608"
+        ],
+        "answer": [
+          "633"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0054",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "hhc",
+          21
+        ],
+        [
+          "hfl",
+          "twice the number for hhc plus 16"
+        ],
+        [
+          "xql",
+          35
+        ],
+        [
+          "xrw",
+          76
+        ],
+        [
+          "ynn",
+          "twice the number for hfl plus 6"
+        ]
+      ],
+      "queried_term": "ynn",
+      "queried_value": 122,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 6,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for ynn plus 6?",
+      "answer": 250,
+      "expected_intermediates": {
+        "base_value": "21",
+        "hop1_product": "42",
+        "hop1_value": "58",
+        "hop2_product": "116",
+        "hop2_value": "122",
+        "final_product": "244",
+        "answer": "250"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "21"
+        ],
+        "hop1_product": [
+          "42"
+        ],
+        "hop1_value": [
+          "58"
+        ],
+        "hop2_product": [
+          "116"
+        ],
+        "hop2_value": [
+          "122"
+        ],
+        "final_product": [
+          "244"
+        ],
+        "answer": [
+          "250"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0055",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "yzk",
+          59
+        ],
+        [
+          "bbi",
+          "twice the number for yzk plus 7"
+        ],
+        [
+          "xuh",
+          52
+        ],
+        [
+          "rrm",
+          "twice the number for bbi plus 28"
+        ],
+        [
+          "fkr",
+          29
+        ]
+      ],
+      "queried_term": "rrm",
+      "queried_value": 278,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 20,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for rrm plus 20?",
+      "answer": 576,
+      "expected_intermediates": {
+        "base_value": "59",
+        "hop1_product": "118",
+        "hop1_value": "125",
+        "hop2_product": "250",
+        "hop2_value": "278",
+        "final_product": "556",
+        "answer": "576"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "59"
+        ],
+        "hop1_product": [
+          "118"
+        ],
+        "hop1_value": [
+          "125"
+        ],
+        "hop2_product": [
+          "250"
+        ],
+        "hop2_value": [
+          "278"
+        ],
+        "final_product": [
+          "556"
+        ],
+        "answer": [
+          "576"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0056",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "fwp",
+          50
+        ],
+        [
+          "miz",
+          "twice the number for fwp plus 25"
+        ],
+        [
+          "jrn",
+          "twice the number for miz plus 14"
+        ],
+        [
+          "ueo",
+          "twice the number for miz minus 15"
+        ],
+        [
+          "ncg",
+          "twice the number for miz minus 29"
+        ]
+      ],
+      "queried_term": "ueo",
+      "queried_value": 235,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 22,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for ueo plus 22?",
+      "answer": 492,
+      "expected_intermediates": {
+        "base_value": "50",
+        "hop1_product": "100",
+        "hop1_value": "125",
+        "hop2_product": "250",
+        "hop2_value": "235",
+        "final_product": "470",
+        "answer": "492"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "50"
+        ],
+        "hop1_product": [
+          "100"
+        ],
+        "hop1_value": [
+          "125"
+        ],
+        "hop2_product": [
+          "250"
+        ],
+        "hop2_value": [
+          "235"
+        ],
+        "final_product": [
+          "470"
+        ],
+        "answer": [
+          "492"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0057",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "lke",
+          79
+        ],
+        [
+          "wvl",
+          "twice the number for lke minus 19"
+        ],
+        [
+          "gnb",
+          "twice the number for wvl plus 18"
+        ],
+        [
+          "bjd",
+          "twice the number for gnb minus 24"
+        ],
+        [
+          "czc",
+          96
+        ]
+      ],
+      "queried_term": "gnb",
+      "queried_value": 296,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 29,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for gnb plus 29?",
+      "answer": 621,
+      "expected_intermediates": {
+        "base_value": "79",
+        "hop1_product": "158",
+        "hop1_value": "139",
+        "hop2_product": "278",
+        "hop2_value": "296",
+        "final_product": "592",
+        "answer": "621"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "79"
+        ],
+        "hop1_product": [
+          "158"
+        ],
+        "hop1_value": [
+          "139"
+        ],
+        "hop2_product": [
+          "278"
+        ],
+        "hop2_value": [
+          "296"
+        ],
+        "final_product": [
+          "592"
+        ],
+        "answer": [
+          "621"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0058",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "hex",
+          37
+        ],
+        [
+          "lak",
+          "twice the number for hex plus 5"
+        ],
+        [
+          "zoq",
+          "twice the number for lak plus 29"
+        ],
+        [
+          "bjk",
+          68
+        ],
+        [
+          "abv",
+          "twice the number for lak plus 11"
+        ]
+      ],
+      "queried_term": "abv",
+      "queried_value": 169,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 15,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for abv minus 15?",
+      "answer": 323,
+      "expected_intermediates": {
+        "base_value": "37",
+        "hop1_product": "74",
+        "hop1_value": "79",
+        "hop2_product": "158",
+        "hop2_value": "169",
+        "final_product": "338",
+        "answer": "323"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "37"
+        ],
+        "hop1_product": [
+          "74"
+        ],
+        "hop1_value": [
+          "79"
+        ],
+        "hop2_product": [
+          "158"
+        ],
+        "hop2_value": [
+          "169"
+        ],
+        "final_product": [
+          "338"
+        ],
+        "answer": [
+          "323"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0059",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "fkm",
+          64
+        ],
+        [
+          "dmt",
+          "twice the number for fkm plus 5"
+        ],
+        [
+          "bhk",
+          71
+        ],
+        [
+          "czo",
+          "twice the number for dmt minus 28"
+        ],
+        [
+          "who",
+          98
+        ]
+      ],
+      "queried_term": "czo",
+      "queried_value": 238,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 5,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for czo minus 5?",
+      "answer": 471,
+      "expected_intermediates": {
+        "base_value": "64",
+        "hop1_product": "128",
+        "hop1_value": "133",
+        "hop2_product": "266",
+        "hop2_value": "238",
+        "final_product": "476",
+        "answer": "471"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "64"
+        ],
+        "hop1_product": [
+          "128"
+        ],
+        "hop1_value": [
+          "133"
+        ],
+        "hop2_product": [
+          "266"
+        ],
+        "hop2_value": [
+          "238"
+        ],
+        "final_product": [
+          "476"
+        ],
+        "answer": [
+          "471"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0060",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "wam",
+          92
+        ],
+        [
+          "txn",
+          14
+        ],
+        [
+          "alt",
+          "twice the number for txn plus 26"
+        ],
+        [
+          "omz",
+          "twice the number for alt plus 24"
+        ],
+        [
+          "rmg",
+          "twice the number for omz plus 7"
+        ]
+      ],
+      "queried_term": "omz",
+      "queried_value": 132,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 21,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for omz plus 21?",
+      "answer": 285,
+      "expected_intermediates": {
+        "base_value": "14",
+        "hop1_product": "28",
+        "hop1_value": "54",
+        "hop2_product": "108",
+        "hop2_value": "132",
+        "final_product": "264",
+        "answer": "285"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "14"
+        ],
+        "hop1_product": [
+          "28"
+        ],
+        "hop1_value": [
+          "54"
+        ],
+        "hop2_product": [
+          "108"
+        ],
+        "hop2_value": [
+          "132"
+        ],
+        "final_product": [
+          "264"
+        ],
+        "answer": [
+          "285"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0061",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "nbv",
+          35
+        ],
+        [
+          "osw",
+          22
+        ],
+        [
+          "zsr",
+          "twice the number for nbv plus 7"
+        ],
+        [
+          "kpx",
+          "twice the number for zsr plus 15"
+        ],
+        [
+          "yew",
+          49
+        ]
+      ],
+      "queried_term": "kpx",
+      "queried_value": 169,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 16,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for kpx plus 16?",
+      "answer": 354,
+      "expected_intermediates": {
+        "base_value": "35",
+        "hop1_product": "70",
+        "hop1_value": "77",
+        "hop2_product": "154",
+        "hop2_value": "169",
+        "final_product": "338",
+        "answer": "354"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "35"
+        ],
+        "hop1_product": [
+          "70"
+        ],
+        "hop1_value": [
+          "77"
+        ],
+        "hop2_product": [
+          "154"
+        ],
+        "hop2_value": [
+          "169"
+        ],
+        "final_product": [
+          "338"
+        ],
+        "answer": [
+          "354"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0062",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "iaq",
+          65
+        ],
+        [
+          "hps",
+          "twice the number for iaq minus 27"
+        ],
+        [
+          "ulr",
+          80
+        ],
+        [
+          "nrn",
+          "twice the number for hps minus 21"
+        ],
+        [
+          "vpa",
+          "twice the number for hps minus 30"
+        ]
+      ],
+      "queried_term": "nrn",
+      "queried_value": 185,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 8,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for nrn minus 8?",
+      "answer": 362,
+      "expected_intermediates": {
+        "base_value": "65",
+        "hop1_product": "130",
+        "hop1_value": "103",
+        "hop2_product": "206",
+        "hop2_value": "185",
+        "final_product": "370",
+        "answer": "362"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "65"
+        ],
+        "hop1_product": [
+          "130"
+        ],
+        "hop1_value": [
+          "103"
+        ],
+        "hop2_product": [
+          "206"
+        ],
+        "hop2_value": [
+          "185"
+        ],
+        "final_product": [
+          "370"
+        ],
+        "answer": [
+          "362"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0063",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "pty",
+          95
+        ],
+        [
+          "edq",
+          "twice the number for pty plus 28"
+        ],
+        [
+          "xgb",
+          "twice the number for edq plus 16"
+        ],
+        [
+          "cxa",
+          "twice the number for xgb plus 4"
+        ],
+        [
+          "eve",
+          "twice the number for pty minus 28"
+        ]
+      ],
+      "queried_term": "xgb",
+      "queried_value": 452,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 21,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for xgb plus 21?",
+      "answer": 925,
+      "expected_intermediates": {
+        "base_value": "95",
+        "hop1_product": "190",
+        "hop1_value": "218",
+        "hop2_product": "436",
+        "hop2_value": "452",
+        "final_product": "904",
+        "answer": "925"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "95"
+        ],
+        "hop1_product": [
+          "190"
+        ],
+        "hop1_value": [
+          "218"
+        ],
+        "hop2_product": [
+          "436"
+        ],
+        "hop2_value": [
+          "452"
+        ],
+        "final_product": [
+          "904"
+        ],
+        "answer": [
+          "925"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0064",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "mog",
+          63
+        ],
+        [
+          "sun",
+          "twice the number for mog plus 10"
+        ],
+        [
+          "ruc",
+          "twice the number for sun minus 24"
+        ],
+        [
+          "bwc",
+          69
+        ],
+        [
+          "fkk",
+          "twice the number for ruc minus 25"
+        ]
+      ],
+      "queried_term": "ruc",
+      "queried_value": 248,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 17,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for ruc plus 17?",
+      "answer": 513,
+      "expected_intermediates": {
+        "base_value": "63",
+        "hop1_product": "126",
+        "hop1_value": "136",
+        "hop2_product": "272",
+        "hop2_value": "248",
+        "final_product": "496",
+        "answer": "513"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "63"
+        ],
+        "hop1_product": [
+          "126"
+        ],
+        "hop1_value": [
+          "136"
+        ],
+        "hop2_product": [
+          "272"
+        ],
+        "hop2_value": [
+          "248"
+        ],
+        "final_product": [
+          "496"
+        ],
+        "answer": [
+          "513"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0065",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "jdh",
+          27
+        ],
+        [
+          "iix",
+          "twice the number for jdh plus 28"
+        ],
+        [
+          "sgr",
+          "twice the number for iix plus 10"
+        ],
+        [
+          "xxy",
+          "twice the number for sgr plus 4"
+        ],
+        [
+          "qmz",
+          "twice the number for jdh minus 17"
+        ]
+      ],
+      "queried_term": "sgr",
+      "queried_value": 174,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 21,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for sgr plus 21?",
+      "answer": 369,
+      "expected_intermediates": {
+        "base_value": "27",
+        "hop1_product": "54",
+        "hop1_value": "82",
+        "hop2_product": "164",
+        "hop2_value": "174",
+        "final_product": "348",
+        "answer": "369"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "27"
+        ],
+        "hop1_product": [
+          "54"
+        ],
+        "hop1_value": [
+          "82"
+        ],
+        "hop2_product": [
+          "164"
+        ],
+        "hop2_value": [
+          "174"
+        ],
+        "final_product": [
+          "348"
+        ],
+        "answer": [
+          "369"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0066",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "yai",
+          98
+        ],
+        [
+          "gke",
+          "twice the number for yai minus 21"
+        ],
+        [
+          "odk",
+          19
+        ],
+        [
+          "jzx",
+          "twice the number for gke minus 9"
+        ],
+        [
+          "xlv",
+          49
+        ]
+      ],
+      "queried_term": "jzx",
+      "queried_value": 341,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 26,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for jzx minus 26?",
+      "answer": 656,
+      "expected_intermediates": {
+        "base_value": "98",
+        "hop1_product": "196",
+        "hop1_value": "175",
+        "hop2_product": "350",
+        "hop2_value": "341",
+        "final_product": "682",
+        "answer": "656"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "98"
+        ],
+        "hop1_product": [
+          "196"
+        ],
+        "hop1_value": [
+          "175"
+        ],
+        "hop2_product": [
+          "350"
+        ],
+        "hop2_value": [
+          "341"
+        ],
+        "final_product": [
+          "682"
+        ],
+        "answer": [
+          "656"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0067",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "abl",
+          11
+        ],
+        [
+          "dqp",
+          "twice the number for abl minus 8"
+        ],
+        [
+          "tdz",
+          29
+        ],
+        [
+          "oyf",
+          "twice the number for dqp minus 22"
+        ],
+        [
+          "ixw",
+          "twice the number for tdz plus 7"
+        ]
+      ],
+      "queried_term": "oyf",
+      "queried_value": 6,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 9,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for oyf minus 9?",
+      "answer": 3,
+      "expected_intermediates": {
+        "base_value": "11",
+        "hop1_product": "22",
+        "hop1_value": "14",
+        "hop2_product": "28",
+        "hop2_value": "6",
+        "final_product": "12",
+        "answer": "3"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "11"
+        ],
+        "hop1_product": [
+          "22"
+        ],
+        "hop1_value": [
+          "14"
+        ],
+        "hop2_product": [
+          "28"
+        ],
+        "hop2_value": [
+          "6"
+        ],
+        "final_product": [
+          "12"
+        ],
+        "answer": [
+          "3"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0068",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "zhf",
+          97
+        ],
+        [
+          "ufz",
+          "twice the number for zhf plus 24"
+        ],
+        [
+          "ogk",
+          88
+        ],
+        [
+          "psy",
+          21
+        ],
+        [
+          "gyb",
+          "twice the number for ufz minus 4"
+        ]
+      ],
+      "queried_term": "gyb",
+      "queried_value": 432,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 11,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for gyb plus 11?",
+      "answer": 875,
+      "expected_intermediates": {
+        "base_value": "97",
+        "hop1_product": "194",
+        "hop1_value": "218",
+        "hop2_product": "436",
+        "hop2_value": "432",
+        "final_product": "864",
+        "answer": "875"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "97"
+        ],
+        "hop1_product": [
+          "194"
+        ],
+        "hop1_value": [
+          "218"
+        ],
+        "hop2_product": [
+          "436"
+        ],
+        "hop2_value": [
+          "432"
+        ],
+        "final_product": [
+          "864"
+        ],
+        "answer": [
+          "875"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0069",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "gka",
+          67
+        ],
+        [
+          "rxc",
+          "twice the number for gka minus 12"
+        ],
+        [
+          "zzw",
+          "twice the number for rxc plus 22"
+        ],
+        [
+          "vxy",
+          "twice the number for rxc plus 28"
+        ],
+        [
+          "tae",
+          "twice the number for rxc minus 16"
+        ]
+      ],
+      "queried_term": "tae",
+      "queried_value": 228,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 20,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for tae plus 20?",
+      "answer": 476,
+      "expected_intermediates": {
+        "base_value": "67",
+        "hop1_product": "134",
+        "hop1_value": "122",
+        "hop2_product": "244",
+        "hop2_value": "228",
+        "final_product": "456",
+        "answer": "476"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "67"
+        ],
+        "hop1_product": [
+          "134"
+        ],
+        "hop1_value": [
+          "122"
+        ],
+        "hop2_product": [
+          "244"
+        ],
+        "hop2_value": [
+          "228"
+        ],
+        "final_product": [
+          "456"
+        ],
+        "answer": [
+          "476"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0070",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "nxg",
+          13
+        ],
+        [
+          "agc",
+          "twice the number for nxg plus 1"
+        ],
+        [
+          "saj",
+          "twice the number for agc plus 8"
+        ],
+        [
+          "hsa",
+          "twice the number for nxg minus 23"
+        ],
+        [
+          "nor",
+          71
+        ]
+      ],
+      "queried_term": "saj",
+      "queried_value": 62,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 25,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for saj plus 25?",
+      "answer": 149,
+      "expected_intermediates": {
+        "base_value": "13",
+        "hop1_product": "26",
+        "hop1_value": "27",
+        "hop2_product": "54",
+        "hop2_value": "62",
+        "final_product": "124",
+        "answer": "149"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "13"
+        ],
+        "hop1_product": [
+          "26"
+        ],
+        "hop1_value": [
+          "27"
+        ],
+        "hop2_product": [
+          "54"
+        ],
+        "hop2_value": [
+          "62"
+        ],
+        "final_product": [
+          "124"
+        ],
+        "answer": [
+          "149"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0071",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "vlf",
+          61
+        ],
+        [
+          "pch",
+          27
+        ],
+        [
+          "yfd",
+          "twice the number for vlf minus 28"
+        ],
+        [
+          "eru",
+          "twice the number for yfd plus 14"
+        ],
+        [
+          "iif",
+          "twice the number for vlf minus 13"
+        ]
+      ],
+      "queried_term": "eru",
+      "queried_value": 202,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 21,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for eru plus 21?",
+      "answer": 425,
+      "expected_intermediates": {
+        "base_value": "61",
+        "hop1_product": "122",
+        "hop1_value": "94",
+        "hop2_product": "188",
+        "hop2_value": "202",
+        "final_product": "404",
+        "answer": "425"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "61"
+        ],
+        "hop1_product": [
+          "122"
+        ],
+        "hop1_value": [
+          "94"
+        ],
+        "hop2_product": [
+          "188"
+        ],
+        "hop2_value": [
+          "202"
+        ],
+        "final_product": [
+          "404"
+        ],
+        "answer": [
+          "425"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0072",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ddl",
+          22
+        ],
+        [
+          "ybw",
+          "twice the number for ddl minus 20"
+        ],
+        [
+          "hqu",
+          72
+        ],
+        [
+          "prq",
+          "twice the number for ybw plus 14"
+        ],
+        [
+          "ksi",
+          73
+        ]
+      ],
+      "queried_term": "prq",
+      "queried_value": 62,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 15,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for prq plus 15?",
+      "answer": 139,
+      "expected_intermediates": {
+        "base_value": "22",
+        "hop1_product": "44",
+        "hop1_value": "24",
+        "hop2_product": "48",
+        "hop2_value": "62",
+        "final_product": "124",
+        "answer": "139"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "22"
+        ],
+        "hop1_product": [
+          "44"
+        ],
+        "hop1_value": [
+          "24"
+        ],
+        "hop2_product": [
+          "48"
+        ],
+        "hop2_value": [
+          "62"
+        ],
+        "final_product": [
+          "124"
+        ],
+        "answer": [
+          "139"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0073",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "pbb",
+          29
+        ],
+        [
+          "hpu",
+          "twice the number for pbb minus 25"
+        ],
+        [
+          "uav",
+          "twice the number for hpu plus 10"
+        ],
+        [
+          "vut",
+          "twice the number for hpu minus 1"
+        ],
+        [
+          "ixp",
+          "twice the number for uav minus 13"
+        ]
+      ],
+      "queried_term": "vut",
+      "queried_value": 65,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 23,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for vut plus 23?",
+      "answer": 153,
+      "expected_intermediates": {
+        "base_value": "29",
+        "hop1_product": "58",
+        "hop1_value": "33",
+        "hop2_product": "66",
+        "hop2_value": "65",
+        "final_product": "130",
+        "answer": "153"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "29"
+        ],
+        "hop1_product": [
+          "58"
+        ],
+        "hop1_value": [
+          "33"
+        ],
+        "hop2_product": [
+          "66"
+        ],
+        "hop2_value": [
+          "65"
+        ],
+        "final_product": [
+          "130"
+        ],
+        "answer": [
+          "153"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0074",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "rus",
+          77
+        ],
+        [
+          "epu",
+          "twice the number for rus minus 28"
+        ],
+        [
+          "xpn",
+          "twice the number for epu plus 4"
+        ],
+        [
+          "dpl",
+          "twice the number for xpn plus 3"
+        ],
+        [
+          "vzk",
+          44
+        ]
+      ],
+      "queried_term": "xpn",
+      "queried_value": 256,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 11,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for xpn minus 11?",
+      "answer": 501,
+      "expected_intermediates": {
+        "base_value": "77",
+        "hop1_product": "154",
+        "hop1_value": "126",
+        "hop2_product": "252",
+        "hop2_value": "256",
+        "final_product": "512",
+        "answer": "501"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "77"
+        ],
+        "hop1_product": [
+          "154"
+        ],
+        "hop1_value": [
+          "126"
+        ],
+        "hop2_product": [
+          "252"
+        ],
+        "hop2_value": [
+          "256"
+        ],
+        "final_product": [
+          "512"
+        ],
+        "answer": [
+          "501"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0075",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "asw",
+          58
+        ],
+        [
+          "gax",
+          "twice the number for asw minus 28"
+        ],
+        [
+          "jko",
+          "twice the number for gax plus 19"
+        ],
+        [
+          "qzi",
+          "twice the number for gax minus 8"
+        ],
+        [
+          "zqe",
+          79
+        ]
+      ],
+      "queried_term": "qzi",
+      "queried_value": 168,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 25,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for qzi plus 25?",
+      "answer": 361,
+      "expected_intermediates": {
+        "base_value": "58",
+        "hop1_product": "116",
+        "hop1_value": "88",
+        "hop2_product": "176",
+        "hop2_value": "168",
+        "final_product": "336",
+        "answer": "361"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "58"
+        ],
+        "hop1_product": [
+          "116"
+        ],
+        "hop1_value": [
+          "88"
+        ],
+        "hop2_product": [
+          "176"
+        ],
+        "hop2_value": [
+          "168"
+        ],
+        "final_product": [
+          "336"
+        ],
+        "answer": [
+          "361"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0076",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ihz",
+          88
+        ],
+        [
+          "szb",
+          "twice the number for ihz plus 15"
+        ],
+        [
+          "pqt",
+          "twice the number for szb minus 6"
+        ],
+        [
+          "yvv",
+          "twice the number for pqt plus 2"
+        ],
+        [
+          "lqg",
+          "twice the number for szb minus 19"
+        ]
+      ],
+      "queried_term": "lqg",
+      "queried_value": 363,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 8,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for lqg plus 8?",
+      "answer": 734,
+      "expected_intermediates": {
+        "base_value": "88",
+        "hop1_product": "176",
+        "hop1_value": "191",
+        "hop2_product": "382",
+        "hop2_value": "363",
+        "final_product": "726",
+        "answer": "734"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "88"
+        ],
+        "hop1_product": [
+          "176"
+        ],
+        "hop1_value": [
+          "191"
+        ],
+        "hop2_product": [
+          "382"
+        ],
+        "hop2_value": [
+          "363"
+        ],
+        "final_product": [
+          "726"
+        ],
+        "answer": [
+          "734"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0077",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "fmh",
+          44
+        ],
+        [
+          "wcr",
+          "twice the number for fmh plus 9"
+        ],
+        [
+          "yyu",
+          73
+        ],
+        [
+          "pkg",
+          "twice the number for fmh plus 29"
+        ],
+        [
+          "blk",
+          "twice the number for pkg plus 25"
+        ]
+      ],
+      "queried_term": "blk",
+      "queried_value": 259,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 29,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for blk minus 29?",
+      "answer": 489,
+      "expected_intermediates": {
+        "base_value": "44",
+        "hop1_product": "88",
+        "hop1_value": "117",
+        "hop2_product": "234",
+        "hop2_value": "259",
+        "final_product": "518",
+        "answer": "489"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "44"
+        ],
+        "hop1_product": [
+          "88"
+        ],
+        "hop1_value": [
+          "117"
+        ],
+        "hop2_product": [
+          "234"
+        ],
+        "hop2_value": [
+          "259"
+        ],
+        "final_product": [
+          "518"
+        ],
+        "answer": [
+          "489"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0078",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "wzq",
+          57
+        ],
+        [
+          "ttz",
+          "twice the number for wzq plus 8"
+        ],
+        [
+          "oua",
+          11
+        ],
+        [
+          "jqc",
+          "twice the number for wzq minus 7"
+        ],
+        [
+          "cme",
+          "twice the number for jqc plus 17"
+        ]
+      ],
+      "queried_term": "cme",
+      "queried_value": 231,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 29,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for cme minus 29?",
+      "answer": 433,
+      "expected_intermediates": {
+        "base_value": "57",
+        "hop1_product": "114",
+        "hop1_value": "107",
+        "hop2_product": "214",
+        "hop2_value": "231",
+        "final_product": "462",
+        "answer": "433"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "57"
+        ],
+        "hop1_product": [
+          "114"
+        ],
+        "hop1_value": [
+          "107"
+        ],
+        "hop2_product": [
+          "214"
+        ],
+        "hop2_value": [
+          "231"
+        ],
+        "final_product": [
+          "462"
+        ],
+        "answer": [
+          "433"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0079",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "row",
+          35
+        ],
+        [
+          "pjc",
+          "twice the number for row plus 12"
+        ],
+        [
+          "iul",
+          "twice the number for pjc plus 27"
+        ],
+        [
+          "cbb",
+          77
+        ],
+        [
+          "ivc",
+          68
+        ]
+      ],
+      "queried_term": "iul",
+      "queried_value": 191,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 17,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for iul minus 17?",
+      "answer": 365,
+      "expected_intermediates": {
+        "base_value": "35",
+        "hop1_product": "70",
+        "hop1_value": "82",
+        "hop2_product": "164",
+        "hop2_value": "191",
+        "final_product": "382",
+        "answer": "365"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "35"
+        ],
+        "hop1_product": [
+          "70"
+        ],
+        "hop1_value": [
+          "82"
+        ],
+        "hop2_product": [
+          "164"
+        ],
+        "hop2_value": [
+          "191"
+        ],
+        "final_product": [
+          "382"
+        ],
+        "answer": [
+          "365"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0080",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "cha",
+          77
+        ],
+        [
+          "lcq",
+          "twice the number for cha plus 3"
+        ],
+        [
+          "rjp",
+          "twice the number for lcq minus 11"
+        ],
+        [
+          "jbt",
+          89
+        ],
+        [
+          "vsn",
+          "twice the number for rjp minus 6"
+        ]
+      ],
+      "queried_term": "rjp",
+      "queried_value": 303,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 18,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for rjp plus 18?",
+      "answer": 624,
+      "expected_intermediates": {
+        "base_value": "77",
+        "hop1_product": "154",
+        "hop1_value": "157",
+        "hop2_product": "314",
+        "hop2_value": "303",
+        "final_product": "606",
+        "answer": "624"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "77"
+        ],
+        "hop1_product": [
+          "154"
+        ],
+        "hop1_value": [
+          "157"
+        ],
+        "hop2_product": [
+          "314"
+        ],
+        "hop2_value": [
+          "303"
+        ],
+        "final_product": [
+          "606"
+        ],
+        "answer": [
+          "624"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0081",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "six",
+          46
+        ],
+        [
+          "lkr",
+          "twice the number for six plus 1"
+        ],
+        [
+          "klh",
+          "twice the number for lkr minus 2"
+        ],
+        [
+          "vho",
+          "twice the number for six plus 22"
+        ],
+        [
+          "zju",
+          "twice the number for six minus 18"
+        ]
+      ],
+      "queried_term": "klh",
+      "queried_value": 184,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 28,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for klh minus 28?",
+      "answer": 340,
+      "expected_intermediates": {
+        "base_value": "46",
+        "hop1_product": "92",
+        "hop1_value": "93",
+        "hop2_product": "186",
+        "hop2_value": "184",
+        "final_product": "368",
+        "answer": "340"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "46"
+        ],
+        "hop1_product": [
+          "92"
+        ],
+        "hop1_value": [
+          "93"
+        ],
+        "hop2_product": [
+          "186"
+        ],
+        "hop2_value": [
+          "184"
+        ],
+        "final_product": [
+          "368"
+        ],
+        "answer": [
+          "340"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0082",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "wbu",
+          84
+        ],
+        [
+          "vgb",
+          "twice the number for wbu plus 22"
+        ],
+        [
+          "rrh",
+          "twice the number for vgb minus 11"
+        ],
+        [
+          "sjs",
+          "twice the number for wbu plus 25"
+        ],
+        [
+          "qya",
+          "twice the number for vgb plus 3"
+        ]
+      ],
+      "queried_term": "rrh",
+      "queried_value": 369,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 22,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for rrh minus 22?",
+      "answer": 716,
+      "expected_intermediates": {
+        "base_value": "84",
+        "hop1_product": "168",
+        "hop1_value": "190",
+        "hop2_product": "380",
+        "hop2_value": "369",
+        "final_product": "738",
+        "answer": "716"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "84"
+        ],
+        "hop1_product": [
+          "168"
+        ],
+        "hop1_value": [
+          "190"
+        ],
+        "hop2_product": [
+          "380"
+        ],
+        "hop2_value": [
+          "369"
+        ],
+        "final_product": [
+          "738"
+        ],
+        "answer": [
+          "716"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0083",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "cvv",
+          53
+        ],
+        [
+          "rxl",
+          "twice the number for cvv minus 9"
+        ],
+        [
+          "tii",
+          "twice the number for rxl minus 30"
+        ],
+        [
+          "njb",
+          "twice the number for tii minus 6"
+        ],
+        [
+          "htz",
+          "twice the number for cvv minus 17"
+        ]
+      ],
+      "queried_term": "tii",
+      "queried_value": 164,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 18,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for tii minus 18?",
+      "answer": 310,
+      "expected_intermediates": {
+        "base_value": "53",
+        "hop1_product": "106",
+        "hop1_value": "97",
+        "hop2_product": "194",
+        "hop2_value": "164",
+        "final_product": "328",
+        "answer": "310"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "53"
+        ],
+        "hop1_product": [
+          "106"
+        ],
+        "hop1_value": [
+          "97"
+        ],
+        "hop2_product": [
+          "194"
+        ],
+        "hop2_value": [
+          "164"
+        ],
+        "final_product": [
+          "328"
+        ],
+        "answer": [
+          "310"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0084",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "tws",
+          93
+        ],
+        [
+          "piw",
+          83
+        ],
+        [
+          "aaq",
+          33
+        ],
+        [
+          "dzd",
+          "twice the number for tws plus 6"
+        ],
+        [
+          "aej",
+          "twice the number for dzd minus 24"
+        ]
+      ],
+      "queried_term": "aej",
+      "queried_value": 360,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 21,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for aej plus 21?",
+      "answer": 741,
+      "expected_intermediates": {
+        "base_value": "93",
+        "hop1_product": "186",
+        "hop1_value": "192",
+        "hop2_product": "384",
+        "hop2_value": "360",
+        "final_product": "720",
+        "answer": "741"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "93"
+        ],
+        "hop1_product": [
+          "186"
+        ],
+        "hop1_value": [
+          "192"
+        ],
+        "hop2_product": [
+          "384"
+        ],
+        "hop2_value": [
+          "360"
+        ],
+        "final_product": [
+          "720"
+        ],
+        "answer": [
+          "741"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0085",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "jex",
+          62
+        ],
+        [
+          "afa",
+          "twice the number for jex minus 13"
+        ],
+        [
+          "rlw",
+          "twice the number for jex plus 18"
+        ],
+        [
+          "rtd",
+          "twice the number for rlw minus 13"
+        ],
+        [
+          "cyt",
+          "twice the number for jex minus 22"
+        ]
+      ],
+      "queried_term": "rtd",
+      "queried_value": 271,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 12,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for rtd minus 12?",
+      "answer": 530,
+      "expected_intermediates": {
+        "base_value": "62",
+        "hop1_product": "124",
+        "hop1_value": "142",
+        "hop2_product": "284",
+        "hop2_value": "271",
+        "final_product": "542",
+        "answer": "530"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "62"
+        ],
+        "hop1_product": [
+          "124"
+        ],
+        "hop1_value": [
+          "142"
+        ],
+        "hop2_product": [
+          "284"
+        ],
+        "hop2_value": [
+          "271"
+        ],
+        "final_product": [
+          "542"
+        ],
+        "answer": [
+          "530"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0086",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "fus",
+          28
+        ],
+        [
+          "qiq",
+          "twice the number for fus minus 7"
+        ],
+        [
+          "pkv",
+          "twice the number for qiq minus 5"
+        ],
+        [
+          "uvg",
+          86
+        ],
+        [
+          "iqe",
+          "twice the number for qiq minus 10"
+        ]
+      ],
+      "queried_term": "pkv",
+      "queried_value": 93,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 22,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for pkv minus 22?",
+      "answer": 164,
+      "expected_intermediates": {
+        "base_value": "28",
+        "hop1_product": "56",
+        "hop1_value": "49",
+        "hop2_product": "98",
+        "hop2_value": "93",
+        "final_product": "186",
+        "answer": "164"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "28"
+        ],
+        "hop1_product": [
+          "56"
+        ],
+        "hop1_value": [
+          "49"
+        ],
+        "hop2_product": [
+          "98"
+        ],
+        "hop2_value": [
+          "93"
+        ],
+        "final_product": [
+          "186"
+        ],
+        "answer": [
+          "164"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0087",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "esk",
+          13
+        ],
+        [
+          "ndk",
+          "twice the number for esk minus 9"
+        ],
+        [
+          "gcy",
+          "twice the number for ndk minus 8"
+        ],
+        [
+          "szm",
+          "twice the number for gcy plus 10"
+        ],
+        [
+          "wwx",
+          "twice the number for szm minus 26"
+        ]
+      ],
+      "queried_term": "gcy",
+      "queried_value": 26,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 20,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for gcy plus 20?",
+      "answer": 72,
+      "expected_intermediates": {
+        "base_value": "13",
+        "hop1_product": "26",
+        "hop1_value": "17",
+        "hop2_product": "34",
+        "hop2_value": "26",
+        "final_product": "52",
+        "answer": "72"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "13"
+        ],
+        "hop1_product": [
+          "26"
+        ],
+        "hop1_value": [
+          "17"
+        ],
+        "hop2_product": [
+          "34"
+        ],
+        "hop2_value": [
+          "26"
+        ],
+        "final_product": [
+          "52"
+        ],
+        "answer": [
+          "72"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0088",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "byu",
+          67
+        ],
+        [
+          "dou",
+          "twice the number for byu minus 3"
+        ],
+        [
+          "zxq",
+          "twice the number for dou minus 18"
+        ],
+        [
+          "nli",
+          "twice the number for zxq plus 8"
+        ],
+        [
+          "mne",
+          "twice the number for nli minus 11"
+        ]
+      ],
+      "queried_term": "zxq",
+      "queried_value": 244,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 3,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for zxq minus 3?",
+      "answer": 485,
+      "expected_intermediates": {
+        "base_value": "67",
+        "hop1_product": "134",
+        "hop1_value": "131",
+        "hop2_product": "262",
+        "hop2_value": "244",
+        "final_product": "488",
+        "answer": "485"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "67"
+        ],
+        "hop1_product": [
+          "134"
+        ],
+        "hop1_value": [
+          "131"
+        ],
+        "hop2_product": [
+          "262"
+        ],
+        "hop2_value": [
+          "244"
+        ],
+        "final_product": [
+          "488"
+        ],
+        "answer": [
+          "485"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0089",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "cuz",
+          74
+        ],
+        [
+          "rnp",
+          "twice the number for cuz plus 16"
+        ],
+        [
+          "mei",
+          "twice the number for rnp plus 10"
+        ],
+        [
+          "qpv",
+          "twice the number for cuz minus 3"
+        ],
+        [
+          "pzh",
+          "twice the number for mei minus 16"
+        ]
+      ],
+      "queried_term": "mei",
+      "queried_value": 338,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 23,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for mei plus 23?",
+      "answer": 699,
+      "expected_intermediates": {
+        "base_value": "74",
+        "hop1_product": "148",
+        "hop1_value": "164",
+        "hop2_product": "328",
+        "hop2_value": "338",
+        "final_product": "676",
+        "answer": "699"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "74"
+        ],
+        "hop1_product": [
+          "148"
+        ],
+        "hop1_value": [
+          "164"
+        ],
+        "hop2_product": [
+          "328"
+        ],
+        "hop2_value": [
+          "338"
+        ],
+        "final_product": [
+          "676"
+        ],
+        "answer": [
+          "699"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0090",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ymp",
+          89
+        ],
+        [
+          "doj",
+          60
+        ],
+        [
+          "hqc",
+          "twice the number for doj minus 2"
+        ],
+        [
+          "uqt",
+          "twice the number for hqc minus 18"
+        ],
+        [
+          "gse",
+          43
+        ]
+      ],
+      "queried_term": "uqt",
+      "queried_value": 218,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 13,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for uqt plus 13?",
+      "answer": 449,
+      "expected_intermediates": {
+        "base_value": "60",
+        "hop1_product": "120",
+        "hop1_value": "118",
+        "hop2_product": "236",
+        "hop2_value": "218",
+        "final_product": "436",
+        "answer": "449"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "60"
+        ],
+        "hop1_product": [
+          "120"
+        ],
+        "hop1_value": [
+          "118"
+        ],
+        "hop2_product": [
+          "236"
+        ],
+        "hop2_value": [
+          "218"
+        ],
+        "final_product": [
+          "436"
+        ],
+        "answer": [
+          "449"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0091",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "sne",
+          85
+        ],
+        [
+          "gfs",
+          "twice the number for sne plus 21"
+        ],
+        [
+          "szk",
+          "twice the number for gfs plus 13"
+        ],
+        [
+          "gcl",
+          "twice the number for gfs plus 11"
+        ],
+        [
+          "bjp",
+          47
+        ]
+      ],
+      "queried_term": "gcl",
+      "queried_value": 393,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 6,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for gcl plus 6?",
+      "answer": 792,
+      "expected_intermediates": {
+        "base_value": "85",
+        "hop1_product": "170",
+        "hop1_value": "191",
+        "hop2_product": "382",
+        "hop2_value": "393",
+        "final_product": "786",
+        "answer": "792"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "85"
+        ],
+        "hop1_product": [
+          "170"
+        ],
+        "hop1_value": [
+          "191"
+        ],
+        "hop2_product": [
+          "382"
+        ],
+        "hop2_value": [
+          "393"
+        ],
+        "final_product": [
+          "786"
+        ],
+        "answer": [
+          "792"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0092",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "xhw",
+          55
+        ],
+        [
+          "jmj",
+          "twice the number for xhw plus 16"
+        ],
+        [
+          "alh",
+          "twice the number for jmj plus 19"
+        ],
+        [
+          "ixa",
+          30
+        ],
+        [
+          "inv",
+          "twice the number for alh minus 19"
+        ]
+      ],
+      "queried_term": "alh",
+      "queried_value": 271,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 2,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for alh plus 2?",
+      "answer": 544,
+      "expected_intermediates": {
+        "base_value": "55",
+        "hop1_product": "110",
+        "hop1_value": "126",
+        "hop2_product": "252",
+        "hop2_value": "271",
+        "final_product": "542",
+        "answer": "544"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "55"
+        ],
+        "hop1_product": [
+          "110"
+        ],
+        "hop1_value": [
+          "126"
+        ],
+        "hop2_product": [
+          "252"
+        ],
+        "hop2_value": [
+          "271"
+        ],
+        "final_product": [
+          "542"
+        ],
+        "answer": [
+          "544"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0093",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "ujk",
+          94
+        ],
+        [
+          "rnc",
+          "twice the number for ujk minus 2"
+        ],
+        [
+          "htk",
+          89
+        ],
+        [
+          "tfs",
+          10
+        ],
+        [
+          "lem",
+          "twice the number for rnc plus 12"
+        ]
+      ],
+      "queried_term": "lem",
+      "queried_value": 384,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 13,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for lem minus 13?",
+      "answer": 755,
+      "expected_intermediates": {
+        "base_value": "94",
+        "hop1_product": "188",
+        "hop1_value": "186",
+        "hop2_product": "372",
+        "hop2_value": "384",
+        "final_product": "768",
+        "answer": "755"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "94"
+        ],
+        "hop1_product": [
+          "188"
+        ],
+        "hop1_value": [
+          "186"
+        ],
+        "hop2_product": [
+          "372"
+        ],
+        "hop2_value": [
+          "384"
+        ],
+        "final_product": [
+          "768"
+        ],
+        "answer": [
+          "755"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0094",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "csm",
+          11
+        ],
+        [
+          "xst",
+          "twice the number for csm minus 21"
+        ],
+        [
+          "muu",
+          "twice the number for xst plus 12"
+        ],
+        [
+          "ruo",
+          "twice the number for csm plus 5"
+        ],
+        [
+          "cfs",
+          73
+        ]
+      ],
+      "queried_term": "muu",
+      "queried_value": 14,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 18,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for muu plus 18?",
+      "answer": 46,
+      "expected_intermediates": {
+        "base_value": "11",
+        "hop1_product": "22",
+        "hop1_value": "1",
+        "hop2_product": "2",
+        "hop2_value": "14",
+        "final_product": "28",
+        "answer": "46"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "11"
+        ],
+        "hop1_product": [
+          "22"
+        ],
+        "hop1_value": [
+          "1"
+        ],
+        "hop2_product": [
+          "2"
+        ],
+        "hop2_value": [
+          "14"
+        ],
+        "final_product": [
+          "28"
+        ],
+        "answer": [
+          "46"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0095",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "yza",
+          83
+        ],
+        [
+          "xja",
+          "twice the number for yza plus 19"
+        ],
+        [
+          "hmx",
+          "twice the number for xja minus 28"
+        ],
+        [
+          "dlg",
+          "twice the number for yza minus 12"
+        ],
+        [
+          "dwe",
+          "twice the number for xja minus 13"
+        ]
+      ],
+      "queried_term": "hmx",
+      "queried_value": 342,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 10,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for hmx plus 10?",
+      "answer": 694,
+      "expected_intermediates": {
+        "base_value": "83",
+        "hop1_product": "166",
+        "hop1_value": "185",
+        "hop2_product": "370",
+        "hop2_value": "342",
+        "final_product": "684",
+        "answer": "694"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "83"
+        ],
+        "hop1_product": [
+          "166"
+        ],
+        "hop1_value": [
+          "185"
+        ],
+        "hop2_product": [
+          "370"
+        ],
+        "hop2_value": [
+          "342"
+        ],
+        "final_product": [
+          "684"
+        ],
+        "answer": [
+          "694"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0096",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "wjz",
+          35
+        ],
+        [
+          "lka",
+          39
+        ],
+        [
+          "tqo",
+          "twice the number for wjz minus 26"
+        ],
+        [
+          "wxh",
+          "twice the number for tqo plus 24"
+        ],
+        [
+          "tlb",
+          "twice the number for tqo plus 2"
+        ]
+      ],
+      "queried_term": "wxh",
+      "queried_value": 112,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 4,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for wxh plus 4?",
+      "answer": 228,
+      "expected_intermediates": {
+        "base_value": "35",
+        "hop1_product": "70",
+        "hop1_value": "44",
+        "hop2_product": "88",
+        "hop2_value": "112",
+        "final_product": "224",
+        "answer": "228"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "35"
+        ],
+        "hop1_product": [
+          "70"
+        ],
+        "hop1_value": [
+          "44"
+        ],
+        "hop2_product": [
+          "88"
+        ],
+        "hop2_value": [
+          "112"
+        ],
+        "final_product": [
+          "224"
+        ],
+        "answer": [
+          "228"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0097",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "xsg",
+          29
+        ],
+        [
+          "xev",
+          37
+        ],
+        [
+          "zkx",
+          15
+        ],
+        [
+          "dyt",
+          "twice the number for xev plus 16"
+        ],
+        [
+          "bnz",
+          "twice the number for dyt minus 8"
+        ]
+      ],
+      "queried_term": "bnz",
+      "queried_value": 172,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 10,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for bnz plus 10?",
+      "answer": 354,
+      "expected_intermediates": {
+        "base_value": "37",
+        "hop1_product": "74",
+        "hop1_value": "90",
+        "hop2_product": "180",
+        "hop2_value": "172",
+        "final_product": "344",
+        "answer": "354"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "37"
+        ],
+        "hop1_product": [
+          "74"
+        ],
+        "hop1_value": [
+          "90"
+        ],
+        "hop2_product": [
+          "180"
+        ],
+        "hop2_value": [
+          "172"
+        ],
+        "final_product": [
+          "344"
+        ],
+        "answer": [
+          "354"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0098",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "uud",
+          89
+        ],
+        [
+          "fua",
+          "twice the number for uud minus 26"
+        ],
+        [
+          "gsw",
+          "twice the number for fua plus 13"
+        ],
+        [
+          "gvz",
+          "twice the number for gsw minus 21"
+        ],
+        [
+          "vaa",
+          78
+        ]
+      ],
+      "queried_term": "gsw",
+      "queried_value": 317,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 12,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for gsw plus 12?",
+      "answer": 646,
+      "expected_intermediates": {
+        "base_value": "89",
+        "hop1_product": "178",
+        "hop1_value": "152",
+        "hop2_product": "304",
+        "hop2_value": "317",
+        "final_product": "634",
+        "answer": "646"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "89"
+        ],
+        "hop1_product": [
+          "178"
+        ],
+        "hop1_value": [
+          "152"
+        ],
+        "hop2_product": [
+          "304"
+        ],
+        "hop2_value": [
+          "317"
+        ],
+        "final_product": [
+          "634"
+        ],
+        "answer": [
+          "646"
+        ]
+      }
+    },
+    {
+      "id": "varbind_c2_heldout_0099",
+      "type": "chained_var_binding",
+      "definitions": [
+        [
+          "eaq",
+          57
+        ],
+        [
+          "wlv",
+          "twice the number for eaq plus 26"
+        ],
+        [
+          "skg",
+          62
+        ],
+        [
+          "can",
+          "twice the number for wlv minus 24"
+        ],
+        [
+          "xou",
+          32
+        ]
+      ],
+      "queried_term": "can",
+      "queried_value": 256,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 7,
+      "num_terms": 5,
+      "chain_len": 2,
+      "question": "What is twice the number for can minus 7?",
+      "answer": 505,
+      "expected_intermediates": {
+        "base_value": "57",
+        "hop1_product": "114",
+        "hop1_value": "140",
+        "hop2_product": "280",
+        "hop2_value": "256",
+        "final_product": "512",
+        "answer": "505"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "57"
+        ],
+        "hop1_product": [
+          "114"
+        ],
+        "hop1_value": [
+          "140"
+        ],
+        "hop2_product": [
+          "280"
+        ],
+        "hop2_value": [
+          "256"
+        ],
+        "final_product": [
+          "512"
+        ],
+        "answer": [
+          "505"
+        ]
+      }
+    }
+  ]
+}

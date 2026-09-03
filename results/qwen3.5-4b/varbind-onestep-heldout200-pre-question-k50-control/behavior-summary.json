@@ -1,0 +1,67 @@
+{
+  "overall": {
+    "by_length": {
+      "0": {
+        "n": 200,
+        "correct": 147,
+        "accuracy": 0.735,
+        "mrr": 0.9379166666666667,
+        "recall_at_1": 0.885,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "50": {
+        "n": 200,
+        "correct": 139,
+        "accuracy": 0.695,
+        "mrr": 0.9165833333333333,
+        "recall_at_1": 0.855,
+        "recall_at_5": 0.995,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      }
+    },
+    "paired_vs_k0": {
+      "50": {
+        "helped_count": 4,
+        "hurt_count": 12,
+        "net_correct": -8,
+        "exact_mcnemar_p": 0.076812744140625,
+        "helped_ids": [
+          "varbind_onestep_0021",
+          "varbind_onestep_0058",
+          "varbind_onestep_0115",
+          "varbind_onestep_0150"
+        ],
+        "hurt_ids": [
+          "varbind_onestep_0018",
+          "varbind_onestep_0032",
+          "varbind_onestep_0036",
+          "varbind_onestep_0065",
+          "varbind_onestep_0099",
+          "varbind_onestep_0105",
+          "varbind_onestep_0151",
+          "varbind_onestep_0152",
+          "varbind_onestep_0159",
+          "varbind_onestep_0172",
+          "varbind_onestep_0174",
+          "varbind_onestep_0176"
+        ],
+        "mean_log10_rank_gain": -0.01752574989159953,
+        "largest_rank_gain_ids": [
+          "varbind_onestep_0115",
+          "varbind_onestep_0021",
+          "varbind_onestep_0199",
+          "varbind_onestep_0198",
+          "varbind_onestep_0197",
+          "varbind_onestep_0196",
+          "varbind_onestep_0195",
+          "varbind_onestep_0194",
+          "varbind_onestep_0193",
+          "varbind_onestep_0192"
+        ]
+      }
+    }
+  }
+}

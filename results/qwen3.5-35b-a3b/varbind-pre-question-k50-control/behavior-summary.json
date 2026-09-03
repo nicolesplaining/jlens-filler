@@ -1,0 +1,54 @@
+{
+  "overall": {
+    "by_length": {
+      "0": {
+        "n": 50,
+        "correct": 3,
+        "accuracy": 0.06,
+        "mrr": 0.657079365079365,
+        "recall_at_1": 0.46,
+        "recall_at_5": 0.92,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "50": {
+        "n": 50,
+        "correct": 4,
+        "accuracy": 0.08,
+        "mrr": 0.6820555555555555,
+        "recall_at_1": 0.48,
+        "recall_at_5": 0.94,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      }
+    },
+    "paired_vs_k0": {
+      "50": {
+        "helped_count": 2,
+        "hurt_count": 1,
+        "net_correct": 1,
+        "exact_mcnemar_p": 1.0,
+        "helped_ids": [
+          "varbind_easy_0023",
+          "varbind_easy_0043"
+        ],
+        "hurt_ids": [
+          "varbind_easy_0019"
+        ],
+        "mean_log10_rank_gain": 0.02679896123388702,
+        "largest_rank_gain_ids": [
+          "varbind_easy_0000",
+          "varbind_easy_0043",
+          "varbind_easy_0041",
+          "varbind_easy_0024",
+          "varbind_easy_0021",
+          "varbind_easy_0014",
+          "varbind_easy_0001",
+          "varbind_easy_0036",
+          "varbind_easy_0035",
+          "varbind_easy_0017"
+        ]
+      }
+    }
+  }
+}

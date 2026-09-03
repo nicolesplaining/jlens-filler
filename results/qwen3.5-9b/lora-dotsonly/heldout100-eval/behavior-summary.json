@@ -1,0 +1,253 @@
+{
+  "overall": {
+    "by_length": {
+      "0": {
+        "n": 100,
+        "correct": 67,
+        "accuracy": 0.67,
+        "mrr": 0.9733333333333333,
+        "recall_at_1": 0.95,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "5": {
+        "n": 100,
+        "correct": 70,
+        "accuracy": 0.7,
+        "mrr": 0.9783333333333333,
+        "recall_at_1": 0.96,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "10": {
+        "n": 100,
+        "correct": 73,
+        "accuracy": 0.73,
+        "mrr": 0.9775,
+        "recall_at_1": 0.96,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "25": {
+        "n": 100,
+        "correct": 68,
+        "accuracy": 0.68,
+        "mrr": 0.9783333333333333,
+        "recall_at_1": 0.96,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "50": {
+        "n": 100,
+        "correct": 63,
+        "accuracy": 0.63,
+        "mrr": 0.9783333333333333,
+        "recall_at_1": 0.96,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "100": {
+        "n": 100,
+        "correct": 67,
+        "accuracy": 0.67,
+        "mrr": 0.9783333333333333,
+        "recall_at_1": 0.96,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      }
+    },
+    "paired_vs_k0": {
+      "5": {
+        "helped_count": 8,
+        "hurt_count": 5,
+        "net_correct": 3,
+        "exact_mcnemar_p": 0.5810546875,
+        "helped_ids": [
+          "varbind_heldout_0068",
+          "varbind_heldout_0070",
+          "varbind_heldout_0072",
+          "varbind_heldout_0085",
+          "varbind_heldout_0087",
+          "varbind_heldout_0106",
+          "varbind_heldout_0121",
+          "varbind_heldout_0141"
+        ],
+        "hurt_ids": [
+          "varbind_heldout_0069",
+          "varbind_heldout_0090",
+          "varbind_heldout_0094",
+          "varbind_heldout_0144",
+          "varbind_heldout_0149"
+        ],
+        "mean_log10_rank_gain": 0.0030102999566398118,
+        "largest_rank_gain_ids": [
+          "varbind_heldout_0070",
+          "varbind_heldout_0149",
+          "varbind_heldout_0148",
+          "varbind_heldout_0147",
+          "varbind_heldout_0146",
+          "varbind_heldout_0145",
+          "varbind_heldout_0144",
+          "varbind_heldout_0143",
+          "varbind_heldout_0142",
+          "varbind_heldout_0141"
+        ]
+      },
+      "10": {
+        "helped_count": 10,
+        "hurt_count": 4,
+        "net_correct": 6,
+        "exact_mcnemar_p": 0.1795654296875,
+        "helped_ids": [
+          "varbind_heldout_0070",
+          "varbind_heldout_0072",
+          "varbind_heldout_0076",
+          "varbind_heldout_0085",
+          "varbind_heldout_0087",
+          "varbind_heldout_0095",
+          "varbind_heldout_0106",
+          "varbind_heldout_0113",
+          "varbind_heldout_0121",
+          "varbind_heldout_0141"
+        ],
+        "hurt_ids": [
+          "varbind_heldout_0090",
+          "varbind_heldout_0094",
+          "varbind_heldout_0144",
+          "varbind_heldout_0149"
+        ],
+        "mean_log10_rank_gain": 0.0017609125905568123,
+        "largest_rank_gain_ids": [
+          "varbind_heldout_0070",
+          "varbind_heldout_0149",
+          "varbind_heldout_0148",
+          "varbind_heldout_0147",
+          "varbind_heldout_0146",
+          "varbind_heldout_0145",
+          "varbind_heldout_0144",
+          "varbind_heldout_0143",
+          "varbind_heldout_0142",
+          "varbind_heldout_0141"
+        ]
+      },
+      "25": {
+        "helped_count": 7,
+        "hurt_count": 6,
+        "net_correct": 1,
+        "exact_mcnemar_p": 1.0,
+        "helped_ids": [
+          "varbind_heldout_0068",
+          "varbind_heldout_0070",
+          "varbind_heldout_0072",
+          "varbind_heldout_0087",
+          "varbind_heldout_0095",
+          "varbind_heldout_0121",
+          "varbind_heldout_0147"
+        ],
+        "hurt_ids": [
+          "varbind_heldout_0069",
+          "varbind_heldout_0094",
+          "varbind_heldout_0103",
+          "varbind_heldout_0129",
+          "varbind_heldout_0144",
+          "varbind_heldout_0149"
+        ],
+        "mean_log10_rank_gain": 0.0030102999566398118,
+        "largest_rank_gain_ids": [
+          "varbind_heldout_0070",
+          "varbind_heldout_0149",
+          "varbind_heldout_0148",
+          "varbind_heldout_0147",
+          "varbind_heldout_0146",
+          "varbind_heldout_0145",
+          "varbind_heldout_0144",
+          "varbind_heldout_0143",
+          "varbind_heldout_0142",
+          "varbind_heldout_0141"
+        ]
+      },
+      "50": {
+        "helped_count": 5,
+        "hurt_count": 9,
+        "net_correct": -4,
+        "exact_mcnemar_p": 0.4239501953125,
+        "helped_ids": [
+          "varbind_heldout_0068",
+          "varbind_heldout_0087",
+          "varbind_heldout_0095",
+          "varbind_heldout_0106",
+          "varbind_heldout_0121"
+        ],
+        "hurt_ids": [
+          "varbind_heldout_0069",
+          "varbind_heldout_0089",
+          "varbind_heldout_0090",
+          "varbind_heldout_0094",
+          "varbind_heldout_0119",
+          "varbind_heldout_0129",
+          "varbind_heldout_0130",
+          "varbind_heldout_0144",
+          "varbind_heldout_0149"
+        ],
+        "mean_log10_rank_gain": 0.0030102999566398118,
+        "largest_rank_gain_ids": [
+          "varbind_heldout_0070",
+          "varbind_heldout_0149",
+          "varbind_heldout_0148",
+          "varbind_heldout_0147",
+          "varbind_heldout_0146",
+          "varbind_heldout_0145",
+          "varbind_heldout_0144",
+          "varbind_heldout_0143",
+          "varbind_heldout_0142",
+          "varbind_heldout_0141"
+        ]
+      },
+      "100": {
+        "helped_count": 8,
+        "hurt_count": 8,
+        "net_correct": 0,
+        "exact_mcnemar_p": 1.0,
+        "helped_ids": [
+          "varbind_heldout_0068",
+          "varbind_heldout_0070",
+          "varbind_heldout_0072",
+          "varbind_heldout_0078",
+          "varbind_heldout_0087",
+          "varbind_heldout_0106",
+          "varbind_heldout_0141",
+          "varbind_heldout_0147"
+        ],
+        "hurt_ids": [
+          "varbind_heldout_0050",
+          "varbind_heldout_0069",
+          "varbind_heldout_0090",
+          "varbind_heldout_0094",
+          "varbind_heldout_0119",
+          "varbind_heldout_0129",
+          "varbind_heldout_0130",
+          "varbind_heldout_0149"
+        ],
+        "mean_log10_rank_gain": 0.0030102999566398118,
+        "largest_rank_gain_ids": [
+          "varbind_heldout_0070",
+          "varbind_heldout_0149",
+          "varbind_heldout_0148",
+          "varbind_heldout_0147",
+          "varbind_heldout_0146",
+          "varbind_heldout_0145",
+          "varbind_heldout_0144",
+          "varbind_heldout_0143",
+          "varbind_heldout_0142",
+          "varbind_heldout_0141"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,195 @@
+{
+ "by_length": {
+  "0": {
+   "n": 50,
+   "correct": 14,
+   "accuracy": 0.28,
+   "mrr": 0.9316666666666668,
+   "recall_at_1": 0.88,
+   "recall_at_5": 1.0,
+   "recall_at_10": 1.0,
+   "recall_at_50": 1.0
+  },
+  "5": {
+   "n": 50,
+   "correct": 14,
+   "accuracy": 0.28,
+   "mrr": 0.9316666666666668,
+   "recall_at_1": 0.88,
+   "recall_at_5": 1.0,
+   "recall_at_10": 1.0,
+   "recall_at_50": 1.0
+  },
+  "10": {
+   "n": 50,
+   "correct": 16,
+   "accuracy": 0.32,
+   "mrr": 0.9283333333333332,
+   "recall_at_1": 0.88,
+   "recall_at_5": 1.0,
+   "recall_at_10": 1.0,
+   "recall_at_50": 1.0
+  },
+  "25": {
+   "n": 50,
+   "correct": 15,
+   "accuracy": 0.3,
+   "mrr": 0.9316666666666668,
+   "recall_at_1": 0.88,
+   "recall_at_5": 1.0,
+   "recall_at_10": 1.0,
+   "recall_at_50": 1.0
+  },
+  "50": {
+   "n": 50,
+   "correct": 13,
+   "accuracy": 0.26,
+   "mrr": 0.9283333333333332,
+   "recall_at_1": 0.88,
+   "recall_at_5": 1.0,
+   "recall_at_10": 1.0,
+   "recall_at_50": 1.0
+  },
+  "100": {
+   "n": 50,
+   "correct": 15,
+   "accuracy": 0.3,
+   "mrr": 0.9416666666666668,
+   "recall_at_1": 0.9,
+   "recall_at_5": 1.0,
+   "recall_at_10": 1.0,
+   "recall_at_50": 1.0
+  }
+ },
+ "paired_vs_k0": {
+  "5": {
+   "helped_count": 1,
+   "hurt_count": 1,
+   "net_correct": 0,
+   "exact_mcnemar_p": 1.0,
+   "helped_ids": [
+    "varbind_easy_0022"
+   ],
+   "hurt_ids": [
+    "varbind_easy_0043"
+   ],
+   "mean_log10_rank_gain": 0.0,
+   "largest_rank_gain_ids": [
+    "varbind_easy_0014",
+    "varbind_easy_0049",
+    "varbind_easy_0048",
+    "varbind_easy_0047",
+    "varbind_easy_0046",
+    "varbind_easy_0045",
+    "varbind_easy_0044",
+    "varbind_easy_0043",
+    "varbind_easy_0042",
+    "varbind_easy_0041"
+   ]
+  },
+  "10": {
+   "helped_count": 2,
+   "hurt_count": 0,
+   "net_correct": 2,
+   "exact_mcnemar_p": 0.5,
+   "helped_ids": [
+    "varbind_easy_0009",
+    "varbind_easy_0045"
+   ],
+   "hurt_ids": [],
+   "mean_log10_rank_gain": -0.0035218251811136247,
+   "largest_rank_gain_ids": [
+    "varbind_easy_0014",
+    "varbind_easy_0048",
+    "varbind_easy_0047",
+    "varbind_easy_0046",
+    "varbind_easy_0045",
+    "varbind_easy_0044",
+    "varbind_easy_0043",
+    "varbind_easy_0042",
+    "varbind_easy_0041",
+    "varbind_easy_0040"
+   ]
+  },
+  "25": {
+   "helped_count": 2,
+   "hurt_count": 1,
+   "net_correct": 1,
+   "exact_mcnemar_p": 1.0,
+   "helped_ids": [
+    "varbind_easy_0022",
+    "varbind_easy_0045"
+   ],
+   "hurt_ids": [
+    "varbind_easy_0025"
+   ],
+   "mean_log10_rank_gain": 0.0,
+   "largest_rank_gain_ids": [
+    "varbind_easy_0014",
+    "varbind_easy_0049",
+    "varbind_easy_0048",
+    "varbind_easy_0047",
+    "varbind_easy_0046",
+    "varbind_easy_0045",
+    "varbind_easy_0044",
+    "varbind_easy_0043",
+    "varbind_easy_0042",
+    "varbind_easy_0041"
+   ]
+  },
+  "50": {
+   "helped_count": 2,
+   "hurt_count": 3,
+   "net_correct": -1,
+   "exact_mcnemar_p": 1.0,
+   "helped_ids": [
+    "varbind_easy_0022",
+    "varbind_easy_0045"
+   ],
+   "hurt_ids": [
+    "varbind_easy_0019",
+    "varbind_easy_0025",
+    "varbind_easy_0043"
+   ],
+   "mean_log10_rank_gain": -0.0035218251811136247,
+   "largest_rank_gain_ids": [
+    "varbind_easy_0014",
+    "varbind_easy_0048",
+    "varbind_easy_0047",
+    "varbind_easy_0046",
+    "varbind_easy_0045",
+    "varbind_easy_0044",
+    "varbind_easy_0043",
+    "varbind_easy_0042",
+    "varbind_easy_0041",
+    "varbind_easy_0040"
+   ]
+  },
+  "100": {
+   "helped_count": 2,
+   "hurt_count": 1,
+   "net_correct": 1,
+   "exact_mcnemar_p": 1.0,
+   "helped_ids": [
+    "varbind_easy_0022",
+    "varbind_easy_0036"
+   ],
+   "hurt_ids": [
+    "varbind_easy_0019"
+   ],
+   "mean_log10_rank_gain": 0.0060205999132796235,
+   "largest_rank_gain_ids": [
+    "varbind_easy_0014",
+    "varbind_easy_0049",
+    "varbind_easy_0048",
+    "varbind_easy_0047",
+    "varbind_easy_0046",
+    "varbind_easy_0045",
+    "varbind_easy_0044",
+    "varbind_easy_0043",
+    "varbind_easy_0042",
+    "varbind_easy_0041"
+   ]
+  }
+ }
+}

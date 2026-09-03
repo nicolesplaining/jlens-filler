@@ -1,0 +1,256 @@
+{
+  "overall": {
+    "by_length": {
+      "0": {
+        "n": 200,
+        "correct": 147,
+        "accuracy": 0.735,
+        "mrr": 0.9379166666666667,
+        "recall_at_1": 0.885,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "5": {
+        "n": 200,
+        "correct": 145,
+        "accuracy": 0.725,
+        "mrr": 0.9282142857142857,
+        "recall_at_1": 0.87,
+        "recall_at_5": 0.995,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "10": {
+        "n": 200,
+        "correct": 142,
+        "accuracy": 0.71,
+        "mrr": 0.9326666666666666,
+        "recall_at_1": 0.875,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "25": {
+        "n": 200,
+        "correct": 150,
+        "accuracy": 0.75,
+        "mrr": 0.9493333333333334,
+        "recall_at_1": 0.905,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "50": {
+        "n": 200,
+        "correct": 144,
+        "accuracy": 0.72,
+        "mrr": 0.9352083333333333,
+        "recall_at_1": 0.88,
+        "recall_at_5": 0.995,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "100": {
+        "n": 200,
+        "correct": 149,
+        "accuracy": 0.745,
+        "mrr": 0.946547619047619,
+        "recall_at_1": 0.9,
+        "recall_at_5": 0.995,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      }
+    },
+    "paired_vs_k0": {
+      "5": {
+        "helped_count": 5,
+        "hurt_count": 7,
+        "net_correct": -2,
+        "exact_mcnemar_p": 0.7744140625,
+        "helped_ids": [
+          "varbind_onestep_0052",
+          "varbind_onestep_0056",
+          "varbind_onestep_0115",
+          "varbind_onestep_0125",
+          "varbind_onestep_0191"
+        ],
+        "hurt_ids": [
+          "varbind_onestep_0065",
+          "varbind_onestep_0099",
+          "varbind_onestep_0122",
+          "varbind_onestep_0123",
+          "varbind_onestep_0159",
+          "varbind_onestep_0174",
+          "varbind_onestep_0176"
+        ],
+        "mean_log10_rank_gain": -0.007860483839752595,
+        "largest_rank_gain_ids": [
+          "varbind_onestep_0191",
+          "varbind_onestep_0115",
+          "varbind_onestep_0052",
+          "varbind_onestep_0030",
+          "varbind_onestep_0199",
+          "varbind_onestep_0198",
+          "varbind_onestep_0197",
+          "varbind_onestep_0196",
+          "varbind_onestep_0195",
+          "varbind_onestep_0194"
+        ]
+      },
+      "10": {
+        "helped_count": 5,
+        "hurt_count": 10,
+        "net_correct": -5,
+        "exact_mcnemar_p": 0.3017578125,
+        "helped_ids": [
+          "varbind_onestep_0021",
+          "varbind_onestep_0056",
+          "varbind_onestep_0100",
+          "varbind_onestep_0115",
+          "varbind_onestep_0150"
+        ],
+        "hurt_ids": [
+          "varbind_onestep_0042",
+          "varbind_onestep_0047",
+          "varbind_onestep_0081",
+          "varbind_onestep_0099",
+          "varbind_onestep_0104",
+          "varbind_onestep_0122",
+          "varbind_onestep_0151",
+          "varbind_onestep_0152",
+          "varbind_onestep_0174",
+          "varbind_onestep_0176"
+        ],
+        "mean_log10_rank_gain": -0.0038637810924846876,
+        "largest_rank_gain_ids": [
+          "varbind_onestep_0115",
+          "varbind_onestep_0043",
+          "varbind_onestep_0021",
+          "varbind_onestep_0030",
+          "varbind_onestep_0199",
+          "varbind_onestep_0198",
+          "varbind_onestep_0197",
+          "varbind_onestep_0196",
+          "varbind_onestep_0195",
+          "varbind_onestep_0194"
+        ]
+      },
+      "25": {
+        "helped_count": 9,
+        "hurt_count": 6,
+        "net_correct": 3,
+        "exact_mcnemar_p": 0.60723876953125,
+        "helped_ids": [
+          "varbind_onestep_0021",
+          "varbind_onestep_0052",
+          "varbind_onestep_0056",
+          "varbind_onestep_0100",
+          "varbind_onestep_0115",
+          "varbind_onestep_0150",
+          "varbind_onestep_0154",
+          "varbind_onestep_0161",
+          "varbind_onestep_0191"
+        ],
+        "hurt_ids": [
+          "varbind_onestep_0016",
+          "varbind_onestep_0042",
+          "varbind_onestep_0099",
+          "varbind_onestep_0107",
+          "varbind_onestep_0114",
+          "varbind_onestep_0137"
+        ],
+        "mean_log10_rank_gain": 0.007296962438796154,
+        "largest_rank_gain_ids": [
+          "varbind_onestep_0191",
+          "varbind_onestep_0161",
+          "varbind_onestep_0154",
+          "varbind_onestep_0115",
+          "varbind_onestep_0052",
+          "varbind_onestep_0043",
+          "varbind_onestep_0021",
+          "varbind_onestep_0030",
+          "varbind_onestep_0003",
+          "varbind_onestep_0199"
+        ]
+      },
+      "50": {
+        "helped_count": 6,
+        "hurt_count": 9,
+        "net_correct": -3,
+        "exact_mcnemar_p": 0.60723876953125,
+        "helped_ids": [
+          "varbind_onestep_0002",
+          "varbind_onestep_0021",
+          "varbind_onestep_0056",
+          "varbind_onestep_0115",
+          "varbind_onestep_0125",
+          "varbind_onestep_0191"
+        ],
+        "hurt_ids": [
+          "varbind_onestep_0007",
+          "varbind_onestep_0099",
+          "varbind_onestep_0104",
+          "varbind_onestep_0114",
+          "varbind_onestep_0123",
+          "varbind_onestep_0137",
+          "varbind_onestep_0151",
+          "varbind_onestep_0152",
+          "varbind_onestep_0159"
+        ],
+        "mean_log10_rank_gain": -0.002754537344402905,
+        "largest_rank_gain_ids": [
+          "varbind_onestep_0191",
+          "varbind_onestep_0115",
+          "varbind_onestep_0043",
+          "varbind_onestep_0021",
+          "varbind_onestep_0002",
+          "varbind_onestep_0030",
+          "varbind_onestep_0003",
+          "varbind_onestep_0199",
+          "varbind_onestep_0198",
+          "varbind_onestep_0197"
+        ]
+      },
+      "100": {
+        "helped_count": 9,
+        "hurt_count": 7,
+        "net_correct": 2,
+        "exact_mcnemar_p": 0.803619384765625,
+        "helped_ids": [
+          "varbind_onestep_0038",
+          "varbind_onestep_0056",
+          "varbind_onestep_0100",
+          "varbind_onestep_0109",
+          "varbind_onestep_0115",
+          "varbind_onestep_0150",
+          "varbind_onestep_0154",
+          "varbind_onestep_0161",
+          "varbind_onestep_0191"
+        ],
+        "hurt_ids": [
+          "varbind_onestep_0007",
+          "varbind_onestep_0042",
+          "varbind_onestep_0099",
+          "varbind_onestep_0107",
+          "varbind_onestep_0114",
+          "varbind_onestep_0137",
+          "varbind_onestep_0151"
+        ],
+        "mean_log10_rank_gain": 0.005061172282085058,
+        "largest_rank_gain_ids": [
+          "varbind_onestep_0191",
+          "varbind_onestep_0161",
+          "varbind_onestep_0154",
+          "varbind_onestep_0115",
+          "varbind_onestep_0109",
+          "varbind_onestep_0043",
+          "varbind_onestep_0102",
+          "varbind_onestep_0030",
+          "varbind_onestep_0003",
+          "varbind_onestep_0199"
+        ]
+      }
+    }
+  }
+}

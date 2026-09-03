@@ -1,0 +1,47 @@
+{
+ "by_length": {
+  "0": {
+   "n": 50,
+   "correct": 0,
+   "accuracy": 0.0,
+   "mrr": 0.44212698412698415,
+   "recall_at_1": 0.2,
+   "recall_at_5": 0.76,
+   "recall_at_10": 1.0,
+   "recall_at_50": 1.0
+  },
+  "50": {
+   "n": 50,
+   "correct": 0,
+   "accuracy": 0.0,
+   "mrr": 0.44946031746031745,
+   "recall_at_1": 0.2,
+   "recall_at_5": 0.8,
+   "recall_at_10": 1.0,
+   "recall_at_50": 1.0
+  }
+ },
+ "paired_vs_k0": {
+  "50": {
+   "helped_count": 0,
+   "hurt_count": 0,
+   "net_correct": 0,
+   "exact_mcnemar_p": 1.0,
+   "helped_ids": [],
+   "hurt_ids": [],
+   "mean_log10_rank_gain": 0.011126050015345746,
+   "largest_rank_gain_ids": [
+    "varbind_c2_heldout_0019",
+    "varbind_c2_heldout_0042",
+    "varbind_c2_heldout_0038",
+    "varbind_c2_heldout_0046",
+    "varbind_c2_heldout_0035",
+    "varbind_c2_heldout_0028",
+    "varbind_c2_heldout_0016",
+    "varbind_c2_heldout_0023",
+    "varbind_c2_heldout_0017",
+    "varbind_c2_heldout_0005"
+   ]
+  }
+ }
+}

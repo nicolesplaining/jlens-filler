@@ -1,0 +1,182 @@
+{
+ "by_length": {
+  "0": {
+   "n": 50,
+   "correct": 3,
+   "accuracy": 0.06,
+   "mrr": 0.8606666666666666,
+   "recall_at_1": 0.76,
+   "recall_at_5": 0.96,
+   "recall_at_10": 1.0,
+   "recall_at_50": 1.0
+  },
+  "5": {
+   "n": 50,
+   "correct": 3,
+   "accuracy": 0.06,
+   "mrr": 0.8523333333333334,
+   "recall_at_1": 0.74,
+   "recall_at_5": 0.98,
+   "recall_at_10": 1.0,
+   "recall_at_50": 1.0
+  },
+  "10": {
+   "n": 50,
+   "correct": 3,
+   "accuracy": 0.06,
+   "mrr": 0.8606666666666666,
+   "recall_at_1": 0.76,
+   "recall_at_5": 0.96,
+   "recall_at_10": 1.0,
+   "recall_at_50": 1.0
+  },
+  "25": {
+   "n": 50,
+   "correct": 2,
+   "accuracy": 0.04,
+   "mrr": 0.8418571428571429,
+   "recall_at_1": 0.72,
+   "recall_at_5": 0.98,
+   "recall_at_10": 1.0,
+   "recall_at_50": 1.0
+  },
+  "50": {
+   "n": 50,
+   "correct": 2,
+   "accuracy": 0.04,
+   "mrr": 0.8313333333333334,
+   "recall_at_1": 0.7,
+   "recall_at_5": 0.98,
+   "recall_at_10": 1.0,
+   "recall_at_50": 1.0
+  },
+  "100": {
+   "n": 50,
+   "correct": 1,
+   "accuracy": 0.02,
+   "mrr": 0.8308571428571428,
+   "recall_at_1": 0.7,
+   "recall_at_5": 0.98,
+   "recall_at_10": 1.0,
+   "recall_at_50": 1.0
+  }
+ },
+ "paired_vs_k0": {
+  "5": {
+   "helped_count": 0,
+   "hurt_count": 0,
+   "net_correct": 0,
+   "exact_mcnemar_p": 1.0,
+   "helped_ids": [],
+   "hurt_ids": [],
+   "mean_log10_rank_gain": -0.0024987747321659993,
+   "largest_rank_gain_ids": [
+    "varbind_c2_heldout_0029",
+    "varbind_c2_heldout_0049",
+    "varbind_c2_heldout_0048",
+    "varbind_c2_heldout_0047",
+    "varbind_c2_heldout_0046",
+    "varbind_c2_heldout_0045",
+    "varbind_c2_heldout_0044",
+    "varbind_c2_heldout_0043",
+    "varbind_c2_heldout_0042",
+    "varbind_c2_heldout_0041"
+   ]
+  },
+  "10": {
+   "helped_count": 1,
+   "hurt_count": 1,
+   "net_correct": 0,
+   "exact_mcnemar_p": 1.0,
+   "helped_ids": [
+    "varbind_c2_heldout_0043"
+   ],
+   "hurt_ids": [
+    "varbind_c2_heldout_0036"
+   ],
+   "mean_log10_rank_gain": 0.0,
+   "largest_rank_gain_ids": [
+    "varbind_c2_heldout_0049",
+    "varbind_c2_heldout_0048",
+    "varbind_c2_heldout_0047",
+    "varbind_c2_heldout_0046",
+    "varbind_c2_heldout_0045",
+    "varbind_c2_heldout_0044",
+    "varbind_c2_heldout_0043",
+    "varbind_c2_heldout_0042",
+    "varbind_c2_heldout_0041",
+    "varbind_c2_heldout_0040"
+   ]
+  },
+  "25": {
+   "helped_count": 0,
+   "hurt_count": 1,
+   "net_correct": -1,
+   "exact_mcnemar_p": 1.0,
+   "helped_ids": [],
+   "hurt_ids": [
+    "varbind_c2_heldout_0036"
+   ],
+   "mean_log10_rank_gain": -0.009858310438057887,
+   "largest_rank_gain_ids": [
+    "varbind_c2_heldout_0029",
+    "varbind_c2_heldout_0049",
+    "varbind_c2_heldout_0048",
+    "varbind_c2_heldout_0047",
+    "varbind_c2_heldout_0046",
+    "varbind_c2_heldout_0045",
+    "varbind_c2_heldout_0044",
+    "varbind_c2_heldout_0043",
+    "varbind_c2_heldout_0042",
+    "varbind_c2_heldout_0041"
+   ]
+  },
+  "50": {
+   "helped_count": 0,
+   "hurt_count": 1,
+   "net_correct": -1,
+   "exact_mcnemar_p": 1.0,
+   "helped_ids": [],
+   "hurt_ids": [
+    "varbind_c2_heldout_0036"
+   ],
+   "mean_log10_rank_gain": -0.016478174818886377,
+   "largest_rank_gain_ids": [
+    "varbind_c2_heldout_0029",
+    "varbind_c2_heldout_0049",
+    "varbind_c2_heldout_0047",
+    "varbind_c2_heldout_0046",
+    "varbind_c2_heldout_0045",
+    "varbind_c2_heldout_0044",
+    "varbind_c2_heldout_0043",
+    "varbind_c2_heldout_0042",
+    "varbind_c2_heldout_0041",
+    "varbind_c2_heldout_0040"
+   ]
+  },
+  "100": {
+   "helped_count": 0,
+   "hurt_count": 2,
+   "net_correct": -2,
+   "exact_mcnemar_p": 0.5,
+   "helped_ids": [],
+   "hurt_ids": [
+    "varbind_c2_heldout_0004",
+    "varbind_c2_heldout_0036"
+   ],
+   "mean_log10_rank_gain": -0.01781711061149864,
+   "largest_rank_gain_ids": [
+    "varbind_c2_heldout_0029",
+    "varbind_c2_heldout_0049",
+    "varbind_c2_heldout_0047",
+    "varbind_c2_heldout_0046",
+    "varbind_c2_heldout_0045",
+    "varbind_c2_heldout_0044",
+    "varbind_c2_heldout_0043",
+    "varbind_c2_heldout_0042",
+    "varbind_c2_heldout_0041",
+    "varbind_c2_heldout_0040"
+   ]
+  }
+ }
+}

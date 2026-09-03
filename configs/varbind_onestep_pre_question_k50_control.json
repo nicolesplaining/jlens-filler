@@ -1,0 +1,2848 @@
+{
+  "seed": 42,
+  "task_type": "variable_binding_pre_filler",
+  "filler_type": "dots",
+  "filler_lengths": [
+    0,
+    50
+  ],
+  "source": {
+    "kind": "deterministic synthetic one-step variable binding (chain_len=0)",
+    "seed": 90211,
+    "selection": "50 held-out examples and 5 disjoint few-shots; placement control with identical dots before the definitions/question",
+    "probe_rationale": "Released chain_len=1 items are at floor for open models up to 9B in direct-answer mode. This keeps the released language, five-definition layout, and derived-expression distractors, but queries a literal variable so the answer needs one hidden affine step. Intended to place small models in the 30-80% band where a filler effect is measurable."
+  },
+  "sanity_prompts": [
+    {
+      "id": "capital",
+      "messages": [
+        {
+          "role": "user",
+          "content": "The capital of France is"
+        }
+      ]
+    },
+    {
+      "id": "arithmetic",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Complete with only the answer: 17 + 25 ="
+        }
+      ]
+    },
+    {
+      "id": "chinese",
+      "messages": [
+        {
+          "role": "user",
+          "content": "用一个词回答：中国的首都是"
+        }
+      ]
+    }
+  ],
+  "few_shot": [
+    {
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "sty",
+          67
+        ],
+        [
+          "yxv",
+          32
+        ],
+        [
+          "mpw",
+          "three times the number for yxv minus 17"
+        ],
+        [
+          "zgr",
+          "three times the number for yxv plus 25"
+        ],
+        [
+          "hez",
+          "three times the number for yxv plus 9"
+        ]
+      ],
+      "queried_term": "sty",
+      "queried_value": 67,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 9,
+      "question": "What is twice the number for sty minus 9?",
+      "answer": 125,
+      "expected_intermediates": {
+        "base_value": "67",
+        "first_product": "134",
+        "answer": "125"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "67"
+        ],
+        "first_product": [
+          "134"
+        ],
+        "answer": [
+          "125"
+        ]
+      }
+    },
+    {
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "yxv",
+          48
+        ],
+        [
+          "tkv",
+          "three times the number for yxv minus 25"
+        ],
+        [
+          "ydo",
+          "three times the number for yxv minus 4"
+        ],
+        [
+          "iyy",
+          "twice the number for yxv plus 22"
+        ],
+        [
+          "geq",
+          26
+        ]
+      ],
+      "queried_term": "geq",
+      "queried_value": 26,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 9,
+      "question": "What is twice the number for geq minus 9?",
+      "answer": 43,
+      "expected_intermediates": {
+        "base_value": "26",
+        "first_product": "52",
+        "answer": "43"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "26"
+        ],
+        "first_product": [
+          "52"
+        ],
+        "answer": [
+          "43"
+        ]
+      }
+    },
+    {
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "eec",
+          98
+        ],
+        [
+          "veb",
+          88
+        ],
+        [
+          "lmf",
+          "twice the number for veb plus 6"
+        ],
+        [
+          "jfu",
+          "three times the number for veb plus 28"
+        ],
+        [
+          "yyr",
+          "three times the number for veb plus 2"
+        ]
+      ],
+      "queried_term": "eec",
+      "queried_value": 98,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 27,
+      "question": "What is twice the number for eec plus 27?",
+      "answer": 223,
+      "expected_intermediates": {
+        "base_value": "98",
+        "first_product": "196",
+        "answer": "223"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "98"
+        ],
+        "first_product": [
+          "196"
+        ],
+        "answer": [
+          "223"
+        ]
+      }
+    },
+    {
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "fnc",
+          37
+        ],
+        [
+          "jxr",
+          79
+        ],
+        [
+          "kir",
+          "three times the number for fnc minus 25"
+        ],
+        [
+          "mch",
+          "twice the number for fnc minus 15"
+        ],
+        [
+          "vme",
+          "twice the number for fnc plus 27"
+        ]
+      ],
+      "queried_term": "jxr",
+      "queried_value": 79,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 21,
+      "question": "What is twice the number for jxr minus 21?",
+      "answer": 137,
+      "expected_intermediates": {
+        "base_value": "79",
+        "first_product": "158",
+        "answer": "137"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "79"
+        ],
+        "first_product": [
+          "158"
+        ],
+        "answer": [
+          "137"
+        ]
+      }
+    },
+    {
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "gew",
+          37
+        ],
+        [
+          "ouu",
+          "twice the number for gew plus 12"
+        ],
+        [
+          "vvu",
+          34
+        ],
+        [
+          "naa",
+          "three times the number for gew minus 13"
+        ],
+        [
+          "yby",
+          "twice the number for gew plus 18"
+        ]
+      ],
+      "queried_term": "vvu",
+      "queried_value": 34,
+      "coefficient": 3,
+      "operation": "minus",
+      "constant": 30,
+      "question": "What is three times the number for vvu minus 30?",
+      "answer": 72,
+      "expected_intermediates": {
+        "base_value": "34",
+        "first_product": "102",
+        "answer": "72"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "34"
+        ],
+        "first_product": [
+          "102"
+        ],
+        "answer": [
+          "72"
+        ]
+      }
+    }
+  ],
+  "examples": [
+    {
+      "id": "varbind_onestep_0000",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "ksk",
+          99
+        ],
+        [
+          "rcr",
+          "three times the number for ksk minus 17"
+        ],
+        [
+          "orf",
+          "twice the number for ksk minus 25"
+        ],
+        [
+          "vlv",
+          51
+        ],
+        [
+          "ntr",
+          "twice the number for ksk minus 10"
+        ]
+      ],
+      "queried_term": "vlv",
+      "queried_value": 51,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 25,
+      "question": "What is twice the number for vlv plus 25?",
+      "answer": 127,
+      "expected_intermediates": {
+        "base_value": "51",
+        "first_product": "102",
+        "answer": "127"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "51"
+        ],
+        "first_product": [
+          "102"
+        ],
+        "answer": [
+          "127"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0001",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "anx",
+          71
+        ],
+        [
+          "ujv",
+          "three times the number for anx plus 13"
+        ],
+        [
+          "cvy",
+          "three times the number for anx plus 30"
+        ],
+        [
+          "rbm",
+          92
+        ],
+        [
+          "fom",
+          "twice the number for anx plus 30"
+        ]
+      ],
+      "queried_term": "rbm",
+      "queried_value": 92,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 30,
+      "question": "What is twice the number for rbm minus 30?",
+      "answer": 154,
+      "expected_intermediates": {
+        "base_value": "92",
+        "first_product": "184",
+        "answer": "154"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "92"
+        ],
+        "first_product": [
+          "184"
+        ],
+        "answer": [
+          "154"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0002",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "tfb",
+          85
+        ],
+        [
+          "qli",
+          "twice the number for tfb minus 25"
+        ],
+        [
+          "tbl",
+          "three times the number for tfb minus 2"
+        ],
+        [
+          "psr",
+          "twice the number for tfb plus 30"
+        ],
+        [
+          "gho",
+          90
+        ]
+      ],
+      "queried_term": "gho",
+      "queried_value": 90,
+      "coefficient": 3,
+      "operation": "plus",
+      "constant": 8,
+      "question": "What is three times the number for gho plus 8?",
+      "answer": 278,
+      "expected_intermediates": {
+        "base_value": "90",
+        "first_product": "270",
+        "answer": "278"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "90"
+        ],
+        "first_product": [
+          "270"
+        ],
+        "answer": [
+          "278"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0003",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "qzf",
+          69
+        ],
+        [
+          "svx",
+          "twice the number for qzf minus 19"
+        ],
+        [
+          "ndj",
+          49
+        ],
+        [
+          "jyz",
+          "three times the number for qzf plus 8"
+        ],
+        [
+          "zqf",
+          "three times the number for qzf minus 20"
+        ]
+      ],
+      "queried_term": "ndj",
+      "queried_value": 49,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 17,
+      "question": "What is twice the number for ndj minus 17?",
+      "answer": 81,
+      "expected_intermediates": {
+        "base_value": "49",
+        "first_product": "98",
+        "answer": "81"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "49"
+        ],
+        "first_product": [
+          "98"
+        ],
+        "answer": [
+          "81"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0004",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "olb",
+          76
+        ],
+        [
+          "heg",
+          29
+        ],
+        [
+          "ejc",
+          "twice the number for olb plus 13"
+        ],
+        [
+          "ygl",
+          "three times the number for olb minus 9"
+        ],
+        [
+          "cpo",
+          "twice the number for olb minus 20"
+        ]
+      ],
+      "queried_term": "heg",
+      "queried_value": 29,
+      "coefficient": 3,
+      "operation": "plus",
+      "constant": 25,
+      "question": "What is three times the number for heg plus 25?",
+      "answer": 112,
+      "expected_intermediates": {
+        "base_value": "29",
+        "first_product": "87",
+        "answer": "112"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "29"
+        ],
+        "first_product": [
+          "87"
+        ],
+        "answer": [
+          "112"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0005",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "inf",
+          73
+        ],
+        [
+          "ncd",
+          "twice the number for inf plus 17"
+        ],
+        [
+          "vrp",
+          76
+        ],
+        [
+          "xnl",
+          "three times the number for inf minus 5"
+        ],
+        [
+          "hvg",
+          "three times the number for inf plus 5"
+        ]
+      ],
+      "queried_term": "vrp",
+      "queried_value": 76,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 22,
+      "question": "What is twice the number for vrp minus 22?",
+      "answer": 130,
+      "expected_intermediates": {
+        "base_value": "76",
+        "first_product": "152",
+        "answer": "130"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "76"
+        ],
+        "first_product": [
+          "152"
+        ],
+        "answer": [
+          "130"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0006",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "ftp",
+          55
+        ],
+        [
+          "jzx",
+          "twice the number for ftp minus 28"
+        ],
+        [
+          "rqr",
+          "three times the number for ftp minus 27"
+        ],
+        [
+          "lwk",
+          24
+        ],
+        [
+          "zxq",
+          "twice the number for ftp minus 27"
+        ]
+      ],
+      "queried_term": "lwk",
+      "queried_value": 24,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 11,
+      "question": "What is twice the number for lwk minus 11?",
+      "answer": 37,
+      "expected_intermediates": {
+        "base_value": "24",
+        "first_product": "48",
+        "answer": "37"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "24"
+        ],
+        "first_product": [
+          "48"
+        ],
+        "answer": [
+          "37"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0007",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "nni",
+          47
+        ],
+        [
+          "qcr",
+          "three times the number for nni minus 24"
+        ],
+        [
+          "kfp",
+          35
+        ],
+        [
+          "lpe",
+          "three times the number for nni plus 19"
+        ],
+        [
+          "jox",
+          "three times the number for nni plus 10"
+        ]
+      ],
+      "queried_term": "kfp",
+      "queried_value": 35,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 13,
+      "question": "What is twice the number for kfp plus 13?",
+      "answer": 83,
+      "expected_intermediates": {
+        "base_value": "35",
+        "first_product": "70",
+        "answer": "83"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "35"
+        ],
+        "first_product": [
+          "70"
+        ],
+        "answer": [
+          "83"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0008",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "ond",
+          88
+        ],
+        [
+          "pme",
+          "twice the number for ond plus 16"
+        ],
+        [
+          "ory",
+          "twice the number for ond plus 20"
+        ],
+        [
+          "fcp",
+          "twice the number for ond minus 26"
+        ],
+        [
+          "iux",
+          94
+        ]
+      ],
+      "queried_term": "iux",
+      "queried_value": 94,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 30,
+      "question": "What is twice the number for iux minus 30?",
+      "answer": 158,
+      "expected_intermediates": {
+        "base_value": "94",
+        "first_product": "188",
+        "answer": "158"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "94"
+        ],
+        "first_product": [
+          "188"
+        ],
+        "answer": [
+          "158"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0009",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "oke",
+          65
+        ],
+        [
+          "wga",
+          79
+        ],
+        [
+          "oys",
+          "three times the number for wga plus 23"
+        ],
+        [
+          "oql",
+          "three times the number for wga minus 25"
+        ],
+        [
+          "bjy",
+          "three times the number for wga minus 15"
+        ]
+      ],
+      "queried_term": "oke",
+      "queried_value": 65,
+      "coefficient": 3,
+      "operation": "minus",
+      "constant": 20,
+      "question": "What is three times the number for oke minus 20?",
+      "answer": 175,
+      "expected_intermediates": {
+        "base_value": "65",
+        "first_product": "195",
+        "answer": "175"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "65"
+        ],
+        "first_product": [
+          "195"
+        ],
+        "answer": [
+          "175"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0010",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "eme",
+          45
+        ],
+        [
+          "ybt",
+          94
+        ],
+        [
+          "sti",
+          "three times the number for eme plus 21"
+        ],
+        [
+          "aaj",
+          "three times the number for eme minus 29"
+        ],
+        [
+          "cdo",
+          "twice the number for eme plus 27"
+        ]
+      ],
+      "queried_term": "ybt",
+      "queried_value": 94,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 9,
+      "question": "What is twice the number for ybt minus 9?",
+      "answer": 179,
+      "expected_intermediates": {
+        "base_value": "94",
+        "first_product": "188",
+        "answer": "179"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "94"
+        ],
+        "first_product": [
+          "188"
+        ],
+        "answer": [
+          "179"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0011",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "lel",
+          57
+        ],
+        [
+          "mgt",
+          82
+        ],
+        [
+          "phf",
+          "twice the number for lel plus 11"
+        ],
+        [
+          "ned",
+          "three times the number for lel minus 19"
+        ],
+        [
+          "zmo",
+          "three times the number for lel plus 20"
+        ]
+      ],
+      "queried_term": "mgt",
+      "queried_value": 82,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 7,
+      "question": "What is twice the number for mgt minus 7?",
+      "answer": 157,
+      "expected_intermediates": {
+        "base_value": "82",
+        "first_product": "164",
+        "answer": "157"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "82"
+        ],
+        "first_product": [
+          "164"
+        ],
+        "answer": [
+          "157"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0012",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "wtc",
+          82
+        ],
+        [
+          "stb",
+          "twice the number for wtc plus 11"
+        ],
+        [
+          "jfm",
+          "twice the number for wtc plus 8"
+        ],
+        [
+          "fgc",
+          32
+        ],
+        [
+          "wnz",
+          "twice the number for wtc minus 29"
+        ]
+      ],
+      "queried_term": "fgc",
+      "queried_value": 32,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 29,
+      "question": "What is twice the number for fgc plus 29?",
+      "answer": 93,
+      "expected_intermediates": {
+        "base_value": "32",
+        "first_product": "64",
+        "answer": "93"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "32"
+        ],
+        "first_product": [
+          "64"
+        ],
+        "answer": [
+          "93"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0013",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "ntp",
+          98
+        ],
+        [
+          "ceu",
+          62
+        ],
+        [
+          "ndz",
+          "twice the number for ceu minus 8"
+        ],
+        [
+          "nfn",
+          "twice the number for ceu minus 23"
+        ],
+        [
+          "swi",
+          "twice the number for ceu plus 9"
+        ]
+      ],
+      "queried_term": "ntp",
+      "queried_value": 98,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 30,
+      "question": "What is twice the number for ntp minus 30?",
+      "answer": 166,
+      "expected_intermediates": {
+        "base_value": "98",
+        "first_product": "196",
+        "answer": "166"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "98"
+        ],
+        "first_product": [
+          "196"
+        ],
+        "answer": [
+          "166"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0014",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "icw",
+          79
+        ],
+        [
+          "heb",
+          31
+        ],
+        [
+          "zpj",
+          "twice the number for icw plus 21"
+        ],
+        [
+          "gpr",
+          "three times the number for icw minus 26"
+        ],
+        [
+          "wlv",
+          "three times the number for icw minus 22"
+        ]
+      ],
+      "queried_term": "heb",
+      "queried_value": 31,
+      "coefficient": 3,
+      "operation": "plus",
+      "constant": 23,
+      "question": "What is three times the number for heb plus 23?",
+      "answer": 116,
+      "expected_intermediates": {
+        "base_value": "31",
+        "first_product": "93",
+        "answer": "116"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "31"
+        ],
+        "first_product": [
+          "93"
+        ],
+        "answer": [
+          "116"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0015",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "glr",
+          43
+        ],
+        [
+          "hqy",
+          "three times the number for glr plus 13"
+        ],
+        [
+          "nyr",
+          "three times the number for glr plus 26"
+        ],
+        [
+          "sld",
+          89
+        ],
+        [
+          "gqr",
+          "three times the number for glr minus 20"
+        ]
+      ],
+      "queried_term": "sld",
+      "queried_value": 89,
+      "coefficient": 3,
+      "operation": "plus",
+      "constant": 22,
+      "question": "What is three times the number for sld plus 22?",
+      "answer": 289,
+      "expected_intermediates": {
+        "base_value": "89",
+        "first_product": "267",
+        "answer": "289"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "89"
+        ],
+        "first_product": [
+          "267"
+        ],
+        "answer": [
+          "289"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0016",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "zsa",
+          79
+        ],
+        [
+          "wrc",
+          53
+        ],
+        [
+          "jrj",
+          "three times the number for zsa plus 21"
+        ],
+        [
+          "eqr",
+          "three times the number for zsa minus 10"
+        ],
+        [
+          "ind",
+          "three times the number for zsa minus 26"
+        ]
+      ],
+      "queried_term": "wrc",
+      "queried_value": 53,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 1,
+      "question": "What is twice the number for wrc minus 1?",
+      "answer": 105,
+      "expected_intermediates": {
+        "base_value": "53",
+        "first_product": "106",
+        "answer": "105"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "53"
+        ],
+        "first_product": [
+          "106"
+        ],
+        "answer": [
+          "105"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0017",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "mqr",
+          33
+        ],
+        [
+          "dkc",
+          "three times the number for mqr minus 27"
+        ],
+        [
+          "zas",
+          "three times the number for mqr plus 12"
+        ],
+        [
+          "dmz",
+          "three times the number for mqr minus 28"
+        ],
+        [
+          "pgb",
+          82
+        ]
+      ],
+      "queried_term": "pgb",
+      "queried_value": 82,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 12,
+      "question": "What is twice the number for pgb minus 12?",
+      "answer": 152,
+      "expected_intermediates": {
+        "base_value": "82",
+        "first_product": "164",
+        "answer": "152"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "82"
+        ],
+        "first_product": [
+          "164"
+        ],
+        "answer": [
+          "152"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0018",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "uyw",
+          66
+        ],
+        [
+          "fbz",
+          "three times the number for uyw minus 23"
+        ],
+        [
+          "oqo",
+          46
+        ],
+        [
+          "bmz",
+          "twice the number for uyw minus 21"
+        ],
+        [
+          "orw",
+          "three times the number for uyw minus 24"
+        ]
+      ],
+      "queried_term": "oqo",
+      "queried_value": 46,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 1,
+      "question": "What is twice the number for oqo minus 1?",
+      "answer": 91,
+      "expected_intermediates": {
+        "base_value": "46",
+        "first_product": "92",
+        "answer": "91"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "46"
+        ],
+        "first_product": [
+          "92"
+        ],
+        "answer": [
+          "91"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0019",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "hgd",
+          44
+        ],
+        [
+          "ggw",
+          "three times the number for hgd plus 25"
+        ],
+        [
+          "zil",
+          "three times the number for hgd plus 1"
+        ],
+        [
+          "amr",
+          80
+        ],
+        [
+          "wlm",
+          "twice the number for hgd plus 29"
+        ]
+      ],
+      "queried_term": "amr",
+      "queried_value": 80,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 12,
+      "question": "What is twice the number for amr plus 12?",
+      "answer": 172,
+      "expected_intermediates": {
+        "base_value": "80",
+        "first_product": "160",
+        "answer": "172"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "80"
+        ],
+        "first_product": [
+          "160"
+        ],
+        "answer": [
+          "172"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0020",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "mfb",
+          60
+        ],
+        [
+          "och",
+          "three times the number for mfb minus 28"
+        ],
+        [
+          "cjx",
+          79
+        ],
+        [
+          "bcb",
+          "three times the number for mfb plus 15"
+        ],
+        [
+          "gua",
+          "three times the number for mfb minus 2"
+        ]
+      ],
+      "queried_term": "cjx",
+      "queried_value": 79,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 21,
+      "question": "What is twice the number for cjx minus 21?",
+      "answer": 137,
+      "expected_intermediates": {
+        "base_value": "79",
+        "first_product": "158",
+        "answer": "137"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "79"
+        ],
+        "first_product": [
+          "158"
+        ],
+        "answer": [
+          "137"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0021",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "zvv",
+          91
+        ],
+        [
+          "wlb",
+          "twice the number for zvv minus 5"
+        ],
+        [
+          "bja",
+          "three times the number for zvv plus 4"
+        ],
+        [
+          "bil",
+          68
+        ],
+        [
+          "yrx",
+          "twice the number for zvv plus 13"
+        ]
+      ],
+      "queried_term": "bil",
+      "queried_value": 68,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 10,
+      "question": "What is twice the number for bil plus 10?",
+      "answer": 146,
+      "expected_intermediates": {
+        "base_value": "68",
+        "first_product": "136",
+        "answer": "146"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "68"
+        ],
+        "first_product": [
+          "136"
+        ],
+        "answer": [
+          "146"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0022",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "tdb",
+          52
+        ],
+        [
+          "lyw",
+          88
+        ],
+        [
+          "whx",
+          "three times the number for tdb minus 13"
+        ],
+        [
+          "gqw",
+          "three times the number for tdb plus 10"
+        ],
+        [
+          "rcm",
+          "three times the number for tdb minus 23"
+        ]
+      ],
+      "queried_term": "lyw",
+      "queried_value": 88,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 30,
+      "question": "What is twice the number for lyw minus 30?",
+      "answer": 146,
+      "expected_intermediates": {
+        "base_value": "88",
+        "first_product": "176",
+        "answer": "146"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "88"
+        ],
+        "first_product": [
+          "176"
+        ],
+        "answer": [
+          "146"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0023",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "rvn",
+          83
+        ],
+        [
+          "pns",
+          "twice the number for rvn plus 18"
+        ],
+        [
+          "hex",
+          "twice the number for rvn plus 10"
+        ],
+        [
+          "act",
+          86
+        ],
+        [
+          "okq",
+          "three times the number for rvn minus 3"
+        ]
+      ],
+      "queried_term": "act",
+      "queried_value": 86,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 16,
+      "question": "What is twice the number for act minus 16?",
+      "answer": 156,
+      "expected_intermediates": {
+        "base_value": "86",
+        "first_product": "172",
+        "answer": "156"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "86"
+        ],
+        "first_product": [
+          "172"
+        ],
+        "answer": [
+          "156"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0024",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "hoq",
+          71
+        ],
+        [
+          "gch",
+          86
+        ],
+        [
+          "dix",
+          "three times the number for hoq plus 19"
+        ],
+        [
+          "yxj",
+          "twice the number for hoq minus 13"
+        ],
+        [
+          "zpt",
+          "twice the number for hoq plus 3"
+        ]
+      ],
+      "queried_term": "gch",
+      "queried_value": 86,
+      "coefficient": 3,
+      "operation": "plus",
+      "constant": 7,
+      "question": "What is three times the number for gch plus 7?",
+      "answer": 265,
+      "expected_intermediates": {
+        "base_value": "86",
+        "first_product": "258",
+        "answer": "265"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "86"
+        ],
+        "first_product": [
+          "258"
+        ],
+        "answer": [
+          "265"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0025",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "oya",
+          59
+        ],
+        [
+          "yyd",
+          43
+        ],
+        [
+          "hso",
+          "three times the number for yyd plus 10"
+        ],
+        [
+          "jai",
+          "twice the number for yyd plus 29"
+        ],
+        [
+          "dov",
+          "three times the number for yyd minus 2"
+        ]
+      ],
+      "queried_term": "oya",
+      "queried_value": 59,
+      "coefficient": 3,
+      "operation": "plus",
+      "constant": 22,
+      "question": "What is three times the number for oya plus 22?",
+      "answer": 199,
+      "expected_intermediates": {
+        "base_value": "59",
+        "first_product": "177",
+        "answer": "199"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "59"
+        ],
+        "first_product": [
+          "177"
+        ],
+        "answer": [
+          "199"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0026",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "xrg",
+          89
+        ],
+        [
+          "avb",
+          62
+        ],
+        [
+          "qlg",
+          "twice the number for avb plus 18"
+        ],
+        [
+          "nde",
+          "twice the number for avb minus 24"
+        ],
+        [
+          "mbj",
+          "twice the number for avb minus 10"
+        ]
+      ],
+      "queried_term": "xrg",
+      "queried_value": 89,
+      "coefficient": 3,
+      "operation": "minus",
+      "constant": 22,
+      "question": "What is three times the number for xrg minus 22?",
+      "answer": 245,
+      "expected_intermediates": {
+        "base_value": "89",
+        "first_product": "267",
+        "answer": "245"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "89"
+        ],
+        "first_product": [
+          "267"
+        ],
+        "answer": [
+          "245"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0027",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "vft",
+          58
+        ],
+        [
+          "bin",
+          77
+        ],
+        [
+          "dgs",
+          "twice the number for vft plus 5"
+        ],
+        [
+          "ipd",
+          "three times the number for vft minus 8"
+        ],
+        [
+          "jcc",
+          "three times the number for vft minus 18"
+        ]
+      ],
+      "queried_term": "bin",
+      "queried_value": 77,
+      "coefficient": 3,
+      "operation": "minus",
+      "constant": 23,
+      "question": "What is three times the number for bin minus 23?",
+      "answer": 208,
+      "expected_intermediates": {
+        "base_value": "77",
+        "first_product": "231",
+        "answer": "208"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "77"
+        ],
+        "first_product": [
+          "231"
+        ],
+        "answer": [
+          "208"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0028",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "pvs",
+          40
+        ],
+        [
+          "waz",
+          46
+        ],
+        [
+          "qit",
+          "twice the number for pvs minus 3"
+        ],
+        [
+          "rtj",
+          "three times the number for pvs minus 19"
+        ],
+        [
+          "mmu",
+          "twice the number for pvs minus 7"
+        ]
+      ],
+      "queried_term": "waz",
+      "queried_value": 46,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 3,
+      "question": "What is twice the number for waz plus 3?",
+      "answer": 95,
+      "expected_intermediates": {
+        "base_value": "46",
+        "first_product": "92",
+        "answer": "95"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "46"
+        ],
+        "first_product": [
+          "92"
+        ],
+        "answer": [
+          "95"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0029",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "rin",
+          27
+        ],
+        [
+          "grn",
+          "twice the number for rin plus 10"
+        ],
+        [
+          "xng",
+          47
+        ],
+        [
+          "afm",
+          "three times the number for rin plus 7"
+        ],
+        [
+          "ybe",
+          "three times the number for rin minus 5"
+        ]
+      ],
+      "queried_term": "xng",
+      "queried_value": 47,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 24,
+      "question": "What is twice the number for xng plus 24?",
+      "answer": 118,
+      "expected_intermediates": {
+        "base_value": "47",
+        "first_product": "94",
+        "answer": "118"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "47"
+        ],
+        "first_product": [
+          "94"
+        ],
+        "answer": [
+          "118"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0030",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "rzy",
+          71
+        ],
+        [
+          "kfq",
+          "twice the number for rzy plus 9"
+        ],
+        [
+          "emz",
+          57
+        ],
+        [
+          "fyk",
+          "twice the number for rzy plus 21"
+        ],
+        [
+          "mdb",
+          "three times the number for rzy plus 26"
+        ]
+      ],
+      "queried_term": "emz",
+      "queried_value": 57,
+      "coefficient": 3,
+      "operation": "plus",
+      "constant": 18,
+      "question": "What is three times the number for emz plus 18?",
+      "answer": 189,
+      "expected_intermediates": {
+        "base_value": "57",
+        "first_product": "171",
+        "answer": "189"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "57"
+        ],
+        "first_product": [
+          "171"
+        ],
+        "answer": [
+          "189"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0031",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "lcr",
+          48
+        ],
+        [
+          "mho",
+          94
+        ],
+        [
+          "uyc",
+          "three times the number for lcr minus 3"
+        ],
+        [
+          "jdt",
+          "twice the number for lcr plus 8"
+        ],
+        [
+          "bub",
+          "three times the number for lcr minus 12"
+        ]
+      ],
+      "queried_term": "mho",
+      "queried_value": 94,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 11,
+      "question": "What is twice the number for mho plus 11?",
+      "answer": 199,
+      "expected_intermediates": {
+        "base_value": "94",
+        "first_product": "188",
+        "answer": "199"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "94"
+        ],
+        "first_product": [
+          "188"
+        ],
+        "answer": [
+          "199"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0032",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "xyj",
+          81
+        ],
+        [
+          "mgo",
+          74
+        ],
+        [
+          "uvw",
+          "three times the number for mgo plus 13"
+        ],
+        [
+          "qtj",
+          "twice the number for mgo plus 23"
+        ],
+        [
+          "lyt",
+          "three times the number for mgo plus 27"
+        ]
+      ],
+      "queried_term": "xyj",
+      "queried_value": 81,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 26,
+      "question": "What is twice the number for xyj minus 26?",
+      "answer": 136,
+      "expected_intermediates": {
+        "base_value": "81",
+        "first_product": "162",
+        "answer": "136"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "81"
+        ],
+        "first_product": [
+          "162"
+        ],
+        "answer": [
+          "136"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0033",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "fvt",
+          51
+        ],
+        [
+          "imp",
+          "twice the number for fvt plus 17"
+        ],
+        [
+          "lvd",
+          41
+        ],
+        [
+          "vlc",
+          "three times the number for fvt plus 13"
+        ],
+        [
+          "tqk",
+          "twice the number for fvt minus 21"
+        ]
+      ],
+      "queried_term": "lvd",
+      "queried_value": 41,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 25,
+      "question": "What is twice the number for lvd minus 25?",
+      "answer": 57,
+      "expected_intermediates": {
+        "base_value": "41",
+        "first_product": "82",
+        "answer": "57"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "41"
+        ],
+        "first_product": [
+          "82"
+        ],
+        "answer": [
+          "57"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0034",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "xel",
+          89
+        ],
+        [
+          "wsy",
+          39
+        ],
+        [
+          "eqh",
+          "three times the number for xel plus 7"
+        ],
+        [
+          "rps",
+          "twice the number for xel minus 23"
+        ],
+        [
+          "xrk",
+          "twice the number for xel minus 10"
+        ]
+      ],
+      "queried_term": "wsy",
+      "queried_value": 39,
+      "coefficient": 3,
+      "operation": "plus",
+      "constant": 29,
+      "question": "What is three times the number for wsy plus 29?",
+      "answer": 146,
+      "expected_intermediates": {
+        "base_value": "39",
+        "first_product": "117",
+        "answer": "146"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "39"
+        ],
+        "first_product": [
+          "117"
+        ],
+        "answer": [
+          "146"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0035",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "dgs",
+          31
+        ],
+        [
+          "wna",
+          92
+        ],
+        [
+          "edl",
+          "twice the number for wna minus 28"
+        ],
+        [
+          "lbl",
+          "twice the number for wna minus 10"
+        ],
+        [
+          "ycp",
+          "twice the number for wna minus 6"
+        ]
+      ],
+      "queried_term": "dgs",
+      "queried_value": 31,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 2,
+      "question": "What is twice the number for dgs minus 2?",
+      "answer": 60,
+      "expected_intermediates": {
+        "base_value": "31",
+        "first_product": "62",
+        "answer": "60"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "31"
+        ],
+        "first_product": [
+          "62"
+        ],
+        "answer": [
+          "60"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0036",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "hib",
+          78
+        ],
+        [
+          "rdd",
+          "twice the number for hib minus 20"
+        ],
+        [
+          "sfd",
+          72
+        ],
+        [
+          "qwt",
+          "three times the number for hib minus 17"
+        ],
+        [
+          "vxr",
+          "twice the number for hib plus 20"
+        ]
+      ],
+      "queried_term": "sfd",
+      "queried_value": 72,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 28,
+      "question": "What is twice the number for sfd plus 28?",
+      "answer": 172,
+      "expected_intermediates": {
+        "base_value": "72",
+        "first_product": "144",
+        "answer": "172"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "72"
+        ],
+        "first_product": [
+          "144"
+        ],
+        "answer": [
+          "172"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0037",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "wlj",
+          34
+        ],
+        [
+          "wiu",
+          75
+        ],
+        [
+          "vof",
+          "three times the number for wiu minus 13"
+        ],
+        [
+          "inn",
+          "twice the number for wiu plus 4"
+        ],
+        [
+          "lvg",
+          "twice the number for wiu minus 11"
+        ]
+      ],
+      "queried_term": "wlj",
+      "queried_value": 34,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 17,
+      "question": "What is twice the number for wlj plus 17?",
+      "answer": 85,
+      "expected_intermediates": {
+        "base_value": "34",
+        "first_product": "68",
+        "answer": "85"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "34"
+        ],
+        "first_product": [
+          "68"
+        ],
+        "answer": [
+          "85"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0038",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "bki",
+          57
+        ],
+        [
+          "mrg",
+          "three times the number for bki minus 12"
+        ],
+        [
+          "tcj",
+          "three times the number for bki minus 29"
+        ],
+        [
+          "fez",
+          41
+        ],
+        [
+          "tko",
+          "twice the number for bki minus 24"
+        ]
+      ],
+      "queried_term": "fez",
+      "queried_value": 41,
+      "coefficient": 3,
+      "operation": "plus",
+      "constant": 15,
+      "question": "What is three times the number for fez plus 15?",
+      "answer": 138,
+      "expected_intermediates": {
+        "base_value": "41",
+        "first_product": "123",
+        "answer": "138"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "41"
+        ],
+        "first_product": [
+          "123"
+        ],
+        "answer": [
+          "138"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0039",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "odi",
+          24
+        ],
+        [
+          "vfq",
+          51
+        ],
+        [
+          "giz",
+          "twice the number for odi minus 1"
+        ],
+        [
+          "typ",
+          "three times the number for odi minus 2"
+        ],
+        [
+          "llt",
+          "twice the number for odi minus 28"
+        ]
+      ],
+      "queried_term": "vfq",
+      "queried_value": 51,
+      "coefficient": 3,
+      "operation": "plus",
+      "constant": 26,
+      "question": "What is three times the number for vfq plus 26?",
+      "answer": 179,
+      "expected_intermediates": {
+        "base_value": "51",
+        "first_product": "153",
+        "answer": "179"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "51"
+        ],
+        "first_product": [
+          "153"
+        ],
+        "answer": [
+          "179"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0040",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "yqz",
+          35
+        ],
+        [
+          "wvr",
+          99
+        ],
+        [
+          "rsf",
+          "three times the number for wvr plus 16"
+        ],
+        [
+          "yne",
+          "three times the number for wvr minus 24"
+        ],
+        [
+          "qwa",
+          "twice the number for wvr plus 6"
+        ]
+      ],
+      "queried_term": "yqz",
+      "queried_value": 35,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 13,
+      "question": "What is twice the number for yqz minus 13?",
+      "answer": 57,
+      "expected_intermediates": {
+        "base_value": "35",
+        "first_product": "70",
+        "answer": "57"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "35"
+        ],
+        "first_product": [
+          "70"
+        ],
+        "answer": [
+          "57"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0041",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "vnd",
+          25
+        ],
+        [
+          "dvq",
+          "three times the number for vnd minus 19"
+        ],
+        [
+          "qpp",
+          "twice the number for vnd minus 17"
+        ],
+        [
+          "gnv",
+          "three times the number for vnd minus 10"
+        ],
+        [
+          "nhj",
+          31
+        ]
+      ],
+      "queried_term": "nhj",
+      "queried_value": 31,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 19,
+      "question": "What is twice the number for nhj minus 19?",
+      "answer": 43,
+      "expected_intermediates": {
+        "base_value": "31",
+        "first_product": "62",
+        "answer": "43"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "31"
+        ],
+        "first_product": [
+          "62"
+        ],
+        "answer": [
+          "43"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0042",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "mxx",
+          64
+        ],
+        [
+          "nsk",
+          99
+        ],
+        [
+          "vjh",
+          "twice the number for mxx plus 6"
+        ],
+        [
+          "mfe",
+          "twice the number for mxx minus 7"
+        ],
+        [
+          "bhw",
+          "twice the number for mxx plus 27"
+        ]
+      ],
+      "queried_term": "nsk",
+      "queried_value": 99,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 8,
+      "question": "What is twice the number for nsk plus 8?",
+      "answer": 206,
+      "expected_intermediates": {
+        "base_value": "99",
+        "first_product": "198",
+        "answer": "206"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "99"
+        ],
+        "first_product": [
+          "198"
+        ],
+        "answer": [
+          "206"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0043",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "wok",
+          98
+        ],
+        [
+          "blj",
+          "three times the number for wok plus 3"
+        ],
+        [
+          "gvr",
+          30
+        ],
+        [
+          "ecq",
+          "twice the number for wok plus 5"
+        ],
+        [
+          "cxu",
+          "three times the number for wok plus 2"
+        ]
+      ],
+      "queried_term": "gvr",
+      "queried_value": 30,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 29,
+      "question": "What is twice the number for gvr minus 29?",
+      "answer": 31,
+      "expected_intermediates": {
+        "base_value": "30",
+        "first_product": "60",
+        "answer": "31"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "30"
+        ],
+        "first_product": [
+          "60"
+        ],
+        "answer": [
+          "31"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0044",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "jhr",
+          85
+        ],
+        [
+          "llw",
+          "three times the number for jhr plus 16"
+        ],
+        [
+          "aml",
+          72
+        ],
+        [
+          "ddt",
+          "twice the number for jhr minus 9"
+        ],
+        [
+          "czj",
+          "twice the number for jhr minus 2"
+        ]
+      ],
+      "queried_term": "aml",
+      "queried_value": 72,
+      "coefficient": 3,
+      "operation": "minus",
+      "constant": 4,
+      "question": "What is three times the number for aml minus 4?",
+      "answer": 212,
+      "expected_intermediates": {
+        "base_value": "72",
+        "first_product": "216",
+        "answer": "212"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "72"
+        ],
+        "first_product": [
+          "216"
+        ],
+        "answer": [
+          "212"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0045",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "uxx",
+          57
+        ],
+        [
+          "ajt",
+          22
+        ],
+        [
+          "yuo",
+          "three times the number for uxx plus 30"
+        ],
+        [
+          "sai",
+          "three times the number for uxx plus 28"
+        ],
+        [
+          "eur",
+          "twice the number for uxx minus 7"
+        ]
+      ],
+      "queried_term": "ajt",
+      "queried_value": 22,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 27,
+      "question": "What is twice the number for ajt plus 27?",
+      "answer": 71,
+      "expected_intermediates": {
+        "base_value": "22",
+        "first_product": "44",
+        "answer": "71"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "22"
+        ],
+        "first_product": [
+          "44"
+        ],
+        "answer": [
+          "71"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0046",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "rbb",
+          55
+        ],
+        [
+          "dip",
+          51
+        ],
+        [
+          "euo",
+          "twice the number for dip minus 11"
+        ],
+        [
+          "oep",
+          "three times the number for dip minus 6"
+        ],
+        [
+          "zve",
+          "three times the number for dip minus 19"
+        ]
+      ],
+      "queried_term": "rbb",
+      "queried_value": 55,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 10,
+      "question": "What is twice the number for rbb minus 10?",
+      "answer": 100,
+      "expected_intermediates": {
+        "base_value": "55",
+        "first_product": "110",
+        "answer": "100"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "55"
+        ],
+        "first_product": [
+          "110"
+        ],
+        "answer": [
+          "100"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0047",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "kff",
+          57
+        ],
+        [
+          "vdy",
+          "twice the number for kff minus 16"
+        ],
+        [
+          "yyg",
+          "three times the number for kff plus 27"
+        ],
+        [
+          "xlf",
+          "twice the number for kff plus 3"
+        ],
+        [
+          "lwm",
+          46
+        ]
+      ],
+      "queried_term": "lwm",
+      "queried_value": 46,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 29,
+      "question": "What is twice the number for lwm minus 29?",
+      "answer": 63,
+      "expected_intermediates": {
+        "base_value": "46",
+        "first_product": "92",
+        "answer": "63"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "46"
+        ],
+        "first_product": [
+          "92"
+        ],
+        "answer": [
+          "63"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0048",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "pdf",
+          31
+        ],
+        [
+          "cck",
+          "twice the number for pdf minus 10"
+        ],
+        [
+          "eyx",
+          60
+        ],
+        [
+          "vir",
+          "twice the number for pdf minus 18"
+        ],
+        [
+          "cqf",
+          "twice the number for pdf plus 11"
+        ]
+      ],
+      "queried_term": "eyx",
+      "queried_value": 60,
+      "coefficient": 2,
+      "operation": "plus",
+      "constant": 10,
+      "question": "What is twice the number for eyx plus 10?",
+      "answer": 130,
+      "expected_intermediates": {
+        "base_value": "60",
+        "first_product": "120",
+        "answer": "130"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "60"
+        ],
+        "first_product": [
+          "120"
+        ],
+        "answer": [
+          "130"
+        ]
+      }
+    },
+    {
+      "id": "varbind_onestep_0049",
+      "type": "onestep_var_binding",
+      "chain_len": 0,
+      "num_terms": 5,
+      "definitions": [
+        [
+          "qky",
+          96
+        ],
+        [
+          "nen",
+          "three times the number for qky minus 18"
+        ],
+        [
+          "ngv",
+          32
+        ],
+        [
+          "aao",
+          "twice the number for qky minus 28"
+        ],
+        [
+          "vtl",
+          "three times the number for qky minus 2"
+        ]
+      ],
+      "queried_term": "ngv",
+      "queried_value": 32,
+      "coefficient": 2,
+      "operation": "minus",
+      "constant": 6,
+      "question": "What is twice the number for ngv minus 6?",
+      "answer": 58,
+      "expected_intermediates": {
+        "base_value": "32",
+        "first_product": "64",
+        "answer": "58"
+      },
+      "highlight_forms": {
+        "base_value": [
+          "32"
+        ],
+        "first_product": [
+          "64"
+        ],
+        "answer": [
+          "58"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,217 @@
+{
+  "overall": {
+    "by_length": {
+      "0": {
+        "n": 50,
+        "correct": 37,
+        "accuracy": 0.74,
+        "mrr": 0.93,
+        "recall_at_1": 0.86,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "5": {
+        "n": 50,
+        "correct": 42,
+        "accuracy": 0.84,
+        "mrr": 0.97,
+        "recall_at_1": 0.94,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "10": {
+        "n": 50,
+        "correct": 38,
+        "accuracy": 0.76,
+        "mrr": 0.95,
+        "recall_at_1": 0.9,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "25": {
+        "n": 50,
+        "correct": 36,
+        "accuracy": 0.72,
+        "mrr": 0.94,
+        "recall_at_1": 0.88,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "50": {
+        "n": 50,
+        "correct": 40,
+        "accuracy": 0.8,
+        "mrr": 0.97,
+        "recall_at_1": 0.94,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "100": {
+        "n": 50,
+        "correct": 41,
+        "accuracy": 0.82,
+        "mrr": 0.98,
+        "recall_at_1": 0.96,
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      }
+    },
+    "paired_vs_k0": {
+      "5": {
+        "helped_count": 6,
+        "hurt_count": 1,
+        "net_correct": 5,
+        "exact_mcnemar_p": 0.125,
+        "helped_ids": [
+          "varbind_onestep_0007",
+          "varbind_onestep_0021",
+          "varbind_onestep_0025",
+          "varbind_onestep_0030",
+          "varbind_onestep_0031",
+          "varbind_onestep_0044"
+        ],
+        "hurt_ids": [
+          "varbind_onestep_0027"
+        ],
+        "mean_log10_rank_gain": 0.024082399653118494,
+        "largest_rank_gain_ids": [
+          "varbind_onestep_0031",
+          "varbind_onestep_0030",
+          "varbind_onestep_0025",
+          "varbind_onestep_0021",
+          "varbind_onestep_0007",
+          "varbind_onestep_0049",
+          "varbind_onestep_0048",
+          "varbind_onestep_0047",
+          "varbind_onestep_0046",
+          "varbind_onestep_0045"
+        ]
+      },
+      "10": {
+        "helped_count": 3,
+        "hurt_count": 2,
+        "net_correct": 1,
+        "exact_mcnemar_p": 1.0,
+        "helped_ids": [
+          "varbind_onestep_0021",
+          "varbind_onestep_0025",
+          "varbind_onestep_0030"
+        ],
+        "hurt_ids": [
+          "varbind_onestep_0027",
+          "varbind_onestep_0029"
+        ],
+        "mean_log10_rank_gain": 0.012041199826559247,
+        "largest_rank_gain_ids": [
+          "varbind_onestep_0030",
+          "varbind_onestep_0025",
+          "varbind_onestep_0021",
+          "varbind_onestep_0049",
+          "varbind_onestep_0048",
+          "varbind_onestep_0047",
+          "varbind_onestep_0046",
+          "varbind_onestep_0045",
+          "varbind_onestep_0044",
+          "varbind_onestep_0043"
+        ]
+      },
+      "25": {
+        "helped_count": 3,
+        "hurt_count": 4,
+        "net_correct": -1,
+        "exact_mcnemar_p": 1.0,
+        "helped_ids": [
+          "varbind_onestep_0007",
+          "varbind_onestep_0021",
+          "varbind_onestep_0031"
+        ],
+        "hurt_ids": [
+          "varbind_onestep_0002",
+          "varbind_onestep_0009",
+          "varbind_onestep_0027",
+          "varbind_onestep_0029"
+        ],
+        "mean_log10_rank_gain": 0.0060205999132796235,
+        "largest_rank_gain_ids": [
+          "varbind_onestep_0031",
+          "varbind_onestep_0021",
+          "varbind_onestep_0007",
+          "varbind_onestep_0049",
+          "varbind_onestep_0048",
+          "varbind_onestep_0047",
+          "varbind_onestep_0046",
+          "varbind_onestep_0045",
+          "varbind_onestep_0044",
+          "varbind_onestep_0043"
+        ]
+      },
+      "50": {
+        "helped_count": 6,
+        "hurt_count": 3,
+        "net_correct": 3,
+        "exact_mcnemar_p": 0.5078125,
+        "helped_ids": [
+          "varbind_onestep_0000",
+          "varbind_onestep_0007",
+          "varbind_onestep_0021",
+          "varbind_onestep_0025",
+          "varbind_onestep_0030",
+          "varbind_onestep_0031"
+        ],
+        "hurt_ids": [
+          "varbind_onestep_0003",
+          "varbind_onestep_0009",
+          "varbind_onestep_0027"
+        ],
+        "mean_log10_rank_gain": 0.024082399653118494,
+        "largest_rank_gain_ids": [
+          "varbind_onestep_0031",
+          "varbind_onestep_0030",
+          "varbind_onestep_0025",
+          "varbind_onestep_0021",
+          "varbind_onestep_0015",
+          "varbind_onestep_0007",
+          "varbind_onestep_0049",
+          "varbind_onestep_0048",
+          "varbind_onestep_0047",
+          "varbind_onestep_0046"
+        ]
+      },
+      "100": {
+        "helped_count": 5,
+        "hurt_count": 1,
+        "net_correct": 4,
+        "exact_mcnemar_p": 0.21875,
+        "helped_ids": [
+          "varbind_onestep_0007",
+          "varbind_onestep_0021",
+          "varbind_onestep_0024",
+          "varbind_onestep_0025",
+          "varbind_onestep_0031"
+        ],
+        "hurt_ids": [
+          "varbind_onestep_0009"
+        ],
+        "mean_log10_rank_gain": 0.03010299956639812,
+        "largest_rank_gain_ids": [
+          "varbind_onestep_0031",
+          "varbind_onestep_0025",
+          "varbind_onestep_0021",
+          "varbind_onestep_0015",
+          "varbind_onestep_0007",
+          "varbind_onestep_0049",
+          "varbind_onestep_0048",
+          "varbind_onestep_0047",
+          "varbind_onestep_0046",
+          "varbind_onestep_0045"
+        ]
+      }
+    }
+  }
+}

@@ -8,3 +8,6 @@ results/filler_layer0_test/
 *.log
 *.pid
 tmp/
+
+# LoRA adapters (hundreds of MB; kept on the compute box)
+results/**/adapter-step*/
