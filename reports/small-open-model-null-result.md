@@ -425,6 +425,93 @@ opposite of a workspace: the model learned to route around the dots. It also
 explains the k=0-only model's interference: without that training, the answer
 cue attends to dot content 3–4× more, and that content is out-of-distribution.
 
+## The same anatomy on DeepSeek V4 Flash (`dump_dot_residuals_dsv4.py`, `dump_dot_attention_dsv4.py`)
+
+Run on a 4×H100 box with Nicole's converted checkpoint (sanity gate passed:
+closure and lens-identity anchor exact). Fifty held-out items at k=50, every
+block's raw four-stream residual at all 50 dots, the last question token, the
+answer cue, and the generation position; attention recomputed from q, k, the
+indexer's selection, and the per-head sink for every block, since the fused
+sparse-attention kernel returns no weights. Tables and figures in
+`results/deepseek-v4-flash/dot-dump/analysis/`.
+
+Two architecture facts frame the attention numbers. Every V4 block attends to a
+128-token sliding window of raw keys plus compressed keys (4-token blocks chosen
+by a learned indexer in even blocks 2–40, 128-token blocks in odd blocks 3–41;
+blocks 0, 1, 42 are window-only). At our prompt lengths the indexer's top-512 is
+every block, so sparsity never bites. For the answer positions the dots are
+about 40% of the raw window keys; the demonstrations and most of the problem are
+reachable only through compressed keys.
+
+**DeepSeek's answer positions look at the dots; Qwen's do not.** Mean attention
+mass on the dot region over the last third of blocks, and the single most
+dot-attentive head at the generation position:
+
+| Model | gen → dots | cue → dots | dots → dots | max head, gen → dots |
+|---|---:|---:|---:|---:|
+| Qwen3.5-9B base | 0.010 | 0.046 | 0.13 | 0.18 |
+| Qwen3.5-9B dots-only | 0.009 | 0.029 | 0.14 | 0.09 |
+| Qwen3.5-9B k=0-only | 0.043 | 0.067 | 0.18 | 0.24 |
+| **DeepSeek V4 Flash** | **0.164** | **0.195** | **0.26** | **0.90** |
+
+DeepSeek puts 20% or more of the generation position's attention on the dots in
+blocks 21, 22, 24, 35, 39, and 40 (peak 0.35 at block 40), and of the answer
+cue's attention in fourteen blocks (peak 0.43 at block 39). Heads reaching 0.5
+to 0.9 of their mass on dots appear in blocks 26 to 40. The dots attend to each
+other at 0.30 to 0.48 in blocks 33 to 42. The window makes dots cheap to reach,
+but Qwen had every token in reach and spent 1 to 4% on them; DeepSeek spends 16
+to 43% in the blocks where Nicole's lens saw the ladder resolve.
+
+**DeepSeek's dot residuals are more problem-specific than the trained Qwen's.**
+Cosine of the same dot position across different problems at three-quarters
+depth: 0.78 (DeepSeek) versus 0.99 (Qwen dots-only), 0.88 (Qwen k=0-only),
+0.83 (Qwen base). The problem explains 4 to 5% of dot-residual variance in the
+late blocks (Qwen dots-only 2%).
+
+**The streams divide the work.** Per hyper-connection stream at blocks 32 / 40:
+
+| stream | var. by problem | cos, same dot, other problems | norm at dots (block 40) |
+|---|---:|---:|---:|
+| 0 | 0.06 / 0.09 | 0.51 / 0.61 | 186 |
+| 1 | 0.03 / 0.03 | 0.68 / 0.79 | 286 |
+| 2 | 0.09 / 0.10 | 0.48 / 0.64 | 273 |
+| 3 | 0.02 / 0.05 | 0.88 / 0.76 | 49 |
+
+Streams 0 and 2 carry the problem-specific content (cosine near 0.5, a tenth of
+variance from problem identity); stream 3 is the position-identity lane (cosine
+0.88, small norm until the last blocks); stream 1 is the high-norm carrier with
+little problem dependence. This is the first direct look at what the four lanes
+do at a filler position, and it matches the guess that width lets a value be
+stored without overwriting the position's own state.
+
+**Where the answer is computed differs.** Best ridge probe R² for the answer:
+
+| Model | from dots (mean) | from last question token | from answer cue |
+|---|---:|---:|---:|
+| Qwen3.5-9B dots-only | 0.97 | 0.94 | 0.99 |
+| DeepSeek V4 Flash | 0.87 | **0.40** | 0.87 |
+
+In the trained Qwen the answer is already linearly present at the last question
+token, before any dot exists; the dots and the cue only repeat it. In DeepSeek
+the question token barely encodes it (0.40) and the dots encode it as well as the
+answer cue does (0.87), consistent with the computation happening across the
+dot span rather than at the question. The affine-probe caveat from the Qwen
+section applies to the absolute values, not to this contrast.
+
+**The dots change character at block 19.** Logit-lens entropy at dot positions
+(through Nicole's collapse) is 0.2 to 1.5 nats in blocks 0 to 18, jumps to 5.9
+at block 19, and declines to 0 by block 42. Qwen's dots start at 11 nats and only
+fall at the end. Whatever the early-block readout means under the collapse, the
+discontinuity at block 19 coincides with the blocks where attention to dots first
+exceeds 20% (21, 22, 24).
+
+**Summary.** On the model that shows the behavioral effect, the dot positions are
+attended (16 to 43% late-block mass from the answer positions, single heads up to
+0.9), problem-specific (cosine 0.78 across problems versus 0.99 in the trained
+Qwen), organized by stream (two content lanes, one position lane, one carrier),
+and hold the answer as strongly as the cue does while the question token does
+not. Every one of those is the opposite of what the fine-tuned Qwen showed.
+
 ## What this does and does not show
 
 On the training phase: five LoRA runs (mixed-k, chain-length 2, a 4B model,

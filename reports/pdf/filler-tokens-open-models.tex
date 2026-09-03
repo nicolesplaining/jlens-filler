@@ -33,7 +33,7 @@ I ran the same items through ten open models from 4B to 35B parameters (Qwen3, Q
 
 I then fine-tuned Qwen3.5-9B with LoRA to solve the task with dots present. Five variants (mixed dot counts, a harder chain, a 4B model, dots-only training, no-dots training) all learn the task, and all learn it as a direct computation at the answer position. The model trained \emph{only} on prompts with dots scores 40/50 with no dots at all. On held-out items, its dot positions decode to the dot token, carry no stage value beyond a faint late leak, can be wiped at every block without changing the answer (median shift 0.02 nats), and receive 1 to 4\% of the answer position's attention. Fine-tuning with dots made the dots more uniform and less attended than in the untrained model. The model learned to route around them.
 
-My reading is that using filler as a workspace is a learned habit, not something transformers do given capacity. DeepSeek's reasoning-focused post-training is the most plausible source, with its four-stream residual making the habit cheap to implement. The one experiment that would settle half of this, running the released DeepSeek-V4-Flash-Base checkpoint, needs about 300\,GB of GPU memory that this project did not have.
+Running the same anatomy on DeepSeek V4 Flash itself (Part V) shows the mirror image: its answer positions put 16 to 43\% of late-block attention on the dots, the dot residuals are problem-specific and split by hyper-connection stream, and the answer is decodable from the dots but not from the question token. My reading is that using filler as a workspace is a learned habit, not something transformers do given capacity. DeepSeek's reasoning-focused post-training is the most plausible source, with its four-stream residual making the habit cheap to implement. The one experiment that would settle half of this, running the released DeepSeek-V4-Flash-Base checkpoint, needs about 300\,GB of GPU memory that this project did not have.
 
 \tableofcontents
 
@@ -229,6 +229,66 @@ Logit-lens entropy at dot positions falls from 11.2 nats at block 0 to 0.02 nats
 
 A dot position in the fine-tuned model holds a dominant position-identity vector, a faint linear copy of the queried chain's numbers that is present more strongly at the answer cue, attends to the demonstrations and to other dots rather than to the problem, receives 1 to 4\% of the answer positions' attention, and predicts ``dot.'' Fine-tuning with dots present made the dots more uniform and less attended than in the untrained model. This is the opposite of a workspace. It also explains why dots hurt the model trained without them: its answer cue attends to dot content three to four times more, and that content is out of distribution.
 
+\section{Part V: the same anatomy on DeepSeek V4 Flash}
+
+With a 4$\times$H100 box I reran the dot-position analysis on the model that shows the behavioral effect, using Nicole's converted checkpoint and loader (her sanity gate passed: final-head closure and the lens identity anchor are exact). Fifty held-out items at $k=50$; every block's raw four-stream residual at all 50 dots, the last question token, the answer cue, and the generation position; and attention recomputed from $q$, $k$, the indexer's selection, and the per-head sink at every block, because the fused sparse-attention kernel returns no weights (\ttt{scripts/dump\_dot\_residuals\_dsv4.py}, \ttt{scripts/dump\_dot\_attention\_dsv4.py}).
+
+Two architecture facts frame the attention numbers. Every V4 block sees a 128-token sliding window of raw keys plus compressed keys: 4-token blocks chosen by a learned indexer in even blocks 2 to 40, 128-token blocks in odd blocks 3 to 41; blocks 0, 1, and 42 are window-only. At our prompt lengths the indexer's top-512 is every block, so sparsity never bites. For the answer positions the dots are about 40\% of the raw window keys, and the demonstrations and most of the problem are reachable only through compressed keys.
+
+\subsection{DeepSeek's answer positions look at the dots}
+
+\begin{figure}[h]\centering\includegraphics[width=0.85\textwidth]{deepseek_attention_heatmaps.png}
+\caption{DeepSeek V4 Flash: attention mass by key region at every block, mean over 64 heads and 50 held-out items, from the generation position, the answer cue, and the dots.}\end{figure}
+
+\begin{table}[h]\centering\small
+\begin{tabular}{lrrrr}\toprule
+Model & gen $\to$ dots & cue $\to$ dots & dots $\to$ dots & max head, gen $\to$ dots \\ \midrule
+Qwen3.5-9B base & 0.010 & 0.046 & 0.13 & 0.18 \\
+Qwen3.5-9B dots-only & 0.009 & 0.029 & 0.14 & 0.09 \\
+Qwen3.5-9B $k=0$-only & 0.043 & 0.067 & 0.18 & 0.24 \\
+\textbf{DeepSeek V4 Flash} & \textbf{0.164} & \textbf{0.195} & \textbf{0.26} & \textbf{0.90} \\ \bottomrule
+\end{tabular}
+\caption{Mean attention mass on the dot region over the last third of attention blocks, and the single most dot-attentive head at the generation position.}\end{table}
+
+DeepSeek puts 20\% or more of the generation position's attention on the dots in blocks 21, 22, 24, 35, 39, and 40 (peak 0.35 at block 40), and of the answer cue's attention in fourteen blocks (peak 0.43 at block 39). Single heads reach 0.5 to 0.9 of their mass on dots in blocks 26 to 40. The dots attend to each other at 0.30 to 0.48 in blocks 33 to 42. The sliding window makes the dots cheap to reach, but Qwen had every token in reach and spent 1 to 4\% on them; DeepSeek spends 16 to 43\% in the blocks where Nicole's lens saw the ladder resolve.
+
+\subsection{The dots are problem-specific, and the four streams divide the work}
+
+Cosine of the same dot position across different problems at three-quarters depth is 0.78 in DeepSeek against 0.99 in the trained Qwen (0.83 in the Qwen base, 0.88 in the $k=0$-only model); the problem explains 4 to 5\% of late-block dot variance (Qwen dots-only: 2\%). Per hyper-connection stream:
+
+\begin{table}[h]\centering\small
+\begin{tabular}{lccc}\toprule
+Stream & var.\ by problem (blocks 32 / 40) & cos, same dot, other problems & norm at dots, block 40 \\ \midrule
+0 & 0.06 / 0.09 & 0.51 / 0.61 & 186 \\
+1 & 0.03 / 0.03 & 0.68 / 0.79 & 286 \\
+2 & 0.09 / 0.10 & 0.48 / 0.64 & 273 \\
+3 & 0.02 / 0.05 & 0.88 / 0.76 & 49 \\ \bottomrule
+\end{tabular}
+\caption{DeepSeek V4 Flash dot residuals by hyper-connection stream.}\end{table}
+
+Streams 0 and 2 carry the problem-specific content (cosine near 0.5, a tenth of their variance from problem identity). Stream 3 is the position-identity lane (cosine 0.88, small norm until the last blocks). Stream 1 is a high-norm carrier with little problem dependence. This is the first direct look at what the four lanes do at a filler position, and it fits the earlier guess that width lets a value be stored without overwriting the position's own state.
+
+\subsection{Where the answer is computed}
+
+\begin{table}[h]\centering\small
+\begin{tabular}{lccc}\toprule
+Model & answer $R^2$ from dots (mean) & from last question token & from answer cue \\ \midrule
+Qwen3.5-9B dots-only & 0.97 & 0.94 & 0.99 \\
+DeepSeek V4 Flash & 0.87 & \textbf{0.40} & 0.87 \\ \bottomrule
+\end{tabular}
+\caption{Best ridge-probe $R^2$ for the answer, by position.}\end{table}
+
+In the trained Qwen the answer is already linearly present at the last question token, before any dot exists; the dots and the cue only repeat it. In DeepSeek the question token barely encodes it and the dots encode it as well as the answer cue does, consistent with the computation happening across the dot span rather than at the question. The affine-probe caveat applies to the absolute values, not to this contrast.
+
+\begin{figure}[h]\centering\includegraphics[width=\textwidth]{deepseek_independence_trajectories.png}
+\caption{DeepSeek V4 Flash by block: fraction of dot-residual variance by problem versus position; logit-lens entropy (through Nicole's stream collapse) at dots and at the generation position; residual norm.}\end{figure}
+
+One more difference. Logit-lens entropy at dot positions is 0.2 to 1.5 nats in blocks 0 to 18, jumps to 5.9 at block 19, and declines to 0 by block 42; Qwen's dots sit at 11 nats and only fall at the end. Whatever the early-block readout means under the stream collapse, the discontinuity at block 19 coincides with the first blocks where attention to dots exceeds 20\%.
+
+\subsection{Summary}
+
+On the model that shows the behavioral effect, the dot positions are attended (16 to 43\% late-block mass from the answer positions, single heads up to 0.9), problem-specific (cosine 0.78 across problems versus 0.99 in the trained Qwen), organized by stream (two content lanes, one position lane, one carrier), and hold the answer as strongly as the cue does while the question token does not. Every one of those is the opposite of what the fine-tuned Qwen showed. The base-checkpoint run that would say whether post-training installed this remains undone; the base weights (304\,GB FP8) exceed this box.
+
 \section{Why does DeepSeek differ?}
 
 I do not know, and the evidence mostly rules explanations out rather than in.
@@ -237,7 +297,7 @@ I do not know, and the evidence mostly rules explanations out rather than in.
 
 \paragraph{Architecture.} Partly ruled out. Two 3B-active mixture-of-experts models behave like the dense ones, so expert routing alone is not it. Three features unique to V4 among everything tested remain: the four-stream hyper-connection residual (four lanes per position to hold a value in without overwriting), multi-head latent attention, and a learned top-512 sparse attention index. The residual width is my candidate for why the habit \emph{works well} once a model has it: writing a value into another position without clobbering what is there is cheap with four lanes and expensive with one, and the $k=0$-only model shows the single-stream failure mode directly.
 
-\paragraph{Post-training.} The leading suspect. Using dots means writing intermediate state into positions after the question and reading it back at the answer. No gradient in my training ever rewarded that, because the direct route always worked, and the learner takes the path that already exists. This matches Pfau et al.\ (2024), who found filler helps only when training makes it useful. DeepSeek V4 was trained hard with reinforcement learning to reason across a span of tokens before answering; a model that has internalized ``the span between question and answer is where thinking happens'' would plausibly treat any trailing tokens as thinking room. Nicole's readouts look like that: values staged by depth, broadcast across the span, read from the late band right before the answer. The awkward fact is that Qwen3.5 also has a thinking mode and shows nothing, so the difference would have to be in how each lab trained its non-thinking mode.
+\paragraph{Post-training.} The leading suspect. Using dots means writing intermediate state into positions after the question and reading it back at the answer. No gradient in my training ever rewarded that, because the direct route always worked, and the learner takes the path that already exists. This matches Pfau et al.\ (2024), who found filler helps only when training makes it useful. DeepSeek V4 was trained hard with reinforcement learning to reason across a span of tokens before answering; a model that has internalized ``the span between question and answer is where thinking happens'' would plausibly treat any trailing tokens as thinking room. Nicole's readouts look like that: values staged by depth, broadcast across the span, read from the late band right before the answer. The awkward fact is that Qwen3.5 also has a thinking mode and shows nothing, so the difference would have to be in how each lab trained its non-thinking mode. Part V adds that whatever installed it, the result is visible in attention: DeepSeek's answer positions read the dots at 16 to 43\% while every Qwen variant, trained or not, reads them at 1 to 4\%.
 
 \paragraph{The experiment that would decide.} \ttt{deepseek-ai/DeepSeek-V4-Flash-Base} is public and ungated: same architecture and pretraining, no post-training. If it shows the placement-specific gain, post-training is out. If it is flat, post-training built the behavior. It is 304\,GB of FP8 weights and needs an 8-GPU box, or a requantization to FP4 for Nicole's 4-GPU setup. The cheap partial check is DeepSeek-V2-Lite-Chat (2.4B active, no hyper-connections) on the existing harness.
 
@@ -274,7 +334,7 @@ All code is in the project repository. Model-touching scripts run on one GPU wit
 \item Data and training: \ttt{scripts/\allowbreak build\_varbind\_sft\_data.py} (\ttt{-{}-chain-len}), \ttt{scripts/\allowbreak build\_onestep\_varbind\_configs.py}, \ttt{scripts/\allowbreak train\_varbind\_lora.py} (\ttt{-{}-ks} selects the dot counts).
 \item Readouts: \ttt{scripts/\allowbreak extract\_hf.py -{}-phase filler -{}-adapter}, \ttt{scripts/\allowbreak build\_artifacts.py} for viewers, \ttt{scripts/\allowbreak analyze\_hf\_lens\_grids.py} and \ttt{\_deep.py}, \ttt{scripts/\allowbreak select\_heldout\_lens\_cases.py}.
 \item Causal: \ttt{scripts/\allowbreak build\_varbind\_counterfactuals\_hf.py}, \ttt{scripts/\allowbreak patch\_varbind\_hf.py} (single-cell grid; \ttt{-{}-lesion-all-dots [-{}-lesion-all-layers]}).
-\item Anatomy: \ttt{scripts/\allowbreak dump\_dot\_residuals\_hf.py}, \ttt{scripts/\allowbreak analyze\_dot\_residuals.py}, \ttt{scripts/\allowbreak probe\_extra\_targets.py}, \ttt{scripts/\allowbreak plot\_dot\_analysis.py}.
+\item Anatomy: \ttt{scripts/\allowbreak dump\_dot\_residuals\_hf.py}, \ttt{scripts/\allowbreak dump\_dot\_residuals\_dsv4.py}, \ttt{scripts/\allowbreak dump\_dot\_attention\_dsv4.py}, \ttt{scripts/\allowbreak setup\_dsv4\_box.sh}, \ttt{scripts/\allowbreak run\_dsv4\_dot\_dump.sh}, \ttt{scripts/\allowbreak analyze\_dot\_residuals.py}, \ttt{scripts/\allowbreak probe\_extra\_targets.py}, \ttt{scripts/\allowbreak plot\_dot\_analysis.py}.
 \item Results: \ttt{results/\allowbreak <model>/\allowbreak } per model; training under \ttt{results/\allowbreak qwen3.5-9b/\allowbreak lora-*}; lens grids under \ttt{results/\allowbreak qwen3.5-9b/\allowbreak lens-heldout-k50/\allowbreak }; lesions and patching under \ttt{results/\allowbreak qwen3.5-9b/\allowbreak lora-*/\allowbreak lesion-all-layers/\allowbreak } and \ttt{results/\allowbreak qwen3.5-9b/\allowbreak patch-heldout-0067/\allowbreak }; anatomy under \ttt{results/\allowbreak qwen3.5-9b/\allowbreak dot-dump/\allowbreak analysis/\allowbreak }. The 1.3\,GB residual dumps stay on the compute box.
 \item Nicole's DeepSeek pipeline and results: \ttt{scripts/\allowbreak extract\_dsv4.py} and \ttt{reports/\allowbreak algorithm-exploration-findings.md}.
 \end{itemize}

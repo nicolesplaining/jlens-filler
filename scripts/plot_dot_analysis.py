@@ -13,7 +13,8 @@ res = json.loads(a.analysis_json.read_text()); a.output_dir.mkdir(parents=True, 
 regions = ["bos", "prefix", "problem", "dots", "template"]
 
 # 1. attention heatmaps: rows = full-attention layers, cols = regions; one panel per model × query
-fig, axes = plt.subplots(len(res), 3, figsize=(12, 2.6 * len(res)), squeeze=False)
+n_att = max(len(r["attention"]) for r in res)
+fig, axes = plt.subplots(len(res), 3, figsize=(12, max(2.6, 0.28 * n_att + 1.2) * len(res)), squeeze=False)
 for i, r in enumerate(res):
     layers = list(r["attention"]); 
     for j, q in enumerate(("gen", "cue", "dots")):
@@ -21,7 +22,8 @@ for i, r in enumerate(res):
         ax = axes[i, j]; im = ax.imshow(M, vmin=0, vmax=1, cmap="viridis", aspect="auto")
         ax.set_xticks(range(5)); ax.set_xticklabels(regions, rotation=30, fontsize=8); ax.set_yticks(range(len(layers))); ax.set_yticklabels([f"L{l}" for l in layers], fontsize=8)
         ax.set_title(f"{r['label']}: attention from {q}", fontsize=9)
-        for (y, x), v in np.ndenumerate(M): ax.text(x, y, f"{v:.2f}", ha="center", va="center", fontsize=7, color="w" if v < 0.5 else "k")
+        if len(layers) <= 12:
+            for (y, x), v in np.ndenumerate(M): ax.text(x, y, f"{v:.2f}", ha="center", va="center", fontsize=7, color="w" if v < 0.5 else "k")
 fig.suptitle("Attention mass by key region (full-attention blocks, mean over heads and 100 held-out items)", fontsize=10); fig.tight_layout(); fig.savefig(a.output_dir / "attention_heatmaps.png", dpi=130); plt.close(fig)
 
 # 2. probes

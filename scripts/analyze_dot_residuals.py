@@ -42,10 +42,15 @@ def ridge_cv_r2(X: np.ndarray, y: np.ndarray, groups: np.ndarray, alpha: float, 
 
 
 def analyze(dump_path: Path, label: str) -> dict:
-    d = torch.load(dump_path)
+    d = torch.load(dump_path, map_location="cpu")
+    attn_path = dump_path.parent / "dot_attention.pt"
+    if "attn_layers" not in d and attn_path.exists():
+        a = torch.load(attn_path, map_location="cpu")
+        for k in ("attn_layers", "regions", "attn_from_answer", "attn_from_dots"):
+            d[k] = a[k]
     R = d["resid"].float().numpy()            # [N, L, P, D]
     N, L, P, D = R.shape; K = P - 3
-    meta = d["meta"]; regions = d["regions"]
+    meta = d["meta"]; regions = d.get("regions", ["bos", "prefix", "problem", "dots", "template"])
     out = {"label": label, "n_items": N, "n_layers": L, "k": K}
 
     # 1. problem independence
@@ -84,9 +89,9 @@ def analyze(dump_path: Path, label: str) -> dict:
         probe[where]["answer_SHUFFLED"] = [ridge_cv_r2(dots[:, l].mean(1) if sel is None else R[:, l, sel], y, np.arange(N), 10.0) for l in range(L)]
     out["probes"] = probe
 
-    # 3. attention
+    # 3. attention (absent for the DeepSeek dump)
     att = {}
-    for l in d["attn_layers"]:
+    for l in d.get("attn_layers", []):
         A = np.array([a[str(l)] for a in d["attn_from_answer"] if str(l) in a])   # [N, 3, H, R]
         Dd = np.array([a[str(l)] for a in d["attn_from_dots"] if str(l) in a])    # [N, H, R]
         if len(A) == 0: continue
@@ -96,8 +101,27 @@ def analyze(dump_path: Path, label: str) -> dict:
                   "max_head_gen_dot_mass": float(A[:, 2, :, regions.index("dots")].mean(0).max())}
     out["attention"] = att
 
+    # 5. per-stream analysis (DeepSeek hyper-connection dumps: resid_streams [N, L, P, 4, D])
+    if "resid_streams" in d and d["resid_streams"] is not None:
+        S = d["resid_streams"].float().numpy(); n_s = S.shape[3]
+        per_stream = {"frac_var_problem": [], "cos_same_pos_other_problems": [], "probe_answer_dots": [], "probe_queried_base_dots": []}
+        y_ans = y_all["answer"]; y_base = y_all[stages[0]]
+        for si in range(n_s):
+            fv, cs, pa, pb = [], [], [], []
+            for l in range(L):
+                X = S[:, l, :K, si, :]
+                total = X.reshape(-1, D).var(0).sum(); item_means = X.mean(1); fv.append(float(item_means.var(0).sum() / total))
+                Xn = X / (np.linalg.norm(X, axis=-1, keepdims=True) + 1e-6)
+                cs.append(float(np.mean([(Xn[:, k] @ Xn[:, k].T)[np.triu_indices(N, 1)].mean() for k in range(0, K, max(1, K // 10))])))
+                pa.append(ridge_cv_r2(X.mean(1), y_ans, np.arange(N), 10.0)); pb.append(ridge_cv_r2(X.mean(1), y_base, np.arange(N), 10.0))
+            per_stream["frac_var_problem"].append(fv); per_stream["cos_same_pos_other_problems"].append(cs)
+            per_stream["probe_answer_dots"].append(pa); per_stream["probe_queried_base_dots"].append(pb)
+        # stream norms at dots by layer
+        per_stream["norm_dots"] = [np.linalg.norm(S[:, :, :K, si, :], axis=-1).mean((0, 2)).tolist() for si in range(n_s)]
+        out["per_stream"] = per_stream
+
     # 4. trajectories
-    E, Nn = d["entropy"].numpy(), d["norms"].numpy()
+    E, Nn = d["entropy"].float().numpy(), d["norms"].float().numpy()
     out["trajectories"] = {"entropy_dots": E[:, :, :K].mean((0, 2)).tolist(), "entropy_qlast": E[:, :, K].mean(0).tolist(), "entropy_cue": E[:, :, K + 1].mean(0).tolist(), "entropy_gen": E[:, :, K + 2].mean(0).tolist(),
                            "norm_dots": Nn[:, :, :K].mean((0, 2)).tolist(), "norm_qlast": Nn[:, :, K].mean(0).tolist(), "norm_cue": Nn[:, :, K + 1].mean(0).tolist(), "norm_gen": Nn[:, :, K + 2].mean(0).tolist()}
     return out
@@ -135,6 +159,8 @@ def main() -> None:
                 b = int(np.argmax(row)); lines.append(f"| {r['label']} | {where} | {s} | " + fmt_layers(row, picks) + f" | L{b} ({row[b]:.2f}) |")
     lines += ["", "## 3. Attention (full-attention blocks only)", "", "Mean attention mass by key region. Regions: bos, prefix (system + demonstrations), problem (target definitions + question), dots, template (answer cue and assistant header).", ""]
     for r in results:
+        if not r["attention"]:
+            lines += [f"### {r['label']}", "", "(no attention recorded for this dump)", ""]; continue
         lines += [f"### {r['label']}", "", "| layer | query | " + " | ".join(REG := ["bos", "prefix", "problem", "dots", "template"]) + " | max head→dots |", "|---:|---|" + "---:|" * 6]
         for l, a in r["attention"].items():
             for q in ("gen", "cue", "dots"):
@@ -146,6 +172,16 @@ def main() -> None:
         t = r["trajectories"]
         for q in ("entropy_dots", "entropy_qlast", "entropy_gen", "norm_dots", "norm_qlast", "norm_gen"):
             lines.append(f"| {r['label']} | {q} | " + fmt_layers(t[q], picks) + " |")
+    for r in results:
+        if "per_stream" not in r: continue
+        ps = r["per_stream"]; n_s = len(ps["frac_var_problem"])
+        lines += ["", f"## 5. Per hyper-connection stream ({r['label']})", "", f"| stream | quantity | {hdr} |", "|---|---|" + "---:|" * len(picks)]
+        for si in range(n_s):
+            lines.append(f"| {si} | var frac: problem (dots) | " + fmt_layers(ps["frac_var_problem"][si], picks) + " |")
+            lines.append(f"| {si} | cos same pos, other problems | " + fmt_layers(ps["cos_same_pos_other_problems"][si], picks) + " |")
+            lines.append(f"| {si} | probe R² answer from dots | " + fmt_layers(ps["probe_answer_dots"][si], picks) + " |")
+            lines.append(f"| {si} | probe R² queried base from dots | " + fmt_layers(ps["probe_queried_base_dots"][si], picks) + " |")
+            lines.append(f"| {si} | mean norm at dots | " + fmt_layers(ps["norm_dots"][si], picks) + " |")
     (args.output_dir / "dot-analysis.md").write_text("\n".join(lines) + "\n"); print("\n".join(lines))
 
 

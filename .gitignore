@@ -11,3 +11,7 @@ tmp/
 
 # LoRA adapters (hundreds of MB; kept on the compute box)
 results/**/adapter-step*/
+# raw residual dumps (1.4 GB each; analysis outputs in dot-dump/analysis are tracked)
+results/**/dot_dump.pt
+# rsync partial transfers
+results/**/.*.pt.*

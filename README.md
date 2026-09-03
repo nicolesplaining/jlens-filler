@@ -163,6 +163,7 @@ answer. The computation resolves at the answer position in the last three blocks
 - Training records: `results/qwen3.5-9b/lora-{mixedk,c2-mixedk,dotsonly,k0only}/`, `results/qwen3.5-4b/lora-mixedk/`
 - Held-out lens grids and viewers: `results/qwen3.5-9b/lens-heldout-k50/<model>/<item>/viewer.html`
 - Dot-position anatomy (variance decomposition, probes, attention heatmaps, entropy): `results/qwen3.5-9b/dot-dump/analysis/`
+- Same anatomy on DeepSeek V4 Flash (4×H100, Nicole's pipeline; per hyper-connection stream, recomputed sparse attention): `results/deepseek-v4-flash/dot-dump/analysis/`; scripts `dump_dot_residuals_dsv4.py`, `dump_dot_attention_dsv4.py`, `setup_dsv4_box.sh`, `run_dsv4_dot_dump.sh`
 - Lesions and single-cell patch grids: `results/qwen3.5-9b/lora-*/lesion-all-layers/`, `results/qwen3.5-9b/patch-heldout-0067/`
 - One-step config generator: [`scripts/build_onestep_varbind_configs.py`](scripts/build_onestep_varbind_configs.py)
 - Screen driver: [`scripts/screen_models.sh`](scripts/screen_models.sh)
