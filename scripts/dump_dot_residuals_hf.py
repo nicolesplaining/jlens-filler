@@ -49,8 +49,11 @@ def main() -> None:
 
     cfg = json.loads(args.examples_config.read_text()); items = cfg["examples"][: args.max_items or None]
     K = args.filler_length
-    resid = torch.zeros(len(items), L, K + 3, model.config.get_text_config().hidden_size if hasattr(model.config, "get_text_config") else model.config.hidden_size, dtype=torch.bfloat16)
-    entropy = torch.zeros(len(items), L, K + 3); norms = torch.zeros(len(items), L, K + 3)
+    _m0 = build_messages(cfg["few_shot"], items[0], cfg["filler_type"], K, task_type=cfg.get("task_type", "variable_binding"))
+    _, _al0 = render_and_align(tokenizer, encode, _m0, cfg["filler_type"], K)
+    NF = len(_al0.filler_token_indices)   # numbers span more than one token per item
+    resid = torch.zeros(len(items), L, NF + 3, model.config.get_text_config().hidden_size if hasattr(model.config, "get_text_config") else model.config.hidden_size, dtype=torch.bfloat16)
+    entropy = torch.zeros(len(items), L, NF + 3); norms = torch.zeros(len(items), L, NF + 3)
     attn_from_answer: list[Any] = []  # per item: {layer: [query(3), head, region]}
     attn_from_dots: list[Any] = []    # per item: {layer: [head, region]} averaged over dot queries
     meta = []
@@ -59,6 +62,7 @@ def main() -> None:
         msgs = build_messages(cfg["few_shot"], ex, cfg["filler_type"], K, task_type=cfg.get("task_type", "variable_binding"))
         _, al = render_and_align(tokenizer, encode, msgs, cfg["filler_type"], K)
         fabs = al.filler_token_indices; cue = al.answer_cue_token_indices[-1]; gen = al.generation_position
+        if len(fabs) != NF: raise AssertionError(f"{ex['id']}: {len(fabs)} filler tokens, expected {NF}")
         # last question token: the token just before "\n\nFiller:" i.e. before the first token whose offset >= filler marker start
         q_last = next(i for i in range(fabs[0] - 1, 0, -1) if al.token_strings[i].strip().endswith("?"))
         target_start = max(i for i, t in enumerate(al.input_ids[: fabs[0]]) if t == im_start) if im_start is not None else 0
@@ -90,7 +94,7 @@ def main() -> None:
                      "filler_token_indices": fabs, "q_last": q_last, "cue": cue, "gen": gen, "target_start": target_start})
         del out
         if n % 10 == 0: print(f"[{n+1}/{len(items)}] {ex['id']} T={T}", flush=True)
-    torch.save({"resid": resid, "entropy": entropy, "norms": norms, "positions": [f"F{i+1}" for i in range(K)] + ["q_last", "cue", "gen"],
+    torch.save({"resid": resid, "entropy": entropy, "norms": norms, "positions": [f"F{i+1}" for i in range(NF)] + ["q_last", "cue", "gen"], "filler_type": cfg["filler_type"], "filler_items": K, "filler_token_strings": [_al0.token_strings[i] for i in _al0.filler_token_indices],
                 "attn_layers": attn_layers, "regions": REGIONS, "attn_from_answer": attn_from_answer, "attn_from_dots": attn_from_dots,
                 "meta": meta, "model_id": args.model_id, "adapter": str(args.adapter) if args.adapter else None, "n_layers": L},
                args.output_dir / "dot_dump.pt")

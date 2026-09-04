@@ -21,7 +21,24 @@ def make_filler(filler_type: str, length: int) -> str:
         return " ".join(str(i) for i in range(1, length + 1))
     if filler_type == "alphabet":
         return " ".join(chr(ord("a") + (i % 26)) for i in range(length))
+    if filler_type == "alphabet-scrambled":
+        return " ".join(_scrambled([chr(ord("a") + (i % 26)) for i in range(length)]))
+    if filler_type == "counting-scrambled":
+        return " ".join(_scrambled([str(i) for i in range(1, length + 1)]))
     raise ValueError(f"unsupported filler type: {filler_type}")
+
+
+def _scrambled(items: list[str]) -> list[str]:
+    """Fixed permutation (seed 0) of the in-order filler, so every item sees the same sequence.
+
+    Using one sequence for all items keeps the position-identity analyses meaningful; the
+    sequence is a deterministic function of the length and is recorded in the sweep output.
+    """
+    import random
+
+    items = list(items)
+    random.Random(0).shuffle(items)
+    return items
 
 
 def filler_description(filler_type: str) -> str:
@@ -29,6 +46,8 @@ def filler_description(filler_type: str) -> str:
         "dots": "dots",
         "counting": "counting numbers",
         "alphabet": "letters",
+        "alphabet-scrambled": "letters in scrambled order",
+        "counting-scrambled": "numbers in scrambled order",
     }[filler_type]
 
 

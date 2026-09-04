@@ -40,6 +40,19 @@ from extract_dsv4 import (  # noqa: E402
 )
 from jlens_filler.prompts import build_messages, render_and_align, token_variants  # noqa: E402
 
+ONE_TOKEN_FILLERS = {"dots"}
+
+
+def check_filler_token_count(filler_type: str, filler_length: int, indices: list[int], example_id: str) -> None:
+    """Dots are one token each on every tokenizer tested; letters usually are; numbers are not (a
+    space token per item on DeepSeek, digit-split on Qwen). Exact equality for dots, at least one
+    token per item otherwise; the sweep output records the actual indices."""
+    n = len(indices)
+    if filler_type in ONE_TOKEN_FILLERS and n != filler_length:
+        raise AssertionError(f"{example_id}: {filler_length} fillers mapped to {n} tokens")
+    if n < filler_length:
+        raise AssertionError(f"{example_id}: {filler_length} fillers mapped to only {n} tokens")
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
@@ -320,8 +333,7 @@ def run_filler_example(
     messages = build_messages(few_shot, example, filler_type, filler_length, task_type=task_type)
     rendered, alignment = render_and_align(tokenizer, encode_messages, messages, filler_type, filler_length,
                                            filler_placement=filler_placement_for_task(task_type))
-    if len(alignment.filler_token_indices) != filler_length:
-        raise AssertionError(f"{example['id']}: {filler_length} fillers mapped to {len(alignment.filler_token_indices)} tokens")
+    check_filler_token_count(filler_type, filler_length, alignment.filler_token_indices, example["id"])
     cue = alignment.answer_cue_token_indices[-1]
     positions = alignment.filler_token_indices + [cue, alignment.generation_position]
     columns = [{"position_kind": "filler", "filler_ordinal": i, "absolute_index": a, "surface": alignment.token_strings[a]}
@@ -427,11 +439,7 @@ def run_filler_length_sweep(
                     filler_length,
                     filler_placement=filler_placement_for_task(task_type),
                 )
-                if len(alignment.filler_token_indices) != filler_length:
-                    raise AssertionError(
-                        f"{example['id']} at k={filler_length}: {filler_length} visible "
-                        f"fillers mapped to {len(alignment.filler_token_indices)} tokens"
-                    )
+                check_filler_token_count(filler_type, filler_length, alignment.filler_token_indices, example["id"])
                 input_ids = alignment.input_ids
                 token_strings = alignment.token_strings
                 filler_token_indices = alignment.filler_token_indices

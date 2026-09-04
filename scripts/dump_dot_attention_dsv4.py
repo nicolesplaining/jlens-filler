@@ -137,8 +137,9 @@ def main() -> None:
                 mass = mass.to("cuda")                             # [nq, H_local, R]
                 gathered = [torch.empty_like(mass) for _ in range(world_size)]; dist.all_gather(gathered, mass.contiguous())
                 full = torch.cat(gathered, dim=1).cpu()           # [nq, H, R]
-                rec_ans[str(l)] = full[K:].tolist()                # [3, H, R] for q_last, cue, gen
-                rec_dots[str(l)] = full[:K].mean(0).tolist()       # [H, R]
+                nf = len(fabs)
+                rec_ans[str(l)] = full[nf:].tolist()               # [3, H, R] for q_last, cue, gen
+                rec_dots[str(l)] = full[:nf].mean(0).tolist()      # [H, R]
             attn_from_answer.append(rec_ans); attn_from_dots.append(rec_dots)
             meta.append({"id": ex["id"], "answer": ex["answer"], "expected_intermediates": ex["expected_intermediates"], "n_tokens": T,
                          "filler_token_indices": fabs, "q_last": q_last, "cue": cue, "gen": gen, "target_start": target_start})

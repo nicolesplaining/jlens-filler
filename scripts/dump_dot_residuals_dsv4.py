@@ -52,7 +52,10 @@ def main() -> None:
 
     cfg = json.loads(args.examples_config.read_text()); items = cfg["examples"][: args.max_items or None]
     task = cfg.get("task_type", "variable_binding"); K = args.filler_length
-    L = len(model.layers); positions_n = K + 3
+    L = len(model.layers)
+    _m0 = build_messages(cfg["few_shot"], items[0], cfg["filler_type"], K, task_type=task)
+    _, _al0 = render_and_align(tokenizer, encode_messages, _m0, cfg["filler_type"], K, filler_placement=filler_placement_for_task(task))
+    NF = len(_al0.filler_token_indices); positions_n = NF + 3        # numbers carry a space token per item, so NF can exceed K
     resid = torch.zeros(len(items), L, positions_n, 4, 4096, dtype=torch.bfloat16) if rank == 0 else None
     collapsed = torch.zeros(len(items), L, positions_n, 4096, dtype=torch.bfloat16) if rank == 0 else None
     entropy = torch.zeros(len(items), L, positions_n) if rank == 0 else None
@@ -63,6 +66,7 @@ def main() -> None:
             _, al = render_and_align(tokenizer, encode_messages, msgs, cfg["filler_type"], K, filler_placement=filler_placement_for_task(task))
             fabs = al.filler_token_indices; cue = al.answer_cue_token_indices[-1]; gen = al.generation_position
             q_last = next(i for i in range(fabs[0] - 1, 0, -1) if al.token_strings[i].strip().endswith("?"))
+            if len(fabs) != NF: raise AssertionError(f"{ex['id']}: {len(fabs)} filler tokens, expected {NF}")
             positions = fabs + [q_last, cue, gen]
             tokens = torch.tensor([al.input_ids], dtype=torch.long, device="cuda")
             with capture_layers(model, list(range(L)), positions) as cap:
@@ -82,7 +86,7 @@ def main() -> None:
     if rank == 0:
         args.output_dir.mkdir(parents=True, exist_ok=True)
         torch.save({"resid_streams": resid, "resid": collapsed, "entropy": entropy, "norms": collapsed.float().norm(dim=-1),
-                    "positions": [f"F{i+1}" for i in range(K)] + ["q_last", "cue", "gen"], "meta": meta, "n_layers": L,
+                    "positions": [f"F{i+1}" for i in range(NF)] + ["q_last", "cue", "gen"], "filler_type": cfg["filler_type"], "filler_items": K, "filler_token_strings": [_al0.token_strings[i] for i in _al0.filler_token_indices], "meta": meta, "n_layers": L,
                     "model_id": "deepseek-ai/DeepSeek-V4-Flash", "adapter": None, "collapse": "model.head.hc_head (model-native), per extract_dsv4"},
                    args.output_dir / "dot_dump.pt")
         print("DUMP_DONE", flush=True)

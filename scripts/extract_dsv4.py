@@ -103,6 +103,20 @@ def answer_is_correct(parsed: int | str | None, expected: Any) -> bool:
     return parsed == str(expected).strip().lower()
 
 
+ONE_TOKEN_FILLERS = {"dots", "alphabet", "alphabet-scrambled"}
+
+
+def check_filler_token_count(filler_type: str, filler_length: int, indices: list[int], example_id: str) -> None:
+    """Dots and single letters are one token each; numbers carry a separate space token, so they map
+    to about two tokens per item. Require exact equality for the one-token types and at least one
+    token per item otherwise; the sweep output records the actual `filler_token_indices`."""
+    n = len(indices)
+    if filler_type in ONE_TOKEN_FILLERS and n != filler_length:
+        raise AssertionError(f"{example_id} at k={filler_length}: {filler_length} visible fillers mapped to {n} tokens")
+    if n < filler_length:
+        raise AssertionError(f"{example_id} at k={filler_length}: {filler_length} visible fillers mapped to only {n} tokens")
+
+
 def filler_placement_for_task(task_type: str) -> str:
     return (
         "before_question"
@@ -895,12 +909,7 @@ def run_filler_length_sweep(
                     filler_length,
                     filler_placement=filler_placement_for_task(task_type),
                 )
-                if len(alignment.filler_token_indices) != filler_length:
-                    raise AssertionError(
-                        f"{example['id']} at k={filler_length}: "
-                        f"{filler_length} visible fillers mapped to "
-                        f"{len(alignment.filler_token_indices)} tokens"
-                    )
+                check_filler_token_count(filler_type, filler_length, alignment.filler_token_indices, example["id"])
                 input_ids = alignment.input_ids
                 token_strings = alignment.token_strings
                 filler_token_indices = alignment.filler_token_indices
@@ -1008,11 +1017,7 @@ def run_paired_task_eval(
             filler_type,
             filler_length,
         )
-        if len(alignment.filler_token_indices) != filler_length:
-            raise AssertionError(
-                f"{example['id']}: {filler_length} visible dots mapped to "
-                f"{len(alignment.filler_token_indices)} tokens"
-            )
+        check_filler_token_count(filler_type, filler_length, alignment.filler_token_indices, example["id"])
         dots_ids, dots_logits = greedy_generate(
             model,
             alignment.input_ids,
