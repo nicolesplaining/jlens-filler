@@ -31,7 +31,7 @@ sys.path.insert(0, str(REPO / "src")); sys.path.insert(0, str(REPO / "scripts"))
 from extract_dsv4 import barrier, distributed_setup, filler_placement_for_task  # noqa: E402
 from jlens_filler.prompts import build_messages, render_and_align  # noqa: E402
 
-REGIONS = ["bos", "prefix", "problem", "dots", "template", "announce"]   # announce = the filler sentence in the system message
+REGIONS = ["bos", "prefix", "problem", "dots", "template", "announce", "demo_filler", "demo_answer"]   # announce = filler sentence; demo_* = spans inside the demonstrations
 STATE: dict[str, Any] = {"layer": None, "queries": None, "key_region": None, "record": {}}
 
 
@@ -83,7 +83,7 @@ def main() -> None:
     p.add_argument("--reference-code-dir", type=Path, required=True); p.add_argument("--examples-config", type=Path, required=True)
     p.add_argument("--filler-length", type=int, default=50); p.add_argument("--output-dir", type=Path, required=True)
     p.add_argument("--max-items", type=int, default=0); p.add_argument("--max-seq-len", type=int, default=1280)
-    p.add_argument("--process-group-timeout-minutes", type=int, default=60); p.add_argument("--announce-filler", type=int, default=0)
+    p.add_argument("--process-group-timeout-minutes", type=int, default=60); p.add_argument("--announce-filler", type=int, default=0); p.add_argument("--announce-mode", default="both")
     args = p.parse_args()
 
     rank, local_rank, world_size = distributed_setup(args.process_group_timeout_minutes)
@@ -106,7 +106,7 @@ def main() -> None:
     attn_from_answer, attn_from_dots, meta = [], [], []
     with torch.inference_mode():
         for n, ex in enumerate(items):
-            msgs = build_messages(cfg["few_shot"], ex, cfg["filler_type"], args.announce_filler or K, task_type=task, target_length=K)
+            msgs = build_messages(cfg["few_shot"], ex, cfg["filler_type"], args.announce_filler or K, task_type=task, target_length=K, announce_mode=args.announce_mode)
             if K > 0:
                 rendered, al = render_and_align(tokenizer, encode_messages, msgs, cfg["filler_type"], K, filler_placement=filler_placement_for_task(task))
             else:
@@ -132,6 +132,23 @@ def main() -> None:
                 ann_end = rendered.find("before you answer.", ann) + len("before you answer.")
                 for i, (x, y) in enumerate(al.offsets):
                     if y > ann and x < ann_end: token_region[i] = 5
+            # demonstrations: every "Filler: ..." span and every "Answer:" cue before the target's definitions
+            tgt_char = al.offsets[target_start][0]
+            pos = 0
+            while True:
+                f0 = rendered.find("Filler: ", pos)
+                if f0 < 0 or f0 >= tgt_char: break
+                f1 = rendered.find("\n\nAnswer:", f0); f1 = f1 if f1 > 0 else f0 + 8
+                for i, (x, y) in enumerate(al.offsets):
+                    if y > f0 + 8 and x < f1 and i < target_start: token_region[i] = 6
+                pos = f1 + 1
+            pos = 0
+            while True:
+                a0 = rendered.find("Answer:", pos)
+                if a0 < 0 or a0 >= tgt_char: break
+                for i, (x, y) in enumerate(al.offsets):
+                    if y > a0 and x < a0 + 7 and i < target_start: token_region[i] = 7
+                pos = a0 + 7
             queries = fabs + [q_last, cue, gen]
             STATE["queries"] = queries; STATE["record"] = {}
             per_layer_key_region = {}
@@ -159,7 +176,7 @@ def main() -> None:
                 rec_dots[str(l)] = full[:nf].mean(0).tolist() if nf else []   # [H, R]
             attn_from_answer.append(rec_ans); attn_from_dots.append(rec_dots)
             meta.append({"id": ex["id"], "answer": ex["answer"], "expected_intermediates": ex["expected_intermediates"], "n_tokens": T,
-                         "filler_token_indices": fabs, "q_last": q_last, "cue": cue, "gen": gen, "target_start": target_start, "n_announce_tokens": int((token_region == 5).sum())})
+                         "filler_token_indices": fabs, "q_last": q_last, "cue": cue, "gen": gen, "target_start": target_start, "n_announce_tokens": int((token_region == 5).sum()), "n_demo_filler_tokens": int((token_region == 6).sum()), "n_demo_answer_tokens": int((token_region == 7).sum())})
             if rank == 0 and n % 5 == 0:
                 g = torch.tensor(rec_ans[str(L - 2)])[2].mean(0); print(f"[{n+1}/{len(items)}] {ex['id']} T={T} gen-attn@L{L-2} by region {dict(zip(REGIONS, [round(float(x), 3) for x in g]))}", flush=True)
     STATE["queries"] = None

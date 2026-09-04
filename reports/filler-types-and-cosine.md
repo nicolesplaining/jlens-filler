@@ -396,6 +396,15 @@ the last two items when the demonstrations are there. The span is most useful to
 that has seen examples of a span being used, which is the same channel that moved its
 computation off the question token.
 
+**What the demonstrations do is not visible in attention.** With demonstrations-only
+announcement, the question token's late-block attention on the demonstrations' 250
+filler tokens is 0.16 in chat and 0.21 in base (peak 0.39 and 0.35, both at block 38),
+at or below those tokens' share of the keys (about 0.32), and attention on the
+demonstrations' answer cues is 0.01 in both. Neither checkpoint reads the demonstration
+spans specially, and they do not differ. Whatever the demonstrations do to the question
+token's computation, it is not carried by attention from the question token to the
+spans; it stays unlocated (`results/filler-cosine/demo-attention.md`).
+
 This corrects the reading in the previous section. The chat model's heads that read the
 sentence from block 20 on are real, but they are not the deferral mechanism; if
 anything they are the mechanism of the sentence's cost to accuracy. What the

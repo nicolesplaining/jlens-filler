@@ -32,6 +32,15 @@ def main() -> None:
             li = [layers.index(l) for l in last]
             pk = int(m.argmax()); hk = int(mh.argmax())
             lines.append(f"| {qname} | {float(m.mean()):.4f} | {float(m[li].mean()):.4f} | L{layers[pk]} ({float(m[pk]):.3f}) | {float(mh[hk]):.3f} (L{layers[hk]}) | {float(pr[li].mean()):.3f} |")
+        # all-region breakdown from q_last, last third of blocks and peak block per region
+        lines.append("q_last mass by region (last third mean | peak block):")
+        for r_i, rname in enumerate(R):
+            vals = []
+            for l in layers:
+                v = [torch.tensor(r[str(l)])[0, :, r_i].mean() for r in recs if str(l) in r]
+                vals.append(float(torch.stack(v).mean()) if v else float("nan"))
+            vt = torch.tensor(vals); li = [layers.index(l) for l in last]; pk = int(vt.argmax())
+            lines.append(f"- {rname}: {float(vt[li].mean()):.3f} | L{layers[pk]} ({float(vt[pk]):.3f})")
         lines.append("")
     a.output.parent.mkdir(parents=True, exist_ok=True); a.output.write_text("\n".join(lines) + "\n"); a.output.with_suffix(".json").write_text(json.dumps(out)); print("\n".join(lines))
 
