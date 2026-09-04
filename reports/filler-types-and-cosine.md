@@ -511,6 +511,8 @@ or a format token.
 
 ## Artifacts
 
+- Raw dumps for every condition below (86 GB): HF dataset `nick-rui/jlens-filler-dumps` (private), layout mirrors `results/`.
+
 - `results/filler-cosine/dots/`, `results/filler-cosine/qwen-dots/` (JSON, markdown, figures)
 - `results/deepseek-v4-flash{,-base}/varbind-eval-<type>/` behavioral sweeps
 - `results/deepseek-v4-flash{,-base}/filler-dump-<type>/{analysis,cosine}/` anatomy per type
