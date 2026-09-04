@@ -287,10 +287,31 @@ near-miss pattern. A ridge probe at R² 0.84 has a residual error of tens of uni
 three-digit answers and cannot separate exact from off-by-a-few, so this is as far as
 linear probes can take the question.
 
-**Pending control: announced but absent.** `run_dsv4_announce.sh` renders the system
-sentence and the demonstrations with fifty dots and the target with none. If the
-announcement is the trigger, the chat model's question-token probe should fall toward
-0.36 and its accuracy below the plain k=0 35/50, with a smaller effect on the base.
+**Announced but absent.** `run_dsv4_announce.sh` renders the system sentence and the
+demonstrations with fifty dots and the target with none (`--announce-filler 50`).
+
+| condition | chat: q_last probe | chat: correct/50 | base: q_last probe | base: correct/50 |
+|---|---:|---:|---:|---:|
+| plain k=0 | 0.84 | 34 to 35 | 0.84 | 48 |
+| announced, absent | 0.31 | 32 | 0.55 | 46 |
+| announced, present (k=50) | 0.36 | 49 | 0.65 | 50 |
+
+The announcement alone does it. With fifty dots promised and none delivered, the chat
+model's question-token encoding of the answer falls to 0.31, indistinguishable from the
+0.36 it shows when the dots are there, and the base's falls to 0.55. Both checkpoints
+defer computation away from the question token when told a filler span is coming; the
+chat model defers almost completely, the base partly. The answer remains decodable at
+the cue and generation positions at 0.79 to 0.83 in every condition, so what moves is
+where the value is assembled, not whether it is.
+
+Accuracy moves much less than the probe: chat 34 to 32, base 48 to 46. Two consequences.
+First, the chat model's k=0 deficit is not caused by deferral: it is there at 0.84 and
+at 0.31 alike. Second, deferral only pays off when there are positions to defer into.
+With the dots present the chat model reaches 49; with them promised and absent it sits at
+32. Reading the three rows together: the chat model, once told to expect a span, plans to
+finish the arithmetic in it, and emits an approximate answer when the span is missing.
+The base does the arithmetic well enough at the question token, or at the cue, that it
+does not need the span either way.
 
 ## Artifacts
 
@@ -298,5 +319,6 @@ announcement is the trigger, the chat model's question-token probe should fall t
 - `results/deepseek-v4-flash{,-base}/varbind-eval-<type>/` behavioral sweeps
 - `results/deepseek-v4-flash{,-base}/filler-dump-<type>/{analysis,cosine}/` anatomy per type
 - `results/qwen3.5-9b/filler-types/{base,dotsonly}/varbind-eval-<type>/` and `.../filler-dump-<type>/{analysis,cosine}/`
+- Announced-but-absent: `results/deepseek-v4-flash{,-base}/{varbind-eval-announce50-k0,k0-announce50-dump}/`, `results/filler-cosine/k0-announce-probes.md`
 - k=0 dumps and probes: `results/deepseek-v4-flash{,-base}/k0-dump/`, `results/filler-cosine/k0-probes.md`
 - Cross-type tables: `results/filler-cosine/summary-deepseek.md`, `results/filler-cosine/summary-qwen.md`
