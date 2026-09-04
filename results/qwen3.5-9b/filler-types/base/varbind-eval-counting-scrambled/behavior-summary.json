@@ -1,0 +1,177 @@
+{
+  "overall": {
+    "by_length": {
+      "0": {
+        "n": 50,
+        "correct": 0,
+        "accuracy": 0.0,
+        "mrr": 0.6209126984126985,
+        "recall_at_1": 0.38,
+        "recall_at_5": 0.92,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "5": {
+        "n": 50,
+        "correct": 1,
+        "accuracy": 0.02,
+        "mrr": 0.585388888888889,
+        "recall_at_1": 0.34,
+        "recall_at_5": 0.9,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "10": {
+        "n": 50,
+        "correct": 1,
+        "accuracy": 0.02,
+        "mrr": 0.6367460317460317,
+        "recall_at_1": 0.4,
+        "recall_at_5": 0.9,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "25": {
+        "n": 50,
+        "correct": 0,
+        "accuracy": 0.0,
+        "mrr": 0.6175793650793651,
+        "recall_at_1": 0.36,
+        "recall_at_5": 0.9,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "50": {
+        "n": 50,
+        "correct": 0,
+        "accuracy": 0.0,
+        "mrr": 0.5652222222222222,
+        "recall_at_1": 0.28,
+        "recall_at_5": 0.9,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      },
+      "100": {
+        "n": 50,
+        "correct": 0,
+        "accuracy": 0.0,
+        "mrr": 0.5690793650793651,
+        "recall_at_1": 0.3,
+        "recall_at_5": 0.88,
+        "recall_at_10": 1.0,
+        "recall_at_50": 1.0
+      }
+    },
+    "paired_vs_k0": {
+      "5": {
+        "helped_count": 1,
+        "hurt_count": 0,
+        "net_correct": 1,
+        "exact_mcnemar_p": 1.0,
+        "helped_ids": [
+          "varbind_easy_0020"
+        ],
+        "hurt_ids": [],
+        "mean_log10_rank_gain": -0.029432538883524848,
+        "largest_rank_gain_ids": [
+          "varbind_easy_0038",
+          "varbind_easy_0020",
+          "varbind_easy_0014",
+          "varbind_easy_0027",
+          "varbind_easy_0004",
+          "varbind_easy_0049",
+          "varbind_easy_0032",
+          "varbind_easy_0048",
+          "varbind_easy_0047",
+          "varbind_easy_0046"
+        ]
+      },
+      "10": {
+        "helped_count": 1,
+        "hurt_count": 0,
+        "net_correct": 1,
+        "exact_mcnemar_p": 1.0,
+        "helped_ids": [
+          "varbind_easy_0020"
+        ],
+        "hurt_ids": [],
+        "mean_log10_rank_gain": 0.014333975425929011,
+        "largest_rank_gain_ids": [
+          "varbind_easy_0027",
+          "varbind_easy_0024",
+          "varbind_easy_0010",
+          "varbind_easy_0020",
+          "varbind_easy_0014",
+          "varbind_easy_0005",
+          "varbind_easy_0004",
+          "varbind_easy_0049",
+          "varbind_easy_0032",
+          "varbind_easy_0048"
+        ]
+      },
+      "25": {
+        "helped_count": 0,
+        "hurt_count": 0,
+        "net_correct": 0,
+        "exact_mcnemar_p": 1.0,
+        "helped_ids": [],
+        "hurt_ids": [],
+        "mean_log10_rank_gain": 0.0033158260483173874,
+        "largest_rank_gain_ids": [
+          "varbind_easy_0042",
+          "varbind_easy_0027",
+          "varbind_easy_0024",
+          "varbind_easy_0015",
+          "varbind_easy_0010",
+          "varbind_easy_0014",
+          "varbind_easy_0001",
+          "varbind_easy_0004",
+          "varbind_easy_0049",
+          "varbind_easy_0031"
+        ]
+      },
+      "50": {
+        "helped_count": 0,
+        "hurt_count": 0,
+        "net_correct": 0,
+        "exact_mcnemar_p": 1.0,
+        "helped_ids": [],
+        "hurt_ids": [],
+        "mean_log10_rank_gain": -0.036368288608017975,
+        "largest_rank_gain_ids": [
+          "varbind_easy_0027",
+          "varbind_easy_0014",
+          "varbind_easy_0035",
+          "varbind_easy_0024",
+          "varbind_easy_0010",
+          "varbind_easy_0004",
+          "varbind_easy_0008",
+          "varbind_easy_0049",
+          "varbind_easy_0032",
+          "varbind_easy_0048"
+        ]
+      },
+      "100": {
+        "helped_count": 0,
+        "hurt_count": 0,
+        "net_correct": 0,
+        "exact_mcnemar_p": 1.0,
+        "helped_ids": [],
+        "hurt_ids": [],
+        "mean_log10_rank_gain": -0.039290849321582735,
+        "largest_rank_gain_ids": [
+          "varbind_easy_0042",
+          "varbind_easy_0027",
+          "varbind_easy_0010",
+          "varbind_easy_0004",
+          "varbind_easy_0014",
+          "varbind_easy_0049",
+          "varbind_easy_0032",
+          "varbind_easy_0048",
+          "varbind_easy_0047",
+          "varbind_easy_0046"
+        ]
+      }
+    }
+  }
+}

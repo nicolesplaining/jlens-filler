@@ -15,8 +15,14 @@ from pathlib import Path
 DOT_REGION = 3
 
 
-def load(p: Path):
-    d = json.loads(p.read_text()); return d[0] if isinstance(d, list) else d
+def load(p: Path, label: str = ""):
+    d = json.loads(p.read_text())
+    if isinstance(d, list):
+        for r in d:
+            rl = str(r.get("label", ""))
+            if label and (label in rl or rl == label.split("-", 1)[-1] or rl == label): return r
+        return d[0]
+    return d
 
 
 def anatomy_row(a: dict) -> dict:
@@ -71,17 +77,20 @@ def main() -> None:
         mdir, label = spec.split(":")
         for ft in a.types:
             d = a.root / mdir / ("dot-dump" if ft == "dots" else f"filler-dump-{ft}")
+            if ft == "dots" and not (d / "analysis").exists() and (a.root / mdir).parent.name == "filler-types":
+                d = (a.root / mdir).parent.parent / "dot-dump"
             an = d / "analysis" / "dot-analysis.json"; co = d / "cosine" / "filler-cosine.json"
             if ft == "dots" and not co.exists():
-                alt = a.root / "filler-cosine" / "dots" / "filler-cosine.json"
-                if alt.exists():
-                    for r in json.loads(alt.read_text()):
-                        if r["label"].startswith(label): co = None; cdata = r; break
+                for alt in (a.root / "filler-cosine" / "dots" / "filler-cosine.json", a.root / "filler-cosine" / "qwen-dots" / "filler-cosine.json"):
+                    if alt.exists():
+                        for r in json.loads(alt.read_text()):
+                            if r["label"] == f"{label}-dots" or r["label"].startswith(label): co = None; cdata = r; break
+                    if co is None: break
             if not an.exists(): continue
             row = {"model": label, "filler": ft}
-            row.update(anatomy_row(load(an)))
+            row.update(anatomy_row(load(an, label)))
             if co is None: row.update(cosine_row(cdata))
-            elif co.exists(): row.update(cosine_row(load(co)))
+            elif co.exists(): row.update(cosine_row(load(co, label)))
             rows.append(row)
     if not rows: print("no analysis outputs found"); return
     cols = [k for k in rows[0] if k not in ("model", "filler")]

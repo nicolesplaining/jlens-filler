@@ -186,6 +186,58 @@ both checkpoints for every type; change points are as scattered in the base as i
 The "each filler position holds its own snapshot" picture is the same before and after
 post-training.
 
+### Qwen3.5-9B with the same fillers (`run_hf_filler_types.sh`)
+
+| model | filler | k=0 | 50 | 100 | helped/hurt at 50 |
+|---|---|---:|---:|---:|---|
+| Qwen base | any of the four | 0 | 0 to 1 | 0 to 1 | floor |
+| Qwen dots-only LoRA | dots (earlier run) | 40 | 46 to 48 | | |
+| Qwen dots-only LoRA | alphabet | 42 | 40 | 39 | 1/3 |
+| Qwen dots-only LoRA | alphabet-scrambled | 41 | 40 | 38 | 3/4 |
+| Qwen dots-only LoRA | counting | 42 | 37 | 39 | 0/5 |
+| Qwen dots-only LoRA | counting-scrambled | 42 | 30 | 36 | 0/12 (p=0.0005) |
+
+The untrained 9B is at floor whatever fills the span. The model trained only on dot
+prompts gets nothing from letters and is hurt by numbers, badly by scrambled numbers.
+Its gain with dots is specific to the token it was trained on, and digit tokens sitting
+between the question and the answer interfere with a model that does its arithmetic at
+the answer position. DeepSeek's chat model shows the opposite sign: numbers are the
+filler it reads hardest and benefits from most.
+
+### Qwen3.5-9B anatomy by filler type (`results/filler-cosine/summary-qwen.md`)
+
+Numbers cost 140 tokens per 50 items on Qwen's digit-split tokenizer.
+
+| model | filler | gen→filler | max head | R² ans from filler | R² ans from q_last | centered adj | change pts/item |
+|---|---|---:|---:|---:|---:|---:|---:|
+| Qwen base | dots | 0.010 | 0.18 | 0.54 | 0.28 | 0.24 | 0.2 |
+| Qwen base | letters (either) | 0.005 to 0.011 | 0.05 | 0.25 to 0.38 | 0.30 to 0.34 | 0.02 | 1.0 |
+| Qwen base | numbers (either) | 0.011 to 0.012 | 0.10 to 0.11 | 0.47 to 0.51 | 0.36 to 0.39 | 0.05 | 0.2 to 0.4 |
+| Qwen dots-only | dots | 0.009 | 0.08 | 0.97 | 0.94 | 0.77 | 4.2 |
+| Qwen dots-only | letters (either) | 0.009 to 0.011 | 0.14 to 0.16 | 0.95 to 0.97 | 0.92 | 0.08 to 0.10 | 0.4 to 0.7 |
+| Qwen dots-only | numbers (either) | 0.053 to 0.054 | **0.49 to 0.51** | 0.97 to 0.98 | 0.90 to 0.91 | 0.14 to 0.23 | 0.3 |
+
+Two things this adds.
+
+**Why numbers hurt the trained Qwen.** Its answer position ignores dots and letters
+(attention 0.01, no head above 0.16) but attends to number fillers at 0.05 on average
+with single heads putting half their mass there. A model that does its arithmetic at the
+answer position and has heads that read digits will read filler digits as if they were
+problem digits. That is the mechanism behind 42 → 30 with scrambled numbers. DeepSeek's
+chat model has the opposite relation to the same tokens: it reads them hardest and
+benefits most.
+
+**The constant-vector signature is specific to identical tokens.** The dots-only Qwen's
+0.77 centered adjacency, which looked like a copied problem vector along the span, falls
+to 0.08 to 0.23 with letters or numbers, because heterogeneous tokens vary the residual
+by token identity. So redundancy across the span has to be compared within a filler
+type. Within dots, the contrast stands: 0.77 in the trained Qwen against 0.11 to 0.12 in
+both DeepSeek checkpoints.
+
+The direct-path picture is unchanged by filler type: the trained Qwen holds the answer
+at the question token at 0.90 to 0.94 whatever fills the span, like the DeepSeek base
+(0.74 to 0.88) and unlike the DeepSeek chat model (0.24 to 0.52).
+
 ### Summary of the filler-type comparison
 
 Filler type changes how much the answer positions read the span (letters least, numbers
@@ -201,4 +253,5 @@ for every filler type.
 - `results/filler-cosine/dots/`, `results/filler-cosine/qwen-dots/` (JSON, markdown, figures)
 - `results/deepseek-v4-flash{,-base}/varbind-eval-<type>/` behavioral sweeps
 - `results/deepseek-v4-flash{,-base}/filler-dump-<type>/{analysis,cosine}/` anatomy per type
-- `results/qwen3.5-9b/filler-types/{base,dotsonly}/` (pending)
+- `results/qwen3.5-9b/filler-types/{base,dotsonly}/varbind-eval-<type>/` and `.../filler-dump-<type>/{analysis,cosine}/`
+- Cross-type tables: `results/filler-cosine/summary-deepseek.md`, `results/filler-cosine/summary-qwen.md`
