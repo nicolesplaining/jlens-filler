@@ -313,6 +313,27 @@ finish the arithmetic in it, and emits an approximate answer when the span is mi
 The base does the arithmetic well enough at the question token, or at the cue, that it
 does not need the span either way.
 
+## First-token distributions (no GPU; from the sweep files)
+
+Top-10 tokens at the answer position, mean over the 50 released items.
+
+| condition | top-1 prob | p(correct token) | p(correct) on misses | top-10 entropy (nats) | median rank of correct on misses |
+|---|---:|---:|---:|---:|---:|
+| chat, k=0 | 0.74 | 0.60 | 0.12 | 0.76 | 3 |
+| chat, announced but absent | 0.60 | 0.51 | 0.11 | 1.13 | 3 |
+| chat, k=50 dots | 0.92 | 0.92 | 0.22 | 0.26 | 2 |
+| base, k=0 | 0.89 | 0.88 | 0.30 | 0.30 | 2 |
+| base, k=50 dots | 0.90 | 0.90 | | 0.29 | |
+
+The chat model at k=0 is genuinely less certain than the base: its first-token
+distribution is three times flatter and every miss still has the correct number in
+the top few. Fifty dots sharpen it to the base's level. Announcing filler that never
+comes flattens it further. This is the confidence-recalibration description from Part VI
+of the PDF, and it sits on top of the deferral result: told to expect a span, the model
+postpones the computation, and with no span it emits its best approximation with low
+confidence. All 15 chat misses at k=0 have a number as the top token; none is a refusal
+or a format token.
+
 ## Artifacts
 
 - `results/filler-cosine/dots/`, `results/filler-cosine/qwen-dots/` (JSON, markdown, figures)
