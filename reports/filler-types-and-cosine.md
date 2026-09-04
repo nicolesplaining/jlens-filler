@@ -49,6 +49,12 @@ count does not explain the letter gap: 100 letters (100 tokens) give 43 to 46, 5
 (99 tokens) give 49. The k=0 baseline is the same 34 to 35 in every run, as it must be
 (identical prompts).
 
+Pre-question placement (fifty items of filler before the variable definitions, chat
+model): letters 34, scrambled letters 36, numbers 35, scrambled numbers 28 (5 helped,
+11 hurt), against a k=0 baseline of 34 and post-question scores of 42 to 50. The
+placement specificity Nicole found for dots (35 → 35) holds for every filler type, and
+scrambled numbers before the question mildly hurt.
+
 The base is at 48 to 50 for every filler type at every length. Whatever the filler is
 made of, there is no deficit for it to repair, so the type comparison is only informative
 on the post-trained model.
