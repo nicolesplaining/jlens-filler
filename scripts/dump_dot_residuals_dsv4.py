@@ -33,7 +33,7 @@ def main() -> None:
     p.add_argument("--ckpt-path", type=Path, required=True); p.add_argument("--model-config", type=Path, required=True)
     p.add_argument("--reference-code-dir", type=Path, required=True); p.add_argument("--examples-config", type=Path, required=True)
     p.add_argument("--filler-length", type=int, default=50); p.add_argument("--output-dir", type=Path, required=True)
-    p.add_argument("--max-items", type=int, default=0); p.add_argument("--max-seq-len", type=int, default=1280)
+    p.add_argument("--max-items", type=int, default=0); p.add_argument("--max-seq-len", type=int, default=1280); p.add_argument("--announce-filler", type=int, default=0)
     p.add_argument("--process-group-timeout-minutes", type=int, default=60)
     args = p.parse_args()
 
@@ -53,8 +53,21 @@ def main() -> None:
     cfg = json.loads(args.examples_config.read_text()); items = cfg["examples"][: args.max_items or None]
     task = cfg.get("task_type", "variable_binding"); K = args.filler_length
     L = len(model.layers)
-    _m0 = build_messages(cfg["few_shot"], items[0], cfg["filler_type"], K, task_type=task)
-    _, _al0 = render_and_align(tokenizer, encode_messages, _m0, cfg["filler_type"], K, filler_placement=filler_placement_for_task(task))
+    def align_any(ex):
+        """Alignment for K>0 via render_and_align; for K=0 locate the last 'Answer:' cue from offsets."""
+        msgs = build_messages(cfg["few_shot"], ex, cfg["filler_type"], args.announce_filler or K, task_type=task, target_length=K)
+        if K > 0:
+            return render_and_align(tokenizer, encode_messages, msgs, cfg["filler_type"], K, filler_placement=filler_placement_for_task(task))[1]
+        rendered = encode_messages(msgs, thinking_mode="chat")
+        enc = tokenizer(rendered, add_special_tokens=False, return_offsets_mapping=True)
+        ids = list(enc["input_ids"]); offs = [tuple(x) for x in enc["offset_mapping"]]
+        a0 = rendered.rfind("Answer:"); a1 = a0 + len("Answer:")
+        cue_idx = [i for i, (x, y) in enumerate(offs) if y > a0 and x < a1]
+        class _A: pass
+        al = _A(); al.input_ids = ids; al.token_strings = [tokenizer.decode([t]) for t in ids]
+        al.filler_token_indices = []; al.answer_cue_token_indices = cue_idx; al.generation_position = len(ids) - 1
+        return al
+    _al0 = align_any(items[0])
     NF = len(_al0.filler_token_indices); positions_n = NF + 3        # numbers carry a space token per item, so NF can exceed K
     # accumulators live on the CPU: the default device is cuda here, and 100+ filler positions make these 7 GB
     resid = torch.zeros(len(items), L, positions_n, 4, 4096, dtype=torch.bfloat16, device="cpu") if rank == 0 else None
@@ -63,10 +76,9 @@ def main() -> None:
     meta = []
     with torch.inference_mode():
         for n, ex in enumerate(items):
-            msgs = build_messages(cfg["few_shot"], ex, cfg["filler_type"], K, task_type=task)
-            _, al = render_and_align(tokenizer, encode_messages, msgs, cfg["filler_type"], K, filler_placement=filler_placement_for_task(task))
+            al = align_any(ex)
             fabs = al.filler_token_indices; cue = al.answer_cue_token_indices[-1]; gen = al.generation_position
-            q_last = next(i for i in range(fabs[0] - 1, 0, -1) if al.token_strings[i].strip().endswith("?"))
+            q_last = next(i for i in range((fabs[0] if fabs else cue) - 1, 0, -1) if al.token_strings[i].strip().endswith("?"))
             if len(fabs) != NF: raise AssertionError(f"{ex['id']}: {len(fabs)} filler tokens, expected {NF}")
             positions = fabs + [q_last, cue, gen]
             tokens = torch.tensor([al.input_ids], dtype=torch.long, device="cuda")
@@ -87,7 +99,7 @@ def main() -> None:
     if rank == 0:
         args.output_dir.mkdir(parents=True, exist_ok=True)
         torch.save({"resid_streams": resid, "resid": collapsed, "entropy": entropy, "norms": collapsed.float().norm(dim=-1),
-                    "positions": [f"F{i+1}" for i in range(NF)] + ["q_last", "cue", "gen"], "filler_type": cfg["filler_type"], "filler_items": K, "filler_token_strings": [_al0.token_strings[i] for i in _al0.filler_token_indices], "meta": meta, "n_layers": L,
+                    "positions": [f"F{i+1}" for i in range(NF)] + ["q_last", "cue", "gen"], "filler_type": cfg["filler_type"], "filler_items": K, "announce_filler": args.announce_filler, "filler_token_strings": [_al0.token_strings[i] for i in _al0.filler_token_indices], "meta": meta, "n_layers": L,
                     "model_id": "deepseek-ai/DeepSeek-V4-Flash", "adapter": None, "collapse": "model.head.hc_head (model-native), per extract_dsv4"},
                    args.output_dir / "dot_dump.pt")
         print("DUMP_DONE", flush=True)

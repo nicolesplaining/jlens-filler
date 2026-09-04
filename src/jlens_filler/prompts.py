@@ -398,7 +398,13 @@ def build_messages(
     filler_type: str,
     length: int,
     task_type: str = "addition",
+    target_length: int | None = None,
 ) -> list[dict[str, str]]:
+    """`length` sets the filler count announced in the system message and rendered in every demonstration;
+    `target_length` (default: same) sets the count rendered in the target turn. `target_length=0` with
+    `length=50` is the "announced but absent" control."""
+    if target_length is None:
+        target_length = length
     if task_type == "addition":
         fact_count = len(_fact_phrases(target))
         for item in few_shot:
@@ -451,7 +457,7 @@ def build_messages(
         )
         messages.append({"role": "assistant", "content": str(item["answer"])})
     messages.append(
-        {"role": "user", "content": user_builder(target, filler_type, length)}
+        {"role": "user", "content": user_builder(target, filler_type, target_length)}
     )
     return messages
 

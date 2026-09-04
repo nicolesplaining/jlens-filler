@@ -248,10 +248,49 @@ adjacent cosine. The base reads all of them and needs none of them. The one thin
 moves between base and chat is the answer encoding at the question token, and it moves
 for every filler type.
 
+## The question token without any filler (k=0 dumps)
+
+The 0.74 versus 0.40 question-token probe in the base-checkpoint write-up was measured
+with fifty dots present. `run_dsv4_followups.sh` dumps both checkpoints at k=0 (no
+filler sentence, no filler in the demonstrations, none in the target) on the same 50
+held-out items; `probe_k0_dump.py` fits the same ridge probes. Best R² for the answer:
+
+| condition | position | chat | base |
+|---|---|---:|---:|
+| k=0 | last question token | 0.84 | 0.84 |
+| k=0 | answer cue | 0.83 | 0.83 |
+| k=0 | generation position | 0.84 | 0.83 |
+| k=50 | last question token | 0.36 | 0.65 |
+| k=50 | answer cue | 0.82 | 0.81 |
+| k=50 | generation position | 0.82 | 0.84 |
+
+**With no filler in the prompt, the chat model's question token holds the answer exactly
+as well as the base's.** The gap between the checkpoints exists only when the filler
+scaffold is in the context. The question token precedes the dots, so the dots cannot be
+the cause; what differs between k=0 and k=50 is the system sentence announcing fifty
+filler tokens and the five demonstrations that contain them. Read that way, the chat
+model defers its computation when it is told filler is coming (0.84 to 0.36), and the
+base defers less (0.84 to 0.65). This is the deferred-computation hypothesis with a
+specific trigger: the announcement, not the tokens.
+
+**The k=0 deficit is not a representation deficit.** At k=0 the answer is decodable at
+the generation position at 0.84 in both checkpoints, yet the chat model emits the wrong
+number on 15 of 50 items and the base on 2. The failure is between an approximately
+correct linear representation and an exactly correct emitted number, consistent with the
+near-miss pattern. A ridge probe at R² 0.84 has a residual error of tens of units on
+three-digit answers and cannot separate exact from off-by-a-few, so this is as far as
+linear probes can take the question.
+
+**Pending control: announced but absent.** `run_dsv4_announce.sh` renders the system
+sentence and the demonstrations with fifty dots and the target with none. If the
+announcement is the trigger, the chat model's question-token probe should fall toward
+0.36 and its accuracy below the plain k=0 35/50, with a smaller effect on the base.
+
 ## Artifacts
 
 - `results/filler-cosine/dots/`, `results/filler-cosine/qwen-dots/` (JSON, markdown, figures)
 - `results/deepseek-v4-flash{,-base}/varbind-eval-<type>/` behavioral sweeps
 - `results/deepseek-v4-flash{,-base}/filler-dump-<type>/{analysis,cosine}/` anatomy per type
 - `results/qwen3.5-9b/filler-types/{base,dotsonly}/varbind-eval-<type>/` and `.../filler-dump-<type>/{analysis,cosine}/`
+- k=0 dumps and probes: `results/deepseek-v4-flash{,-base}/k0-dump/`, `results/filler-cosine/k0-probes.md`
 - Cross-type tables: `results/filler-cosine/summary-deepseek.md`, `results/filler-cosine/summary-qwen.md`
