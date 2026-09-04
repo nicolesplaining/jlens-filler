@@ -24,7 +24,8 @@ for i, r in enumerate(res):
         ax.set_title(f"{r['label']}: attention from {q}", fontsize=9)
         if len(layers) <= 12:
             for (y, x), v in np.ndenumerate(M): ax.text(x, y, f"{v:.2f}", ha="center", va="center", fontsize=7, color="w" if v < 0.5 else "k")
-fig.suptitle("Attention mass by key region (full-attention blocks, mean over heads and 100 held-out items)", fontsize=10); fig.tight_layout(); fig.savefig(a.output_dir / "attention_heatmaps.png", dpi=130); plt.close(fig)
+n_items = " / ".join(str(r.get("n_items", "?")) for r in res)
+fig.suptitle(f"Attention mass by key region (full-attention blocks, mean over heads and {n_items} held-out items)", fontsize=10); fig.tight_layout(); fig.savefig(a.output_dir / "attention_heatmaps.png", dpi=130); plt.close(fig)
 
 # 2. probes
 stages = [s for s in res[0]["probes"]["gen"] if s not in ("first_product", "second_product")]

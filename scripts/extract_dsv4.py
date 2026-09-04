@@ -1118,6 +1118,12 @@ def main() -> None:
         help="optional comma-separated subset of configured example IDs",
     )
     parser.add_argument("--process-group-timeout-minutes", type=int, default=30)
+    parser.add_argument(
+        "--render",
+        choices=["chat", "plain"],
+        default="chat",
+        help="chat: official encode_messages (non-thinking); plain: raw few-shot text for base models",
+    )
     args = parser.parse_args()
 
     rank, local_rank, world_size = distributed_setup(
@@ -1133,8 +1139,26 @@ def main() -> None:
     sys.path.insert(0, str(args.reference_code_dir.resolve()))
     encoding_dir = args.reference_code_dir.resolve().parent / "encoding"
     sys.path.insert(0, str(encoding_dir))
-    from encoding_dsv4 import encode_messages  # type: ignore  # noqa: E402
+    from encoding_dsv4 import encode_messages as chat_encode_messages  # type: ignore  # noqa: E402
     from model import ModelArgs, Transformer  # type: ignore  # noqa: E402
+
+    def plain_encode_messages(messages: list[dict[str, str]], thinking_mode: str = "chat") -> str:
+        """Raw few-shot text for a base checkpoint: no turn markers, demo answers inline."""
+        parts: list[str] = []
+        pending_user: str | None = None
+        for message in messages:
+            if message["role"] == "system":
+                parts.append(message["content"])
+            elif message["role"] == "user":
+                pending_user = message["content"]
+            else:
+                parts.append(f"{pending_user} {message['content']}")
+                pending_user = None
+        if pending_user is not None:
+            parts.append(pending_user)
+        return "\n\n".join(parts)
+
+    encode_messages = chat_encode_messages if args.render == "chat" else plain_encode_messages
 
     with args.model_config.open() as handle:
         model_args = ModelArgs(**json.load(handle))
@@ -1231,7 +1255,8 @@ def main() -> None:
                 "top_k": args.top_k,
                 "max_new_tokens": args.max_new_tokens,
                 "max_seq_len": args.max_seq_len,
-                "thinking_mode": "chat (official non-thinking renderer)",
+                "thinking_mode": "chat (official non-thinking renderer)" if args.render == "chat" else "plain few-shot text (base model)",
+                "render": args.render,
                 "decoding": "greedy",
             },
             "model_config": vars(model_args),

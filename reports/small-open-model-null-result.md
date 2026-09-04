@@ -17,6 +17,12 @@ pre-question placement control is slightly negative (4 helped / 12 hurt).
 
 Whatever DeepSeek V4 Flash is doing with filler positions, none of these models
 does it, even in the accuracy band where a workspace effect would be visible.
+DeepSeek-V4-Flash-Base, the same network before post-training, scores 48/50 with
+no dots and 50/50 with fifty, so the chat model's filler gain is post-training
+repairing a deficit that post-training introduced. The base reads the dots
+exactly as the chat model does (20% of late attention, problem-specific dot
+residuals, answer decodable from the span), so the reading is pretrained; the
+need for it is not.
 Per Nicole's finding that the J-Lens exposed nothing the logit lens did not on
 DeepSeek, the screen used no lens at all; it is purely behavioral.
 
@@ -512,6 +518,109 @@ Qwen), organized by stream (two content lanes, one position lane, one carrier),
 and hold the answer as strongly as the cue does while the question token does
 not. Every one of those is the opposite of what the fine-tuned Qwen showed.
 
+## The base checkpoint: DeepSeek-V4-Flash-Base (`scripts/run_dsv4_base_eval.sh`)
+
+The question left open above was whether DeepSeek's dot use comes from its
+architecture or its post-training. `deepseek-ai/DeepSeek-V4-Flash-Base` has the
+same architecture and pretraining with no post-training, so it decides that.
+The released base experts are FP8 (the chat checkpoint ships FP4 experts), which
+makes the converted 4-way shards 75 GB each against 42 GB for the chat model.
+They fit on 4×H100 80GB only with `PYTORCH_ALLOC_CONF=expandable_segments:True`:
+under the default caching allocator each 8 MiB expert weight is rounded into a
+20 MiB segment and about 12 GiB per GPU is lost, which is exactly the margin.
+Loaded through the chat repository's reference code with `expert_dtype: null`;
+the sanity gate (final-head closure, lens identity anchor) passed with no failed
+prompts. Same 50 released items, same `max_seq_len`, same config hash as the chat
+run. Results in `results/deepseek-v4-flash-base/`.
+
+Two renderings, because a base model has no chat template of its own. "Chat" is
+Nicole's encoding with turn markers, identical to the chat-model run. "Plain"
+(`extract_dsv4.py --render plain`) joins the system text and the five
+demonstrations as raw text with the demo answers inline, no turn markers.
+
+**The base does not need the dots.** Correct out of 50:
+
+| Visible dots | Chat model (Nicole) | Base, chat rendering | Base, plain rendering |
+|---:|---:|---:|---:|
+| 0 | 35 | 48 | 47 |
+| 5 | 45 | 48 | 44 |
+| 10 | 42 | 49 | 50 |
+| 25 | 43 | 49 | 47 |
+| 50 | 49 | 50 | 50 |
+| 100 | 49 | 49 | 50 |
+
+The chat model's k=0 to k=50 change is 14 helped / 0 hurt. The base's is 2 / 0
+(chat rendering, McNemar p=0.5) and 3 / 0 (plain, p=0.25); every other length
+moves 1 to 3 items in either direction. The pre-question k=50 control, where the
+chat model fell back to 35/50, gives the base 49/50 (chat rendering, 2 helped /
+1 hurt) and 50/50 (plain, 3 / 0). Placement does not matter to the base because
+there is no deficit for placement to fix.
+
+One artifact to know about: the rank columns (MRR, R@10) in the plain-rendering
+reports are meaningless. The plain prompt ends in `Answer:` and DeepSeek's
+tokenizer emits a standalone space token before the number, which the base
+predicts with probability 0.997; the rank helper scores the number at that
+position. Accuracy is parsed from the generated text and is unaffected.
+
+**The base reads the dots the same way the chat model does.** The same dump
+(`scripts/run_dsv4_base_dot_dump.sh`: 50 held-out items at k=50, chat rendering,
+all four streams, recomputed attention) on the base, analyzed side by side with
+the chat run. Mean attention mass on the dot region over the last third of
+blocks, and where single heads put at least half their mass on dots:
+
+| Model | gen → dots | cue → dots | dots → dots | blocks with gen ≥ 0.20 | blocks with a head ≥ 0.5 |
+|---|---:|---:|---:|---|---|
+| DeepSeek V4 Flash (chat) | 0.164 | 0.195 | 0.26 | 21, 22, 24, 35, 39, 40 | 26, 28, 32, 34, 37, 39, 40 |
+| DeepSeek-V4-Flash-Base | 0.203 | 0.189 | 0.27 | 17–19, 21–24, 34, 35, 37, 39–41 | 21, 24, 28, 32–41 |
+
+The base puts more of the generation position's attention on the dots than the
+chat model, in the same blocks and with more dot-dominated heads. Its dot
+residuals are more problem-specific (cosine of the same dot across problems
+0.64 at blocks 32 and 40, versus 0.78 and 0.76 in chat; problem explains 4 to 7%
+of variance versus 4 to 5%), the answer is decodable from the dots at R² 0.85
+(chat 0.87), the entropy jump at the dots comes at the same depth (block 21:
+4.7 nats versus 5.5), and the four streams divide the work the same way (streams
+0 and 2 content, cosine 0.44 and 0.40 at block 32; stream 3 position, 0.73;
+stream 1 the high-norm carrier). Figures in
+`results/deepseek-v4-flash-base/dot-dump/analysis/`.
+
+**What post-training changed is the direct path.** Best ridge probe R² for the
+answer:
+
+| Model | from dots (mean) | from last question token | from answer cue | from generation position |
+|---|---:|---:|---:|---:|
+| DeepSeek-V4-Flash-Base | 0.85 | **0.74** | 0.86 | 0.86 |
+| DeepSeek V4 Flash (chat) | 0.87 | **0.40** | 0.87 | 0.87 |
+| Qwen3.5-9B dots-only | 0.97 | 0.94 | 0.99 | — |
+
+In the base the answer is already linearly present at the last question token,
+before any dot exists, at 0.74. In the chat model that number is 0.40; the dots
+and the cue hold it at 0.87 in both. Post-training weakened the encoding at the
+question, and left the dot span as the place where the value is still assembled.
+That is the mechanistic counterpart of the behavioral table: the base can answer
+from the question alone (96% at k=0); the chat model often cannot (70%), and the
+dot span, which both models read, recovers it (98%).
+
+**What this settles.** The chat model's 70% at k=0 is not a task the network
+cannot do; the same network before post-training does it at 96%. Fifty
+post-question dots bring the chat model to 98%, which is the base's level. So
+the filler effect in DeepSeek V4 Flash is a post-training artifact: post-training
+introduced a deficit in direct answering, and the dots recover the pretrained
+competence.
+
+The anatomy splits the explanation in two. Reading the dots (16 to 43% of
+late-block attention, problem-specific dot residuals, the answer decodable from
+the dot span) is there in the base, so it comes from pretraining and the
+architecture, not from post-training; the sliding window that makes dots 40% of
+the raw keys and the four-stream residual are the plausible reasons. What
+post-training added is the *dependence* on it: a weaker direct path at the
+question token (answer probe 0.74 to 0.40) and a 26-point k=0 deficit that the
+dot span repairs. The "learned habit" reading from the previous section was half
+right. The habit of reading trailing tokens is pretrained; needing them is
+learned. It reframes Nicole's result: the interesting object is what
+post-training did to the direct-answer path, and why the model's pretrained
+reading of an inert span is enough to restore it.
+
 ## What this does and does not show
 
 On the training phase: five LoRA runs (mixed-k, chain-length 2, a 4B model,
@@ -542,10 +651,12 @@ The screen rules out the cheap explanations. Two MoE models with 3B active
 parameters behave like the dense ones, so MoE routing alone is not it. Four
 families with different post-training behave alike, so it is not a Qwen quirk.
 Scale from 4B to 35B brings the direct-answer output closer to correct without
-ever producing a filler gain. What remains: a scale threshold above 35B, the
-four-stream hyper-connection residual specific to DeepSeek V4, or something in
-DeepSeek's post-training. None of these is testable on one 80GB card with an
-open model.
+ever producing a filler gain. The base-checkpoint run then removes the
+architecture and scale explanations for DeepSeek: the same network without
+post-training scores 96% with no dots and gains nothing from them, while
+reading the dots just as the chat model does. What is left is DeepSeek's
+post-training, which created the k=0 deficit; the post-question span repairs it
+because both models already read that span.
 
 The next step is therefore to make a model that uses filler: fine-tune one of
 these (Qwen3.5-9B or Qwen3.6-27B with LoRA) on the two-step task with dots present
@@ -557,6 +668,7 @@ when pushed to do it," which is the more general interpretability question.
 
 - Two-step sweeps and controls: `results/<model>/varbind-eval/`, `.../varbind-pre-question-k50-control/` for qwen3.5-4b, qwen3.5-9b, llama3.1-8b-it, qwen3.5-27b, qwen3.5-35b-a3b, qwen3.6-27b, qwen3-32b, qwen3-30b-a3b, gemma-3-27b-it, olmo-3.1-32b-it
 - Screen driver: `scripts/screen_models.sh`
+- DeepSeek-V4-Flash-Base: `results/deepseek-v4-flash-base/{sanity,varbind-eval,varbind-eval-plain,varbind-pre-question-k50-control,varbind-pre-question-k50-control-plain,dot-dump/analysis}/`; drivers `scripts/run_dsv4_base_eval.sh`, `scripts/run_dsv4_base_dot_dump.sh`; base config on the box is the chat `inference/config.json` with `expert_dtype: null`
 - Branching sweep: `results/qwen3.5-9b/branching-varbind-eval/`
 - One-step sweeps and controls: `results/*/varbind-onestep-eval/`, `.../varbind-onestep-pre-question-k50-control/`
 - Held-out 200: `results/qwen3.5-4b/varbind-onestep-heldout200-eval/`, `.../varbind-onestep-heldout200-pre-question-k50-control/`

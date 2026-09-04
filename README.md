@@ -147,6 +147,11 @@ variant where they sit at 50–85%, dots have no effect (200-item held-out
 replication on Qwen3.5-4B: every length within ±3 correct of baseline). No lens
 readouts were extracted because the behavior gate was not met.
 
+DeepSeek-V4-Flash-Base, the same network before post-training, scores 96% with no
+dots and gains nothing from them, while reading the dots exactly as the chat model
+does. DeepSeek's filler effect is post-training weakening the direct path; the
+dot-reading that repairs it is pretrained.
+
 - PDF report (screen, training, causal tests, dot anatomy): [`reports/pdf/filler-tokens-open-models.pdf`](reports/pdf/filler-tokens-open-models.pdf) (source: `filler-tokens-open-models.tex`, figures under `results/report-figures/`)
 - Findings note: [`reports/small-open-model-null-result.md`](reports/small-open-model-null-result.md)
 
@@ -164,6 +169,7 @@ answer. The computation resolves at the answer position in the last three blocks
 - Held-out lens grids and viewers: `results/qwen3.5-9b/lens-heldout-k50/<model>/<item>/viewer.html`
 - Dot-position anatomy (variance decomposition, probes, attention heatmaps, entropy): `results/qwen3.5-9b/dot-dump/analysis/`
 - Same anatomy on DeepSeek V4 Flash (4×H100, Nicole's pipeline; per hyper-connection stream, recomputed sparse attention): `results/deepseek-v4-flash/dot-dump/analysis/`; scripts `dump_dot_residuals_dsv4.py`, `dump_dot_attention_dsv4.py`, `setup_dsv4_box.sh`, `run_dsv4_dot_dump.sh`
+- DeepSeek-V4-Flash-Base (same architecture, no post-training) on the released items: 48/50 with no dots, 50/50 with fifty, no placement effect, in chat and plain rendering. The base reads the dots as the chat model does (20% of late attention, answer decodable from the span) but holds the answer at the question token (probe R² 0.74 vs 0.40 in chat): post-training weakened the direct path, and the dots repair it. `results/deepseek-v4-flash-base/`; `scripts/run_dsv4_base_eval.sh`, `scripts/run_dsv4_base_dot_dump.sh`; `extract_dsv4.py --render plain` for the raw-text rendering. FP8 experts need `PYTORCH_ALLOC_CONF=expandable_segments:True` to fit 4×H100.
 - Lesions and single-cell patch grids: `results/qwen3.5-9b/lora-*/lesion-all-layers/`, `results/qwen3.5-9b/patch-heldout-0067/`
 - One-step config generator: [`scripts/build_onestep_varbind_configs.py`](scripts/build_onestep_varbind_configs.py)
 - Screen driver: [`scripts/screen_models.sh`](scripts/screen_models.sh)
