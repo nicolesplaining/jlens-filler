@@ -356,6 +356,36 @@ Part VI of the PDF is out. The dot effect survives the change of rendering: 22 h
 2 hurt at k=50, and the curve keeps rising to 44 at k=100 where the chat-rendered run
 saturates at 49. The base is at ceiling in both renderings.
 
+## Where the announcement is read
+
+`dump_dot_attention_dsv4.py` now attributes keys to a sixth region, the 21-token filler
+sentence in the system message, and handles k=0. Mass on that sentence from the last
+question token, mean over 64 heads and 50 held-out items (uniform attention over the
+roughly 800 prefix tokens would give 0.026):
+
+| block | 14 | 20 | 22 | 24 | 26 | 28 | 32 | 34 | 38 | 40 | 42 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| chat, announced (absent or delivered) | 0.007 | 0.039 | 0.039 | 0.039 | 0.055 | 0.010 | 0.066 | 0.060 | 0.062 | 0.173 | 0.010 |
+| base, announced (absent or delivered) | 0.006 | 0.003 | 0.005 | 0.008 | 0.009 | 0.005 | 0.009 | 0.007 | 0.030 | 0.082 | 0.014 |
+| single most attentive head, chat | 0.04 | 0.16 | | 0.16 | | 0.04 | 0.25 | | | 0.38 | |
+| single most attentive head, base | 0.03 | 0.03 | | 0.03 | | 0.01 | 0.03 | | | 0.19 | |
+
+The values are identical whether the dots are delivered or not, as they must be (the
+question token precedes them). The chat model's question token reads the announcement
+above chance from block 20 and six times chance at block 40, with single heads at 0.16
+to 0.38; the base's question token ignores it until block 38 and reads it at half the
+chat model's level at block 40. The sentence is about 600 tokens before the question,
+outside the 128-token window, so this is attention through the compressed keys, which
+the indexer selects in the even blocks (20, 22, 24, 26, 32, 34, 38, 40 are all even).
+Block 20 is also where the question-token probe first separates between the announced
+and unannounced runs (0.66 versus 0.09 at block 28). Post-training installed, or
+strengthened, heads in blocks 20 to 40 that read the filler instruction at the question
+token; that is the mechanism by which the announcement defers the computation. Attention
+from the cue and generation positions to the sentence is 0.02 in both checkpoints.
+
+Results: `results/filler-cosine/announce-attention.md`, dumps under
+`results/deepseek-v4-flash{,-base}/announce-attn-{k0,announce50-k0,k50}/`.
+
 ## First-token distributions (no GPU; from the sweep files)
 
 Top-10 tokens at the answer position, mean over the 50 released items.

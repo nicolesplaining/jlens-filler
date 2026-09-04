@@ -31,7 +31,7 @@ sys.path.insert(0, str(REPO / "src")); sys.path.insert(0, str(REPO / "scripts"))
 from extract_dsv4 import barrier, distributed_setup, filler_placement_for_task  # noqa: E402
 from jlens_filler.prompts import build_messages, render_and_align  # noqa: E402
 
-REGIONS = ["bos", "prefix", "problem", "dots", "template"]
+REGIONS = ["bos", "prefix", "problem", "dots", "template", "announce"]   # announce = the filler sentence in the system message
 STATE: dict[str, Any] = {"layer": None, "queries": None, "key_region": None, "record": {}}
 
 
@@ -83,7 +83,7 @@ def main() -> None:
     p.add_argument("--reference-code-dir", type=Path, required=True); p.add_argument("--examples-config", type=Path, required=True)
     p.add_argument("--filler-length", type=int, default=50); p.add_argument("--output-dir", type=Path, required=True)
     p.add_argument("--max-items", type=int, default=0); p.add_argument("--max-seq-len", type=int, default=1280)
-    p.add_argument("--process-group-timeout-minutes", type=int, default=60)
+    p.add_argument("--process-group-timeout-minutes", type=int, default=60); p.add_argument("--announce-filler", type=int, default=0)
     args = p.parse_args()
 
     rank, local_rank, world_size = distributed_setup(args.process_group_timeout_minutes)
@@ -106,15 +106,32 @@ def main() -> None:
     attn_from_answer, attn_from_dots, meta = [], [], []
     with torch.inference_mode():
         for n, ex in enumerate(items):
-            msgs = build_messages(cfg["few_shot"], ex, cfg["filler_type"], K, task_type=task)
-            rendered, al = render_and_align(tokenizer, encode_messages, msgs, cfg["filler_type"], K, filler_placement=filler_placement_for_task(task))
+            msgs = build_messages(cfg["few_shot"], ex, cfg["filler_type"], args.announce_filler or K, task_type=task, target_length=K)
+            if K > 0:
+                rendered, al = render_and_align(tokenizer, encode_messages, msgs, cfg["filler_type"], K, filler_placement=filler_placement_for_task(task))
+            else:
+                rendered = encode_messages(msgs, thinking_mode="chat")
+                enc = tokenizer(rendered, add_special_tokens=False, return_offsets_mapping=True)
+                ids = list(enc["input_ids"]); offs = [tuple(x) for x in enc["offset_mapping"]]
+                a0 = rendered.rfind("Answer:"); a1 = a0 + len("Answer:")
+                class _A: pass
+                al = _A(); al.input_ids = ids; al.offsets = offs; al.token_strings = [tokenizer.decode([t]) for t in ids]
+                al.filler_token_indices = []; al.answer_cue_token_indices = [i for i, (x, y) in enumerate(offs) if y > a0 and x < a1]
+                al.generation_position = len(ids) - 1; al.filler_char_span = (a0, a0)
             fabs = al.filler_token_indices; cue = al.answer_cue_token_indices[-1]; gen = al.generation_position; T = len(al.input_ids)
-            q_last = next(i for i in range(fabs[0] - 1, 0, -1) if al.token_strings[i].strip().endswith("?"))
+            q_last = next(i for i in range(((fabs[0] if fabs else cue) - 1), 0, -1) if al.token_strings[i].strip().endswith("?"))
             first_def = f"{ex['definitions'][0][0]} = {ex['definitions'][0][1]}"
             char_start = rendered.rfind(first_def, 0, al.filler_char_span[0])
             target_start = next(i for i, (a, b) in enumerate(al.offsets) if b > char_start)
             token_region = torch.ones(T, dtype=torch.long); token_region[0] = 0
-            token_region[target_start: fabs[0]] = 2; token_region[fabs] = 3; token_region[fabs[-1] + 1: gen + 1] = 4
+            token_region[target_start: (fabs[0] if fabs else cue)] = 2
+            if fabs: token_region[fabs] = 3
+            token_region[(fabs[-1] + 1 if fabs else cue): gen + 1] = 4
+            ann = rendered.find(" After the question, there will be")
+            if ann >= 0:
+                ann_end = rendered.find("before you answer.", ann) + len("before you answer.")
+                for i, (x, y) in enumerate(al.offsets):
+                    if y > ann and x < ann_end: token_region[i] = 5
             queries = fabs + [q_last, cue, gen]
             STATE["queries"] = queries; STATE["record"] = {}
             per_layer_key_region = {}
@@ -139,10 +156,10 @@ def main() -> None:
                 full = torch.cat(gathered, dim=1).cpu()           # [nq, H, R]
                 nf = len(fabs)
                 rec_ans[str(l)] = full[nf:].tolist()               # [3, H, R] for q_last, cue, gen
-                rec_dots[str(l)] = full[:nf].mean(0).tolist()      # [H, R]
+                rec_dots[str(l)] = full[:nf].mean(0).tolist() if nf else []   # [H, R]
             attn_from_answer.append(rec_ans); attn_from_dots.append(rec_dots)
             meta.append({"id": ex["id"], "answer": ex["answer"], "expected_intermediates": ex["expected_intermediates"], "n_tokens": T,
-                         "filler_token_indices": fabs, "q_last": q_last, "cue": cue, "gen": gen, "target_start": target_start})
+                         "filler_token_indices": fabs, "q_last": q_last, "cue": cue, "gen": gen, "target_start": target_start, "n_announce_tokens": int((token_region == 5).sum())})
             if rank == 0 and n % 5 == 0:
                 g = torch.tensor(rec_ans[str(L - 2)])[2].mean(0); print(f"[{n+1}/{len(items)}] {ex['id']} T={T} gen-attn@L{L-2} by region {dict(zip(REGIONS, [round(float(x), 3) for x in g]))}", flush=True)
     STATE["queries"] = None
