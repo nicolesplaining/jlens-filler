@@ -33,7 +33,7 @@ I ran the same items through ten open models from 4B to 35B parameters (Qwen3, Q
 
 I then fine-tuned Qwen3.5-9B with LoRA to solve the task with dots present. Five variants (mixed dot counts, a harder chain, a 4B model, dots-only training, no-dots training) all learn the task, and all learn it as a direct computation at the answer position. The model trained \emph{only} on prompts with dots scores 40/50 with no dots at all. On held-out items, its dot positions decode to the dot token, carry no stage value beyond a faint late leak, can be wiped at every block without changing the answer (median shift 0.02 nats), and receive 1 to 4\% of the answer position's attention. Fine-tuning with dots made the dots more uniform and less attended than in the untrained model. The model learned to route around them.
 
-Running the same anatomy on DeepSeek V4 Flash itself (Part V) shows the mirror image: its answer positions put 16 to 43\% of late-block attention on the dots, the dot residuals are problem-specific and split by hyper-connection stream, and the answer is decodable from the dots but not from the question token. Running the released DeepSeek-V4-Flash-Base checkpoint, the same network before post-training, settles where this comes from (Part VI): the base scores 48/50 with no dots and 50/50 with fifty, in either placement, in chat and raw-text rendering. The chat model's 70\% is a deficit that post-training introduced, and the dots recover the pretrained competence. The base also reads the dots exactly as the chat model does (20\% of late-block attention, problem-specific dot residuals, the answer decodable from the span), so that anatomy is pretrained. What post-training changed is the direct path: the answer is readable from the last question token at $R^2$ 0.74 in the base and 0.40 in chat. Reading trailing tokens is a pretrained habit of this architecture; needing them is what post-training added.
+Running the same anatomy on DeepSeek V4 Flash itself (Part V) shows the mirror image: its answer positions put 16 to 43\% of late-block attention on the dots, the dot residuals are problem-specific and split by hyper-connection stream, and the answer is decodable from the dots but not from the question token. Running the released DeepSeek-V4-Flash-Base checkpoint, the same network before post-training, settles where this comes from (Part VI): the base scores 48/50 with no dots and 50/50 with fifty, in either placement, in chat and raw-text rendering. The chat model's 70\% is a deficit that post-training introduced, and the dots recover the pretrained competence. The base also reads the dots exactly as the chat model does (20\% of late-block attention, problem-specific dot residuals, the answer decodable from the span), so that anatomy is pretrained. What post-training changed is the direct path: the answer is readable from the last question token at $R^2$ 0.74 in the base and 0.40 in chat. Reading trailing tokens is a pretrained habit of this architecture; needing them is what post-training added. Part VII shows the trigger: telling the chat model that a filler span is coming, with no filler delivered, moves the answer off its question token in proportion to the promised count (0.84 with nothing announced, 0.51 for five, 0.31 for fifty), while the base barely reacts. Numbers work as filler as well as dots and letters work less well, in any order, and attention on the filler tracks the gain; adjacent-position cosine along the span shows no point where the model changes thought, only tokenization artifacts.
 
 \tableofcontents
 
@@ -361,13 +361,13 @@ The base misses two items at $k=0$. One of them is the same dropped-constant err
 
 None of these is tested here; they differ in what they predict, which is how to tell them apart.
 
-\paragraph{Deferred computation.} Reasoning-oriented reinforcement learning rewards putting the work into the span of tokens after the question. A model that has internalized ``the span after the question is where thinking happens'' has less pressure to keep a pathway that finishes arithmetic before the first output token, and unused pathways drift. Prediction: the deficit should be specific to direct-answer mode and should scale with how much post-training emphasized long reasoning; models with lighter or non-reasoning post-training from the same base should show a smaller deficit. This is the hypothesis the evidence fits best, and the awkward fact remains that Qwen3.5 also has a thinking mode and shows no filler gain; the difference would have to lie in how each lab trained its non-thinking mode.
+\paragraph{Deferred computation.} \emph{Supported and graded (Part VII).} Reasoning-oriented reinforcement learning rewards putting the work into the span of tokens after the question. A model that has internalized ``the span after the question is where thinking happens'' has less pressure to keep a pathway that finishes arithmetic before the first output token, and unused pathways drift. Prediction: the deficit should be specific to direct-answer mode and should scale with how much post-training emphasized long reasoning; models with lighter or non-reasoning post-training from the same base should show a smaller deficit. This is the hypothesis the evidence fits best, and the awkward fact remains that Qwen3.5 also has a thinking mode and shows no filler gain; the difference would have to lie in how each lab trained its non-thinking mode.
 
-\paragraph{A representational shift at the question token.} The 0.74 to 0.40 drop is a linear readout. Post-training may have moved the answer representation at the question token into a form a ridge probe cannot read, rather than removed it. Prediction: a nonlinear probe, or a patching experiment that transplants the chat model's question-token residual into the base, would recover more of the answer than the linear number suggests. The behavioral gap argues against this being the whole story, since whatever is at the question token is not enough to emit the right number.
+\paragraph{A representational shift at the question token.} \emph{Resolved: it is deferral, not a shift (Part VII); with no filler announced the chat question token reads out at 0.84, like the base.} The 0.74 to 0.40 drop is a linear readout. Post-training may have moved the answer representation at the question token into a form a ridge probe cannot read, rather than removed it. Prediction: a nonlinear probe, or a patching experiment that transplants the chat model's question-token residual into the base, would recover more of the answer than the linear number suggests. The behavioral gap argues against this being the whole story, since whatever is at the question token is not enough to emit the right number.
 
-\paragraph{Confidence recalibration.} Post-training may have made the model reluctant to commit to a computed number at the first output token, spreading probability across nearby values. The near-miss pattern (right magnitude, off by a few) is consistent with this. Prediction: the chat model's first-token distribution at $k=0$ should be flatter across neighboring numbers than the base's, with the correct answer still ranked high. Nicole's MRR of 0.795 at $k=0$ against 0.98 for the base says the correct answer is usually near the top even when it is not first, which fits.
+\paragraph{Confidence recalibration.} \emph{Holds as a description (Part VII: entropy 0.76 versus 0.30 nats at $k=0$, sharpened by dots).} Post-training may have made the model reluctant to commit to a computed number at the first output token, spreading probability across nearby values. The near-miss pattern (right magnitude, off by a few) is consistent with this. Prediction: the chat model's first-token distribution at $k=0$ should be flatter across neighboring numbers than the base's, with the correct answer still ranked high. Nicole's MRR of 0.795 at $k=0$ against 0.98 for the base says the correct answer is usually near the top even when it is not first, which fits.
 
-\paragraph{Format-specific interference.} The turn markers and the empty think tag were seen during post-training in contexts where an answer follows a reasoning span. Their presence with no span may itself disrupt the direct path. Prediction: the chat model should do better at $k=0$ in the plain rendering, without turn markers. The base did equally well in both renderings, but this was not run on the chat model and is a cheap check.
+\paragraph{Format-specific interference.} \emph{Refuted (Part VII: plain rendering drops the chat model to 19/50).} The turn markers and the empty think tag were seen during post-training in contexts where an answer follows a reasoning span. Their presence with no span may itself disrupt the direct path. Prediction: the chat model should do better at $k=0$ in the plain rendering, without turn markers. The base did equally well in both renderings, but this was not run on the chat model and is a cheap check.
 
 The first and third hypotheses are not exclusive; deferred computation would produce exactly the kind of imprecise first-token answers the third describes. Distinguishing them needs the chat model's full first-token distributions at $k=0$, which the existing sweep files contain, and a plain-rendering run of the chat model, which needs the box.
 
@@ -377,9 +377,91 @@ The chat model's 70\% at $k=0$ is not a task the network cannot do; the same net
 
 The anatomy splits the explanation in two. Reading the dots (16 to 43\% of late-block attention, problem-specific dot residuals, the answer decodable from the dot span) is there in the base, so it comes from pretraining and the architecture, not from post-training; the sliding window that makes the dots 40\% of the raw keys and the four-stream residual are the plausible reasons. What post-training added is the \emph{dependence} on it: a weaker direct path at the question token (answer probe 0.74 to 0.40) and a 26-point $k=0$ deficit that the dot span repairs. The ``learned habit'' reading was half right. The habit of reading trailing tokens is pretrained; needing them is learned. It reframes Nicole's result: the interesting object is what post-training did to the direct-answer path, and why the model's pretrained reading of an inert span is enough to restore it.
 
+
+\section{Part VII: what fills the span, and when the model decides to use it}
+
+A second day on the same box, with three questions. Does the filler have to be dots? Is there a point in the span where the model ``changes thought''? And what, in the context, makes the chat model stop computing at the question token? Everything here uses the same 50 released items for behavior and the same 50 held-out items at $k=50$ for dumps, in chat rendering unless stated (\ttt{reports/filler-types-and-cosine.md} is the running log).
+
+\subsection{Letters, numbers, and their scrambles}
+
+\ttt{src/jlens\_filler/prompts.py} renders five filler types: dots, the alphabet, a fixed scrambled alphabet, counting numbers, and a fixed scrambled sequence of numbers. Numbers cost two tokens each on DeepSeek's tokenizer (a standalone space precedes each), so 50 numbers are 99 tokens.
+
+\begin{table}[h]\centering\scriptsize
+\begin{tabular}{llrrrrrrll}\toprule
+Filler & Model & $k$=0 & 5 & 10 & 25 & 50 & 100 & helped/hurt @50 & pre-q.\ @50 \\ \midrule
+dots & chat & 35 & 45 & 42 & 43 & 49 & 49 & 14/0 & 35 \\
+alphabet & chat & 34 & 41 & 43 & 41 & 42 & 43 & 12/4 & 34 \\
+alphabet, scrambled & chat & 34 & 38 & 32 & 38 & 41 & 46 & 10/3 & 36 \\
+counting & chat & 34 & 45 & 45 & 46 & 49 & 48 & 15/0 & 35 \\
+counting, scrambled & chat & 34 & 31 & 41 & 41 & 49 & 50 & 15/0 & 28 \\
+dots & base & 48 & 48 & 49 & 49 & 50 & 49 & 2/0 & 49 \\
+any other & base & 48 & 49--50 & 49--50 & 48--50 & 49--50 & 49--50 & $\leq$2/1 & --- \\ \bottomrule
+\end{tabular}
+\caption{Correct out of 50 by filler type and count (post-question), with the pre-question control at 50.}\end{table}
+
+Numbers work as well as dots, in any order. Letters help less (42 to 46 even at 100 tokens, so it is not token count), in any order. Scrambled numbers hurt at $k=5$ before helping. Every type is placement-specific: before the question, nothing helps and scrambled numbers hurt. The base is at ceiling for every type.
+
+\begin{table}[h]\centering\scriptsize
+\begin{tabular}{llrrrrrr}\toprule
+Model & Filler & gen$\to$filler & cos same pos & $R^2$ ans$|$filler & $R^2$ ans$|$q\_last & cent.\ adj. & correct @50 \\ \midrule
+chat & dots & 0.164 & 0.78 & 0.87 & 0.40 & 0.12 & 49 \\
+chat & alphabet & 0.126 & 0.82 & 0.84 & 0.24 & 0.05 & 42 \\
+chat & alphabet, scrambled & 0.113 & 0.85 & 0.83 & 0.43 & 0.03 & 41 \\
+chat & counting & 0.227 & 0.77 & 0.89 & 0.51 & 0.04 & 49 \\
+chat & counting, scrambled & 0.231 & 0.77 & 0.91 & 0.52 & 0.01 & 49 \\
+base & dots & 0.203 & 0.64 & 0.85 & 0.74 & 0.11 & 50 \\
+base & alphabet & 0.180 & 0.77 & 0.83 & 0.88 & 0.04 & 50 \\
+base & alphabet, scrambled & 0.164 & 0.81 & 0.78 & 0.87 & 0.02 & 50 \\
+base & counting & 0.271 & 0.72 & 0.82 & 0.78 & 0.03 & 49 \\
+base & counting, scrambled & 0.267 & 0.72 & 0.88 & 0.76 & 0.00 & 50 \\ \bottomrule
+\end{tabular}
+\caption{Anatomy by filler type (50 held-out items, $k=50$ items). Attention is the generation position's mass on the filler over the last third of blocks.}\end{table}
+
+Attention on the filler tracks the chat model's gain: letters 0.11 to 0.13 and 41 to 42 correct, dots 0.16 and 49, numbers 0.23 and 49. The answer is decodable from every filler type at 0.78 to 0.91 in both checkpoints, so every type ends up holding the answer; what differs is how hard the answer positions read it. The base reads every type harder than the chat model, in the same order, so which token kind attracts the answer positions is pretrained. The two checkpoints separate in one column only, the answer at the question token, and they separate there for all five fillers.
+
+The same fillers on Qwen3.5-9B: the untrained model is at floor for all of them, and the dots-only LoRA gets nothing from letters (42 $\to$ 40) and is hurt by numbers (42 $\to$ 37; scrambled, 42 $\to$ 30 with 12 items hurt and none helped). Its answer position, which ignores dots and letters (attention 0.01), attends to filler digits at 0.05 with single heads at 0.5: a model that does its arithmetic at the answer position reads filler digits as problem digits. DeepSeek's chat model has the opposite relation to the same tokens.
+
+\subsection{Adjacent-position cosine: no change of thought}
+
+For each item, the residual at every filler position and every block. Adjacent cosine is $\cos(h_p, h_{p+1})$ per block and flattened over blocks; the \emph{item-centered} version subtracts the per-position mean over items first, removing the position-identity component that dominates filler residuals. Change points are boundaries where an item's flattened centered series drops more than two standard deviations below its own mean (\ttt{scripts/analyze\_filler\_cosine.py}).
+
+\begin{figure}[h]\centering\includegraphics[width=\textwidth]{deepseek_adjacent_cosine_flat.png}
+\caption{Adjacent-position cosine across fifty dots, chat versus base: flattened over blocks (left), item-centered (middle), and the fraction of items with a change point at each boundary (right).}\end{figure}
+
+\begin{table}[h]\centering\footnotesize
+\begin{tabular}{lp{2.6cm}rp{4.2cm}}\toprule
+Model (dots) & centered adjacent cosine, late blocks & change pts/item & where \\ \midrule
+Qwen3.5-9B base & 0.25 to 0.30 & 0.15 & diffuse \\
+Qwen3.5-9B $k=0$-only & 0.44 to 0.51 & 0.69 & F1/2 (42 of 100 items) \\
+Qwen3.5-9B dots-only & 0.75 to 0.82 & 4.2 & F2/3, F3/4 (100/100), F7/8 (98) \\
+DeepSeek chat & 0.06 to 0.19 & 0.88 & diffuse, none above 5 of 50 \\
+DeepSeek base & 0.06 to 0.19 & 0.48 & diffuse, none above 4 of 50 \\ \bottomrule
+\end{tabular}
+\caption{Problem-specific content carried from one dot to the next.}\end{table}
+
+Three findings. The raw series has exactly three drops in every item and every model, at F1$|$F2, F2$|$F3 and F49$|$F50, and all are tokenization (the first dot has no leading space, the last merges with the newline); with letters the one shared drop is the z$\to$a wrap; with numbers the series alternates because the tokens alternate number, space. Between artifacts the raw adjacent cosine is 0.7 to 0.96 and flat. Second, after centering, DeepSeek's adjacent cosine is 0.01 to 0.19 for every filler type: each position's problem-specific content is nearly unrelated to its neighbor's, and change points are scattered. The span is fifty weakly related snapshots, not a trajectory with segments. Third, the trained Qwen that ignores its dots carries one constant problem vector along the span (0.77 after centering) with a settling transient in the first ten dots identical across all 100 items; that signature is specific to identical tokens (it falls to 0.08 to 0.23 with letters or numbers), so redundancy has to be compared within a filler type, and within dots the contrast with DeepSeek stands. One caveat: the item-centered cosine between filler and answer positions rises along the span in the chat model and falls in the base, but it also rises in the Qwen dots-only model, so that gradient alone is not evidence of use.
+
+\subsection{The announcement, not the tokens, moves the computation}
+
+The 0.74 versus 0.40 question-token probe of Part VI was measured with dots present. With no filler anywhere in the prompt ($k=0$: no filler sentence, none in the demonstrations, none in the target), both checkpoints hold the answer at the last question token at $R^2$ 0.84. The question token precedes the dots, so the dots cannot cause the gap; what differs between $k=0$ and $k=50$ is the system sentence announcing fifty filler tokens and the demonstrations containing them. So I rendered the sentence and the demonstrations with $N$ dots and the target with none (\ttt{extract\_dsv4.py -{}-announce-filler N}).
+
+\begin{table}[h]\centering\small
+\begin{tabular}{lrrrrr}\toprule
+Announced dots, none delivered & 0 & 5 & 25 & 50 & 50, delivered \\ \midrule
+chat: $R^2$ answer at question token & 0.84 & 0.51 & 0.36 & 0.31 & 0.36 \\
+base: $R^2$ answer at question token & 0.84 & 0.86 & 0.85 & 0.55 & 0.65 \\
+chat: correct of 50 & 34 & & & 32 & 49 \\
+base: correct of 50 & 48 & & & 46 & 50 \\ \bottomrule
+\end{tabular}
+\caption{Deferral is triggered by the announcement and graded by the announced count. Answer probes at the cue and generation positions stay at 0.79 to 0.83 in every condition.}\end{table}
+
+The chat model reads the number in the instruction and defers in proportion: five promised dots halve its in-place computation, twenty-five bring it to the fifty-dot level, and the value is then assembled at the cue and generation positions instead (0.8 there in every condition). The base ignores the announcement until it is fifty, and defers partly. Accuracy moves much less than the probe (chat 34 to 32), so deferral is not itself the $k=0$ deficit; the deficit is present at 0.84 and at 0.31 alike, and no linear probe at any position sees it. What the dots do is give a model that has planned to finish in the span a span to finish in: promised and delivered, 49; promised and absent, 32.
+
+Two more pieces. The first-token distribution (from the sweep files) is three times flatter in the chat model at $k=0$ than in the base (top-10 entropy 0.76 versus 0.30 nats; top-1 probability 0.74 versus 0.89), sharpens to the base's level with fifty dots (0.26), flattens further when filler is announced and absent (1.13), and on every miss has the correct number at median rank 3. And in plain rendering, without turn markers or the think tag, the chat model drops to 19/50 at $k=0$ and still climbs to 44 at $k=100$ with dots: the chat template was helping, and the dot effect survives a change of rendering.
+
 \section{Why does DeepSeek differ?}
 
-Part VI answers the headline question: post-training. What follows is the reasoning that stood before that run, kept because it says which explanations the earlier evidence had already weakened.
+Part VI answers the headline question: post-training, and Part VII says how: the post-trained model defers its computation to whatever span it is told to expect. What follows is the reasoning that stood before that run, kept because it says which explanations the earlier evidence had already weakened.
 
 \paragraph{Scale.} Weakened. DeepSeek V4 Flash runs about 13B active parameters (256 experts, 6 active plus one shared, 43 blocks, width 4096), the same regime as the models tested. Total parameters (roughly 280B) is the only scale axis left, and it is confounded with everything else. The trained 9B is the sharper counterexample: it reached DeepSeek-level accuracy at $k=0$ (72\% versus 70\%) and got nothing from dots. Nicole's interpretation was that filler amplifies a circuit the model nearly has. The 9B nearly had the circuit and no amplification happened.
 
@@ -405,7 +487,7 @@ Part VI answers the headline question: post-training. What follows is the reason
 In order of information per GPU-hour:
 
 \begin{enumerate}
-\item Test the hypotheses in Part VI against each other. From the existing sweep files: compare the chat and base models' full first-token distributions at $k=0$ (flatness across neighboring numbers, rank of the correct answer). On the box: run the chat model in plain rendering; dump both models' residuals at the question token with $k=0$, since the 0.74 versus 0.40 probe was measured with dots present; and patch the base's question-token residual into the chat model at $k=0$ to see whether the direct path is recoverable from a single position.
+\item Patch the base's question-token residual into the chat model under an announced span, and the chat model's announced-span question token into its own unannounced run, to test whether deferral is carried by that one position. Then find the announcement's footprint: which heads read the ``there will be $N$ filler tokens'' sentence, and whether ablating them restores the chat model's in-place computation and its $k=0$ accuracy.
 \item Run DeepSeek-V2-Lite-Chat on the existing harness. Twenty minutes. Tests whether the DeepSeek training pipeline produces the effect without hyper-connections.
 \item Train a model where dots are \emph{necessary}: a chain long enough that the direct computation cannot fit, with the loss also applied to intermediate values written at the dot positions during a first phase, then removed. If that produces a dot-dependent model, Nicole's causal ladder can be run on it and compared with DeepSeek's mechanism.
 \item On the DeepSeek side, read the four residual streams separately. The unresolved question in Nicole's pipeline is how the released lens collapses four streams to one; values living in one lane may be invisible after the collapse, and her ``raw first product never appears'' result could be that artifact.
@@ -422,7 +504,7 @@ All code is in the project repository. Model-touching scripts run on one GPU wit
 \item Data and training: \ttt{scripts/\allowbreak build\_varbind\_sft\_data.py} (\ttt{-{}-chain-len}), \ttt{scripts/\allowbreak build\_onestep\_varbind\_configs.py}, \ttt{scripts/\allowbreak train\_varbind\_lora.py} (\ttt{-{}-ks} selects the dot counts).
 \item Readouts: \ttt{scripts/\allowbreak extract\_hf.py -{}-phase filler -{}-adapter}, \ttt{scripts/\allowbreak build\_artifacts.py} for viewers, \ttt{scripts/\allowbreak analyze\_hf\_lens\_grids.py} and \ttt{\_deep.py}, \ttt{scripts/\allowbreak select\_heldout\_lens\_cases.py}.
 \item Causal: \ttt{scripts/\allowbreak build\_varbind\_counterfactuals\_hf.py}, \ttt{scripts/\allowbreak patch\_varbind\_hf.py} (single-cell grid; \ttt{-{}-lesion-all-dots [-{}-lesion-all-layers]}).
-\item Anatomy: \ttt{scripts/\allowbreak dump\_dot\_residuals\_hf.py}, \ttt{scripts/\allowbreak dump\_dot\_residuals\_dsv4.py}, \ttt{scripts/\allowbreak dump\_dot\_attention\_dsv4.py}, \ttt{scripts/\allowbreak setup\_dsv4\_box.sh}, \ttt{scripts/\allowbreak run\_dsv4\_dot\_dump.sh}, \ttt{scripts/\allowbreak run\_dsv4\_base\_eval.sh}, \ttt{scripts/\allowbreak run\_dsv4\_base\_dot\_dump.sh}, \ttt{scripts/\allowbreak analyze\_dot\_residuals.py}, \ttt{scripts/\allowbreak probe\_extra\_targets.py}, \ttt{scripts/\allowbreak plot\_dot\_analysis.py}.
+\item Anatomy: \ttt{scripts/\allowbreak dump\_dot\_residuals\_hf.py}, \ttt{scripts/\allowbreak dump\_dot\_residuals\_dsv4.py}, \ttt{scripts/\allowbreak dump\_dot\_attention\_dsv4.py}, \ttt{scripts/\allowbreak setup\_dsv4\_box.sh}, \ttt{scripts/\allowbreak run\_dsv4\_dot\_dump.sh}, \ttt{scripts/\allowbreak run\_dsv4\_base\_eval.sh}, \ttt{scripts/\allowbreak run\_dsv4\_base\_dot\_dump.sh}, \ttt{scripts/\allowbreak run\_dsv4\_filler\_types.sh}, \ttt{scripts/\allowbreak run\_hf\_filler\_types.sh}, \ttt{scripts/\allowbreak run\_dsv4\_followups.sh}, \ttt{scripts/\allowbreak run\_dsv4\_announce.sh}, \ttt{scripts/\allowbreak analyze\_filler\_cosine.py}, \ttt{scripts/\allowbreak summarize\_filler\_types.py}, \ttt{scripts/\allowbreak probe\_k0\_dump.py}, \ttt{scripts/\allowbreak analyze\_dot\_residuals.py}, \ttt{scripts/\allowbreak probe\_extra\_targets.py}, \ttt{scripts/\allowbreak plot\_dot\_analysis.py}.
 \item Results: \ttt{results/\allowbreak <model>/\allowbreak } per model; training under \ttt{results/\allowbreak qwen3.5-9b/\allowbreak lora-*}; lens grids under \ttt{results/\allowbreak qwen3.5-9b/\allowbreak lens-heldout-k50/\allowbreak }; lesions and patching under \ttt{results/\allowbreak qwen3.5-9b/\allowbreak lora-*/\allowbreak lesion-all-layers/\allowbreak } and \ttt{results/\allowbreak qwen3.5-9b/\allowbreak patch-heldout-0067/\allowbreak }; anatomy under \ttt{results/\allowbreak qwen3.5-9b/\allowbreak dot-dump/\allowbreak analysis/\allowbreak }. The 1.3\,GB residual dumps stay on the compute box.
 \item Nicole's DeepSeek pipeline and results: \ttt{scripts/\allowbreak extract\_dsv4.py} and \ttt{reports/\allowbreak algorithm-exploration-findings.md}.
 \end{itemize}
