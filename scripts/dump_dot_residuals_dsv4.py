@@ -56,9 +56,10 @@ def main() -> None:
     _m0 = build_messages(cfg["few_shot"], items[0], cfg["filler_type"], K, task_type=task)
     _, _al0 = render_and_align(tokenizer, encode_messages, _m0, cfg["filler_type"], K, filler_placement=filler_placement_for_task(task))
     NF = len(_al0.filler_token_indices); positions_n = NF + 3        # numbers carry a space token per item, so NF can exceed K
-    resid = torch.zeros(len(items), L, positions_n, 4, 4096, dtype=torch.bfloat16) if rank == 0 else None
-    collapsed = torch.zeros(len(items), L, positions_n, 4096, dtype=torch.bfloat16) if rank == 0 else None
-    entropy = torch.zeros(len(items), L, positions_n) if rank == 0 else None
+    # accumulators live on the CPU: the default device is cuda here, and 100+ filler positions make these 7 GB
+    resid = torch.zeros(len(items), L, positions_n, 4, 4096, dtype=torch.bfloat16, device="cpu") if rank == 0 else None
+    collapsed = torch.zeros(len(items), L, positions_n, 4096, dtype=torch.bfloat16, device="cpu") if rank == 0 else None
+    entropy = torch.zeros(len(items), L, positions_n, device="cpu") if rank == 0 else None
     meta = []
     with torch.inference_mode():
         for n, ex in enumerate(items):

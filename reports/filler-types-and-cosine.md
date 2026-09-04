@@ -119,9 +119,82 @@ its dots. Adjacency to the answer positions is enough to produce it, so the grad
 not by itself evidence of computation. The chat/base *difference* in DeepSeek remains,
 since both checkpoints have the same adjacency.
 
-### Other filler types
+### Other filler types, chat model (50 held-out items, k=50 items)
 
-(pending: dumps at k=50 for each type on both checkpoints, anatomy and cosine)
+Same dump and analysis as for dots (`summarize_filler_types.py` collects the numbers).
+Attention is the mean mass on the filler region from the generation position over the
+last third of blocks. "Cos same pos" is the cosine of the same filler position across
+different problems at three-quarter depth; "var by problem" the share of filler-residual
+variance explained by which problem precedes it. Probe R² is the best ridge probe for
+the answer. Centered adjacency is the item-centered adjacent cosine at three-quarter
+depth over the middle of the span.
+
+| filler | tokens | correct at k=50 | gen→filler | cue→filler | cos same pos | var by problem | R² ans from filler | R² ans from q_last | centered adj | change pts/item |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| dots | 50 | 49 | 0.164 | 0.195 | 0.78 | 0.036 | 0.87 | 0.40 | 0.12 | 0.9 |
+| alphabet | 50 | 42 | 0.126 | 0.159 | 0.82 | 0.017 | 0.84 | 0.24 | 0.05 | 0.9 |
+| alphabet-scrambled | 50 | 41 | 0.113 | 0.149 | 0.85 | 0.024 | 0.83 | 0.43 | 0.03 | 1.9 |
+| counting | 99 | 49 | 0.227 | 0.254 | 0.77 | 0.016 | 0.89 | 0.51 | 0.04 | 1.2 |
+| counting-scrambled | 99 | 49 | 0.231 | 0.254 | 0.77 | 0.013 | 0.91 | 0.52 | 0.01 | 2.3 |
+
+**Attention on the filler tracks the behavioral gain.** Letters get 0.11 to 0.13 of the
+generation position's late attention and lift accuracy to 41 or 42; dots get 0.16 and
+lift it to 49; numbers get 0.23 and lift it to 49. The answer is decodable from every
+filler type at 0.83 to 0.91, so the filler always ends up holding the answer; what
+differs is how much the answer positions read it. Numbers are content tokens the model
+already attends to in arithmetic contexts, and they are read hardest; letters are read
+least. Order within a type changes nothing (scrambled versus ordered letters, scrambled
+versus ordered numbers), which says the filler's semantics as a sequence do not matter,
+only what kind of token fills the slot.
+
+**Change points are token artifacts wherever they are consistent.** For letters the only
+raw change point shared across items is F26|F27 (45 of 50 items), which is the z→a wrap
+of the alphabet. For numbers the raw adjacent cosine is low everywhere (0.3) because the
+tokens alternate number, space, number, space. For scrambled types change points are
+more frequent (1.9 to 2.3 per item) and scattered: heterogeneous token identity, not a
+pivot in the computation. After centering, adjacent cosine is 0.01 to 0.05 for every
+type other than dots (0.12): the problem-specific content at one filler position is
+nearly unrelated to its neighbor's. Nothing here looks like a thought that persists
+across several positions and then changes.
+
+### Other filler types, base model
+
+| filler | tokens | correct at k=50 | gen→filler | cue→filler | cos same pos | var by problem | R² ans from filler | R² ans from q_last | centered adj | change pts/item |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| dots | 50 | 50 | 0.203 | 0.189 | 0.64 | 0.044 | 0.85 | 0.74 | 0.11 | 0.5 |
+| alphabet | 50 | 50 | 0.180 | 0.168 | 0.77 | 0.016 | 0.83 | 0.88 | 0.04 | 1.1 |
+| alphabet-scrambled | 50 | 50 | 0.164 | 0.156 | 0.81 | 0.019 | 0.78 | 0.87 | 0.02 | 1.8 |
+| counting | 99 | 49 | 0.271 | 0.241 | 0.72 | 0.015 | 0.82 | 0.78 | 0.03 | 1.2 |
+| counting-scrambled | 99 | 50 | 0.267 | 0.228 | 0.72 | 0.016 | 0.88 | 0.76 | 0.00 | 2.7 |
+
+**The base reads every filler type harder than the chat model, in the same order.** Letters
+0.16 to 0.18 (chat 0.11 to 0.13), dots 0.20 (0.16), numbers 0.27 (0.23). Which token kind
+attracts the answer positions is a pretraining property; post-training lowered the amount
+by a roughly constant factor and did not change the ranking. The answer is decodable from
+every filler type in the base too (0.78 to 0.88).
+
+**The chat/base difference is at the question token for every type.** Answer probe from
+the last question token: base 0.74 to 0.88, chat 0.24 to 0.52. This is the one column
+where the checkpoints separate, and it separates for all five fillers. One caution when
+reading the chat column's spread (letters 0.24, dots 0.40, numbers 0.51): the question
+token precedes the filler, so the filler itself cannot affect it; what differs is the
+five demonstrations and the system sentence, which mention the filler type. The
+question-token encoding depends on the surrounding context, not on the filler tokens.
+
+**Redundancy is not what separates them either.** Centered adjacency is 0.00 to 0.11 in
+both checkpoints for every type; change points are as scattered in the base as in chat.
+The "each filler position holds its own snapshot" picture is the same before and after
+post-training.
+
+### Summary of the filler-type comparison
+
+Filler type changes how much the answer positions read the span (letters least, numbers
+most) and, in the post-trained model, how much accuracy the span recovers. It does not
+change the anatomy: every type ends up holding the answer, every type is dominated by
+position and token identity, and every type shows the same scattered non-pattern in
+adjacent cosine. The base reads all of them and needs none of them. The one thing that
+moves between base and chat is the answer encoding at the question token, and it moves
+for every filler type.
 
 ## Artifacts
 
