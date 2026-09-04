@@ -381,10 +381,20 @@ after the question rather than at it. The graded result (0.51, 0.36, 0.31 for 5,
 does something different: it degrades the post-trained model's answer without changing
 where the answer is computed, and it does nothing to the base.
 
-With fifty dots delivered in the target (chat model): sentence only 28 → 36 (11 helped,
-3 hurt), demonstrations only 34 → 47 (13 helped, none hurt), both 34 → 49. The span is
-most useful to a model that has seen examples of a span being used; the instruction
-alone makes it only partly useful.
+With fifty dots delivered in the target (chat model), the full 2×2:
+
+| announced by | k=0 | k=50 delivered | helped/hurt |
+|---|---:|---:|---|
+| nothing (dots only in the target) | 34 | 39 | 9/4 |
+| sentence only | 28 | 36 | 11/3 |
+| demonstrations only | 34 | 47 | 13/0 |
+| both | 34 to 35 | 49 | 14/0 |
+
+Unannounced dots help a little (34 to 39, McNemar p=0.27). Demonstrations of a span being
+used make them nearly fully effective (47). The sentence, which hurts on its own, adds
+the last two items when the demonstrations are there. The span is most useful to a model
+that has seen examples of a span being used, which is the same channel that moved its
+computation off the question token.
 
 This corrects the reading in the previous section. The chat model's heads that read the
 sentence from block 20 on are real, but they are not the deferral mechanism; if

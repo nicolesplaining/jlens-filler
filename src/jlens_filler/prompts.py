@@ -399,18 +399,23 @@ def build_messages(
     length: int,
     task_type: str = "addition",
     target_length: int | None = None,
+    announce_mode: str = "both",
 ) -> list[dict[str, str]]:
     """`length` sets the filler count announced in the system message and rendered in every demonstration;
     `target_length` (default: same) sets the count rendered in the target turn. `target_length=0` with
     `length=50` is the "announced but absent" control."""
     if target_length is None:
         target_length = length
+    if announce_mode not in ("both", "sentence", "demos", "none"):
+        raise ValueError(f"unsupported announce_mode: {announce_mode}")   # "none": filler only in the target
+    system_length = length if announce_mode in ("both", "sentence") else 0   # "demos": no filler sentence
+    demo_length = length if announce_mode in ("both", "demos") else 0        # "sentence": demos without filler
     if task_type == "addition":
         fact_count = len(_fact_phrases(target))
         for item in few_shot:
             if len(_fact_phrases(item)) != fact_count:
                 raise ValueError("few-shot and target items must use the same number of facts")
-        system_message = build_system_message(filler_type, length, fact_count)
+        system_message = build_system_message(filler_type, system_length, fact_count)
         user_builder = build_user_turn
     else:
         task_builders = {
@@ -446,14 +451,14 @@ def build_messages(
         if task_type not in task_builders:
             raise ValueError(f"unsupported task type: {task_type}")
         system_builder, user_builder = task_builders[task_type]
-        system_message = system_builder(filler_type, length)
+        system_message = system_builder(filler_type, system_length)
 
     messages: list[dict[str, str]] = [
         {"role": "system", "content": system_message}
     ]
     for item in few_shot:
         messages.append(
-            {"role": "user", "content": user_builder(item, filler_type, length)}
+            {"role": "user", "content": user_builder(item, filler_type, demo_length)}
         )
         messages.append({"role": "assistant", "content": str(item["answer"])})
     messages.append(

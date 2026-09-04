@@ -8,7 +8,7 @@ LOGDIR=$HOME/filler-logs; mkdir -p "$LOGDIR"; REF="--reference-code-dir $WORK/ca
 python - <<'PY'
 import json; c=json.load(open("configs/varbind_easy_dot_length_sweep.json")); c["filler_lengths"]=[0,50]; json.dump(c, open("configs/varbind_easy_k0_k50.json","w"), indent=1)
 PY
-for mode in sentence demos; do
+for mode in sentence demos none; do
   out="results/deepseek-v4-flash/varbind-eval-announce50-$mode-k50"; echo "=== DELIVERED chat $mode ==="
   if [ -f "$out/behavior-report.md" ]; then echo "(done already)"; else
   torchrun --standalone --nproc-per-node=4 scripts/extract_dsv4.py --ckpt-path cache/model_mp4 --model-config cache/model_hf/inference/config.json $REF $LENS \

@@ -879,6 +879,7 @@ def run_filler_length_sweep(
     max_new_tokens: int,
     rank: int,
     announce_length: int = 0,
+    announce_mode: str = "both",
 ) -> dict[str, Any] | None:
     """Evaluate each example once at every configured filler length.
 
@@ -897,7 +898,7 @@ def run_filler_length_sweep(
             )
         conditions: dict[str, Any] | None = {} if rank == 0 else None
         for filler_length in filler_lengths:
-            messages = build_messages(few_shot, example, filler_type, announce_length or filler_length, task_type=task_type, target_length=filler_length)
+            messages = build_messages(few_shot, example, filler_type, announce_length or filler_length, task_type=task_type, target_length=filler_length, announce_mode=announce_mode)
             if filler_length:
                 rendered, alignment = render_and_align(
                     tokenizer,
@@ -1114,6 +1115,7 @@ def main() -> None:
     parser.add_argument("--top-k", type=int, default=10)
     parser.add_argument("--max-new-tokens", type=int, default=12)
     parser.add_argument("--max-seq-len", type=int, default=1024)
+    parser.add_argument("--announce-mode", choices=["both", "sentence", "demos", "none"], default="both", help="which context channel carries the filler announcement")
     parser.add_argument("--announce-filler", type=int, default=0, help="render the system sentence and demos with this many filler tokens regardless of the target length")
     parser.add_argument("--model-revision", default="unknown")
     parser.add_argument(
@@ -1368,6 +1370,7 @@ def main() -> None:
                 max_new_tokens=args.max_new_tokens,
                 rank=rank,
                 announce_length=args.announce_filler,
+                announce_mode=args.announce_mode,
             )
             output_name = "filler_length_sweep.json"
         else:
