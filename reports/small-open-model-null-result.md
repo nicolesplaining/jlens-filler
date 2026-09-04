@@ -601,6 +601,34 @@ That is the mechanistic counterpart of the behavioral table: the base can answer
 from the question alone (96% at k=0); the chat model often cannot (70%), and the
 dot span, which both models read, recovers it (98%).
 
+**The chat model's misses are near-misses.** All fifteen k=0 misses are numbers
+of the right magnitude (no refusals, no words). None matches another variable's
+value or the final operation applied to another variable, so the binding is
+always right. Nine of fifteen are within 4 of the answer (seven within 2), one
+drops the doubling, one drops the constant, the rest are slips of 10 to 50 on
+three-digit answers. Fifty dots repair fourteen of the fifteen. The base misses
+two items at k=0; one is the same dropped-constant error on the same item.
+
+**Relocated, not forgotten.** With dots the chat model reaches the base's level;
+the answer is decodable from the dot span at 0.87 in both; the misses are
+approximate answers to the right sub-problem. What weakened is the pathway that
+finishes the arithmetic at the question position in time for the first output
+token. Hypotheses for why post-training does that, with what each predicts:
+(1) deferred computation: reasoning RL rewards working in the span after the
+question, so the in-place pathway drifts; predicts the deficit is specific to
+direct-answer mode and scales with reasoning emphasis. (2) representational
+shift: the 0.74 to 0.40 drop is a linear readout and the value may have moved
+into a nonlinear form; predicts a nonlinear probe or patching the chat question
+token into the base recovers more. (3) confidence recalibration: the model
+spreads mass over neighboring numbers at the first token; predicts flatter
+first-token distributions with the answer still ranked high (chat MRR 0.795 at
+k=0 vs base 0.98 fits). (4) format interference: turn markers plus an empty
+think tag without a reasoning span disrupt the direct path; predicts the chat
+model does better at k=0 in plain rendering (untested; the base was equal in
+both). (1) and (3) are compatible. Distinguishing them needs the chat model's
+first-token distributions at k=0 (in the sweep files) and a plain-rendering chat
+run (needs the box).
+
 **What this settles.** The chat model's 70% at k=0 is not a task the network
 cannot do; the same network before post-training does it at 96%. Fifty
 post-question dots bring the chat model to 98%, which is the base's level. So

@@ -347,6 +347,30 @@ In the base the answer is linearly present at the last question token, before an
 \begin{figure}[h]\centering\includegraphics[width=\textwidth]{deepseek_base_probes.png}
 \caption{DeepSeek-V4-Flash-Base: ridge-probe $R^2$ by block for the stage values, from the dots, the last question token, the answer cue, and the generation position.}\end{figure}
 
+\subsection{The chat model's misses are near-misses}
+
+What does the post-trained model emit when it fails at $k=0$? All fifteen misses are numbers of the right magnitude; there is no refusal, no words, no formatting failure. None is a wrong-variable substitution: for every miss I resolved every variable in the prompt and applied the final operation to each, and no miss matches another variable's value or its transformed value. The model always finds the right chain. Nine of the fifteen are within 4 of the correct answer (seven within 2), one drops the doubling in the final step ($b + c$ for $2b + c$), one drops the constant ($2b$ for $2b + c$), and the rest are arithmetic slips of 10 to 50 on three-digit answers. With fifty dots, fourteen of the fifteen are repaired and the one remaining miss is off by 2.
+
+The base misses two items at $k=0$. One of them is the same dropped-constant error on the same item that the chat model makes, which suggests that item is hard for reasons shared by both checkpoints.
+
+\subsection{Relocated, not forgotten}
+
+``Post-training made the model forget the task'' is too strong. Nothing about the task disappeared. With fifty dots the chat model reaches 49/50, the base's level, so the circuit exists and needs only positions after the question to run in. The answer is decodable from the dot span and the answer cue at $R^2$ 0.87 in both checkpoints, so the computation happens in both; in the base it also happens at the question token (0.74), in the chat model it mostly does not (0.40). And the misses are approximate answers to the right sub-problem, not wrong sub-problems. The accurate word is \emph{relocated}. What weakened is one pathway: finishing the two-step arithmetic in place, at the question position, in time to emit the answer on the very next token. When any trailing tokens exist, even dots, the pretrained dot-reading anatomy carries the value to the answer and the pathway is not needed.
+
+\subsection{Why post-training would do this: hypotheses}
+
+None of these is tested here; they differ in what they predict, which is how to tell them apart.
+
+\paragraph{Deferred computation.} Reasoning-oriented reinforcement learning rewards putting the work into the span of tokens after the question. A model that has internalized ``the span after the question is where thinking happens'' has less pressure to keep a pathway that finishes arithmetic before the first output token, and unused pathways drift. Prediction: the deficit should be specific to direct-answer mode and should scale with how much post-training emphasized long reasoning; models with lighter or non-reasoning post-training from the same base should show a smaller deficit. This is the hypothesis the evidence fits best, and the awkward fact remains that Qwen3.5 also has a thinking mode and shows no filler gain; the difference would have to lie in how each lab trained its non-thinking mode.
+
+\paragraph{A representational shift at the question token.} The 0.74 to 0.40 drop is a linear readout. Post-training may have moved the answer representation at the question token into a form a ridge probe cannot read, rather than removed it. Prediction: a nonlinear probe, or a patching experiment that transplants the chat model's question-token residual into the base, would recover more of the answer than the linear number suggests. The behavioral gap argues against this being the whole story, since whatever is at the question token is not enough to emit the right number.
+
+\paragraph{Confidence recalibration.} Post-training may have made the model reluctant to commit to a computed number at the first output token, spreading probability across nearby values. The near-miss pattern (right magnitude, off by a few) is consistent with this. Prediction: the chat model's first-token distribution at $k=0$ should be flatter across neighboring numbers than the base's, with the correct answer still ranked high. Nicole's MRR of 0.795 at $k=0$ against 0.98 for the base says the correct answer is usually near the top even when it is not first, which fits.
+
+\paragraph{Format-specific interference.} The turn markers and the empty think tag were seen during post-training in contexts where an answer follows a reasoning span. Their presence with no span may itself disrupt the direct path. Prediction: the chat model should do better at $k=0$ in the plain rendering, without turn markers. The base did equally well in both renderings, but this was not run on the chat model and is a cheap check.
+
+The first and third hypotheses are not exclusive; deferred computation would produce exactly the kind of imprecise first-token answers the third describes. Distinguishing them needs the chat model's full first-token distributions at $k=0$, which the existing sweep files contain, and a plain-rendering run of the chat model, which needs the box.
+
 \subsection{What this settles}
 
 The chat model's 70\% at $k=0$ is not a task the network cannot do; the same network before post-training does it at 96\%. Fifty post-question dots bring the chat model to 98\%, which is the base's level. So the filler effect in DeepSeek V4 Flash is a post-training artifact: post-training introduced a deficit in direct answering, and the dots recover the pretrained competence.
@@ -381,7 +405,7 @@ Part VI answers the headline question: post-training. What follows is the reason
 In order of information per GPU-hour:
 
 \begin{enumerate}
-\item Find what in post-training created the $k=0$ deficit. Intermediate checkpoints from DeepSeek are not public, but the chat model's failure cases at $k=0$ can be characterized: which items it misses, what it emits instead, and whether the miss is a wrong binding or a wrong arithmetic step. Comparing the chat and base models' logit-lens trajectories at the answer position on the same items would show where the direct path diverges.
+\item Test the hypotheses in Part VI against each other. From the existing sweep files: compare the chat and base models' full first-token distributions at $k=0$ (flatness across neighboring numbers, rank of the correct answer). On the box: run the chat model in plain rendering; dump both models' residuals at the question token with $k=0$, since the 0.74 versus 0.40 probe was measured with dots present; and patch the base's question-token residual into the chat model at $k=0$ to see whether the direct path is recoverable from a single position.
 \item Run DeepSeek-V2-Lite-Chat on the existing harness. Twenty minutes. Tests whether the DeepSeek training pipeline produces the effect without hyper-connections.
 \item Train a model where dots are \emph{necessary}: a chain long enough that the direct computation cannot fit, with the loss also applied to intermediate values written at the dot positions during a first phase, then removed. If that produces a dot-dependent model, Nicole's causal ladder can be run on it and compared with DeepSeek's mechanism.
 \item On the DeepSeek side, read the four residual streams separately. The unresolved question in Nicole's pipeline is how the released lens collapses four streams to one; values living in one lane may be invisible after the collapse, and her ``raw first product never appears'' result could be that artifact.
