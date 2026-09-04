@@ -356,7 +356,37 @@ Part VI of the PDF is out. The dot effect survives the change of rendering: 22 h
 2 hurt at k=50, and the curve keeps rising to 44 at k=100 where the chat-rendered run
 saturates at 49. The base is at ceiling in both renderings.
 
-## Where the announcement is read
+## Which channel carries the announcement
+
+The announced-but-absent prompt carries the announcement in two places: the system
+sentence ("there will be 50 filler tokens...") and the five demonstrations, each with
+fifty dots between its question and its answer. `build_messages(...,
+announce_mode="sentence"|"demos")` separates them; the target has no filler in either.
+
+| condition (target k=0) | chat: q_last probe | chat: correct/50 | base: q_last probe | base: correct/50 |
+|---|---:|---:|---:|---:|
+| nothing announced | 0.84 | 34 | 0.84 | 48 |
+| sentence only | **0.83** | **28** | 0.84 | 50 |
+| demonstrations only | **0.40** | **34** | 0.55 | 46 |
+| both | 0.31 | 32 | 0.55 | 46 |
+
+A double dissociation. The demonstrations move the computation off the question token
+(0.84 to 0.40 in chat, 0.84 to 0.55 in base) and leave accuracy alone. The sentence
+leaves the question token alone and costs the chat model six items (34 to 28), its
+worst score in any condition, while the base is unaffected (50). So the "deferral"
+measured all day is in-context format learning: five examples of question, span,
+answer teach both checkpoints, the chat model more strongly, to finish the arithmetic
+after the question rather than at it. The graded result (0.51, 0.36, 0.31 for 5, 25,
+50 announced) was graded by the demonstrations' span length. The instruction sentence
+does something different: it degrades the post-trained model's answer without changing
+where the answer is computed, and it does nothing to the base.
+
+This corrects the reading in the previous section. The chat model's heads that read the
+sentence from block 20 on are real, but they are not the deferral mechanism; if
+anything they are the mechanism of the sentence's cost to accuracy. What the
+demonstrations do to the question token has yet to be located.
+
+## Where the announcement is read (the sentence)
 
 `dump_dot_attention_dsv4.py` now attributes keys to a sixth region, the 21-token filler
 sentence in the system message, and handles k=0. Mass on that sentence from the last
@@ -377,11 +407,11 @@ to 0.38; the base's question token ignores it until block 38 and reads it at hal
 chat model's level at block 40. The sentence is about 600 tokens before the question,
 outside the 128-token window, so this is attention through the compressed keys, which
 the indexer selects in the even blocks (20, 22, 24, 26, 32, 34, 38, 40 are all even).
-Block 20 is also where the question-token probe first separates between the announced
-and unannounced runs (0.66 versus 0.09 at block 28). Post-training installed, or
-strengthened, heads in blocks 20 to 40 that read the filler instruction at the question
-token; that is the mechanism by which the announcement defers the computation. Attention
-from the cue and generation positions to the sentence is 0.02 in both checkpoints.
+Post-training installed, or strengthened, heads in blocks 20 to 40 that read the filler
+instruction at the question token. Given the channel decomposition above, these heads
+are not what defers the computation (the demonstrations do that); they are the chat
+model's route to the instruction whose presence costs it six items. Attention from the
+cue and generation positions to the sentence is 0.02 in both checkpoints.
 
 Results: `results/filler-cosine/announce-attention.md`, dumps under
 `results/deepseek-v4-flash{,-base}/announce-attn-{k0,announce50-k0,k50}/`.
@@ -414,6 +444,7 @@ or a format token.
 - `results/deepseek-v4-flash{,-base}/filler-dump-<type>/{analysis,cosine}/` anatomy per type
 - `results/qwen3.5-9b/filler-types/{base,dotsonly}/varbind-eval-<type>/` and `.../filler-dump-<type>/{analysis,cosine}/`
 - Announced-but-absent: `results/deepseek-v4-flash{,-base}/{varbind-eval-announce50-k0,k0-announce50-dump}/`, `results/filler-cosine/k0-announce-probes.md`
+- Channel decomposition: `results/deepseek-v4-flash{,-base}/{varbind-eval-announce50-{sentence,demos}-k0,k0-announce50-{sentence,demos}-dump}/`, `results/filler-cosine/k0-announce-channel-probes.md`
 - k=0 dumps and probes: `results/deepseek-v4-flash{,-base}/k0-dump/`, `results/filler-cosine/k0-probes.md`
 - Llama-3.1-8B-Instruct and Gemma-3-27B-IT dot dumps: `results/{llama3.1-8b-it,gemma-3-27b-it}/dot-dump/{analysis,cosine}/`
 - Cross-type tables: `results/filler-cosine/summary-deepseek.md`, `results/filler-cosine/summary-qwen.md`
