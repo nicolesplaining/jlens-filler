@@ -304,6 +304,21 @@ chat model defers almost completely, the base partly. The answer remains decodab
 the cue and generation positions at 0.79 to 0.83 in every condition, so what moves is
 where the value is assembled, not whether it is.
 
+**Deferral is graded by the announced count.** Same design with 5 and 25 announced dots
+(`run_dsv4_announce_graded.sh`), none delivered. Best answer probe at the last question
+token:
+
+| announced dots (none delivered) | 0 | 5 | 25 | 50 |
+|---|---:|---:|---:|---:|
+| chat | 0.84 | 0.51 | 0.36 | 0.31 |
+| base | 0.84 | 0.86 | 0.85 | 0.55 |
+
+The chat model reads the number in the instruction and defers in proportion: five
+promised dots halve its in-place computation, twenty-five bring it to the fifty-dot
+level. The base ignores the announcement until it is fifty. This matches the behavioral
+curve with dots delivered (45 at k=5, 49 at k=50): whatever span the chat model is
+promised, it plans to use.
+
 Accuracy moves much less than the probe: chat 34 to 32, base 48 to 46. Two consequences.
 First, the chat model's k=0 deficit is not caused by deferral: it is there at 0.84 and
 at 0.31 alike. Second, deferral only pays off when there are positions to defer into.
