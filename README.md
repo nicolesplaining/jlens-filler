@@ -152,6 +152,7 @@ dots and gains nothing from them, while reading the dots exactly as the chat mod
 does. DeepSeek's filler effect is post-training weakening the direct path; the
 dot-reading that repairs it is pretrained.
 
+- Session report, end to end (base checkpoint, filler types, adjacent cosine, announcement channels): [`reports/pdf/deepseek-filler-session.pdf`](reports/pdf/deepseek-filler-session.pdf)
 - PDF report (screen, training, causal tests, dot anatomy): [`reports/pdf/filler-tokens-open-models.pdf`](reports/pdf/filler-tokens-open-models.pdf) (source: `filler-tokens-open-models.tex`, figures under `results/report-figures/`)
 - Findings note: [`reports/small-open-model-null-result.md`](reports/small-open-model-null-result.md)
 
