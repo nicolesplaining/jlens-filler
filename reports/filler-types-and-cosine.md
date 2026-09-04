@@ -110,6 +110,8 @@ base, 0.40 chat). Caveat below.
 | Qwen base | 0.25 to 0.30 | 0.15 | diffuse |
 | Qwen k=0-only | 0.44 to 0.51 | 0.69 | F1/2 (42 items) |
 | Qwen dots-only | 0.75 to 0.82 | 4.2 | F2/3, F3/4 (100/100), F7/8 (98) |
+| Llama-3.1-8B-Instruct | 0.44 to 0.59 | 0.44 | F4/5 (22 of 50) |
+| Gemma-3-27B-IT | 0.23 to 0.36 | 0.26 | diffuse |
 | DeepSeek chat | 0.06 to 0.19 | 0.88 | diffuse |
 | DeepSeek base | 0.06 to 0.19 | 0.48 | diffuse |
 
@@ -118,6 +120,15 @@ whole span (adjacent cosine 0.8 after centering) and its only change points are 
 settling transient in the first ten dots, identical across all 100 items. DeepSeek's
 dots are the least redundant position to position of any model here. Redundancy across
 the span is a clean signature of not using it.
+
+Llama and Gemma (`run_hf_other_models_cosine.sh`, 50 held-out items, k=50) put 1 to 2
+percent of late attention on the dots and get nothing from them behaviorally, yet the
+answer is linearly decodable from their dot residuals at 0.84 and 0.81, about what
+DeepSeek shows (0.87). Decodability of the answer from the span is therefore not
+evidence that the span is used; it is what a residual stream leaks about its context.
+The measures that do separate DeepSeek from every non-using model are attention from
+the answer positions (0.16 to 0.27 against 0.01 to 0.04) and, within dots, the
+non-redundancy of the span (0.06 to 0.19 against 0.23 to 0.77).
 
 **Caveat on the rising gradient.** The filler-to-answer cosine also rises along the span
 in Qwen dots-only (block 29: F1 -0.04, F50 0.50), a model shown by lesions not to use
@@ -374,4 +385,5 @@ or a format token.
 - `results/qwen3.5-9b/filler-types/{base,dotsonly}/varbind-eval-<type>/` and `.../filler-dump-<type>/{analysis,cosine}/`
 - Announced-but-absent: `results/deepseek-v4-flash{,-base}/{varbind-eval-announce50-k0,k0-announce50-dump}/`, `results/filler-cosine/k0-announce-probes.md`
 - k=0 dumps and probes: `results/deepseek-v4-flash{,-base}/k0-dump/`, `results/filler-cosine/k0-probes.md`
+- Llama-3.1-8B-Instruct and Gemma-3-27B-IT dot dumps: `results/{llama3.1-8b-it,gemma-3-27b-it}/dot-dump/{analysis,cosine}/`
 - Cross-type tables: `results/filler-cosine/summary-deepseek.md`, `results/filler-cosine/summary-qwen.md`
