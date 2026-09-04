@@ -313,6 +313,23 @@ finish the arithmetic in it, and emits an approximate answer when the span is mi
 The base does the arithmetic well enough at the question token, or at the cue, that it
 does not need the span either way.
 
+## Chat model in plain rendering (format-interference test)
+
+`extract_dsv4.py --render plain` drops the turn markers and the empty think tag and
+joins the demonstrations as raw text, the rendering the base model was also run in.
+
+| Visible dots | 0 | 5 | 10 | 25 | 50 | 100 |
+|---|---:|---:|---:|---:|---:|---:|
+| chat, chat rendering (Nicole) | 35 | 45 | 42 | 43 | 49 | 49 |
+| chat, plain rendering | 19 | 23 | 29 | 36 | 39 | 44 |
+| base, plain rendering | 47 | 44 | 50 | 47 | 50 | 50 |
+
+Without its chat template the post-trained model gets worse at k=0 (19 against 35), so
+the turn markers were helping rather than interfering, and the format hypothesis from
+Part VI of the PDF is out. The dot effect survives the change of rendering: 22 helped and
+2 hurt at k=50, and the curve keeps rising to 44 at k=100 where the chat-rendered run
+saturates at 49. The base is at ceiling in both renderings.
+
 ## First-token distributions (no GPU; from the sweep files)
 
 Top-10 tokens at the answer position, mean over the 50 released items.
