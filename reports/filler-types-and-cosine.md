@@ -438,6 +438,12 @@ the last two items when the demonstrations are there. The span is most useful to
 that has seen examples of a span being used, which is the same channel that moved its
 computation off the question token.
 
+**The grading is the demonstrations' too.** Demonstrations only, with 5, 25, 50 dots in
+each demonstration and none in the target: chat question-token probe 0.49, 0.33, 0.40;
+base 0.84, 0.82, 0.55. The same curve as with both channels (0.51, 0.36, 0.31; base 0.86,
+0.85, 0.55). The chat model calibrates its deferral to the span length the examples show,
+from five dots up; the base only reacts at fifty.
+
 **What the demonstrations do is not visible in attention.** With demonstrations-only
 announcement, the question token's late-block attention on the demonstrations' 250
 filler tokens is 0.16 in chat and 0.21 in base (peak 0.39 and 0.35, both at block 38),
