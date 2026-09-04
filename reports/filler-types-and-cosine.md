@@ -8,6 +8,48 @@ filler span. Same 50 released items for behavior, same 50 held-out items at k=50
 the dumps, chat rendering throughout. Scripts: `scripts/run_dsv4_filler_types.sh`,
 `scripts/analyze_filler_cosine.py`, `scripts/run_hf_filler_types.sh` (Qwen3.5-9B).
 
+## Findings in one page
+
+1. **Numbers work as filler as well as dots; letters work less; order never matters.**
+   Chat model at k=50: dots 49, numbers 49 (scrambled 49), letters 42 (scrambled 41), from
+   a k=0 baseline of 34 to 35. Every type is placement-specific (28 to 36 before the
+   question). The base is at 48 to 50 for every type and length.
+2. **Attention on the filler tracks the gain, and the ordering is pretrained.** Late-block
+   attention from the generation position: letters 0.11 to 0.13, dots 0.16, numbers 0.23
+   in the chat model; the base reads every type harder (0.16 to 0.27) in the same order.
+   The answer is decodable from every filler type in both checkpoints (0.78 to 0.91), and
+   also from the dots of Llama, Gemma and the trained Qwen, so decodability is not
+   evidence of use; attention and non-redundancy are.
+3. **Adjacent-position cosine shows no change of thought.** Every consistent drop is a
+   tokenization artifact (first and last dot, the z→a wrap, the number/space alternation).
+   After removing position identity, DeepSeek's filler positions are nearly unrelated to
+   their neighbors (0.01 to 0.19) and change points are scattered. The trained Qwen that
+   ignores its dots carries one constant vector along the span (0.77 with dots); Llama
+   0.44 to 0.59, Gemma 0.23 to 0.36, Qwen base 0.25 to 0.30.
+4. **With nothing announced, the chat model's question token holds the answer as well as
+   the base's (0.84 both).** The 0.40 versus 0.74 gap of the base write-up appears only when
+   a filler span is announced in the context, and it is graded by the announced count
+   (0.84, 0.51, 0.36, 0.31 for 0, 5, 25, 50 dots announced and none delivered; base 0.84,
+   0.86, 0.85, 0.55).
+5. **The demonstrations defer; the sentence costs accuracy.** Demonstrations-only: chat
+   question-token probe 0.40, accuracy unchanged at 34. Sentence-only: probe 0.83,
+   accuracy 28. The base: 0.55 and 46 versus 0.84 and 50. Deferral is in-context format
+   learning from question/span/answer examples, stronger after post-training; the
+   instruction sentence degrades the post-trained model's answer without moving the
+   computation and does nothing to the base. With dots delivered: nothing announced 39,
+   sentence 36, demonstrations 47, both 49.
+6. **The chat model has heads that read the sentence** (question token, blocks 20 to 40,
+   up to 0.38 of a head's mass; the base at most 0.19 at block 40). They are the route to
+   the sentence's cost, not the deferral. Attention from the question token to the
+   demonstrations' spans is at or below uniform in both checkpoints; what the
+   demonstrations do stays unlocated.
+7. **Other results.** The chat model's k=0 misses are near-misses with a flatter first-token
+   distribution (entropy 0.76 vs 0.30 nats); dots sharpen it to the base's level. Plain
+   rendering drops the chat model to 19 at k=0 and dots still bring it to 44 (format
+   interference refuted). The dots-only Qwen gets nothing from letters and is hurt by
+   numbers (42 to 30 scrambled) because its answer position reads filler digits as problem
+   digits (heads at 0.5).
+
 ## Filler types
 
 `src/jlens_filler/prompts.py` renders five filler types. The scrambled variants use one
