@@ -381,6 +381,11 @@ after the question rather than at it. The graded result (0.51, 0.36, 0.31 for 5,
 does something different: it degrades the post-trained model's answer without changing
 where the answer is computed, and it does nothing to the base.
 
+With fifty dots delivered in the target (chat model): sentence only 28 → 36 (11 helped,
+3 hurt), demonstrations only 34 → 47 (13 helped, none hurt), both 34 → 49. The span is
+most useful to a model that has seen examples of a span being used; the instruction
+alone makes it only partly useful.
+
 This corrects the reading in the previous section. The chat model's heads that read the
 sentence from block 20 on are real, but they are not the deferral mechanism; if
 anything they are the mechanism of the sentence's cost to accuracy. What the
