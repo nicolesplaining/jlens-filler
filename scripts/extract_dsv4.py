@@ -1117,6 +1117,14 @@ def main() -> None:
     parser.add_argument("--max-seq-len", type=int, default=1024)
     parser.add_argument("--announce-mode", choices=["both", "sentence", "demos", "none"], default="both", help="which context channel carries the filler announcement")
     parser.add_argument("--announce-filler", type=int, default=0, help="render the system sentence and demos with this many filler tokens regardless of the target length")
+    parser.add_argument(
+        "--extraction-filler-length",
+        type=int,
+        help=(
+            "for phase=filler/all, extract only this positive filler length "
+            "instead of every positive length in a sweep config"
+        ),
+    )
     parser.add_argument("--model-revision", default="unknown")
     parser.add_argument(
         "--example-ids",
@@ -1131,6 +1139,8 @@ def main() -> None:
         help="chat: official encode_messages (non-thinking); plain: raw few-shot text for base models",
     )
     args = parser.parse_args()
+    if args.extraction_filler_length is not None and args.extraction_filler_length <= 0:
+        parser.error("--extraction-filler-length must be positive")
 
     rank, local_rank, world_size = distributed_setup(
         args.process_group_timeout_minutes
@@ -1261,6 +1271,7 @@ def main() -> None:
                 "top_k": args.top_k,
                 "max_new_tokens": args.max_new_tokens,
                 "max_seq_len": args.max_seq_len,
+                "extraction_filler_length": args.extraction_filler_length,
                 "thinking_mode": "chat (official non-thinking renderer)" if args.render == "chat" else "plain few-shot text (base model)",
                 "render": args.render,
                 "decoding": "greedy",
@@ -1395,11 +1406,14 @@ def main() -> None:
             print(f"wrote {path}", flush=True)
 
     if args.phase in {"filler", "all"}:
-        extraction_lengths = (
-            [length for length in filler_lengths if length > 0]
-            if filler_lengths is not None
-            else [int(experiment["filler_length"])]
-        )
+        if args.extraction_filler_length is not None:
+            extraction_lengths = [args.extraction_filler_length]
+        else:
+            extraction_lengths = (
+                [length for length in filler_lengths if length > 0]
+                if filler_lengths is not None
+                else [int(experiment["filler_length"])]
+            )
         if not extraction_lengths:
             raise ValueError("filler extraction requires at least one positive length")
         multi_length = filler_lengths is not None
