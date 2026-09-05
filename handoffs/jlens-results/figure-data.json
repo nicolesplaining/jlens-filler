@@ -1,0 +1,90 @@
+{
+  "source_message_utc": "2026-09-04T20:36:48.591Z",
+  "provenance": "Values transcribed from the historical conversation summary; not a fresh raw-data audit.",
+  "independent_100": {
+    "dots": [
+      0,
+      5,
+      25,
+      50,
+      100
+    ],
+    "accuracy_percent": [
+      59,
+      74,
+      79,
+      94,
+      96
+    ]
+  },
+  "initial_50": {
+    "dots": [
+      0,
+      5,
+      50,
+      100
+    ],
+    "accuracy_percent": [
+      70,
+      90,
+      98,
+      98
+    ]
+  },
+  "window_35_selected_rescued": {
+    "predecessors": [
+      "0",
+      "1",
+      "2",
+      "4",
+      "8",
+      "16",
+      "32",
+      "Full"
+    ],
+    "correct": [
+      7,
+      14,
+      28,
+      29,
+      30,
+      31,
+      33,
+      35
+    ]
+  },
+  "path_10_selected_rescued": {
+    "condition": [
+      "Full setup",
+      "Block local dot communication",
+      "Block compressed dot communication",
+      "Block local answer access",
+      "Only local answer access"
+    ],
+    "correct": [
+      10,
+      2,
+      9,
+      4,
+      10
+    ]
+  },
+  "patch_single_example": {
+    "condition": [
+      "Before patch",
+      "Full donor state",
+      "J-Lens-orthogonal remainder"
+    ],
+    "donor_answer_rank": [
+      73,
+      3,
+      8
+    ]
+  },
+  "layer_schematic": {
+    "base": 24,
+    "bound_value": 31,
+    "later_product": 31,
+    "answer": 36
+  }
+}
